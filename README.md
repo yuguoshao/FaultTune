@@ -4,7 +4,7 @@
 
 The optimizer is written in Rust for speed. A Python package built on top of it lets you describe the processor, write error models with NumPy, and run calibrations from scripts or Jupyter notebooks, without writing any Rust.
 
-> **Status: early development.** No code has been published yet. The Rust and Python APIs below describe the planned design and may change before the first release.
+> **Status: early development.** No code has been published yet. The Rust and Python APIs below describe the planned design and may change before the first release. The planned internals are described in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ---
 
@@ -88,20 +88,20 @@ FaultTune provides the Snake machinery: graphs, scopes, traversal, segmentation,
 ### 1. Describe the processor
 
 ```rust
-use faulttune::{ProcessorGraph, ElementKind};
+use faulttune::{ProcessorGraph, ElementKind, EdgeType};
 
 // 16 qubits on a 4×4 grid: nearest-neighbour couplers are engineered edges,
 // diagonals are parasitic edges that only carry crosstalk constraints.
 let graph = ProcessorGraph::square_lattice(4, 4);
 
 // Calibrate every node and every engineered edge.
-let goal = graph.goal(|element| element.kind() != ElementKind::ParasiticEdge);
+let goal = graph.goal(|element| element.kind() != ElementKind::Edge(EdgeType::Parasitic));
 ```
 
 ### 2. Supply an error model
 
 ```rust
-use faulttune::{ElementId, ErrorModel, Step, Assignment};
+use faulttune::{ElementId, ErrorModel, ModelError, Step};
 
 struct GateFrequencyModel {
     // Measured device data: relaxation spectra, crosstalk strengths, ...
@@ -109,18 +109,22 @@ struct GateFrequencyModel {
 
 impl ErrorModel for GateFrequencyModel {
     type Value = f64; // frequency in GHz
+    type Data = ();   // per-step calibration data; none in this example
 
     /// The `k` candidate values for one element.
     fn options(&self, element: ElementId) -> Vec<f64> {
         /* ... */
     }
 
-    /// Collect any calibration data this step needs (optional).
-    fn prepare(&mut self, step: &Step<f64>) {}
+    /// Collect any calibration data this step needs.
+    fn prepare(&self, step: &Step<f64>) -> Result<(), ModelError> {
+        Ok(())
+    }
 
-    /// Estimated error of a candidate assignment of the step's parameters,
-    /// given the values already fixed for the constraining neighbours.
-    fn error(&self, step: &Step<f64>, candidate: &Assignment<f64>) -> f64 {
+    /// Estimated error of one candidate assignment of the step's parameters,
+    /// given the values already fixed for the constraining neighbours
+    /// (`step.constraints`). Return `f64::INFINITY` for forbidden candidates.
+    fn error(&self, step: &Step<f64>, data: &(), candidate: &[f64]) -> f64 {
         /* ... */
     }
 }
@@ -129,28 +133,29 @@ impl ErrorModel for GateFrequencyModel {
 ### 3. Run the Snake
 
 ```rust
-use faulttune::{Snake, SnakeConfig, AlgorithmSubgraphs, heuristics::BreadthFirst, optimizers::Exhaustive};
+use faulttune::{Snake, SnakeConfig, AlgorithmSubgraphs, heuristics::BreadthFirst, optimizers::CoordinateDescent};
 
 let config = SnakeConfig {
     parameter_distance: 1,  // d_P
     constraint_distance: 2, // d_R
     traversal_distance: 2,  // d_T
+    ..SnakeConfig::default()
 };
 
-let mut snake = Snake::new(&graph, goal, config)
+let snake = Snake::new(&graph, goal, config)
     .algorithm(AlgorithmSubgraphs::all_active(&graph)) // or the subgraphs of your algorithm
     .heuristic(BreadthFirst)
-    .optimizer(Exhaustive);
+    .optimizer(CoordinateDescent::default());
 
-let mut model = GateFrequencyModel { /* ... */ };
-let mut params = snake.calibrate(&mut model)?; // a ParameterDatabase
+let model = GateFrequencyModel { /* ... */ };
+let mut params = snake.calibrate(&model)?; // a ParameterDatabase
 ```
 
 ### 4. Re-calibrate after drift
 
 ```rust
 // Qubit 7 has drifted past its threshold: forget its neighbourhood and re-learn it.
-snake.recalibrate(&mut params, qubit_7, &mut model)?;
+snake.recalibrate(&mut params, &[qubit_7], &model)?;
 ```
 
 ### Pluggable parts
@@ -158,7 +163,7 @@ snake.recalibrate(&mut params, qubit_7, &mut model)?;
 | Part | Provided by FaultTune | You can supply your own |
 | --- | --- | --- |
 | `ErrorModel` | Toy models for examples and tests | Yes, normally required |
-| `Optimizer` (solves one step) | Exhaustive search, random search | Yes |
+| `Optimizer` (solves one step) | Coordinate descent (default), exhaustive search, random search | Yes |
 | `TraversalHeuristic` | Breadth-first, depth-first, random | Yes |
 | `AlgorithmSubgraphs` | "Everything active at once" | Yes, from your algorithm's structure |
 | `ProcessorGraph` | Square lattice builder | Yes, any graph with typed edges |
@@ -204,7 +209,10 @@ class GateFrequencyModel(ft.ErrorModel):
         return np.linspace(5.0, 7.0, 100)
 
     def prepare(self, step):
-        """Optional: collect any calibration data this step needs."""
+        """Optional: collect calibration data for this step.
+
+        Whatever this returns is available as step.data in error().
+        """
 
     def error(self, step, candidates):
         """Estimated error of many candidate assignments at once.
@@ -224,7 +232,7 @@ snake = ft.Snake(
     constraint_distance=2,  # d_R
     traversal_distance=2,   # d_T
     heuristic="breadth_first",
-    optimizer="exhaustive",
+    optimizer="coordinate_descent",
 )
 model = GateFrequencyModel(device_data)  # device_data: your measured data
 params = snake.calibrate(model)
@@ -241,7 +249,7 @@ snake.recalibrate(params, qubit, model)
 
 - **Thin bindings.** The Python package is built with [PyO3](https://pyo3.rs/) and maturin. It wraps the Rust crate directly instead of reimplementing it, so both interfaces behave the same.
 - **Batch evaluation.** In Python, `error` receives a whole batch of candidate assignments as a NumPy array instead of one assignment at a time. This keeps the cost of calling into Python low, even when a step has thousands of candidates.
-- **Custom parts.** Traversal heuristics and step optimizers can be given by name (`"breadth_first"`, `"exhaustive"`, …) or written as Python callables.
+- **Custom parts.** Traversal heuristics and step optimizers can be given by name (`"breadth_first"`, `"coordinate_descent"`, …) or written as Python callables.
 - **Parallelism.** Calibration subgoals still run in parallel in Rust. Calls into a Python error model need the GIL, though, so they run one at a time unless the interpreter is a free-threaded build. For heavy models, do the work in NumPy, which releases the GIL during large array operations, or implement the model in Rust.
 
 ### Repository layout (planned)
@@ -273,7 +281,7 @@ Nothing in the Snake is specific to qubits. The paper notes that the same ideas 
 - [ ] Builders for calibration parameters, active constraints and traversal options
 - [ ] Traversal heuristics: breadth-first, depth-first, random
 - [ ] Segmentation into calibration subgoals and traversal threads
-- [ ] Exhaustive and random-search step optimizers
+- [ ] Coordinate-descent, exhaustive and random-search step optimizers
 - [ ] Parallel calibration of subgoals (via `rayon`, behind a feature flag)
 - [ ] Local re-calibration and calibration stitching
 - [ ] Worked example: a toy gate-frequency model on a square lattice

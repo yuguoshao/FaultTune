@@ -1,8 +1,10 @@
 # FaultTune
 
-**A Rust implementation of the Snake Optimizer.** FaultTune learns the control parameters of a quantum processor, or any other system whose parameters sit on a graph and interfere with their neighbours. It works through the graph one small neighbourhood at a time, choosing parameter values that keep computational errors low.
+**A Rust implementation of the Snake Optimizer, with a Python interface.** FaultTune learns the control parameters of a quantum processor, or any other system whose parameters sit on a graph and interfere with their neighbours. It works through the graph one small neighbourhood at a time, choosing parameter values that keep computational errors low.
 
-> **Status: early development.** No code has been published yet. The API below describes the planned design and may change before the first release.
+The optimizer is written in Rust for speed. A Python package built on top of it lets you describe the processor, write error models with NumPy, and run calibrations from scripts or Jupyter notebooks, without writing any Rust.
+
+> **Status: early development.** No code has been published yet. The Rust and Python APIs below describe the planned design and may change before the first release.
 
 ---
 
@@ -79,9 +81,9 @@ In the paper's gate-frequency example for XEB (`d_P = 1`, `d_R = 2`, `d_T = 2`),
 - **Re-calibration.** Calibrated values drift. When an element's performance falls past a threshold, its calibration is considered expired. The Snake removes that element's neighbourhood from `P*` and runs the same algorithm again, so only that local region is re-calibrated, still subject to all surrounding constraints.
 - **Stitching.** Calibrated regions separated by uncalibrated gaps can be joined by running the same algorithm on the gaps. A large processor can therefore be split on purpose into constraint-disjoint regions, calibrated in parallel, and then stitched together.
 
-## Planned API
+## Planned Rust API
 
-FaultTune provides the Snake machinery: graphs, scopes, traversal, segmentation, parallelism and the parameter database. You provide the physics: the error model and how calibration data is collected.
+FaultTune provides the Snake machinery: graphs, scopes, traversal, segmentation, parallelism and the parameter database. You provide the physics: the error model and how calibration data is collected. The same design is available from Python; see [Python interface](#python-interface).
 
 ### 1. Describe the processor
 
@@ -161,6 +163,101 @@ snake.recalibrate(&mut params, qubit_7, &mut model)?;
 | `AlgorithmSubgraphs` | "Everything active at once" | Yes, from your algorithm's structure |
 | `ProcessorGraph` | Square lattice builder | Yes, any graph with typed edges |
 
+## Python interface
+
+Measurement and analysis code for quantum hardware is often written in Python, so FaultTune ships a Python package, `faulttune`, that exposes the same concepts as the Rust API. The Snake itself still runs in Rust; Python is used to describe the problem and to write the error model.
+
+### Installation
+
+Once published, prebuilt wheels for Linux, macOS and Windows will be available from PyPI, so no Rust toolchain is needed:
+
+```bash
+pip install faulttune
+```
+
+To build from source, install a Rust toolchain and [maturin](https://www.maturin.rs/), then run this from the repository root:
+
+```bash
+maturin develop --release
+```
+
+The package will support Python 3.11 and newer, and include type stubs for editor autocompletion and type checking.
+
+### Example
+
+```python
+import numpy as np
+import faulttune as ft
+
+# 1. Describe the processor: 16 qubits on a 4×4 grid.
+graph = ft.ProcessorGraph.square_lattice(4, 4)
+goal = graph.goal(exclude=[ft.ElementKind.PARASITIC_EDGE])
+
+
+# 2. Write the error model in Python.
+class GateFrequencyModel(ft.ErrorModel):
+    def __init__(self, device_data):
+        self.data = device_data  # relaxation spectra, crosstalk strengths, ...
+
+    def options(self, element):
+        """The k candidate values (frequencies in GHz) for one element."""
+        return np.linspace(5.0, 7.0, 100)
+
+    def prepare(self, step):
+        """Optional: collect any calibration data this step needs."""
+
+    def error(self, step, candidates):
+        """Estimated error of many candidate assignments at once.
+
+        candidates: array of shape (n_candidates, len(step.parameters)).
+        step.constraints maps each constraining element to its fixed value.
+        Returns an array of shape (n_candidates,).
+        """
+        ...
+
+
+# 3. Run the Snake.
+snake = ft.Snake(
+    graph,
+    goal,
+    parameter_distance=1,   # d_P
+    constraint_distance=2,  # d_R
+    traversal_distance=2,   # d_T
+    heuristic="breadth_first",
+    optimizer="exhaustive",
+)
+model = GateFrequencyModel(device_data)  # device_data: your measured data
+params = snake.calibrate(model)
+
+# 4. Use, save and re-calibrate the results.
+print(params.to_dict())             # {element: value}
+params.save("calibration.json")
+
+qubit = graph.node(1, 3)            # this qubit has drifted
+snake.recalibrate(params, qubit, model)
+```
+
+### Design notes
+
+- **Thin bindings.** The Python package is built with [PyO3](https://pyo3.rs/) and maturin. It wraps the Rust crate directly instead of reimplementing it, so both interfaces behave the same.
+- **Batch evaluation.** In Python, `error` receives a whole batch of candidate assignments as a NumPy array instead of one assignment at a time. This keeps the cost of calling into Python low, even when a step has thousands of candidates.
+- **Custom parts.** Traversal heuristics and step optimizers can be given by name (`"breadth_first"`, `"exhaustive"`, …) or written as Python callables.
+- **Parallelism.** Calibration subgoals still run in parallel in Rust. Calls into a Python error model need the GIL, though, so they run one at a time unless the interpreter is a free-threaded build. For heavy models, do the work in NumPy, which releases the GIL during large array operations, or implement the model in Rust.
+
+### Repository layout (planned)
+
+```text
+FaultTune/
+├── Cargo.toml            # Cargo workspace
+├── pyproject.toml        # Python package build (maturin)
+├── crates/
+│   ├── faulttune/        # Rust core: the Snake Optimizer
+│   └── faulttune-py/     # PyO3 bindings
+├── python/
+│   └── faulttune/        # Python package: type stubs and pure-Python helpers
+└── examples/             # Rust and Python examples
+```
+
 ## Beyond quantum hardware
 
 Nothing in the Snake is specific to qubits. The paper notes that the same ideas may apply to other optimization problems, such as playing games, financial trading or traffic routing. FaultTune is a good fit for any problem with these properties:
@@ -180,6 +277,9 @@ Nothing in the Snake is specific to qubits. The paper notes that the same ideas 
 - [ ] Parallel calibration of subgoals (via `rayon`, behind a feature flag)
 - [ ] Local re-calibration and calibration stitching
 - [ ] Worked example: a toy gate-frequency model on a square lattice
+- [ ] Python bindings (PyO3) with NumPy batch evaluation for error models
+- [ ] Python type stubs, and the worked example as a Jupyter notebook
+- [ ] Prebuilt wheels for Linux, macOS and Windows, published to PyPI
 - [ ] Extensions suggested in the paper: caching error-model evaluations, re-optimizing the worst performers, parallel traversal threads, and reinforcement-learning-guided traversal
 
 ## References

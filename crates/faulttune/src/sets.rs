@@ -29,9 +29,7 @@ impl ElementSet {
     /// The set of all `capacity` elements.
     pub fn full(capacity: usize) -> Self {
         let mut set = Self::new(capacity);
-        for word in &mut set.words {
-            *word = u64::MAX;
-        }
+        set.words.fill(u64::MAX);
         set.mask_tail();
         set
     }

@@ -587,8 +587,10 @@ impl PyGraph {
 
     /// The JSON description of the graph; `from_json` reads it back (same ids, same
     /// fingerprint).
-    fn to_json(&self) -> String {
-        self.inner.to_json()
+    fn to_json(&self, py: Python<'_>) -> String {
+        // Like building a big lattice, this takes seconds on one: let other Python threads run.
+        let graph = &self.inner;
+        py.detach(|| graph.to_json())
     }
 
     /// The node `q{row}_{col}` of a lattice-labelled graph (`KeyError` if there is none).

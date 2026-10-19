@@ -1157,11 +1157,11 @@ fn check_evaluations_per_step_are_deterministic_and_accounted(
 
     // Bounded by the search space: at least one, at most the number of combinations.
     for step in base.db.steps() {
-        let combos = step
-            .parameters
-            .iter()
-            .map(|&p| model.options(p).len() as u128)
-            .product::<u128>();
+        // Saturating: a step can span more combinations than `u128` holds (24 parameters of
+        // 100 options each, say).
+        let combos = step.parameters.iter().fold(1u128, |combos, &p| {
+            combos.saturating_mul(model.options(p).len() as u128)
+        });
         prop_assert!(u128::from(step.evaluations) >= 1);
         prop_assert!(u128::from(step.evaluations) <= combos);
         if sc.optimizer == Opt::Exhaustive {
@@ -1766,4 +1766,29 @@ fn stitched_regions_interleave_but_stay_inside() {
         map
     };
     assert_eq!(per_region(&events), per_region(&sequential_log));
+}
+
+/// A scenario found by the property test above: one step spans 100^24 combinations, which
+/// overflowed the bound computed from the number of options.
+#[test]
+fn evaluations_are_accounted_for_a_search_space_beyond_u128() {
+    let sc = Scenario {
+        rows: 5,
+        cols: 4,
+        d_p: 2,
+        d_r: 0,
+        d_t: 1,
+        expiry: 0,
+        heuristic: Heur::Breadth,
+        optimizer: Opt::Coordinate,
+        seeds: Seeds::Random,
+        xeb: false,
+        goal: Goal::EngineeredOnly,
+        model: ModelKind::Gate,
+        k: 2,
+        interaction: 0,
+        seed: 4470080637610985088,
+        cache: 0,
+    };
+    check_evaluations_per_step_are_deterministic_and_accounted(sc).unwrap();
 }

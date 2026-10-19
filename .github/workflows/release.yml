@@ -11,15 +11,15 @@
 # setup on PyPI (project "faulttune" -> Publishing): add a trusted publisher for this GitHub
 # repository with workflow name `release.yml` and environment name `pypi`.
 #
-# To release: set the version in Cargo.toml (`[workspace.package] version`), then push a tag
-# `v<version>`, for example `git tag v0.1.0 && git push origin v0.1.0`. A manual run
-# (workflow_dispatch) builds and tests everything but never publishes.
+# To release: set the version in Cargo.toml (`[workspace.package] version`), push a tag
+# `v<version>` (for example `git tag v0.1.0 && git push origin v0.1.0`), then run this workflow
+# by hand with that tag selected as the ref: from the Actions tab ("Run workflow", "Use workflow
+# from" -> Tags -> the tag) or with `gh workflow run release.yml --ref v0.1.0`. Pushing the tag
+# does not start anything by itself. A manual run on a branch builds and tests everything but
+# never publishes.
 name: Release
 
 on:
-  push:
-    tags:
-      - "v*"
   workflow_dispatch:
 
 permissions:

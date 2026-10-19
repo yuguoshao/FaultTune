@@ -2,9 +2,9 @@
 # (extension build, tests, examples, type checking) on the supported interpreters.
 name: CI
 
+# Manual only: start it from the Actions tab ("Run workflow", pick the branch) or with
+# `gh workflow run ci.yml --ref <branch>`.
 on:
-  push:
-  pull_request:
   workflow_dispatch:
 
 permissions:

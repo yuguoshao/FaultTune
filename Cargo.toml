@@ -1,0 +1,18 @@
+[workspace]
+resolver = "2"
+members = ["crates/faulttune", "crates/faulttune-py"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["FaultTune contributors"]
+description = "A Rust implementation of the Snake Optimizer for learning control parameters on graphs, with a Python interface."
+keywords = ["optimization", "quantum", "calibration", "graph"]
+categories = ["algorithms", "science"]
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
+[profile.bench]
+debug = true

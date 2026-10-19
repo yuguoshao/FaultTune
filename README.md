@@ -4,7 +4,7 @@
 
 The optimizer is written in Rust for speed. A Python package built on top of it lets you describe the processor, write error models with NumPy, and run calibrations from scripts or Jupyter notebooks, without writing any Rust.
 
-> **Status: early development.** No code has been published yet. The Rust and Python APIs below describe the planned design and may change before the first release. The planned internals are described in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+> **Status: early development.** The Rust core and the Python package are implemented and tested, but nothing has been published to crates.io or PyPI yet, and the APIs may still change before the first release. The internals are described in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), including [where the code refines the first design](docs/ARCHITECTURE.md#16-implementation-notes). To try it, see [Getting started](#getting-started).
 
 ---
 
@@ -67,7 +67,7 @@ The Snake is controlled mainly by three distances:
 - **`d_P ≈ √N`**: one step covers the whole remaining goal. This is the full global optimization over `k^|G* \ P*|` options that the Snake exists to avoid.
 - **In between**: each step optimizes between 1 and about `d_P²` parameters, and full calibration takes between about `|G* \ P*| / d_P²` and `|G* \ P*|` steps.
 
-In the paper's gate-frequency example for XEB (`d_P = 1`, `d_R = 2`, `d_T = 2`), each step optimized 1 to 5 parameters under 0 to 8 active constraints.
+In the paper's gate-frequency example for XEB (`d_P = 1`, `d_R = 2`, `d_T = 2`), each step optimized 1 to 5 parameters under 0 to 8 active constraints (as reported by the paper; FaultTune reproduces the 1 to 5 parameters, see [the notes on the paper's figures](docs/ARCHITECTURE.md#165-the-papers-figures) for the constraint count).
 
 ### The algorithm
 
@@ -81,7 +81,22 @@ In the paper's gate-frequency example for XEB (`d_P = 1`, `d_R = 2`, `d_T = 2`),
 - **Re-calibration.** Calibrated values drift. When an element's performance falls past a threshold, its calibration is considered expired. The Snake removes that element's neighbourhood from `P*` and runs the same algorithm again, so only that local region is re-calibrated, still subject to all surrounding constraints.
 - **Stitching.** Calibrated regions separated by uncalibrated gaps can be joined by running the same algorithm on the gaps. A large processor can therefore be split on purpose into constraint-disjoint regions, calibrated in parallel, and then stitched together.
 
-## Planned Rust API
+## Getting started
+
+FaultTune is not published yet, so build it from a clone of this repository. You need a recent stable Rust toolchain (developed with 1.96); the Python package also needs Python 3.11 or newer.
+
+```bash
+cargo test --workspace                                   # the Rust test suite
+cargo run --release -p faulttune --example quickstart    # the walkthrough below, runnable
+cargo run --release -p faulttune --example gate_frequency  # the worked example: settings, re-calibration, checkpoints, stitching
+cargo bench -p faulttune --bench engine                  # engine benchmarks
+```
+
+The Python equivalents are in `examples/`: `quickstart.py`, `gate_frequency.py` and the notebook `gate_frequency.ipynb` (after `maturin develop`, see [Installation](#installation)).
+
+The Rust crate has three optional features: `parallel` (rayon, on by default), `serde` (saving and loading, checkpoint journal, graph descriptions; on by default) and `tracing` (spans for `calibrate`, `pass`, `subgoal` and `step`).
+
+## Rust API
 
 FaultTune provides the Snake machinery: graphs, scopes, traversal, segmentation, parallelism and the parameter database. You provide the physics: the error model and how calibration data is collected. The same design is available from Python; see [Python interface](#python-interface).
 
@@ -162,7 +177,7 @@ snake.recalibrate(&mut params, &[qubit_7], &model)?;
 
 | Part | Provided by FaultTune | You can supply your own |
 | --- | --- | --- |
-| `ErrorModel` | Toy models for examples and tests | Yes, normally required |
+| `ErrorModel` | Toy models for examples and tests (`faulttune::toy`) | Yes, normally required |
 | `Optimizer` (solves one step) | Coordinate descent (default), exhaustive search, random search | Yes |
 | `TraversalHeuristic` | Breadth-first, depth-first, random | Yes |
 | `AlgorithmSubgraphs` | "Everything active at once" | Yes, from your algorithm's structure |
@@ -174,19 +189,22 @@ Measurement and analysis code for quantum hardware is often written in Python, s
 
 ### Installation
 
-Once published, prebuilt wheels for Linux, macOS and Windows will be available from PyPI, so no Rust toolchain is needed:
+Once published, prebuilt wheels for Linux, macOS and Windows will be available from PyPI, so no Rust toolchain is needed (the release workflow in `.github/workflows` builds them):
 
 ```bash
 pip install faulttune
 ```
 
-To build from source, install a Rust toolchain and [maturin](https://www.maturin.rs/), then run this from the repository root:
+To build from source, install a Rust toolchain and [maturin](https://www.maturin.rs/), then run this from the repository root, inside a virtual environment:
 
 ```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install maturin numpy pytest
 maturin develop --release
+python -m pytest python/tests    # optional: the Python test suite
 ```
 
-The package will support Python 3.11 and newer, and include type stubs for editor autocompletion and type checking.
+The package supports Python 3.11 and newer (one `abi3` wheel per platform) and ships type stubs for editor autocompletion and type checking.
 
 ### Example
 
@@ -250,20 +268,25 @@ snake.recalibrate(params, qubit, model)
 - **Thin bindings.** The Python package is built with [PyO3](https://pyo3.rs/) and maturin. It wraps the Rust crate directly instead of reimplementing it, so both interfaces behave the same.
 - **Batch evaluation.** In Python, `error` receives a whole batch of candidate assignments as a NumPy array instead of one assignment at a time. This keeps the cost of calling into Python low, even when a step has thousands of candidates.
 - **Custom parts.** Traversal heuristics and step optimizers can be given by name (`"breadth_first"`, `"coordinate_descent"`, …) or written as Python callables.
-- **Parallelism.** Calibration subgoals still run in parallel in Rust. Calls into a Python error model need the GIL, though, so they run one at a time unless the interpreter is a free-threaded build. For heavy models, do the work in NumPy, which releases the GIL during large array operations, or implement the model in Rust.
+- **Parallelism.** Calibration subgoals still run in parallel in Rust. The Python code of an error model needs the GIL, though, so it runs one call at a time. Calls overlap only while a model releases the GIL (large NumPy operations, `time.sleep`, I/O); a model that is not thread-safe must use `threads=1` or its own lock. For heavy models, do the work in NumPy or implement the model in Rust.
+- **Progress and interrupts.** `on_step` callbacks run on the main thread, so progress bars and notebook widgets work. Ctrl-C cancels the run, keeps every committed step in the database and raises `KeyboardInterrupt`. Records delivered to `on_step` carry the step's index *within its subgoal*; the stable key of a step is `(pass_, subgoal, centre)`.
 
-### Repository layout (planned)
+### Repository layout
 
 ```text
 FaultTune/
 ├── Cargo.toml            # Cargo workspace
 ├── pyproject.toml        # Python package build (maturin)
 ├── crates/
-│   ├── faulttune/        # Rust core: the Snake Optimizer
+│   ├── faulttune/        # Rust core: the Snake Optimizer (src/), integration tests (tests/)
 │   └── faulttune-py/     # PyO3 bindings
 ├── python/
-│   └── faulttune/        # Python package: type stubs and pure-Python helpers
-└── examples/             # Rust and Python examples
+│   ├── faulttune/        # Python package: ErrorModel base class, type stubs
+│   └── tests/            # pytest suite
+├── examples/             # Rust and Python examples, notebook
+├── benches/              # criterion benchmarks
+├── docs/ARCHITECTURE.md  # design and implementation notes
+└── .github/workflows/    # CI and wheel builds
 ```
 
 ## Beyond quantum hardware
@@ -277,18 +300,22 @@ Nothing in the Snake is specific to qubits. The paper notes that the same ideas 
 
 ## Roadmap
 
-- [ ] Processor graph with typed nodes and edges, and connectivity subgraphs
-- [ ] Builders for calibration parameters, active constraints and traversal options
-- [ ] Traversal heuristics: breadth-first, depth-first, random
-- [ ] Segmentation into calibration subgoals and traversal threads
-- [ ] Coordinate-descent, exhaustive and random-search step optimizers
-- [ ] Parallel calibration of subgoals (via `rayon`, behind a feature flag)
-- [ ] Local re-calibration and calibration stitching
-- [ ] Worked example: a toy gate-frequency model on a square lattice
-- [ ] Python bindings (PyO3) with NumPy batch evaluation for error models
-- [ ] Python type stubs, and the worked example as a Jupyter notebook
-- [ ] Prebuilt wheels for Linux, macOS and Windows, published to PyPI
-- [ ] Extensions suggested in the paper: caching error-model evaluations, re-optimizing the worst performers, parallel traversal threads, and reinforcement-learning-guided traversal
+- [x] Processor graph with typed nodes and edges, and connectivity subgraphs
+- [x] Builders for calibration parameters, active constraints and traversal options
+- [x] Traversal heuristics: breadth-first, depth-first, random
+- [x] Segmentation into calibration subgoals and traversal threads
+- [x] Coordinate-descent, exhaustive and random-search step optimizers
+- [x] Parallel calibration of subgoals (via `rayon`, behind a feature flag)
+- [x] Local re-calibration and calibration stitching
+- [x] Worked example: a toy gate-frequency model on a square lattice
+- [x] Python bindings (PyO3) with NumPy batch evaluation for error models
+- [x] Python type stubs (checked with `mypy --strict` and `stubtest`), and the worked example as a Jupyter notebook
+- [ ] Prebuilt wheels for Linux, macOS and Windows, published to PyPI (the build workflow exists; nothing is published yet)
+- [ ] Extensions suggested in the paper:
+  - [x] caching error-model evaluations (within a step always, across steps opt-in)
+  - [x] re-optimizing the worst performers (`Report::worst_steps` feeds `recalibrate`)
+  - [ ] parallel traversal threads
+  - [ ] reinforcement-learning-guided traversal
 
 ## References
 

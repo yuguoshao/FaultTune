@@ -1,0 +1,50 @@
+[package]
+name = "faulttune"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+description.workspace = true
+keywords.workspace = true
+categories.workspace = true
+readme = "../../README.md"
+
+[features]
+default = ["parallel", "serde"]
+# Run calibration subgoals on a rayon thread pool.
+parallel = ["dep:rayon"]
+# JSON persistence (saved calibrations, checkpoint journal, graph descriptions).
+serde = ["dep:serde", "dep:serde_json"]
+# Emit `tracing` spans for calibrate / pass / subgoal / step.
+tracing = ["dep:tracing"]
+
+[dependencies]
+rand = "0.9"
+rayon = { version = "1", optional = true }
+serde = { version = "1", features = ["derive"], optional = true }
+# float_roundtrip: saved parameter values must come back bit for bit.
+serde_json = { version = "1", features = ["float_roundtrip"], optional = true }
+tracing = { version = "0.1", optional = true }
+
+[dev-dependencies]
+proptest = "1"
+criterion = { version = "0.8", default-features = false, features = ["cargo_bench_support"] }
+tempfile = "3"
+
+# Examples and benchmarks live at the repository root (docs/ARCHITECTURE.md section 2.2).
+[[example]]
+name = "quickstart"
+path = "../../examples/quickstart.rs"
+
+[[example]]
+name = "gate_frequency"
+path = "../../examples/gate_frequency.rs"
+required-features = ["serde"]
+
+[[example]]
+name = "separable"
+path = "../../examples/separable.rs"
+
+[[bench]]
+name = "engine"
+path = "../../benches/engine.rs"
+harness = false

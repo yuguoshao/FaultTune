@@ -1,0 +1,41 @@
+[build-system]
+requires = ["maturin>=1.5,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "faulttune"
+dynamic = ["version"]
+description = "A Rust implementation of the Snake Optimizer for learning control parameters on graphs, with a Python interface."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.23"]
+keywords = ["optimization", "quantum", "calibration", "graph"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Rust",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "mypy>=1.8"]
+
+[tool.maturin]
+manifest-path = "crates/faulttune-py/Cargo.toml"
+python-source = "python"
+module-name = "faulttune._native"
+features = ["pyo3/extension-module"]
+include = [{ path = "python/faulttune/py.typed", format = "sdist" }]
+
+[tool.mypy]
+# `mypy --strict python/faulttune` must pass; `python/tests/test_typing.py` runs it, and
+# `python -m mypy.stubtest faulttune._native`, as part of the test suite.
+strict = true
+python_version = "3.11"
+mypy_path = "$MYPY_CONFIG_FILE_DIR/python"
+files = ["python/faulttune"]
+warn_unreachable = true
+show_error_codes = true

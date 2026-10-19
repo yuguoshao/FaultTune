@@ -1,0 +1,95 @@
+# Continuous integration: the Rust workspace on three operating systems, and the Python package
+# (extension build, tests, examples, type checking) on the supported interpreters.
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A new push to a branch or pull request supersedes the runs still going for it.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: "0"
+
+jobs:
+  rust:
+    name: Rust (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      # `cargo test --workspace` also builds the PyO3 crate as an ordinary library (the
+      # `extension-module` feature is off), which needs a Python to link against.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - uses: Swatinem/rust-cache@v2
+      - name: Check formatting
+        run: cargo fmt --all --check
+      - name: Lint
+        run: cargo clippy --workspace --all-targets -- -D warnings
+      - name: Test
+        run: cargo test --workspace
+      - name: Test the core crate without default features (no rayon, no serde)
+        run: cargo test -p faulttune --no-default-features --lib
+      - name: Build the core crate with tracing
+        run: cargo build -p faulttune --features tracing
+      - name: Build the benchmarks
+        run: cargo bench -p faulttune --bench engine --no-run
+      - name: Run the quickstart example
+        run: cargo run --release -p faulttune --example quickstart
+
+  python:
+    name: Python ${{ matrix.python }} (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest, python: "3.11", venv_bin: bin }
+          - { os: ubuntu-latest, python: "3.13", venv_bin: bin }
+          - { os: macos-latest, python: "3.13", venv_bin: bin }
+          - { os: windows-latest, python: "3.13", venv_bin: Scripts }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: python-${{ matrix.python }}
+      # `maturin develop` installs into a virtual environment: create one and put it first on
+      # the PATH of the following steps.
+      - name: Create a virtual environment
+        shell: bash
+        run: |
+          python -m venv .venv
+          echo "VIRTUAL_ENV=${{ github.workspace }}/.venv" >> "$GITHUB_ENV"
+          echo "${{ github.workspace }}/.venv/${{ matrix.venv_bin }}" >> "$GITHUB_PATH"
+      - name: Install the build and test tools
+        run: python -m pip install maturin numpy pytest mypy nbformat
+      - name: Build and install the extension
+        run: maturin develop
+      - name: Test (includes the examples and the notebook)
+        run: python -m pytest python/tests
+      - name: Type-check the package
+        run: python -m mypy --strict python/faulttune
+      - name: Check the type stubs against the compiled module
+        run: python -m mypy.stubtest faulttune._native

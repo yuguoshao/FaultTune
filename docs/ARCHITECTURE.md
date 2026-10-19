@@ -1,6 +1,6 @@
 # FaultTune architecture
 
-This document describes the planned architecture of FaultTune: a Rust implementation of the Snake Optimizer ([Klimov et al., arXiv:2006.04594](https://arxiv.org/abs/2006.04594)) with a Python interface. It is a design for code that has not been written yet. Read the [README](../README.md) first for the algorithm and its terminology.
+This document describes the planned architecture of FaultTune: a Rust implementation of the Snake Optimizer ([Klimov et al., arXiv:2006.04594](https://arxiv.org/abs/2006.04594)) with a Python interface. The Rust core described here is implemented; [§16](#16-implementation-notes) lists where the code refines or departs from the first design. Read the [README](../README.md) first for the algorithm and its terminology.
 
 ## Contents
 
@@ -19,6 +19,7 @@ This document describes the planned architecture of FaultTune: a Rust implementa
 13. [Testing strategy](#13-testing-strategy)
 14. [Trade-offs](#14-trade-offs)
 15. [What to revisit as FaultTune grows](#15-what-to-revisit-as-faulttune-grows)
+16. [Implementation notes](#16-implementation-notes)
 
 ### Notation
 
@@ -138,6 +139,7 @@ FaultTune/
 │   │       ├── persist.rs     # JSON format, journal
 │   │       ├── engine.rs      # Snake, SnakeConfig, calibration loop
 │   │       ├── events.rs      # Observer, Event, Report
+│   │       ├── toy.rs         # toy error models for examples, tests and benchmarks
 │   │       └── error.rs
 │   └── faulttune-py/          # PyO3 bindings
 ├── python/faulttune/          # __init__.py, _model.py, *.pyi, py.typed
@@ -425,8 +427,9 @@ pub trait Observer: Send + Sync {
 
 pub enum Event {
     PassStarted { pass: u32, subgoals: usize, uncalibrated: usize },
-    StepCommitted(StepRecord), // includes the committed values
+    StepCommitted(StepRecord), // includes the committed option indices (see §16)
     StepFailed { centre: ElementId, error: String },
+    Invalidated { elements: Vec<ElementId> }, // re-calibration forgot these elements
     PassFinished { pass: u32, calibrated: usize },
     Finished(Report),
 }
@@ -543,7 +546,7 @@ Values are `float` in Python. A model whose options are structured (for example 
 
 One Python call per batch, rather than per candidate, is what keeps Python models fast. Coordinate descent sends batches of `k` candidates, so a step costs about `sweeps × |P|` Python calls instead of thousands.
 
-Calls into Python take the GIL, so Python models serialize across parallel subgoals. NumPy releases the GIL inside large array operations, so heavy NumPy models still get some overlap. Free-threaded Python is discussed in [§15](#15-what-to-revisit-as-faulttune-grows).
+Calls into Python take the GIL, so the Python code of a model runs one call at a time across parallel subgoals. NumPy releases the GIL inside large array operations (and `time.sleep` and I/O release it too), so calls into a heavy NumPy model overlap; a model that is not thread-safe must use `threads=1` or its own lock. Free-threaded Python is discussed in [§15](#15-what-to-revisit-as-faulttune-grows).
 
 ### 9.4 Exceptions and interrupts
 
@@ -583,7 +586,7 @@ Calls into Python take the GIL, so Python models serialize across parallel subgo
 - The `format` field is versioned. Newer versions of FaultTune read older formats.
 - Loading checks the graph fingerprint and fails with `GraphMismatch` on a different device.
 
-**Checkpoints** are an append-only journal, written by a built-in `CheckpointObserver`. Each `StepCommitted` event becomes one JSON line. Each line is flushed as it is written, and a torn last line is ignored on replay, so a crash loses at most the step being written. To resume, load the last saved database, replay the journal, and call `calibrate_into` again. This matters most when `prepare` measures hardware and a full run takes hours.
+**Checkpoints** are an append-only journal, written by a built-in `CheckpointObserver`. Each `StepCommitted` event becomes one `step` line and each `Invalidated` event (what `recalibrate` announces) one `invalidated` line, for example `{"type":"step","index":0,"pass":3,"subgoal":2,"centre":"q1_3",...}` and `{"type":"invalidated","pass":4,"elements":[...]}`. A step line carries its pass, its subgoal and its index within the subgoal; an invalidated line carries the number of the pass that follows it. Pass numbers continue across the `calibrate_*` calls on one database, so (pass, subgoal, centre) identifies a step for the life of a database. Each line is flushed as it is written (`CheckpointObserver::durable` also syncs it to the disk), and a torn last line is ignored on replay, so a crash loses at most the line being written. Because parallel subgoals commit at the same time, the lines of a pass interleave: the order of the file is not the order of the history. The canonical order is the order of the history: by pass; inside a pass the invalidation first, then the steps by (subgoal, index). `read_journal_entries` returns the entries in this order, and `replay_entries` sorts into it, so a journal replays into the database of its run at any thread count. Replay skips a step if the database history already holds a step with the same (pass, subgoal, centre), and applies an invalidation only to elements calibrated by a step of an earlier pass; it assumes nothing else, so it works onto an empty database, onto a save taken at any time, and twice in a row. To resume: load the last saved database, replay the journal (or the journals, oldest first; a resumed run may start a new journal with `create` or continue the old one with `append`), and call `calibrate_into` again. This matters most when `prepare` measures hardware and a full run takes hours.
 
 ---
 
@@ -603,7 +606,7 @@ Calls into Python take the GIL, so Python models serialize across parallel subgo
 | --- | --- | --- | --- |
 | 53 | ≈ 265 | ≈ 160 | ≈ 0.1 MB |
 | 1,000 | ≈ 5,000 | ≈ 3,000 | ≈ 2 MB |
-| 10,000 | ≈ 50,000 | ≈ 30,000 | ≈ 25 MB |
+| 10,000 | ≈ 50,000 | ≈ 30,000 | ≈ 17 MB (`max_distance` 2; see [§16.1](#161-data-model)) |
 
 ### 12.2 Evaluation counts
 
@@ -615,7 +618,19 @@ With `d_P = 1`, `k = 100` and `CoordinateDescent` doing up to 3 sweeps over at m
 | 1,000 | ≈ 4.5 million | ≈ 5 s | ≈ 45 s |
 | 10,000 | ≈ 45 million | ≈ 45 s | ≈ 8 min |
 
-These are single-core figures before parallelism and caching. They will be replaced by benchmark results. The engine's own overhead per step is a few neighbourhood slices and bitset tests, which is microseconds and negligible next to the model.
+These are single-core figures before parallelism and caching, and the table above is an upper bound: steps usually need fewer than three sweeps.
+
+**Measured** (Apple M1 Pro, release build, `cargo test --release -p faulttune --test scale -- --ignored --nocapture` and `cargo bench -p faulttune --bench engine`; the machine was shared with other builds, so treat the figures as ±20%):
+
+| Case (square lattice, `d_P = 1`, `d_R = d_T = 2`) | Result |
+| --- | --- |
+| Engine alone (a model that costs nothing), 10×10 to 100×100 qubits | 15–20 µs per step, almost flat in the processor size (10,000 qubits, 10,000 steps: 0.2 s) |
+| Neighbourhood index, 100×100 qubits (49,402 elements), depth 2 | 22 ms, 17 MB |
+| Toy gate-frequency model, 100×100 qubits, one thread | 1.35 s, 6.8 million evaluations: ≈ 0.5 s in the model, ≈ 0.8 s of engine work, about 130 ns per evaluated candidate |
+| The same, stitched into 2×2 regions | 0.48 s with 4 threads (2.8×); 8×8 regions are slower (0.82 s with 8 threads) because the gap, calibrated serially in stage two, grows |
+| Re-calibrating 400 scattered qubits of a 100×100 processor | 48 ms (400 steps, one pass) |
+
+So the engine's own cost per step is small and does not grow with the processor, as required in §1.2, but it is not negligible next to a model that costs about a microsecond per candidate (the bookkeeping per evaluated candidate, mostly de-duplication, is about 130 ns). Every `calibrate_*` call also spends O(N) on validation and the option table, which dominates the cost of re-calibrating a single qubit on a very large processor.
 
 ### 12.3 Where the time really goes
 
@@ -627,14 +642,17 @@ These are single-core figures before parallelism and caching. They will be repla
 
 ## 13. Testing strategy
 
+Unit tests live next to the code (`#[cfg(test)]` in each module of `crates/faulttune/src`, about 380 tests); integration tests use only the public API (`crates/faulttune/tests`); the Python suite is in `python/tests`.
+
 | Level | What is tested |
 | --- | --- |
-| Paper figures | Unit tests for `scope` and `segment` that rebuild the paper's examples: `X_g^d` shapes (Fig. 2), the XEB algorithm subgraphs (Fig. 3), 8 node and 6 edge traversal options (Fig. 4), and steps of 1–5 parameters with 0–8 constraints (Fig. 7). |
-| Properties | `proptest` on random graphs and calibration states: subgoals partition the uncalibrated set; elements in different subgoals are more than `max(d_P, d_R)` apart; threads partition subgoals; every run ends with `P* = G*` or a reported failure; parallel and sequential runs give identical databases; the same seed gives the same result. |
-| Known optima | Toy models where the best answer is known. With a separable model the Snake must find the global optimum for every `d_P`. A frequency-collision model must never produce a collision when a collision-free assignment exists within the options. |
-| Recovery | Inject model errors, NaN and cancellation mid-run; check that committed steps survive and that resuming completes the calibration. Kill a run and resume from the journal. |
-| Python | `pytest` for the bindings: NumPy batch shapes, exception chaining, Ctrl-C handling, callbacks on the main thread, save/load round trips. `stubtest` for the type stubs. |
-| Benchmarks | `criterion` benchmarks on lattices from 10×10 to 100×100, tracking engine overhead per step and total time with a cheap Rust model. |
+| Paper figures | Unit tests for `scope`, `activity` and `neighbourhoods` that rebuild the paper's examples: `X_g^d` shapes (Fig. 2), the XEB algorithm subgraphs (Fig. 3), 8 node and 6 edge traversal options (Fig. 4), and steps of 1–5 parameters (Fig. 7); `tests/figures.rs` repeats the parameter and constraint counts with the real engine. The paper's 0–8 constraints per step is *not* reproduced by the literal definition; the tests assert the numbers the implementation produces and [§16.5](#165-the-papers-figures) records the discrepancy. |
+| Properties | `proptest` (`tests/properties.rs`) on random lattices, goals, distances, heuristics, optimizers, seed policies, models and cache settings: subgoals partition the uncalibrated set; elements in different subgoals are more than `max(d_P, d_R)` apart; threads partition subgoals; every run ends with `P* = G*` or a reported failure; parallel and sequential runs give identical databases at 1, 2, 4 and 8 threads; the same seed gives the same result; the cross-step cache never changes results; re-calibration changes only its region and only appends to the history; stitched regions are separate subgoals. |
+| Known optima | `tests/known_optima.rs`: with a separable model the Snake finds the global optimum for every `d_P`, `d_R`, `d_T`, heuristic and optimizer; with the frequency-collision model it produces no collision when enough options exist, also after re-calibration and stitching (with the documented exception of very large steps and flat `+∞` errors, §16.3). |
+| Recovery | `tests/recovery.rs`: model errors under `Abort`, `Retry` and `SkipElement`, NaN, `+∞`, panics and cancellation at chosen steps; committed steps survive, resuming completes the calibration, and a run cancelled on a pass boundary resumes to exactly the database of an uninterrupted run. Journals written by parallel runs replay into the database of their run at any thread count, also after re-calibration and after a resume with a new journal. |
+| Mutation checks | Every package was checked by breaking the code on purpose (dozens of mutants: thread-dependent RNG, dropped overlays, reversed merge order, cache keys without constraints, …) and confirming that a test fails. |
+| Python | `pytest` for the bindings: NumPy batch shapes, exception chaining, Ctrl-C handling, callbacks on the main thread, save/load and journal round trips, custom heuristics and optimizers, thread-count determinism, the README example. `mypy --strict` and `stubtest` for the type stubs. |
+| Benchmarks | `criterion` benchmarks (`benches/engine.rs`) on lattices from 10×10 to 100×100, tracking engine overhead per step, the neighbourhood index, segmentation and thread scaling; heavy cases also run as ignored tests (`tests/scale.rs`). |
 
 ---
 
@@ -670,4 +688,63 @@ These are single-core figures before parallelism and caching. They will be repla
 
 - The paper defines connectivity in words; the incidence-graph formula is inferred from its figures. It should be confirmed against the original implementation or the authors if possible.
 - Should hard constraints get their own API instead of being expressed as `+∞` errors? A separate API would let optimizers skip forbidden candidates without evaluating them.
+- What exactly does the paper count as an active constraint? Its "0 to 8" per step (Fig. 7) is smaller than the 0 to 18 that §4.4's literal definition gives (§16.5). Possible readings: only node constraints are counted, or an edge parameter constrains over a shorter reach than a node does.
 - Which default `CoordinateDescent` settings (random starts, maximum sweeps) work well on realistic models? This needs benchmarks on a physics-based example.
+
+---
+
+## 16. Implementation notes
+
+The Rust core follows the design above. This section records the places where the implementation refines it, makes a choice the design left open, or deliberately differs. Each item names the code that holds the details.
+
+### 16.1 Data model
+
+- **`StepRecord` carries option indices, not values.** `Event::StepCommitted` and the history hold `option_indices` (aligned with `parameters`); the committed value of `parameters[i]` is `model.options(parameters[i])[option_indices[i]]`. This keeps `Observer`, `Event` and `HistoryRecord` free of the model's value type. The database itself stores values (`Entry::value`).
+- **Step indices are assigned at merge.** `Step::index` (what the model sees), `StepRecord::index` inside an `Overlay` and in events are the ordinal of the step *within its subgoal and pass*. `ParameterDatabase::merge` renumbers steps 0, 1, 2, … in subgoal order. `StepRecord` also carries `pass` and `subgoal`, and `evaluations` counts distinct candidates after within-step de-duplication and before the cross-step cache, so it does not depend on scheduling. The three timing fields are excluded from `same_outcome`. Journal lines carry the local index, the pass and the subgoal (§10).
+- **Algorithm subgraphs.** `AlgorithmSubgraphs::all_active` holds *every* element of the graph (it has no goal argument), not `G*`; the Snake checks that every goal element is active in at least one subgraph. `xeb_square_lattice` builds the five XEB subgraphs of a lattice: all nodes, and for each of four edge patterns (horizontal edges by parity of `r + c`, vertical edges by parity of `r + c`) that pattern's engineered edges plus all nodes.
+- **Stitch plans.** `StitchPlan::gap` contains every goal element that is in no region or lies within `max(d_P, d_R)` of an element of a *different* region (on both sides of a boundary); `stage_one` and `gap` partition the goal.
+- **Limits.** Distances are limited to 64 (`engine::MAX_DISTANCE`). The neighbourhood index uses `usize` offsets: about 17 MB for 10,000 qubits at `max_distance` 2, 37 MB at 3 and 65 MB at 4 (the ≈ 25 MB of §12.1 holds only for depth 2).
+
+### 16.2 Engine
+
+- **`Snake` is not generic over the model.** The methods are (`calibrate::<M>`); `Snake::new_shared` takes an `Arc<ProcessorGraph>` and gives a `Snake<'static>` for the Python bindings. The neighbourhood index and activity masks are built once per `Snake` and cached.
+- **Per-call cross-step cache.** `CachePolicy::AcrossSteps` creates a fresh cache for every `calibrate_*` call. A cache that survives calls (and can be shared by several `Snake`s) must be passed explicitly with `Snake::shared_cache`, because a cache silently shared between different models would be wrong.
+- **NaN is always fatal.** `FaultTuneError::NonFiniteError` is raised whatever the `ModelErrorPolicy`; `Retry` and `SkipElement` apply to `ModelError`s from `prepare` and `error_batch`. A skipped centre leaves the traversal frontier's `available` set but the traversal continues from its neighbours.
+- **Pass numbers continue across calls.** A `calibrate_*` call starts at pass `1 + (highest pass in the database history)`, so `(pass, subgoal, centre)` identifies a step for the whole life of a database, and a run that was cancelled on a pass boundary and resumed draws the same random numbers as an uninterrupted one (it ends with an identical database). `Report::passes` counts the passes of the call. If several subgoals fail in one pass, the error returned (or the panic re-raised) is the one of the lowest-numbered failing subgoal, whatever the scheduling; later failures are dropped, and which later subgoals' steps are kept may vary.
+- **Panics.** A panic inside a model is caught per subgoal; the steps committed before it are merged and the panic is re-raised afterwards.
+- **Report.** `Event::Finished` is emitted for every run that does not panic: after success, cancellation and error. A cancelled run returns `FaultTuneError::Cancelled { report }`.
+- **Re-calibration is journaled.** `recalibrate` emits `Event::Invalidated` after updating the database, so a checkpoint journal can record the removal.
+
+### 16.3 Optimizers
+
+- Width-0 search spaces cannot be represented by `IndexBatch` (a zero-width batch has no rows); the optimizers return `error = NaN, evaluations = 0` for them. The engine never produces one because the centre of a step is always one of its parameters.
+- `CoordinateDescent` skips parameters with a single option in a sweep, continues with later (smaller) parameters when one batch does not fit the remaining budget, and starts from the best of `random_starts` points, drawing up to `max_start_attempts` more if all are `+∞`. `Exhaustive` and `RandomSearch` cap a batch at 2²⁰ rows.
+- **Hard constraints and flat `+∞`.** A model that answers `+∞` for every forbidden candidate gives the search no gradient on the forbidden plateau: a sweep over one parameter cannot see progress while another colliding pair remains. `CoordinateDescent` therefore looks for a feasible start with up to `max_start_attempts` (default 20,000) random points, stopping at the first batch that contains one. That is enough for the steps of the paper's setting (a node and up to four edges), but a step with dozens of mutually constraining parameters (for example `d_P = 2` over a goal that includes the parasitic edges) can still end with error `+∞`, which the report shows. Models for such steps should return a graded penalty (a large finite number that grows with the number of violations); this is also the practical answer to the open question on hard constraints in §15. `tests/known_optima.rs` keeps an `#[ignore]`d test that measures the remaining failure rate.
+- `StepKey` is a 128-bit mixing of the parameter ids and the `(constraint id, option index)` pairs with fixed constants (stable across runs and platforms).
+
+### 16.4 Persistence
+
+- The saved format has extra fields beyond the example in §10: `pass`, `subgoal` and `options` per step (so a round trip preserves `same_outcome`), `prepare_ms` and `evaluate_ms`, and `{"type": "invalidated", "elements": [...]}` history records. The loader checks consistency: step indices must be 0, 1, 2, …; every value must be backed by the step it names; the fingerprint, the element count and every label must match the graph. Non-finite errors are stored as `null` and read back as `+∞`. `serde_json` is built with `float_roundtrip` so values come back bit for bit.
+- `replay_entries` (and `replay_journal`, for steps alone) processes journal entries in canonical order (pass; invalidations first; then subgoal and index). It skips a step iff the database history already holds a step with the same (pass, subgoal, centre) (as many times as the journal repeats the triple), commits the others with `commit_step` keeping pass and subgoal (the global index is reassigned), and applies an invalidation (pass P, elements) to the elements currently calibrated by a step of a pass below P, counting it only if something was removed. All entries are validated (graph bounds, lengths, option ranges) before any is applied. A crash inside a parallel pass replays the surviving steps in canonical order; the resumed run redoes the rest in later passes.
+
+### 16.5 The paper's figures
+
+The unit tests rebuild the paper's examples (`neighbourhoods.rs`, `scope.rs`, `activity.rs`):
+
+| Claim | Result |
+| --- | --- |
+| Fig. 2: `X_n^1`, `X_n^2`, `X_e^0` | Reproduced: `X_n^1` is the node and its 8 incident edges; `X_n^2` of an interior node is the 3×3 block of nodes with all incident edges (61 elements on a 5×5 lattice). |
+| Fig. 4: traversal options with `d_T = 2` | Reproduced with the XEB subgraphs of §16.1: an interior node has 8 options, an interior horizontal or vertical engineered edge has 6. |
+| Fig. 7: parameters per step with `d_P = 1` | Reproduced: 5 in the interior, 4 on a boundary, 3 at a corner (1 to 5 along a traversal). |
+| Fig. 7: **0 to 8 active constraints** with `d_R = 2` | **Not reproduced.** With the definition of §4.4 (every calibrated, co-active element within `d_R` of any parameter) a sequential Snake on a 6×6 lattice sees 0 to 18 constraints per step breadth-first (up to 26 depth-first from an interior seed). Counting only node constraints, depth-first traversal reaches exactly 8 and breadth-first 5. The paper's wording leaves open whether edge constraints and the reach of edge parameters are counted differently; see the open questions in §15. |
+
+### 16.6 Python bindings
+
+- **Build.** PyO3 0.30 and the `numpy` crate 0.30 with `abi3-py311`: one wheel per platform for Python 3.11 and newer (developed on 3.14). The native module is `faulttune._native`; `faulttune/__init__.py` re-exports it together with the pure-Python `ErrorModel` base class. The bindings contain no calibration logic.
+- **Threads.** `calibrate`, `recalibrate` and `stitch` run the engine on a dedicated Rust thread (16 MiB stack; the engine's rayon workers get the same) with the GIL released, while the calling thread runs the event pump (100 ms tick): it checks for signals (Ctrl-C cancels the run and raises `KeyboardInterrupt` once the engine has stopped) and delivers `on_step` callbacks on the main thread. An exception in `on_step` cancels the run and is re-raised afterwards.
+- **`on_step` records.** `StepRecord.index` in a record delivered to `on_step` is the local ordinal within its subgoal and pass (§16.1); the stable key is `(pass_, subgoal, centre)`. With parallel subgoals the delivery order interleaves. `StepRecord.values` is filled for these records (the adapter keeps the option lists) and is `None` for records read from a database or a journal.
+- **The database during a run.** With `database=`, the engine writes into that `ParameterDatabase`; touching it from another thread, or from `on_step`, raises `RuntimeError` until the call returns. Committed steps are never lost on error, cancellation or Ctrl-C (without `database=`, the partial database is attached to the exception as `.partial`).
+- **Model hooks.** `options(element)` is called once per element and its result must be a non-empty, finite 1-D array. `on_model_error="retry"` applies to `options()` too; `"skip"` cannot skip an element whose options are unknown (the core's `options` cannot fail), so a failing `options()` aborts. A wrong-shaped `error()` result is a `ModelError` naming the shape.
+- **Checkpoints from Python.** `checkpoint=path` attaches a `CheckpointObserver` in append mode (a `RuntimeWarning` is raised if a fresh run is appended to a non-empty journal). `ParameterDatabase.replay_journal(path, model)` uses `read_journal_entries` and `replay_entries`, so recalibrations are restored; the module function `read_journal` returns steps only.
+- **Unsafe code.** One file (`scoped.rs`) holds the crate's only `unsafe`: it lets frozen Python objects handed to user callbacks (the traversal context and the optimizer objective) borrow engine data for the duration of the callback, with a thread check; every block carries its justification.
+- **Not done.** Pickling of `Element`, `ProcessorGraph`, `ElementSet` and `ParameterDatabase` (use `to_json`/`save`); `db.history` and `db.steps()` rebuild their list on each access (O(n)); a second Ctrl-C does not force-stop a run that is waiting inside a slow model call.

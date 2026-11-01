@@ -94,6 +94,9 @@ cargo bench -p faulttune --bench engine                  # engine benchmarks
 
 The Python equivalents are in `examples/`: `quickstart.py`, `gate_frequency.py` and the notebook `gate_frequency.ipynb` (after `maturin develop`, see [Installation](#installation)).
 
+For step-by-step traces, scope comparisons and an isolated check of the demo model's
+local/global objective consistency, see the [Snake exploration scripts](experiments/snake_demo/README.md).
+
 The Rust crate has three optional features: `parallel` (rayon, on by default), `serde` (saving and loading, checkpoint journal, graph descriptions; on by default) and `tracing` (spans for `calibrate`, `pass`, `subgoal` and `step`).
 
 ## Rust API

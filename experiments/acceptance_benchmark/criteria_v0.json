@@ -1,0 +1,170 @@
+{
+  "schema_version": "faulttune.validation_acceptance_criteria.v0",
+  "date": "2026-11-03",
+  "status": "proposed_research_targets_not_achieved_or_international_standard",
+  "narrative": "A statistical acceptance gate for quantum calibration updates",
+  "scope": {
+    "phase": "software_and_circuit_simulation",
+    "candidate": "fixed_before_validation",
+    "loss": "probability of failure on a frozen workload and failure predicate",
+    "delta_loss": "p_fail_new - p_fail_old",
+    "baseline_and_gain": "unknown; estimate from paid independent validation data",
+    "noise": "stationary for the initial theorem; context dependence explicit in the circuit model",
+    "publication_claim": "restricted to the validated model family and benchmark"
+  },
+  "reliability": {
+    "false_accept_probability_max": 0.01,
+    "false_accept_domain": "delta_loss >= 0",
+    "false_reject_probability_max": 0.01,
+    "false_reject_domain": "delta_loss <= 0",
+    "beneficial_accept_probability_min": 0.95,
+    "beneficial_domain": "delta_loss <= -epsilon",
+    "harmful_reject_probability_min": 0.95,
+    "harmful_domain": "delta_loss >= epsilon",
+    "practical_gap_grid_absolute": [
+      0.01,
+      0.003,
+      0.001
+    ],
+    "near_zero": "no power or finite termination promise; false acceptance guarantee remains in force",
+    "abstention": "reported separately and counted against required decision power"
+  },
+  "efficiency": {
+    "primary_cost": "all executed validation circuit shots, both old and new, including validator-specific training, retries, and discards",
+    "reference": "strongest qualifying preregistered baseline under the same actions, observations, error, power, and total budget",
+    "cross_instance_aggregation": "equal-weight geometric mean of paired expected-cost ratios, stratified and frozen before evaluation",
+    "geometric_mean_speedup_target": 3,
+    "simultaneous_confidence_lower_speedup_target": 2,
+    "efficiency_instance_domain": "preregistered instances with abs(delta_loss) >= epsilon; unchanged and near-boundary cases reported separately and excluded from the speedup score before evaluation",
+    "each_major_stratum_point_speedup_min": 1,
+    "tail_reporting_required": [
+      "mean",
+      "median",
+      "p95",
+      "maximum",
+      "abstention_rate"
+    ],
+    "costs_include_all_trials": true,
+    "cost_of_abstention": "actual incurred executions included in the primary mean; additional conservative score charges the full registered budget on abstentions",
+    "cost_advantage_must_survive_full_budget_abstention_penalty": true,
+    "penalized_geometric_mean_speedup_target": 3,
+    "penalized_simultaneous_confidence_lower_speedup_target": 2,
+    "penalized_each_major_stratum_point_speedup_min": 1,
+    "noncompletion_rule": "abstentions, timeouts, exceptions and unfinished runs count against decision power and receive the full-budget penalty; data-leakage, invalid-action or certificate violations also fail the engineering audit",
+    "companion_metrics": [
+      "total readout objects",
+      "configuration switches",
+      "modeled device execution time",
+      "host compute time"
+    ],
+    "host_compute_is_not_device_time": true
+  },
+  "stretch_targets": {
+    "preregistered_important_stratum_speedup": 10,
+    "theory": "matching-order information lower and upper costs; strive for leading-constant optimality in a specified family",
+    "independent_reproduction_required_for_leadership_claim": true
+  },
+  "statistical_audit": {
+    "overall_family_error_probability": 0.05,
+    "alpha_allocation": {
+      "safety_endpoints": 0.02,
+      "power_endpoints": 0.02,
+      "cost_endpoints": 0.01
+    },
+    "binary_intervals": "one-sided exact Clopper-Pearson; Bonferroni over all endpoints in each family",
+    "repetitions": "fixed before held-out evaluation; if extended adaptively, use prespecified sequentially valid certification",
+    "repetition_count_requires_binomial_power_planning": true,
+    "power_plan_example": {
+      "safety_endpoints": 60,
+      "good_candidate_power_endpoints": 60,
+      "alpha_per_endpoint": "1/3000",
+      "assumed_actual_false_accept_probability": 0.001,
+      "assumed_actual_good_accept_probability": 0.98,
+      "repetitions_per_endpoint": 3000,
+      "maximum_false_accepts_per_safety_endpoint": 12,
+      "minimum_good_accepts_per_power_endpoint": 2890,
+      "joint_pass_probability_union_lower_approximation": 0.99904579,
+      "scope": "illustration for these 120 endpoints under the stated performance assumptions; no certification of uncounted bad-rejection, false-rejection or cost endpoints"
+    },
+    "cost_intervals": "bounded-cost valid concentration on per-instance means with simultaneous endpoint correction; exploratory bootstrap intervals cannot alone certify the target",
+    "illustrative_zero_error_requirements_alpha_0_05": [
+      {
+        "simultaneous_safety_endpoints": 1,
+        "repetitions_per_endpoint": 299
+      },
+      {
+        "simultaneous_safety_endpoints": 24,
+        "repetitions_per_endpoint": 615
+      },
+      {
+        "simultaneous_safety_endpoints": 60,
+        "repetitions_per_endpoint": 706
+      },
+      {
+        "simultaneous_safety_endpoints": 120,
+        "repetitions_per_endpoint": 775
+      }
+    ],
+    "examples_are_separate_from_actual_alpha_allocation": true
+  },
+  "benchmark_coverage_target": {
+    "physical_mechanism_families_min": 3,
+    "workload_families_min": 2,
+    "system_sizes_min": 3,
+    "unseen_contexts_required": true,
+    "cases": [
+      "clear_improvement",
+      "clear_harm",
+      "no_change",
+      "near_boundary",
+      "context_blindness"
+    ],
+    "truth_source": "independent exact or controlled-error circuit scorer, unavailable to the policy",
+    "mechanism_selection": "derive context effects from one consistent evolution/noise model; no hand-switched Bernoulli means"
+  },
+  "minimum_next_milestone": {
+    "qubits": 3,
+    "fixed_candidate": true,
+    "unknown_old_failure_probability": true,
+    "mechanisms_to_try": [
+      "fixed_ZZ_coupling_with_driven_spectator"
+    ],
+    "baselines": [
+      "fixed_sample_direct_workload_AB",
+      "sequential_direct_workload_AB"
+    ],
+    "research_outcome": "physically consistent calibration/workload separation, or a documented failure to find it in the specified model family; a negative search is not proof of absence",
+    "engineering_gate": [
+      "paid independent validation samples from both old and new configurations with unknown probabilities",
+      "zero selection/validation sample overlap and no hidden-truth access",
+      "independently recomputed confidence certificates agree with every decision",
+      "complete action and cost audit with all unfinished and failed runs retained"
+    ],
+    "comparison": "add one context-matched audit action and measure its information and cost"
+  },
+  "required_freeze_before_leadership_evaluation": [
+    "model equations and parameter ranges",
+    "workload and failure predicates",
+    "candidate generation and epsilon grid",
+    "development and held-out split with hashes",
+    "all baseline implementations and tuning budgets",
+    "per-instance total budgets",
+    "cost model and context switching prices",
+    "number of endpoints and repetitions",
+    "decision rules and error budget ledger",
+    "simultaneous cost interval construction"
+  ],
+  "audit_invariants": [
+    "zero candidate-selection/validation sample overlap",
+    "zero illegal actions",
+    "zero uncharged executions",
+    "zero certificate/decision mismatches",
+    "no hidden-truth access",
+    "no free old/new shared-noise coupling",
+    "all selected candidates, errors, abstentions and failed runs retained"
+  ],
+  "repeated_updates": {
+    "single_candidate_guarantee_does_not_compose_automatically": true,
+    "campaign_error_target": "must be declared separately; allocate conditional per-update error budgets with total <= campaign budget"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "reviewer": "stream_stats",
+  "review_date": "2026-11-03",
+  "scope": "Independent source review of deterministic method selection, release gate, execution grouping, and planned bootstrap; no prospective observation was generated or inspected by this review.",
+  "plan_sha256": "c9baab61fc33594ac21d3231ae51fc40bc3824506145ae9f45c0c71960e81d37",
+  "wrapper_sources_sha256": {
+    "experiments/structured_validation/prospective/common.py": "8eeaa1af5eb178456b4101eedf307e2cd4cc3cdb3148bb3b4137671273632196",
+    "experiments/structured_validation/prospective/run.py": "089dfc722290aa388be59c7481356a55d6bc6fd6368ab7f03b3b7f033deab318",
+    "experiments/structured_validation/prospective/analyze.py": "995e1ae97210634dc8eb77369354c6008befe379a8ab05c4bfe56cfe88b72a68"
+  },
+  "checks": [
+    {
+      "item": "Development completeness and audit binding",
+      "verdict": "passed",
+      "detail": "Both completed development datasets require the registered spec hash, expected records/cases/methods/replicates/seeds, a passed audit binding the current spec/summary/ledger, matching complete case definitions, and pinned algorithm sources."
+    },
+    {
+      "item": "Deterministic selection",
+      "verdict": "passed",
+      "detail": "The candidate is the lowest equal-case geometric mean unconditional cost among the three RB methods; the primary comparator is the lowest among the eighteen registered non-RB controls. Exact metric ties use ascending method name. All errors and cap abstentions remain in per-case mean costs. No development-superiority gate was added."
+    },
+    {
+      "item": "Release binding",
+      "verdict": "passed",
+      "detail": "Selection, plan, algorithm sources, wrapper/analysis hashes and explicit root release are bound before run mode invokes a simulator. Selection and release modes themselves do not sample observations. Existing release, spec, ledger and completed analysis files are not overwritten."
+    },
+    {
+      "item": "Prospective groups and independence",
+      "verdict": "passed",
+      "detail": "The selected candidate, primary comparator and fixed PSR-beta secondary are deduplicated. Methods share independent case/replicate seed labels. Refined engines within one policy share observation prefixes while preserving their own first stopping costs; unequal protocols have separately reconstructed trajectories under the same labels."
+    },
+    {
+      "item": "Prospective sizes and partial-data restrictions",
+      "verdict": "passed",
+      "detail": "The plan has 48 main cases times 64 replicates plus 8 null cases times 16 replicates, totaling 3200 independent joint labels. Main and null caps are kept distinct. Complete data and the exact expected method matrix are required for primary analysis; a cutoff does not authorize sample reduction or replacement."
+    },
+    {
+      "item": "Bootstrap statistic and coupling",
+      "verdict": "passed",
+      "detail": "The analysis uses 5000 RandomState(914207) resamples. Within each main case, 64 replicate labels are sampled with replacement and the identical index matrix is applied to every method; each case draws a new matrix. It recomputes case means and then the equal-case geometric mean of candidate/comparator ratios. Primary and secondary use the same resamples."
+    },
+    {
+      "item": "Interval and acceptance rule",
+      "verdict": "passed",
+      "detail": "Linear-interpolated 2.5 and 97.5 percentiles match the plan. The primary numerical threshold requires the unrounded upper endpoint strictly below one. The analysis labels scientific acceptance as additionally requiring a passed independent audit; it does not silently convert the numerical flag to a scientific pass. The secondary remains descriptive."
+    },
+    {
+      "item": "Final implementation refresh",
+      "verdict": "passed",
+      "detail": "The final analyze.py stores each row with records.append rather than repeated list concatenation. This performance edit does not change selection, resampling, statistics or acceptance. Its final hash is recorded above."
+    }
+  ],
+  "blocking_findings": [],
+  "limits": [
+    "This review does not execute or validate any prospective data; a full post-run implementation audit is still required.",
+    "The confidence intervals concern Monte Carlo uncertainty on the fixed case matrix, not uncertainty over a population of unseen problem instances.",
+    "Passing the registered comparison would establish a claim against the selected named implementation, not full-field SOTA dominance or theorem novelty.",
+    "The explicit-root-release condition is an operational instruction; a command-line reference string alone is not evidence of external user authorization."
+  ],
+  "prospective_observations_generated": false,
+  "prospective_outcomes_inspected": false
+}

@@ -1,0 +1,469 @@
+{
+  "status": "passed_independent_source_and_all_48_model_leaf_audit",
+  "new_simulation_observations": 0,
+  "blocking_findings": [],
+  "input_sha256": {
+    "results/sota_round6/theory/continuum_null_certificate.json": "d4b540f98467b7e24c23d65ee88cdc40bb08b2c4685a002c2a91573d9a1cf5db",
+    "experiments/sota_round6/continuum_null_certificate.py": "2eecd08a2ff87e5abc1cc3e9dc0d81c386486fd5a4dfdae07f73967f31482d68",
+    "results/sota_round5/continuous_chernoff_refinement.json": "5a2dc575808bd0679c1deb0c0b7947c2662fca6ccbcd82aaef0f1d1dcf4ec130",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "results/sota_round6/theory/continuum_certificate_peer_review.py": "0d17b1dfffd2e82327c16f3d54021457f7fb3a26742867a8cf63047123c00c7b"
+  },
+  "source_review": [
+    {
+      "item": "Directed arithmetic",
+      "verdict": "passed",
+      "reason": "The imported 64-digit _Bounds uses outward ROUND_FLOOR/CEILING arithmetic. Decimal ln/exp/sqrt are correctly rounded and expanded by next_minus/next_plus. Exact Decimal endpoints are not rounded by construction, sign changes use copy_negate, and abs_upper uses copy_abs. Every rational is enclosed by interval division of exact integer numerator and denominator. No ambient Decimal arithmetic affects a returned bound."
+    },
+    {
+      "item": "Rational chart coverage and calculus",
+      "verdict": "passed",
+      "reason": "For each sign the chart lies on the unit circle. Its sine runs continuously and monotonically from-1 to1 while cosine has the prescribed sign, so the two closed chart domains cover the full circle. Both first and second derivatives match exact symbolic differentiation."
+    },
+    {
+      "item": "Physical range intersections",
+      "verdict": "passed",
+      "reason": "The exact rational physical checks exclude boundary rates. The directed A+/-sqrt(B^2+C^2) enclosure contains every true probability, and a+/-|b| contains every null probability. Intersecting these global ranges with local chart enclosures preserves containment. If interval precision cannot resolve strict physicality, construction raises rather than certifies."
+    },
+    {
+      "item": "KL derivatives and Taylor bound",
+      "verdict": "passed",
+      "reason": "Both KL partial derivatives and the full Hessian match independent symbolic differentiation. The chain-rule second derivative includes both quadratic derivative terms and the p/q second-derivative terms. The midpoint and halfwidth are exact rationals; directed midpoint enclosures contain the exact derivatives. F(mid)+|Fprime(mid)|h+sup|Fsecond|h^2/2 bounds every chart point, and taking its minimum with a separate direct interval upper remains valid."
+    },
+    {
+      "item": "Reflected-pair lower bound",
+      "verdict": "passed",
+      "reason": "The entropy secant center lies strictly between the ordered pair rates and equalizes their KL values. The capacity weight pools at that center. Every affine sine-zero null has a common rate on the pair, and a constant physical null attains that pooled value, so the exact pair capacity is a valid oracle lower bound. Intersecting the two outward KL intervals is justified by their exact equality. Negative C is handled by swapping labels through abs(C)."
+    },
+    {
+      "item": "Global upper/lower sandwich",
+      "verdict": "passed",
+      "reason": "Each model uses one fixed physical affine null on all leaves. Exact coverage therefore gives a pointwise all-angle upper bound. For every design, its infimum over nulls is at most its divergence to this fixed null, hence at most the pointwise bound. Together with the reflected lower bound this allows arbitrary support counts and physical boundary nulls without a minimax exchange. It does not prove exact reflected-pair optimality; the certified gap is at most1e-6 relative."
+    },
+    {
+      "item": "Threshold rounding and semantics",
+      "verdict": "passed",
+      "reason": "The acceptance target is rounded downward from pair_lower*(1+tolerance). Exact Fraction comparisons verify every stored leaf bound is <=target and every final exact ratio is <=1+tolerance. All parameters, proposed null coefficients and selected cosine exactly equal Fraction(the recorded binary64 value); no subsequent Bernoulli probability is rounded back to binary64."
+    },
+    {
+      "item": "Leaf coverage and source binding",
+      "verdict": "passed",
+      "reason": "All48 original registry indices occur exactly once. For both charts in every model, sorted exact dyadic leaves meet without gaps or positive-width overlaps and cover[-1,1]. Every leaf width and lattice position match its claimed depth. Every stored leaf upper was replayed exactly and all input source hashes matched."
+    }
+  ],
+  "nonblocking_observations": [
+    "max_nodes is a soft visit budget: it is checked only when a leaf cannot be accepted, so accepted leaves can carry the visit count beyond the requested number. This does not weaken a certified bound or permit unresolved coverage to be labeled certified.",
+    "The arithmetic proof relies on documented Decimal correctly-rounded elementary functions and ordinary Python execution; it is not a formally verified arithmetic kernel."
+  ],
+  "checks": {
+    "models": 48,
+    "all_accepted_leaves_replayed": 5537,
+    "independent_capacity_precision_digits": 150,
+    "independent_scalar_chart_points_with_two_derivatives": 288,
+    "exact_symbolic_identities": {
+      "chart_-1_unit_circle": "exact symbolic residual0",
+      "chart_-1_cos_first": "exact symbolic residual0",
+      "chart_-1_sin_first": "exact symbolic residual0",
+      "chart_-1_cos_second": "exact symbolic residual0",
+      "chart_-1_sin_second": "exact symbolic residual0",
+      "chart_1_unit_circle": "exact symbolic residual0",
+      "chart_1_cos_first": "exact symbolic residual0",
+      "chart_1_sin_first": "exact symbolic residual0",
+      "chart_1_cos_second": "exact symbolic residual0",
+      "chart_1_sin_second": "exact symbolic residual0",
+      "KL_p_first": "exact symbolic residual0",
+      "KL_q_first": "exact symbolic residual0",
+      "KL_pp_second": "exact symbolic residual0",
+      "KL_pq_second": "exact symbolic residual0",
+      "KL_qq_second": "exact symbolic residual0"
+    }
+  },
+  "models": [
+    {
+      "registry_index": 0,
+      "leaf_count": 50,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "1330723512756677376093284614717839319279357747095484767113389921/1330722732464138029655028589775569534068833848451479579333351107"
+    },
+    {
+      "registry_index": 1,
+      "leaf_count": 58,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "333913068620885955657242659692495161049697998220877554098671699/333912911139043009929637758919272617010806939268648825485112245"
+    },
+    {
+      "registry_index": 2,
+      "leaf_count": 75,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "41288218884981240125423127298988390486141775017171222617532119/41288186215689265604350573245411889146426568848797436033422235"
+    },
+    {
+      "registry_index": 3,
+      "leaf_count": 138,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "673929591170093971451663520820053499422646419363811197044323579/673929306650512749895444835850616368225796042152845379685409185"
+    },
+    {
+      "registry_index": 4,
+      "leaf_count": 54,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "6750950556732403812846931248920388995451548681052082718271543619/6750948301079093260801033348893379468663022059764649185731779720"
+    },
+    {
+      "registry_index": 5,
+      "leaf_count": 60,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "5186396706387632771132718550573922688216407458975245271955976616/5186394121128574585050566947379782305725621933399632547798469859"
+    },
+    {
+      "registry_index": 6,
+      "leaf_count": 82,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "119643456434192700315197212285856679469566534440884089861269450/119643398571311589946460449807738251943185558386368880922510693"
+    },
+    {
+      "registry_index": 7,
+      "leaf_count": 153,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "797183404001534209120590301918273865804825718993822067462889333/797182823613168526695339304829603350499245999247181882676238322"
+    },
+    {
+      "registry_index": 8,
+      "leaf_count": 78,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "7397929300096520299982062836380203998552781523088100801004110787/7397923981113786679714800223096219990888623876432133675641302740"
+    },
+    {
+      "registry_index": 9,
+      "leaf_count": 79,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "270084814288212287747502123861911218429041821258198518744515475/270084655493364377163563553854993357838436847532745909182238914"
+    },
+    {
+      "registry_index": 10,
+      "leaf_count": 87,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "1605018356345185729386060094971933687820117490826466155336273637/1605017780122804443989294933517777227982707095714476334934584905"
+    },
+    {
+      "registry_index": 11,
+      "leaf_count": 183,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "9519548516239399859648377810555505990562140087232233918233925057/9519539761918505776321770428232719227236807546704137527705752170"
+    },
+    {
+      "registry_index": 12,
+      "leaf_count": 50,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "3458639530946664204100343773912968290446403117135969693791068562/3458637517331358363435764047518752346704224091939408163898711265"
+    },
+    {
+      "registry_index": 13,
+      "leaf_count": 58,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "1300787393555179322687456656051023105026587188078427155317779078/1300786458986989093337298635219189742722221970492020867996906525"
+    },
+    {
+      "registry_index": 14,
+      "leaf_count": 73,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "1327288624421617940010179756748674085755573228409612012868882084/1327287331454808815030991921351139768460724394972080278291071083"
+    },
+    {
+      "registry_index": 15,
+      "leaf_count": 140,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "6984619229751013768451516942202453491813661593764047487900428519/6984612251431470662540363666310174645486438605454031901716387700"
+    },
+    {
+      "registry_index": 16,
+      "leaf_count": 54,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "3471508781588663433096816482100000633606364115189176656188031587/3471507603895091112583346646340620465625242693883536604944371896"
+    },
+    {
+      "registry_index": 17,
+      "leaf_count": 55,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "331949901294587173867691772732486588026873108011728321039772418/331949674872804838843675349428701820155678777738154474652458743"
+    },
+    {
+      "registry_index": 18,
+      "leaf_count": 79,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "7274031486711913637011785872145566588800168832712333444135246847/7274028412738575557527367631082474104515636017161382091281558560"
+    },
+    {
+      "registry_index": 19,
+      "leaf_count": 159,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "804015846762879436225520494501450004354823546132232674547856713/804015256933127775259718038707313682887355617487539223630527056"
+    },
+    {
+      "registry_index": 20,
+      "leaf_count": 78,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "1898863324128417946055943912693048528732354632544213428047969564/1898861988164379394566364299891163927390238399374590907828941959"
+    },
+    {
+      "registry_index": 21,
+      "leaf_count": 81,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "206945982473825168951929589759502748461087166237756399300672261/206945792813387448573275107851957049403696415179276096559363266"
+    },
+    {
+      "registry_index": 22,
+      "leaf_count": 89,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "736479684077844148184760526832294453782358492444527440960835323/736479342820594889984043118627964044563596862355894618298684780"
+    },
+    {
+      "registry_index": 23,
+      "leaf_count": 186,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "2384844449173675818279804791269466036390513703652180684173812246/2384842935872719720655991524254477581468837987393008184070256255"
+    },
+    {
+      "registry_index": 24,
+      "leaf_count": 50,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "3257283167652229569022809708042846579202447198156032651788767826/3257281331361120345666876048565603879889667328629489893183386611"
+    },
+    {
+      "registry_index": 25,
+      "leaf_count": 59,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "2441658462320704323696669957294065945190646844924470266140515592/2441656853692360544947072547659234057504650888974496437709774467"
+    },
+    {
+      "registry_index": 26,
+      "leaf_count": 69,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "6180354934623459123654822148722165889051964368895560031376360889/6180352400269555867910535474771041371016115492639130028287044500"
+    },
+    {
+      "registry_index": 27,
+      "leaf_count": 137,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "135173703119001022866289762349753322606375567790909753293907249/135173575121517298366505723002687443582593059763852238686439895"
+    },
+    {
+      "registry_index": 28,
+      "leaf_count": 52,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "1568074385205527095433761363618996875050970896666733576857387064/1568073811850668883192055699458445899287809639731058204799747003"
+    },
+    {
+      "registry_index": 29,
+      "leaf_count": 63,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "235151088955959225655851651701666680230651864270769306539051224/235150879185560192486284419736231669964301737936245029395889975"
+    },
+    {
+      "registry_index": 30,
+      "leaf_count": 83,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "3075462467925429277408846710441061936222890745198592427688108922/3075459827140276842685083703644465488158812473154864708952236445"
+    },
+    {
+      "registry_index": 31,
+      "leaf_count": 171,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "333379481300105298193456431713745500556530450989618613952760611/333379298272978367486588148507516717597271581549206229523022926"
+    },
+    {
+      "registry_index": 32,
+      "leaf_count": 78,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "1703715009626956435629777802342196726813142147511625427933460203/1703713919136600441232609329749824885636453291133947804065869201"
+    },
+    {
+      "registry_index": 33,
+      "leaf_count": 78,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "1270071279416137303420012900638705573777586503194820222700090494/1270070486462954284871430681124356898182420456844432231203859517"
+    },
+    {
+      "registry_index": 34,
+      "leaf_count": 94,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "1685926964222142382496243524268798715737100410277544622532340338/1685925478945961730001859580292785660373197439163044095178223639"
+    },
+    {
+      "registry_index": 35,
+      "leaf_count": 204,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "481164797985496194736741954256077808240657222516554690030777453/481164340383856839119982666324892659867959713191010852425281576"
+    },
+    {
+      "registry_index": 36,
+      "leaf_count": 52,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "1308121015836246791037778132861323584452611252991768112144835849/1308120359411369591292018062337171955180780082161104190737603494"
+    },
+    {
+      "registry_index": 37,
+      "leaf_count": 56,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "9692448592380986306761212987015830400479507509143475600423816339/9692444114493871216213818222802249508493255255700705495960836200"
+    },
+    {
+      "registry_index": 38,
+      "leaf_count": 74,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "598542414270673739279332374715722614101012734442392677098264254/598542172768624138784269493586901604417867158954705628911663223"
+    },
+    {
+      "registry_index": 39,
+      "leaf_count": 154,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "1247394705881180140319698340365240982101049634714006061620750719/1247393750050378616445272838676614069865865788402553288279918650"
+    },
+    {
+      "registry_index": 40,
+      "leaf_count": 52,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "3185730921712159630963069023870609825307386742462107938389194241/3185728231025489640761480275646815532486873297778394183531522582"
+    },
+    {
+      "registry_index": 41,
+      "leaf_count": 64,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "303670916143410100288960096793074971701701413552812391673190079/303670630421531037585628879782156700744017972084592095257457790"
+    },
+    {
+      "registry_index": 42,
+      "leaf_count": 130,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "285568883883106627954750434955668771969863498727769686887310677/285568767345361585664971712302371861780477672375808843743234840"
+    },
+    {
+      "registry_index": 43,
+      "leaf_count": 382,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "479767479392248257571408357392401970889373677196767393601128771/479767247584951194502644821144480312905138862231306281368194191"
+    },
+    {
+      "registry_index": 44,
+      "leaf_count": 92,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "6926023029021084319425903617942702708048236307282916847275423081/6926020074323393914044609399299349766919977672721806930402353536"
+    },
+    {
+      "registry_index": 45,
+      "leaf_count": 82,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "4472581180128854376712232612727478050400821021066988131315174149/4472577769890300364083493239968070201864252579812702871716114045"
+    },
+    {
+      "registry_index": 46,
+      "leaf_count": 176,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "4912153695042532461475681131015816552945285057906612593397881167/4912152106011212064426050403821942792185248379952252484565675400"
+    },
+    {
+      "registry_index": 47,
+      "leaf_count": 886,
+      "exact_cover_and_full_replay": "passed",
+      "independent_capacity_contained_150_digits": true,
+      "independent_KL_and_two_derivative_points": 6,
+      "upper_over_pair_lower_exact": "4994828895813562772592153027197380059454093013344483125328492201/4994824194302066072144246263760537603251684523366371594434890980"
+    }
+  ],
+  "elapsed_seconds": 17.656000000002678,
+  "claim_boundary": "Passed fixed-model numerical continuum certificates and source review. These results are not a general all-parameter theorem, finite stopping-cost result, numerical epsilon for a perturbation theorem, or a SOTA claim."
+}

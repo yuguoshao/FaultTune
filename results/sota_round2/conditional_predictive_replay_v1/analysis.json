@@ -1,0 +1,4350 @@
+{
+  "status": "complete exploratory screening",
+  "groups": 24,
+  "sources": {
+    "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f",
+    "experiments/structured_validation/weighted_fisher.py": "1f31c9cbea3c8db4d7d8dc75936dc5304fd3273fb8ad1fafedc90e792fe24e24",
+    "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/structured_validation/conditional_fisher_unequal.py": "011d691f76b798cd0372544156ab86dbf7b6273b02b41de009737f433caef917",
+    "experiments/structured_validation/safe_grid.py": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+    "experiments/structured_validation/rb_grid.py": "a262a4790289505e7846c98334edbf341cded98090ce7bd8bf7c0c3974fb420f",
+    "experiments/structured_validation/predictive.py": "fc16237805139c707e6e076c0c7e69f45e88c111d405349c68daa3f150871fe4",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/structured_validation/design_policy.py": "1e61776de4b3bd8b2fd331b9c9f28b7b68f4e6c9672e19ca38aa9b436e3d4547",
+    "experiments/structured_validation/probe_fixed.py": "bf64f1ab7fb5e1675966704cc315de1f21b51db8135301fc319d8388d67311ec",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/sota_round2/conditional_predictive_replay.py": "abe37fdf4fb134cc9d2df711234b6b95b167197738aea208d4c8da3de1c8c80b",
+    "experiments/sota_round2/adaptive_safe_replay.py": "a1eaba577bde2dc769280df2b6525221de11011b87fed7ca21b4b34020a5a198"
+  },
+  "input_sha256": {
+    "spec.json": "7cd44298b83d58b3649abc3f7b4ff56f8c6898dd52673f0e9dc80ac47ff2b243",
+    "summary.json": "f70ef9f8edef39d5eaacc8c9e5429da33d9cc1df5a68bfc84cc81f4cbdfa05da",
+    "trials.jsonl": "55047a732a135b029045cdfe69bbd4f69a83b3727e2d5a395b00ffcbdcf639c7",
+    "audit.json": "7e38e8c4e0167f1a415a179c82c58afff5ccb39c03b0902248de306f29bb3786"
+  },
+  "records": [
+    {
+      "case_id": 1,
+      "rep": 0,
+      "seed": 810001009,
+      "variants": {
+        "fisher71_control": {
+          "shots": 1024,
+          "stop_block": 28,
+          "direction": 1,
+          "log_evidence": 5.341264760900887,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 1024,
+          "stop_block": 28,
+          "direction": 1,
+          "log_evidence": 5.2709522773984725,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k2": {
+          "shots": 1024,
+          "stop_block": 28,
+          "direction": 1,
+          "log_evidence": 4.8669458648018615,
+          "config": {
+            "mode": "past",
+            "shrink": "2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k4": {
+          "shots": 1024,
+          "stop_block": 28,
+          "direction": 1,
+          "log_evidence": 4.8669458648018615,
+          "config": {
+            "mode": "past",
+            "shrink": "4"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 1024,
+          "stop_block": 28,
+          "direction": 1,
+          "log_evidence": 5.099242752866518,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 1024,
+          "stop_block": 28,
+          "direction": 1,
+          "log_evidence": 4.89180903827582,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k4": {
+          "shots": 1024,
+          "stop_block": 28,
+          "direction": 1,
+          "log_evidence": 4.767080970229719,
+          "config": {
+            "mode": "total",
+            "shrink": "4"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 1024,
+          "stop_block": 28,
+          "direction": 1,
+          "log_evidence": 5.036111024664287,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 1024,
+          "stop_block": 28,
+          "direction": 1,
+          "log_evidence": 4.728623466860197,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": 1152,
+          "stop_block": 29,
+          "direction": 1,
+          "log_evidence": 5.638132651504666,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 1152,
+          "stop_block": 29,
+          "direction": 1,
+          "log_evidence": 5.805375802105521,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 1152,
+          "stop_block": 29,
+          "direction": 1,
+          "log_evidence": 4.820664027822589,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k2": {
+          "shots": 1152,
+          "stop_block": 29,
+          "direction": 1,
+          "log_evidence": 4.867268679804147,
+          "config": {
+            "mode": "total",
+            "shrink": "2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_2": {
+          "shots": 2634,
+          "stop_block": 36,
+          "direction": 1,
+          "log_evidence": 4.917957069336324,
+          "config": {
+            "mode": "past",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 2964,
+          "stop_block": 37,
+          "direction": 1,
+          "log_evidence": 5.722655702079619,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 2964,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 2964,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 2964,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 1024,
+        "pair_grid": 1024,
+        "fisher": 1024,
+        "hedge": 1024,
+        "rb": 1024,
+        "safe": 2964
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 3,
+      "rep": 0,
+      "seed": 810003027,
+      "variants": {
+        "total_k1": {
+          "shots": 24740,
+          "stop_block": 85,
+          "direction": 1,
+          "log_evidence": 5.577881624856467,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 31314,
+          "stop_block": 91,
+          "direction": 1,
+          "log_evidence": 5.263702919939226,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1_2": {
+          "shots": 31314,
+          "stop_block": 91,
+          "direction": 1,
+          "log_evidence": 4.614322738795279,
+          "config": {
+            "mode": "total",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 31314,
+          "stop_block": 91,
+          "direction": 1,
+          "log_evidence": 4.822306863433193,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "fisher71_control": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 6.277934343724453,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 6.269229618875801,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_2": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 5.051292776764269,
+          "config": {
+            "mode": "past",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 6.006329453668073,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 5.648658502923625,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 6.654650343531623,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 35230,
+        "pair_grid": 35230,
+        "fisher": 35230,
+        "hedge": 35230,
+        "safe": 35230,
+        "rb": 35230
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 5,
+      "rep": 0,
+      "seed": 810005045,
+      "variants": {
+        "fisher71_control": {
+          "shots": 1206662,
+          "stop_block": 184,
+          "direction": 1,
+          "log_evidence": 5.822896748094472,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 1206662,
+          "stop_block": 184,
+          "direction": 1,
+          "log_evidence": 5.825494943555918,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 1206662,
+          "stop_block": 184,
+          "direction": 1,
+          "log_evidence": 5.538743261196731,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 1206662,
+          "stop_block": 184,
+          "direction": 1,
+          "log_evidence": 5.135136340416512,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 1206662,
+          "stop_block": 184,
+          "direction": 1,
+          "log_evidence": 5.548157007362551,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 1206662,
+          "stop_block": 184,
+          "direction": 1,
+          "log_evidence": 5.163064598689941,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": null,
+          "available_history_shots": 1206662,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 1206662,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_2": {
+          "shots": null,
+          "available_history_shots": 1206662,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1": {
+          "shots": null,
+          "available_history_shots": 1206662,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 1206662,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 1206662,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_mix": {
+          "shots": null,
+          "available_history_shots": 1206662,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 1206662,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 1206662,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1": {
+          "shots": null,
+          "available_history_shots": 1206662,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 1206662,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 1206662,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 1206662,
+        "pair_grid": 1206662,
+        "fisher": 1206662,
+        "hedge": 1206662,
+        "safe": 1206662,
+        "rb": 1206662
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 7,
+      "rep": 0,
+      "seed": 810007063,
+      "variants": {
+        "past_k2": {
+          "shots": 718,
+          "stop_block": 25,
+          "direction": 1,
+          "log_evidence": 4.848202479842648,
+          "config": {
+            "mode": "past",
+            "shrink": "2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k4": {
+          "shots": 718,
+          "stop_block": 25,
+          "direction": 1,
+          "log_evidence": 4.848202479842648,
+          "config": {
+            "mode": "past",
+            "shrink": "4"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "fisher71_control": {
+          "shots": 808,
+          "stop_block": 26,
+          "direction": 1,
+          "log_evidence": 5.852826498968195,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 808,
+          "stop_block": 26,
+          "direction": 1,
+          "log_evidence": 5.847401382699261,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": 808,
+          "stop_block": 26,
+          "direction": 1,
+          "log_evidence": 5.590411475907246,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 808,
+          "stop_block": 26,
+          "direction": 1,
+          "log_evidence": 5.650920096209708,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 808,
+          "stop_block": 26,
+          "direction": 1,
+          "log_evidence": 5.789077118229486,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 808,
+          "stop_block": 26,
+          "direction": 1,
+          "log_evidence": 5.727139287721748,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 808,
+          "stop_block": 26,
+          "direction": 1,
+          "log_evidence": 4.632501730194795,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k2": {
+          "shots": 808,
+          "stop_block": 26,
+          "direction": 1,
+          "log_evidence": 4.908185299684851,
+          "config": {
+            "mode": "total",
+            "shrink": "2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k4": {
+          "shots": 808,
+          "stop_block": 26,
+          "direction": 1,
+          "log_evidence": 5.880286260515097,
+          "config": {
+            "mode": "total",
+            "shrink": "4"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 808,
+          "stop_block": 26,
+          "direction": 1,
+          "log_evidence": 5.654041059258879,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 808,
+          "stop_block": 26,
+          "direction": 1,
+          "log_evidence": 5.414107462746593,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 1152,
+          "stop_block": 29,
+          "direction": 1,
+          "log_evidence": 5.065515768799368,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_2": {
+          "shots": 1296,
+          "stop_block": 30,
+          "direction": 1,
+          "log_evidence": 4.988547704481363,
+          "config": {
+            "mode": "past",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 1642,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 1642,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 1642,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 808,
+        "pair_grid": 808,
+        "fisher": 808,
+        "hedge": 808,
+        "rb": 808,
+        "safe": 1642
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 9,
+      "rep": 0,
+      "seed": 810009081,
+      "variants": {
+        "total_k4": {
+          "shots": 1296,
+          "stop_block": 30,
+          "direction": 1,
+          "log_evidence": 5.514237865397505,
+          "config": {
+            "mode": "total",
+            "shrink": "4"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "fisher71_control": {
+          "shots": 6768,
+          "stop_block": 52,
+          "direction": 1,
+          "log_evidence": 6.286707607001821,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 6768,
+          "stop_block": 52,
+          "direction": 1,
+          "log_evidence": 6.257962108606839,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_2": {
+          "shots": 6768,
+          "stop_block": 52,
+          "direction": 1,
+          "log_evidence": 4.978173824643772,
+          "config": {
+            "mode": "past",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 6768,
+          "stop_block": 52,
+          "direction": 1,
+          "log_evidence": 4.768649920086362,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 6768,
+          "stop_block": 52,
+          "direction": 1,
+          "log_evidence": 6.005210893001258,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 6768,
+          "stop_block": 52,
+          "direction": 1,
+          "log_evidence": 5.66614722552511,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 6768,
+          "stop_block": 52,
+          "direction": 1,
+          "log_evidence": 5.973400352289311,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 6768,
+          "stop_block": 52,
+          "direction": 1,
+          "log_evidence": 5.574146818362617,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": null,
+          "available_history_shots": 6768,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 6768,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 6768,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 6768,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_mix": {
+          "shots": null,
+          "available_history_shots": 6768,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 6768,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 6768,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1": {
+          "shots": null,
+          "available_history_shots": 6768,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 6768,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 6768,
+        "pair_grid": 6768,
+        "fisher": 6768,
+        "hedge": 6768,
+        "safe": 6768,
+        "rb": 6768
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 11,
+      "rep": 0,
+      "seed": 810011099,
+      "variants": {
+        "past_k1": {
+          "shots": 80360,
+          "stop_block": 115,
+          "direction": 1,
+          "log_evidence": 5.081001083221725,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "fisher71_control": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 6.4410965151967385,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 6.445418614926479,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 5.712918617180942,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_2": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 4.614271763006645,
+          "config": {
+            "mode": "past",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 6.306359321116398,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 6.144790248632395,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 4.694570256396752,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 6.180067457458792,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 6.213999220394584,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 5.9123700330807045,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 90406,
+        "pair_grid": 90406,
+        "fisher": 90406,
+        "hedge": 90406,
+        "safe": 90406,
+        "rb": 90406
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 13,
+      "rep": 0,
+      "seed": 810013117,
+      "variants": {
+        "fisher71_control": {
+          "shots": 1152,
+          "stop_block": 29,
+          "direction": 1,
+          "log_evidence": 6.237810153829646,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 1152,
+          "stop_block": 29,
+          "direction": 1,
+          "log_evidence": 6.077551863945042,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 1152,
+          "stop_block": 29,
+          "direction": 1,
+          "log_evidence": 4.621719443043841,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 1152,
+          "stop_block": 29,
+          "direction": 1,
+          "log_evidence": 5.816937441627719,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 1152,
+          "stop_block": 29,
+          "direction": 1,
+          "log_evidence": 5.46350410327484,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 1152,
+          "stop_block": 29,
+          "direction": 1,
+          "log_evidence": 6.062060317583288,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 1152,
+          "stop_block": 29,
+          "direction": 1,
+          "log_evidence": 5.8621211768431944,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 1152,
+          "stop_block": 29,
+          "direction": 1,
+          "log_evidence": 5.587163136788626,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": null,
+          "available_history_shots": 1152,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 1152,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_2": {
+          "shots": null,
+          "available_history_shots": 1152,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 1152,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 1152,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_mix": {
+          "shots": null,
+          "available_history_shots": 1152,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 1152,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 1152,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 1152,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 1152,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 1152,
+        "pair_grid": 1152,
+        "fisher": 1152,
+        "hedge": 1152,
+        "safe": 1152,
+        "rb": 1152
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 15,
+      "rep": 0,
+      "seed": 810015135,
+      "variants": {
+        "fisher71_control": {
+          "shots": 3754,
+          "stop_block": 39,
+          "direction": 1,
+          "log_evidence": 5.368001230128716,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 3754,
+          "stop_block": 39,
+          "direction": 1,
+          "log_evidence": 5.380045335619738,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_2": {
+          "shots": 3754,
+          "stop_block": 39,
+          "direction": 1,
+          "log_evidence": 4.834658711237395,
+          "config": {
+            "mode": "past",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 3754,
+          "stop_block": 39,
+          "direction": 1,
+          "log_evidence": 5.075106075264171,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 3754,
+          "stop_block": 39,
+          "direction": 1,
+          "log_evidence": 5.180612607629639,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 3754,
+          "stop_block": 39,
+          "direction": 1,
+          "log_evidence": 4.931240465684654,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 3754,
+          "stop_block": 39,
+          "direction": 1,
+          "log_evidence": 5.105544600151895,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 3754,
+          "stop_block": 39,
+          "direction": 1,
+          "log_evidence": 4.725932102038231,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": null,
+          "available_history_shots": 3754,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 3754,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 3754,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 3754,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_mix": {
+          "shots": null,
+          "available_history_shots": 3754,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 3754,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 3754,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1": {
+          "shots": null,
+          "available_history_shots": 3754,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 3754,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 3754,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 3754,
+        "pair_grid": 3754,
+        "fisher": 3754,
+        "hedge": 3754,
+        "safe": 3754,
+        "rb": 3754
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 17,
+      "rep": 0,
+      "seed": 810017153,
+      "variants": {
+        "fisher71_control": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 6.3778956332860774,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 6.371923036807492,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 5.192096636618995,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 6.116157975712151,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 5.771624340290905,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 6.331921509846891,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1_2": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 5.470022586104151,
+          "config": {
+            "mode": "total",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 7.845238757816139,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 6.362071664004435,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 90406,
+          "stop_block": 118,
+          "direction": 1,
+          "log_evidence": 6.352122275263142,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_2": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 90406,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 90406,
+        "pair_grid": 90406,
+        "fisher": 90406,
+        "hedge": 90406,
+        "safe": 90406,
+        "rb": 90406
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 19,
+      "rep": 0,
+      "seed": 810019171,
+      "variants": {
+        "past_mix": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 5.493233787901982,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k2": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 6.29510093857751,
+          "config": {
+            "mode": "past",
+            "shrink": "2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k4": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 6.346278385677752,
+          "config": {
+            "mode": "past",
+            "shrink": "4"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 4.627594988345041,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 5.0052374385070095,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k4": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 5.917542380042308,
+          "config": {
+            "mode": "total",
+            "shrink": "4"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "fisher71_control": {
+          "shots": 396,
+          "stop_block": 20,
+          "direction": 1,
+          "log_evidence": 5.919239453379296,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 396,
+          "stop_block": 20,
+          "direction": 1,
+          "log_evidence": 5.811128679701667,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 396,
+          "stop_block": 20,
+          "direction": 1,
+          "log_evidence": 6.363833817413654,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 396,
+          "stop_block": 20,
+          "direction": 1,
+          "log_evidence": 6.565682572563368,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k2": {
+          "shots": 396,
+          "stop_block": 20,
+          "direction": 1,
+          "log_evidence": 5.808265534841372,
+          "config": {
+            "mode": "total",
+            "shrink": "2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 396,
+          "stop_block": 20,
+          "direction": 1,
+          "log_evidence": 6.05928919925978,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 396,
+          "stop_block": 20,
+          "direction": 1,
+          "log_evidence": 6.257947670403067,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_2": {
+          "shots": 502,
+          "stop_block": 22,
+          "direction": 1,
+          "log_evidence": 4.959325606139269,
+          "config": {
+            "mode": "past",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 502,
+          "stop_block": 22,
+          "direction": 1,
+          "log_evidence": 5.083428641101173,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 566,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 566,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 566,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 396,
+        "pair_grid": 396,
+        "fisher": 396,
+        "hedge": 396,
+        "rb": 396,
+        "safe": 566
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 21,
+      "rep": 0,
+      "seed": 810021189,
+      "variants": {
+        "fisher71_control": {
+          "shots": 2964,
+          "stop_block": 37,
+          "direction": 1,
+          "log_evidence": 5.483168029498895,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 2964,
+          "stop_block": 37,
+          "direction": 1,
+          "log_evidence": 5.388157298948674,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 2964,
+          "stop_block": 37,
+          "direction": 1,
+          "log_evidence": 5.793370425420025,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 2964,
+          "stop_block": 37,
+          "direction": 1,
+          "log_evidence": 5.207497779850265,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 2964,
+          "stop_block": 37,
+          "direction": 1,
+          "log_evidence": 4.9868421170868915,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 2964,
+          "stop_block": 37,
+          "direction": 1,
+          "log_evidence": 5.014800404597187,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 2964,
+          "stop_block": 37,
+          "direction": 1,
+          "log_evidence": 5.1649622057073055,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 2964,
+          "stop_block": 37,
+          "direction": 1,
+          "log_evidence": 4.877194224139663,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": null,
+          "available_history_shots": 2964,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 2964,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_2": {
+          "shots": null,
+          "available_history_shots": 2964,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 2964,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 2964,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_mix": {
+          "shots": null,
+          "available_history_shots": 2964,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 2964,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 2964,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 2964,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 2964,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 2964,
+        "pair_grid": 2964,
+        "fisher": 2964,
+        "hedge": 2964,
+        "safe": 2964,
+        "rb": 2964
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 23,
+      "rep": 0,
+      "seed": 810023207,
+      "variants": {
+        "total_k1": {
+          "shots": 31314,
+          "stop_block": 91,
+          "direction": 1,
+          "log_evidence": 4.8957713398720335,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "fisher71_control": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 5.3161056639656605,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 5.3887479249282215,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 5.22912569874832,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_2": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 5.185151125389343,
+          "config": {
+            "mode": "past",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 6.604117448959067,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 5.351166966165106,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 5.312118343246273,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 5.913130431759703,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1_2": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 5.407118929695859,
+          "config": {
+            "mode": "total",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 5.547761474061651,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 35230,
+          "stop_block": 94,
+          "direction": 1,
+          "log_evidence": 5.6849245626128635,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 35230,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 35230,
+        "pair_grid": 35230,
+        "fisher": 35230,
+        "hedge": 35230,
+        "safe": 35230,
+        "rb": 35230
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 25,
+      "rep": 0,
+      "seed": 810025225,
+      "variants": {
+        "fisher71_control": {
+          "shots": 276,
+          "stop_block": 17,
+          "direction": 1,
+          "log_evidence": 6.021409381621369,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 276,
+          "stop_block": 17,
+          "direction": 1,
+          "log_evidence": 5.758062035549915,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 276,
+          "stop_block": 17,
+          "direction": 1,
+          "log_evidence": 5.497456456789511,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 276,
+          "stop_block": 17,
+          "direction": 1,
+          "log_evidence": 5.14403946020538,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 276,
+          "stop_block": 17,
+          "direction": 1,
+          "log_evidence": 5.506871906476917,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 276,
+          "stop_block": 17,
+          "direction": 1,
+          "log_evidence": 5.170623369502618,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": null,
+          "available_history_shots": 276,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 276,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_2": {
+          "shots": null,
+          "available_history_shots": 276,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1": {
+          "shots": null,
+          "available_history_shots": 276,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 276,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 276,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_mix": {
+          "shots": null,
+          "available_history_shots": 276,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 276,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 276,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1": {
+          "shots": null,
+          "available_history_shots": 276,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 276,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 276,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 276,
+        "pair_grid": 276,
+        "fisher": 276,
+        "hedge": 276,
+        "safe": 276,
+        "rb": 276
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 27,
+      "rep": 0,
+      "seed": 810027243,
+      "variants": {
+        "hedge_control": {
+          "shots": 1296,
+          "stop_block": 30,
+          "direction": 1,
+          "log_evidence": 4.6231635232159505,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 1296,
+          "stop_block": 30,
+          "direction": 1,
+          "log_evidence": 4.63185447837359,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "fisher71_control": {
+          "shots": 1458,
+          "stop_block": 31,
+          "direction": 1,
+          "log_evidence": 6.181948785752335,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 1458,
+          "stop_block": 31,
+          "direction": 1,
+          "log_evidence": 6.042507083928732,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 1458,
+          "stop_block": 31,
+          "direction": 1,
+          "log_evidence": 5.670255486704842,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 1458,
+          "stop_block": 31,
+          "direction": 1,
+          "log_evidence": 5.14242161244197,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1_2": {
+          "shots": 1458,
+          "stop_block": 31,
+          "direction": 1,
+          "log_evidence": 4.768254208703565,
+          "config": {
+            "mode": "total",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 1458,
+          "stop_block": 31,
+          "direction": 1,
+          "log_evidence": 6.123854886579253,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 1458,
+          "stop_block": 31,
+          "direction": 1,
+          "log_evidence": 5.890144687893132,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": null,
+          "available_history_shots": 1458,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 1458,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_2": {
+          "shots": null,
+          "available_history_shots": 1458,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1": {
+          "shots": null,
+          "available_history_shots": 1458,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 1458,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 1458,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 1458,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 1458,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 1458,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 1296,
+        "pair_grid": 1296,
+        "hedge": 1296,
+        "fisher": 1458,
+        "safe": 1458,
+        "rb": 1458
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 29,
+      "rep": 0,
+      "seed": 810029261,
+      "variants": {
+        "fisher71_control": {
+          "shots": 19546,
+          "stop_block": 79,
+          "direction": 1,
+          "log_evidence": 4.87302964562,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 19546,
+          "stop_block": 79,
+          "direction": 1,
+          "log_evidence": 4.825958143437297,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": 19546,
+          "stop_block": 79,
+          "direction": 1,
+          "log_evidence": 4.800717456192391,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_2": {
+          "shots": 19546,
+          "stop_block": 79,
+          "direction": 1,
+          "log_evidence": 4.713405182508598,
+          "config": {
+            "mode": "past",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 19546,
+          "stop_block": 79,
+          "direction": 1,
+          "log_evidence": 6.18268782858301,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 19546,
+          "stop_block": 79,
+          "direction": 1,
+          "log_evidence": 4.81970744738199,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 19546,
+          "stop_block": 79,
+          "direction": 1,
+          "log_evidence": 4.813417434237516,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 19546,
+          "stop_block": 79,
+          "direction": 1,
+          "log_evidence": 4.801860618810501,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1_2": {
+          "shots": 19546,
+          "stop_block": 79,
+          "direction": 1,
+          "log_evidence": 4.75351029346073,
+          "config": {
+            "mode": "total",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 19546,
+          "stop_block": 79,
+          "direction": 1,
+          "log_evidence": 6.173918059482195,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 19546,
+          "stop_block": 79,
+          "direction": 1,
+          "log_evidence": 4.819987983067816,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 19546,
+          "stop_block": 79,
+          "direction": 1,
+          "log_evidence": 4.81398196570435,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 19546,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 19546,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 19546,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 19546,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 19546,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 19546,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 19546,
+        "pair_grid": 19546,
+        "fisher": 19546,
+        "hedge": 19546,
+        "safe": 19546,
+        "rb": 19546
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 31,
+      "rep": 0,
+      "seed": 810031279,
+      "variants": {
+        "fisher71_control": {
+          "shots": 70,
+          "stop_block": 6,
+          "direction": 1,
+          "log_evidence": 5.969577163350395,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 70,
+          "stop_block": 6,
+          "direction": 1,
+          "log_evidence": 5.6555825383514104,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 70,
+          "stop_block": 6,
+          "direction": 1,
+          "log_evidence": 5.387424901637203,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 70,
+          "stop_block": 6,
+          "direction": 1,
+          "log_evidence": 5.019900973765712,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 70,
+          "stop_block": 6,
+          "direction": 1,
+          "log_evidence": 5.379658669403663,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 70,
+          "stop_block": 6,
+          "direction": 1,
+          "log_evidence": 4.997303157622826,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k2": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 4.832361026320379,
+          "config": {
+            "mode": "past",
+            "shrink": "2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k4": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 4.832361026320379,
+          "config": {
+            "mode": "past",
+            "shrink": "4"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k4": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 4.834311619981679,
+          "config": {
+            "mode": "total",
+            "shrink": "4"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": 90,
+          "stop_block": 8,
+          "direction": 1,
+          "log_evidence": 4.960490762952494,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 90,
+          "stop_block": 8,
+          "direction": 1,
+          "log_evidence": 5.253073726471288,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k2": {
+          "shots": 90,
+          "stop_block": 8,
+          "direction": 1,
+          "log_evidence": 4.90563520835156,
+          "config": {
+            "mode": "total",
+            "shrink": "2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 102,
+          "stop_block": 9,
+          "direction": 1,
+          "log_evidence": 5.127372496166234,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 102,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_2": {
+          "shots": null,
+          "available_history_shots": 102,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 102,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 102,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1": {
+          "shots": null,
+          "available_history_shots": 102,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 70,
+        "pair_grid": 70,
+        "fisher": 70,
+        "hedge": 70,
+        "rb": 70,
+        "safe": 102
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 33,
+      "rep": 0,
+      "seed": 810033297,
+      "variants": {
+        "fisher71_control": {
+          "shots": 150,
+          "stop_block": 12,
+          "direction": 1,
+          "log_evidence": 5.545826633257381,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 150,
+          "stop_block": 12,
+          "direction": 1,
+          "log_evidence": 6.946116627376971,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 150,
+          "stop_block": 12,
+          "direction": 1,
+          "log_evidence": 6.6639358656039285,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 150,
+          "stop_block": 12,
+          "direction": 1,
+          "log_evidence": 6.269383409684083,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 150,
+          "stop_block": 12,
+          "direction": 1,
+          "log_evidence": 6.662132626762101,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 150,
+          "stop_block": 12,
+          "direction": 1,
+          "log_evidence": 6.264022886273621,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": null,
+          "available_history_shots": 150,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 150,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_2": {
+          "shots": null,
+          "available_history_shots": 150,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1": {
+          "shots": null,
+          "available_history_shots": 150,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 150,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 150,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_mix": {
+          "shots": null,
+          "available_history_shots": 150,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 150,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 150,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1": {
+          "shots": null,
+          "available_history_shots": 150,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 150,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 150,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 132,
+        "pair_grid": 132,
+        "fisher": 150,
+        "hedge": 150,
+        "safe": 150,
+        "rb": 150
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 35,
+      "rep": 0,
+      "seed": 810035315,
+      "variants": {
+        "past_k1": {
+          "shots": 6768,
+          "stop_block": 52,
+          "direction": 1,
+          "log_evidence": 5.353611689311599,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 6768,
+          "stop_block": 52,
+          "direction": 1,
+          "log_evidence": 5.1579380862815,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "fisher71_control": {
+          "shots": 7614,
+          "stop_block": 55,
+          "direction": 1,
+          "log_evidence": 5.027340247464232,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 7614,
+          "stop_block": 55,
+          "direction": 1,
+          "log_evidence": 5.046329201184999,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": 7614,
+          "stop_block": 55,
+          "direction": 1,
+          "log_evidence": 6.449813189774774,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_2": {
+          "shots": 7614,
+          "stop_block": 55,
+          "direction": 1,
+          "log_evidence": 5.103990763904556,
+          "config": {
+            "mode": "past",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 7614,
+          "stop_block": 55,
+          "direction": 1,
+          "log_evidence": 5.61580378498265,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 7614,
+          "stop_block": 55,
+          "direction": 1,
+          "log_evidence": 5.976395192454886,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 7614,
+          "stop_block": 55,
+          "direction": 1,
+          "log_evidence": 6.501029829140628,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1_2": {
+          "shots": 7614,
+          "stop_block": 55,
+          "direction": 1,
+          "log_evidence": 5.124235549613763,
+          "config": {
+            "mode": "total",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 7614,
+          "stop_block": 55,
+          "direction": 1,
+          "log_evidence": 5.645605303849639,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 7614,
+          "stop_block": 55,
+          "direction": 1,
+          "log_evidence": 6.017714185216574,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 7614,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 7614,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 7614,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 7614,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 7614,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 7614,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 7614,
+        "pair_grid": 7614,
+        "fisher": 7614,
+        "hedge": 7614,
+        "safe": 7614,
+        "rb": 7614
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 37,
+      "rep": 0,
+      "seed": 810037333,
+      "variants": {
+        "past_k2": {
+          "shots": 70,
+          "stop_block": 6,
+          "direction": 1,
+          "log_evidence": 4.938725399501952,
+          "config": {
+            "mode": "past",
+            "shrink": "2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "fisher71_control": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 6.471382581135766,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 6.177320686088673,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 7.033942131763897,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 6.172014858782142,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 6.469092527594007,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 6.694681935762746,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 6.7099487638935065,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 6.6075568456496905,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k2": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 8.089606864927761,
+          "config": {
+            "mode": "total",
+            "shrink": "2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 6.33931263702503,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 6.478684894941181,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 80,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_2": {
+          "shots": null,
+          "available_history_shots": 80,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 80,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 80,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 80,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 80,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 80,
+        "pair_grid": 80,
+        "fisher": 80,
+        "hedge": 80,
+        "safe": 80,
+        "rb": 80
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 39,
+      "rep": 0,
+      "seed": 810039351,
+      "variants": {
+        "past_k2": {
+          "shots": 312,
+          "stop_block": 18,
+          "direction": 1,
+          "log_evidence": 5.996392179017296,
+          "config": {
+            "mode": "past",
+            "shrink": "2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 312,
+          "stop_block": 18,
+          "direction": 1,
+          "log_evidence": 4.627610705046616,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k2": {
+          "shots": 312,
+          "stop_block": 18,
+          "direction": 1,
+          "log_evidence": 6.040971628543551,
+          "config": {
+            "mode": "total",
+            "shrink": "2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "fisher71_control": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 7.457513340893472,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 7.459464978954907,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 10.98969082359757,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 8.174796673933171,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k4": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 5.122158608991897,
+          "config": {
+            "mode": "past",
+            "shrink": "4"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 9.687641002171683,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 10.32542094928448,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 8.424622044375043,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 9.888801382627399,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 352,
+          "stop_block": 19,
+          "direction": 1,
+          "log_evidence": 10.536901367098057,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 352,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_2": {
+          "shots": null,
+          "available_history_shots": 352,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 352,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 352,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 352,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 352,
+        "pair_grid": 352,
+        "fisher": 352,
+        "hedge": 352,
+        "safe": 352,
+        "rb": 352
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 41,
+      "rep": 0,
+      "seed": 810041369,
+      "variants": {
+        "fisher71_control": {
+          "shots": 3336,
+          "stop_block": 38,
+          "direction": 1,
+          "log_evidence": 5.1549592776738,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 3336,
+          "stop_block": 38,
+          "direction": 1,
+          "log_evidence": 5.116045683238671,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 3336,
+          "stop_block": 38,
+          "direction": 1,
+          "log_evidence": 5.708505440669573,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 3336,
+          "stop_block": 38,
+          "direction": 1,
+          "log_evidence": 4.972079067409398,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 3336,
+          "stop_block": 38,
+          "direction": 1,
+          "log_evidence": 4.803843175035349,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 3336,
+          "stop_block": 38,
+          "direction": 1,
+          "log_evidence": 5.660195360959749,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 3336,
+          "stop_block": 38,
+          "direction": 1,
+          "log_evidence": 4.967249581354643,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 3336,
+          "stop_block": 38,
+          "direction": 1,
+          "log_evidence": 4.792376589835495,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": null,
+          "available_history_shots": 3336,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 3336,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_2": {
+          "shots": null,
+          "available_history_shots": 3336,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 3336,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 3336,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_mix": {
+          "shots": null,
+          "available_history_shots": 3336,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 3336,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 3336,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 3336,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 3336,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 3336,
+        "pair_grid": 3336,
+        "fisher": 3336,
+        "hedge": 3336,
+        "safe": 3336,
+        "rb": 3336
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 43,
+      "rep": 0,
+      "seed": 810043387,
+      "variants": {
+        "fisher71_control": {
+          "shots": 32,
+          "stop_block": 0,
+          "direction": 1,
+          "log_evidence": 17.074064988994945,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 32,
+          "stop_block": 0,
+          "direction": 1,
+          "log_evidence": 16.381270344754373,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_2": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_hedge_w0.25": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_hedge_w0.5": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_mix": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_hedge_w0.25": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_hedge_w0.5": {
+          "shots": null,
+          "available_history_shots": 32,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 32,
+        "pair_grid": 32,
+        "fisher": 32,
+        "hedge": 32,
+        "safe": 32,
+        "rb": 32
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 45,
+      "rep": 0,
+      "seed": 810045405,
+      "variants": {
+        "fisher71_control": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 5.940248612492153,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 5.43519547112457,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 5.156069793252704,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 4.76750092203147,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 5.1509137925267945,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 80,
+          "stop_block": 7,
+          "direction": 1,
+          "log_evidence": 4.752214979451411,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1": {
+          "shots": 90,
+          "stop_block": 8,
+          "direction": 1,
+          "log_evidence": 4.624623298600581,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": null,
+          "available_history_shots": 90,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 90,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k1_2": {
+          "shots": null,
+          "available_history_shots": 90,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 90,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 90,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_mix": {
+          "shots": null,
+          "available_history_shots": 90,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 90,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_2": {
+          "shots": null,
+          "available_history_shots": 90,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1": {
+          "shots": null,
+          "available_history_shots": 90,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 90,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 90,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "fisher": 80,
+        "hedge": 80,
+        "safe": 80,
+        "rb": 80,
+        "beta": 90,
+        "pair_grid": 90
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    },
+    {
+      "case_id": 47,
+      "rep": 0,
+      "seed": 810047423,
+      "variants": {
+        "past_k1": {
+          "shots": 1848,
+          "stop_block": 33,
+          "direction": 1,
+          "log_evidence": 4.929729412918649,
+          "config": {
+            "mode": "past",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "fisher71_control": {
+          "shots": 2340,
+          "stop_block": 35,
+          "direction": 1,
+          "log_evidence": 6.481414680149786,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "hedge_control": {
+          "shots": 2340,
+          "stop_block": 35,
+          "direction": 1,
+          "log_evidence": 6.473041246695797,
+          "config": null,
+          "certificate_status": "floating_screen_only"
+        },
+        "past_mix": {
+          "shots": 2340,
+          "stop_block": 35,
+          "direction": 1,
+          "log_evidence": 6.165986423754248,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_2": {
+          "shots": 2340,
+          "stop_block": 35,
+          "direction": 1,
+          "log_evidence": 5.712070962298449,
+          "config": {
+            "mode": "past",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.25": {
+          "shots": 2340,
+          "stop_block": 35,
+          "direction": 1,
+          "log_evidence": 6.404658083446191,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_hedge_w0.5": {
+          "shots": 2340,
+          "stop_block": 35,
+          "direction": 1,
+          "log_evidence": 6.331253159176818,
+          "config": {
+            "mode": "past",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_mix": {
+          "shots": 2340,
+          "stop_block": 35,
+          "direction": 1,
+          "log_evidence": 5.8271725711004265,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1_2": {
+          "shots": 2340,
+          "stop_block": 35,
+          "direction": 1,
+          "log_evidence": 5.66622499274892,
+          "config": {
+            "mode": "total",
+            "shrink": "1/2"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_k1": {
+          "shots": 2340,
+          "stop_block": 35,
+          "direction": 1,
+          "log_evidence": 7.234376914812508,
+          "config": {
+            "mode": "total",
+            "shrink": "1"
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.25": {
+          "shots": 2340,
+          "stop_block": 35,
+          "direction": 1,
+          "log_evidence": 6.346402325880125,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.25
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "total_hedge_w0.5": {
+          "shots": 2340,
+          "stop_block": 35,
+          "direction": 1,
+          "log_evidence": 6.201368326814838,
+          "config": {
+            "mode": "total",
+            "shrink": "mixture",
+            "adaptive_weight": 0.5
+          },
+          "certificate_status": "floating_screen_only"
+        },
+        "past_k1_4": {
+          "shots": null,
+          "available_history_shots": 2340,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k2": {
+          "shots": null,
+          "available_history_shots": 2340,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "past_k4": {
+          "shots": null,
+          "available_history_shots": 2340,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k1_4": {
+          "shots": null,
+          "available_history_shots": 2340,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k2": {
+          "shots": null,
+          "available_history_shots": 2340,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        },
+        "total_k4": {
+          "shots": null,
+          "available_history_shots": 2340,
+          "right_censored": true,
+          "certificate_status": "not_crossed"
+        }
+      },
+      "old_costs": {
+        "beta": 2340,
+        "pair_grid": 2340,
+        "fisher": 2340,
+        "hedge": 2340,
+        "safe": 2340,
+        "rb": 2340
+      },
+      "control_matches": {
+        "fisher71": true,
+        "hedge": true
+      }
+    }
+  ],
+  "all_controls_match": true,
+  "summaries": [
+    {
+      "variant": "total_k4",
+      "geometric_mean_cost_ratio_or_lower_bound": 0.9432722250873733,
+      "right_censored": 19,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "past_k2",
+      "geometric_mean_cost_ratio_or_lower_bound": 0.9949736146977292,
+      "right_censored": 18,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "total_hedge_w0.5",
+      "geometric_mean_cost_ratio_or_lower_bound": 0.999997930218499,
+      "right_censored": 1,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "hedge_control",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.0,
+      "right_censored": 0,
+      "floating_wrong_stops": 0,
+      "metric_status": "floating_screen_only"
+    },
+    {
+      "variant": "past_hedge_w0.25",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.0,
+      "right_censored": 1,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "past_hedge_w0.5",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.0,
+      "right_censored": 1,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "fisher71_control",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.004919688608603,
+      "right_censored": 0,
+      "floating_wrong_stops": 0,
+      "metric_status": "floating_screen_only"
+    },
+    {
+      "variant": "total_hedge_w0.25",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.004919688608603,
+      "right_censored": 1,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "past_k1",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.0055587028445605,
+      "right_censored": 6,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "past_k4",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.005566348986765,
+      "right_censored": 19,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "total_k2",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.0203728990719865,
+      "right_censored": 18,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "past_mix",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.0204938609101868,
+      "right_censored": 13,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "total_mix",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.0206846039494486,
+      "right_censored": 10,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "total_k1",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.0671532487293454,
+      "right_censored": 8,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "past_k1_2",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.099040125037669,
+      "right_censored": 13,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "total_k1_2",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.1155026295140595,
+      "right_censored": 17,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "past_k1_4",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.1209928753036627,
+      "right_censored": 24,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    },
+    {
+      "variant": "total_k1_4",
+      "geometric_mean_cost_ratio_or_lower_bound": 1.1209928753036627,
+      "right_censored": 24,
+      "floating_wrong_stops": 0,
+      "metric_status": "lower_bound_due_to_censoring"
+    }
+  ],
+  "elapsed_seconds": 10.5657212,
+  "limits": "Selected old development paths, no new samples. Float crossings require outward certification and independent validation; censored entries are lower bounds only."
+}

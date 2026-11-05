@@ -1,0 +1,65 @@
+{
+  "schema": "faulttune.round8.midpoint_demodulation_independent_review.v1",
+  "created_utc": "2026-11-05T07:12:59.095530+00:00",
+  "status": "identity_and_LR_pass_in_declared_model_generic_Markov_extension_rejected",
+  "exact_identity": {
+    "definition": "u_mid=(u_old+u_new)/2, h=(u_old-u_new)/2>0, d=x_old-x_new.",
+    "population_law": "x(u)=r+v*sin^2((omega+u)/2).",
+    "trigonometric_difference": "d=v*sin(omega+u_mid)*sin(h).",
+    "paid_probe": "Run the midpoint duration1 window, then an ideal registered Rx(S*pi/2) analysis primitive on q0 with an independent fair public sign S. After readout Y in{0,1}, record Z=S*(2Y-1).",
+    "demodulation_law": "For the existing readout model v=1-2r, E[Z]=v*sin(omega+u_mid). More generally a shared affine classical readout law r+v*p gives the same demodulated mean, with its offset canceled by S.",
+    "sign": "Using Rx(+pi/2) after Rx(theta), P(Y=1)=(1+sin theta)/2 before readout, so the displayed Z convention has the required positive sign.",
+    "exact_sin_h": "(sqrt(985)-sqrt(193))/198",
+    "sin_h_interval": {
+      "lower": "0.08834477607828599535361640845094000191073739329122710760894048999",
+      "upper": "0.08834477607828599535361640845094000191073739329122710760894049022"
+    },
+    "certified_rational_lower": "883/10000",
+    "applicability": "The old three-qubit model has no q0 noise except readout. Its spectator dephasing and the added (gamma+chi*u)P11 term act on a disjoint tensor factor, so they cannot alter this identity."
+  },
+  "LR_control": {
+    "d0": "3/500",
+    "mean_cut": "60/883",
+    "fixed_alternative_mean": "1/5",
+    "factor_minus": "3532/4115",
+    "factor_plus": "5298/4715",
+    "null_mean_identity": "E_mu[f(Z)]=1+(mu1-cut)*(mu-cut)/(1-cut^2)<=1 for mu<=cut.",
+    "target_null_implication": "d<=d0 implies mu=d/sin(h)<=d0/sin(h)<=d0/.0883=cut. Therefore the likelihood product is a valid nonnegative supermartingale for d<=d0.",
+    "risk": "Crossing200 has probability<=.005 on the d<=d0 null. The mirrored process controls d>=-d0. These can replace the paired target processes in the existing fixed-parameter partition proof with the same echo gate.",
+    "good_world_mean_interval": {
+      "lower": "0.2263857682120011804844057147767161461848039529815921498076151680",
+      "upper": "0.2263857682120011804844057147767161461848039529815921498076151688"
+    },
+    "good_world_log_drift_interval": {
+      "lower": "0.01239203394713561352048114039420299960816826537839937848521439630",
+      "upper": "0.01239203394713561352048114039420299960816826537839937848521439755"
+    },
+    "good_world_necessary_scope": "Old/new observed q0 rates.03/.01 and no extra q0 channel; hidden truth appears only in this diagnostic cost calculation.",
+    "good_world_expected_midpoint_shots_upper": "436.9660270793668542597257837456559936670846813128536912609673715",
+    "cost_proof": "For log likelihood S_n, positive step overshoot is at most log(f_plus). Applying bounded stopped Wald to T wedge n gives drift*E[T wedge n]<=log200+log(f_plus). Monotone convergence yields the expected-shot bound."
+  },
+  "independent_matrix_checks": {
+    "physical_parameter_points": 81,
+    "three_qubit_gate_Kraus_runs": 324,
+    "identity_max_absolute_error": 9.71445146547012e-17
+  },
+  "common_Markov_channel_counterexample": {
+    "channel": "Amplitude damping of strength g=3/4 after the sensing Rx and before analysis/readout, identical in every arm.",
+    "population_contrast": "v_Z=(1-2r)*(1-g)",
+    "demodulation_contrast": "v_Y=(1-2r)*sqrt(1-g)",
+    "actual_identity": "d=sqrt(1-g)*sin(h)*mu_d; for g=3/4 this is half the proposed generic-Markov value.",
+    "matrix_d": 0.005000000000000006,
+    "matrix_demod_mean": 0.11319288410600087,
+    "incorrect_generic_formula_value": 0.010000000000000023,
+    "conclusion": "A shared unspecified q0 Markov channel is insufficient. The scalar population law alone also does not identify the orthogonal measurement contrast."
+  },
+  "required_scope": [
+    "Use the existing no-extra-q0-noise model, or a proved channel class with the required equal quadrature transfer and calibrated offset. Generic Markov noise is not covered.",
+    "Final basis rotations are declared known ideal primitives with explicit cost. An uncalibrated finite pulse with unknown drift/overrotation requires a new error envelope.",
+    "The midpoint amplitude, analysis bases and phase cycling are new public actions shared with every strong comparator. The result is measurement-menu improvement, not same-action SOTA superiority.",
+    "All midpoint and echo shots are independently paid. Extra basis/control settings, resets and analysis primitive costs must enter the same ledger.",
+    "The echo prior, contrast lower bound, spectator preparation and risk assumptions remain necessary for the complete target-sign guard."
+  ],
+  "new_monte_carlo_observations": 0,
+  "source_sha256": "b7daaabb1c4ab2ae340cc79fb3dfbabbcb7cba10f53757272a634755673b0a0c"
+}

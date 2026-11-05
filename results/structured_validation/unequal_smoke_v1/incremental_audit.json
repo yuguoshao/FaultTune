@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "audit_type": "implementation and data-flow audit, not independent theoretical verification",
+  "directory": "D:\\Engineering Projects\\FaultTune\\results\\structured_validation\\unequal_smoke_v1",
+  "trajectories": 9,
+  "checks": {
+    "blocks": 378,
+    "screens": 354,
+    "certificates": 9,
+    "plans": 69,
+    "seed_replayed_trajectories": 9,
+    "shared_prefix_checks": 6
+  },
+  "outcomes": {
+    "wrong": 0,
+    "abstained": 3,
+    "paid_shots": 38022
+  },
+  "input_sha256": {
+    "spec.json": "2457c9cccb5cb532a83f4c4b724915c2d4259dac178d458b01f08f90c43455f2",
+    "summary.json": "6f08aa80054a897c6732476add63b6dbfdeb00bdf5dfe77e9dab555333ba549a",
+    "trials.jsonl": "d314530bc24b734901af7b1e2694f5331c63d3d3207922a6f778af4f5ebf1da8"
+  },
+  "audit_source_sha256": "260a75ebd46dcd7eb8f9fbb21fd45d2ffc1a173c7cec057d037046aba9671bc4",
+  "audit_sources_sha256": {
+    "audit_unequal_incremental.py": "260a75ebd46dcd7eb8f9fbb21fd45d2ffc1a173c7cec057d037046aba9671bc4",
+    "audit_unequal.py": "061daa58573f90361f19ec2ac88847bfc06712058d95ca806b0e445168d2f0cb"
+  },
+  "all_rng_streams_replayed": true,
+  "all_predictable_actions_rebuilt_from_paid_counts": true,
+  "all_rounded_allocations_and_costs_reconstructed": true,
+  "all_first_certified_stops_recomputed": true,
+  "summary_cells_rebuilt": true,
+  "all_original_full_interval_certificates_recomputed": true,
+  "incremental_prefix_equals_final_ledger": true,
+  "limits": "Same original audit_record and full Decimal normalizers for every trajectory; no lazy certificates, power or SOTA claim.",
+  "elapsed_seconds": 3.7956936
+}

@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T12:41:14.783957+00:00",
+  "scope": "Independent source review of four fixed full-count control replays. The ongoing data replay and its later audit are separate.",
+  "sources": {
+    "experiments/sota_round3/replay_full_count_controls.py": "8af6983c2fe3f62a9303ee1a6e37eca6fa732bd4912d719bfc2011142acc0236",
+    "results/sota_round3/full_count_replay/interface_checks.json": "c2160e282d4e0771dd3c7b0fea7e66563addd2258630bf95749b1015edafbd53",
+    "results/sota_round3/full_count_replay/spec.json": "c62ef75fd42d6c852f8f56d4f0175e7ca57c6ce4fd544ee39592b062a072bc9f",
+    "results/sota_round3/paired_benchmark_audit/audit.json": "bf12f8fc9bc21c10d1ebc904a85c30ed54a189fd8c0b33072661a631806cfa4a",
+    "experiments/structured_validation/safe_grid.py": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+    "experiments/structured_validation/rb_grid.py": "a262a4790289505e7846c98334edbf341cded98090ce7bd8bf7c0c3974fb420f",
+    "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f"
+  },
+  "review": [
+    "The input audit, complete original data/source hash maps and 576-path matrix are checked. No simulator or true parameters are passed into replay_history, replay_method or endpoint prediction.",
+    "Coarse schedule_blocks combines the first 16 observed pairs into one 32-shot block. Its initial safe prediction therefore receives empty paid rows and center 0.5. Partial observed tails before 32 remain unconsumed.",
+    "Fine safe predictions use precisely the paid rows from preceding fine blocks. The current prediction and safe update occur before the current observations are merged into the paid-row store. Logged previous-paid-shot counts must equal the state budget.",
+    "Four methods have separate states and own first certified stopping prefixes. Both schedules use the same underlying observed category counts at their eligible checkpoints. Later original-path observations do not replace a stopped method prefix.",
+    "Endpoint predictions use the frozen fit and rational endpoint precision; all engines retain the exact same 71 normalized reciprocal-odds experts. This changes no frozen odds or prior weights.",
+    "Each eligible screen uses the frozen tolerance followed by its outward certificate, and cap certificates are forced. A result becomes a stop only at the first non-abstaining certified direction or an observed cap abstention.",
+    "Unobserved continuation is not imputed. If a method remains active, its lower cost is the next method checkpoint strictly after the actual original-path end and its upper cost is 4096. The last eligible prefix and any unconsumed initial coarse tail are recorded separately.",
+    "Summaries retain every case, error, cap abstention and censored path. Reported cost ranges are equal-case ratios of possible within-case mean costs, not statistical confidence intervals.",
+    "The deterministic interface checks cover current-outcome mutation without prediction change, exact paid-prefix timing, coarse aggregation, partial-tail censoring, observed-cap abstention and mirrored first stopping directions."
+  ],
+  "issues": [],
+  "limits": [
+    "This review confirms source logic, not completion of the 2304-record data reconstruction or its independent audit.",
+    "Predictability does not make replayed development data a held-out test. No inferential superiority or empirical 1% error guarantee is obtained.",
+    "The four methods remain separately evaluated frozen controls. Their first-crossing union is not a new certified combined procedure.",
+    "Right-censored control costs must remain intervals; replacing them with cap values would change the comparison."
+  ]
+}

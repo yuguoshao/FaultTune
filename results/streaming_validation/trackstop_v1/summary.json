@@ -1,0 +1,2876 @@
+{
+  "spec": {
+    "status": "development fixed two-arm Track-and-Stop-style control",
+    "cases": [
+      {
+        "kind": "main",
+        "A": 0.01,
+        "B": 0.0,
+        "C": -0.005,
+        "rho": 0.5,
+        "B_over_R": 0.0,
+        "case_id": 0,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.0009983341664682815
+      },
+      {
+        "kind": "main",
+        "A": 0.01,
+        "B": 0.0,
+        "C": 0.005,
+        "rho": 0.5,
+        "B_over_R": 0.0,
+        "case_id": 1,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0009983341664682815
+      },
+      {
+        "kind": "main",
+        "A": 0.01,
+        "B": 0.0045000000000000005,
+        "C": -0.0021794494717703363,
+        "rho": 0.5,
+        "B_over_R": 0.9,
+        "case_id": 2,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.000435163774351915
+      },
+      {
+        "kind": "main",
+        "A": 0.01,
+        "B": 0.0045000000000000005,
+        "C": 0.0021794494717703363,
+        "rho": 0.5,
+        "B_over_R": 0.9,
+        "case_id": 3,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.000435163774351915
+      },
+      {
+        "kind": "main",
+        "A": 0.01,
+        "B": 0.004975,
+        "C": -0.0004993746088859534,
+        "rho": 0.5,
+        "B_over_R": 0.995,
+        "case_id": 4,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -9.970854678351648e-05
+      },
+      {
+        "kind": "main",
+        "A": 0.01,
+        "B": 0.004975,
+        "C": 0.0004993746088859534,
+        "rho": 0.5,
+        "B_over_R": 0.995,
+        "case_id": 5,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 9.970854678351648e-05
+      },
+      {
+        "kind": "main",
+        "A": 0.01,
+        "B": 0.0,
+        "C": -0.0098,
+        "rho": 0.98,
+        "B_over_R": 0.0,
+        "case_id": 6,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.001956734966277832
+      },
+      {
+        "kind": "main",
+        "A": 0.01,
+        "B": 0.0,
+        "C": 0.0098,
+        "rho": 0.98,
+        "B_over_R": 0.0,
+        "case_id": 7,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.001956734966277832
+      },
+      {
+        "kind": "main",
+        "A": 0.01,
+        "B": 0.00882,
+        "C": -0.004271720964669859,
+        "rho": 0.98,
+        "B_over_R": 0.9,
+        "case_id": 8,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.0008529209977297535
+      },
+      {
+        "kind": "main",
+        "A": 0.01,
+        "B": 0.00882,
+        "C": 0.004271720964669859,
+        "rho": 0.98,
+        "B_over_R": 0.9,
+        "case_id": 9,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0008529209977297535
+      },
+      {
+        "kind": "main",
+        "A": 0.01,
+        "B": 0.009751,
+        "C": -0.0009787742334164686,
+        "rho": 0.98,
+        "B_over_R": 0.995,
+        "case_id": 10,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.00019542875169569228
+      },
+      {
+        "kind": "main",
+        "A": 0.01,
+        "B": 0.009751,
+        "C": 0.0009787742334164686,
+        "rho": 0.98,
+        "B_over_R": 0.995,
+        "case_id": 11,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.00019542875169569228
+      },
+      {
+        "kind": "main",
+        "A": 0.05,
+        "B": 0.0,
+        "C": -0.025,
+        "rho": 0.5,
+        "B_over_R": 0.0,
+        "case_id": 12,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.004991670832341408
+      },
+      {
+        "kind": "main",
+        "A": 0.05,
+        "B": 0.0,
+        "C": 0.025,
+        "rho": 0.5,
+        "B_over_R": 0.0,
+        "case_id": 13,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.004991670832341408
+      },
+      {
+        "kind": "main",
+        "A": 0.05,
+        "B": 0.022500000000000003,
+        "C": -0.010897247358851683,
+        "rho": 0.5,
+        "B_over_R": 0.9,
+        "case_id": 14,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.0021758188717595755
+      },
+      {
+        "kind": "main",
+        "A": 0.05,
+        "B": 0.022500000000000003,
+        "C": 0.010897247358851683,
+        "rho": 0.5,
+        "B_over_R": 0.9,
+        "case_id": 15,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0021758188717595755
+      },
+      {
+        "kind": "main",
+        "A": 0.05,
+        "B": 0.024875,
+        "C": -0.0024968730444297673,
+        "rho": 0.5,
+        "B_over_R": 0.995,
+        "case_id": 16,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.0004985427339175825
+      },
+      {
+        "kind": "main",
+        "A": 0.05,
+        "B": 0.024875,
+        "C": 0.0024968730444297673,
+        "rho": 0.5,
+        "B_over_R": 0.995,
+        "case_id": 17,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0004985427339175825
+      },
+      {
+        "kind": "main",
+        "A": 0.05,
+        "B": 0.0,
+        "C": -0.049,
+        "rho": 0.98,
+        "B_over_R": 0.0,
+        "case_id": 18,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.00978367483138916
+      },
+      {
+        "kind": "main",
+        "A": 0.05,
+        "B": 0.0,
+        "C": 0.049,
+        "rho": 0.98,
+        "B_over_R": 0.0,
+        "case_id": 19,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.00978367483138916
+      },
+      {
+        "kind": "main",
+        "A": 0.05,
+        "B": 0.0441,
+        "C": -0.021358604823349298,
+        "rho": 0.98,
+        "B_over_R": 0.9,
+        "case_id": 20,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.004264604988648768
+      },
+      {
+        "kind": "main",
+        "A": 0.05,
+        "B": 0.0441,
+        "C": 0.021358604823349298,
+        "rho": 0.98,
+        "B_over_R": 0.9,
+        "case_id": 21,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.004264604988648768
+      },
+      {
+        "kind": "main",
+        "A": 0.05,
+        "B": 0.048755,
+        "C": -0.004893871167082344,
+        "rho": 0.98,
+        "B_over_R": 0.995,
+        "case_id": 22,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.0009771437584784617
+      },
+      {
+        "kind": "main",
+        "A": 0.05,
+        "B": 0.048755,
+        "C": 0.004893871167082344,
+        "rho": 0.98,
+        "B_over_R": 0.995,
+        "case_id": 23,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0009771437584784617
+      },
+      {
+        "kind": "main",
+        "A": 0.2,
+        "B": 0.0,
+        "C": -0.1,
+        "rho": 0.5,
+        "B_over_R": 0.0,
+        "case_id": 24,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.01996668332936563
+      },
+      {
+        "kind": "main",
+        "A": 0.2,
+        "B": 0.0,
+        "C": 0.1,
+        "rho": 0.5,
+        "B_over_R": 0.0,
+        "case_id": 25,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.01996668332936563
+      },
+      {
+        "kind": "main",
+        "A": 0.2,
+        "B": 0.09000000000000001,
+        "C": -0.04358898943540673,
+        "rho": 0.5,
+        "B_over_R": 0.9,
+        "case_id": 26,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.008703275487038302
+      },
+      {
+        "kind": "main",
+        "A": 0.2,
+        "B": 0.09000000000000001,
+        "C": 0.04358898943540673,
+        "rho": 0.5,
+        "B_over_R": 0.9,
+        "case_id": 27,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.008703275487038302
+      },
+      {
+        "kind": "main",
+        "A": 0.2,
+        "B": 0.0995,
+        "C": -0.00998749217771907,
+        "rho": 0.5,
+        "B_over_R": 0.995,
+        "case_id": 28,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.00199417093567033
+      },
+      {
+        "kind": "main",
+        "A": 0.2,
+        "B": 0.0995,
+        "C": 0.00998749217771907,
+        "rho": 0.5,
+        "B_over_R": 0.995,
+        "case_id": 29,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.00199417093567033
+      },
+      {
+        "kind": "main",
+        "A": 0.2,
+        "B": 0.0,
+        "C": -0.196,
+        "rho": 0.98,
+        "B_over_R": 0.0,
+        "case_id": 30,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.03913469932555664
+      },
+      {
+        "kind": "main",
+        "A": 0.2,
+        "B": 0.0,
+        "C": 0.196,
+        "rho": 0.98,
+        "B_over_R": 0.0,
+        "case_id": 31,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.03913469932555664
+      },
+      {
+        "kind": "main",
+        "A": 0.2,
+        "B": 0.1764,
+        "C": -0.08543441929339719,
+        "rho": 0.98,
+        "B_over_R": 0.9,
+        "case_id": 32,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.01705841995459507
+      },
+      {
+        "kind": "main",
+        "A": 0.2,
+        "B": 0.1764,
+        "C": 0.08543441929339719,
+        "rho": 0.98,
+        "B_over_R": 0.9,
+        "case_id": 33,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.01705841995459507
+      },
+      {
+        "kind": "main",
+        "A": 0.2,
+        "B": 0.19502,
+        "C": -0.019575484668329375,
+        "rho": 0.98,
+        "B_over_R": 0.995,
+        "case_id": 34,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.003908575033913847
+      },
+      {
+        "kind": "main",
+        "A": 0.2,
+        "B": 0.19502,
+        "C": 0.019575484668329375,
+        "rho": 0.98,
+        "B_over_R": 0.995,
+        "case_id": 35,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.003908575033913847
+      },
+      {
+        "kind": "main",
+        "A": 0.5,
+        "B": 0.0,
+        "C": -0.25,
+        "rho": 0.5,
+        "B_over_R": 0.0,
+        "case_id": 36,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.04991670832341408
+      },
+      {
+        "kind": "main",
+        "A": 0.5,
+        "B": 0.0,
+        "C": 0.25,
+        "rho": 0.5,
+        "B_over_R": 0.0,
+        "case_id": 37,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.04991670832341408
+      },
+      {
+        "kind": "main",
+        "A": 0.5,
+        "B": 0.225,
+        "C": -0.10897247358851682,
+        "rho": 0.5,
+        "B_over_R": 0.9,
+        "case_id": 38,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.02175818871759575
+      },
+      {
+        "kind": "main",
+        "A": 0.5,
+        "B": 0.225,
+        "C": 0.10897247358851682,
+        "rho": 0.5,
+        "B_over_R": 0.9,
+        "case_id": 39,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.02175818871759575
+      },
+      {
+        "kind": "main",
+        "A": 0.5,
+        "B": 0.24875,
+        "C": -0.02496873044429767,
+        "rho": 0.5,
+        "B_over_R": 0.995,
+        "case_id": 40,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.0049854273391758235
+      },
+      {
+        "kind": "main",
+        "A": 0.5,
+        "B": 0.24875,
+        "C": 0.02496873044429767,
+        "rho": 0.5,
+        "B_over_R": 0.995,
+        "case_id": 41,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0049854273391758235
+      },
+      {
+        "kind": "main",
+        "A": 0.5,
+        "B": 0.0,
+        "C": -0.49,
+        "rho": 0.98,
+        "B_over_R": 0.0,
+        "case_id": 42,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.0978367483138916
+      },
+      {
+        "kind": "main",
+        "A": 0.5,
+        "B": 0.0,
+        "C": 0.49,
+        "rho": 0.98,
+        "B_over_R": 0.0,
+        "case_id": 43,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0978367483138916
+      },
+      {
+        "kind": "main",
+        "A": 0.5,
+        "B": 0.441,
+        "C": -0.21358604823349295,
+        "rho": 0.98,
+        "B_over_R": 0.9,
+        "case_id": 44,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.04264604988648767
+      },
+      {
+        "kind": "main",
+        "A": 0.5,
+        "B": 0.441,
+        "C": 0.21358604823349295,
+        "rho": 0.98,
+        "B_over_R": 0.9,
+        "case_id": 45,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.04264604988648767
+      },
+      {
+        "kind": "main",
+        "A": 0.5,
+        "B": 0.48755,
+        "C": -0.048938711670823434,
+        "rho": 0.98,
+        "B_over_R": 0.995,
+        "case_id": 46,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.009771437584784616
+      },
+      {
+        "kind": "main",
+        "A": 0.5,
+        "B": 0.48755,
+        "C": 0.048938711670823434,
+        "rho": 0.98,
+        "B_over_R": 0.995,
+        "case_id": 47,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.009771437584784616
+      },
+      {
+        "kind": "weak",
+        "A": 0.01,
+        "B": 0.0,
+        "C": -0.00011268771898089124,
+        "case_id": 48,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -2.25e-05
+      },
+      {
+        "kind": "null",
+        "A": 0.01,
+        "B": 0.0,
+        "C": 0.0,
+        "case_id": 49,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "kind": "weak",
+        "A": 0.01,
+        "B": 0.0,
+        "C": 0.00011268771898089124,
+        "case_id": 50,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 2.25e-05
+      },
+      {
+        "kind": "weak",
+        "A": 0.01,
+        "B": 0.0098,
+        "C": -0.00011268771898089124,
+        "case_id": 51,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -2.25e-05
+      },
+      {
+        "kind": "null",
+        "A": 0.01,
+        "B": 0.0098,
+        "C": 0.0,
+        "case_id": 52,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "kind": "weak",
+        "A": 0.01,
+        "B": 0.0098,
+        "C": 0.00011268771898089124,
+        "case_id": 53,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 2.25e-05
+      },
+      {
+        "kind": "weak",
+        "A": 0.05,
+        "B": 0.0,
+        "C": -0.00011268771898089124,
+        "case_id": 54,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -2.25e-05
+      },
+      {
+        "kind": "null",
+        "A": 0.05,
+        "B": 0.0,
+        "C": 0.0,
+        "case_id": 55,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "kind": "weak",
+        "A": 0.05,
+        "B": 0.0,
+        "C": 0.00011268771898089124,
+        "case_id": 56,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 2.25e-05
+      },
+      {
+        "kind": "weak",
+        "A": 0.05,
+        "B": 0.049,
+        "C": -0.00011268771898089124,
+        "case_id": 57,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -2.25e-05
+      },
+      {
+        "kind": "null",
+        "A": 0.05,
+        "B": 0.049,
+        "C": 0.0,
+        "case_id": 58,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "kind": "weak",
+        "A": 0.05,
+        "B": 0.049,
+        "C": 0.00011268771898089124,
+        "case_id": 59,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 2.25e-05
+      },
+      {
+        "kind": "weak",
+        "A": 0.2,
+        "B": 0.0,
+        "C": -0.00011268771898089124,
+        "case_id": 60,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -2.25e-05
+      },
+      {
+        "kind": "null",
+        "A": 0.2,
+        "B": 0.0,
+        "C": 0.0,
+        "case_id": 61,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "kind": "weak",
+        "A": 0.2,
+        "B": 0.0,
+        "C": 0.00011268771898089124,
+        "case_id": 62,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 2.25e-05
+      },
+      {
+        "kind": "weak",
+        "A": 0.2,
+        "B": 0.196,
+        "C": -0.00011268771898089124,
+        "case_id": 63,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -2.25e-05
+      },
+      {
+        "kind": "null",
+        "A": 0.2,
+        "B": 0.196,
+        "C": 0.0,
+        "case_id": 64,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "kind": "weak",
+        "A": 0.2,
+        "B": 0.196,
+        "C": 0.00011268771898089124,
+        "case_id": 65,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 2.25e-05
+      },
+      {
+        "kind": "weak",
+        "A": 0.5,
+        "B": 0.0,
+        "C": -0.00011268771898089124,
+        "case_id": 66,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -2.25e-05
+      },
+      {
+        "kind": "null",
+        "A": 0.5,
+        "B": 0.0,
+        "C": 0.0,
+        "case_id": 67,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "kind": "weak",
+        "A": 0.5,
+        "B": 0.0,
+        "C": 0.00011268771898089124,
+        "case_id": 68,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 2.25e-05
+      },
+      {
+        "kind": "weak",
+        "A": 0.5,
+        "B": 0.49,
+        "C": -0.00011268771898089124,
+        "case_id": 69,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -2.25e-05
+      },
+      {
+        "kind": "null",
+        "A": 0.5,
+        "B": 0.49,
+        "C": 0.0,
+        "case_id": 70,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "kind": "weak",
+        "A": 0.5,
+        "B": 0.49,
+        "C": 0.00011268771898089124,
+        "case_id": 71,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 2.25e-05
+      }
+    ],
+    "methods": [
+      "psr_trackstop"
+    ],
+    "repetitions": 128,
+    "delta": 0.01,
+    "checkpoints": [
+      32,
+      36,
+      42,
+      48,
+      54,
+      62,
+      70,
+      80,
+      90,
+      102,
+      116,
+      132,
+      150,
+      170,
+      192,
+      216,
+      244,
+      256,
+      276,
+      312,
+      352,
+      384,
+      396,
+      446,
+      502,
+      512,
+      566,
+      638,
+      718,
+      808,
+      910,
+      1024,
+      1152,
+      1296,
+      1458,
+      1642,
+      1848,
+      2080,
+      2340,
+      2634,
+      2964,
+      3336,
+      3754,
+      4224,
+      4752,
+      5346,
+      6016,
+      6768,
+      7614,
+      8566,
+      9638,
+      10844,
+      12200,
+      13726,
+      15442,
+      17374,
+      19546,
+      21990,
+      24740,
+      27834,
+      31314,
+      35230,
+      39634,
+      44590,
+      50164,
+      56436,
+      63492,
+      71430,
+      80360,
+      90406,
+      101708,
+      114422,
+      128726,
+      144818,
+      162922,
+      183288,
+      206200,
+      231976,
+      260974,
+      293596,
+      330296,
+      371584,
+      418032,
+      470286,
+      529072,
+      595206,
+      669608,
+      753310,
+      847474,
+      953410,
+      1072588,
+      1206662,
+      1357496,
+      1527184,
+      1718082,
+      1932844,
+      2174450,
+      2446258,
+      2752042,
+      3096048,
+      3483054,
+      3918436,
+      4194304
+    ],
+    "sources": {
+      "experiments/streaming_validation/run_trackstop.py": "2cea0c42b6eb14f00c900567d66670e6330019f6593ad284c46479f9b8a86a85",
+      "experiments/streaming_validation/sota_baseline.py": "5ba2e731bad8dad69e207e1179e6e91dad3a5b7256f93ec3f249f52991a7545a",
+      "experiments/streaming_validation/benchmark.py": "19fe60408a74b68e18dbea4f40472ee448b608be2accabe39c024a3ede0f486f",
+      "experiments/circuit_validation/kl_trackstop.py": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b"
+    },
+    "scope": "existing frozen two-arm allocation and audited GLR; fixed\u00b1pi/2; not full all-angle structured SOTA"
+  },
+  "cells": [
+    {
+      "case_id": 0,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 11075.515625,
+      "median_shots": 10844.0,
+      "min_shots": 1024,
+      "max_shots": 21990,
+      "empirical_N95_correct": 19546,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 3.2280143000000003,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 1,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 11197.59375,
+      "median_shots": 10844.0,
+      "min_shots": 1152,
+      "max_shots": 21990,
+      "empirical_N95_correct": 19546,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 3.2158835,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 2,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 69458.90625,
+      "median_shots": 67461.0,
+      "min_shots": 6768,
+      "max_shots": 128726,
+      "empirical_N95_correct": 114422,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 3.9932246000000005,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 3,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 67550.890625,
+      "median_shots": 67461.0,
+      "min_shots": 9638,
+      "max_shots": 183288,
+      "empirical_N95_correct": 114422,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 3.842682999999999,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 4,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 127,
+      "abstained": 1,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9572409680857795,
+        0.9998022241853383
+      ],
+      "mean_shots": 1603439.0625,
+      "median_shots": 1527184.0,
+      "min_shots": 231976,
+      "max_shots": 4194304,
+      "empirical_N95_correct": 2446258,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 5.4341811,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 5,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 1586777.78125,
+      "median_shots": 1527184.0,
+      "min_shots": 293596,
+      "max_shots": 3483054,
+      "empirical_N95_correct": 2752042,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 5.472413800000002,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 6,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 1909.84375,
+      "median_shots": 1848.0,
+      "min_shots": 566,
+      "max_shots": 3754,
+      "empirical_N95_correct": 2964,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 2.231896599999999,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 7,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 1872.28125,
+      "median_shots": 1848.0,
+      "min_shots": 718,
+      "max_shots": 3754,
+      "empirical_N95_correct": 2964,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 2.2450446,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 8,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 15654.078125,
+      "median_shots": 15442.0,
+      "min_shots": 2080,
+      "max_shots": 35230,
+      "empirical_N95_correct": 27834,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 3.308579199999997,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 9,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 15601.3125,
+      "median_shots": 15442.0,
+      "min_shots": 3336,
+      "max_shots": 31314,
+      "empirical_N95_correct": 27834,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 3.677827999999998,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 10,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 381007.59375,
+      "median_shots": 371584.0,
+      "min_shots": 101708,
+      "max_shots": 847474,
+      "empirical_N95_correct": 669608,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 5.183555899999995,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 11,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 379455.734375,
+      "median_shots": 371584.0,
+      "min_shots": 71430,
+      "max_shots": 753310,
+      "empirical_N95_correct": 595206,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 5.009710600000005,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 12,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 1819.640625,
+      "median_shots": 1642.0,
+      "min_shots": 216,
+      "max_shots": 4752,
+      "empirical_N95_correct": 3336,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 2.5987924000000007,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 13,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 1830.421875,
+      "median_shots": 1642.0,
+      "min_shots": 216,
+      "max_shots": 5346,
+      "empirical_N95_correct": 3336,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 2.6155040000000014,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 14,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 11628.09375,
+      "median_shots": 11522.0,
+      "min_shots": 1024,
+      "max_shots": 24740,
+      "empirical_N95_correct": 19546,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 3.811799399999998,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 15,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 12458.921875,
+      "median_shots": 12200.0,
+      "min_shots": 3336,
+      "max_shots": 24740,
+      "empirical_N95_correct": 21990,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 3.7939221999999972,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 16,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 286021.734375,
+      "median_shots": 260974.0,
+      "min_shots": 50164,
+      "max_shots": 595206,
+      "empirical_N95_correct": 470286,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 5.357631099999992,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 17,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 270097.90625,
+      "median_shots": 260974.0,
+      "min_shots": 24740,
+      "max_shots": 595206,
+      "empirical_N95_correct": 418032,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 5.299109599999994,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 18,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 313.59375,
+      "median_shots": 276.0,
+      "min_shots": 102,
+      "max_shots": 718,
+      "empirical_N95_correct": 566,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 1.4923842999999977,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 19,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 322.21875,
+      "median_shots": 312.0,
+      "min_shots": 116,
+      "max_shots": 718,
+      "empirical_N95_correct": 566,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 1.4734157000000039,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 20,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 2874.109375,
+      "median_shots": 2634.0,
+      "min_shots": 512,
+      "max_shots": 5346,
+      "empirical_N95_correct": 4752,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 2.875716600000004,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 21,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 2675.375,
+      "median_shots": 2340.0,
+      "min_shots": 244,
+      "max_shots": 7614,
+      "empirical_N95_correct": 4752,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 2.9780681999999956,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 22,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 64338.03125,
+      "median_shots": 63492.0,
+      "min_shots": 5346,
+      "max_shots": 114422,
+      "empirical_N95_correct": 101708,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 4.504265699999991,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 23,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 68559.890625,
+      "median_shots": 71430.0,
+      "min_shots": 17374,
+      "max_shots": 144818,
+      "empirical_N95_correct": 114422,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 4.5510909999999996,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 24,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 317.34375,
+      "median_shots": 312.0,
+      "min_shots": 48,
+      "max_shots": 808,
+      "empirical_N95_correct": 566,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 1.576546499999992,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 25,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 314.3125,
+      "median_shots": 312.0,
+      "min_shots": 36,
+      "max_shots": 808,
+      "empirical_N95_correct": 566,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 1.7920658000000032,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 26,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 2110.171875,
+      "median_shots": 2080.0,
+      "min_shots": 276,
+      "max_shots": 4224,
+      "empirical_N95_correct": 3754,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 2.658180299999998,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 27,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 1995.484375,
+      "median_shots": 1848.0,
+      "min_shots": 216,
+      "max_shots": 5346,
+      "empirical_N95_correct": 3336,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 2.8958324000000033,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 28,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 52535.734375,
+      "median_shots": 50164.0,
+      "min_shots": 9638,
+      "max_shots": 101708,
+      "empirical_N95_correct": 90406,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 4.713124300000004,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 29,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 50608.921875,
+      "median_shots": 50164.0,
+      "min_shots": 5346,
+      "max_shots": 101708,
+      "empirical_N95_correct": 90406,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 4.246580200000011,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 30,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 62.0,
+      "median_shots": 54.0,
+      "min_shots": 32,
+      "max_shots": 150,
+      "empirical_N95_correct": 102,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 0.6360002999999921,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 31,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 57.296875,
+      "median_shots": 54.0,
+      "min_shots": 32,
+      "max_shots": 150,
+      "empirical_N95_correct": 102,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 0.5902844000000016,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 32,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 464.734375,
+      "median_shots": 446.0,
+      "min_shots": 80,
+      "max_shots": 1296,
+      "empirical_N95_correct": 910,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 1.979877700000003,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 33,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 483.890625,
+      "median_shots": 446.0,
+      "min_shots": 80,
+      "max_shots": 2080,
+      "empirical_N95_correct": 910,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 1.791019900000009,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 34,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 12438.140625,
+      "median_shots": 12200.0,
+      "min_shots": 1848,
+      "max_shots": 24740,
+      "empirical_N95_correct": 21990,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 3.6671144000000027,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 35,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 11562.46875,
+      "median_shots": 10844.0,
+      "min_shots": 1848,
+      "max_shots": 24740,
+      "empirical_N95_correct": 19546,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 3.4553590000000014,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 36,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 71.90625,
+      "median_shots": 62.0,
+      "min_shots": 32,
+      "max_shots": 216,
+      "empirical_N95_correct": 132,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 0.840959500000011,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 37,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 69.6875,
+      "median_shots": 62.0,
+      "min_shots": 32,
+      "max_shots": 216,
+      "empirical_N95_correct": 116,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 0.7009805,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 38,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 433.65625,
+      "median_shots": 396.0,
+      "min_shots": 90,
+      "max_shots": 1152,
+      "empirical_N95_correct": 808,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 1.8684609000000023,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 39,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 455.0,
+      "median_shots": 446.0,
+      "min_shots": 54,
+      "max_shots": 1152,
+      "empirical_N95_correct": 910,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 1.7974089000000077,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 40,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 11513.71875,
+      "median_shots": 10844.0,
+      "min_shots": 2634,
+      "max_shots": 24740,
+      "empirical_N95_correct": 21990,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 3.29337120000001,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 41,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 12283.9375,
+      "median_shots": 12200.0,
+      "min_shots": 2340,
+      "max_shots": 24740,
+      "empirical_N95_correct": 19546,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 3.382051000000004,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 42,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 32.0,
+      "median_shots": 32.0,
+      "min_shots": 32,
+      "max_shots": 32,
+      "empirical_N95_correct": 32,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 0.2294181999999978,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 43,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 32.0,
+      "median_shots": 32.0,
+      "min_shots": 32,
+      "max_shots": 32,
+      "empirical_N95_correct": 32,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 0.24197150000000534,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 44,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 93.875,
+      "median_shots": 90.0,
+      "min_shots": 32,
+      "max_shots": 244,
+      "empirical_N95_correct": 170,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 0.8204696999999896,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 45,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 99.6875,
+      "median_shots": 96.0,
+      "min_shots": 32,
+      "max_shots": 276,
+      "empirical_N95_correct": 192,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 0.8793393999999921,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 46,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 2842.28125,
+      "median_shots": 2634.0,
+      "min_shots": 718,
+      "max_shots": 7614,
+      "empirical_N95_correct": 5346,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 2.6700064000000054,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 47,
+      "kind": "main",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 128,
+      "abstained": 0,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.9715919465564561,
+        1.0
+      ],
+      "mean_shots": 2596.328125,
+      "median_shots": 2340.0,
+      "min_shots": 312,
+      "max_shots": 6768,
+      "empirical_N95_correct": 4752,
+      "N95_censored": false,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 2.5599129000000005,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 48,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 7.014751899999993,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 49,
+      "kind": "null",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": null,
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.661868400000003,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 50,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.798662899999982,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 51,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.704550600000005,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 52,
+      "kind": "null",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": null,
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.840932000000009,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 53,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 7.018767700000012,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 54,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 7.295555399999984,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 55,
+      "kind": "null",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": null,
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.8121759,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 56,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.94237369999999,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 57,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.588754899999998,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 58,
+      "kind": "null",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": null,
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.68849849999998,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 59,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.6991562999999985,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 60,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 7.049422900000025,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 61,
+      "kind": "null",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": null,
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.806216799999987,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 62,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 7.152120400000001,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 63,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.629060799999991,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 64,
+      "kind": "null",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": null,
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.885850099999999,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 65,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.746257899999989,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 66,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 5.947386799999947,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 67,
+      "kind": "null",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": null,
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.057241300000044,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 68,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.240842900000018,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 69,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 5.992539700000009,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 70,
+      "kind": "null",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": null,
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.067206699999986,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    },
+    {
+      "case_id": 71,
+      "kind": "weak",
+      "method": "psr_trackstop",
+      "repetitions": 128,
+      "wrong": 0,
+      "correct": 0,
+      "abstained": 128,
+      "error_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "power_ci95_pointwise": [
+        0.0,
+        0.02840805344354393
+      ],
+      "mean_shots": 4194304.0,
+      "median_shots": 4194304.0,
+      "min_shots": 4194304,
+      "max_shots": 4194304,
+      "empirical_N95_correct": null,
+      "N95_censored": true,
+      "N95_scope": "empirical order statistic; no simultaneous guarantee",
+      "elapsed_seconds": 6.034605199999987,
+      "source_sha256": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b",
+      "baseline_scope": "fixed two-arm adaptive allocation; not full all-angle structured identification"
+    }
+  ],
+  "aggregate": {
+    "psr_trackstop": {
+      "main_geomean_shots": 3920.6952171325265,
+      "main_wrong": 0,
+      "main_abstained": 1,
+      "main_trials": 6144,
+      "all_wrong": 0,
+      "null_decisions": 0,
+      "weak_abstained": 2048,
+      "main_N95_censored_cases": 0
+    }
+  },
+  "trial_count": 9216,
+  "elapsed_seconds": 298.3668475151062
+}

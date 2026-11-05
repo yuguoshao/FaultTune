@@ -1,0 +1,51 @@
+{
+  "status": "mechanism_reduced_to_classical_two_dimensional_linear_identification",
+  "new_simulation_observations": 0,
+  "root_implementation_recommendation": "Use shared confidence regions as a correct engineering feature; do not pursue it as the novel SOTA mechanism without an additional task-specific advantage over equally shared structured confidence-sequence/pure-exploration controls.",
+  "deterministic_problem": {
+    "model": "One static p_theta(x)=A+B cos(x)+C sin(x); every paid observation and every proposed update refers to this SAME function.",
+    "update": "For old x_j and candidate y_j, improvement is g_j(theta)=p(x_j)-p(y_j)=d_j dot(B,C), where d_j=(cos x_j-cos y_j,sin x_j-sin y_j). A cancels.",
+    "global_safety": "Over the entire finite or adaptively proposed sequence, probability of ever approving a g_j<=0 update must be<=.01.",
+    "success": "For a deterministic finite set with strictly positive improvements, require all approved with probability>=.95, or separately each approved with probability>=.95 for the information lower bound.",
+    "shared_certificate": "Use one simultaneous anytime confidence region S_t for(A,B,C). Approve any proposed update only if inf_theta in S_t g_j(theta)>0. The single event theta_true in S_t for all t proves the whole-sequence error bound, even for updates selected from past data. No per-update error-budget restart is necessary."
+  },
+  "sharp_geometry": {
+    "lemma": "If a finite set of nonzero update directions d_j admits some lambda with every d_j dot lambda>0, its generated cone lies in an open half-plane and has at most two extreme rays. Every d_j is a nonnegative linear combination of these extremes. Certifying the two extreme linear inequalities certifies all M signs.",
+    "proof": "Rotate coordinates so lambda points horizontally. Every d_j has positive first coordinate. Normalize each d_j by that coordinate; each becomes(1,t_j). Every t_j lies between the minimum and maximum slopes, so(1,t_j) is a convex combination of those two normalized extremes. Restore the positive normalizations.",
+    "phase_form": "Writing(B,C)=R(cos phi,sin phi), each true-positive sign restricts phi to an open semicircle. Their jointly feasible intersection is an angular interval with at most two active endpoints. Radius-zero models must remain in the confidence region until excluded; an unqualified phase interval is not a valid substitute.",
+    "exact_checks": 1001,
+    "exceptions": "This two-ray reduction is for signs of homogeneous linear forms. Different required absolute improvement thresholds produce affine half-spaces with potentially many active facets. Random future directions also cannot be selected as the two extremes before they are proposed."
+  },
+  "concrete_chain": {
+    "construction": "Let p(x)=1/2+R cos x and x_j=pi/3+j*pi/(3M), j=0,...,M. Every consecutive update decreases failure probability. Normalized chord directions are(sin midpoint,-cos midpoint), hence lie within angles[-pi/6,pi/6] around(B,C)=(R,0). Two extreme chords certify the entire chain.",
+    "shared_four_angle_test": "Sample each of0,pi,+pi/2,-pi/2 exactly n times. Estimate B and C by half-differences of the corresponding means. Hoeffding plus a four-arm union bound gives simultaneous mean errors<=e with probability>=.99 when n>=log800/(2e^2). On this event the coefficient confidence rectangle of radius e around the estimates has B>=R-2e and |C|<=2e.",
+    "choice": "Take e=R/8. Every normalized chain direction has dot product at least3 sqrt(3) R/8-R/8>0 throughout the rectangle. Thus all M updates are certified with probability>=.99, at a fixed cost independent of M.",
+    "example_R_exact": "1/4",
+    "per_arm_n_sufficient": 3423,
+    "total_preparations_sufficient": 13692,
+    "comparison": "A reset endpoint-comparison strategy can be much worse as each short chord has a small raw probability difference. A same-information structured linear confidence region obtains the same M-independent cost immediately. The reuse gain is real but classical."
+  },
+  "information_bound": {
+    "null_union": "For fixed directions D, let H_j={eta physical:d_j dot(B_eta,C_eta)<=0}. For any valid policy and any eta in H_j, data processing for the event approving j gives transcript KL>=kappa=kl(.95,.01).",
+    "characteristic_time": "If w is the expected paid-angle occupation measure normalized by expected total cost, chain rule gives E[N] integral kl(p_theta(x)||p_eta(x)) w(dx)>=kappa for every eta in union H_j. Thus E[N]>=kappa/I*(theta,D), where I*=sup_w inf_eta in union H_j integral kl(p_theta||p_eta)dw. This is the standard controlled-sensing/linear-identification characteristic-time structure, not a new theorem family.",
+    "scope": "This fixed-D information lower bound does not condition on a randomly selected set of successful updates."
+  },
+  "no_uniform_free_sequence_counterexample": {
+    "construction": "For any0<epsilon<=1 use theta=(A,B,C)=(1/2,1/4,0) and direction d=(epsilon,1). The improvement is epsilon/4>0. The physical null eta=(1/2,1/4,-epsilon/4) has d dot(B_eta,C_eta)=0. Positive scaling realizes d as a circle chord direction without changing its sign.",
+    "per_shot_bound": "For every query angle, |p_theta-p_eta|<=epsilon/4 and q_eta(1-q_eta)>=1/8. The Bernoulli bound kl(p||q)<= (p-q)^2/[q(1-q)] gives per-shot KL<=epsilon^2/2.",
+    "cost_obstruction": "Any95%-successful globally safe certificate therefore needs E[N]>=2*kappa/epsilon^2, even with arbitrary adaptive angles and all old data charged. Sending a candidate direction toward the zero-improvement boundary prevents any uniform finite-cost guarantee.",
+    "trajectory_warning": "If a chain approaches an unknown optimum, the minimum angular margin can shrink as the number of steps grows; the fixed-margin reuse example does not remove this cost."
+  },
+  "fair_comparators": [
+    "A shared structured Bernoulli likelihood confidence sequence over(A,B,C).",
+    "A shared linear/generalized-linear pure-exploration design targeting the two active update constraints.",
+    "A fixed-design shared simultaneous confidence region when active design overhead is not justified."
+  ],
+  "novelty_boundary": "Shared confidence sets, confidence sequences, phase inference and fixed-confidence linear identification are established ideas. This reduction alone supplies no basis for an international-leading claim.",
+  "source_sha256": {
+    "results/sota_round5/mechanisms/shared_and_collective_feasibility.py": "c61bb00d3d509d79a30080d43070884d8a43b3784e3d1e255ee1b40078059a17",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "docs/CONTINUOUS_SYMMETRIC_DESIGN.md": "0e16a486bb11c38b179b1d8d2aa8ed18184aefe07ceabd99c44efb59b10cd13d",
+    "docs/CONTINUOUS_PSR_INFORMATION_BOUND.md": "8f9dce032aefcee81dae2b33fe808c8885413d35fc46ecaebd69891a591a19d4"
+  }
+}

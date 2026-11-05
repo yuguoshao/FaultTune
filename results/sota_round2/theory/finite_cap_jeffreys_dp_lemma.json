@@ -1,0 +1,104 @@
+{
+  "status": "proved_lemma_exact_calibration_implementation_under_separate_review",
+  "title": "Finite physical-budget error control by exact fair-sign crossing calibration",
+  "scope": "New mathematical justification for a separate capped paired-sign procedure. Existing frozen experiments and certificates are unchanged.",
+  "source_bindings": {
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f",
+    "results/sota_round2/theory/jeffreys_overshoot_calibration_lemma.json": "ded7ad35bcf8a451fddcd2b6bbf05e229c0320a228467fd01809491052dd98c8"
+  },
+  "checked_existing_definition": {
+    "functions": ["direct_tests._log_marginal", "direct_tests.certificate_from_pairs", "run_refined.beta_bounds"],
+    "pair_counts": "[both zero, plus only, minus only, both one]; b=counts[1], c=counts[2], d=b+c.",
+    "capital": "M_d(b)=2^d*B(b+1/2,c+1/2)/B(1/2,1/2)=(2*b)!*(2*c)!/[2^d*b!*c!*d!].",
+    "direction": "Positive score b-c corresponds to reject; negative score corresponds to accept; zero score always abstains.",
+    "prior": "The reviewed identity uses the symmetric Jeffreys prior 1/2. A new calibrated API should reject other priors unless separately calibrated.",
+    "old_scope": "The existing certificate_from_pairs docstring limits its original argument to iid target contexts. The adaptive-common-ordering result below uses a separate monotone-coupling proof, rather than extending that docstring by assertion."
+  },
+  "finite_budget": {
+    "physical_shot_cap": 4096,
+    "maximum_complete_pairs": 2048,
+    "maximum_discordances_H": 2048,
+    "delta_exact": [1, 100],
+    "generalization": "For a fixed physical-shot cap N_shots, complete two-shot pairs imply D<=H=floor(N_shots/2). Unpaired leftover shots cannot contribute to the paired-sign decision.",
+    "action_assumption": "Each pair or block action and orientation is fixed before its outcomes. For every pair, q_plus=P(plus only | past) and q_minus=P(minus only | past) obey q_plus>=q_minus for C>0, q_plus<=q_minus for C<0, and equality for C=0.",
+    "physical_sufficient_condition": "Predictable symmetric arms with nonnegative sine have p_plus-p_minus=2*C*sin(phi). Under the conditional independent Bernoulli model this gives q_plus-q_minus=p_plus-p_minus and hence the required ordering."
+  },
+  "calibrated_event": {
+    "threshold": "Fix h=a/q>0 with positive integer numerator a and denominator q before evaluation data.",
+    "fair_reference": "Expose H iid fair signs and let b_d count their plus signs in the first d symbols.",
+    "full_event": "E_h={there exists 1<=d<=H with 2*b_d-d!=0 and M_d(b_d)>=h}.",
+    "acceptance_requirement": "Compute P_fair(E_h) exactly and require it to be <=delta. No asymptotic approximation or simulated error estimate is used.",
+    "actual_rule": "At any chosen physical checkpoints, stop with sign(b-c) if nonzero and M_D(b)>=h, while enforcing the released physical cap. A boundary-table integer test or a conservative arithmetic enclosure may implement this rule."
+  },
+  "exact_boundary_certificate": {
+    "central_coefficients": "J_k=binom(2*k,k), all integers.",
+    "comparison": "M_d(b)>=a/q if and only if q*J_b*J_(d-b) >= a*2^d*binom(d,b). All products and comparisons are exact integers.",
+    "tail_monotonicity": "M_d(b)=M_d(d-b) and M_d(b+1)/M_d(b)=(2*b+1)/(2*(d-b)-1). Thus M_d increases on the positive-score half and decreases on the negative-score half.",
+    "upper_boundary_B_d": "The smallest integer b in {floor(d/2)+1,...,d} satisfying M_d(b)>=h; use B_d=d+1 if there is no such b.",
+    "crossing_set": "b>=B_d or b<=d-B_d. The construction excludes zero-score states even if their capital exceeded an unusually small threshold.",
+    "independent_row_checks": [
+      "Require floor(d/2)+1<=B_d<=d+1.",
+      "If B_d=d+1, verify M_d(d)<h by exact cross multiplication.",
+      "If B_d<=d, verify M_d(B_d)>=h by exact cross multiplication.",
+      "If floor(d/2)+1<B_d<=d, verify M_d(B_d-1)<h. No adjacent-safe check is needed when B_d is already the first positive-score state; the preceding state is either tied or on the symmetric negative side.",
+      "Symmetry plus monotonicity then certifies the complete crossing set without examining every state."
+    ],
+    "minimal_artifact_fields": [
+      "Exact threshold numerator and denominator, exact delta numerator and denominator, physical shot cap and H.",
+      "Crossing convention (greater than or equal), score-zero abstention, orientation convention and prior=1/2.",
+      "The H integer values B_d in increasing d order.",
+      "Final surviving_path_count and denominator=2^H, hence crossing_path_count=2^H-surviving_path_count.",
+      "Source hashes, boundary-table hash and exact risk numerator/denominator; an independent verifier should recompute boundaries and integer DP rather than trusting supplied risk fields."
+    ]
+  },
+  "exact_integer_dp": {
+    "initial": "c_0(0)=1; other states are zero. c_d(b) counts length-d fair-sign strings with b plus signs and no boundary crossing through d.",
+    "step": "u_d(b)=c_(d-1)(b)+c_(d-1)(b-1). Set c_d(b)=0 if b>=B_d or b<=d-B_d; otherwise set c_d(b)=u_d(b).",
+    "survivors": "S_count=sum_b c_H(b).",
+    "crossing_probability": "P_fair(E_h)=(2^H-S_count)/2^H.",
+    "exact_risk_check": "For delta=r/s, require s*(2^H-S_count)<=r*2^H. For delta=1/100, require 100*(2^H-S_count)<=2^H.",
+    "complexity": "The count DP requires O(H^2) integer additions and O(H) integer storage. Boundary construction can use binary search within each monotone half, with exact integer comparisons.",
+    "suggested_verification": [
+      "Compare the integer DP against independent enumeration of all sign strings at several small horizons, including boundary-equality and zero-score cases.",
+      "Cross-check the rational capital identity against the existing outward Decimal beta evidence on a fixed collection of integer states.",
+      "Use an independent boundary verifier based on binomial coefficients if the producer uses factorial or predictive recurrences.",
+      "Reject malformed caps, noninteger counts, booleans posing as integers, inconsistent boundary lengths and incorrect supplied risk summaries."
+    ]
+  },
+  "threshold_selection": {
+    "legal_search": "Search a predeclared rational threshold grid deterministically using exact null probabilities. Since E_h decreases with h, binary search can return the smallest grid value whose exact risk is <=delta.",
+    "certificate_of_grid_minimality": "Also certify that the immediately lower grid value has exact risk >delta, unless the accepted value is the bottom of the declared grid.",
+    "claim_boundary": "This establishes optimality only on the declared grid for this constant-capital threshold shape. It does not establish a globally optimal sequential boundary, minimal sample size or SOTA status.",
+    "boundary_plateaus": "The finite-horizon crossing probability is a step function of h. Exact greater-than-or-equal convention and rational comparison avoid changing results at a capital value through floating rounding."
+  },
+  "theorem_and_proof": [
+    "At the zero-sign null, conditionally on any past and on the occurrence of a discordant pair, its sign is fair. One can generate each such sign with a fresh fair uniform, while allowing concordance probabilities, waiting times, arm choices and cessation to depend on the past.",
+    "Embed the actual variable-length discordant sequence into a latent length-H fair sequence, filling any unused continuation with independent fair signs. A report at any physical checkpoint is therefore contained in E_h. The exact DP bounds its null probability by delta.",
+    "For a positive true sign, the next actual discordant symbol, when generated, has conditional plus probability p_d>=1/2. Use a sequential coupling X_d=1{U_d<=p_d}, Z_d=1{U_d<=1/2} with fresh iid uniforms. Then X_d>=Z_d coordinatewise even though p_d may depend on the actual past. Fill unused continuation with p_d=1/2 if necessary.",
+    "Every actual wrong report is a negative-score crossing at some d<=H. At fixed d its crossing set is b<=d-B_d, a coordinatewise decreasing event. Consequently the union of actual wrong-direction crossings is contained in the coupled fair negative-crossing union, which is itself contained in E_h. Its probability is at most delta.",
+    "For a negative true sign, reverse plus and minus and repeat the argument. This controls one wrong direction under each strict sign and both possible reports at the null, with no additional factor two.",
+    "The coupling applies to the unconditional union of all wrong-direction crossings, ignoring a possible earlier stop by the opposite direction. Any actual wrong report is contained in that enlarged event; it is unnecessary and generally invalid to condition strict-alternative paths on survival.",
+    "Blockwise observations can be exposed in an artificial within-block order because the action was chosen before the whole block. Actual checkpoints form a subset of the full discordance event. Nondiscordant outcomes and skipped checkpoints change the observed prefix length or inspection times, not the containment."
+  ],
+  "selection_bias_warning": "The observed prefixes need not have an iid fair law conditional on final D, or conditional on D>=d, because adaptive cessation can depend on previous signs. The proof does not make that assertion. It uses the latent fair full-sequence crossing union and never calibrates a fixed-D test after conditioning on the data-selected length.",
+  "cap_adaptation": [
+    "A certificate calibrated for H remains valid if the actual cap is shortened so that D never exceeds H, including predictable or data-dependent early cessation.",
+    "Extending sampling beyond H or applying a threshold selected for a smaller H to a larger horizon is not covered.",
+    "Choosing among separately calibrated cap/threshold pairs after seeing evaluation outcomes is not automatically valid. A single larger-horizon envelope, a predeclared combined boundary calibrated as one event, or an additional valid selection argument is required.",
+    "A new certificate should state finite_horizon_valid together with its physical cap and discordance cap. It must not inherit an unqualified anytime_valid=true flag from the original threshold-100 implementation."
+  ],
+  "relation_to_two_stage_infinite_lemma": [
+    "The finite-cap method spends the whole delta budget on crossings through H and abstains beyond the released cap. It therefore needs no late-boundary calculation or positive residual risk budget.",
+    "The earlier two-stage lemma instead requires p_early<delta and computes S=E_fair[M_d0; no early crossing]. Choosing h_late>=S/(delta-p_early) controls the entire continuation beyond d0. This preserves infinite-horizon validity at the cost of a potentially large late threshold.",
+    "If finite-cap calibration nearly exhausts delta, a valid infinite continuation may require a very large h_late. If p_early=delta, that formula leaves no positive late risk budget; merely reusing the finite threshold indefinitely is invalid.",
+    "The same latent-sequence interpretation clarifies the fair-prefix wording in the earlier lemma: it concerns an augmented reference sequence, not observed prefixes conditioned on an adaptive length.",
+    "Comparisons must disclose the guarantee difference. A finite-budget calibrated method can beat the threshold-100 method by using the known cap, while the original method supplies an unrestricted-horizon guarantee. A broad superiority claim requires a suitably matched finite-budget baseline or an explicit statement of this distinction."
+  ],
+  "limits": [
+    "This file contains the proof and machine-certificate design, not a computed production threshold or evidence of performance improvement.",
+    "The coupling fails without common sign ordering, for retrospectively oriented or selected discordances, or when current outcomes influence their own measurement action.",
+    "Computing exact probabilities under the mathematical reference model does not validate simulator assumptions, physical independence, hardware drift or source-code correctness. Those require separate protocol and implementation checks.",
+    "No novelty conclusion or comparison with the full literature on exact sequential boundaries is made here."
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "status": "proved_conservative_two_constraint_lemma_no_simulation_or_novelty_claim",
+  "title": "A fixed physical-pair perfect-separation gate combined with a finite sign boundary",
+  "sources": {
+    "results/sota_round2/theory/finite_cap_jeffreys_dp_lemma.json": "95cbc30eb66f788c8ab9d60228cc7d435de0fc06ec79993b538e8e75d68bdf93",
+    "results/sota_round2/theory/generic_symmetric_tail_dp_lemma.json": "e8d51fddd0a021c66374daee4b504aba17c427e578319920ca83a01343a5e43d"
+  },
+  "assumptions": [
+    "Fix a maximum of H complete physical pairs, an integer gate length 1<=m<=H, and a deterministic symmetric sign-count boundary table before observing the evaluation data. A smaller physical budget remains valid.",
+    "At pair i, the minus and plus Bernoulli probabilities are chosen predictably and the two outcomes are conditionally independent. Under positive truth p_plus_i>=p_minus_i; negative truth reverses this inequality; the zero-sign null has p_plus_i=p_minus_i=p_i.",
+    "The first-m gate uses exactly the first m physical pairs from the beginning of the experiment, with their original predictable orientation. No sliding windows, restarts, retrospective orientation, selection of favorable pairs or data-selected gate length are allowed.",
+    "The ordinary sign-boundary decision uses the cumulative plus-only and minus-only counts, with at most H discordances and zero-score abstention."
+  ],
+  "gate": {
+    "positive": "All first m physical pairs are plus-only discordances: minus outcome 0 and plus outcome 1.",
+    "negative": "All first m physical pairs are minus-only discordances: minus outcome 1 and plus outcome 0.",
+    "action": "At completion of the first m pairs, or a later allowed checkpoint when the frozen prefix remains available, report the gate direction. Otherwise continue the ordinary finite sign boundary.",
+    "prefix_integrity": "The four-category first_m_counts must sum to m and be the actual earliest prefix. Componentwise domination by current counts is necessary but does not prove chronology. A block aggregate that straddles pair m cannot be split into a favorable prefix without observed ordering or a separately specified valid observation protocol."
+  },
+  "reference_quantities": {
+    "U": "A latent length-H iid fair sign sequence, independent of the physical discordance uniforms used below.",
+    "E": "The event that the ordinary symmetric sign boundary crosses at any discordance index 1,...,H.",
+    "p_beta_name": "p_B=P_U(E). The name p_beta is appropriate when the ordinary boundary is a Jeffreys constant-capital contour, but this conservative lemma also accepts any predetermined symmetric tail table.",
+    "S_count": "The integer number of length-H sign strings that never cross the ordinary boundary.",
+    "T_count": "The integer number of length-H sign strings that never cross the ordinary boundary AND have their first m signs all equal, in either direction.",
+    "exact_reference_formulas": "p_B=(2^H-S_count)/2^H and P_U(first m signs all equal AND E does not occur)=T_count/2^H."
+  },
+  "sufficient_risk_constraints": {
+    "zero_sign_null": "R_null=p_B+2^(-m)*T_count/2^H <= delta.",
+    "strict_sign": "R_strict=p_B+4^(-m) <= delta.",
+    "exact_null_numerator": "R_null=[2^m*(2^H-S_count)+T_count]/2^(H+m).",
+    "exact_strict_numerator": "R_strict=[2^(2m)*(2^H-S_count)+2^H]/2^(H+2m).",
+    "arithmetic_scope": "The reference probabilities and these upper bounds are exact rational numbers. R_null is a proved upper bound on physical-model risk, not a claim that every physical null has exactly that error probability.",
+    "conclusion": "If both constraints hold, the probability of ever reporting a wrong direction is <=delta for each strict sign, and the probability of any report is <=delta at the zero-sign null, through the fixed physical-pair budget."
+  },
+  "null_proof": [
+    "Under the null each independent Bernoulli pair has discordance probability r_i=2*p_i*(1-p_i)<=1/2. Conditional on discordance its sign is fair.",
+    "Construct independent sequences of fresh uniforms V_i for the discordance gate of each physical pair, U_j for the sign of each successive discordance, and auxiliary W_i for concordant outcome types. All unused latent U_j remain independent of the entire V sequence. Adaptive p_i may depend on all previously observed outcomes and auxiliary randomness.",
+    "The event that all first m physical pairs are discordant is contained pointwise in {V_1<=1/2,...,V_m<=1/2}, since every predictable r_i<=1/2. The latter event has probability 2^(-m) and is independent of the full latent U sequence. Independence of the actual adaptive gate from U is not claimed or needed.",
+    "Any ordinary report at a physical checkpoint is contained in E. On a fast-gate report outside E, the first m latent U signs must all agree and the first m V uniforms must all be <=1/2. Hence P(any report)<=P(E)+2^(-m)*P_U(first m U all equal AND E does not occur)=R_null.",
+    "This inclusion remains true if physical monitoring skips an ordinary latent crossing or a gate crossing: if E already occurred, its path is in the first term. Otherwise the extra report is counted by the overlap-adjusted gate term."
+  ],
+  "strict_sign_proof": [
+    "Under positive truth the conditional probability of a wrong minus-only discordance in one pair is p_minus_i*(1-p_plus_i)<=p_minus_i*(1-p_minus_i)<=1/4. The chain rule bounds the probability of first m pairs all being wrong-direction discordances by 4^(-m), even when subsequent actions depend on previous outcomes.",
+    "The ordinary boundary's wrong-direction crossing probability is at most p_B by the latent-sign monotone coupling established in the finite-boundary lemma. The conservative union bound gives R_strict. Negative truth follows by reversing plus and minus.",
+    "The null inequality r_i<=1/2 is not used under a strict alternative; its discordance rate may exceed 1/2."
+  ],
+  "overlap_integer_dp": [
+    "Compute S_count with the usual survivor DP for the ordinary symmetric table.",
+    "For each of the two homogeneous prefixes of length m, explicitly check all its intermediate indices d=1,...,m against the ordinary boundary. Discard the prefix if it already crosses, since such gate paths belong to E.",
+    "For each remaining homogeneous prefix put one unit at its state b=0 or b=m at d=m. Extend these counts by the same integer plus/minus recursion through H, zeroing every ordinary-boundary crossing state. The final total is T_count.",
+    "For symmetric tables the two homogeneous directions have equal survivor counts, but an independent checker may retain both explicitly. Require 0<=T_count<=S_count and T_count<=2^(H-m+1).",
+    "All risk comparisons use integer cross multiplication against delta. Floating numbers may display results but cannot authorize a threshold or gate."
+  ],
+  "different_gate_lengths": {
+    "independent_choices": "Any fixed m may be calibrated separately. Selecting one calibrated m before evaluation is legal. Running several m gates simultaneously or restarting the gate requires certification of their union.",
+    "gate_alone_null_risk": "At the constant null p=1/2, the two homogeneous-discordance gates have total probability 2*4^(-m); this is also an upper bound for adaptive nulls.",
+    "minimum_for_delta_001": "A deterministic two-direction gate alone requires m>=4 when delta=0.01. For m<=3 its null probability at p=1/2 already exceeds the entire risk budget, regardless of the continuation rule.",
+    "m4": "8 physical shots; gate-only null risk 1/128=0.0078125. Leaves comparatively little risk for a broad continuation.",
+    "m5": "10 physical shots; gate-only null risk 1/512=0.001953125, wrong-direction strict gate risk at most 1/1024.",
+    "m6": "12 physical shots; gate-only null risk 1/2048=0.00048828125.",
+    "m7": "14 physical shots; gate-only null risk 1/8192=0.0001220703125.",
+    "tradeoff": "Shorter gates can greatly help nearly deterministic separated pairs but spend more risk and may raise continuation thresholds. No quantitative stopping-cost improvement is established without a frozen implementation and development evaluation."
+  },
+  "classical_relationship": [
+    "For a single direction, F_m^+=4^m*1{first m pairs all plus-only} is a product of one-pair factors with null conditional expectation at most one. The opposite-direction factor has the same property. Their equal mixture equals 4^m/2 on the two-direction gate event.",
+    "This is an extreme-alternative full paired Bernoulli e-value construction that retains physical-pair information. It is related to unconditional two-sample exact testing rather than a new source of evidence created by discordance reindexing.",
+    "Conditioning only on discordant signs discards the information that observing m discordances in the first m physical pairs is rare under a common-probability null. The gate uses precisely that omitted event.",
+    "Combining the gate with a sign boundary and subtracting their overlap by exact counting is a calibration construction. No claim of first invention or superiority over existing unconditional sequential tests is made here."
+  ],
+  "not_used_in_this_certificate": [
+    "For a constant Jeffreys-capital continuation, wrong-direction crossings appear monotone in the underlying plus and minus Bernoulli outcomes, which may allow a direct least-favorable-null coupling and eliminate the separate strict union bound. This possible sharpening is not required by, or asserted as part of, the conservative two-constraint certificate here.",
+    "The extra physical-pair constraint can also sharpen null calibration beyond the latent H-discordance event. That requires a separately specified physical-clock DP and is not used in these formulas."
+  ],
+  "limits": [
+    "The factor 1/4 requires conditional independence within each Bernoulli pair. Correlated pairs with the same marginal probability can have discordance rate greater than 1/2 and invalidate the gate proof.",
+    "A runtime wrapper cannot verify prefix chronology from aggregate counts alone. Source-level controller separation and an observation-ledger audit must enforce it.",
+    "No new simulator observations, tuned performance result, hardware result or SOTA conclusion is supplied by this theorem artifact."
+  ]
+}

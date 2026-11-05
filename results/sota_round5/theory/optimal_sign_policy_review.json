@@ -1,0 +1,102 @@
+{
+  "status": "passed_independent_uniform_iid_sign_policy_review",
+  "new_simulation_observations": 0,
+  "horizon": 128,
+  "probability_denominator": 1000000000000,
+  "independent_integer_full_state_risk_recomputed": true,
+  "exact_null_any_report": {
+    "numerator": "253276595624826601252166536941526126051685636823192434629564187105765972865387710612761822255731799509813772804906935009673251871300840001616831446566939427311621215724121819478862019063521224303194533377022081459134416836885516936220245367079265769816997763078491412569969467117357133039085933812599930251767013732021813719956975903750946061588246900566767791474351306495283063049965194654737065413882420649125199379165915409130472069295319188240942915109824254658634968383280653789334953562140779177528257200287319578177538826393471790091725202352580509615635107739941311443022699254983576958133833219385946491824560966360065857948966743152569146922378550243878789170849719162481358136770199895046995316401769329200586235895204682991029890946927147923785630927542931758526716941122484959147921345356840902161323239076449563635296646622308772177316480192028936957242539191082987398454475891318965661879219721114455184141253244470172687427829702312586453677795022949384003195145489600069423427123314591397167330600312260643453669063100587020853328337571490766195540379809599839263514711734537230536397315131378642761466284331118734524672566185111846716425094065614607566869826113492568712185517211821547838330694536949368545981424698500756264056943229708077093105855524778749612394904003325146537373462902514168013142282908997268683859118042517660978739563091004255489809085768773952437160781333",
+    "denominator": "25353012004564588029934064107520000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "exact_null_any_report_float_diagnostic": 0.009990000224794843,
+  "uniform_strict_wrong_direction_upper_float_diagnostic": 0.0049950001123974215,
+  "exact_null_within_one_percent": true,
+  "exact_fixed_q_checks": [
+    {
+      "q_exact": "0",
+      "wrong_probability_float_diagnostic": 0.0,
+      "prefix_lemma_bound_checked_exactly": true,
+      "saved_design_row_compared": false
+    },
+    {
+      "q_exact": "1/10",
+      "wrong_probability_float_diagnostic": 1.0009083373267093e-10,
+      "prefix_lemma_bound_checked_exactly": true,
+      "saved_design_row_compared": false
+    },
+    {
+      "q_exact": "1/4",
+      "wrong_probability_float_diagnostic": 9.865220555389396e-07,
+      "prefix_lemma_bound_checked_exactly": true,
+      "saved_design_row_compared": false
+    },
+    {
+      "q_exact": "49/100",
+      "wrong_probability_float_diagnostic": 0.0032330057141327544,
+      "prefix_lemma_bound_checked_exactly": true,
+      "saved_design_row_compared": false
+    },
+    {
+      "q_exact": "1/2",
+      "wrong_probability_float_diagnostic": 0.009990000224794843,
+      "prefix_lemma_bound_checked_exactly": true,
+      "saved_design_row_compared": false
+    },
+    {
+      "q_exact": "7/10",
+      "wrong_probability_float_diagnostic": 6.354853966167553e-06,
+      "prefix_lemma_bound_checked_exactly": true,
+      "saved_design_row_compared": true
+    },
+    {
+      "q_exact": "9/10",
+      "wrong_probability_float_diagnostic": 1.0009083373267093e-10,
+      "prefix_lemma_bound_checked_exactly": true,
+      "saved_design_row_compared": true
+    },
+    {
+      "q_exact": "99/100",
+      "wrong_probability_float_diagnostic": 1.0000000990009315e-20,
+      "prefix_lemma_bound_checked_exactly": true,
+      "saved_design_row_compared": true
+    },
+    {
+      "q_exact": "1",
+      "wrong_probability_float_diagnostic": 0.0,
+      "prefix_lemma_bound_checked_exactly": true,
+      "saved_design_row_compared": false
+    }
+  ],
+  "runtime_endpoint_calls": 27356,
+  "proof": {
+    "protocol": "At each NEW discordance d<=128, use the frozen probability depending only on(d,min(k,d-k)), draw one independent uniform integer U in[0,10^12), and report the strict current majority iff U<threshold. On a report stop; on a nonreport atH128 permanently abstain from further reports.",
+    "path_weight": "For a particular sign prefix z of length d with k plus signs, its first-report weight equals q^k(1-q)^(d-k) times the product of earlier continue probabilities and the final report probability. These policy-coin factors are fixed and do not depend on q.",
+    "uniform_positive_error": "A plus-report prefix has k>d/2. On0<q<=1/2, the derivative of log[q^k(1-q)^(d-k)] is(k-dq)/(q(1-q))>0. Therefore every such prefix likelihood is<=2^(-d), with the q=0 boundary by continuity. Multiplying by its same policy-coin weight and summing disjoint first-report prefixes gives P_q(report plus)<=P_.5(report plus).",
+    "negative_error": "Reflect every sign word and use the same folded-state probability. This bijection shows equal plus/minus fair risks and gives P_q(report minus)<=P_.5(report minus) for fixed q>=1/2.",
+    "null_union": "At q=.5 both report directions are errors and their disjoint union has the independently recomputed exact risk alpha<=.01. At fixed strict alternatives the wrong direction is bounded by alpha/2<=.005.",
+    "physical_cap": "For fixed iid physical PSR pairs, conditional discordant signs have one fixed q. Couple the runtime to the full latent sign stream and the same independent policy coins. A physical cap only prevents some latent reports from arriving. Concordant pairs must NOT redraw a policy coin. AfterH128 no reports are permitted; charging remaining pairs to the physical cap changes cost, not risk.",
+    "randomness_semantics": "The strict integer comparison accepts exactly threshold of the denominator possible integer values, so the report probability is exactly the stored rational. This assumes genuinely independent uniform integer input; the audit does not claim that an arbitrary caller/RNG supplies this contract.",
+    "scope_limit": "The prefix proof uses a single fixed iid q and does not establish control for arbitrary history-dependent changing q, policy retuning from outcomes, repeated coins at the same state, or continuing after a terminal report/horizon."
+  },
+  "runtime_contract_review": {
+    "hash_and_exact_risk_before_use": "load_policy registers an immutable policy only after structural validation and exact risk checking. Unverified policy objects are rejected.",
+    "majority_and_tie": "Every tie threshold is zero. The runtime strict comparison thus cannot report a tie; reflected counts report the reflected sign.",
+    "horizon": "Inputs outside1<=d<=128 are rejected. At128 a nonreport returnsabstain.",
+    "caller_statefulness": "decide is intentionally a stateless decision kernel. The caller must enforce exactly one call/coin per new discordance and absorbing stop/abstention. These protocol obligations are necessary for the theorem; the physical evaluation plan and direct DP enforce them.",
+    "input_types": "Counts and uniform_integer must be Python ints, excluding bool; an external numpy integer draw needs explicit int conversion.",
+    "no_truth_input": "Only verified table, paid counts and a fresh independent coin enter decide. No true or estimated q is accepted."
+  },
+  "not_claimed": [
+    "No exact global optimality of the floating occupancy LP.",
+    "No power guarantee away from explicitly checked design points.",
+    "No certified physical-cost gain or SOTA novelty from this risk review."
+  ],
+  "source_sha256": {
+    "results/sota_round5/theory/review_oracle_and_optimal_policy.py": "a7e72a0571cb96618538d24bbdbb6d29c07ed86f56c193250258e6b103d1b7f3",
+    "experiments/sota_round5/optimal_sign_policy.py": "f912c910442cfb961fe698189b754914c477045dd01114089bf6defab661d546",
+    "results/sota_round5/optimal_sign_stopping/prototype.json": "9193d84bbfa11761ee800a7175e76d5ffd5bbe6cd76c020c4dca0180cdf23030",
+    "results/sota_round5/optimal_sign_stopping/runtime_audit.json": "3b9157c61c47433b6150627445d1c809d95ce98f76f3884f5501427af1245d0f",
+    "results/sota_round5/optimal_sign_stopping/physical_evaluation_plan.json": "4f2516039b00e827d495b46cb479396554b5626e8ec4487d89a3c41d33da7b24",
+    "experiments/sota_round5/evaluate_optimal_sign_physical.py": "9f0a3647bfbcffb013c7ebf5052726ddd6902751bf7b9bf7683887cf4ef92c50"
+  }
+}

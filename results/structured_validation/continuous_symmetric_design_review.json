@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "reviewer": "stream_design independent of document author stream_sota",
+  "review_type": "Line-by-line mathematical review; no new Monte Carlo or numerical design experiment",
+  "document": "docs/CONTINUOUS_SYMMETRIC_DESIGN.md",
+  "document_sha256": "0e16a486bb11c38b179b1d8d2aa8ed18184aefe07ceabd99c44efb59b10cd13d",
+  "claim_reviewed": "For A=1/2 and B^2+C^2<=1/4, the continuous-angle oracle KL design value equals Phi(2C), achieved by the equally weighted reflected PSR pair, with the affine null a=1/2 and b=B*atanh(2C)/(2C) for 0<|2C|<1.",
+  "checks": [
+    {
+      "item": "Physical matrix representation",
+      "status": "passed",
+      "reason": "rho=(I+beta Z+gamma X)/2 is positive semidefinite with unit trace exactly when beta^2+gamma^2<=1. Tr(rho P_x) reproduces the stated Bernoulli probability. No additional measurement resource is introduced by the proof."
+    },
+    {
+      "item": "Strict feasibility of the proposed null",
+      "status": "passed",
+      "reason": "The derivative proof of atanh(t)<t/sqrt(1-t^2) for 0<t<1 is correct. Combined with |beta|<=sqrt(1-gamma^2), it gives |beta*lambda|<1 and hence sigma>0, trace(sigma)=1, and all null probabilities strictly between zero and one."
+    },
+    {
+      "item": "Frechet derivative and normalization",
+      "status": "passed",
+      "reason": "In the X eigenbasis, the diagonal entries of Dlog(H*)[rho] are 1/2; the off-diagonal entries are beta*lambda/2. The divided difference is atanh(gamma)/gamma, also for negative gamma. Thus the derivative is exactly sigma and Tr(sigma H*)=1."
+    },
+    {
+      "item": "Concavity and supporting hyperplane",
+      "status": "passed",
+      "reason": "The integral formula for Dlog is self-adjoint for the trace inner product. The displayed second directional derivative is negative semidefinite since R E R E R is positive semidefinite. Tr(rho log H) is concave even when rho is singular, so its derivative at positive H* yields the required global supporting inequality."
+    },
+    {
+      "item": "Likelihood-ratio matrix at every angle",
+      "status": "passed",
+      "reason": "For interior p, H_x has eigenvalues p/q and (1-p)/(1-q), is positive, has Tr(sigma H_x)=1, and Tr(rho log H_x)=kl(p||q). The supporting linear term vanishes and Tr(rho log H*) equals Phi(gamma). This is a single physical affine null bounding every angle."
+    },
+    {
+      "item": "Singular-rho and endpoint probabilities",
+      "status": "passed",
+      "reason": "The proof never requires rho>0. For p=0 or p=1, (H_x+epsilon I)/(1+epsilon) remains positive and normalized under sigma. The zero-probability eigenspace has zero rho weight; the trace-log limit therefore gives the standard boundary Bernoulli KL."
+    },
+    {
+      "item": "Matching primal lower bound without a minimax exchange",
+      "status": "passed",
+      "reason": "Under the two PSR angles the affine null is the common probability a. Equal weighting makes the a-dependent term -log(a)/2-log(1-a)/2, minimized at a=1/2. The feasible choice b=0 attains Phi(gamma). The separately constructed uniform upper bound proves equality without requiring an interchange of sup and inf."
+    },
+    {
+      "item": "Extension to the opposite-sign physical null",
+      "status": "passed",
+      "reason": "For C>0, any full null with c<=0 has q_plus<=q_minus. At q_plus=q_minus=1/2, the equal-weight KL gradient is (-2C,2C), and its dot product with every feasible displacement is 2C*(q_minus-q_plus)>=0. Convexity proves the same minimum. The c=0 dual remains feasible in the larger null. Negative C follows by reflection."
+    },
+    {
+      "item": "C=0, |C|=1/2 and negative-C boundaries",
+      "status": "passed",
+      "reason": "At C=0 the true law is in the null and the value is zero, including |B|=1/2. At |C|=1/2 physicality forces B=0; the constant null 1/2 gives the log(2) upper bound and the PSR pair attains it. No undefined zero-times-infinite expression is used. Evenness and the signed derivative computation handle negative C."
+    },
+    {
+      "item": "Scope of conclusions",
+      "status": "passed",
+      "reason": "The document restricts the result to A=1/2, oracle KL information under equal per-query cost. It does not claim a result for general A, finite-prior growth, paid learning, finite-sample stopping cost, SOTA superiority, or mathematical novelty."
+    }
+  ],
+  "material_issues": [],
+  "limitations": [
+    "This is an independent human-readable mathematical review, not verification by a formal proof assistant.",
+    "No literature-priority assessment was performed.",
+    "The general A!=1/2 reflected-two-angle conjecture remains unresolved."
+  ],
+  "frozen_code_or_previous_documents_modified": false
+}

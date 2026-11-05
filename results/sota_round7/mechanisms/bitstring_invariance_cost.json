@@ -1,0 +1,102 @@
+{
+  "status": "complete_physical_null_witness_and_finite_cost_obstruction",
+  "new_simulation_observations": 0,
+  "resource_contract": {
+    "actions": "Only the two frozen amplitudes, old and new, with common duration1, and the existing spectator_plus or spectator_0 preparations. Each execution returns the complete three-bit outcome and costs one. Fresh shot noise is independent; no hidden-noise coupling.",
+    "expanded_hamiltonian": "H(u)=((omega+u)/2)X_0+(gamma+chi*u)P11_(1,2). Unknown fixed real omega,gamma,chi; fixed Markov/readout nuisance may also be unknown. The witness uses omega=0,kappa=0,readout=1/200 in both worlds.",
+    "good_world": "chi=0, gamma=2 asin(sqrt(t_good)); spectators are exactly invariant under the two amplitudes.",
+    "null_world": "chi=(2 asin(sqrt(t_null))-2 asin(sqrt(t_good)))/(u_new-u_old), gamma=2 asin(sqrt(t_good))-chi*u_old. All coefficients are fixed before observations, so this is a single amplitude-dependent Hamiltonian, not freely assigned arm probabilities.",
+    "shared_information": "Controls, target task, complete bitstrings and the declared enlarged Hamiltonian family are identical for both worlds and all algorithms. Hidden omega/gamma/chi are never supplied to the validator.",
+    "not_covered": "Additional amplitudes, durations, spectator probes, known chi=0, or a sufficiently restrictive prior bound on chi change the information experiment; this lower bound does not cover them."
+  },
+  "exact_output_laws": {
+    "readout_flip": "1/200",
+    "x_old": "3/100",
+    "x_new": "1/100",
+    "s_good_both": "1/2",
+    "s_null_new": "97/198",
+    "t_good": "19601/29601",
+    "t_null_new": "1980499/2930499",
+    "old_either_world": [
+      "97/200",
+      "3/200",
+      "97/598",
+      "3/598",
+      "97/598",
+      "3/598",
+      "9603/59800",
+      "297/59800"
+    ],
+    "new_good_world": [
+      "99/200",
+      "1/200",
+      "99/598",
+      "1/598",
+      "99/598",
+      "1/598",
+      "9801/59800",
+      "99/59800"
+    ],
+    "new_null_world": [
+      "97/200",
+      "97/19800",
+      "5049/29900",
+      "51/29900",
+      "5049/29900",
+      "51/29900",
+      "10003/59800",
+      "10003/5920200"
+    ],
+    "delta_good": "-1/100",
+    "delta_null": "0",
+    "index_order": "x+2*spectator_index; success is outcome000",
+    "factorization": "q0 is independent of the spectator pair because the two Hamiltonian terms commute on disjoint subsystems; independent readout preserves factorization. Spectator_0 is blind to P11 in either world."
+  },
+  "analytic_lower_bound": {
+    "new_target_full_output_KL_interval": [
+      "0.0002041222635633725473704930366485038844138098403519258306335786393",
+      "0.0002041222635633725473704930366485038844138098403519258306335809991"
+    ],
+    "spectator_KL_interval_independent_factorization_check": [
+      "0.000204122263563372547370493036648503884413809840351925830633578635",
+      "0.000204122263563372547370493036648503884413809840351925830633580785"
+    ],
+    "kappa_kl_095_001_interval": [
+      "4.176898950135489315266713690929139464445277254023544295589312295",
+      "4.176898950135489315266713690929139464445277254023544295589312299"
+    ],
+    "necessary_expected_new_target_shots_lower": "20462.73090068254084363295202103978754666557609319588440582201209",
+    "necessary_expected_total_shots_lower": "20462.73090068254084363295202103978754666557609319588440582201209",
+    "proof": "Old and spectator_0 laws coincide between good and null worlds. Only new spectator_plus shots contribute KL=D(Q_good||Q_null). For any predictable randomized allocation and finite stopping time, transcript KL=E_good[N_new_target]*D. Data processing of accept implies transcript KL>=kl(.95,.01). Therefore E_good[N_total]>=E_good[N_new_target]>=kappa/D.",
+    "scope": "This is a necessary cost at the good world for a validator uniformly1percent-risk-valid over the expanded physical crosstalk class, with95percent correct acceptance at that good world. It is not a lower bound for a validator allowed to assume chi=0."
+  },
+  "common_Q_control": {
+    "rule": "Observe old/new X0 outcomes with independent shot noise; multiply L+ by1.5 on(old1,new0),by.5 on(old0,new1),and by1 otherwise. L- swaps those factors. Accept/reject on the respective first crossing of200; stop at cap if neither crosses.",
+    "risk": "When x_old<=x_new, L+ is a nonnegative supermartingale; when x_old>=x_new, L- is. Under equality their union crossing probability is<=.01. With common spectator success s>0 these are exactly the target sign nulls.",
+    "pair_mean_upper": "1072.384264186778243977689119317864464793593662380782769446798447",
+    "physical_mean_upper": "2144.768528373556487955378238635728929587187324761565538893596894",
+    "physical_cap": 131072,
+    "correct_stop_probability_lower": "0.9786367147188296776736802807721273122437500967043947941673767326",
+    "cost_and_power_proof": "In the good world, log L+ has the displayed positive mean increment and positive overshoot<=log1.5. Stopped Wald gives E[T+] <=(log200+log1.5)/drift. Stopping at either sign and capping reduce expected cost. Wrong-sign probability<=.005 and Markov cap abstention<=E[T+]/cap_pairs give the correct-stop lower bound.",
+    "scope": "Classical fixed-alternative conditional McNemar/SPRT control, not a new FaultTune method or full-field SOTA winner."
+  },
+  "invariance_tax": {
+    "expanded_class_necessary_cost_over_common_Q_feasible_cost_lower": "9.540764250303530404041502223551200713511838360870579429163375559",
+    "exact_acceptance_failure_when_ignoring_spectators": "The entire X0-only history has the identical law in both worlds. Thus the common-Q control accepts the null world with probability at least its good-world correct-stop lower bound, exceeding95percent. It cannot be promoted as robust to unknown amplitude crosstalk.",
+    "interpretation": "The large bitstring gain depends materially on the model promise. Uniform validity over a larger physically plausible family can force an order-of-magnitude larger cost even at a truly invariant point. This is a cross-model cost separation, not a same-model algorithm speedup."
+  },
+  "high_precision_physical_parameters_diagnostic": {
+    "digits": 120,
+    "u_old": "0.31917392579812228365495875639710001246557943921056009425684340359133142140410374",
+    "u_new": "0.14225372489090911685299834438043892366483637578418387883820975783799027790363179",
+    "gamma_good": "1.9011178121828857963228494137280967005215808130756179583904488450618418483960397",
+    "gamma_null": "1.9534491590084691752178590241695348976475525531385074020964132555125916952881586",
+    "chi_null": "-0.16395871528266062031376569868739041019414217011982210772731013874211567085445395",
+    "scope": "Angle decimals only verify the analytic exact inverse-trigonometric construction. Rational PMFs and directed KL bounds carry the cost statement."
+  },
+  "source_sha256": {
+    "experiments/sota_round7/bitstring_invariance_cost.py": "c6fffd845df8dac8436ee80c180e304292903337e2dcec9cf55cced4a9f0ce32",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a"
+  },
+  "claim_boundary": "No Monte Carlo, no SOTA gain, no reclassification of an old failed candidate, and no claim that all full-bitstring mechanisms fail. The useful invariant-family shortcut and the expanded-family obstruction are distinct statements."
+}

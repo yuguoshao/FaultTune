@@ -1,0 +1,309 @@
+{
+  "status": "round7_mechanism_screens_reviews_and_controls_complete_goal_active",
+  "updated_utc": "2026-11-05T06:53:57.318105+00:00",
+  "objective": "Continue trying to exceed applicable SOTA, retaining the original1percent error,95percent per-case correct-stop,threefold geometric cost,full-cost/abstention accounting and independent physical validation requirements.",
+  "sota_goal_complete": false,
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "new_simulation_observations": 0,
+  "latest_operational_performance_changed": false,
+  "latest_operational_result_source": "results/sota_round6/distance_to_sota.json",
+  "mechanism_results": {
+    "full_bitstrings": {
+      "positive_result": "The same-duration disjoint three-qubit circuit has P_j(X,S)=Bern(x_j)*Q(S); with common s=Q(00)>0, Delta=s(x_new-x_old), so full readout permits nuisance cancellation. The enlarged common-Q information-ratio example is53.3230116211; a separately constructed physical sign-reflection pair has KL ratio55.9268095211.",
+      "scope": "These ratios compare information experiments/models and are not finite stopping-cost speedups or same-information SOTA wins. Exact-angle identities and floating gate checks remain distinguished.",
+      "expanded_crosstalk_shot_lower": "20462.73090068254084363295202103978754666557609319588440582201209",
+      "common_Q_control_shot_upper": "2144.768528373556487955378238635728929587187324761565538893596894",
+      "cross_model_invariance_cost_ratio_lower": "9.540764250303530404041502223551200713511838360870579429163375559",
+      "mechanism_limit": "An explicit stationary H(u) with amplitude-dependent spectator coupling makes the target null while preserving all X-only observations. Thus the cheap invariant-model control cannot be claimed uniformly safe under unknown crosstalk."
+    },
+    "noisy_multidepth_phase": {
+      "positive_result": "On the declared score pair, a feasible multi-depth-resource control beats every depth1-only method by>15x in circuit counts and>3x in modeled device time.",
+      "same_resource_speedup_limits": {
+        "primary_shots": "1.593",
+        "paid_gate_uses": "1.954",
+        "modeled_device_time": "2.045"
+      },
+      "scope": "The same multi-depth-resource comparison is bounded below3x by a common-null finite-error information proof and qualified fixed-depth controls. This applies to the declared noisy Ramsey family/score pair, not all phase-estimation problems.",
+      "independent_review": "Root verified the analytic chain, budget closure,130digit constants,4 matrix-relative-entropy calculations and3 symbolic identities."
+    }
+  },
+  "executable_controls": {
+    "module": "experiments/sota_round7/resource_controls.py",
+    "controls": [
+      "RamseyFixedDepthControl depth8",
+      "RamseyFixedDepthControl depth16",
+      "InvariantBitstringControl"
+    ],
+    "contract": "Paid-observation-only state machines; exact rational crossing fallback, first report absorbs, phase randomization, full readout counts, attempts charged on issue, unique pending outcome, failure/interruption handling, full-cap penalty for every undecided/uncompleted record, and exact resource ledgers.",
+    "randomness_scope": "Default Ramsey coins use system randomness under the explicit independent-fair-coin assumption. Fixed seeded replay is labelled deterministic and does not inherit a probability guarantee.",
+    "validation": "Seven deterministic test groups and independent source review passed. Tests are not Monte Carlo power/cost evidence.",
+    "archive": "results/sota_round7/mechanisms/resource_controls_v3_sources.zip",
+    "archive_sha256": "4dc1588aa9734f7eb9bd6935efa16fb683b10cbb15e17800a382d6445b18a78c",
+    "retained_development_versions": [
+      {
+        "version": 1,
+        "check_status": "passed",
+        "archive": "results/sota_round7/mechanisms/resource_controls_v1_sources.zip",
+        "sha256": "fc87a8fe7fd52568cf2cb7a033b43b76625dbe86d5566a648ca6d32d02135419"
+      },
+      {
+        "version": 2,
+        "check_status": "failed",
+        "archive": "results/sota_round7/mechanisms/resource_controls_v2_sources.zip",
+        "sha256": "abb899026a55f59b4b0eef29d4871e1abd02525888d8ba273367ad413d60f70b"
+      }
+    ],
+    "development_corrections": "v1 missed a float-depth input boundary and incomplete-record score penalty. v2 fixed behavior but a test-edit placement error was retained as failed. v3 corrects the test placement and includes all reviewed accounting/seed-scope changes. Both earlier source/check snapshots are preserved."
+  },
+  "literature": "Tendick/Mitra originals did not supply the inspected fixed-basis KL reflected-pair result, but Baek2020 already defined the measurement resource quantity; priority remains unverified. Full-output and multi-depth comparators must receive equal information/actions. RPEv3 contains an erratum; its earlier constants are not used.",
+  "claim_limits": [
+    "No new candidate has passed the original independent performance acceptance. The previous geometric cost disadvantage remains.",
+    "The two resource improvements are real within their contracts, but their advantages are also accessible to strong classical controls. They do not establish international-leading or SOTA performance.",
+    "New explicit model families are feasibility probes; they do not replace or erase frozen old instances, failed preregistration checks or the original3x requirement.",
+    "The exact common-Q control has demonstrated finite-cost/power bounds at its stated reference instance, not uniform95percent power over every common-Q distribution.",
+    "Analytic model guarantees assume the stated physical observation law; actual execution failures remain failed trials with full-cap penalties."
+  ],
+  "next_required": [
+    "Develop a candidate mechanism whose gain survives the newly executable same-resource controls. Do not launch large performance experiments merely to rediscover the certified noisy-phase ceiling.",
+    "For the promising full-bitstring direction, quantify which additional physically executable diagnostic action can identify amplitude-dependent spectator coupling at low paid cost, while giving it to model-aware likelihood/active-learning comparators too.",
+    "Finish faithful full applicable literature controls before labelling any cost reduction SOTA. Preserve separate statuses for oracle information, theorem novelty and operational performance.",
+    "If a candidate shows sufficient potential, freeze its implementation and independent physical benchmark with the original safety,power,cost and coverage criteria before full validation."
+  ],
+  "source_binding_audit": {
+    "checked_links": 54,
+    "failures": [],
+    "links": [
+      [
+        "results/sota_round7/mechanisms/bitstring_nuisance_diagnostic.json",
+        "experiments/sota_round7/bitstring_nuisance_diagnostic.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/bitstring_nuisance_diagnostic.json",
+        "experiments/circuit_validation/quantum_model.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/bitstring_nuisance_diagnostic.json",
+        "experiments/circuit_validation/direct_tests.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/bitstring_nuisance_peer_review.json",
+        "results/sota_round7/mechanisms/bitstring_nuisance_diagnostic.json"
+      ],
+      [
+        "results/sota_round7/mechanisms/bitstring_nuisance_peer_review.json",
+        "experiments/sota_round7/bitstring_nuisance_diagnostic.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/bitstring_nuisance_peer_review.json",
+        "experiments/circuit_validation/quantum_model.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/bitstring_nuisance_peer_review.json",
+        "experiments/circuit_validation/direct_tests.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/bitstring_nuisance_peer_review.json",
+        "results/sota_round7/mechanisms/bitstring_nuisance_peer_review.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/bitstring_invariance_cost.json",
+        "experiments/sota_round7/bitstring_invariance_cost.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/bitstring_invariance_cost.json",
+        "experiments/circuit_validation/direct_tests.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_obstruction.json",
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_obstruction.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_obstruction.json",
+        "docs/VALIDATION_ACCEPTANCE_CRITERIA.md"
+      ],
+      [
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_obstruction.json",
+        "experiments/acceptance_benchmark/criteria_v0.json"
+      ],
+      [
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_obstruction.json",
+        "experiments/circuit_validation/quantum_model.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_obstruction.json",
+        "experiments/circuit_validation/observation.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_obstruction.json",
+        "experiments/circuit_validation/direct_tests.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_budget_closure.json",
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_budget_closure.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_budget_closure.json",
+        "experiments/circuit_validation/direct_tests.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/noisy_multidepth_root_review.json",
+        "experiments/sota_round7/review_multidepth_obstruction.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/noisy_multidepth_root_review.json",
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_obstruction.json"
+      ],
+      [
+        "results/sota_round7/mechanisms/noisy_multidepth_root_review.json",
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_budget_closure.json"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "experiments/sota_round7/write_literature_review.py"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "experiments/sota_round7/fetch_literature.py"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "experiments/sota_round7/inspect_and_fetch_rpe.py"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/public_source_ledger.json"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/rpe_source_ledger.json"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round6/literature/reflected_pair_priority_review.json"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round6/research_state.json"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round6/distance_to_sota.json"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/structured_validation/literature_cache/continuous_fisher_turner_ly_grunwald_v3.html"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/structured_validation/literature_cache/continuous_fisher_turner_ly_grunwald_v3.txt"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/tendick2023_abs.html"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/tendick2023_abs.txt"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/tendick2023_full.html"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/tendick2023_full.txt"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/mitra2025_abs.html"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/mitra2025_abs.txt"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/mitra2025_full.html"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/mitra2025_full.txt"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/kimmel2015_abs.html"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/kimmel2015_abs.txt"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/kimmel2015_html.html"
+      ],
+      [
+        "results/sota_round7/literature/direct_priority_and_resource_comparators.json",
+        "results/sota_round7/literature/kimmel2015_html.txt"
+      ],
+      [
+        "results/sota_round7/mechanisms/resource_control_checks_v3.json",
+        "experiments/sota_round7/test_resource_controls.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/resource_control_checks_v3.json",
+        "experiments/sota_round7/resource_controls.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/resource_control_checks_v3.json",
+        "experiments/circuit_validation/direct_tests.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/resource_controls_peer_review.json",
+        "experiments/sota_round7/resource_controls.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/resource_controls_peer_review.json",
+        "results/sota_round7/mechanisms/resource_control_checks_v3.json"
+      ],
+      [
+        "results/sota_round7/mechanisms/resource_controls_peer_review.json",
+        "experiments/sota_round7/test_resource_controls.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/resource_controls_peer_review.json",
+        "experiments/circuit_validation/direct_tests.py"
+      ],
+      [
+        "results/sota_round7/mechanisms/resource_controls_peer_review.json",
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_obstruction.json"
+      ],
+      [
+        "results/sota_round7/mechanisms/resource_controls_peer_review.json",
+        "results/sota_round7/mechanisms/noisy_multidepth_phase_budget_closure.json"
+      ],
+      [
+        "results/sota_round7/mechanisms/resource_controls_peer_review.json",
+        "results/sota_round7/mechanisms/bitstring_invariance_cost.json"
+      ],
+      [
+        "results/sota_round7/mechanisms/resource_controls_peer_review.json",
+        "results/sota_round7/mechanisms/resource_controls_peer_review.py"
+      ]
+    ]
+  },
+  "artifact_sha256": {
+    "results/sota_round7/mechanisms/bitstring_nuisance_diagnostic.json": "d3dd68e495a4f9bae6db3a0ac4e3b81b0dbe412203b66e0bbedcfb2d657785ce",
+    "results/sota_round7/mechanisms/bitstring_nuisance_peer_review.json": "7f61820c481e3b89209f5f8af624452d456cccc53c5dbc702d9216109592204a",
+    "results/sota_round7/mechanisms/bitstring_nuisance_applicability_addendum.json": "b9d5d6ada76769c503ec97ff9f61fa129f9b933358422a02fca2925eb7b15052",
+    "results/sota_round7/mechanisms/bitstring_invariance_cost.json": "a51d351690cf7177faa8846267ed9e0d32aefcbe44cbe9a2f129d83787813216",
+    "results/sota_round7/mechanisms/bitstring_invariance_cost_independent_review.json": "b17b7ddd50cb9da79506e96820f4c7d3bb9a62d0e4fc690de2299fc8ac294fe1",
+    "results/sota_round7/mechanisms/noisy_multidepth_phase_obstruction.json": "78db9abc7d27879995d0b37e958937b996e4fdb02992f3f4ca86156555108fda",
+    "results/sota_round7/mechanisms/noisy_multidepth_phase_budget_closure.json": "9e54a9518da3e39cc423fd2d9dc2a5e08c06dfe41657a211ca32c5e8b14c5a6a",
+    "results/sota_round7/mechanisms/noisy_multidepth_root_review.json": "47f9ef88d4e5f91587bb38dc7be61575448d319002a5c101c23dc2588ab0d0e5",
+    "results/sota_round7/literature/direct_priority_and_resource_comparators.json": "06f231d048d8e6599a272f0aeb6d6e2548db618ed238673a4b25d45a714cc67d",
+    "results/sota_round7/mechanisms/resource_control_checks_v3.json": "7fd9ec049170de065e704b6bd250aa067315aa1b0a94b0ca00a4ed571d73701e",
+    "results/sota_round7/mechanisms/resource_controls_peer_review.json": "6b7b5fd02f9fb12a91903de45a4c1cf4bfe020c354caffdd8ad49fc41ae3f43d"
+  },
+  "state_writer_sha256": "b3e338806dc7d8977ca0551a0109ddffe38e72aeaf66c6751d9da29b959077d2"
+}

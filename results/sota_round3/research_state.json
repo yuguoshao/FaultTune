@@ -1,0 +1,81 @@
+{
+  "status": "active_research",
+  "objective": "Continue pursuing a defensible advantage over applicable SOTA; development savings alone do not complete the user goal.",
+  "updated_utc": "2026-11-04T13:20:23.435628+00:00",
+  "previous_goal_turn_classification": "progress",
+  "completed_evidence": [
+    {
+      "path": "results/sota_round3/paired_benchmark/summary.json",
+      "finding": "576 paths / 6336 methods / 1254704 paid observations; beta exact costs 0.932824 of fine hedge but ties calibrated pair_grid and pairwise_hedge."
+    },
+    {
+      "path": "results/sota_round3/paired_benchmark_audit/audit.json",
+      "finding": "Full independent ledger and certificate audit passed; 36 mechanical same-seed replays matched."
+    },
+    {
+      "path": "results/sota_round3/literature/finite_horizon_prior_art.json",
+      "finding": "Exact finite-horizon calibration, MaxSPRT and optimal alpha spending have direct classical precedents."
+    },
+    {
+      "path": "results/sota_round3/fast_gate_replay_v1/summary.json",
+      "finding": "m6 separate physical-prefix candidate: geometric cost ratio 0.9627147 versus beta exact; 461 versus 462 main correct stops. Arithmetic mean cost is slightly higher, so it does not dominate all metrics."
+    },
+    {
+      "path": "results/sota_round2/theory/physical_fast_gate_replay_independent_audit.json",
+      "finding": "All 1728 replay method records independently verified, no censoring or new observations."
+    },
+    {
+      "path": "results/sota_round3/full_count_replay_audit/audit.json",
+      "finding": "All 2304 full-count comparator replays independently audited, no censoring."
+    },
+    {
+      "path": "results/sota_round2/theory/piecewise_gate_replay_independent_audit.json",
+      "finding": "Piecewise candidate independently verified: 58 paths cheaper, 518 identical costs, no observed decision changes or cost regressions in this development sample."
+    },
+    {
+      "path": "results/sota_round3/round3_closeout.json",
+      "finding": "Metrics and completion gaps recorded; original SOTA goal remains active."
+    }
+  ],
+  "current_main_outcomes": [
+    {
+      "group": "main",
+      "method": "physical_gate_m6_piecewise_D512",
+      "trajectories": 512,
+      "mean_paid_shots": 824.0859375,
+      "wrong": 0,
+      "correct_stops": 462,
+      "abstained": 50
+    },
+    {
+      "group": "main",
+      "method": "beta_exact",
+      "trajectories": 512,
+      "mean_paid_shots": 824.8203125,
+      "wrong": 0,
+      "correct_stops": 462,
+      "abstained": 50
+    }
+  ],
+  "live_work": {
+    "status": "all_released_observations_and_required_audits_complete",
+    "new_observations_at_cap16384": 0
+  },
+  "scope_limits": [
+    "Current shared-path experiment is fixed PSR in the original warm-up regime, not a validation of full closed-angle adaptation.",
+    "512 main trajectories and 64 null trajectories per method are development data; no held-out superiority or empirical 1 percent risk certification.",
+    "Current correct-stop fraction is about 90 percent, below the original 95 percent power target.",
+    "Equal-case geometric savings do not imply a reduction in the arithmetic mean or in every case.",
+    "The original international-leading acceptance criteria, including the ambitious threefold target, remain unachieved."
+  ],
+  "next_required": [
+    "Improve the rare/weak-signal long paths that dominate total observations, while retaining adequate power.",
+    "Freeze a sufficient physical budget and independently evaluated cases/seeds; the H8192 boundary preparations are mathematical preparation, not a new experiment.",
+    "Match comparator optimization, including exact sequential and full-count methods, before formal superiority testing.",
+    "Preserve the full original international-leading objective and acceptance criteria."
+  ],
+  "sota_goal_complete": false,
+  "current_goal_turn_classification": "progress",
+  "latest_closeout": "results/sota_round3/round3_closeout.json",
+  "current_candidate": "physical_gate_m6_piecewise_D512"
+}

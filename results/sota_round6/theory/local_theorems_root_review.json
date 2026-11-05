@@ -1,0 +1,38 @@
+{
+  "status": "independent_root_analytic_review_passed",
+  "new_simulation_observations": 0,
+  "blocking_findings": [],
+  "reviewed_claims": [
+    "For every fixed 0<A<1 and 0<C<min(A,1-A), a sufficiently small neighborhood of B=0 admits an exact globally optimal reflected pair and a physical affine tangent null.",
+    "For every fixed B,C with C>0 and B^2+C^2<1/4, a sufficiently small neighborhood of A=1/2 admits the same exact reflected-pair/global-null conclusion."
+  ],
+  "analytic_checks": [
+    "At B=0, strict convexity of Bernoulli KL in p gives a unique pair of global contacts at z=0; the two branch second derivatives are strictly negative because the capacity center is strictly between the endpoint rates.",
+    "At A=1/2, rho is positive definite. For nonzero Hermitian E, R E R E R = R^(1/2)(R^(1/2) E R^(1/2))^2 R^(1/2) is nonzero positive semidefinite. Thus Tr(rho log H) has strictly negative Hessian, making the previous tangent bound strict unless H=H*. Distinct eigenvalues of H* force PSR contacts.",
+    "The factorization (1-t^2)D-t^2 lambda=(lambda-1)((1-t^2)lambda-1) plus 1<lambda<1/(1-t^2) proves strict negative baseline curvature. Strict physicality supplies 4B^2<1-t^2.",
+    "Symmetric entropy secants and equal endpoint capacities are even analytic functions of c; consequently they extend analytically in c^2 across z=+/-1 when all rates retain a strict interior margin.",
+    "For both theorems, choose a closed contact neighborhood with uniform negative second derivative and its compact exterior with a strict value gap. Local C2 convergence and global C0 convergence preserve both properties. The implicit-function maximum and affine tangent therefore give global domination, not only stationary contacts.",
+    "Both null coefficients remain strictly physical by continuity from an interior null. Any design has infimum at most the integrated KL to this single null; the reflected pair with capacity weights supplies the matching lower bound, including physical boundary nulls. No unjustified minimax exchange is used.",
+    "The extension to opposite-sign nulls is valid because their two rates have reversed order; the weighted Bernoulli order-cone projection pools at the capacity center, attainable by a physical constant null.",
+    "Small-B expansions follow from R_zB=K_A and R_zz=-C K_C; near-symmetry expansions follow from K_AA=4D, R_zalpha=4BD and R_zz=-H. The stated odd/even remainders follow from probability/angle symmetries."
+  ],
+  "symbolic_identity_checks": 4,
+  "reproduced_110_digit_diagnostic_cases": {
+    "reflected_pair_small_background_theorem": 6,
+    "reflected_pair_near_symmetric_theorem": 6
+  },
+  "scope_limits": [
+    "Neither proof supplies a numerical epsilon; the diagnostic nonzero perturbations are not individually certified by these existence proofs.",
+    "These are separate open neighborhoods, not an all-parameter proof or a continuation argument covering the entire physical region.",
+    "The checks of numerical contacts reproduce the author functions; analytic review and symbolic simplifications are separate evidence. They do not constitute proof-assistant verification.",
+    "No novelty, paid-learning, finite-risk stopping, cost improvement or SOTA claim is accepted."
+  ],
+  "source_sha256": {
+    "results/sota_round6/theory/reflected_pair_small_background_theorem.py": "b7e31bd24b05b7a5eb8d4d9b6a2090af7e9dc81051adde466ce09fe03e1cf825",
+    "results/sota_round6/theory/reflected_pair_small_background_theorem.json": "33c56e17956824b0c66bf2dcbc14c0c8a87f0e7f7ca02e806d49b31896543325",
+    "results/sota_round6/theory/reflected_pair_near_symmetric_theorem.py": "80f71ff8469f3284c314dbe67bc06530bd30f8e795d6787b49e35dacad63a942",
+    "results/sota_round6/theory/reflected_pair_near_symmetric_theorem.json": "67ab5673df1d49cf96c42e372a8f9a7b0be220a56806457a53787e2d1d715d57",
+    "experiments/sota_round6/review_local_theorems.py": "97ba6c617d2bcbed6834219d00e337ce0a30a944945ebacd0f267606c95434df",
+    "docs/CONTINUOUS_SYMMETRIC_DESIGN.md": "0e16a486bb11c38b179b1d8d2aa8ed18184aefe07ceabd99c44efb59b10cd13d"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "scope": "Existing smoke records only; no new simulated observations",
+  "checks": [
+    "Existing complete smoke audit agrees exactly with original audit on counts, outcomes and input hashes.",
+    "A partial JSON line is never parsed or marked audited, and produces no complete audit.",
+    "An initially partial line followed by the remaining flushed ledger yields the identical complete audit.",
+    "Unexpected bytes after the expected records prevent a passed audit.",
+    "Changing an already audited prefix while waiting for the summary is rejected by the final ledger hash."
+  ],
+  "audit_source_sha256": "260a75ebd46dcd7eb8f9fbb21fd45d2ffc1a173c7cec057d037046aba9671bc4",
+  "test_source_sha256": "5b2e5dc6d0d73488a267e5b540298301b365f4a3adbb570b7ea6ca59e21b0776",
+  "elapsed_seconds": 16.7342848
+}

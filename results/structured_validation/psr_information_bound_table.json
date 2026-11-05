@@ -1,0 +1,415 @@
+{
+  "status": "computed_outward",
+  "scope": "Outward deterministic evaluation of analytical full-Bernoulli oracle bounds; no sampling",
+  "phi": "((1+x) log(1+x)+(1-x) log(1-x))/2",
+  "definitions": {
+    "m": "min(A,1-A)",
+    "t": "m/(1-m)",
+    "u": "|C|/m"
+  },
+  "uniform_formula": "2/(1+Phi(t)/(t*log(2)))",
+  "fixed_signal_formula": "2/(1+Phi(t*u)/(t*Phi(u)))",
+  "rounding": "Displayed bounds use the upper endpoint of an outward Decimal interval, rounded toward +infinity to six decimals",
+  "uniform": [
+    {
+      "m": "1/2",
+      "m_decimal": "0.5",
+      "ratio": {
+        "lower_decimal": "1",
+        "upper_decimal": "1",
+        "upper_rounded_six_decimals": "1.000000"
+      },
+      "maximum_additional_information_percent": {
+        "lower_decimal": "-0",
+        "upper_decimal": "-0",
+        "upper_rounded_six_decimals": "0.000000"
+      }
+    },
+    {
+      "m": "4999/10000",
+      "m_decimal": "0.4999",
+      "ratio": {
+        "lower_decimal": "1.001174668052072170064964850125069843455236509192080528036866883",
+        "upper_decimal": "1.001174668052072170064964850125069843455236509192080528036866889",
+        "upper_rounded_six_decimals": "1.001175"
+      },
+      "maximum_additional_information_percent": {
+        "lower_decimal": "0.117466805207217006496485012506984345523650919208052803686688300",
+        "upper_decimal": "0.117466805207217006496485012506984345523650919208052803686688900",
+        "upper_rounded_six_decimals": "0.117467"
+      }
+    },
+    {
+      "m": "499/1000",
+      "m_decimal": "0.499",
+      "ratio": {
+        "lower_decimal": "1.008498388614366573833122320748432397810537760550611751372771334",
+        "upper_decimal": "1.008498388614366573833122320748432397810537760550611751372771340",
+        "upper_rounded_six_decimals": "1.008499"
+      },
+      "maximum_additional_information_percent": {
+        "lower_decimal": "0.849838861436657383312232074843239781053776055061175137277133400",
+        "upper_decimal": "0.849838861436657383312232074843239781053776055061175137277134000",
+        "upper_rounded_six_decimals": "0.849839"
+      }
+    },
+    {
+      "m": "99/200",
+      "m_decimal": "0.495",
+      "ratio": {
+        "lower_decimal": "1.031753736460922545718550542126109748653852563870603448203642092",
+        "upper_decimal": "1.031753736460922545718550542126109748653852563870603448203642097",
+        "upper_rounded_six_decimals": "1.031754"
+      },
+      "maximum_additional_information_percent": {
+        "lower_decimal": "3.175373646092254571855054212610974865385256387060344820364209200",
+        "upper_decimal": "3.175373646092254571855054212610974865385256387060344820364209700",
+        "upper_rounded_six_decimals": "3.175374"
+      }
+    },
+    {
+      "m": "49/100",
+      "m_decimal": "0.49",
+      "ratio": {
+        "lower_decimal": "1.054907765691293247400084354522564347279688717967599880858248382",
+        "upper_decimal": "1.054907765691293247400084354522564347279688717967599880858248388",
+        "upper_rounded_six_decimals": "1.054908"
+      },
+      "maximum_additional_information_percent": {
+        "lower_decimal": "5.490776569129324740008435452256434727968871796759988085824838200",
+        "upper_decimal": "5.490776569129324740008435452256434727968871796759988085824838800",
+        "upper_rounded_six_decimals": "5.490777"
+      }
+    },
+    {
+      "m": "12/25",
+      "m_decimal": "0.48",
+      "ratio": {
+        "lower_decimal": "1.093768498256836875594021344425446633859479507982379618407612259",
+        "upper_decimal": "1.093768498256836875594021344425446633859479507982379618407612264",
+        "upper_rounded_six_decimals": "1.093769"
+      },
+      "maximum_additional_information_percent": {
+        "lower_decimal": "9.376849825683687559402134442544663385947950798237961840761225900",
+        "upper_decimal": "9.376849825683687559402134442544663385947950798237961840761226400",
+        "upper_rounded_six_decimals": "9.376850"
+      }
+    },
+    {
+      "m": "9/20",
+      "m_decimal": "0.45",
+      "ratio": {
+        "lower_decimal": "1.186901893210631843714939654465158182188349323520547770444030950",
+        "upper_decimal": "1.186901893210631843714939654465158182188349323520547770444030954",
+        "upper_rounded_six_decimals": "1.186902"
+      },
+      "maximum_additional_information_percent": {
+        "lower_decimal": "18.69018932106318437149396544651581821883493235205477704440309500",
+        "upper_decimal": "18.69018932106318437149396544651581821883493235205477704440309540",
+        "upper_rounded_six_decimals": "18.690190"
+      }
+    },
+    {
+      "m": "2/5",
+      "m_decimal": "0.4",
+      "ratio": {
+        "lower_decimal": "1.311504333858021776916125343976224376479687451129799201460534730",
+        "upper_decimal": "1.311504333858021776916125343976224376479687451129799201460534735",
+        "upper_rounded_six_decimals": "1.311505"
+      },
+      "maximum_additional_information_percent": {
+        "lower_decimal": "31.15043338580217769161253439762243764796874511297992014605347300",
+        "upper_decimal": "31.15043338580217769161253439762243764796874511297992014605347350",
+        "upper_rounded_six_decimals": "31.150434"
+      }
+    },
+    {
+      "m": "1/4",
+      "m_decimal": "0.25",
+      "ratio": {
+        "lower_decimal": "1.606280559768806003054936220541624304112447280671752499122861738",
+        "upper_decimal": "1.606280559768806003054936220541624304112447280671752499122861745",
+        "upper_rounded_six_decimals": "1.606281"
+      },
+      "maximum_additional_information_percent": {
+        "lower_decimal": "60.62805597688060030549362205416243041124472806717524991228617380",
+        "upper_decimal": "60.62805597688060030549362205416243041124472806717524991228617450",
+        "upper_rounded_six_decimals": "60.628056"
+      }
+    },
+    {
+      "m": "1/10",
+      "m_decimal": "0.1",
+      "ratio": {
+        "lower_decimal": "1.851311095098546649999046183127782803947361780102501502768722891",
+        "upper_decimal": "1.851311095098546649999046183127782803947361780102501502768722916",
+        "upper_rounded_six_decimals": "1.851312"
+      },
+      "maximum_additional_information_percent": {
+        "lower_decimal": "85.13110950985466499990461831277828039473617801025015027687228910",
+        "upper_decimal": "85.13110950985466499990461831277828039473617801025015027687229160",
+        "upper_rounded_six_decimals": "85.131110"
+      }
+    },
+    {
+      "m": "1/100",
+      "m_decimal": "0.01",
+      "ratio": {
+        "lower_decimal": "1.985532491954671911974736276235820529017850738936531265178120564",
+        "upper_decimal": "1.985532491954671911974736276235820529017850738936531265178120733",
+        "upper_rounded_six_decimals": "1.985533"
+      },
+      "maximum_additional_information_percent": {
+        "lower_decimal": "98.55324919546719119747362762358205290178507389365312651781205640",
+        "upper_decimal": "98.55324919546719119747362762358205290178507389365312651781207330",
+        "upper_rounded_six_decimals": "98.553250"
+      }
+    }
+  ],
+  "fixed_signal": [
+    {
+      "m": "49/100",
+      "u": "0",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.02",
+        "upper_decimal": "1.02",
+        "upper_rounded_six_decimals": "1.020000"
+      }
+    },
+    {
+      "m": "49/100",
+      "u": "1/100",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.020000640561877196750272081160738564677606790059442967209600236",
+        "upper_decimal": "1.020000640561877196750272081160738564677606790059442967209606435",
+        "upper_rounded_six_decimals": "1.020001"
+      }
+    },
+    {
+      "m": "49/100",
+      "u": "1/10",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.020064445082745162303949825875460702698752424908094000556526416",
+        "upper_decimal": "1.020064445082745162303949825875460702698752424908094000556526514",
+        "upper_rounded_six_decimals": "1.020065"
+      }
+    },
+    {
+      "m": "49/100",
+      "u": "1/2",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.021899135467892293563822008247998396564775676585380719362244468",
+        "upper_decimal": "1.021899135467892293563822008247998396564775676585380719362244476",
+        "upper_rounded_six_decimals": "1.021900"
+      }
+    },
+    {
+      "m": "49/100",
+      "u": "9/10",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.032140265398728610296008055933443022980602243296151015467191696",
+        "upper_decimal": "1.032140265398728610296008055933443022980602243296151015467191701",
+        "upper_rounded_six_decimals": "1.032141"
+      }
+    },
+    {
+      "m": "49/100",
+      "u": "1",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.054907765691293247400084354522564347279688717967599880858248382",
+        "upper_decimal": "1.054907765691293247400084354522564347279688717967599880858248388",
+        "upper_rounded_six_decimals": "1.054908"
+      }
+    },
+    {
+      "m": "9/20",
+      "u": "0",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.1",
+        "upper_decimal": "1.1",
+        "upper_rounded_six_decimals": "1.100000"
+      }
+    },
+    {
+      "m": "9/20",
+      "u": "1/100",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.100002727416162242625605588581914154858123769131731041912326900",
+        "upper_decimal": "1.100002727416162242625605588581914154858123769131731041912335300",
+        "upper_rounded_six_decimals": "1.100003"
+      }
+    },
+    {
+      "m": "9/20",
+      "u": "1/10",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.100274170568241517471928978665523457087919733866598374199735057",
+        "upper_decimal": "1.100274170568241517471928978665523457087919733866598374199735165",
+        "upper_rounded_six_decimals": "1.100275"
+      }
+    },
+    {
+      "m": "9/20",
+      "u": "1/2",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.107884104893613008503114644607591945461593736710459424927450326",
+        "upper_decimal": "1.107884104893613008503114644607591945461593736710459424927450336",
+        "upper_rounded_six_decimals": "1.107885"
+      }
+    },
+    {
+      "m": "9/20",
+      "u": "9/10",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.143188693582865710186498557892236037523124864451765607092684622",
+        "upper_decimal": "1.143188693582865710186498557892236037523124864451765607092684627",
+        "upper_rounded_six_decimals": "1.143189"
+      }
+    },
+    {
+      "m": "9/20",
+      "u": "1",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.186901893210631843714939654465158182188349323520547770444030950",
+        "upper_decimal": "1.186901893210631843714939654465158182188349323520547770444030954",
+        "upper_rounded_six_decimals": "1.186902"
+      }
+    },
+    {
+      "m": "1/4",
+      "u": "0",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.5",
+        "upper_decimal": "1.5",
+        "upper_rounded_six_decimals": "1.500000"
+      }
+    },
+    {
+      "m": "1/4",
+      "u": "1/100",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.500005555730460993477599217132086698105672899129044998945353501",
+        "upper_decimal": "1.500005555730460993477599217132086698105672899129044998945391048",
+        "upper_rounded_six_decimals": "1.500006"
+      }
+    },
+    {
+      "m": "1/4",
+      "u": "1/10",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.500557312894035969414621416668698143589201049201963115841437682",
+        "upper_decimal": "1.500557312894035969414621416668698143589201049201963115841438092",
+        "upper_rounded_six_decimals": "1.500558"
+      }
+    },
+    {
+      "m": "1/4",
+      "u": "1/2",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.515134911727953860021743391381442817521708938461860555895495884",
+        "upper_decimal": "1.515134911727953860021743391381442817521708938461860555895495910",
+        "upper_rounded_six_decimals": "1.515135"
+      }
+    },
+    {
+      "m": "1/4",
+      "u": "9/10",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.565951113353983137277499500848682165545247077542019818527030995",
+        "upper_decimal": "1.565951113353983137277499500848682165545247077542019818527031000",
+        "upper_rounded_six_decimals": "1.565952"
+      }
+    },
+    {
+      "m": "1/4",
+      "u": "1",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.606280559768806003054936220541624304112447280671752499122861738",
+        "upper_decimal": "1.606280559768806003054936220541624304112447280671752499122861745",
+        "upper_rounded_six_decimals": "1.606281"
+      }
+    },
+    {
+      "m": "1/10",
+      "u": "0",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.8",
+        "upper_decimal": "1.8",
+        "upper_rounded_six_decimals": "1.800000"
+      }
+    },
+    {
+      "m": "1/10",
+      "u": "1/100",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.800002963038442779568182960594536043106073672964734656824525283",
+        "upper_decimal": "1.800002963038442779568182960594536043106073672964734656824686740",
+        "upper_rounded_six_decimals": "1.800003"
+      }
+    },
+    {
+      "m": "1/10",
+      "u": "1/10",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.800297054597146457740891207358024532017042678469217042601114951",
+        "upper_decimal": "1.800297054597146457740891207358024532017042678469217042601116676",
+        "upper_rounded_six_decimals": "1.800298"
+      }
+    },
+    {
+      "m": "1/10",
+      "u": "1/2",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.807943794276252205750361933346712364573107751317070088301371486",
+        "upper_decimal": "1.807943794276252205750361933346712364573107751317070088301371557",
+        "upper_rounded_six_decimals": "1.807944"
+      }
+    },
+    {
+      "m": "1/10",
+      "u": "9/10",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.832963879770001209724243166418407332563675218221409650692754746",
+        "upper_decimal": "1.832963879770001209724243166418407332563675218221409650692754752",
+        "upper_rounded_six_decimals": "1.832964"
+      }
+    },
+    {
+      "m": "1/10",
+      "u": "1",
+      "signal_interpretation": "u=|C|/m; u=0 is the C->0 limit",
+      "ratio": {
+        "lower_decimal": "1.851311095098546649999046183127782803947361780102501502768722891",
+        "upper_decimal": "1.851311095098546649999046183127782803947361780102501502768722916",
+        "upper_rounded_six_decimals": "1.851312"
+      }
+    }
+  ],
+  "sources": {
+    "experiments/structured_validation/psr_information_bound_table.py": "420ba4529ee2ee4f27f661a79c03ff58bfda24182052f208d86fbd3cdb9840be",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a"
+  }
+}

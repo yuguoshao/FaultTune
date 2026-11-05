@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "scope": "Only existing completed smoke data; no new simulator observations. Rep relabeling exercises the lower-bound code path while preserving existing RNG seeds.",
+  "plan_sha256": "c9baab61fc33594ac21d3231ae51fc40bc3824506145ae9f45c0c71960e81d37",
+  "audit_sources_sha256": {
+    "experiments/structured_validation/prospective/audit.py": "dcd084140936f5d2ca129000f56a0887926128ff10e990d015ba269a29b2c523",
+    "experiments/structured_validation/audit_refined.py": "542bdc715fb434c11bcf96c44748fdac51d539dc341e90b035c34864c3917b44",
+    "experiments/structured_validation/audit_conditional.py": "c605dca6595464338fb529c16bfc2aaccf0d35f38fffea6aec890dfc4176611f",
+    "experiments/structured_validation/audit_unequal.py": "061daa58573f90361f19ec2ac88847bfc06712058d95ca806b0e445168d2f0cb",
+    "experiments/structured_validation/run_conditional.py": "ea79e9c7bef12bf162582851ff3ef6db3b83af988310d02263924d1c7fd17ca1",
+    "experiments/structured_validation/fast_rb_certificate.py": "4cdbba1a913aac7e9f843f61f5ffffc6fe3c09871e991b33633187d5a486d73c",
+    "experiments/structured_validation/fast_weighted_fisher.py": "22b1dd9ff9a2d95e5bfcc7054e0cbb4b334e9e15ee45d81484e24d6c4562783a"
+  },
+  "checks": [
+    {
+      "dataset": "refined_smoke_v1",
+      "mode": "original full interval",
+      "seconds": 25.6461649,
+      "totals": {
+        "replayed_rng_blocks": 598,
+        "causal_angle_and_prediction_blocks": 598,
+        "checkpoint_screens_recomputed": 2761,
+        "full_interval_final_certificates": 54,
+        "all_decisions_strictly_certified": 54,
+        "terminal_records_checked": 54,
+        "seed_replayed_method_trajectories": 54
+      }
+    },
+    {
+      "dataset": "refined_smoke_v1",
+      "mode": "old-data independent lower-bound pathway",
+      "seconds": 5.426027599999998,
+      "totals": {
+        "replayed_rng_blocks": 598,
+        "causal_angle_and_prediction_blocks": 598,
+        "checkpoint_screens_recomputed": 2761,
+        "full_interval_final_certificates": 27,
+        "all_decisions_strictly_certified": 54,
+        "terminal_records_checked": 54,
+        "independent_decision_final_certificates": 27,
+        "seed_replayed_method_trajectories": 54
+      }
+    },
+    {
+      "dataset": "unequal_smoke_v1",
+      "mode": "original full interval",
+      "seconds": 3.6536931000000017,
+      "totals": {
+        "causal_unequal_plans_rebuilt": 69,
+        "replayed_rng_blocks": 378,
+        "checkpoint_screens_recomputed": 354,
+        "full_interval_final_certificates": 9,
+        "all_decisions_strictly_certified": 6,
+        "terminal_records_checked": 9,
+        "seed_replayed_method_trajectories": 9
+      }
+    },
+    {
+      "dataset": "unequal_smoke_v1",
+      "mode": "old-data independent lower-bound pathway",
+      "seconds": 1.2355865999999978,
+      "totals": {
+        "causal_unequal_plans_rebuilt": 69,
+        "replayed_rng_blocks": 378,
+        "checkpoint_screens_recomputed": 354,
+        "independent_decision_final_certificates": 6,
+        "all_decisions_strictly_certified": 6,
+        "terminal_records_checked": 9,
+        "seed_replayed_method_trajectories": 9,
+        "full_interval_final_certificates": 3
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "status": "selected from complete audited development, not released",
+  "created_utc": "2026-11-03T16:58:59.968723+00:00",
+  "plan_sha256": "c9baab61fc33594ac21d3231ae51fc40bc3824506145ae9f45c0c71960e81d37",
+  "selection": {
+    "candidate": "closed_rb",
+    "primary_comparator": "closed_hedge",
+    "secondary_comparator": "psr_beta",
+    "methods": [
+      "closed_hedge",
+      "closed_rb",
+      "psr_beta"
+    ],
+    "development_scores": {
+      "psr_beta": 2461.479115462408,
+      "psr_pair_grid": 2461.479115462408,
+      "psr_fisher": 2436.599673749071,
+      "psr_hedge": 2425.9619356898675,
+      "psr_safe": 2716.7808259575554,
+      "psr_rb": 2421.3770107793703,
+      "closed_beta": 2359.692802284061,
+      "closed_pair_grid": 2359.692802284061,
+      "closed_fisher": 2345.4517731252554,
+      "closed_hedge": 2330.6958135160216,
+      "closed_safe": 2617.803598699344,
+      "closed_rb": 2331.8302400170423,
+      "grid_beta": 2387.1491605682427,
+      "grid_pair_grid": 2387.1491605682427,
+      "grid_fisher": 2371.2669059975856,
+      "grid_hedge": 2359.501988604498,
+      "grid_safe": 2650.2098499672516,
+      "grid_rb": 2357.153505859195,
+      "psr_weighted_conditional_unequal": 2411.582537710495,
+      "closed_weighted_conditional_unequal": 2454.746856926516,
+      "grid_weighted_conditional_unequal": 2458.626777987293
+    },
+    "development_input_sha256": {
+      "results/structured_validation/refined_development_v1": {
+        "spec.json": "7cd44298b83d58b3649abc3f7b4ff56f8c6898dd52673f0e9dc80ac47ff2b243",
+        "summary.json": "f70ef9f8edef39d5eaacc8c9e5429da33d9cc1df5a68bfc84cc81f4cbdfa05da",
+        "trials.jsonl": "55047a732a135b029045cdfe69bbd4f69a83b3727e2d5a395b00ffcbdcf639c7",
+        "audit.json": "7e38e8c4e0167f1a415a179c82c58afff5ccb39c03b0902248de306f29bb3786"
+      },
+      "results/structured_validation/unequal_development_v1": {
+        "spec.json": "a13a5356446a2e0b4448e938ca68b048d500f6d4f3b988f61468d627fdf290ee",
+        "summary.json": "7deb8ff6be8e87c339b86558726b6559524a3ee572389abbc251df727e2f7564",
+        "trials.jsonl": "c8a998941fefcf387e6fbcc439c78fad1ed5bc034db6471f9ad14ca3f632355b",
+        "audit.json": "e4fb689f0b00c46a84ece145f167d1f089c05e6e3cff7d204835594e9d4986d4"
+      }
+    },
+    "selection_rule": "Equal-case geometric mean of unconditional per-case mean total shots across all 24 main development cases, including all errors and cap abstentions.",
+    "tie_break": "Ascending lexicographic method name after numeric metric; exact float equality only."
+  }
+}

@@ -1,0 +1,1485 @@
+{
+  "status": "certified_exact_parameter_adaptive_angle_cost_obstruction",
+  "new_simulation_observations": 0,
+  "goal_achieved": false,
+  "exact_parameter_semantics": "Each input A,B,C is the exact rational represented by its parsed binary64 value. The continuous-angle model is p(x)=A+B cos(x)+C sin(x) in real arithmetic. Baseline PSR rates are exact rational A-C and A+C, with NO second rounding to binary64. Candidate U(A,C) and baseline operating characteristics refer to this same model.",
+  "baseline": {
+    "name": "beta_exact",
+    "pair_cap": 8192,
+    "physical_shot_cap": 16384,
+    "monitoring": "Every complete PSR pair",
+    "every_positive_case_power_certified_at_least_95_percent": true,
+    "exact_null_crossing_probability_at_most_one_percent": true
+  },
+  "candidate_scope": {
+    "model": "Stationary single-harmonic Bernoulli p(x)=A+B cos(x)+C sin(x), physical B^2+C^2<=min(A,1-A)^2.",
+    "design": "Arbitrary angles and allocation chosen predictably from all previous paid outcomes and independent internal randomness; stopping may be after any paid shot, with any finite cap.",
+    "error_and_power": "Probability of a sign report<=.01 at EVERY physical C=0 null, and correct-sign report probability>=.95 separately at each compared nonnull case.",
+    "cost": "Unconditional expected number of single Bernoulli queries. Every query costs one, including data used for calibration/exploration and all wrong/abstaining paths.",
+    "no_truth_access": "The policy and output kernels are identical under the true parameter and its counterfactual null; parameters are not supplied to the candidate."
+  },
+  "theorem": {
+    "explicit_null": "For m=min(A,1-A) and0<|C|<m, q*(x)=A+B lambda(C/m) cos(x), lambda(v)=atanh(v)/v. This is a single feasible C=0 null for all angles, with a positive physical margin certified per row.",
+    "pointwise_information": "The cited analytic proof gives kl(p(x)||q*(x))<=U(A,C)=2m Phi(C/m) for every real angle x. No finite angle grid or optimized sampling distribution is substituted for this uniform statement.",
+    "adaptive_change_of_measure": "Finite transcript chain rule gives KL(P_theta transcript||P_q* transcript)<=U E_theta[N] even for adaptive angles, unbalanced counts, and mid-pair stopping. For the correct terminal-sign event, binary data processing and the.95/.01 requirements give KL>=kappa=kl(.95,.01). Hence candidate expected cost>=kappa/U.",
+    "matched_cost_product": "For each case i, certified beta mean B_i<=b_i and candidate mean C_i>=l_i, where b_i is the outward binary64 cost upper endpoint and l_i is the outward Decimal lower endpoint of kappa/U. Exact Fraction arithmetic yields geometric speedup G<=(product b_i/l_i)^(1/8).",
+    "mirrors": "C->-C leaves Phi and lambda unchanged, hence U unchanged; exact PSR rates swap, so the symmetric beta baseline has the identical expected cost and correct power. Applying the same lower bound to each mirror yields the same16-case geometric bound, without requiring a mirror-symmetric candidate.",
+    "status": "Analytic proof plus audited numerical enclosure primitives and source-bound exact rational comparisons. Independent round5 review is pending; no proof-assistant certification."
+  },
+  "kappa": {
+    "lower": "4.176898950135489315266713690929139464445277254023544295589312295",
+    "upper": "4.176898950135489315266713690929139464445277254023544295589312299",
+    "independent_mpmath160_value": "4.17689895013548931526671369092913946444527725402354429558931229724272894415112245656747003183662756335762211538042550593094528245",
+    "independent_mpmath160_inside_interval": true
+  },
+  "rows": [
+    {
+      "case_id": 9,
+      "mirror_case_id": 1009,
+      "exact_parameter_model": {
+        "A": {
+          "numerator": "5764607523034235",
+          "denominator": "576460752303423488"
+        },
+        "B": {
+          "numerator": "5084383835316195",
+          "denominator": "576460752303423488"
+        },
+        "C": {
+          "numerator": "2462479480923893",
+          "denominator": "576460752303423488"
+        }
+      },
+      "parameter_binary64_hex": {
+        "A": "0x1.47ae147ae147bp-7",
+        "B": "0x1.210385c67dfe3p-7",
+        "C": "0x1.17f395d744deap-8"
+      },
+      "exact_psr_probabilities": {
+        "minus": {
+          "numerator": "1651064021055171",
+          "denominator": "288230376151711744"
+        },
+        "plus": {
+          "numerator": "514192937747383",
+          "denominator": "36028797018963968"
+        }
+      },
+      "probabilities_were_not_rounded_again": true,
+      "beta_operating_intervals_exact_parameter_model": {
+        "plus": [
+          0.979303172581761,
+          0.9793031725908125
+        ],
+        "minus": [
+          1.2882592671323004e-05,
+          1.2882592671416941e-05
+        ],
+        "abstain": [
+          0.02068394481651612,
+          0.020683944825567655
+        ],
+        "expected_shots": [
+          6518.890596510492,
+          6518.890596582023
+        ],
+        "pair_cap": 8192,
+        "exact_binary_model_probabilities": [
+          "1651064021055171/288230376151711744",
+          "514192937747383/36028797018963968"
+        ],
+        "discordance_rate_interval": [
+          0.0198364952,
+          0.019836495200000002
+        ],
+        "sign_probability_interval": [
+          0.7153465580285502,
+          0.7153465580285503
+        ],
+        "protocol": "Every physical pair inspected; stationary independent Bernoulli arms",
+        "arithmetic": "Outward IEEE-754 intervals; rational mode-centered binomial ratios; explicit interval sign recursion; conservative cumulative-sum error envelope"
+      },
+      "beta_power_lower_endpoint_at_least_95_percent": true,
+      "information_bounds_exact_parameter_model": {
+        "E_full_psr_per_shot": {
+          "lower": "0.0009515929204331424589431809956920898648480744929934652959054541077",
+          "upper": "0.0009515929204331424589431809956920898648480744929934652959054547198",
+          "independent_mpmath160_value": "0.0009515929204331424589431809956920898648480744929934652959054545606915753822227241398604671483373891964149432650213762208209514193141",
+          "independent_mpmath160_inside_interval": true
+        },
+        "U_pointwise_any_angle_per_shot": {
+          "lower": "0.001884753864479386740162028659021269141052535945400171224779483646",
+          "upper": "0.001884753864479386740162028659021269141052535945400171224779483673",
+          "independent_mpmath160_value": "0.001884753864479386740162028659021269141052535945400171224779483655287362422085526939131295260188318764488758740051257295060199725975",
+          "independent_mpmath160_inside_interval": true
+        },
+        "oracle_information_ratio_upper_U_over_E": {
+          "lower": "1.980630397735085733329587026574726049435592391158317115468411153",
+          "upper": "1.980630397735085733329587026574726049435592391158317115468412459",
+          "independent_mpmath160_value": "1.98063039773508573332958702657472604943559239115831711546841149546732085369638775668420701427390192832032079199176504320484017348",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_cosine_coefficient": {
+          "lower": "0.009424150503820905334416045313715723066407343521885954771262413565",
+          "upper": "0.009424150503820905334416045313715723066407343521885954771262413602",
+          "independent_mpmath160_value": "0.009424150503820905334416045313715723066407343521885954771262413575532920093911047130214713325757184850999897864532040369935771139876",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_lambda": {
+          "lower": "1.068497789548855514591215164789146031558039930860488094909208918",
+          "upper": "1.068497789548855514591215164789146031558039930860488094909208922",
+          "independent_mpmath160_value": "1.068497789548855514591215164789146031558039930860488094909208919083030302787744615060287268546387926660873197625518887821024443773",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_physical_margin_m_abs_bstar": {
+          "lower": "0.000575849496179094873750771803501128263023594245142853822487586398",
+          "upper": "0.000575849496179094873750771803501128263023594245142853822487586435",
+          "independent_mpmath160_value": "0.0005758494961790948737507718035011282630235942451428538224875864244670799060889528697852866742428151490001021354679596300642288601237",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_balanced_psr": {
+          "lower": "4389.375814433617561779682903970789809376878108648970945655385270",
+          "upper": "4389.375814433617561779682903970789809376878108648970945655388103",
+          "independent_mpmath160_value": "4389.375814433617561779682903970789809376878108648970945655386008559756585236555964291140531000341092160195470403660230595891607844",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_arbitrary_adaptive_angles": {
+          "lower": "2216.150887845106954207290743962119482958672441442316236538077100",
+          "upper": "2216.150887845106954207290743962119482958672441442316236538077135",
+          "independent_mpmath160_value": "2216.150887845106954207290743962119482958672441442316236538077122830579660259465192975875842845616801788986645482286884495660346037",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_balanced_psr_gain": {
+          "lower": "13168.12744330085268533904871191236942813063432594691283696615581",
+          "upper": "13168.12744330085268533904871191236942813063432594691283696616431",
+          "independent_mpmath160_value": "13168.12744330085268533904871191236942813063432594691283696615802567926975570966789287342159300102327648058641121098069178767482353",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_arbitrary_angle_gain": {
+          "lower": "6648.452663535320862621872231886358448876017324326948709614231300",
+          "upper": "6648.452663535320862621872231886358448876017324326948709614231405",
+          "independent_mpmath160_value": "6648.452663535320862621872231886358448876017324326948709614231368491738980778395578927627528536850405366959936446860653486981038111",
+          "independent_mpmath160_inside_interval": true
+        },
+        "necessary_minimum_even_cap_balanced_psr": 4390,
+        "necessary_minimum_integer_cap_arbitrary_angles": 2217,
+        "cap4096_power_ceiling_balanced_psr": {
+          "root_lower": "0.9112510836167899166246746397563238409487332460504470003806658339",
+          "upper": "0.9112510836167899166246746397563238409487332460511243858687916007",
+          "method": "Outward rational bisection of kl(power,.01)=cap*information on [.01,1]"
+        },
+        "cap4096_power_ceiling_arbitrary_angles": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "sign_only_true_q_lr_growth_per_shot": {
+          "lower": "0.0009506877620722775036232432779080315426192462857502941302550718840",
+          "upper": "0.0009506877620722775036232432779080315426192462857502941302550718960",
+          "independent_mpmath160_value": "0.0009506877620722775036232432779080315426192462857502941302550718908495908658790765211388894700757369449105037908704808023591746736695",
+          "independent_mpmath160_inside_interval": true
+        },
+        "full_information_over_sign_lr_growth": {
+          "lower": "1.000952108985700963782127652856037016759750599115102520373974339",
+          "upper": "1.000952108985700963782127652856037016759750599115102520373974998",
+          "independent_mpmath160_value": "1.000952108985700963782127652856037016759750599115102520373974822367051617474718774133487853178448360233308056238223896094414733512",
+          "independent_mpmath160_inside_interval": true
+        },
+        "discordance_probability_exact": {
+          "numerator": "102996971711301189335562243854747",
+          "denominator": "5192296858534827628530496329220096"
+        },
+        "conditional_positive_sign_probability_exact": {
+          "numerator": "147357058402086537047371402498459",
+          "denominator": "205993943422602378671124487709494"
+        }
+      },
+      "candidate95percent_expected_shots_lower_endpoint_exact": {
+        "numerator": "22161508878451069542072907439621194829586724414423162365380771",
+        "denominator": "10000000000000000000000000000000000000000000000000000000000"
+      },
+      "beta_expected_shots_upper_endpoint_exact": {
+        "numerator": "895949501392695",
+        "denominator": "137438953472"
+      },
+      "candidate_speedup_upper_exact": {
+        "numerator": "65188905965820231358520686626434326171875000000000000000000000",
+        "denominator": "22161508878451069542072907439621194829586724414423162365380771"
+      },
+      "individual_threefold_cost_gain_excluded": true,
+      "exact_threefold_cross_multiplication_slack": "1295620669532977267698035692429258316885173243269487096142313",
+      "elapsed_seconds": 0.7577759000000001
+    },
+    {
+      "case_id": 7,
+      "mirror_case_id": 1007,
+      "exact_parameter_model": {
+        "A": {
+          "numerator": "5764607523034235",
+          "denominator": "576460752303423488"
+        },
+        "B": {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        "C": {
+          "numerator": "2824657686286775",
+          "denominator": "288230376151711744"
+        }
+      },
+      "parameter_binary64_hex": {
+        "A": "0x1.47ae147ae147bp-7",
+        "B": "0x0.0p+0",
+        "C": "0x1.41205bc01a36ep-7"
+      },
+      "exact_psr_probabilities": {
+        "minus": {
+          "numerator": "115292150460685",
+          "denominator": "576460752303423488"
+        },
+        "plus": {
+          "numerator": "11413922895607785",
+          "denominator": "576460752303423488"
+        }
+      },
+      "probabilities_were_not_rounded_again": true,
+      "beta_operating_intervals_exact_parameter_model": {
+        "plus": [
+          0.9999999999927129,
+          1.0
+        ],
+        "minus": [
+          8.382632975368527e-19,
+          8.382632975429638e-19
+        ],
+        "abstain": [
+          0.0,
+          7.287059006166383e-12
+        ],
+        "expected_shots": [
+          945.9456104093281,
+          945.9456104162283
+        ],
+        "pair_cap": 8192,
+        "exact_binary_model_probabilities": [
+          "115292150460685/576460752303423488",
+          "11413922895607785/576460752303423488"
+        ],
+        "discordance_rate_interval": [
+          0.01999208,
+          0.019992080000000002
+        ],
+        "sign_probability_interval": [
+          0.9901941168702806,
+          0.9901941168702807
+        ],
+        "protocol": "Every physical pair inspected; stationary independent Bernoulli arms",
+        "arithmetic": "Outward IEEE-754 intervals; rational mode-centered binomial ratios; explicit interval sign recursion; conservative cumulative-sum error envelope"
+      },
+      "beta_power_lower_endpoint_at_least_95_percent": true,
+      "information_bounds_exact_parameter_model": {
+        "E_full_psr_per_shot": {
+          "lower": "0.006419962304755405335185548648234479567628421102368298897571726507",
+          "upper": "0.006419962304755405335185548648234479567628421102368298897571727087",
+          "independent_mpmath160_value": "0.006419962304755405335185548648234479567628421102368298897571726821084352444537063857813382173294481632000532120605801094273490330439",
+          "independent_mpmath160_inside_interval": true
+        },
+        "U_pointwise_any_angle_per_shot": {
+          "lower": "0.01274291292410195725318965720219616727188741532109407578958208108",
+          "upper": "0.01274291292410195725318965720219616727188741532109407578958208114",
+          "independent_mpmath160_value": "0.01274291292410195725318965720219616727188741532109407578958208110513115230641766749220923702661956101471733516216171064116606832696",
+          "independent_mpmath160_inside_interval": true
+        },
+        "oracle_information_ratio_upper_U_over_E": {
+          "lower": "1.984889056850537150738595623305159006958716053994416526022381343",
+          "upper": "1.984889056850537150738595623305159006958716053994416526022381533",
+          "independent_mpmath160_value": "1.984889056850537150738595623305159006958716053994416526022381429862467585211671282027866590692328173218026078013935529080497980407",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_cosine_coefficient": {
+          "lower": "0E-63",
+          "upper": "0E-63",
+          "independent_mpmath160_value": "0.0",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_lambda": {
+          "lower": "2.344448903129891603317226574439411598881156541412370479393176895",
+          "upper": "2.344448903129891603317226574439411598881156541412370479393176899",
+          "independent_mpmath160_value": "2.344448903129891603317226574439411598881156541412370479393176896915763709047029484943598570882458713159068816236795751910468347668",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_physical_margin_m_abs_bstar": {
+          "lower": "0.010000000000000000208166817117216851329430937767028808593750000",
+          "upper": "0.010000000000000000208166817117216851329430937767028808593750000",
+          "independent_mpmath160_value": "0.01000000000000000020816681711721685132943093776702880859375",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_balanced_psr": {
+          "lower": "650.6111331902322325728871875109485334264289527217740011096677355",
+          "upper": "650.6111331902322325728871875109485334264289527217740011096677951",
+          "independent_mpmath160_value": "650.6111331902322325728871875109485334264289527217740011096677628636746560768254223106825059023530594808397644962938551025685659703",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_arbitrary_adaptive_angles": {
+          "lower": "327.7821150480671330664204234353711212945509396469689806074917138",
+          "upper": "327.7821150480671330664204234353711212945509396469689806074917158",
+          "independent_mpmath160_value": "327.7821150480671330664204234353711212945509396469689806074917148814575911025882568854238608729311012575662400896381654404370257059",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_balanced_psr_gain": {
+          "lower": "1951.833399570696697718661562532845600279286858165322003329003206",
+          "upper": "1951.833399570696697718661562532845600279286858165322003329003386",
+          "independent_mpmath160_value": "1951.833399570696697718661562532845600279286858165322003329003288591023968230476266932047517707059178442519293488881565307705697911",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_arbitrary_angle_gain": {
+          "lower": "983.3463451442013991992612703061133638836528189409069418224751414",
+          "upper": "983.3463451442013991992612703061133638836528189409069418224751474",
+          "independent_mpmath160_value": "983.3463451442013991992612703061133638836528189409069418224751446443727733077647706562715826187933037726987202689144963213110771178",
+          "independent_mpmath160_inside_interval": true
+        },
+        "necessary_minimum_even_cap_balanced_psr": 652,
+        "necessary_minimum_integer_cap_arbitrary_angles": 328,
+        "cap4096_power_ceiling_balanced_psr": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "cap4096_power_ceiling_arbitrary_angles": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "sign_only_true_q_lr_growth_per_shot": {
+          "lower": "0.006377868882348304124507090205293070504717870530981705100216694815",
+          "upper": "0.006377868882348304124507090205293070504717870530981705100216694870",
+          "independent_mpmath160_value": "0.006377868882348304124507090205293070504717870530981705100216694844221338936788694130550650626380702219352579441248020574760189875706",
+          "independent_mpmath160_inside_interval": true
+        },
+        "full_information_over_sign_lr_growth": {
+          "lower": "1.006599919688471643846746020248897198364847310959512116132430797",
+          "upper": "1.006599919688471643846746020248897198364847310959512116132430898",
+          "independent_mpmath160_value": "1.006599919688471643846746020248897198364847310959512116132430851349543615193702977138996390899876983477035658047873866814578474439",
+          "independent_mpmath160_inside_interval": true
+        },
+        "discordance_probability_exact": {
+          "numerator": "3321754053746462681276257104678955",
+          "denominator": "166153499473114484112975882535043072"
+        },
+        "conditional_positive_sign_probability_exact": {
+          "numerator": "1315672528683901292948828636444271",
+          "denominator": "1328701621498585072510502841871582"
+        }
+      },
+      "candidate95percent_expected_shots_lower_endpoint_exact": {
+        "numerator": "1638910575240335665332102117176855606472754698234844903037458569",
+        "denominator": "5000000000000000000000000000000000000000000000000000000000000"
+      },
+      "beta_expected_shots_upper_endpoint_exact": {
+        "numerator": "8320625583170473",
+        "denominator": "8796093022208"
+      },
+      "candidate_speedup_upper_exact": {
+        "numerator": "4729728052081141527196450624614953994750976562500000000000000000",
+        "denominator": "1638910575240335665332102117176855606472754698234844903037458569"
+      },
+      "individual_threefold_cost_gain_excluded": true,
+      "exact_threefold_cross_multiplication_slack": "187003673639865468799855726915612824667287532204534709112375707",
+      "elapsed_seconds": 0.9904767999999997
+    },
+    {
+      "case_id": 19,
+      "mirror_case_id": 1019,
+      "exact_parameter_model": {
+        "A": {
+          "numerator": "3602879701896397",
+          "denominator": "72057594037927936"
+        },
+        "B": {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        "C": {
+          "numerator": "3530822107858469",
+          "denominator": "72057594037927936"
+        }
+      },
+      "parameter_binary64_hex": {
+        "A": "0x1.999999999999ap-5",
+        "B": "0x0.0p+0",
+        "C": "0x1.916872b020c4ap-5"
+      },
+      "exact_psr_probabilities": {
+        "minus": {
+          "numerator": "9007199254741",
+          "denominator": "9007199254740992"
+        },
+        "plus": {
+          "numerator": "3566850904877433",
+          "denominator": "36028797018963968"
+        }
+      },
+      "probabilities_were_not_rounded_again": true,
+      "beta_operating_intervals_exact_parameter_model": {
+        "plus": [
+          0.9999999999927074,
+          1.0
+        ],
+        "minus": [
+          3.983546986260016e-19,
+          3.983546986289081e-19
+        ],
+        "abstain": [
+          0.0,
+          7.292610561198107e-12
+        ],
+        "expected_shots": [
+          188.74289857743108,
+          188.74289857880925
+        ],
+        "pair_cap": 8192,
+        "exact_binary_model_probabilities": [
+          "9007199254741/9007199254740992",
+          "3566850904877433/36028797018963968"
+        ],
+        "discordance_rate_interval": [
+          0.099802,
+          0.09980200000000002
+        ],
+        "sign_probability_interval": [
+          0.990972124807118,
+          0.9909721248071182
+        ],
+        "protocol": "Every physical pair inspected; stationary independent Bernoulli arms",
+        "arithmetic": "Outward IEEE-754 intervals; rational mode-centered binomial ratios; explicit interval sign recursion; conservative cumulative-sum error envelope"
+      },
+      "beta_power_lower_endpoint_at_least_95_percent": true,
+      "information_bounds_exact_parameter_model": {
+        "E_full_psr_per_shot": {
+          "lower": "0.03312152743290641866047002005190947291090375802202539136189452273",
+          "upper": "0.03312152743290641866047002005190947291090375802202539136189452350",
+          "independent_mpmath160_value": "0.0331215274329064186604700200519094729109037580220253913618945230937051736869229249073958455977161600819757431807654736846136337805",
+          "independent_mpmath160_inside_interval": true
+        },
+        "U_pointwise_any_angle_per_shot": {
+          "lower": "0.06371456462050979660717883072238150395142942674829183029732028099",
+          "upper": "0.06371456462050979660717883072238150395142942674829183029732028135",
+          "independent_mpmath160_value": "0.06371456462050979660717883072238150395142942674829183029732028117630581205063570265521048850310852014819537603421737727683714996009",
+          "independent_mpmath160_inside_interval": true
+        },
+        "oracle_information_ratio_upper_U_over_E": {
+          "lower": "1.923660216141150186641087516760651795210274756360374425597640956",
+          "upper": "1.923660216141150186641087516760651795210274756360374425597641013",
+          "independent_mpmath160_value": "1.923660216141150186641087516760651795210274756360374425597640986135102698949145673377009236819059717884321304022312443114627060613",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_cosine_coefficient": {
+          "lower": "0E-63",
+          "upper": "0E-63",
+          "independent_mpmath160_value": "0.0",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_lambda": {
+          "lower": "2.344448903129892430540928399346244524321719654860896270044054879",
+          "upper": "2.344448903129892430540928399346244524321719654860896270044054885",
+          "independent_mpmath160_value": "2.344448903129892430540928399346244524321719654860896270044054881816802747744100961311112358709095068383869790584291200468400523189",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_physical_margin_m_abs_bstar": {
+          "lower": "0.050000000000000002775557561562891351059079170227050781250000000",
+          "upper": "0.050000000000000002775557561562891351059079170227050781250000000",
+          "independent_mpmath160_value": "0.05000000000000000277555756156289135105907917022705078125",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_balanced_psr": {
+          "lower": "126.1082828561136151906589038307737233024231641392159026018241831",
+          "upper": "126.1082828561136151906589038307737233024231641392159026018241863",
+          "independent_mpmath160_value": "126.1082828561136151906589038307737233024231641392159026018241847565347047161856156078690870077297934491037329154872061717148170182",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_arbitrary_adaptive_angles": {
+          "lower": "65.55642300961341597310961175647145097910953539256042254967909050",
+          "upper": "65.55642300961341597310961175647145097910953539256042254967909095",
+          "independent_mpmath160_value": "65.55642300961341597310961175647145097910953539256042254967909072007695375300454118545453164421846987035557391428513449167234140982",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_balanced_psr_gain": {
+          "lower": "378.3248485683408455719767114923211699072694924176477078054725493",
+          "upper": "378.3248485683408455719767114923211699072694924176477078054725589",
+          "independent_mpmath160_value": "378.3248485683408455719767114923211699072694924176477078054725542696041141485568468236072610231893803473111987464616185151444510546",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_arbitrary_angle_gain": {
+          "lower": "196.6692690288402479193288352694143529373286061776812676490372715",
+          "upper": "196.6692690288402479193288352694143529373286061776812676490372729",
+          "independent_mpmath160_value": "196.6692690288402479193288352694143529373286061776812676490372721602308612590136235563635949326554096110667217428554034750170242295",
+          "independent_mpmath160_inside_interval": true
+        },
+        "necessary_minimum_even_cap_balanced_psr": 128,
+        "necessary_minimum_integer_cap_arbitrary_angles": 66,
+        "cap4096_power_ceiling_balanced_psr": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "cap4096_power_ceiling_arbitrary_angles": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "sign_only_true_q_lr_growth_per_shot": {
+          "lower": "0.03201957620408513772442669399500769830879623647330187085603679970",
+          "upper": "0.03201957620408513772442669399500769830879623647330187085603679984",
+          "independent_mpmath160_value": "0.03201957620408513772442669399500769830879623647330187085603679976535678466275750799770769770967760022483633816757934222495587593619",
+          "independent_mpmath160_inside_interval": true
+        },
+        "full_information_over_sign_lr_growth": {
+          "lower": "1.034414922352429237912842891198447883173675816316565182915348356",
+          "upper": "1.034414922352429237912842891198447883173675816316565182915348386",
+          "independent_mpmath160_value": "1.034414922352429237912842891198447883173675816316565182915348370719654464311824162643388819966528095379600482836425515623528448346",
+          "independent_mpmath160_inside_interval": true
+        },
+        "discordance_probability_exact": {
+          "numerator": "16193800346109152963878177343059",
+          "denominator": "162259276829213363391578010288128"
+        },
+        "conditional_positive_sign_probability_exact": {
+          "numerator": "32095209475372063188742371673683",
+          "denominator": "32387600692218305927756354686118"
+        }
+      },
+      "candidate95percent_expected_shots_lower_endpoint_exact": {
+        "numerator": "131112846019226831946219223512942901958219070785120845099358181",
+        "denominator": "2000000000000000000000000000000000000000000000000000000000000"
+      },
+      "beta_expected_shots_upper_endpoint_exact": {
+        "numerator": "6640800372721505",
+        "denominator": "35184372088832"
+      },
+      "candidate_speedup_upper_exact": {
+        "numerator": "377485797157618492292385781183838844299316406250000000000000000",
+        "denominator": "131112846019226831946219223512942901958219070785120845099358181"
+      },
+      "individual_threefold_cost_gain_excluded": true,
+      "exact_threefold_cross_multiplication_slack": "15852740900062003546271889354989861575340806105362535298074543",
+      "elapsed_seconds": 0.9845813999999997
+    },
+    {
+      "case_id": 21,
+      "mirror_case_id": 1021,
+      "exact_parameter_model": {
+        "A": {
+          "numerator": "3602879701896397",
+          "denominator": "72057594037927936"
+        },
+        "B": {
+          "numerator": "1588869948536311",
+          "denominator": "36028797018963968"
+        },
+        "C": {
+          "numerator": "6156198702309733",
+          "denominator": "288230376151711744"
+        }
+      },
+      "parameter_binary64_hex": {
+        "A": "0x1.999999999999ap-5",
+        "B": "0x1.694467381d7dcp-5",
+        "C": "0x1.5df07b4d16165p-6"
+      },
+      "exact_psr_probabilities": {
+        "minus": {
+          "numerator": "8255320105275855",
+          "denominator": "288230376151711744"
+        },
+        "plus": {
+          "numerator": "20567717509895321",
+          "denominator": "288230376151711744"
+        }
+      },
+      "probabilities_were_not_rounded_again": true,
+      "beta_operating_intervals_exact_parameter_model": {
+        "plus": [
+          0.9999898662781063,
+          0.9999898662854462
+        ],
+        "minus": [
+          1.0133714581602987e-05,
+          1.0133714581676933e-05
+        ],
+        "abstain": [
+          0.0,
+          7.312131752005995e-12
+        ],
+        "expected_shots": [
+          1261.408896401258,
+          1261.4088964105463
+        ],
+        "pair_cap": 8192,
+        "exact_binary_model_probabilities": [
+          "8255320105275855/288230376151711744",
+          "20567717509895321/288230376151711744"
+        ],
+        "discordance_rate_interval": [
+          0.09591237999999999,
+          0.09591238
+        ],
+        "sign_probability_interval": [
+          0.7226887167574123,
+          0.7226887167574124
+        ],
+        "protocol": "Every physical pair inspected; stationary independent Bernoulli arms",
+        "arithmetic": "Outward IEEE-754 intervals; rational mode-centered binomial ratios; explicit interval sign recursion; conservative cumulative-sum error envelope"
+      },
+      "beta_power_lower_endpoint_at_least_95_percent": true,
+      "information_bounds_exact_parameter_model": {
+        "E_full_psr_per_shot": {
+          "lower": "0.004952004892661266741491770115479920496431774693869124179008014469",
+          "upper": "0.004952004892661266741491770115479920496431774693869124179008015081",
+          "independent_mpmath160_value": "0.004952004892661266741491770115479920496431774693869124179008014992658826464205952456545470395399826146328799821560538894051146790141",
+          "independent_mpmath160_inside_interval": true
+        },
+        "U_pointwise_any_angle_per_shot": {
+          "lower": "0.009423769322396934934874838901496160906097624038863776621951271179",
+          "upper": "0.009423769322396934934874838901496160906097624038863776621951271290",
+          "independent_mpmath160_value": "0.009423769322396934934874838901496160906097624038863776621951271237324615378052281258777248612643440598845017097333109424234750737192",
+          "independent_mpmath160_inside_interval": true
+        },
+        "oracle_information_ratio_upper_U_over_E": {
+          "lower": "1.903021003949874619106597668903874066159547598891593385537809786",
+          "upper": "1.903021003949874619106597668903874066159547598891593385537810045",
+          "independent_mpmath160_value": "1.903021003949874619106597668903874066159547598891593385537809832224102655586323994765368048273638449205145112116138339147334400363",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_cosine_coefficient": {
+          "lower": "0.04712075251910452884304718779614782729652535100073887959915734358",
+          "upper": "0.04712075251910452884304718779614782729652535100073887959915734377",
+          "independent_mpmath160_value": "0.04712075251910452884304718779614782729652535100073887959915734369153426241545884489300474582915263012454068921233733846585615698368",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_lambda": {
+          "lower": "1.068497789548855521788919510998753015404415193983921894626677310",
+          "upper": "1.068497789548855521788919510998753015404415193983921894626677314",
+          "independent_mpmath160_value": "1.068497789548855521788919510998753015404415193983921894626677312400563646227196008482353918168425515666256844538500663665422648931",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_physical_margin_m_abs_bstar": {
+          "lower": "0.00287924748089547393251037376674352376255381922631190165084265623",
+          "upper": "0.00287924748089547393251037376674352376255381922631190165084265642",
+          "independent_mpmath160_value": "0.002879247480895473932510373766743523762553819226311901650842656308465737584541155106995254170847369875459310787662661534143843016323",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_balanced_psr": {
+          "lower": "843.4763374982801745672858295092349925692318592188567351071980435",
+          "upper": "843.4763374982801745672858295092349925692318592188567351071981488",
+          "independent_mpmath160_value": "843.4763374982801745672858295092349925692318592188567351071980590892915737183877576401544592635759815830136480239563257668129805068",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_arbitrary_adaptive_angles": {
+          "lower": "443.2301775690213327994268285523485546192319267738570141789298344",
+          "upper": "443.2301775690213327994268285523485546192319267738570141789298404",
+          "independent_mpmath160_value": "443.230177569021332799426828552348554619231926773857014178929837261634636667842647757941003092070171194695742545414824366268639935",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_balanced_psr_gain": {
+          "lower": "2530.429012494840523701857488527704977707695577656570205321594130",
+          "upper": "2530.429012494840523701857488527704977707695577656570205321594447",
+          "independent_mpmath160_value": "2530.42901249484052370185748852770497770769557765657020532159417726787472115516327292046337779072794474904094407186897730043894152",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_arbitrary_angle_gain": {
+          "lower": "1329.690532707063998398280485657045663857695780321571042536789503",
+          "upper": "1329.690532707063998398280485657045663857695780321571042536789522",
+          "independent_mpmath160_value": "1329.690532707063998398280485657045663857695780321571042536789511784903910003527943273823009276210513584087227636244473098805919805",
+          "independent_mpmath160_inside_interval": true
+        },
+        "necessary_minimum_even_cap_balanced_psr": 844,
+        "necessary_minimum_integer_cap_arbitrary_angles": 444,
+        "cap4096_power_ceiling_balanced_psr": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "cap4096_power_ceiling_arbitrary_angles": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "sign_only_true_q_lr_growth_per_shot": {
+          "lower": "0.004927556919122522053366832433366915831573600359104960681299581402",
+          "upper": "0.004927556919122522053366832433366915831573600359104960681299581467",
+          "independent_mpmath160_value": "0.004927556919122522053366832433366915831573600359104960681299581441468631272189878371706215954596230124576749595318751171446306223696",
+          "independent_mpmath160_inside_interval": true
+        },
+        "full_information_over_sign_lr_growth": {
+          "lower": "1.004961479682531658534149970192736405518751226690199210464012858",
+          "upper": "1.004961479682531658534149970192736405518751226690199210464012997",
+          "independent_mpmath160_value": "1.004961479682531658534149970192736405518751226690199210464012969904872331505050020610989704421296480228968489703806261276594285464",
+          "independent_mpmath160_inside_interval": true
+        },
+        "discordance_probability_exact": {
+          "numerator": "3984044394948789245798277105971017",
+          "denominator": "41538374868278621028243970633760768"
+        },
+        "conditional_positive_sign_probability_exact": {
+          "numerator": "5758447862580203298385831527575369",
+          "denominator": "7968088789897578491596554211942034"
+        }
+      },
+      "candidate95percent_expected_shots_lower_endpoint_exact": {
+        "numerator": "554037721961276665999283535690435693274039908467321267723662293",
+        "denominator": "1250000000000000000000000000000000000000000000000000000000000"
+      },
+      "beta_expected_shots_upper_endpoint_exact": {
+        "numerator": "2773867497966975",
+        "denominator": "2199023255552"
+      },
+      "candidate_speedup_upper_exact": {
+        "numerator": "525587040171060948523518163710832595825195312500000000000000000",
+        "denominator": "184679240653758888666427845230145231091346636155773755907887431"
+      },
+      "individual_threefold_cost_gain_excluded": true,
+      "exact_threefold_cross_multiplication_slack": "28450681790215717475765371979603097448844595967321267723662293",
+      "elapsed_seconds": 0.7357942999999998
+    },
+    {
+      "case_id": 31,
+      "mirror_case_id": 1031,
+      "exact_parameter_model": {
+        "A": {
+          "numerator": "3602879701896397",
+          "denominator": "18014398509481984"
+        },
+        "B": {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        "C": {
+          "numerator": "3530822107858469",
+          "denominator": "18014398509481984"
+        }
+      },
+      "parameter_binary64_hex": {
+        "A": "0x1.999999999999ap-3",
+        "B": "0x0.0p+0",
+        "C": "0x1.916872b020c4ap-3"
+      },
+      "exact_psr_probabilities": {
+        "minus": {
+          "numerator": "9007199254741",
+          "denominator": "2251799813685248"
+        },
+        "plus": {
+          "numerator": "3566850904877433",
+          "denominator": "9007199254740992"
+        }
+      },
+      "probabilities_were_not_rounded_again": true,
+      "beta_operating_intervals_exact_parameter_model": {
+        "plus": [
+          0.9999999999927016,
+          1.0
+        ],
+        "minus": [
+          1.1492438874190195e-20,
+          1.149243887427411e-20
+        ],
+        "abstain": [
+          0.0,
+          7.298384107788419e-12
+        ],
+        "expected_shots": [
+          46.76766290493351,
+          46.767662905275216
+        ],
+        "pair_cap": 8192,
+        "exact_binary_model_probabilities": [
+          "9007199254741/2251799813685248",
+          "3566850904877433/9007199254740992"
+        ],
+        "discordance_rate_interval": [
+          0.396832,
+          0.3968320000000001
+        ],
+        "sign_probability_interval": [
+          0.993911781307959,
+          0.9939117813079591
+        ],
+        "protocol": "Every physical pair inspected; stationary independent Bernoulli arms",
+        "arithmetic": "Outward IEEE-754 intervals; rational mode-centered binomial ratios; explicit interval sign recursion; conservative cumulative-sum error envelope"
+      },
+      "beta_power_lower_endpoint_at_least_95_percent": true,
+      "information_bounds_exact_parameter_model": {
+        "E_full_psr_per_shot": {
+          "lower": "0.1516852891601217929855238219562127777037825687271234593310124076",
+          "upper": "0.1516852891601217929855238219562127777037825687271234593310124093",
+          "independent_mpmath160_value": "0.1516852891601217929855238219562127777037825687271234593310124083998211481286004476412729520811253760509196440687563953448170383545",
+          "independent_mpmath160_inside_interval": true
+        },
+        "U_pointwise_any_angle_per_shot": {
+          "lower": "0.2548582584820391864287153228895260158057177069931673211892811239",
+          "upper": "0.2548582584820391864287153228895260158057177069931673211892811254",
+          "independent_mpmath160_value": "0.2548582584820391864287153228895260158057177069931673211892811247052232482025428106208419540124340805927815041368695091073485998404",
+          "independent_mpmath160_inside_interval": true
+        },
+        "oracle_information_ratio_upper_U_over_E": {
+          "lower": "1.680177820098335978646293662276224892408781443028312037503870029",
+          "upper": "1.680177820098335978646293662276224892408781443028312037503870059",
+          "independent_mpmath160_value": "1.680177820098335978646293662276224892408781443028312037503870044800509803841107165235147842439606889049509553325327234055489951993",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_cosine_coefficient": {
+          "lower": "0E-63",
+          "upper": "0E-63",
+          "independent_mpmath160_value": "0.0",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_lambda": {
+          "lower": "2.344448903129892430540928399346244524321719654860896270044054879",
+          "upper": "2.344448903129892430540928399346244524321719654860896270044054885",
+          "independent_mpmath160_value": "2.344448903129892430540928399346244524321719654860896270044054881816802747744100961311112358709095068383869790584291200468400523189",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_physical_margin_m_abs_bstar": {
+          "lower": "0.200000000000000011102230246251565404236316680908203125000000000",
+          "upper": "0.200000000000000011102230246251565404236316680908203125000000000",
+          "independent_mpmath160_value": "0.200000000000000011102230246251565404236316680908203125",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_balanced_psr": {
+          "lower": "27.53661197643416582641330636907089011942884429356262083340047078",
+          "upper": "27.53661197643416582641330636907089011942884429356262083340047113",
+          "independent_mpmath160_value": "27.53661197643416582641330636907089011942884429356262083340047096886092509572836822813048432008521180355506951894331466996077494397",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_arbitrary_adaptive_angles": {
+          "lower": "16.38910575240335399327740293911786274477738384814010563741977262",
+          "upper": "16.38910575240335399327740293911786274477738384814010563741977275",
+          "independent_mpmath160_value": "16.38910575240335399327740293911786274477738384814010563741977268001923843825113529636363291105461746758889347857128362291808535246",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_balanced_psr_gain": {
+          "lower": "82.60983592930249747923991910721267035828653288068786250020141234",
+          "upper": "82.60983592930249747923991910721267035828653288068786250020141339",
+          "independent_mpmath160_value": "82.6098359293024974792399191072126703582865328806878625002014129065827752871851046843914529602556354106652085568299440098823248319",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_arbitrary_angle_gain": {
+          "lower": "49.16731725721006197983220881735358823433215154442031691225931786",
+          "upper": "49.16731725721006197983220881735358823433215154442031691225931825",
+          "independent_mpmath160_value": "49.16731725721006197983220881735358823433215154442031691225931804005771531475340588909089873316385240276668043571385086875425605737",
+          "independent_mpmath160_inside_interval": true
+        },
+        "necessary_minimum_even_cap_balanced_psr": 28,
+        "necessary_minimum_integer_cap_arbitrary_angles": 17,
+        "cap4096_power_ceiling_balanced_psr": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "cap4096_power_ceiling_arbitrary_angles": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "sign_only_true_q_lr_growth_per_shot": {
+          "lower": "0.1301646848649806201148085193781881141358232332179119231760128992",
+          "upper": "0.1301646848649806201148085193781881141358232332179119231760129000",
+          "independent_mpmath160_value": "0.1301646848649806201148085193781881141358232332179119231760128995136021616972730896577263769479145622881963477588181960444976644231",
+          "independent_mpmath160_inside_interval": true
+        },
+        "full_information_over_sign_lr_growth": {
+          "lower": "1.165333664176765162394151931628593299625094036454489652080266216",
+          "upper": "1.165333664176765162394151931628593299625094036454489652080266238",
+          "independent_mpmath160_value": "1.165333664176765162394151931628593299625094036454489652080266227237602991334162607108117970166516157977424306534571716480418076756",
+          "independent_mpmath160_inside_interval": true
+        },
+        "discordance_probability_exact": {
+          "numerator": "4024354583918150033969882465875",
+          "denominator": "10141204801825835211973625643008"
+        },
+        "conditional_positive_sign_probability_exact": {
+          "numerator": "7999706866233877590185931048531",
+          "denominator": "8048709167836300067939764931750"
+        }
+      },
+      "candidate95percent_expected_shots_lower_endpoint_exact": {
+        "numerator": "819455287620167699663870146955893137238869192407005281870988631",
+        "denominator": "50000000000000000000000000000000000000000000000000000000000000"
+      },
+      "beta_expected_shots_upper_endpoint_exact": {
+        "numerator": "1645490853384269",
+        "denominator": "35184372088832"
+      },
+      "candidate_speedup_upper_exact": {
+        "numerator": "2338383145263760809484665514901280403137207031250000000000000000",
+        "denominator": "819455287620167699663870146955893137238869192407005281870988631"
+      },
+      "individual_threefold_cost_gain_excluded": true,
+      "exact_threefold_cross_multiplication_slack": "119982717596742289506944925966399008579400545971015845612965893",
+      "elapsed_seconds": 0.9846578999999998
+    },
+    {
+      "case_id": 33,
+      "mirror_case_id": 1033,
+      "exact_parameter_model": {
+        "A": {
+          "numerator": "3602879701896397",
+          "denominator": "18014398509481984"
+        },
+        "B": {
+          "numerator": "1588869948536311",
+          "denominator": "9007199254740992"
+        },
+        "C": {
+          "numerator": "6156198702309733",
+          "denominator": "72057594037927936"
+        }
+      },
+      "parameter_binary64_hex": {
+        "A": "0x1.999999999999ap-3",
+        "B": "0x1.694467381d7dcp-3",
+        "C": "0x1.5df07b4d16165p-4"
+      },
+      "exact_psr_probabilities": {
+        "minus": {
+          "numerator": "8255320105275855",
+          "denominator": "72057594037927936"
+        },
+        "plus": {
+          "numerator": "20567717509895321",
+          "denominator": "72057594037927936"
+        }
+      },
+      "probabilities_were_not_rounded_again": true,
+      "beta_operating_intervals_exact_parameter_model": {
+        "plus": [
+          0.9999967732098476,
+          0.9999967732171784
+        ],
+        "minus": [
+          3.2267828399889913e-06,
+          3.226782840012545e-06
+        ],
+        "abstain": [
+          0.0,
+          7.31242179472186e-12
+        ],
+        "expected_shots": [
+          266.4501072904608,
+          266.45010729241847
+        ],
+        "pair_cap": 8192,
+        "exact_binary_model_probabilities": [
+          "8255320105275855/72057594037927936",
+          "20567717509895321/72057594037927936"
+        ],
+        "discordance_rate_interval": [
+          0.33459807999999996,
+          0.33459808
+        ],
+        "sign_probability_interval": [
+          0.755334457667531,
+          0.7553344576675312
+        ],
+        "protocol": "Every physical pair inspected; stationary independent Bernoulli arms",
+        "arithmetic": "Outward IEEE-754 intervals; rational mode-centered binomial ratios; explicit interval sign recursion; conservative cumulative-sum error envelope"
+      },
+      "beta_power_lower_endpoint_at_least_95_percent": true,
+      "information_bounds_exact_parameter_model": {
+        "E_full_psr_per_shot": {
+          "lower": "0.02341814966695431877746084011171347793359478853280616578198766087",
+          "upper": "0.02341814966695431877746084011171347793359478853280616578198766191",
+          "independent_mpmath160_value": "0.02341814966695431877746084011171347793359478853280616578198766132726682676751803390560231468628693277338108401996956103946397909909",
+          "independent_mpmath160_inside_interval": true
+        },
+        "U_pointwise_any_angle_per_shot": {
+          "lower": "0.03769507728958773973949935560598464362439049615545510648780508471",
+          "upper": "0.03769507728958773973949935560598464362439049615545510648780508516",
+          "independent_mpmath160_value": "0.03769507728958773973949935560598464362439049615545510648780508494929846151220912503510899445057376239538006838933243769693900294877",
+          "independent_mpmath160_inside_interval": true
+        },
+        "oracle_information_ratio_upper_U_over_E": {
+          "lower": "1.609652249459306977368698593986255652872716512956654648702550426",
+          "upper": "1.609652249459306977368698593986255652872716512956654648702550519",
+          "independent_mpmath160_value": "1.60965224945930697736869859398625565287271651295665464870255047745145204437894359927276889130443858649705606580625046481619258699",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_cosine_coefficient": {
+          "lower": "0.1884830100764181153721887511845913091861014040029555183966293743",
+          "upper": "0.1884830100764181153721887511845913091861014040029555183966293751",
+          "independent_mpmath160_value": "0.1884830100764181153721887511845913091861014040029555183966293747661370496618353795720189833166105204981627568493493538634246279347",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_lambda": {
+          "lower": "1.068497789548855521788919510998753015404415193983921894626677310",
+          "upper": "1.068497789548855521788919510998753015404415193983921894626677314",
+          "independent_mpmath160_value": "1.068497789548855521788919510998753015404415193983921894626677312400563646227196008482353918168425515666256844538500663665422648931",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_physical_margin_m_abs_bstar": {
+          "lower": "0.0115169899235818957300414950669740950502152769052476066033706249",
+          "upper": "0.0115169899235818957300414950669740950502152769052476066033706257",
+          "independent_mpmath160_value": "0.01151698992358189573004149506697409505021527690524760660337062523386295033816462042798101668338947950183724315065064613657537206529",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_balanced_psr": {
+          "lower": "178.3616130880558135518484002472043857677952844843817593026940654",
+          "upper": "178.3616130880558135518484002472043857677952844843817593026940736",
+          "independent_mpmath160_value": "178.3616130880558135518484002472043857677952844843817593026940699756937189520960249859851639856514801088376026760023360688025729774",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_arbitrary_adaptive_angles": {
+          "lower": "110.8075443922553331998567071380871386548079816934642535447324586",
+          "upper": "110.8075443922553331998567071380871386548079816934642535447324602",
+          "independent_mpmath160_value": "110.8075443922553331998567071380871386548079816934642535447324593154086591669606619394852507730175427986739356363537060915671599838",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_balanced_psr_gain": {
+          "lower": "535.0848392641674406555452007416131573033858534531452779080821962",
+          "upper": "535.0848392641674406555452007416131573033858534531452779080822208",
+          "independent_mpmath160_value": "535.0848392641674406555452007416131573033858534531452779080822099270811568562880749579554919569544403265128080280070082064077189323",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_arbitrary_angle_gain": {
+          "lower": "332.4226331767659995995701214142614159644239450803927606341973758",
+          "upper": "332.4226331767659995995701214142614159644239450803927606341973806",
+          "independent_mpmath160_value": "332.4226331767659995995701214142614159644239450803927606341973779462259775008819858184557523190526283960218069090611182747014799513",
+          "independent_mpmath160_inside_interval": true
+        },
+        "necessary_minimum_even_cap_balanced_psr": 180,
+        "necessary_minimum_integer_cap_arbitrary_angles": 111,
+        "cap4096_power_ceiling_balanced_psr": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "cap4096_power_ceiling_arbitrary_angles": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "sign_only_true_q_lr_growth_per_shot": {
+          "lower": "0.02287794043157665113426657786100426813440367622195031311126978070",
+          "upper": "0.02287794043157665113426657786100426813440367622195031311126978109",
+          "independent_mpmath160_value": "0.02287794043157665113426657786100426813440367622195031311126978087909694306715529573437127352046402903866071247063621719971385941267",
+          "independent_mpmath160_inside_interval": true
+        },
+        "full_information_over_sign_lr_growth": {
+          "lower": "1.023612669024702006438147043616776440873452254886468575806273174",
+          "upper": "1.023612669024702006438147043616776440873452254886468575806273239",
+          "independent_mpmath160_value": "1.023612669024702006438147043616776440873452254886468575806273204444023295749799434860212302474722668560807309120498705939873408837",
+          "independent_mpmath160_inside_interval": true
+        },
+        "discordance_probability_exact": {
+          "numerator": "868666279827892495741753617411913",
+          "denominator": "2596148429267413814265248164610048"
+        },
+        "conditional_positive_sign_probability_exact": {
+          "numerator": "1312267146735746008888642222813001",
+          "denominator": "1737332559655784991483507234823826"
+        }
+      },
+      "candidate95percent_expected_shots_lower_endpoint_exact": {
+        "numerator": "554037721961276665999283535690435693274039908467321267723662293",
+        "denominator": "5000000000000000000000000000000000000000000000000000000000000"
+      },
+      "beta_expected_shots_upper_endpoint_exact": {
+        "numerator": "2343719929521415",
+        "denominator": "8796093022208"
+      },
+      "candidate_speedup_upper_exact": {
+        "numerator": "1332250536462092327383288647979497909545898437500000000000000000",
+        "denominator": "554037721961276665999283535690435693274039908467321267723662293"
+      },
+      "individual_threefold_cost_gain_excluded": true,
+      "exact_threefold_cross_multiplication_slack": "329862629421737670614561959091809170276221287901963803170986879",
+      "elapsed_seconds": 0.8215199000000002
+    },
+    {
+      "case_id": 43,
+      "mirror_case_id": 1043,
+      "exact_parameter_model": {
+        "A": {
+          "numerator": "1",
+          "denominator": "2"
+        },
+        "B": {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        "C": {
+          "numerator": "2206763817411543",
+          "denominator": "4503599627370496"
+        }
+      },
+      "parameter_binary64_hex": {
+        "A": "0x1.0000000000000p-1",
+        "B": "0x0.0p+0",
+        "C": "0x1.f5c28f5c28f5cp-2"
+      },
+      "exact_psr_probabilities": {
+        "minus": {
+          "numerator": "45035996273705",
+          "denominator": "4503599627370496"
+        },
+        "plus": {
+          "numerator": "4458563631096791",
+          "denominator": "4503599627370496"
+        }
+      },
+      "probabilities_were_not_rounded_again": true,
+      "beta_operating_intervals_exact_parameter_model": {
+        "plus": [
+          0.9999999999927119,
+          1.0
+        ],
+        "minus": [
+          1.1972027793707067e-36,
+          1.1972027793794356e-36
+        ],
+        "abstain": [
+          0.0,
+          7.288059045151843e-12
+        ],
+        "expected_shots": [
+          18.37296959643877,
+          18.372969596572844
+        ],
+        "pair_cap": 8192,
+        "exact_binary_model_probabilities": [
+          "45035996273705/4503599627370496",
+          "4458563631096791/4503599627370496"
+        ],
+        "discordance_rate_interval": [
+          0.9802,
+          0.9802000000000001
+        ],
+        "sign_probability_interval": [
+          0.9998979800040807,
+          0.9998979800040808
+        ],
+        "protocol": "Every physical pair inspected; stationary independent Bernoulli arms",
+        "arithmetic": "Outward IEEE-754 intervals; rational mode-centered binomial ratios; explicit interval sign recursion; conservative cumulative-sum error envelope"
+      },
+      "beta_power_lower_endpoint_at_least_95_percent": true,
+      "information_bounds_exact_parameter_model": {
+        "E_full_psr_per_shot": {
+          "lower": "0.6371456462050979281522960551293673275876426521671258144637762870",
+          "upper": "0.6371456462050979281522960551293673275876426521671258144637762886",
+          "independent_mpmath160_value": "0.637145646205097928152296055129367327587642652167125814463776287653131572429334469301289986702132685938055615513358954468909608186",
+          "independent_mpmath160_inside_interval": true
+        },
+        "U_pointwise_any_angle_per_shot": {
+          "lower": "0.6371456462050979281522960551293673275876426521671258144637762870",
+          "upper": "0.6371456462050979281522960551293673275876426521671258144637762885",
+          "independent_mpmath160_value": "0.637145646205097928152296055129367327587642652167125814463776287653131572429334469301289986702132685938055615513358954468909608186",
+          "independent_mpmath160_inside_interval": true
+        },
+        "oracle_information_ratio_upper_U_over_E": {
+          "lower": "0.9999999999999999999999999999999999999999999999999999999999999974",
+          "upper": "1.000000000000000000000000000000000000000000000000000000000000003",
+          "independent_mpmath160_value": "1.0",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_cosine_coefficient": {
+          "lower": "0E-63",
+          "upper": "0E-63",
+          "independent_mpmath160_value": "0.0",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_lambda": {
+          "lower": "2.344448903129892404588812263662847816705720735516474209053224581",
+          "upper": "2.344448903129892404588812263662847816705720735516474209053224584",
+          "independent_mpmath160_value": "2.344448903129892404588812263662847816705720735516474209053224582501066289889079376959129223765804151092879187805256459720802649966",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_physical_margin_m_abs_bstar": {
+          "lower": "0.500000000000000000000000000000000000000000000000000000000000000",
+          "upper": "0.500000000000000000000000000000000000000000000000000000000000000",
+          "independent_mpmath160_value": "0.5",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_balanced_psr": {
+          "lower": "6.555642300961341987467637156111876026816425885198448206720495948",
+          "upper": "6.555642300961341987467637156111876026816425885198448206720495972",
+          "independent_mpmath160_value": "6.555642300961341987467637156111876026816425885198448206720495961558998834584146446744906924014049216004073036840360681084351902392",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_arbitrary_adaptive_angles": {
+          "lower": "6.555642300961341987467637156111876026816425885198448206720495948",
+          "upper": "6.555642300961341987467637156111876026816425885198448206720495972",
+          "independent_mpmath160_value": "6.555642300961341987467637156111876026816425885198448206720495961558998834584146446744906924014049216004073036840360681084351902392",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_balanced_psr_gain": {
+          "lower": "19.66692690288402596240291146833562808044927765559534462016148784",
+          "upper": "19.66692690288402596240291146833562808044927765559534462016148792",
+          "independent_mpmath160_value": "19.66692690288402596240291146833562808044927765559534462016148788467699650375243934023472077204214764801221911052108204325305570718",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_arbitrary_angle_gain": {
+          "lower": "19.66692690288402596240291146833562808044927765559534462016148784",
+          "upper": "19.66692690288402596240291146833562808044927765559534462016148792",
+          "independent_mpmath160_value": "19.66692690288402596240291146833562808044927765559534462016148788467699650375243934023472077204214764801221911052108204325305570718",
+          "independent_mpmath160_inside_interval": true
+        },
+        "necessary_minimum_even_cap_balanced_psr": 8,
+        "necessary_minimum_integer_cap_arbitrary_angles": 7,
+        "cap4096_power_ceiling_balanced_psr": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "cap4096_power_ceiling_arbitrary_angles": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "sign_only_true_q_lr_growth_per_shot": {
+          "lower": "0.3392019186567423510572953850233852316024425862348403972042086158",
+          "upper": "0.3392019186567423510572953850233852316024425862348403972042086197",
+          "independent_mpmath160_value": "0.3392019186567423510572953850233852316024425862348403972042086179429775749021795519899966308914141168217752628726986852407663942481",
+          "independent_mpmath160_inside_interval": true
+        },
+        "full_information_over_sign_lr_growth": {
+          "lower": "1.878366869881599118428692981116760380816166085898179483471293858",
+          "upper": "1.878366869881599118428692981116760380816166085898179483471293886",
+          "independent_mpmath160_value": "1.878366869881599118428692981116760380816166085898179483471293870651528582895500629539439534548835361314286500161068510069796239822",
+          "independent_mpmath160_inside_interval": true
+        },
+        "discordance_probability_exact": {
+          "numerator": "9940408946749683498235442462353",
+          "denominator": "10141204801825835211973625643008"
+        },
+        "conditional_positive_sign_probability_exact": {
+          "numerator": "19878789652539001825825610497681",
+          "denominator": "19880817893499366996470884924706"
+        }
+      },
+      "candidate95percent_expected_shots_lower_endpoint_exact": {
+        "numerator": "1638910575240335496866909289027969006704106471299612051680123987",
+        "denominator": "250000000000000000000000000000000000000000000000000000000000000"
+      },
+      "beta_expected_shots_upper_endpoint_exact": {
+        "numerator": "1292882797325233",
+        "denominator": "70368744177664"
+      },
+      "candidate_speedup_upper_exact": {
+        "numerator": "4593242399143210974443718441762030124664306640625000000000000000",
+        "denominator": "1638910575240335496866909289027969006704106471299612051680123987"
+      },
+      "individual_threefold_cost_gain_excluded": true,
+      "exact_threefold_cross_multiplication_slack": "323489326577795516157009425321876895448012773273836155040371961",
+      "elapsed_seconds": 0.9803829999999998
+    },
+    {
+      "case_id": 45,
+      "mirror_case_id": 1045,
+      "exact_parameter_model": {
+        "A": {
+          "numerator": "1",
+          "denominator": "2"
+        },
+        "B": {
+          "numerator": "7944349742681555",
+          "denominator": "18014398509481984"
+        },
+        "C": {
+          "numerator": "7695248377887165",
+          "denominator": "36028797018963968"
+        }
+      },
+      "parameter_binary64_hex": {
+        "A": "0x1.0000000000000p-1",
+        "B": "0x1.c395810624dd3p-2",
+        "C": "0x1.b56c9a205b9bdp-3"
+      },
+      "exact_psr_probabilities": {
+        "minus": {
+          "numerator": "10319150131594819",
+          "denominator": "36028797018963968"
+        },
+        "plus": {
+          "numerator": "25709646887369149",
+          "denominator": "36028797018963968"
+        }
+      },
+      "probabilities_were_not_rounded_again": true,
+      "beta_operating_intervals_exact_parameter_model": {
+        "plus": [
+          0.9999999808806997,
+          0.9999999808880105
+        ],
+        "minus": [
+          1.9111997846284552e-08,
+          1.9111997846424108e-08
+        ],
+        "abstain": [
+          0.0,
+          7.302407826688768e-12
+        ],
+        "expected_shots": [
+          67.54238623547162,
+          67.54238623596616
+        ],
+        "pair_cap": 8192,
+        "exact_binary_model_probabilities": [
+          "10319150131594819/36028797018963968",
+          "25709646887369149/36028797018963968"
+        ],
+        "discordance_rate_interval": [
+          0.5912379999999999,
+          0.591238
+        ],
+        "sign_probability_interval": [
+          0.8612522338440576,
+          0.8612522338440577
+        ],
+        "protocol": "Every physical pair inspected; stationary independent Bernoulli arms",
+        "arithmetic": "Outward IEEE-754 intervals; rational mode-centered binomial ratios; explicit interval sign recursion; conservative cumulative-sum error envelope"
+      },
+      "beta_power_lower_endpoint_at_least_95_percent": true,
+      "information_bounds_exact_parameter_model": {
+        "E_full_psr_per_shot": {
+          "lower": "0.09423769322396932326944069684444391344788500514668053695142750744",
+          "upper": "0.09423769322396932326944069684444391344788500514668053695142750776",
+          "independent_mpmath160_value": "0.09423769322396932326944069684444391344788500514668053695142750758488862099986744883730396709715640062442574975610515739569325008928",
+          "independent_mpmath160_inside_interval": true
+        },
+        "U_pointwise_any_angle_per_shot": {
+          "lower": "0.09423769322396932326944069684444391344788500514668053695142750745",
+          "upper": "0.09423769322396932326944069684444391344788500514668053695142750775",
+          "independent_mpmath160_value": "0.09423769322396932326944069684444391344788500514668053695142750758488862099986744883730396709715640062442574975610515739569325008928",
+          "independent_mpmath160_inside_interval": true
+        },
+        "oracle_information_ratio_upper_U_over_E": {
+          "lower": "0.9999999999999999999999999999999999999999999999999999999999999959",
+          "upper": "1.000000000000000000000000000000000000000000000000000000000000004",
+          "independent_mpmath160_value": "1.0",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_cosine_coefficient": {
+          "lower": "0.4712075251910452811352682024612123435212801524395333734322326414",
+          "upper": "0.4712075251910452811352682024612123435212801524395333734322326424",
+          "independent_mpmath160_value": "0.471207525191045281135268202461212343521280152439533373432232641837166775450654797709108125760065302846598254273217033266920831278",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_lambda": {
+          "lower": "1.068497789548855505246507548413116103794830715036752162165809938",
+          "upper": "1.068497789548855505246507548413116103794830715036752162165809940",
+          "independent_mpmath160_value": "1.068497789548855505246507548413116103794830715036752162165809938888265879320455845389593518065235658657357821179927995407022758396",
+          "independent_mpmath160_inside_interval": true
+        },
+        "q_star_physical_margin_m_abs_bstar": {
+          "lower": "0.0287924748089547188647317975387876564787198475604666265677673576",
+          "upper": "0.0287924748089547188647317975387876564787198475604666265677673586",
+          "independent_mpmath160_value": "0.028792474808954718864731797538787656478719847560466626567767358162833224549345202290891874239934697153401745726782966733079168722",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_balanced_psr": {
+          "lower": "44.32301775690214554587978703067999185385410400451289324897807436",
+          "upper": "44.32301775690214554587978703067999185385410400451289324897807463",
+          "independent_mpmath160_value": "44.32301775690214554587978703067999185385410400451289324897807450829618853129382156463807537744604713283526110339288962854539977547",
+          "independent_mpmath160_inside_interval": true
+        },
+        "expected_physical_shots_lower_bound_arbitrary_adaptive_angles": {
+          "lower": "44.32301775690214554587978703067999185385410400451289324897807436",
+          "upper": "44.32301775690214554587978703067999185385410400451289324897807463",
+          "independent_mpmath160_value": "44.32301775690214554587978703067999185385410400451289324897807450829618853129382156463807537744604713283526110339288962854539977547",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_balanced_psr_gain": {
+          "lower": "132.9690532707064366376393610920399755615623120135386797469342230",
+          "upper": "132.9690532707064366376393610920399755615623120135386797469342239",
+          "independent_mpmath160_value": "132.9690532707064366376393610920399755615623120135386797469342235248885655938814646939142261323381413985057833101786688856361993264",
+          "independent_mpmath160_inside_interval": true
+        },
+        "baseline_mean_necessary_for_threefold_arbitrary_angle_gain": {
+          "lower": "132.9690532707064366376393610920399755615623120135386797469342230",
+          "upper": "132.9690532707064366376393610920399755615623120135386797469342239",
+          "independent_mpmath160_value": "132.9690532707064366376393610920399755615623120135386797469342235248885655938814646939142261323381413985057833101786688856361993264",
+          "independent_mpmath160_inside_interval": true
+        },
+        "necessary_minimum_even_cap_balanced_psr": 46,
+        "necessary_minimum_integer_cap_arbitrary_angles": 45,
+        "cap4096_power_ceiling_balanced_psr": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "cap4096_power_ceiling_arbitrary_angles": {
+          "upper": "1",
+          "reason": "KL budget at this cap does not give a nontrivial power ceiling"
+        },
+        "sign_only_true_q_lr_growth_per_shot": {
+          "lower": "0.08586649729025115436738432641485604342452589778894420615075958650",
+          "upper": "0.08586649729025115436738432641485604342452589778894420615075958715",
+          "independent_mpmath160_value": "0.08586649729025115436738432641485604342452589778894420615075958678935613972622942396815961680587870265923436253186272549905367431908",
+          "independent_mpmath160_inside_interval": true
+        },
+        "full_information_over_sign_lr_growth": {
+          "lower": "1.097490828179718842876059735461601276506657460921266019798224460",
+          "upper": "1.097490828179718842876059735461601276506657460921266019798224473",
+          "independent_mpmath160_value": "1.097490828179718842876059735461601276506657460921266019798224467090375468541799031102592773866436216095338333339910567444658291205",
+          "independent_mpmath160_inside_interval": true
+        },
+        "discordance_probability_exact": {
+          "numerator": "383735401255801770965705492313481",
+          "denominator": "649037107316853453566312041152512"
+        },
+        "conditional_positive_sign_probability_exact": {
+          "numerator": "660985943073210171646514596984201",
+          "denominator": "767470802511603541931410984626962"
+        }
+      },
+      "candidate95percent_expected_shots_lower_endpoint_exact": {
+        "numerator": "1108075443922553638646994675766999796346352600112822331224451859",
+        "denominator": "25000000000000000000000000000000000000000000000000000000000000"
+      },
+      "beta_expected_shots_upper_endpoint_exact": {
+        "numerator": "4752872898187677",
+        "denominator": "70368744177664"
+      },
+      "candidate_speedup_upper_exact": {
+        "numerator": "1688559655899154066105438687372952699661254882812500000000000000",
+        "denominator": "1108075443922553638646994675766999796346352600112822331224451859"
+      },
+      "individual_threefold_cost_gain_excluded": true,
+      "exact_threefold_cross_multiplication_slack": "1635666675868506849835545339928046689377802917525966993673355577",
+      "elapsed_seconds": 0.9528214999999998
+    }
+  ],
+  "exact_product_of_eight_upper_speedup_ratios": {
+    "numerator": "164229044874414722476059539666709166951820347485414256204376706256977530090997972307231509228676383304311261690853816291776081201963434415067882716341660362441324084371124067558016373118686679218832420276927123255568609316289600814490574606792617399047531124009087173600902733311068127844303366941693943506228885093855551322597702626482352172843093285337090492248535156250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "denominator": "80568371242548063348523196002667820370357750097100956053472694190920181332312714857966639086146440140338533656825304998146711553256145379820079808318981669553916935693753781245965341290960639940209884704616487375918963447598029700880924198042815682471093018915906525070681793129618135022799536600325187615302272486690260874644616120093727904614100912043150749174408792933827255327406819121423866588147707251262838558056093958343594128091862314354544369604834160162773415795757175618797334064838484819"
+  },
+  "geometric_upper_root_bracket_by_integer_bisection": {
+    "scale": 1000000000000,
+    "lower_integer_tick": 2592153244691,
+    "upper_integer_tick": 2592153244692,
+    "lower_exact": {
+      "numerator": "2592153244691",
+      "denominator": "1000000000000"
+    },
+    "strict_upper_exact": {
+      "numerator": "648038311173",
+      "denominator": "250000000000"
+    }
+  },
+  "upward_thousandth_geometric_speedup_bound": {
+    "numerator": "2593",
+    "denominator": "1000"
+  },
+  "exact_geometric_threefold_excluded": true,
+  "exact_geometric_threefold_integer_slack": "364380038847943121153601149306794402498096850901665116462457640329649779630305749875887609815530410456449857631577009801064493298950135421931660906039178371501924930715594491196762231091306079428884633270061650417835709863401072052989169056566296293645310173098175537387840511412356456040284392693039612437769324691319250275945623737452596609330022798578021573084760934188840622203116140255661988684837107275535483779406032460692321074410708644480165608977316924827956381035962829234929308799405298897459",
+  "exact_rounded_bound_integer_slack": "429668765752831626671039629391006967717627118497244305093111355674142065260841769577109040519892594443596454767954223703866418797043565346212158368345217222883983546672650504617643775801904626048835031886295856997348042627492935945165062915700848301739726648547450327280550872945304252410902821379860723900303069951737949769306373557024885571784710597217220374847343275293366498460317152674793811087702032233705005886440615102325926510939754606090970491638172428267384082976064294725776995362080117591642461177480380873422419",
+  "every_individual_case_threefold_excluded": true,
+  "mechanistic_implications": [
+    "If the recorded threefold exclusions hold, changing only angle choice, allocation, stopped-data use, prior, boundary or paid exploration within this Bernoulli resource model cannot reach the stated3x target on these fixed cases.",
+    "The proof already uses the full Bernoulli transcript and the physical parameter constraint. Recovering discarded counts or enforcing the same physical constraint more carefully cannot evade its lower bound.",
+    "At A=.5 the explicit upper bound equals the full-information PSR value, so angle choice has no oracle information-rate advantage. For the other cases U/E<2. Their combined information room and baseline inefficiency determine this cost ceiling.",
+    "This does not make the whole project impossible. A valid new mechanism would have to change an assumption explicitly: e.g. justified external calibration that truly restricts the null family, an additional observable/resource outside the single-harmonic Bernoulli query family, a richer physical task, or a different predeclared scientific endpoint. Its full information and resource costs must then be charged and compared with strong applicable methods.",
+    "Changing benchmarks or conditioning away abstentions solely to make the3x number larger would not resolve this obstruction for the original task.",
+    "The certified upper limit is necessary, not an achievable gain or proof of SOTA. The original research objective remains active."
+  ],
+  "source_sha256": {
+    "results/sota_round5/theory/certify_adaptive_angle_speedup_limit.py": "37634a6b5805bfa0c8a36cb69b6e17f51a2d31e13dab9e8f572dd3c390a2ad00",
+    "experiments/sota_round4/interval_sign_cost.py": "14a01510987617c05e37d991c995698e99d8f6cc28d5e7e7c5afe51512b48c40",
+    "results/sota_round4/theory/finite_budget_information_bounds.py": "45ed1cc83ce2006940cab1df14a982c922274ef3400e3bbf9a9afc65310e11fd",
+    "results/sota_round3/paired_benchmark/preliminary_plan.json": "f89aefeab89c5ea26716c8cf4fa8b91902fdcdbc1d2853eeaea1f52022ea56f7",
+    "results/sota_round3/cap16384_preparation/beta_exact.json": "d2dbc9579dcaa4789bd56272f1ecd7bf0cacea22d60e24836fc71b37b67423ee",
+    "results/sota_round4/theory/finite_budget_information_bounds.json": "21108102dedd5897426c07757a8c1a05ae43cc1bad6df096c1866e3f6aac387c",
+    "results/sota_round4/theory/audit_interval_sign_cost.json": "53fd8ee03cdaf49050dee6a5774cd20da93996ccc360bd99fcf9e4fbff8f1b99",
+    "results/sota_round2/theory/cap16384_preparation_independent_audit.json": "56553f36e5d35899cd1b07951bd029af6aabb78a7c70d9fc35b120879603bf8c",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "docs/CONTINUOUS_PSR_INFORMATION_BOUND.md": "8f9dce032aefcee81dae2b33fe808c8885413d35fc46ecaebd69891a591a19d4",
+    "docs/CONTINUOUS_SYMMETRIC_DESIGN.md": "0e16a486bb11c38b179b1d8d2aa8ed18184aefe07ceabd99c44efb59b10cd13d"
+  },
+  "elapsed_seconds": 7.2704748
+}

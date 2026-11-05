@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-03",
+  "reviewer": "stream_stats",
+  "status": "passed",
+  "review_type": "independent mathematical audit and focused literature check",
+  "source": {
+    "path": "docs/STREAMING_KL_THEORY_NOTE.md",
+    "sha256": "f71f0fa4fef50e9673f1a29c459c6d9096a8fe88cbc1126e3c1ccec5fd69bc1f"
+  },
+  "scope": {
+    "model": "Independent Bernoulli queries with p(x)=A+B*cos(x)+C*sin(x), strictly physical interior, C nonzero.",
+    "query_cost": "One per physical Bernoulli observation, including exploration and learning queries.",
+    "design": "Uniform oracle pair at plus/minus t0, with true A,B and without implementation angle caps.",
+    "numerical_experiments_added": false,
+    "policies_added": false,
+    "formal_proof_assistant_verification": false
+  },
+  "mathematical_review": [
+    {
+      "claim": "Physical domain and angle formula",
+      "status": "passed",
+      "reason": "Strict physicality implies |B|<min(A,1-A), 0<eta<1, S>0 and D-B^2>|(1-2A)B|. Thus z0 is strictly between -1 and 1, t0 exists and its sine is positive. The C=0 null with unchanged A,B is strictly physical."
+    },
+    {
+      "claim": "Equation (5): M=2K",
+      "status": "passed",
+      "reason": "Differentiating [D+(1-2A)B*z-B^2*z^2]/(1-z^2) gives the stated stationary equation. Its discriminant identity equals S^2. The unique interior minimum is (D+B^2+S)/2; endpoint divergence and the B=0 or A=1/2 special cases are consistent."
+    },
+    {
+      "claim": "Equation (6): exact ordered-null projection for uniform symmetric pair",
+      "status": "passed",
+      "reason": "The reverse-ordered Bernoulli KL projection pools the two probabilities to their arithmetic mean q. A constant physical sinusoid realizes (q,q), so the unconstrained order projection is also available in the structured null. Sign reversal or sine sign reversal exchanges the ordered roles."
+    },
+    {
+      "claim": "Equation (7): I(t)>=u^2/[2q(1-q)]",
+      "status": "passed",
+      "reason": "Bernoulli KL is the Bregman divergence of phi(p)=p*log(p)+(1-p)*log(1-p). Convexity of phi''=1/p+1/(1-p) and the symmetric integral give the stated factor 1/2. Combining u^2/v=C^2*M at t0 yields I0>=K*C^2."
+    },
+    {
+      "claim": "Equations (8)-(11): global all-angle upper bound",
+      "status": "passed",
+      "reason": "Using one legal fixed C'=0 null bounds the minimax information from above without interchanging max and min. The exact maximum |sin(x)|/(a+b*cos(x)) equals 1/sqrt(a^2-b^2). This bounds |u|/min(q,1-q) by eta, and (q+s*u)(1-q-s*u)>=(1-s*eta)*q*(1-q). The KL integral consequently gives I*<=2*K*C^2*F(eta)."
+    },
+    {
+      "claim": "F(eta), strict factor and local limit",
+      "status": "passed",
+      "reason": "Integrating (1-s)/(1-eta*s) gives the displayed logarithmic expression. F increases from 1/2 to 1 on eta in (0,1). Hence I*/I0<=2F(eta)<2 and both I0 and I* equal K*C^2*(1+o(1)) along eta->0."
+    },
+    {
+      "claim": "Equation (12): lower bound for adaptive queries",
+      "status": "passed under the explicitly described experiment model",
+      "reason": "For the same algorithm under the true and null models, predictable queries and conditionally independent observations yield the stopped-transcript KL identity. Every conditional divergence is at most 2*K*C^2*F(eta). Data processing to the correct-direction event gives at least kl(1-beta,delta) when 1-beta>delta. The usual finite-expectation or truncation argument handles optional stopping; an infinite expected count makes the lower bound trivial. All data and truth-dependent inputs must be included or disallowed."
+    },
+    {
+      "claim": "Equation (13): fixed-angle Beta evidence growth per physical observation",
+      "status": "passed",
+      "reason": "A pair is discordant with probability d=2(v+u^2), with conditional positive direction probability a/d. Beta mixture regret is sublinear for fixed parameters. Per pair the asymptotic log growth is d*kl(a/d,1/2); dividing by two gives the stated per-query rate G(t). The correct directional mixture is understood."
+    },
+    {
+      "claim": "Equations (14)-(16): Beta efficiency corollary",
+      "status": "passed",
+      "reason": "a-d/2=u, so Pinsker gives G(t)>=u^2/[2(v+u^2)]. At t0, u^2/v=2*K*C^2<=eta^2, yielding G0>=K*C^2/(1+2*K*C^2) and I*/G0<=2F(eta)(1+2*K*C^2)<=2F(eta)(1+eta^2)."
+    },
+    {
+      "claim": "G(t)<=I(t) and Beta first-order efficiency",
+      "status": "passed",
+      "reason": "For the true joint pair versus the pooled-q independent pair, KL is 2I(t). The KL chain decomposition by discordance contains d*kl(a/d,1/2) as one nonnegative contribution, proving G(t)<=I(t). Together with the bounds and 2*K*C^2<=eta^2, this proves G0/(K*C^2)->1 as eta->0, including varying A,B families."
+    }
+  ],
+  "constants_at_eta_0_1": {
+    "F": 0.5175535907956329,
+    "full_bernoulli_information_factor_upper": 1.0351071815912658,
+    "full_bernoulli_information_fraction_lower": 0.966083530077247,
+    "beta_information_factor_upper": 1.0454582534071786,
+    "beta_information_fraction_lower": 0.9565183466111356,
+    "document_rounded_factor_bounds_are_conservative": true
+  },
+  "blocking_errors": [],
+  "optional_clarifications": [
+    "In the argument preceding (10), when u=0 neither factor decreases; the inequality is then immediate. Replace 'exactly one decreases' with 'for u nonzero exactly one decreases' if refining wording.",
+    "For (12), explicitly state that the algorithm and its internal randomization law are the same under both models and that queries are predictable. These are already implicit in the experiment model.",
+    "The admissible parameter domain for the infimum defining I* should be understood as the physical model domain, including C'=0."
+  ],
+  "claim_boundaries": [
+    "The less-than-two approximation applies to full Bernoulli oracle information I0. The displayed uniform Beta bound is less than four, not less than two.",
+    "The oracle uses true A,B and an uncapped angle. Estimated parameters, shrinkage, forced exploration and implementation angle caps do not automatically inherit the theorem.",
+    "Beta G0 is an asymptotic evidence growth rate at fixed parameters, not an expected stopping cost or a finite-budget success guarantee.",
+    "The eta->0 information-rate limit does not alone prove finite-confidence sample complexity optimality as C->0 at fixed delta; mixture regret and learning costs can affect that limit.",
+    "The general finite-gap all-angle optimum need not equal the oracle symmetric two-point optimum; exact equality remains unproved here.",
+    "No physical hardware, benchmark-wide dominance, SOTA superiority or literature priority follows from this mathematical review."
+  ],
+  "literature_review": {
+    "status": "focused check; novelty unresolved",
+    "retrieval_date": "2026-11-03",
+    "priority_claim_supported": false,
+    "sources": [
+      {
+        "title": "Overshifted Parameter-Shift Rules: Optimizing Complex Quantum Systems with Few Measurements",
+        "authors": "Banchi, Branford and Waghela",
+        "year": "2025 preprint; Quantum Science and Technology 11 (2026) 035031",
+        "url": "https://arxiv.org/html/2510.05289v1",
+        "doi": "https://doi.org/10.1088/2058-9565/ae73ad",
+        "access": "Primary arXiv full HTML; Section III and Appendix A inspected; publication metadata verified on arXiv abstract page.",
+        "relevance": "Section III minimizes coefficient l1 norm over a shift grid using a common measurement variance bound. Appendix A equation (59) gives variance-dependent Neyman allocation proportional to coefficient magnitude times conditional standard deviation. Optimizing shifts and heteroscedastic allocation are therefore clear prior art.",
+        "distinction": "The inspected result targets derivative-estimator variance. It does not present this explicit eta-dependent approximation for Bernoulli sign-identification KL. This comparison does not establish novelty of the current formula."
+      },
+      {
+        "title": "A geometric characterization of c-optimal designs for heteroscedastic regression",
+        "authors": "Dette and Holland-Letz",
+        "year": 2009,
+        "url": "https://arxiv.org/abs/0911.3801",
+        "doi": "https://doi.org/10.1214/09-AOS708",
+        "access": "Primary abstract and bibliographic record inspected.",
+        "relevance": "Generalized Elfving geometry for optimal estimation with parametric mean and variance is established. A local Fisher or c-optimal angle is not a novel statistical framework by itself.",
+        "distinction": "The abstract does not resolve whether the current closed-form Bernoulli sinusoid angle or global eta-bound was previously known."
+      },
+      {
+        "title": "T-optimal discriminating designs for Fourier regression models",
+        "authors": "Dette, Melas and Shpilev",
+        "year": 2015,
+        "url": "https://arxiv.org/html/1512.07441v1",
+        "access": "Primary full HTML; introduction and model/criterion definition inspected.",
+        "relevance": "Explicit minimax discrimination designs for Fourier models and classical approximation arguments are established. The stated model uses common error variance and squared-distance T-optimality.",
+        "distinction": "This is a different loss/model from the present Bernoulli KL criterion, but it prevents claiming that explicit Fourier discrimination design in general is new."
+      },
+      {
+        "title": "Hybrid algorithms for generating optimal designs for discriminating multiple nonlinear models under various error distributional assumptions",
+        "authors": "Chen, Chen, Hsu and Wong",
+        "year": 2020,
+        "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0239864",
+        "access": "Primary full HTML; abstract and introduction inspected.",
+        "relevance": "KL-based discrimination design for non-Gaussian and binary responses, its numerical optimization and prior literature are established.",
+        "distinction": "No claim is made that this source contains or excludes the current special-case closed-form theorem."
+      }
+    ],
+    "recommended_position": "Present the explicit finite-gap Bernoulli information sandwich and its fixed-angle Beta corollary as model-specific results with proved scope, while stating that exact literature priority is not established. Do not label shift optimization, Fisher design, KL design or Neyman allocation themselves as new.",
+    "remaining_check": "Trace references on single-coefficient trigonometric c-optimal design and KL discrimination to determine whether the specific closed-form angle or eta-dependent approximation is previously published."
+  }
+}

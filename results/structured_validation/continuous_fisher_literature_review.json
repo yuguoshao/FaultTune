@@ -1,0 +1,138 @@
+{
+  "format_version": 1,
+  "status": "completed_with_direct_prior_art_and_unresolved_priority",
+  "reviewer": "stream_stats",
+  "reviewed_at_utc": "2026-11-03T18:13:12.029895+00:00",
+  "scope": "Targeted inspection of two primary full-text papers for conditional odds e-variables, continuous prior mixtures, Jeffreys terminology, and the local signed/common-order argument. No simulator calls, new Monte Carlo, prospective files, or trial ledgers were used.",
+  "sources": {
+    "docs/CONTINUOUS_FISHER_EXPLORATION.md": "36bc6865f66600651fda05fb0d30bea75fa15430d01274e23f2a8edde5c7bcfa",
+    "experiments/structured_validation/continuous_fisher.py": "8fac52c9d71a1343491d023eef731332e1400104cf47cc027e68bcdf10b35ace",
+    "results/structured_validation/continuous_fisher_independent_review.json": "5cafdb666db41983200d9f2aa5d3af19e22db8fb989b0fce4e0dc65a89c97bd5",
+    "results/structured_validation/literature_cache/continuous_fisher_turner_ly_grunwald_v3.html": "af6973fac841c3c15e28023d5b6d3b3a666f1a88e1906edb2004e1758a3b5237",
+    "results/structured_validation/literature_cache/continuous_fisher_turner_ly_grunwald_v3.txt": "97b31d65cd7ea88af053f7fd1046bab86bab95c56a9963b39cd83cde5ae558cf",
+    "results/structured_validation/literature_cache/continuous_fisher_safe_testing_v5.html": "11c131a6cb9fa756ba7dda956122b19b7107e06e393cb488efbb54d2c9b201f7",
+    "results/structured_validation/literature_cache/continuous_fisher_safe_testing_v5.txt": "a0589581440c3c3137b76a53e87fdfaa9b03e8bec8c2b8416b16b2d2d595043a"
+  },
+  "primary_papers": [
+    {
+      "id": "turner_ly_grunwald_2106_02693v3",
+      "authors": [
+        "Rosanne Turner",
+        "Alexander Ly",
+        "Peter Grunwald"
+      ],
+      "title": "Generic E-Variables for Exact Sequential k-Sample Tests that allow for Optional Stopping",
+      "url": "https://arxiv.org/html/2106.02693v3",
+      "access": "Primary full HTML inspected and cached locally.",
+      "locators": [
+        {
+          "anchor": "#S7.SS2",
+          "label": "Section 7.2: The Conditional E-variable for Tests of Two Proportions",
+          "finding": "For size-2 blocks with one observation per side, the paper conditions on the pair total and defines the conditional odds likelihood ratio q_delta(Y_a,Y_b | Y_a+Y_b)/q_0(Y_a,Y_b | Y_a+Y_b). The conditional null law is nuisance-independent, giving an e-variable. Concordant pairs have factor one. The discussion attributes the construction to Wald (1947)."
+        },
+        {
+          "anchor": "#S1.SS1",
+          "label": "Section 1.1, Definition 1 and equations (1.2)-(1.4)",
+          "finding": "Conditional e-variable products, likelihood-ratio test martingales, and the Ville threshold 1/alpha are explicit background."
+        },
+        {
+          "anchor": "#S2.SS1",
+          "label": "Section 2.1, Theorem 1 and equations (2.2)-(2.3)",
+          "finding": "The paper also constructs generic full-data two-stream e-variables. Section 7.2 identifies its generic Bernoulli factor as growth-rate optimal in the specified model and compares the pair-conditional factor unfavorably in growth."
+        }
+      ],
+      "limits": [
+        "The directly inspected conditional two-proportion construction in Section 7.2 is m=1. This review does not attribute our exact larger balanced-block continuous mixture, signed changing-probability common-order argument, or certified quadrature algorithm to that section.",
+        "The authors refer to experimental growth comparisons not reported there; this is not an independently reproduced sample-cost benchmark for FaultTune.",
+        "Appendix S2 excluding a fixed-success hypergeometric sampling scheme from a Bayes-factor discussion does not negate the explicit random-total conditional e-variable of Section 7.2.",
+        "Wald (1947) is a historical attribution in this inspected paper, not an independently inspected third primary source."
+      ]
+    },
+    {
+      "id": "grunwald_deheide_koolen_1906_07801v5",
+      "authors": [
+        "Peter Grunwald",
+        "Rianne de Heide",
+        "Wouter M. Koolen"
+      ],
+      "title": "Safe Testing",
+      "url": "https://arxiv.org/html/1906.07801v5",
+      "access": "Primary full HTML inspected and cached locally.",
+      "locators": [
+        {
+          "anchor": "#S1.SS3",
+          "label": "Section 1.3, Definition 1, Proposition 2, Corollary 1 and equation (7)",
+          "finding": "Conditional e-variables may be selected from available past information if conditional safety holds. Products form test supermartingales; the Ville-Robbins boundary is 1/alpha."
+        },
+        {
+          "anchor": "#Thmownexample1",
+          "label": "Example 1 and equation (8)",
+          "finding": "For a simple null and arbitrary prior W on alternatives, prior-mixture likelihood ratios provide e-variables. Posterior-predictive updates telescope to the original prior marginal likelihood."
+        },
+        {
+          "anchor": "#Thmownexample5",
+          "label": "Example 5: Exponential Families with a point null: Jeffreys Prior",
+          "finding": "For a regular d-dimensional exponential family, a point null, and a compact interior parameter restriction, the paper discusses Jeffreys priors and (d/2) log n + O(1) regret, attributed to Clarke and Barron (1994)."
+        }
+      ],
+      "limits": [
+        "The model-dependent Jeffreys prior in Example 5 must not be equated automatically to Beta(1/2,1/2) on q=logistic(lambda) for a general conditional hypergeometric block design.",
+        "The regular, asymptotic, compact-interior regret discussion does not establish the exact local finite-sample Lipschitz bound or its validity at adaptive or boundary parameters.",
+        "Generic optional continuation alone does not prove the local signed common-order decision rule. Its explicit domination proof is still needed.",
+        "Clarke and Barron (1994) is cited background; its original paper was not independently inspected in this targeted review."
+      ]
+    }
+  ],
+  "claim_crosswalk": [
+    {
+      "claim": "Conditioning out the common Bernoulli success probability and accumulating sequential odds evidence",
+      "assessment": "direct_prior_art",
+      "evidence": "Turner, Ly and Grunwald, Section 7.2, especially the m=1 pair-conditional factor."
+    },
+    {
+      "claim": "Fixed continuous prior mixing and inverse-risk stopping boundaries",
+      "assessment": "established_framework",
+      "evidence": "Safe Testing, Section 1.3 and Example 1; Turner, Ly and Grunwald, Section 1.1."
+    },
+    {
+      "claim": "The chosen density rho(lambda)=1/(2*pi*cosh(lambda/2)) is Jeffreys",
+      "assessment": "correct_only_with_model_qualification",
+      "evidence": "It is the change of variables of the Bernoulli-q Beta(1/2,1/2) prior, as established locally. No claim that it is the Jeffreys prior of every conditional hypergeometric design is supported."
+    },
+    {
+      "claim": "A single threshold 1/delta controls directional error under a common order with changing probabilities and predictable balanced blocks",
+      "assessment": "local_derivation_reviewed_priority_unresolved",
+      "evidence": "The local proof uses 1/2 plus the opposite-sign half mixture to dominate the signed error event. The two inspected papers do not by themselves establish that exact extension."
+    },
+    {
+      "claim": "Data-adaptive rational-odds quadrature gives a certified lower bound on one fixed continuous mixture",
+      "assessment": "local_implementation_reviewed_priority_unresolved",
+      "evidence": "The local concavity and outward-rounding construction is supported by the separately bound independent mathematical and numerical review. This search did not establish novelty."
+    },
+    {
+      "claim": "The explicit finite-sample comparison M >= L(lambda*)/[pi*(n+1/2)*cosh(lambda*/2)]",
+      "assessment": "local_derivation_reviewed_priority_unresolved",
+      "evidence": "This is the local Lipschitz integration bound. General logarithmic mixture-regret results are prior art; no claim that this is the first such bound is justified."
+    },
+    {
+      "claim": "The continuous construction has exceeded state of the art in stopping cost",
+      "assessment": "not_established",
+      "evidence": "Literature inspection and deterministic mathematical checks are not stopping-cost benchmarks. A terminal-checkpoint replay is also not a first-crossing comparison."
+    }
+  ],
+  "conclusion": "The conditional-odds and safe-mixture framework has direct antecedents. The current result is a mathematically reviewed and numerically certified local construction with unresolved priority, not a newly established statistical framework or a demonstrated full-field SOTA result.",
+  "next_comparison_requirements": [
+    "Retain the frozen prospective study unchanged; continuous Fisher belongs to a subsequent explicitly frozen candidate study.",
+    "Map applicable full-data growth-rate-optimal or predictive safe two-sample factors into the comparator inventory, verifying equal information access, common-order assumptions, risk level and physical-shot accounting before treating them as direct competitors.",
+    "Use new first-crossing measurements and prespecified risk/error and cost summaries to decide whether continuous integration actually improves stopping cost; a selected terminal-evidence replay only motivates that experiment.",
+    "Broader literature coverage is required before making priority or international-leading claims."
+  ],
+  "not_established": [
+    "Exhaustive or current full-field SOTA coverage",
+    "Originality of the conditional odds framework",
+    "Originality of continuous Jeffreys mixing",
+    "Priority of the signed common-order extension or certified quadrature",
+    "A performance advantage for the finite numerical implementation",
+    "Automatic transfer of ideal-mixture power or regret guarantees to fixed finite nodes, range, precision or shot cap"
+  ]
+}

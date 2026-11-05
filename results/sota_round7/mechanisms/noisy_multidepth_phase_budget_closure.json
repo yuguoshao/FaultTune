@@ -1,0 +1,69 @@
+{
+  "status": "explicit_common_budget_closure_and_optional_penalty_check",
+  "new_simulation_observations": 0,
+  "main_source_sha256": "78db9abc7d27879995d0b37e958937b996e4fdb02992f3f4ca86156555108fda",
+  "common_budgets": {
+    "circuit_shots": 1048576,
+    "sensing_pulse_uses": 16777216,
+    "phase_switches_at_most": 1048576,
+    "modeled_device_time_exact": "95944704/5"
+  },
+  "action_rule": "All methods use the same budget triple. Any positive integer depth is allowed if its next paid circuit fits the remaining shot, pulse and device budgets. A method that exhausts any budget returns an explicit decision already justified or abstains. A phase query cannot be delivered and charged afterward if it exceeds a cap.",
+  "baseline_feasibility": "The depth8 and depth16 policies both fit all common budgets pathwise for every nuisance value and observation sequence, including cap abstentions. Their previously proved uniform95% power and1% error bounds therefore remain valid under this concrete equal-budget contract.",
+  "information_bound_scope": "The main lower bounds allow even unrestricted depths and omit switch cost, so they remain valid for this smaller common budget class. The original primary shot-cost3x exclusion therefore requires no unspecified future resource budget.",
+  "original_acceptance_penalty": "The actual and full-cap-penalized primary shot costs agree because these controls only abstain at the common full shot cap. The existing acceptance files are not changed.",
+  "optional_stronger_companion_penalties": "For completeness, even if a cap abstention is also charged the full common gate and time caps, the same rounded gate/time speedup exclusions survive. At a depthk cap abstention, extra gate penalty is(16-k)N; extra time penalty is at most(16.1-k)N since actual time is at least(k+2.2)N. The pointwise Hoeffding bound controls the probability of that event.",
+  "optional_penalty_results": [
+    {
+      "depth": 8,
+      "point_abstention_probability_upper": [
+        "8.032010418995147315883656376507630176161201368179631343228191739E-8",
+        "8.032010418995147315883656376507630176161201368179631343228262262E-8"
+      ],
+      "optional_full_gate_cap_penalty_cost_upper": [
+        "589681.2221368574743623090204484512212653289750152382305951259520",
+        "589681.2221368574743623090204484512212653289750152382305951260546"
+      ],
+      "optional_full_time_cap_penalty_cost_upper": [
+        "759214.3882133901418598498420269218370160850241671457334040721254",
+        "759214.3882133901418598498420269218370160850241671457334040722574"
+      ],
+      "optional_gate_penalty_speedup_upper": [
+        "1.953088158809556869024711311292057858165250493198838051967029740",
+        "1.953088158809556869024711311292057858165250493198838051967030090"
+      ],
+      "optional_time_penalty_speedup_upper": [
+        "2.044814085943990631822620183172054830779954252867283688316313721",
+        "2.044814085943990631822620183172054830779954252867283688316314089"
+      ]
+    },
+    {
+      "depth": 16,
+      "point_abstention_probability_upper": [
+        "1.612713651249258511611297688137754337494705264149265063431546409E-12",
+        "1.612713651249258511611297688137754337494705264149265063431565892E-12"
+      ],
+      "optional_full_gate_cap_penalty_cost_upper": [
+        "803274.9189031192485448124197658157232423770031439356334535592784",
+        "803274.9189031192485448124197658157232423770031439356334535593930"
+      ],
+      "optional_full_time_cap_penalty_cost_upper": [
+        "918745.6884956117458060864393564588662669323707350956655692144825",
+        "918745.6884956117458060864393564588662669323707350956655692146137"
+      ],
+      "optional_gate_penalty_speedup_upper": [
+        "2.660533646795141403623826759269542620178631794569674145915968818",
+        "2.660533646795141403623826759269542620178631794569674145915969212"
+      ],
+      "optional_time_penalty_speedup_upper": [
+        "2.474484354356184980620995147300644381558945462972239858737310750",
+        "2.474484354356184980620995147300644381558945462972239858737311118"
+      ]
+    }
+  ],
+  "scope": "This closes budgets only for the declared new noisy Ramsey family and score pair. It does not replace the existing frozen three-qubit benchmark.",
+  "source_sha256": {
+    "results/sota_round7/mechanisms/noisy_multidepth_phase_budget_closure.py": "48127eb427b8a1cc82bf6b1ddd7c6e0b9ee8d95ffbe5ce34788a0be971a9ff55",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a"
+  }
+}

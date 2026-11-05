@@ -1,0 +1,143 @@
+{
+  "status": "passed",
+  "ledger_records": 28672,
+  "new_trajectories": 28672,
+  "reused_trajectories": 0,
+  "cells_and_aggregates_recomputed": 224,
+  "independent_seed_values_verified": 14336,
+  "seed_replay_cases": [
+    0,
+    4,
+    10,
+    23,
+    36,
+    47,
+    48,
+    55
+  ],
+  "seed_replay_reps": [
+    0,
+    63,
+    127
+  ],
+  "exact_seed_replay_records": 110,
+  "all_error_records_replayed": 17,
+  "error_replay_keys": [
+    [
+      28,
+      "guarded_closed_beta",
+      47
+    ],
+    [
+      28,
+      "guarded_grid_beta",
+      47
+    ],
+    [
+      28,
+      "psr_beta",
+      47
+    ],
+    [
+      48,
+      "psr_safe",
+      95
+    ],
+    [
+      51,
+      "guarded_grid_beta",
+      91
+    ],
+    [
+      53,
+      "guarded_closed_beta",
+      31
+    ],
+    [
+      53,
+      "guarded_grid_beta",
+      31
+    ],
+    [
+      53,
+      "psr_beta",
+      31
+    ],
+    [
+      53,
+      "psr_safe",
+      42
+    ],
+    [
+      53,
+      "psr_safe",
+      115
+    ],
+    [
+      54,
+      "guarded_closed_beta",
+      79
+    ],
+    [
+      54,
+      "guarded_grid_beta",
+      79
+    ],
+    [
+      54,
+      "psr_beta",
+      79
+    ],
+    [
+      55,
+      "guarded_closed_beta",
+      127
+    ],
+    [
+      55,
+      "guarded_grid_beta",
+      127
+    ],
+    [
+      55,
+      "psr_beta",
+      127
+    ],
+    [
+      55,
+      "psr_safe",
+      68
+    ]
+  ],
+  "history_blocks": 1601522,
+  "causal_angles": 1601522,
+  "causal_forecasts": 313763,
+  "screen_candidates_certified": 24590,
+  "final_certificates": 28672,
+  "abstention_certificates": 4082,
+  "exact_control_prefix_blocks": 440026,
+  "exact_never_explored_controls": 8480,
+  "previous_learned_manifest_files_unchanged": 39,
+  "previous_learned_manifest_sha256": "5e0633642dfbd38be219a9a71df780d3bd8cd354557320d734da44c95b0f3abd",
+  "old_frozen_python_sources_unchanged": 31,
+  "pinned_run_sources_verified": 8,
+  "plan_sha256": "c54cb0776a16159b6c4f8a4ef8a2563c6d01a73e31cf40b6a3a1a572cb6a0587",
+  "gate_sha256": "77e9e058078efe93debcfd9b3b21f2fb7667dec79fc2eb6f1e759a6259502197",
+  "audit_source_sha256": "106663f5f8330cd7f4d762b2f05a166867b18f319d250ce5cfcdbebe6eba38ae",
+  "audit_source_unchanged_during_execution": true,
+  "helper_source_sha256": "4aa5a0078624a1f74fb682b430d42573f291a4e049c5028a83cc14a526b58dea",
+  "review": {
+    "costs": "All pairs and all exploration subblocks retained and charged.",
+    "predictability": "Every angle and safe forecast reconstructed before adding the corresponding observations.",
+    "exploration": "Integer target, deficits, ordering, and per-phase paid costs reconstructed independently.",
+    "stopping": "Common outer checkpoints only; each screen candidate checked for the first certified crossing.",
+    "coupling": "Before exploration, guarded beta and PSR beta histories match exactly within each independent replicate.",
+    "scope": "Implementation and reproducibility audit of the frozen synthetic holdout; no complete SOTA comparison."
+  },
+  "artifact_sha256": {
+    "spec.json": "46aa6252562d4d98cb0010872bf3e6eb14229993627e2f36f156258f8cb0265d",
+    "summary.json": "71d88a49a04917188168039658242ec805fe9878117e56dad4048a7cec677153",
+    "trials.jsonl": "4381f3529f43f2c4c5da973e0a393688cec658b0b93c9d743942dd26e5962cd2"
+  },
+  "elapsed_seconds": 206.8841865
+}

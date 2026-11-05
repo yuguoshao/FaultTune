@@ -6,6 +6,10 @@ The optimizer is written in Rust for speed. A Python package built on top of it 
 
 > **Status: early development.** The Rust core and the Python package are implemented and tested, but nothing has been published to crates.io or PyPI yet, and the APIs may still change before the first release. The internals are described in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), including [where the code refines the first design](docs/ARCHITECTURE.md#16-implementation-notes). To try it, see [Getting started](#getting-started).
 
+Research code, experiment summaries, and audit certificates are available in [experiments](experiments), [docs](docs), and [results](results). [Round 7](results/sota_round7/research_state.json) is complete; [round 8](results/sota_round8/research_state.json) remains exploratory, with controller review and an independent benchmark unfinished. Superiority over applicable SOTA has not been established. The published research snapshot omits large raw observation logs and downloaded literature mirrors; [SYNC_MANIFEST.json](SYNC_MANIFEST.json) records that snapshot and its excluded local files.
+
+**Development branch:** use `dev` for day-to-day changes on both computers, pulling before starting work and pushing completed changes. Merge reviewed changes into `main`.
+
 ---
 
 ## Background

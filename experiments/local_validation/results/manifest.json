@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-02",
+  "scope": "standalone candidate-validation research; new uncommitted files; not the FaultTune Rust/Python integration suite",
+  "base_revisions": {
+    "HEAD": "4f4c319e2230bc26204de3d4053fae336026fd9d",
+    "origin/dev": "a2a28498381bcfb1ca6fbf6c1e69deded9799b28",
+    "origin/dev_hub": "fca412702cb373468b0cbe32a939992f36be0980"
+  },
+  "python": "3.8.5",
+  "platform": "Windows-10-10.0.22621-SP0",
+  "dependencies": "Python standard library only",
+  "commands": [
+    "python -B -m unittest discover -s experiments/local_validation -p test_probe.py -v",
+    "python -B experiments/local_validation/audit_math.py --output experiments/local_validation/results/analytic.json",
+    "python -B experiments/local_validation/probe.py --sizes 8 32 128 --trials 200 --source-sha 4f4c319+uncommitted-local-validation --output experiments/local_validation/results/nominal.json --raw-output experiments/local_validation/results/nominal_trials.jsonl",
+    "python -B experiments/local_validation/probe.py --sizes 32 --trials 500 --budget 300 --policies fixed_exact_scan sequential_scan sequential_round_robin local_only --source-sha 4f4c319+uncommitted-local-validation --output experiments/local_validation/results/budget_300.json --raw-output experiments/local_validation/results/budget_300_trials.jsonl",
+    "python -B experiments/local_validation/stress_probe.py --trials 1000 --output experiments/local_validation/results/misspecification.json"
+  ],
+  "verification": {
+    "unit_tests_passed": 18,
+    "raw_aggregation_checks": [
+      {
+        "experiment": "nominal",
+        "raw_trials": 16800,
+        "groups": 84,
+        "aggregation_and_source_hash": "passed"
+      },
+      {
+        "experiment": "budget_300",
+        "raw_trials": 8000,
+        "groups": 16,
+        "aggregation_and_source_hash": "passed"
+      }
+    ]
+  },
+  "monte_carlo_trials": {
+    "nominal": 16800,
+    "budget": 8000,
+    "stress": 12000,
+    "total": 36800
+  },
+  "files": [
+    {
+      "path": "docs/LOCAL_VALIDATION_RESEARCH.md",
+      "bytes": 15999,
+      "sha256": "85a78566fced79427496ebb30e168601d391cee62cca3880ad93b5f24e32714d"
+    },
+    {
+      "path": "experiments/local_validation/README.md",
+      "bytes": 5516,
+      "sha256": "afb99f250bc39cb23971ed152d60bcbedbacabada2181fceb903155b85196274"
+    },
+    {
+      "path": "experiments/local_validation/.gitignore",
+      "bytes": 39,
+      "sha256": "4e3697df1b744386b754cffc5fbd4689005c716c1c58742152d9019eaed2cd0e"
+    },
+    {
+      "path": "experiments/local_validation/probe.py",
+      "bytes": 26815,
+      "sha256": "750c961e47d0efc5cc4f1ba5763a84fe7342cab433d6a56cd65353dd456e8368"
+    },
+    {
+      "path": "experiments/local_validation/audit_math.py",
+      "bytes": 6662,
+      "sha256": "4c2d38d4e970b7cdf09bc06c923f4fa37f2bab489023da164329b7e9c563e468"
+    },
+    {
+      "path": "experiments/local_validation/stress_probe.py",
+      "bytes": 5387,
+      "sha256": "9b219322b0fb1125325ee115617a0362af9c50d0a10ee54317774b0ac84887c4"
+    },
+    {
+      "path": "experiments/local_validation/test_probe.py",
+      "bytes": 9680,
+      "sha256": "02cb24d65dae2342aebdfda20aa2babd3d4ba520bf25deb2988a6be2597c35f6"
+    },
+    {
+      "path": "experiments/local_validation/results/analytic.json",
+      "bytes": 14147,
+      "sha256": "f5b2053906b0e5985b36d0a9c5b27bf49437a08777e2c88df4c0d0475a42a0d6"
+    },
+    {
+      "path": "experiments/local_validation/results/budget_300.json",
+      "bytes": 28793,
+      "sha256": "db7f0513d530c957fbc258466ac9eeac4adeba0514da06a41d2247a625d11e2c"
+    },
+    {
+      "path": "experiments/local_validation/results/misspecification.json",
+      "bytes": 7981,
+      "sha256": "2a279358d3bbebbb9f3ffd12c589be9e07da28271bd0271ce7bca9308c06e43d"
+    },
+    {
+      "path": "experiments/local_validation/results/nominal.json",
+      "bytes": 142161,
+      "sha256": "96cbf638dafefed75a0fbf44a2fc967b678ebb74ea05f5c3ce491d55d4ea7a9b"
+    },
+    {
+      "path": "experiments/local_validation/results/budget_300_trials.jsonl",
+      "bytes": 3529961,
+      "sha256": "47994cbba8549f96686d2741716d1f9a50411c141aaa0b2bff18c2e9bd34b932"
+    },
+    {
+      "path": "experiments/local_validation/results/nominal_trials.jsonl",
+      "bytes": 7394373,
+      "sha256": "f1f3ae631051274b1bc44b8f1a29ff27e52af3afdf4c84c09b350ed79214cdea"
+    }
+  ]
+}

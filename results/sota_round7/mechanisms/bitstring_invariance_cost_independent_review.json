@@ -1,0 +1,90 @@
+{
+  "schema": "faulttune.round7.invariance_cost_independent_review.v1",
+  "created_utc": "2026-11-04T16:06:46.304197+00:00",
+  "status": "passed_with_explicit_proof_scope",
+  "target_artifact": "results/sota_round7/mechanisms/bitstring_invariance_cost.json",
+  "target_artifact_sha256": "a51d351690cf7177faa8846267ed9e0d32aefcbe44cbe9a2f129d83787813216",
+  "target_source_sha256": "c6fffd845df8dac8436ee80c180e304292903337e2dcec9cf55cced4a9f0ce32",
+  "checks": {
+    "static_amplitude_crosstalk_hamiltonian": "PASS: one fixed gamma and chi solves both physical phase constraints. No freely assigned arm PMFs.",
+    "exact_full_output_laws": "PASS: reconstructed by independent Fraction readout convolution; old/new-good Delta=-1/100, old/new-null Delta=0.",
+    "all_four_allowed_actions": "PASS: old spectator_plus and both spectator_0 actions coincide across worlds. Only new spectator_plus carries KL.",
+    "adaptive_action_KL_chain": "PASS: algorithm randomization and predictable action probabilities are common conditional on the same history; actions add no extra KL. Outcome KL sums to E_good[N_new_target]*D. At finite cap this is immediate; finite expected stopping also follows from bounded per-step log likelihoods. Infinite expected total cost already satisfies the lower bound.",
+    "decision_data_processing": "PASS: P_good(accept)>=.95 and P_null(accept)<=.01 imply KL>=kl(.95,.01); uniform validity over the enlarged family includes the exact-null witness.",
+    "sign_test_risk": "PASS: E[factor_plus]=1+.5*(x_old-x_new), so it is a supermartingale on x_old<=x_new. The opposite process is analogous. Each wrong direction has risk<=1/200; at equality their union is<=1/100.",
+    "bounded_stopped_Wald": "PASS: let T be the first positive crossing and S_n=log Lplus. For every n, E[S_(T wedge n)]=drift*E[T wedge n], while pathwise S_(T wedge n)<=log200+log1.5. Monotone convergence proves E[T]<infinity and the stated bound without presupposing Wald integrability.",
+    "finite_cap_power": "PASS: P(correct accept)>=1-P(ever wrong crossing)-P(T>65536)>=1-1/200-E[T]/65536. Stopping at the first crossing or the cap reduces actual expected shots.",
+    "X_only_failure_at_null": "PASS: both worlds have identical old/new X laws, hence identical X-only stopped transcripts and acceptance probabilities.",
+    "cross_model_ratio": "PASS: uniform enlarged-class cost is bounded below; a valid promised-common-Q control is bounded above. Their quotient is a cross-model cost separation, not same-information same-model SOTA superiority.",
+    "independent_high_precision_numerics": "PASS: 150-digit mpmath checks all reported one-sided numerical bounds, independently of the target script execution."
+  },
+  "gate_checks": [
+    {
+      "action": "old",
+      "context": "spectator_0",
+      "world": "good",
+      "gate_vs_exact_pmf_max_error": 2.220446049250313e-16
+    },
+    {
+      "action": "old",
+      "context": "spectator_0",
+      "world": "null",
+      "gate_vs_exact_pmf_max_error": 2.220446049250313e-16
+    },
+    {
+      "action": "old",
+      "context": "spectator_plus",
+      "world": "good",
+      "gate_vs_exact_pmf_max_error": 3.3306690738754696e-16
+    },
+    {
+      "action": "old",
+      "context": "spectator_plus",
+      "world": "null",
+      "gate_vs_exact_pmf_max_error": 3.3306690738754696e-16
+    },
+    {
+      "action": "new",
+      "context": "spectator_0",
+      "world": "good",
+      "gate_vs_exact_pmf_max_error": 1.734723475976807e-18
+    },
+    {
+      "action": "new",
+      "context": "spectator_0",
+      "world": "null",
+      "gate_vs_exact_pmf_max_error": 1.734723475976807e-18
+    },
+    {
+      "action": "new",
+      "context": "spectator_plus",
+      "world": "good",
+      "gate_vs_exact_pmf_max_error": 1.1102230246251565e-16
+    },
+    {
+      "action": "new",
+      "context": "spectator_plus",
+      "world": "null",
+      "gate_vs_exact_pmf_max_error": 1.1102230246251565e-16
+    }
+  ],
+  "independent_numbers": {
+    "KL_interval": {
+      "lower_decimal": "0.0002041222635633725473704930366485038844138098403519258306335786393",
+      "upper_decimal": "0.0002041222635633725473704930366485038844138098403519258306335809991",
+      "display_midpoint": 0.00020412226356337254
+    },
+    "necessary_new_target_shots_150_digit_display": "20462.73090068254084363295202103978754666557609319588440582212658004236",
+    "common_Q_physical_shot_upper_150_digit_display": "2144.768528373556487955378238635728929587187324761565538893596888425993",
+    "common_Q_power_lower_150_digit_display": "0.9786367147188296776736802807721273122437500967043947941673767327238007",
+    "cross_model_ratio_lower_150_digit_display": "9.540764250303530404041502223551200713511838360870579429163428966959299"
+  },
+  "scope_clarifications": [
+    "The theorem uses exact inverse-trigonometric controls and coefficients. Displayed floating angles and binary64 gate comparisons only check numerical consistency; they do not define the exact laws behind 64-digit KL enclosures.",
+    "The common-Q sign guarantee requires s=Q(00)>0. It does not extend to arbitrary common Q with s=0, where target Delta=0 regardless of the X difference.",
+    "Extra amplitudes, durations, nonlisted preparations, side-channel data or prior exclusion of the null coefficients can invalidate this particular lower-bound experiment.",
+    "The explicit common-Q control is not claimed minimax optimal. Its feasible upper bound suffices for the cross-model separation."
+  ],
+  "blocking_issues": [],
+  "new_monte_carlo_observations": 0
+}

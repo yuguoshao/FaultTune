@@ -1,0 +1,319 @@
+{
+  "status": "passed",
+  "scope": "Complete frozen statistical study under an explicitly authorized administrative continuation",
+  "plan_sha256": "c9baab61fc33594ac21d3231ae51fc40bc3824506145ae9f45c0c71960e81d37",
+  "amendment": {
+    "path": "results/structured_validation/prospective_completion_v1/amendment.json",
+    "sha256": "905a1c1b8f85da818a7ea12c7bd9f0c421dd4a649261497b22a1281132ada72f"
+  },
+  "input_sha256": {
+    "spec.json": "2252bbc3de7756ce844630b2286a7fb3f7c4cf9021e9e3802f418999a496ec6b",
+    "summary.json": "06f7e486aadc9d3f2c5a6df0cd936b9925ba2b5fcc452173889264984c63e4d4",
+    "trials.jsonl": "1115fbb8e4a96de8bc244925e61291bb28ed9efa95734ed3d8842259dcf4b320",
+    "analysis.json": "adc7d6630c81784fee2158bf24d69195843c7524016f3faa94494e1fb109d1cb",
+    "selection.json": "1b7ca5e2a590ef0dbc73061c994af9caf74062c6ca355940e0d13b85886bc3f2",
+    "release.json": "ba4f454b605539ebfb6be16ce53500b782a715b3410f02edad72bacfe9c4389c",
+    "amendment.json": "905a1c1b8f85da818a7ea12c7bd9f0c421dd4a649261497b22a1281132ada72f",
+    "completion_run.json": "1db739928c27c9708d705564d099a15bccffc15caab9e102707c41684c5e4179",
+    "analysis_provenance.json": "c583d7a54a18de3f2b3a93652eca4c9c7362017d6d5c3a6a55a01def6c44b62e"
+  },
+  "audit_sources_sha256": {
+    "experiments/structured_validation/prospective/audit.py": "da2be2884828d81919530ce3997482ba387ea535ded66c3aa1cc461664dcba10",
+    "experiments/structured_validation/audit_refined.py": "542bdc715fb434c11bcf96c44748fdac51d539dc341e90b035c34864c3917b44",
+    "experiments/structured_validation/audit_conditional.py": "c605dca6595464338fb529c16bfc2aaccf0d35f38fffea6aec890dfc4176611f",
+    "experiments/structured_validation/audit_unequal.py": "061daa58573f90361f19ec2ac88847bfc06712058d95ca806b0e445168d2f0cb",
+    "experiments/structured_validation/run_conditional.py": "ea79e9c7bef12bf162582851ff3ef6db3b83af988310d02263924d1c7fd17ca1",
+    "experiments/structured_validation/fast_rb_certificate.py": "4cdbba1a913aac7e9f843f61f5ffffc6fe3c09871e991b33633187d5a486d73c",
+    "experiments/structured_validation/fast_weighted_fisher.py": "22b1dd9ff9a2d95e5bfcc7054e0cbb4b334e9e15ee45d81484e24d6c4562783a",
+    "experiments/structured_validation/completion_common.py": "81ecd628d39da4068da6350e87ba341087e71a38c006fa12b0e8407b523ddfc2",
+    "experiments/structured_validation/complete_prospective.py": "c6981988c1e59ec1e4e67d8ae67423dbe1c6fb1443a1e478f1e63640ecab6cb8",
+    "experiments/structured_validation/audit_prospective_completion.py": "c1a78c54340507d6a3ab2c7e61f8b96607aaf3c590001e6cf530c92c0ea23ca7"
+  },
+  "original_prefix": {
+    "original_ledger_bytes": 531045065,
+    "input_sha256": {
+      "results/structured_validation/prospective_v1/trials.jsonl": "f1f14a93f33289d46ad99defa6818bf815abf806770bd638ac42fc56d7221703"
+    },
+    "direct_byte_comparison_passed": true
+  },
+  "audited_cases": 56,
+  "checks": {
+    "replayed_rng_blocks": 249595,
+    "causal_angle_and_prediction_blocks": 249595,
+    "checkpoint_screens_recomputed": 318193,
+    "full_interval_final_certificates": 3706,
+    "all_decisions_strictly_certified": 9216,
+    "terminal_records_checked": 9600,
+    "seed_replayed_method_trajectories": 9600,
+    "full_runner_replay_groups": 224,
+    "full_runner_replay_method_records": 336,
+    "independent_decision_final_certificates": 5894
+  },
+  "reused_original_case_count": 41,
+  "reused_original_checks": {
+    "replayed_rng_blocks": 208989,
+    "causal_angle_and_prediction_blocks": 208989,
+    "checkpoint_screens_recomputed": 267948,
+    "full_interval_final_certificates": 2836,
+    "all_decisions_strictly_certified": 7872,
+    "terminal_records_checked": 7872,
+    "seed_replayed_method_trajectories": 7872,
+    "full_runner_replay_groups": 164,
+    "full_runner_replay_method_records": 246,
+    "independent_decision_final_certificates": 5036
+  },
+  "freshly_audited_case_count": 15,
+  "freshly_executed_checks": {
+    "replayed_rng_blocks": 40606,
+    "causal_angle_and_prediction_blocks": 40606,
+    "checkpoint_screens_recomputed": 50245,
+    "full_interval_final_certificates": 870,
+    "all_decisions_strictly_certified": 1344,
+    "terminal_records_checked": 1728,
+    "seed_replayed_method_trajectories": 1728,
+    "full_runner_replay_groups": 60,
+    "full_runner_replay_method_records": 90,
+    "independent_decision_final_certificates": 858
+  },
+  "original_records": 7937,
+  "newly_generated_method_trajectories": 1663,
+  "old_unaudited_tail_records_now_audited": 65,
+  "administrative_adaptations": [
+    "Frozen common.DIRECTORY points at the separately named continuation directory in this process.",
+    "Frozen audit.check_deadline is replaced in this process by the amendment hard deadline; no protocol computation is replaced.",
+    "The new continuation wrapper, not the old run wrapper, produced the appended records."
+  ],
+  "case_audits": [
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_000.json",
+      "sha256": "79ac704179b7879aa0e29f7032dcc71f71ed9d66b86398cfc8eae7e54d2849ea"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_001.json",
+      "sha256": "d4a9808cb9f4a40d0c9e4d1200874ce7eda32f3a1be6b74084e40b63f43af490"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_002.json",
+      "sha256": "4786e250b035a43c66dec69430623a81b8435f67bdea5c24a564eb3d0c3b85d2"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_003.json",
+      "sha256": "b645c23ccb81b892459ad7bc8e5fc8e34112f1e51334c1ef0705e04aedc186a4"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_004.json",
+      "sha256": "c2b969a6b15c844a7b56c607c8f1c02c18b26834b0a27e0f5599baca0f53a4b2"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_005.json",
+      "sha256": "3b35bdf2ee8171931b59600844e14c2c7ec5a15b39c82ca6a5cf380a4b4fc84f"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_006.json",
+      "sha256": "56e42ffe8ce81f94cf741b236075291125cc43d658e5d7270d008ee73cae1e93"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_007.json",
+      "sha256": "9f0d7ab18ab4192ae885729be25fd1f7778d4633de242a6a2ee55f4234f923cd"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_008.json",
+      "sha256": "d9f39df04e7fb3559d61f005228776044404feb781b2b2c3a11adf022bb304a8"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_009.json",
+      "sha256": "025fc8c6fba71ab651114c694a71aae217a98d76cf897ff79787d6800543aa96"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_010.json",
+      "sha256": "f94923202c422b420e8283cdc8ac919897e823221480ca78cc3fb4ec839d75e8"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_011.json",
+      "sha256": "81b6beef2a6e5ebbfe2c1307626a8bf623d6752faef5bca57288b70aea2392ca"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_012.json",
+      "sha256": "52eb18fe9345d14fa8bbe57123639a4bdb41e1cbf3746f4060824d6e1d46182d"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_013.json",
+      "sha256": "7947bd5f3ee229979b1e28be10c6e7b9f28eac2a0e51077a8f5286b814e4435f"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_014.json",
+      "sha256": "65f5be1afb7bb13c0004b82a63540e6acfb89f6558a1a38c24f2247c5b976412"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_015.json",
+      "sha256": "27b74b0744e5cdb3919e56afb8a9ffaaa80d93c9fe62b653bbb7c503ab314453"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_016.json",
+      "sha256": "21db3e9b1e9d81e0a86579f1c02377f4f5e9b5e89cf46a5fc8c4d6695f0ee307"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_017.json",
+      "sha256": "60717463774edf07c130fe82eb2b406b40b4601ced06549b24eb042890482d73"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_018.json",
+      "sha256": "8a095dfd5e8064442b72947dafdc435c30b6e8282455533a1028d51dceeda08c"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_019.json",
+      "sha256": "1ed3f0c6b16ec9692da8f1f1881c0fbb2ea617fa17df1799c75b7788f6c03986"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_020.json",
+      "sha256": "7677a551160222defac3a2bbc75581a8a0a4c71ab5ca39e59114eeabb7112355"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_021.json",
+      "sha256": "fdb20ca31105543f2de6204d72044bc0f265378b2ad33c3425dc16ff3a421df2"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_022.json",
+      "sha256": "7325fe2018f880a7fea98570746f31bde7a850b8c8791b0591a5028a2660d423"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_023.json",
+      "sha256": "ea5c35c25ad5adfdbb3e0e22a31190a694a9c04d1bfd07e711ff6691b3bf81c2"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_024.json",
+      "sha256": "f9238ae50747e6312735751f438b5a25b352e9bf483d21a6886245eff250536d"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_025.json",
+      "sha256": "668d32732f865e01f2f40dfee1080f08c106d67f14185239868ea6b925551318"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_026.json",
+      "sha256": "a749722a2cbc11ff58457261e014a9f0f49808b363dfff8ef9dc9eb56ff3676a"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_027.json",
+      "sha256": "e0daacf150dcae3ac807b1e129afe968228b4fc7dac0f07e84dd29556d4424ad"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_028.json",
+      "sha256": "7dc4f3ed22adee9e93f067b4df3e85d06f6fad25d731f1e676680cf4833e5b26"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_029.json",
+      "sha256": "ed21be16fc65f234c42ed278226138a670c5ba7995211199f47307ddec8ba002"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_030.json",
+      "sha256": "318200804552e06f87debc979fc26ad0aa7c635dfdc0a644219b918b02e20d59"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_031.json",
+      "sha256": "10d2f56490b3a517d25233d94be57371734c68b6189c7cd3c0958c816e467ac3"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_032.json",
+      "sha256": "f53bc11efd60a07f69079f028d6a99db377698b788190ddf6db1588456056f0b"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_033.json",
+      "sha256": "e3ef927322bc8892472ab3cbddc83fcec3c3d087ac2b5462a9950d07a6164e65"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_034.json",
+      "sha256": "8bd9d9889ed28b744d4bf499e3038061b208942d3485a4edeef1b5ead0671713"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_035.json",
+      "sha256": "1b16e72074222d1fbb754dc287e3906d251cdec524e99c164c19cabab118e6b9"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_036.json",
+      "sha256": "0b6999a6749a8be9c95f5a316120bf67d55af41e8ad54f482b67c926bd07212f"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_037.json",
+      "sha256": "3c48a963ba35e0fb15c75691eab14c19f092f8d4bae881c7799b5c9ed87b136d"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_038.json",
+      "sha256": "c9c7e9499b49ccea339b70d6e700c497b2a11c3df6f1d75bfe9a34968b9987bc"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_039.json",
+      "sha256": "7f4e8b831a452c3cef57431cd455a44b2138e47b637fde3f7eb1748aec9c7c26"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_040.json",
+      "sha256": "cf1ac5e38573b95459b3c815157427cb6ac87930dd2a26ce290ad7efab0b1e75"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_041.json",
+      "sha256": "5ea4d37ef69e982c01a0c16f120f0281c6d41fc5681574aa6ec504dc6b610446"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_042.json",
+      "sha256": "ec6085b37589561fda9956f508ce6632aecde0ace06e0d27b2094b6f059c5b6a"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_043.json",
+      "sha256": "f706a0030ffb08fc13744b31de44b84cff7a39a7f68fe3eecee21294a5114237"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_044.json",
+      "sha256": "296c9eaa0f497547898fc98453480a045fd3ab63fcdf550a4e54c0b7fcb02d40"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_045.json",
+      "sha256": "ff1b27d479a24d2a75a9760bae94e0b4f7094f275878db51adc177be96b6dc05"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_046.json",
+      "sha256": "6c46ddd8c68334d0b6aacb670fcb69c1e4fa461095067292d41db1a4cf319501"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_047.json",
+      "sha256": "a8a197d48055db195b66dd84a9516a43e32fe9001e350b75961b95d076f639db"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_048.json",
+      "sha256": "44f734f85be4a3b567d71ead4049e9600ac856f638574b42bf26f10357511f3f"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_049.json",
+      "sha256": "30b0ee5e6618e9f1ee38dbab4ac317de8feff7f5dcdb6c1bd75b396b3a8d8202"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_050.json",
+      "sha256": "9b1bb4aab1a0e21e731d8e73b662eedbcfcabe10012543e35abb2fd8dca8f0d0"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_051.json",
+      "sha256": "a51384c9230d1008204085fc6397d5a6c74c18b37e2480cd87a98733c29f4de8"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_052.json",
+      "sha256": "723435e781bc5d48ba71143be3e24050756e0c053ab35152301cb837b473e155"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_053.json",
+      "sha256": "1adef3912ffc187d0604f592bfec7b45e42c262b116c557f91cd972a82019c9c"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_054.json",
+      "sha256": "3f7897220b6335755cb96d44c1fce61d9b67ca68e3a3a90f3a108aa340e68bb7"
+    },
+    {
+      "path": "results/structured_validation/prospective_completion_v1/audit_cases/case_055.json",
+      "sha256": "bedbd4ebdb92d48c6c97cdaaf2820c7176fc1187486c9990c291c66567d4d858"
+    }
+  ],
+  "all_logged_rng_blocks_replayed_or_bound_to_original_passed_audits": true,
+  "all_paid_actions_and_scores_rebuilt_or_bound_to_original_passed_audits": true,
+  "all_final_decisions_strictly_certified": true,
+  "independent_bootstrap_rebuilt": true,
+  "primary_pass": false,
+  "limits": "Reused case audits are separately counted. Lazy decision proofs are not full tight-interval recomputations. Frozen normalizer primitives are reused. Fixed simulator matrix only; no full-field SOTA or novelty claim.",
+  "elapsed_seconds": 2195.0972198
+}

@@ -1,0 +1,325 @@
+{
+  "status": "passed",
+  "directory": "D:\\Engineering Projects\\FaultTune\\results\\structured_validation\\refined_smoke_v1",
+  "run_input_sha256": {
+    "spec.json": "f0cca6e6156211401fbd23bb7ed8527a21652be89c4d74b34402623af533c635",
+    "summary.json": "948c1d795a2c2b15ccb2fa50afc2e3f34620daf304cecbec295765d0e2c61f92",
+    "trials.jsonl": "48e1b7b187a3e2d45d3273ffdb87f1c8639f42c684eb7b1c28faee261835d64b"
+  },
+  "audit_sources_sha256": {
+    "audit_refined.py": "542bdc715fb434c11bcf96c44748fdac51d539dc341e90b035c34864c3917b44",
+    "audit_conditional.py": "c605dca6595464338fb529c16bfc2aaccf0d35f38fffea6aec890dfc4176611f"
+  },
+  "run_sources_match_spec": true,
+  "frozen_evidence_before_and_after": {
+    "manifests": [
+      {
+        "manifest": "results/streaming_validation/evidence_manifest.json",
+        "sha256": "3af4a45b0a3a7aa9d139f0efb0752651da1286635b54e7166f7e529f982343ed",
+        "verified_files": 107
+      },
+      {
+        "manifest": "results/learned_validation/evidence_manifest.json",
+        "sha256": "5e0633642dfbd38be219a9a71df780d3bd8cd354557320d734da44c95b0f3abd",
+        "verified_files": 39
+      }
+    ],
+    "unique_verified_files": 127
+  },
+  "spec_summary_and_all_cells_match": true,
+  "trial_groups": 9,
+  "replay_rule": "Reps 0 and R-1 for every case and policy, deduplicated, no outcome selection",
+  "replayed_rep_indices": [
+    0
+  ],
+  "checks": {
+    "history_blocks": 598,
+    "past_safe_predictions": 598,
+    "rb_marginal_blocks": 598,
+    "screen_checks": 2761,
+    "certificates_recomputed": 54,
+    "final_certificates": 54,
+    "replayed_trials": 9,
+    "replayed_records": 54,
+    "policy_prefix_comparisons": 6
+  },
+  "outcomes": {
+    "wrong": 0,
+    "abstained": 0,
+    "paid_shots_across_protocol_records": 3090418
+  },
+  "matched_prior": {
+    "expert_count": 71,
+    "weights_exactly_sum_to_one": true,
+    "reciprocal_odds_and_weights": true,
+    "fisher_safe_rb_pair_share_exact_prior": true,
+    "m1_log_identity_max_error": 1.7763568394002505e-14
+  },
+  "maximum_screen_outside_certificate_by_engine": {
+    "beta": 8.615330671091215e-13,
+    "pair_grid": 7.993605777301127e-14,
+    "fisher": 1.3097345430423957e-10,
+    "hedge": 6.480860292867874e-11,
+    "rb": 3.2446934028484975e-11,
+    "safe": 3.552713678800501e-14
+  },
+  "decision_rule": "First eligible floating screen with outward Decimal crossing; all cap abstentions retained",
+  "limits": "Complete protocol and certificate audit with mechanical seed replays; no power/SOTA conclusion",
+  "replays": [
+    {
+      "case_id": 1,
+      "policy": "psr",
+      "rep": 0,
+      "seed": 710001009,
+      "records_sha256": "6f3f775fc333a5884bce7133f3e157776362dc5763ac63fcc30e0d58414810ac"
+    },
+    {
+      "case_id": 1,
+      "policy": "closed",
+      "rep": 0,
+      "seed": 710001009,
+      "records_sha256": "cc031bb63f8e3f777a803f9fb5d9d37c9b9856ba98f81ba04c22d03268ee763c"
+    },
+    {
+      "case_id": 1,
+      "policy": "grid",
+      "rep": 0,
+      "seed": 710001009,
+      "records_sha256": "905dbc9b92e827b409033c76f6b8b39292c9a2bb04813f410e42ae7bebb81f99"
+    },
+    {
+      "case_id": 11,
+      "policy": "psr",
+      "rep": 0,
+      "seed": 710011099,
+      "records_sha256": "2428cd134852343a7085f187c9412f844a3d5b48f14d02cae0a9a735493b7a04"
+    },
+    {
+      "case_id": 11,
+      "policy": "closed",
+      "rep": 0,
+      "seed": 710011099,
+      "records_sha256": "0eaa081c7bf358f011ee00b33a03c4b3b88bf8d2a4fbdb7f0bb61a3bfa39e8af"
+    },
+    {
+      "case_id": 11,
+      "policy": "grid",
+      "rep": 0,
+      "seed": 710011099,
+      "records_sha256": "6f5962cc4f412eac9e3305c699682a7f13be8c568a1818ae21142795ede4c223"
+    },
+    {
+      "case_id": 47,
+      "policy": "psr",
+      "rep": 0,
+      "seed": 710047423,
+      "records_sha256": "0779c838622e8e920bcdfbd6cf05daf199e9d276db6bb8cc1bfba6b2b5fb6a79"
+    },
+    {
+      "case_id": 47,
+      "policy": "closed",
+      "rep": 0,
+      "seed": 710047423,
+      "records_sha256": "9a525cd2a0a33282a19ef0952e4ce2693b57c12d7c284920e4c6a2b7eace40f5"
+    },
+    {
+      "case_id": 47,
+      "policy": "grid",
+      "rep": 0,
+      "seed": 710047423,
+      "records_sha256": "b603eb171441190859b673c78ea5a953213f03ee7f38c730e9f568a18c1f3279"
+    }
+  ],
+  "stopping_checks": [
+    {
+      "case_id": 1,
+      "policy": "psr",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 5346,
+        "pair_grid": 5346,
+        "fisher": 5346,
+        "hedge": 5346,
+        "rb": 5346,
+        "safe": 6016
+      },
+      "stop_looks": {
+        "beta": 43,
+        "pair_grid": 43,
+        "fisher": 43,
+        "hedge": 43,
+        "rb": 43,
+        "safe": 44
+      }
+    },
+    {
+      "case_id": 1,
+      "policy": "closed",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 4752,
+        "pair_grid": 4752,
+        "fisher": 4752,
+        "hedge": 4752,
+        "rb": 4752,
+        "safe": 6768
+      },
+      "stop_looks": {
+        "beta": 42,
+        "pair_grid": 42,
+        "fisher": 42,
+        "hedge": 42,
+        "rb": 42,
+        "safe": 45
+      }
+    },
+    {
+      "case_id": 1,
+      "policy": "grid",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 4752,
+        "pair_grid": 4752,
+        "fisher": 4752,
+        "hedge": 4752,
+        "rb": 4752,
+        "safe": 6768
+      },
+      "stop_looks": {
+        "beta": 42,
+        "pair_grid": 42,
+        "fisher": 42,
+        "hedge": 42,
+        "rb": 42,
+        "safe": 45
+      }
+    },
+    {
+      "case_id": 11,
+      "policy": "psr",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 231976,
+        "pair_grid": 231976,
+        "fisher": 231976,
+        "hedge": 231976,
+        "safe": 231976,
+        "rb": 231976
+      },
+      "stop_looks": {
+        "beta": 75,
+        "pair_grid": 75,
+        "fisher": 75,
+        "hedge": 75,
+        "safe": 75,
+        "rb": 75
+      }
+    },
+    {
+      "case_id": 11,
+      "policy": "closed",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 128726,
+        "pair_grid": 128726,
+        "fisher": 128726,
+        "hedge": 128726,
+        "safe": 128726,
+        "rb": 128726
+      },
+      "stop_looks": {
+        "beta": 70,
+        "pair_grid": 70,
+        "fisher": 70,
+        "hedge": 70,
+        "safe": 70,
+        "rb": 70
+      }
+    },
+    {
+      "case_id": 11,
+      "policy": "grid",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 128726,
+        "pair_grid": 128726,
+        "fisher": 128726,
+        "hedge": 128726,
+        "safe": 128726,
+        "rb": 128726
+      },
+      "stop_looks": {
+        "beta": 70,
+        "pair_grid": 70,
+        "fisher": 70,
+        "hedge": 70,
+        "safe": 70,
+        "rb": 70
+      }
+    },
+    {
+      "case_id": 47,
+      "policy": "psr",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 3336,
+        "pair_grid": 3336,
+        "fisher": 3336,
+        "hedge": 3336,
+        "safe": 3336,
+        "rb": 3336
+      },
+      "stop_looks": {
+        "beta": 39,
+        "pair_grid": 39,
+        "fisher": 39,
+        "hedge": 39,
+        "safe": 39,
+        "rb": 39
+      }
+    },
+    {
+      "case_id": 47,
+      "policy": "closed",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 3336,
+        "pair_grid": 3336,
+        "fisher": 3336,
+        "hedge": 3336,
+        "safe": 3336,
+        "rb": 3336
+      },
+      "stop_looks": {
+        "beta": 39,
+        "pair_grid": 39,
+        "fisher": 39,
+        "hedge": 39,
+        "safe": 39,
+        "rb": 39
+      }
+    },
+    {
+      "case_id": 47,
+      "policy": "grid",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 3336,
+        "pair_grid": 3336,
+        "fisher": 3336,
+        "hedge": 3336,
+        "safe": 3336,
+        "rb": 3336
+      },
+      "stop_looks": {
+        "beta": 39,
+        "pair_grid": 39,
+        "fisher": 39,
+        "hedge": 39,
+        "safe": 39,
+        "rb": 39
+      }
+    }
+  ],
+  "elapsed_seconds": 36.710358500000005
+}

@@ -28,3 +28,18 @@ __pycache__/
 
 # Generated outputs from exploratory runs.
 /experiments/snake_demo/local_results/
+
+# Large per-observation logs; see SYNC_MANIFEST.json for the published research snapshot
+*.jsonl
+*.jsonl.gz
+
+# Downloaded literature mirrors; keep review records and source references
+results/**/literature/*.html
+results/**/literature/*.pdf
+results/**/literature/*.txt
+
+# Local credentials
+.env
+.env.*
+*.pem
+*.key

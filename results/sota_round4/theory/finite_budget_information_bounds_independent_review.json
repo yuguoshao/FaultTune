@@ -1,0 +1,94 @@
+{
+  "status": "passed_with_explicit_scope",
+  "created_utc": "2026-11-04T13:49:39.862887+00:00",
+  "reviewer_source": "experiments/sota_round4/review_information_bounds.py",
+  "reviewer_sha256": "d942146132cf9f20259942a3d2d540ca20f4fe2d780c562fa241c383f42edb4c",
+  "input_sha256": {
+    "results/sota_round4/theory/finite_budget_information_bounds.py": "45ed1cc83ce2006940cab1df14a982c922274ef3400e3bbf9a9afc65310e11fd",
+    "results/sota_round4/theory/finite_budget_information_bounds.json": "21108102dedd5897426c07757a8c1a05ae43cc1bad6df096c1866e3f6aac387c",
+    "results/sota_round2/benchmark/preliminary_plan.json": "f245d69f688211e7c1b12985b266f5e288decafb951f1a1d72db5fa1fc2f0c33",
+    "docs/CONTINUOUS_PSR_INFORMATION_BOUND.md": "8f9dce032aefcee81dae2b33fe808c8885413d35fc46ecaebd69891a591a19d4",
+    "docs/CONTINUOUS_SYMMETRIC_DESIGN.md": "0e16a486bb11c38b179b1d8d2aa8ed18184aefe07ceabd99c44efb59b10cd13d"
+  },
+  "new_simulation_observations": 0,
+  "empirical_costs_or_outcomes_read": false,
+  "scope": "Mathematical source review plus independent rigorous rational-series evaluation of kappa and case9; not a rerun of all numerical rows.",
+  "mathematical_findings": [
+    {
+      "topic": "binary data processing",
+      "status": "passed",
+      "reason": "For the same truth-independent randomized procedure under theta and a physical null eta, terminal correct-sign event R has p>=.95 and q<=.01. Since p>q, kl(p,q)>=kl(.95,.01). The null constraint is on any sign report; assigning its entire.01 budget to R gives a valid possibly loose bound."
+    },
+    {
+      "topic": "finite adaptive stopping",
+      "status": "passed",
+      "reason": "Pad the full transcript to finite cap with a deterministic stop symbol. Identical policy/randomization/decision kernels contribute zero KL. Chain rule sums observation KL over paid queries; no unbounded optional-stopping theorem is required."
+    },
+    {
+      "topic": "complete balanced independent pairs",
+      "status": "essential_and_correctly_stated",
+      "reason": "At fixed cos=0,sin=+/-1, one independent observation per arm gives joint KL=kl(A-C,A)+kl(A+C,A)=2E. Starting each complete pair is predictable, so expected transcript KL=E*expected physical shots. Batches or coarsened records do not increase information. Mid-pair stopping, unequal allocation, correlated arms, or uncharged information are outside this exact identity."
+    },
+    {
+      "topic": "B dependence",
+      "status": "passed",
+      "reason": "B vanishes exactly for fixed PSR coordinates cos=0; therefore the paired E bound depends on A,C only. A constant null eta=(A,0,0) is physical. B generally affects other angles; the arbitrary-angle witness q*=A+B*lambda*cos(x) is distinct and has been checked physical for case9."
+    },
+    {
+      "topic": "arbitrary-angle extension",
+      "status": "consistent_with_cited_theorem",
+      "reason": "The same single physical null witness must bound every queried angle, which permits the adaptive chain-rule upper bound U*E[N]. This review checks its case9 numerical witness but does not independently reprove the complete prior pointwise theorem. For case9 the U information budget at4096 yields no nontrivial power ceiling."
+    },
+    {
+      "topic": "scope of expected-cost lower bound",
+      "status": "passed",
+      "reason": "E[N]>=kappa/E applies only when the algorithm actually achieves95% correct-stop probability on this case. N includes errors and cap abstentions. Expected cost need not be integer/even; only a complete-pair hard cap can be rounded to the necessary even minimum4390."
+    }
+  ],
+  "independent_numeric_method": {
+    "logarithms": "Exact Fraction range reduction x=2^k*y with1<=y<2; log(y)=2*sum z^(2j+1)/(2j+1), z=(y-1)/(y+1), with exact positive residual <=2*z^(2L+1)/((2L+1)*(1-z^2)).",
+    "terms": 80,
+    "arithmetic": "Exact rational endpoints; directed Decimal90 used only for displaying them.",
+    "producer_or_interval_helper_imported": false,
+    "mpmath_used": false,
+    "stronger_checks": "Independent narrower kappa/E/lambda/U/cost intervals lie inside the saved outward intervals; saved power-root endpoints bracket the root by exact rational interval inequalities."
+  },
+  "case9_verified": {
+    "kappa": {
+      "lower": "4.17689895013548931526671369092913946444527725402354429558931229724272894415112124297167364",
+      "upper": "4.17689895013548931526671369092913946444527725402354429558931229724272894415112251165022594"
+    },
+    "complete_pair_information_per_physical_shot": {
+      "lower": "0.000951592920433142458943180995692089864848074492993465295905454560691575382222620067582490249",
+      "upper": "0.000951592920433142458943180995692089864848074492993465295905454560691575382222829237106662238"
+    },
+    "necessary_expected_cost_for95pct_correct": {
+      "lower": "4389.37581443361756177968290397078980937687810864897094565538600855975658523606991096258260",
+      "upper": "4389.37581443361756177968290397078980937687810864897094565538600855975658523703607234244126"
+    },
+    "cap4096_correct_probability_bracket": {
+      "lower": "0.9112510836167899166246746397563238409487332460504470003806658339",
+      "upper": "0.9112510836167899166246746397563238409487332460511243858687916007"
+    },
+    "safe_public_power_upper_percent": "91.1252",
+    "safe_public_expected_cost_lower": "4389.3758",
+    "necessary_even_hard_cap": 4390,
+    "rounded_sampler_probabilities_match_exact_binary64_case9_model": true,
+    "physical_null_witness_margin": {
+      "lower": "0.000575849496179094873750771803501128263023594245142853822487586424467079906088952866419313880",
+      "upper": "0.000575849496179094873750771803501128263023594245142853822487586424467079906088955067674263531"
+    },
+    "arbitrary_angle_necessary_expected_cost": {
+      "lower": "2216.15088784510695420729074396211948295867244144231623653807712283057966025946311510829235",
+      "upper": "2216.15088784510695420729074396211948295867244144231623653807712283057966025946522439737081"
+    }
+  },
+  "limits_for_sota_comparison": [
+    "The91.1252% ceiling is specific to fixed balanced complete independent PSR pairs at4096 shots; do not extend it to arbitrary measurement designs.",
+    "The lower bound is necessary and need not be attainable. It neither proves16384 is necessary nor establishes a95%-power algorithm at4390.",
+    "An implemented procedure with about90% aggregate power is not a95%-power cost comparator. Casewise power, not aggregate power alone, matters.",
+    "Current low observed case9 power is not shown close to the91.1252% ceiling; insufficient cap does not explain all remaining algorithmic inefficiency.",
+    "Neither this information bound nor comparison with it establishes SOTA superiority."
+  ],
+  "nonblocking_implementation_scope_note": "The numerical calculate routine forms m-B*lambda for its margin label. All current input rows haveB>=0, so it is correct here; a future negative-B extension should explicitly use m-abs(B)*lambda or normalize the sign. This does not affect case9, the paired E formula, or the sign-invariant mathematical theorem."
+}

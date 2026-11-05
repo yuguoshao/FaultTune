@@ -1,0 +1,139 @@
+{
+  "status": "passed",
+  "reviewer": "stream_stats independent mathematical and source review",
+  "sources": {
+    "docs/CONTINUOUS_FISHER_EXPLORATION.md": "36bc6865f66600651fda05fb0d30bea75fa15430d01274e23f2a8edde5c7bcfa",
+    "experiments/structured_validation/continuous_fisher.py": "8fac52c9d71a1343491d023eef731332e1400104cf47cc027e68bcdf10b35ace",
+    "experiments/structured_validation/continuous_fisher_checks.py": "89500a1467063fe21b41516046ad04d6c218e6e4d7864ddb27091a721870525c",
+    "results/structured_validation/continuous_fisher_checks.json": "d381078f889dce9dd5569542c74887001fde7b5959f063b9aa661e7b428d94d3",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/structured_validation/review_continuous_fisher.py": "2a45dbee37a5499d78bcb0b576930695c565662987881144eaf554a37fcc4ae9"
+  },
+  "scope": "New continuous-mixture exploration only. No simulator calls, no prospective files, no stored trial ledgers.",
+  "mathematical_checks": [
+    "The normalized density is exp(lambda/2)/(pi*(1+exp(lambda)))=1/(2*pi*cosh(lambda/2)); it is the Bernoulli-q Jeffreys prior after q=logistic(lambda), not a claim about the design-dependent hypergeometric Jeffreys prior.",
+    "Central CGFs are convex and nonnegative; log density has second derivative -1/(4*cosh(lambda/2)^2). Thus log integrand is strictly concave.",
+    "Endpoint lower values and the exact positive log-odds width yield the exponential-chord integral lower bound. Nonoverlapping intervals can be summed and outside positive mass discarded without renormalizing.",
+    "Data-dependent integration nodes leave the underlying fixed continuous mixture unchanged; the numerical lower process itself need not be a supermartingale.",
+    "Wrong-direction events are dominated by 1/2 plus the opposite-half continuous expert mixture. Tonelli and Ville justify threshold 1/delta=100 at delta=.01; equality uses the complete mixture for either direction together.",
+    "The conditional score is U=sum(plus-minus)/2 while the API score is 2*U; physical shots are twice the sum of per-side block counts.",
+    "When every nonempty block has m=1, the complete integral equals the exact Jeffreys paired-Beta capital, including its rational factorial formula. Finite chord calculations generally give strict lower values.",
+    "The m=2,T=2 complete-mixture identities 2*sqrt(6)-3 and 3-sqrt(6) follow independently from positive rational integrals and give exact central expectation one.",
+    "Under a uniform positive true gap d and sum(m)->infinity, the without-replacement Hoeffding bound is K_b<=m_b*lambda^2/8. Bounded martingale SLLN gives liminf U/sum(m)>=d/2. A compact interval inside (0,4d) proves ideal continuous-mixture growth.",
+    "That sufficient condition gives an almost surely finite ideal first stop with directional error at most delta, not an almost surely correct first stop. Rates stated per sum(m) must be divided by two for physical shots.",
+    "For n=sum(m), |log L derivative|<=n and |log rho derivative|<=1/2. Integrating the global Lipschitz lower cone yields M>=L(lambda*)/[pi*(n+1/2)*cosh(lambda*/2)] for each finite, possibly data-selected lambda*.",
+    "The explicit expert comparison is O(log N) for fixed lambda*. A data-dependent growing lambda* retains the log cosh(lambda*/2) term; finite chord Q does not automatically inherit the bound."
+  ],
+  "implementation_checks": [
+    "Machin pi uses exact Fraction alternating-series brackets and directed conversion.",
+    "Positive rational odds nodes are deduplicated and sorted exactly; unresolved log widths are rejected.",
+    "All CGFs and endpoint integrands use outward arithmetic; the final decision uses the lower log bound and upper log threshold only.",
+    "The exponential chord uses a scaled negative exponential at large differences and a positive exprel series with geometric remainder near equality.",
+    "The reported upper quadrature endpoint encloses the computed lower quadrature, not the complete mixture; that distinction is explicit.",
+    "The independent rectangle checker correctly removes the minimum support power, uses reciprocal polynomial symmetry, and integrates the whole transformed [0,1] interval with exact rational rectangle bounds.",
+    "The finite wrong-crossing DP deliberately keeps paths after earlier correct crossings, so it bounds the larger event relevant to a delayed numerical rule."
+  ],
+  "author_checks_inspected": {
+    "status": "passed",
+    "m1_cases": 9,
+    "complete_integral_enclosures": 9,
+    "exact_central_normalizations": 17,
+    "finite_ever_wrong_enumerations": 8,
+    "invalid_inputs_rejected": 8,
+    "suite_independently_rerun_by_reviewer": false
+  },
+  "independent_deterministic_references": [
+    {
+      "case": "m1_three_positive",
+      "blocks": [
+        {
+          "m": 1,
+          "minus_successes": 0,
+          "plus_successes": 1
+        },
+        {
+          "m": 1,
+          "minus_successes": 0,
+          "plus_successes": 1
+        },
+        {
+          "m": 1,
+          "minus_successes": 0,
+          "plus_successes": 1
+        }
+      ],
+      "complete_mixture_formula": "5/2",
+      "complete_mixture_reference": "2.5",
+      "independent_integral_absolute_error": "0.0",
+      "implementation_certified_log_lower": "0.914816560125928465058869624116299636138172366205414848706084112",
+      "lower_fraction_of_complete_reference": "0.998526914309201087637583",
+      "score_and_physical_shot_units_checked": true
+    },
+    {
+      "case": "m2_positive_extreme",
+      "blocks": [
+        {
+          "m": 2,
+          "minus_successes": 0,
+          "plus_successes": 2
+        }
+      ],
+      "complete_mixture_formula": "2*sqrt(6)-3",
+      "complete_mixture_reference": "1.8989794855663561963945681494117827839318949613133402568653851345019207549146300530797188662092804696371892025",
+      "independent_integral_absolute_error": "1.936296e-121",
+      "implementation_certified_log_lower": "0.640058342724223329999745878561688237679104439010146567739738114",
+      "lower_fraction_of_complete_reference": "0.998742505018687287912533",
+      "score_and_physical_shot_units_checked": true
+    },
+    {
+      "case": "m2_central",
+      "blocks": [
+        {
+          "m": 2,
+          "minus_successes": 1,
+          "plus_successes": 1
+        }
+      ],
+      "complete_mixture_formula": "3-sqrt(6)",
+      "complete_mixture_reference": "0.55051025721682190180271592529410860803405251934332987156730743274903962254268497346014056689535976518140539877",
+      "independent_integral_absolute_error": "9.6814798e-122",
+      "implementation_certified_log_lower": "-0.598245802596128148152232984030097151890006367678462027529992055",
+      "lower_fraction_of_complete_reference": "0.998664780050839810858195",
+      "score_and_physical_shot_units_checked": true
+    },
+    {
+      "case": "two_m2_central",
+      "blocks": [
+        {
+          "m": 2,
+          "minus_successes": 1,
+          "plus_successes": 1
+        },
+        {
+          "m": 2,
+          "minus_successes": 1,
+          "plus_successes": 1
+        }
+      ],
+      "complete_mixture_formula": "9-(7/2)*sqrt(6)",
+      "complete_mixture_reference": "0.42678590025887665630950573852938012811918381770165455048557601462163867889939740711049198413375917813491889571",
+      "independent_integral_absolute_error": "2.9044439e-121",
+      "implementation_certified_log_lower": "-0.8537925588485623831658172601009420755436786382376254842480794013",
+      "lower_fraction_of_complete_reference": "0.997682925766582970748977",
+      "score_and_physical_shot_units_checked": true
+    }
+  ],
+  "reference_arithmetic": "120-digit mpmath rational-function integration corroborates algebraic closed forms; it is not an outward integration certificate. These four references were independently executed, not the author's full suite.",
+  "blocking_findings": [],
+  "limits": [
+    "No empirical superiority, stopping-cost comparison, theorem novelty or full-field SOTA claim.",
+    "No power guarantee for fixed finite nodes, fixed coverage, fixed precision, fixed cap, or arbitrary adaptive vanishing gaps.",
+    "The implementation and author's rectangle checks reuse outward arithmetic and pi primitives; the normalizer is an existing frozen dependency.",
+    "The current prospective candidate remains the previously frozen protocol; this continuous method is not substituted into that study."
+  ],
+  "new_simulator_observations": 0,
+  "prospective_files_read": false,
+  "stored_trial_ledgers_read": false,
+  "elapsed_seconds": 1.5530321
+}

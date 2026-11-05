@@ -1,0 +1,290 @@
+{
+  "original_model": {
+    "polynomial_coefficients_exact": [
+      "480249/250000",
+      "-1198197/62500",
+      "833147/15625",
+      "-950796/15625"
+    ],
+    "polynomial_coefficients_decimal": [
+      1.920996,
+      -19.171152,
+      53.321408,
+      -60.850944
+    ],
+    "uniform_bad_delta_over_epsilon_lower_exact": "6754779801/3906250000",
+    "uniform_bad_delta_over_epsilon_lower": 1.729223629056,
+    "small_parameter_coefficients": {
+      "kappa": "480249/500000",
+      "s": "-480249/500000",
+      "gamma_squared": "2168397/4000000"
+    },
+    "checked_exact_instances": [
+      {
+        "epsilon": "1/100",
+        "good_delta": "-480249/25000000",
+        "bad_delta": "1693902119/97656250000",
+        "bad_kappa": 0.04082199452025513
+      },
+      {
+        "epsilon": "1/300",
+        "good_delta": "-160083/25000000",
+        "bad_delta": "16327286423/2636718750000",
+        "bad_kappa": 0.013423020332140687
+      },
+      {
+        "epsilon": "1/1000",
+        "good_delta": "-480249/250000000",
+        "bad_delta": "7429211361551/3906250000000000",
+        "bad_kappa": 0.004008021397538818
+      },
+      {
+        "epsilon": "1/3000",
+        "good_delta": "-160083/250000000",
+        "bad_delta": "67310561895017/105468750000000000",
+        "bad_kappa": 0.0013342230131366461
+      },
+      {
+        "epsilon": "1/10000",
+        "good_delta": "-480249/2500000000",
+        "bad_delta": "7496403976379801/39062500000000000000",
+        "bad_kappa": 0.0004000800213397354
+      },
+      {
+        "epsilon": "1/30000",
+        "good_delta": "-160083/2500000000",
+        "bad_delta": "67512551514038267/1054687500000000000000",
+        "bad_kappa": 0.00013334222301242471
+      }
+    ]
+  },
+  "common_channel_shift": {
+    "finite_identity_checks": 200,
+    "maximum_float_residual": 1.942890293094024e-16,
+    "rate_family": "sin(update/2)^2=epsilon; fixed positive readout=0.01",
+    "checked_instances": [
+      {
+        "epsilon": 0.01,
+        "update": 0.2003348423231196,
+        "task_gaps": [
+          -0.010000000000000009,
+          0.010000000000000009
+        ],
+        "direct_bernoulli_kl": 0.00020000666706664234,
+        "shifted_bernoulli_kl": 0.02006706954621522,
+        "any_single_copy_probe_quantum_kl_upper": 0.020897389045511538,
+        "quantum_kl_analytic_bound": 0.027766208524226014,
+        "fixed_endpoint_acceptance_design": {
+          "observations_per_angle": 3006,
+          "total_paid_shots": 6012,
+          "false_accept_bound": 0.01,
+          "beneficial_accept_lower": 0.95,
+          "acceptance_threshold": -0.0055353278912388644,
+          "identity_residual_bound": 0.0,
+          "effective_margin": 0.01
+        }
+      },
+      {
+        "epsilon": 0.003,
+        "update": 0.10959935783163945,
+        "task_gaps": [
+          -0.002999999999999947,
+          0.002999999999999947
+        ],
+        "direct_bernoulli_kl": 1.800005400026325e-05,
+        "shifted_bernoulli_kl": 0.006006010823196996,
+        "any_single_copy_probe_quantum_kl_upper": 0.006253914131713167,
+        "quantum_kl_analytic_bound": 0.008329862557267805,
+        "fixed_endpoint_acceptance_design": {
+          "observations_per_angle": 10020,
+          "total_paid_shots": 20040,
+          "false_accept_bound": 0.01,
+          "beneficial_accept_lower": 0.95,
+          "acceptance_threshold": -0.0016605983673716592,
+          "identity_residual_bound": 0.0,
+          "effective_margin": 0.003
+        }
+      },
+      {
+        "epsilon": 0.001,
+        "update": 0.06325609887514336,
+        "task_gaps": [
+          -0.0009999999999999454,
+          0.0009999999999999454
+        ],
+        "direct_bernoulli_kl": 2.000000666733644e-06,
+        "shifted_bernoulli_kl": 0.0020006670669526078,
+        "any_single_copy_probe_quantum_kl_upper": 0.002083188868390477,
+        "quantum_kl_analytic_bound": 0.002776620852422602,
+        "fixed_endpoint_acceptance_design": {
+          "observations_per_angle": 30059,
+          "total_paid_shots": 60118,
+          "false_accept_bound": 0.01,
+          "beneficial_accept_lower": 0.95,
+          "acceptance_threshold": -0.0005535419964858326,
+          "identity_residual_bound": 0.0,
+          "effective_margin": 0.001
+        }
+      },
+      {
+        "epsilon": 0.0003,
+        "update": 0.034642748436053736,
+        "task_gaps": [
+          -0.00029999999999996696,
+          0.00029999999999996696
+        ],
+        "direct_bernoulli_kl": 1.8000000537006858e-07,
+        "shifted_bernoulli_kl": 0.0006000600108024071,
+        "any_single_copy_probe_quantum_kl_upper": 0.0006248047539366764,
+        "quantum_kl_analytic_bound": 0.0008329862557267802,
+        "fixed_endpoint_acceptance_design": {
+          "observations_per_angle": 100197,
+          "total_paid_shots": 200394,
+          "false_accept_bound": 0.01,
+          "beneficial_accept_lower": 0.95,
+          "acceptance_threshold": -0.00016606232271868866,
+          "identity_residual_bound": 0.0,
+          "effective_margin": 0.0003
+        }
+      },
+      {
+        "epsilon": 0.0001,
+        "update": 0.020000333348334228,
+        "task_gaps": [
+          -9.999999999998899e-05,
+          9.999999999998899e-05
+        ],
+        "direct_bernoulli_kl": 2.0000000078174173e-08,
+        "shifted_bernoulli_kl": 0.00020000666706664234,
+        "any_single_copy_probe_quantum_kl_upper": 0.00020825379215517383,
+        "quantum_kl_analytic_bound": 0.0002776620852422602,
+        "fixed_endpoint_acceptance_design": {
+          "observations_per_angle": 300590,
+          "total_paid_shots": 601180,
+          "false_accept_bound": 0.01,
+          "beneficial_accept_lower": 0.95,
+          "acceptance_threshold": -5.535419964858326e-05,
+          "identity_residual_bound": 0.0,
+          "effective_margin": 0.0001
+        }
+      }
+    ]
+  },
+  "mismatch_threshold": {
+    "claim": "Identical shifted laws; good Delta=-epsilon; bad Delta=0",
+    "eta_threshold": "epsilon / (4 * (1 + abs(sin(update/2))))",
+    "checked_exact_instances": [
+      {
+        "sin_half_update": "1/10",
+        "epsilon": "1/100",
+        "eta": "1/440",
+        "global_probability_floor": "207/440",
+        "global_interworld_probability_difference_upper": "1/110",
+        "replacement_channel_output_population_floor": "1013/2156",
+        "replacement_channel_populations": {
+          "-1": {
+            "old": "99/196",
+            "new": "97/196",
+            "shift_plus": "93/196",
+            "shift_minus": "103/196"
+          },
+          "1": {
+            "old": "1/2",
+            "new": "1/2",
+            "shift_plus": "93/196",
+            "shift_minus": "103/196"
+          }
+        },
+        "any_single_copy_povm_kl_upper": "4/7203",
+        "worlds": {
+          "-1": {
+            "old": "101/200",
+            "new": "99/200",
+            "shift_plus": "19/40",
+            "shift_minus": "21/40"
+          },
+          "1": {
+            "old": "1/2",
+            "new": "1/2",
+            "shift_plus": "19/40",
+            "shift_minus": "21/40"
+          }
+        }
+      },
+      {
+        "sin_half_update": "1/30",
+        "epsilon": "1/900",
+        "eta": "1/3720",
+        "global_probability_floor": "609/1240",
+        "global_interworld_probability_difference_upper": "1/930",
+        "replacement_channel_output_population_floor": "2983/6076",
+        "replacement_channel_populations": {
+          "-1": {
+            "old": "883/1764",
+            "new": "881/1764",
+            "shift_plus": "289/588",
+            "shift_minus": "299/588"
+          },
+          "1": {
+            "old": "1/2",
+            "new": "1/2",
+            "shift_plus": "289/588",
+            "shift_minus": "299/588"
+          }
+        },
+        "any_single_copy_povm_kl_upper": "4/583443",
+        "worlds": {
+          "-1": {
+            "old": "901/1800",
+            "new": "899/1800",
+            "shift_plus": "59/120",
+            "shift_minus": "61/120"
+          },
+          "1": {
+            "old": "1/2",
+            "new": "1/2",
+            "shift_plus": "59/120",
+            "shift_minus": "61/120"
+          }
+        }
+      },
+      {
+        "sin_half_update": "1/100",
+        "epsilon": "1/10000",
+        "eta": "1/40400",
+        "global_probability_floor": "20097/40400",
+        "global_interworld_probability_difference_upper": "1/10100",
+        "replacement_channel_output_population_floor": "19693/39592",
+        "replacement_channel_populations": {
+          "-1": {
+            "old": "9801/19600",
+            "new": "9799/19600",
+            "shift_plus": "195/392",
+            "shift_minus": "197/392"
+          },
+          "1": {
+            "old": "1/2",
+            "new": "1/2",
+            "shift_plus": "195/392",
+            "shift_minus": "197/392"
+          }
+        },
+        "any_single_copy_povm_kl_upper": "1/18007500",
+        "worlds": {
+          "-1": {
+            "old": "10001/20000",
+            "new": "9999/20000",
+            "shift_plus": "199/400",
+            "shift_minus": "201/400"
+          },
+          "1": {
+            "old": "1/2",
+            "new": "1/2",
+            "shift_plus": "199/400",
+            "shift_minus": "201/400"
+          }
+        }
+      }
+    ]
+  }
+}

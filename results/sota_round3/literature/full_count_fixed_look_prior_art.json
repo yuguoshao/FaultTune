@@ -1,0 +1,53 @@
+{
+  "version": "full_count_fixed_look_prior_art_locator_v1",
+  "created_utc": "2026-11-04T12:45:12.009533+00:00",
+  "sources": [
+    {
+      "title": "SciPy barnard_exact",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.barnard_exact.html",
+      "local_html": "results/sota_round3/literature/scipy_barnard.html",
+      "html_sha256": "0fc2f29dc63cbfa76237a773cf9a1d3d077891bf484ffd09ef69eec08715a645",
+      "local_text": "results/sota_round3/literature/scipy_barnard.txt",
+      "text_sha256": "23b30893c6adde85cfa23d6a4f51bed7e631273139dcc1468cd30a9d31c69aef",
+      "verified_findings": [
+        "Fixed two-independent-binomial unconditional exact test; nuisance pi maximization.",
+        "Uses pooled/unpooled Wald ordering, not GLR.",
+        "Reference: Barnard1947, Significance Tests for2x2 Tables, Biometrika34(1/2):123-138, DOI10.2307/2332517."
+      ]
+    },
+    {
+      "title": "SciPy boschloo_exact",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.boschloo_exact.html",
+      "local_html": "results/sota_round3/literature/scipy_boschloo.html",
+      "html_sha256": "0e4f2d9512d1f687a81c0165d34b67a422e43a4d2ab28910b815b5c7d73b438f",
+      "local_text": "results/sota_round3/literature/scipy_boschloo.txt",
+      "text_sha256": "cb7610830b8fe2902fa212de1dca1d4f1d8030e9323c3d760791a485ca710194",
+      "verified_findings": [
+        "Orders tables by Fisher exact p-value, then unconditional null extremeness.",
+        "SciPy two-sided convention is twice the minimum of the two one-sided p-values; differs from default Fisher two-sided.",
+        "Reference: Boschloo1970, Raised Conditional Level of Significance for the2x2-table when Testing the Equality of Two Probabilities, Statistica Neerlandica24:1-35."
+      ]
+    },
+    {
+      "title": "R Exact exact.test manual",
+      "url": "https://rdrr.io/cran/Exact/man/exact.test.html",
+      "local_html": "results/sota_round3/literature/rdrr_exact.html",
+      "html_sha256": "e427c56de59b7a693a892aede1be96e4c9a53c6bf6ca7853f21ab9268e2f016b",
+      "local_text": "results/sota_round3/literature/rdrr_exact.txt",
+      "text_sha256": "a212bb02366f2ce51561f98e3b55a33bea76fffd5724a3b132c75f70e15d102d",
+      "verified_findings": [
+        "Supports Z-pooled/Score, Z-unpooled, Santner and Snell, Boschloo, CSM orderings.",
+        "CSM is identified as Barnard original method; computationally intensive strong comparator.",
+        "This documented interface does not list likelihood-ratio ordering."
+      ]
+    }
+  ],
+  "conclusions": [
+    "Exact unconditional tests of two binomial proportions with nuisance maximization are old prior art.",
+    "A nuisance-maximized GLR ordering is conceptually within exact unconditional test construction, but these verified callable interfaces do not implement GLR ordering.",
+    "Fixed-look p-values must not be repeatedly inspected without sequential error calibration.",
+    "Documented floating nuisance maximization is not our outward interval proof; comparison must state numerical validation scope.",
+    "Do not identify all Barnard tests with SciPy pooled Wald or claim our GLR is its implementation."
+  ],
+  "new_simulation_observations": 0
+}

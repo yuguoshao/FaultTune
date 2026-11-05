@@ -1,0 +1,65 @@
+{
+  "status": "proved_lemma_no_implementation_or_performance_claim",
+  "created_utc": "2026-11-04T11:25:11.748368+00:00",
+  "title": "A rigorous local-volume lower bound for a fixed continuous physical likelihood mixture",
+  "physical_model": {
+    "parameter": "theta=(A,B,C)",
+    "domain": "D={0<=A<=1, B^2+C^2<=min(A,1-A)^2}",
+    "observed_arm": "x_a=(1,cos(phi_a),sin(phi_a)); p_a(theta)=x_a dot theta",
+    "counts": "Integers n_a>=0 and 0<=k_a<=n_a; zero-count arms may be omitted.",
+    "likelihood": "L(theta)=product_a p_a(theta)^k_a * (1-p_a(theta))^(n_a-k_a). This is the likelihood of the realized Bernoulli sequence, without binomial coefficients."
+  },
+  "fixed_prior": {
+    "A": "Beta(1/2,1/2)",
+    "conditional_B_C": "Given A, uniform on the disk B^2+C^2<=m(A)^2, where m(A)=min(A,1-A).",
+    "density": "rho(A,B,C)=1/[pi^2*sqrt(A*(1-A))*m(A)^2] on the interior of D.",
+    "normalization": "The conditional disk density integrates to one and the marginal A density is the normalized arcsine law. Boundary sets have prior measure zero.",
+    "target_integral": "Q=integral_D L(theta)*rho(theta) dtheta. The prior is fixed before observing data."
+  },
+  "parallelepiped": {
+    "definition": "P={theta0+V*t: -d_j<=t_j<=d_j for j=1,2,3}.",
+    "requirements": [
+      "V is an invertible real 3x3 matrix, with columns v_j; every d_j is strictly positive. Rational center, matrix and widths are suitable for later exact feasibility checks.",
+      "All eight vertices theta0+sum_j epsilon_j*d_j*v_j, epsilon_j in {-1,1}, lie in D. Since D is convex, this implies P is contained in D.",
+      "A_lo=A0-sum_j |V_Aj|*d_j and A_hi=A0+sum_j |V_Aj|*d_j satisfy 0<A_lo<=A_hi<1. This sufficient interior condition avoids density-endpoint conventions.",
+      "For each observed arm, p0_a=x_a dot theta0, s_a=sum_j |x_a dot v_j|*d_j, p_min_a=p0_a-s_a and p_max_a=p0_a+s_a must satisfy 0<p_min_a<=p_max_a<1."
+    ],
+    "curvature": "H_a=k_a/p_min_a^2+(n_a-k_a)/(1-p_max_a)^2.",
+    "volume": "Vol(P)=8*|det(V)|*product_j d_j.",
+    "density_minimizer": "A_star=clamp(1/2,A_lo,A_hi).",
+    "density_lower_bound": "rho_min=1/[pi^2*sqrt(A_star*(1-A_star))*min(A_star,1-A_star)^2]. A simpler global bound is rho_min>=8/pi^2."
+  },
+  "conclusion": {
+    "integral_bound": "Q >= rho_min * 8*|det(V)|*product_j d_j * exp(log L(theta0) - (1/6)*sum_a H_a*sum_j (x_a dot v_j)^2*d_j^2).",
+    "log_bound": "log Q >= log rho_min + log(8*|det(V)|*product_j d_j) + log L(theta0) - (1/6)*sum_a H_a*sum_j (x_a dot v_j)^2*d_j^2.",
+    "scope": "A lower bound for the full fixed-prior integral; not a two-sided enclosure of that integral."
+  },
+  "proof": [
+    "The physical domain is convex because it is the intersection of ||(B,C)||<=A and ||(B,C)||<=1-A. The parallelepiped is the convex hull of its eight vertices, so its vertex checks ensure every line segment used below lies in D.",
+    "For ell(theta)=log L(theta), its negative Hessian is sum_a [k_a/p_a(theta)^2+(n_a-k_a)/(1-p_a(theta))^2]*x_a*x_a^T. On P each bracket is at most H_a by the stated probability bounds.",
+    "Taylor's theorem along the segment from theta0 to theta0+V*t therefore gives ell(theta0+V*t)>=ell(theta0)+grad ell(theta0) dot V*t-(1/2)*sum_a H_a*(x_a dot V*t)^2.",
+    "Under independent uniform t_j on [-d_j,d_j], E[t_j]=0, E[t_i*t_j]=0 for i!=j and E[t_j^2]=d_j^2/3. Thus the expected linear term is zero and E ell(theta0+V*t)>=ell(theta0)-(1/6)*sum_a H_a*sum_j (x_a dot v_j)^2*d_j^2.",
+    "The density depends only on A and decreases as A approaches 1/2 from either side: sqrt(A*(1-A))*min(A,1-A)^2 is maximal at the point of [A_lo,A_hi] nearest 1/2. Hence rho(theta)>=rho_min on P.",
+    "Retain the nonnegative prior integral over P, apply the density lower bound and the change-of-variables Jacobian |det(V)|, then use Jensen's inequality E exp(ell)>=exp(E ell). These operations give the stated coefficient 1/6 and volume factor.",
+    "Choosing theta0, V and d_j after observing the data is valid whenever their geometric conditions are certified: every such bound refers to the same fixed Q. Data selection does not renormalize the prior or replace Q with a data-dependent mixture. The maximum of multiple individually valid lower bounds remains valid."
+  ],
+  "axis_aligned_specialization": {
+    "matrix": "V=I; d=(d_A,d_B,d_C).",
+    "exact_box_feasibility": "sqrt((|B0|+d_B)^2+(|C0|+d_C)^2)<=min(A0-d_A,1-A0-d_A). Together with positive widths this is equivalent to containment in D.",
+    "probability_extent": "s_a=d_A+|cos(phi_a)|*d_B+|sin(phi_a)|*d_C.",
+    "curvature_term": "(1/6)*sum_a H_a*(d_A^2+cos(phi_a)^2*d_B^2+sin(phi_a)^2*d_C^2)."
+  },
+  "anytime_use": [
+    "For predictable arms, the full fixed-prior Q is a probability law on observation paths. Q/L_true is a nonnegative martingale for interior true models and a supermartingale when the true model has support restrictions.",
+    "Use the same Q for both sign hypotheses. Under the true model, a false-direction certificate lower_Q/upper_L_null>=1/delta implies Q/L_true>=1/delta because the false-direction null contains truth. Ville's inequality therefore controls the probability of any wrong-sign certificate, including the zero-signal null, by delta without a factor-two threshold.",
+    "An implementation must certify a lower_Q no greater than this bound and a global upper_L_null over the relevant closed physical null. Floating optimizers may propose boxes and null points but do not by themselves certify either side."
+  ],
+  "limits_and_next_implementation_requirements": [
+    "This artifact is a mathematical derivation only. No continuum-mixture implementation, outward-rounded numerical certificate, timing result or sampling result is supplied here.",
+    "Implement exact or outward vertex/probability feasibility, determinant volume, density constants, center likelihood and curvature arithmetic before using the bound to stop an experiment.",
+    "Interior local boxes may avoid the linear-in-n mismatch penalty of a fixed finite grid and yield logarithmic volume penalties under regular identifiable scaling; no uniform regret or sample-complexity theorem is established here.",
+    "Near the physical boundary, a feasible full-dimensional box can have very small volume. The stated lower bound can be conservative even if the full continuous mixture is efficient.",
+    "Separate treatment is required to exploit probability endpoints with zero matching counts. The present sufficient conditions intentionally keep all observed-arm probabilities in (0,1).",
+    "No novelty, superiority over prior work or SOTA status follows from this lemma. Evaluate a frozen implementation with an independent audit and a separately released comparison protocol."
+  ]
+}

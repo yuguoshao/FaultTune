@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T08:52:12.933459+00:00",
+  "sources": {
+    "experiments/structured_validation/freeze_evidence.py": "a5d6b8823282731e01d90f52a74b066773f44719b7aae2a3e566ac70b85339a4",
+    "experiments/structured_validation/freeze_completion_checks.py": "d1e010f43f8e1b4f9d8a8d9ca9d7390c916bb1930fa329c7fccd92da0213d9c4",
+    "experiments/structured_validation/check_recorded_bindings.py": "9a37cf55bb99623d6ed76a5eead762656bc35d6c13866ff9d2bbe32b013c4f91"
+  },
+  "scope": "Isolated temporary administrative fixtures, not study observations or numerical evidence tests",
+  "checks": [
+    "absent completion unaccepted",
+    "complete classified correctly",
+    "numerical_not_met classified correctly",
+    "missing_audit classified correctly",
+    "partial classified correctly",
+    "changed_prefix rejected",
+    "changed_copy rejected",
+    "changed_sample_size rejected",
+    "window_overrun rejected",
+    "running rejected",
+    "wrong_progress_count rejected",
+    "audit_missing_input rejected",
+    "wrong_audit_count rejected",
+    "missing_provenance rejected",
+    "review_missing_wrapper rejected",
+    "existing manifest preserved"
+  ],
+  "checks_count": 16,
+  "real_study_files_modified": false,
+  "real_ledgers_read": false,
+  "freeze_executed": false,
+  "sources_unchanged": true,
+  "elapsed_seconds": 2.2089315000000003
+}

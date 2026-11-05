@@ -1,0 +1,111 @@
+{
+  "schema": "faulttune.round8.fixed_stage_guard.v1",
+  "created_utc": "2026-11-05T07:06:05.051245+00:00",
+  "status": "finite_safe_fixed_stage_control_no_SOTA_claim",
+  "public_frozen_design": {
+    "d0": "3/500",
+    "stake": "7/20",
+    "echo_null_mean": "7379/62500",
+    "update_amplitude_gap_interval": {
+      "lower": "0.1769202009072131668019604120166610885406010498145809442708339429",
+      "upper": "0.1769202009072131668019604120166610888011885010298596227782542722"
+    },
+    "update_gap_upper": "177/1000",
+    "chi_critical": "4/177",
+    "echo_gain": "6",
+    "echo_duration": "6",
+    "echo_control_amplitude_gap": "2",
+    "echo_blocks": 3,
+    "chi_prior_abs_upper": "1/5",
+    "kappa_upper": "1/200",
+    "visibility_lower": "9/10",
+    "physical_null_mean_lower_interval": {
+      "lower": "0.1180643604236871574606309623349671256274156596708154041068638991",
+      "upper": "0.1180643604236871574606309623349671256274156596708154041068638994"
+    },
+    "target_e_threshold": 200,
+    "echo_e_threshold": 100
+  },
+  "dephasing_extension": {
+    "proof": "At common duration tau, e=(1-(1-2r)exp(-kappa*tau))/2 is in[r,1/2] for 0<=r<=1/2 and kappa>=0. Write a=(1-e)^2. Then s(theta)=a-(a-1/4)sin^2(theta/2), so s>=1/4 and |ds/dtheta|<=(a-1/4)/2<=3/8. Shared kappa and equal durations therefore preserve the stated spectator bound for every kappa>=0.",
+    "sign_envelope": "For d=x_old-x_new, Delta=-s_old*d+(s_old-s_new)(1-x_new). If d>=d0 and |chi|<h=2*d0/(3*update_du_upper), Delta<0. If d<=-d0 the symmetric bound implies Delta>0.",
+    "limitations": "Different durations, arm-dependent dephasing/readout, nonfactorizing couplings or imperfect control primitives need separate envelope terms."
+  },
+  "echo_contract": {
+    "law": "A paid phase-cycle sign measurement gives Z in{-1,+1}, E[Z]=A sin(6 chi), with A=v exp(-6 kappa), .9<=v<=1, 0<=kappa<=.005, and |chi|<=.2. The gain6 uses three two-window echoes at amplitude separation2. Public hardware controls and target update gap are distinct.",
+    "null_implication": "|chi|>=h implies |E Z|>=mu0 because |6chi|<=1.2<pi/2 and sin(6h)>=6h-(6h)^3/6. mu0 is rounded downward from this certified physical bound.",
+    "cost": "Each target observation is one duration1 shot. Each echo observation is one shot containing6 sensing windows and6 ideal X1 pulses, plus preparation/analysis/readout. Time above counts sensing windows only; pulse and readout overhead are not free and must be added from the registered device-cost model."
+  },
+  "risk_proof": [
+    "Let D=X_old-X_new. Mplus=product[1+lambda(D-d0)] is a nonnegative supermartingale if d<=d0; Mminus uses -D and is valid if d>=-d0. Each crossing threshold200 has probability<=.005 on its null.",
+    "For echo Z, Lplus=product[1/(1+mu0 Z)] is a supermartingale if mu>=mu0; Lminus=product[1/(1-mu0 Z)] is valid if mu<=-mu0. Echo certification requires both to reach the threshold100 at the same fixed stage, equivalently exp(n*a-b*abs(S))>=100. On the union null |mu|>=mu0 one corresponding supermartingale controls false equivalence by.01; no extra factor2 is required.",
+    "Accept only if Mplus and the echo gate pass. At any fixed parameter with Delta>=0, either d<=d0 and wrong acceptance is controlled by Mplus at.005, or d>d0 and the physical envelope forces |chi|>=h, controlled by the echo gate at.01. This is a fixed-parameter partition, not a union of data-selected claims.",
+    "Wrong rejection is symmetric. At Delta=0, if |d|<=d0 the union of the two target crossings is<=.01; otherwise the echo null is true and every report requires a false echo gate, also<=.01. Thus either wrong direction and any report at equality have risk<=1percent.",
+    "The partition proof needs no independence between the two certificates. The registered implementation nevertheless uses separate paid observations; no truth, uncharged shared noise or initialization data are provided."
+  ],
+  "finite_plans": [
+    {
+      "status": "finite_fixed_stage_power_bound",
+      "planning_x_old": "3/100",
+      "planning_x_new": "1/100",
+      "echo_abs_mean_upper": "0",
+      "target_pairs": 8366,
+      "echo_shots": 3700,
+      "total_physical_shots": 20432,
+      "total_sensing_window_time": 38932,
+      "target_failure_upper": "0.02499490773315241046899967748225285068561646647612132257867248510",
+      "echo_failure_upper": "0.02496305705231675934608594323564713336980798791310198369667270346",
+      "correct_accept_probability_lower": "0.9500420352145308301849143792821000159445755456107766937246548114",
+      "target_chernoff_mgf_interval": {
+        "lower": "0.9992426677661578783476605122543529150008839507218048048084556074",
+        "upper": "0.9992426677661578783476605122543529150008839507218048048084556087"
+      },
+      "scope": "Planning truth is not passed to certificate. Power is proved only for the displayed target rates and echo mean range. Reversing old/new gives the symmetric rejection case."
+    },
+    {
+      "status": "finite_fixed_stage_power_bound",
+      "planning_x_old": "3/100",
+      "planning_x_new": "1/100",
+      "echo_abs_mean_upper": "1/50",
+      "target_pairs": 8366,
+      "echo_shots": 7565,
+      "total_physical_shots": 24297,
+      "total_sensing_window_time": 62122,
+      "target_failure_upper": "0.02499490773315241046899967748225285068561646647612132257867248510",
+      "echo_failure_upper": "0.02499184480151942023955125569611082084085101143513374695867286818",
+      "correct_accept_probability_lower": "0.9500132474653281692914490668216363284735325220887449304626546467",
+      "target_chernoff_mgf_interval": {
+        "lower": "0.9992426677661578783476605122543529150008839507218048048084556074",
+        "upper": "0.9992426677661578783476605122543529150008839507218048048084556087"
+      },
+      "scope": "Planning truth is not passed to certificate. Power is proved only for the displayed target rates and echo mean range. Reversing old/new gives the symmetric rejection case."
+    },
+    {
+      "status": "finite_fixed_stage_power_bound",
+      "planning_x_old": "3/100",
+      "planning_x_new": "1/100",
+      "echo_abs_mean_upper": "1/25",
+      "target_pairs": 8366,
+      "echo_shots": 27752,
+      "total_physical_shots": 44484,
+      "total_sensing_window_time": 183244,
+      "target_failure_upper": "0.02499490773315241046899967748225285068561646647612132257867248510",
+      "echo_failure_upper": "0.02499564349117688481259198056434109412973414209732129407739881654",
+      "correct_accept_probability_lower": "0.9500094487756707047184083419534060551846493914265573833439286983",
+      "target_chernoff_mgf_interval": {
+        "lower": "0.9992426677661578783476605122543529150008839507218048048084556074",
+        "upper": "0.9992426677661578783476605122543529150008839507218048048084556087"
+      },
+      "scope": "Planning truth is not passed to certificate. Power is proved only for the displayed target rates and echo mean range. Reversing old/new gives the symmetric rejection case."
+    },
+    {
+      "status": "no_finite_power_bound_from_this_fixed_alternative",
+      "echo_abs_mean_upper": "2/25"
+    }
+  ],
+  "power_scope": "Fixed Chernoff/Hoeffding bounds, no Monte Carlo. The simple fixed alternative does not certify all useful updates: if echo mean approaches its equivalence boundary, this particular alternative may have nonpositive growth. A general confidence sequence or direct-target fallback is required for whole-benchmark power.",
+  "same_action_comparator": "This classical fixed-stage combination, and stronger optimized or sequential variants using exactly the same echo actions, must be included as baselines. Improvement relative to the previous restricted action menu is not same-action SOTA superiority.",
+  "implementation": "certificate(pair_counts, echo_plus, echo_count, design) has no private probability inputs and uses outward Decimal intervals for every decision.",
+  "source_sha256": "4f3de131a3645964880ab29ee7917f574e16bc6869d43bfaee2e64944aef4cdf",
+  "new_monte_carlo_observations": 0
+}

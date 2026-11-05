@@ -1,0 +1,420 @@
+{
+  "status": "complete_hindsight_and_information_necessary_diagnostics",
+  "pair_cap": 8192,
+  "physical_shot_cap": 16384,
+  "new_observations": 0,
+  "tuned_parameters": 0,
+  "numerical_status": "Costs and powers are existing float analytic estimates, not independently certified intervals. Information lower-bound endpoints are copied from the outward theorem artifact. Derived ratios are float diagnostics, not outward enclosures.",
+  "qualification_rule": "At least .95 correct-report probability on every one of the 16 main cases, using the existing float analytic table; mean power is insufficient. The .01 uniform null-report guarantee is supplied by each frozen boundary certificate, not inferred from these cases.",
+  "qualified_methods": [
+    "beta_exact",
+    "mix_0.75_0.99_w0.5",
+    "mix_0.75_0.99_w0.75",
+    "mix_0.7_0.9_0.99_equal",
+    "mix_beta_0.75_half",
+    "sprt_0.6",
+    "sprt_0.7",
+    "sprt_0.75"
+  ],
+  "excluded_methods": [
+    "mix_0.75_0.99_w0.25",
+    "sprt_0.85",
+    "sprt_0.9",
+    "sprt_0.99"
+  ],
+  "beta_and_single_sprt_control_envelope": {
+    "method_set": [
+      "beta_exact",
+      "sprt_0.6",
+      "sprt_0.7",
+      "sprt_0.75"
+    ],
+    "status": "hindsight_nonexecutable_diagnostic",
+    "equal_case_mean_expected_shots": 1021.9950246708141,
+    "rows": [
+      {
+        "case_id": 7,
+        "method": "beta_exact",
+        "expected_shots": 945.9456104162228,
+        "correct_probability": 0.9999999999999999
+      },
+      {
+        "case_id": 9,
+        "method": "sprt_0.7",
+        "expected_shots": 5585.818968204774,
+        "correct_probability": 0.9903039881473209
+      },
+      {
+        "case_id": 19,
+        "method": "beta_exact",
+        "expected_shots": 188.7428985788081,
+        "correct_probability": 0.9999999999999997
+      },
+      {
+        "case_id": 21,
+        "method": "sprt_0.7",
+        "expected_shots": 1089.8837818956813,
+        "correct_probability": 0.9999999842133113
+      },
+      {
+        "case_id": 31,
+        "method": "beta_exact",
+        "expected_shots": 46.767662905274946,
+        "correct_probability": 0.9999999999999997
+      },
+      {
+        "case_id": 33,
+        "method": "sprt_0.75",
+        "expected_shots": 232.88591953321358,
+        "correct_probability": 0.999999973612441
+      },
+      {
+        "case_id": 43,
+        "method": "beta_exact",
+        "expected_shots": 18.37296959657273,
+        "correct_probability": 1.0
+      },
+      {
+        "case_id": 45,
+        "method": "beta_exact",
+        "expected_shots": 67.54238623596535,
+        "correct_probability": 0.9999999808880019
+      },
+      {
+        "case_id": 1007,
+        "method": "beta_exact",
+        "expected_shots": 945.9456104162225,
+        "correct_probability": 0.9999999999999997
+      },
+      {
+        "case_id": 1009,
+        "method": "sprt_0.7",
+        "expected_shots": 5585.818968204774,
+        "correct_probability": 0.9903039881473209
+      },
+      {
+        "case_id": 1019,
+        "method": "beta_exact",
+        "expected_shots": 188.742898578808,
+        "correct_probability": 0.9999999999999993
+      },
+      {
+        "case_id": 1021,
+        "method": "sprt_0.7",
+        "expected_shots": 1089.8837818956813,
+        "correct_probability": 0.9999999842133113
+      },
+      {
+        "case_id": 1031,
+        "method": "beta_exact",
+        "expected_shots": 46.76766290527492,
+        "correct_probability": 0.9999999999999992
+      },
+      {
+        "case_id": 1033,
+        "method": "sprt_0.75",
+        "expected_shots": 232.88591953321415,
+        "correct_probability": 0.9999999736124432
+      },
+      {
+        "case_id": 1043,
+        "method": "beta_exact",
+        "expected_shots": 18.372969596572734,
+        "correct_probability": 1.0
+      },
+      {
+        "case_id": 1045,
+        "method": "beta_exact",
+        "expected_shots": 67.54238623596524,
+        "correct_probability": 0.9999999808880008
+      }
+    ],
+    "candidate_comparisons": [
+      {
+        "candidate": "mix_0.75_0.99_w0.5",
+        "equal_case_geometric_candidate_over_envelope": 1.0266838149445698,
+        "equal_case_arithmetic_candidate_over_envelope": 1.0625767539336648
+      },
+      {
+        "candidate": "mix_0.7_0.9_0.99_equal",
+        "equal_case_geometric_candidate_over_envelope": 1.0313589608817666,
+        "equal_case_arithmetic_candidate_over_envelope": 1.0729870976583382
+      }
+    ],
+    "interpretation": "An oracle chooses a different already-qualified method per case after seeing expected costs. This is a diagnostic envelope, not an implementable baseline or an achieved saving. Float near-ties do not establish strict winners."
+  },
+  "all_qualified_frozen_methods_envelope": {
+    "method_set": [
+      "beta_exact",
+      "mix_0.75_0.99_w0.5",
+      "mix_0.75_0.99_w0.75",
+      "mix_0.7_0.9_0.99_equal",
+      "mix_beta_0.75_half",
+      "sprt_0.6",
+      "sprt_0.7",
+      "sprt_0.75"
+    ],
+    "status": "hindsight_nonexecutable_diagnostic",
+    "equal_case_mean_expected_shots": 1021.9715318714493,
+    "rows": [
+      {
+        "case_id": 7,
+        "method": "mix_0.7_0.9_0.99_equal",
+        "expected_shots": 945.9456104157539,
+        "correct_probability": 0.9999999999999999
+      },
+      {
+        "case_id": 9,
+        "method": "sprt_0.7",
+        "expected_shots": 5585.818968204774,
+        "correct_probability": 0.9903039881473209
+      },
+      {
+        "case_id": 19,
+        "method": "mix_0.7_0.9_0.99_equal",
+        "expected_shots": 188.7428985787662,
+        "correct_probability": 0.9999999999999997
+      },
+      {
+        "case_id": 21,
+        "method": "sprt_0.7",
+        "expected_shots": 1089.8837818956813,
+        "correct_probability": 0.9999999842133113
+      },
+      {
+        "case_id": 31,
+        "method": "mix_0.7_0.9_0.99_equal",
+        "expected_shots": 46.767662905274726,
+        "correct_probability": 0.9999999999999997
+      },
+      {
+        "case_id": 33,
+        "method": "sprt_0.75",
+        "expected_shots": 232.88591953321358,
+        "correct_probability": 0.999999973612441
+      },
+      {
+        "case_id": 43,
+        "method": "beta_exact",
+        "expected_shots": 18.37296959657273,
+        "correct_probability": 1.0
+      },
+      {
+        "case_id": 45,
+        "method": "mix_0.7_0.9_0.99_equal",
+        "expected_shots": 67.354443841558,
+        "correct_probability": 0.9999999808880019
+      },
+      {
+        "case_id": 1007,
+        "method": "mix_0.7_0.9_0.99_equal",
+        "expected_shots": 945.9456104157535,
+        "correct_probability": 0.9999999999999997
+      },
+      {
+        "case_id": 1009,
+        "method": "sprt_0.7",
+        "expected_shots": 5585.818968204774,
+        "correct_probability": 0.9903039881473209
+      },
+      {
+        "case_id": 1019,
+        "method": "mix_0.7_0.9_0.99_equal",
+        "expected_shots": 188.74289857876607,
+        "correct_probability": 0.9999999999999993
+      },
+      {
+        "case_id": 1021,
+        "method": "sprt_0.7",
+        "expected_shots": 1089.8837818956813,
+        "correct_probability": 0.9999999842133113
+      },
+      {
+        "case_id": 1031,
+        "method": "mix_0.7_0.9_0.99_equal",
+        "expected_shots": 46.7676629052747,
+        "correct_probability": 0.9999999999999992
+      },
+      {
+        "case_id": 1033,
+        "method": "sprt_0.75",
+        "expected_shots": 232.88591953321415,
+        "correct_probability": 0.9999999736124432
+      },
+      {
+        "case_id": 1043,
+        "method": "beta_exact",
+        "expected_shots": 18.372969596572734,
+        "correct_probability": 1.0
+      },
+      {
+        "case_id": 1045,
+        "method": "mix_0.7_0.9_0.99_equal",
+        "expected_shots": 67.35444384155788,
+        "correct_probability": 0.9999999808880008
+      }
+    ],
+    "candidate_comparisons": [
+      {
+        "candidate": "mix_0.75_0.99_w0.5",
+        "equal_case_geometric_candidate_over_envelope": 1.0270414792934768,
+        "equal_case_arithmetic_candidate_over_envelope": 1.0626011801546615
+      },
+      {
+        "candidate": "mix_0.7_0.9_0.99_equal",
+        "equal_case_geometric_candidate_over_envelope": 1.0317182539044711,
+        "equal_case_arithmetic_candidate_over_envelope": 1.0730117631894418
+      }
+    ],
+    "interpretation": "An oracle chooses a different already-qualified method per case after seeing expected costs. This is a diagnostic envelope, not an implementable baseline or an achieved saving. Float near-ties do not establish strict winners."
+  },
+  "case9_comparison": [
+    {
+      "method": "beta_exact",
+      "expected_shots": 6518.890596558116,
+      "correct_probability": 0.9793031725889308,
+      "error_probability": 1.2882592671416874e-05,
+      "abstain_probability": 0.020683944818397648
+    },
+    {
+      "method": "sprt_0.7",
+      "expected_shots": 5585.818968204774,
+      "correct_probability": 0.9903039881473209,
+      "error_probability": 2.601227524985627e-08,
+      "abstain_probability": 0.009695985840403654
+    },
+    {
+      "method": "mix_0.75_0.99_w0.5",
+      "expected_shots": 5997.165145874156,
+      "correct_probability": 0.965988806472986,
+      "error_probability": 1.246522832663996e-05,
+      "abstain_probability": 0.03399872829868769
+    },
+    {
+      "method": "mix_0.7_0.9_0.99_equal",
+      "expected_shots": 6072.243561864293,
+      "correct_probability": 0.9838152252788617,
+      "error_probability": 1.2882621309051802e-05,
+      "abstain_probability": 0.01617189209982906
+    }
+  ],
+  "information_necessary_diagnostic": {
+    "scope": "Complete balanced PSR pairs with rounded sampler probabilities matched exactly as rational inputs; finite cap, all-trajectory paid-shot cost, per-case correct report >=.95, uniform null any-report <=.01. General-angle U bounds are deliberately not combined with rounded-sampler costs.",
+    "rows": [
+      {
+        "case_id": 7,
+        "matched_sampler_psr95_expected_shots_lower_bound": {
+          "lower": "650.6111331902322934916121168652551126288606986112317250017449057",
+          "upper": "650.6111331902322934916121168652551126288606986112317250017450192"
+        },
+        "beta_expected_shots_float": 945.9456104162228,
+        "beta_correct_probability_float": 0.9999999999999999,
+        "diagnostic_lower_bound_over_beta_cost": 0.6877891561904481,
+        "diagnostic_beta_cost_over_lower_bound": 1.4539339432724365,
+        "threefold_beta_cost_target_float": 315.3152034720743,
+        "diagnostic_threefold_target_below_lower_bound": true
+      },
+      {
+        "case_id": 9,
+        "matched_sampler_psr95_expected_shots_lower_bound": {
+          "lower": "4389.375814433617561779682903970789809376878108648970945655382543",
+          "upper": "4389.375814433617561779682903970789809376878108648970945655388801"
+        },
+        "beta_expected_shots_float": 6518.890596558116,
+        "beta_correct_probability_float": 0.9793031725889308,
+        "diagnostic_lower_bound_over_beta_cost": 0.6733317194725047,
+        "diagnostic_beta_cost_over_lower_bound": 1.485152074498155,
+        "threefold_beta_cost_target_float": 2172.9635321860387,
+        "diagnostic_threefold_target_below_lower_bound": true
+      },
+      {
+        "case_id": 19,
+        "matched_sampler_psr95_expected_shots_lower_bound": {
+          "lower": "126.1082828561136151906589038307737233024231641392159026018241834",
+          "upper": "126.1082828561136151906589038307737233024231641392159026018241888"
+        },
+        "beta_expected_shots_float": 188.7428985788081,
+        "beta_correct_probability_float": 0.9999999999999997,
+        "diagnostic_lower_bound_over_beta_cost": 0.6681484909137289,
+        "diagnostic_beta_cost_over_lower_bound": 1.4966732898437687,
+        "threefold_beta_cost_target_float": 62.91429952626937,
+        "diagnostic_threefold_target_below_lower_bound": true
+      },
+      {
+        "case_id": 21,
+        "matched_sampler_psr95_expected_shots_lower_bound": {
+          "lower": "843.4763374982802863854981538484771818500268221978760079956953512",
+          "upper": "843.4763374982802863854981538484771818500268221978760079956955802"
+        },
+        "beta_expected_shots_float": 1261.4088964104974,
+        "beta_correct_probability_float": 0.999989866285418,
+        "diagnostic_lower_bound_over_beta_cost": 0.6686779678647436,
+        "diagnostic_beta_cost_over_lower_bound": 1.4954881842350074,
+        "threefold_beta_cost_target_float": 420.46963213683244,
+        "diagnostic_threefold_target_below_lower_bound": true
+      },
+      {
+        "case_id": 31,
+        "matched_sampler_psr95_expected_shots_lower_bound": {
+          "lower": "27.53661197643416582641330636907089011942884429356262083340047086",
+          "upper": "27.53661197643416582641330636907089011942884429356262083340047106"
+        },
+        "beta_expected_shots_float": 46.767662905274946,
+        "beta_correct_probability_float": 0.9999999999999997,
+        "diagnostic_lower_bound_over_beta_cost": 0.5887959813644718,
+        "diagnostic_beta_cost_over_lower_bound": 1.6983811568866465,
+        "threefold_beta_cost_target_float": 15.589220968424982,
+        "diagnostic_threefold_target_below_lower_bound": true
+      },
+      {
+        "case_id": 33,
+        "matched_sampler_psr95_expected_shots_lower_bound": {
+          "lower": "178.3616130880558383187050858443168534900871557522009274576816030",
+          "upper": "178.3616130880558383187050858443168534900871557522009274576816107"
+        },
+        "beta_expected_shots_float": 266.4501072924116,
+        "beta_correct_probability_float": 0.9999967732171599,
+        "diagnostic_lower_bound_over_beta_cost": 0.6693996669789876,
+        "diagnostic_beta_cost_over_lower_bound": 1.493875855231625,
+        "threefold_beta_cost_target_float": 88.81670243080386,
+        "diagnostic_threefold_target_below_lower_bound": true
+      },
+      {
+        "case_id": 43,
+        "matched_sampler_psr95_expected_shots_lower_bound": {
+          "lower": "6.555642300961341987467637156111876026816425885198448206720495952",
+          "upper": "6.555642300961341987467637156111876026816425885198448206720495972"
+        },
+        "beta_expected_shots_float": 18.37296959657273,
+        "beta_correct_probability_float": 1.0,
+        "diagnostic_lower_bound_over_beta_cost": 0.35680907577315224,
+        "diagnostic_beta_cost_over_lower_bound": 2.802619293898701,
+        "threefold_beta_cost_target_float": 6.124323198857577,
+        "diagnostic_threefold_target_below_lower_bound": true
+      },
+      {
+        "case_id": 45,
+        "matched_sampler_psr95_expected_shots_lower_bound": {
+          "lower": "44.32301775690215746272815877881273316065279684806305042685734829",
+          "upper": "44.32301775690215746272815877881273316065279684806305042685734851"
+        },
+        "beta_expected_shots_float": 67.54238623596535,
+        "beta_correct_probability_float": 0.9999999808880019,
+        "diagnostic_lower_bound_over_beta_cost": 0.6562252272529393,
+        "diagnostic_beta_cost_over_lower_bound": 1.5238670481873355,
+        "threefold_beta_cost_target_float": 22.514128745321784,
+        "diagnostic_threefold_target_below_lower_bound": true
+      }
+    ],
+    "equal_positive_case_arithmetic_lower_bound_mean_float": 783.2935566375747,
+    "equal_positive_case_geometric_lower_bound_over_beta_float": 0.6096971900299689,
+    "diagnostic_maximum_geometric_beta_over_candidate_gain": 1.640158453003279,
+    "equal_positive_case_arithmetic_beta_mean_float": 1164.2651409992336,
+    "interpretation": "The lower bound is necessary for any qualifying balanced PSR procedure and does not give an algorithm achieving it. Relative to the displayed beta cost reference, a 3x casewise or equal-case geometric improvement is incompatible with these information inequalities. Strict comparison to the true beta expected costs still requires their independent interval certification. Eight positive cases are the theory table; the 16-case table also contains sign mirrors."
+  },
+  "input_sha256": {
+    "results/sota_round4/analytic_prior_comparison.json": "13440af229b9363f8ca6fb475ca0a6d5783aacac709e98bbac614c6b32967822",
+    "results/sota_round4/theory/finite_budget_information_bounds.json": "21108102dedd5897426c07757a8c1a05ae43cc1bad6df096c1866e3f6aac387c",
+    "experiments/sota_round4/qualified_comparator_diagnostic.py": "31e2567858dbaae7b3757a592d03f839c45118ea825b08253b9febaf2926ce50"
+  }
+}

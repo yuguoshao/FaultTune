@@ -1,0 +1,75 @@
+{
+  "status": "released_by_root",
+  "explicit_root_release": true,
+  "reference": "Active user goal: continue pursuing SOTA. Fixed 18-case / 32-replicate development comparison of all registered methods; independent source review passed; no protocol adaptation to partial outcomes.",
+  "plan_sha256": "f89aefeab89c5ea26716c8cf4fa8b91902fdcdbc1d2853eeaea1f52022ea56f7",
+  "sources": {
+    "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f",
+    "experiments/structured_validation/weighted_fisher.py": "1f31c9cbea3c8db4d7d8dc75936dc5304fd3273fb8ad1fafedc90e792fe24e24",
+    "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/structured_validation/conditional_fisher_unequal.py": "011d691f76b798cd0372544156ab86dbf7b6273b02b41de009737f433caef917",
+    "experiments/structured_validation/safe_grid.py": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+    "experiments/structured_validation/rb_grid.py": "a262a4790289505e7846c98334edbf341cded98090ce7bd8bf7c0c3974fb420f",
+    "experiments/structured_validation/predictive.py": "fc16237805139c707e6e076c0c7e69f45e88c111d405349c68daa3f150871fe4",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/structured_validation/design_policy.py": "1e61776de4b3bd8b2fd331b9c9f28b7b68f4e6c9672e19ca38aa9b436e3d4547",
+    "experiments/structured_validation/probe_fixed.py": "bf64f1ab7fb5e1675966704cc315de1f21b51db8135301fc319d8388d67311ec",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/sota_round3/exact_sign_boundary.py": "ae47df47a5d2bd0f83aeefd0c3bce1711ed697a54457b0ed4206830008cb283b",
+    "results/sota_round2/theory/finite_cap_jeffreys_dp_lemma.json": "95cbc30eb66f788c8ab9d60228cc7d435de0fc06ec79993b538e8e75d68bdf93",
+    "experiments/sota_round3/generic_sign_boundary.py": "826cc5a3fd5768ca259c0e6a37f4ffa05991d37432456e51d547fdcb52901a1c",
+    "experiments/sota_round3/paired_benchmark.py": "d92c724cca5e1e3ada3169cbb14e89236bb4c88c6f0349a63b829fa3f9f7a2bd",
+    "results/sota_round2/theory/finite_boundary_source_review.json": "0b013e6d3a036bded703f5def430cdce332600177ef75743e736d5bcdd7d7bfd"
+  },
+  "boundaries": {
+    "beta_exact": {
+      "path": "results/sota_round3/beta_boundary_N2048.json",
+      "sha256": "b6d215f23593d1d0151ec03c918bbcd6173a55154d44fcb840ad9d056652f84e",
+      "artifact_sha256": "93cefb682cba282a695af1eb8d3dbac2882b386157dd6ae7969e3cc647f32744",
+      "boundary_sha256": "eef30feb95d3504f77d4ef7cf0a9099df3c7a89b78fcdc1cc6a7982d71473188"
+    },
+    "maxsprt": {
+      "path": "results/sota_round3/boundaries/maxsprt.json",
+      "sha256": "506c54e766563437d53297498101880c33eef97db489d64fcdf518dbd96151c0",
+      "artifact_sha256": "f6b08629b14ae0579dfa5626fdbd154b740184acf53bf6b734210a969a64e987"
+    },
+    "pair_grid": {
+      "path": "results/sota_round3/boundaries/pair_grid.json",
+      "sha256": "fb4c63db31fc16d53239e8361da19a135b3408385c6a6b675d1c1a216d5902b4",
+      "artifact_sha256": "5ef04c00eb97aaff1e07f2e9e175b9c618ebc8e7107864e1e66b206676a1a5e8"
+    },
+    "pairwise_hedge": {
+      "path": "results/sota_round3/boundaries/pairwise_hedge.json",
+      "sha256": "39f0e5010253d6169c6d34932842e4b3790037d09e7385219744beed438c131e",
+      "artifact_sha256": "dca0619a5ca3cd0374a3460f58a66797db8f1ae17df17328c1e6612b0daf17b6"
+    },
+    "sprt_0.6": {
+      "path": "results/sota_round3/boundaries/sprt_0.6.json",
+      "sha256": "44a83f0a821e81c092c863ec0c3cf1a033f1c9cc6493c69632beb0df4757b378",
+      "artifact_sha256": "a816d75195da1d831884facfd78cf398c18de7477c3ab50fc741f302824721a7"
+    },
+    "sprt_0.75": {
+      "path": "results/sota_round3/boundaries/sprt_0.75.json",
+      "sha256": "e2321fd70fd270a6e9fd686db24ce9763a23438d8e884c77bde66abb3ddfbeaf",
+      "artifact_sha256": "72c0b14c6fe8177f715bf50a42b15997086721f5c8996575a47cf45c76cd4b5f"
+    },
+    "sprt_0.9": {
+      "path": "results/sota_round3/boundaries/sprt_0.9.json",
+      "sha256": "f0d6fdd34d21367385ed9f5f164fc830020a26502b64ae6dc9d63c0d46073359",
+      "artifact_sha256": "f36f3d57a867b2140ebbca17bf19a65e4eb01a3b6a43af69f01e64ba67adf06c"
+    },
+    "sprt_0.99": {
+      "path": "results/sota_round3/boundaries/sprt_0.99.json",
+      "sha256": "f3a656bb731d10c070abf5b155b4a2106455571b2eee8282493a53b53902cf75",
+      "artifact_sha256": "0523a5c21c682149b2f4fa1f5f9749147032ab557456c2b2892df8a61339fd34"
+    }
+  },
+  "review": {
+    "path": "results/sota_round2/theory/paired_benchmark_runner_review.json",
+    "sha256": "a77bc8f616170629b6ee338902910adf229107c5ba335c90ec171bdbcb98c099"
+  },
+  "sampling_cutoff_unix": 1793796762.0013494,
+  "hard_deadline_unix": 1793798562.0013494,
+  "scope": "This fixed development probe and audit only. No SOTA or risk certification from finite empirical outcomes."
+}

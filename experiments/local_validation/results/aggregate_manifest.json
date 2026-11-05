@@ -1,0 +1,183 @@
+{
+  "base_revisions": {
+    "HEAD": "4f4c319e2230bc26204de3d4053fae336026fd9d",
+    "origin/dev": "a2a28498381bcfb1ca6fbf6c1e69deded9799b28",
+    "origin/dev_hub": "fca412702cb373468b0cbe32a939992f36be0980"
+  },
+  "commands": [
+    "python -B experiments/local_validation/aggregate_probe.py --trials 100 --output experiments/local_validation/results/aggregate_path.json --raw-output experiments/local_validation/results/aggregate_path_trials.jsonl",
+    "python -B experiments/local_validation/aggregate_probe.py --graphs star --policies sweep_kl group_kl_balanced group_kl_adaptive --trials 100 --output experiments/local_validation/results/aggregate_star.json --raw-output experiments/local_validation/results/aggregate_star_trials.jsonl",
+    "python -B experiments/local_validation/aggregate_probe.py --graphs empty path clique --policies sweep_kl --cases null four_cluster --trials 30 --output experiments/local_validation/results/aggregate_topology.json --raw-output experiments/local_validation/results/aggregate_topology_trials.jsonl",
+    "python -B experiments/local_validation/aggregate_math.py --output experiments/local_validation/results/aggregate_analytic.json",
+    "python -B experiments/local_validation/verify_aggregate.py --write-manifest --tests"
+  ],
+  "dependencies": "Python standard library only",
+  "files": [
+    {
+      "bytes": 18567,
+      "path": "docs/AGGREGATE_VALIDATION_RESEARCH.md",
+      "sha256": "c39717b45496491c9deb4b88358e1d3e58f19245f25b8de437a357df3566de36"
+    },
+    {
+      "bytes": 7390,
+      "path": "experiments/local_validation/AGGREGATE_README.md",
+      "sha256": "cde119a4f247e1bda1c4daab5c1e054fbe7bb043d62e6dfb51d69a1938658738"
+    },
+    {
+      "bytes": 13686,
+      "path": "experiments/local_validation/group_oracle.py",
+      "sha256": "a919401d06ca66a227422835ce5e566aa750cbdcecacebfe08d62a7c3c16e4e9"
+    },
+    {
+      "bytes": 15663,
+      "path": "experiments/local_validation/aggregate_probe.py",
+      "sha256": "b2600f75ad280c0e91ca0b3e22d07efbe349c7fbadc0c5161ed9d10f17c57a11"
+    },
+    {
+      "bytes": 17639,
+      "path": "experiments/local_validation/test_aggregate.py",
+      "sha256": "7a63174345ab5d89aac128e0e8478f69a0d246c0c9e4c27639c5be4d79918368"
+    },
+    {
+      "bytes": 19491,
+      "path": "experiments/local_validation/aggregate_math.py",
+      "sha256": "3b3607e6548e06ad5288f928d96763efbe365632d20f4f340ec1f4607fd019b0"
+    },
+    {
+      "bytes": 9193,
+      "path": "experiments/local_validation/test_aggregate_math.py",
+      "sha256": "f4fa9ef43885f395a590a70b44666616509cdf3c15937352d14bd125b7c72c05"
+    },
+    {
+      "bytes": 2245,
+      "path": "experiments/local_validation/batched_sweep.py",
+      "sha256": "69d367fc26f928188962e1cdf6027ef33b8d28a0b6649c762bf6c0393c26440f"
+    },
+    {
+      "bytes": 8801,
+      "path": "experiments/local_validation/test_batched_sweep.py",
+      "sha256": "e630ed43669dd56f65ad1c0d454d16bc782163d32b1b82e2cae7a95823450d60"
+    },
+    {
+      "bytes": 12088,
+      "path": "experiments/local_validation/verify_aggregate.py",
+      "sha256": "1b486a10ff69fa76fc6a0ba9cfbcd2241c143343f438372002c8f1f77294b15d"
+    },
+    {
+      "bytes": 61548,
+      "path": "experiments/local_validation/results/aggregate_analytic.json",
+      "sha256": "c4b908b7ae0882e3156fa6d768d527196431de6b912b2e822d879ca0b3242f83"
+    },
+    {
+      "bytes": 26815,
+      "path": "experiments/local_validation/probe.py",
+      "sha256": "750c961e47d0efc5cc4f1ba5763a84fe7342cab433d6a56cd65353dd456e8368"
+    },
+    {
+      "bytes": 6662,
+      "path": "experiments/local_validation/audit_math.py",
+      "sha256": "4c2d38d4e970b7cdf09bc06c923f4fa37f2bab489023da164329b7e9c563e468"
+    },
+    {
+      "bytes": 5387,
+      "path": "experiments/local_validation/stress_probe.py",
+      "sha256": "9b219322b0fb1125325ee115617a0362af9c50d0a10ee54317774b0ac84887c4"
+    },
+    {
+      "bytes": 9680,
+      "path": "experiments/local_validation/test_probe.py",
+      "sha256": "02cb24d65dae2342aebdfda20aa2babd3d4ba520bf25deb2988a6be2597c35f6"
+    },
+    {
+      "bytes": 39,
+      "path": "experiments/local_validation/.gitignore",
+      "sha256": "4e3697df1b744386b754cffc5fbd4689005c716c1c58742152d9019eaed2cd0e"
+    },
+    {
+      "bytes": 4469,
+      "path": "experiments/local_validation/results/manifest.json",
+      "sha256": "ce0fe8b658b3d897ef34158f040b308cac6e7aa224f9645ff51175b45779a696"
+    },
+    {
+      "bytes": 27939,
+      "path": "experiments/local_validation/results/aggregate_path.json",
+      "sha256": "9e4dbb3c5b12f2259605953176100d93038fd69673a6bed2597a7e91afc2d8cd"
+    },
+    {
+      "bytes": 1115842,
+      "path": "experiments/local_validation/results/aggregate_path_trials.jsonl",
+      "sha256": "18877bbe0a569b8ccbf175462fded1d7891fa5dab2e08ba4b89c2f8f2a1a50ec"
+    },
+    {
+      "bytes": 21346,
+      "path": "experiments/local_validation/results/aggregate_star.json",
+      "sha256": "84be1a6cfa497dfa58f9a81eda8d26c41b647996ea32fb801c20cc2d5efa71e8"
+    },
+    {
+      "bytes": 861075,
+      "path": "experiments/local_validation/results/aggregate_star_trials.jsonl",
+      "sha256": "65bc3f227552c796b0215ced87539bf9ea31899cbcefea8da52ae58907f74ffc"
+    },
+    {
+      "bytes": 19417,
+      "path": "experiments/local_validation/results/aggregate_topology.json",
+      "sha256": "29374e82bd8a7241eda5a481ca251f68782ada119e4c2a1b2d9a762159742948"
+    },
+    {
+      "bytes": 128437,
+      "path": "experiments/local_validation/results/aggregate_topology_trials.jsonl",
+      "sha256": "9c46ab21729ad0d4530f6fb97d7ba4f1d4119ed05f0a480fa664ea30aa15cb2f"
+    }
+  ],
+  "generated_at_utc": "2026-11-02T15:42:17.509908+00:00",
+  "monte_carlo_trials": {
+    "aggregate_path": 1600,
+    "aggregate_star": 1200,
+    "aggregate_topology": 180,
+    "total": 2980
+  },
+  "platform": "Windows-10-10.0.22621-SP0",
+  "python": "3.8.5",
+  "schema_version": "faulttune.aggregate_manifest.v1",
+  "scope": "standalone fixed-candidate Bernoulli research; new uncommitted files; no FaultTune engine or quantum circuit integration",
+  "verification": {
+    "analytic": {
+      "characteristic_rate_cases": 12,
+      "exact_fractions_and_source_hash": "passed",
+      "finite_event_certificates_checked": 4
+    },
+    "first_round_snapshot_files_unchanged": 13,
+    "local_document_links_checked": 17,
+    "pairing": {
+      "path_star_sweep_pairs": 400,
+      "round_ratio": [
+        1,
+        2,
+        16
+      ],
+      "status": "passed",
+      "topology_triplets": 60
+    },
+    "raw_checks": [
+      {
+        "aggregation_source_and_cost_checks": "passed",
+        "experiment": "aggregate_path",
+        "groups": 16,
+        "raw_trials": 1600
+      },
+      {
+        "aggregation_source_and_cost_checks": "passed",
+        "experiment": "aggregate_star",
+        "groups": 12,
+        "raw_trials": 1200
+      },
+      {
+        "aggregation_source_and_cost_checks": "passed",
+        "experiment": "aggregate_topology",
+        "groups": 6,
+        "raw_trials": 180
+      }
+    ],
+    "unit_tests_passed": 60
+  }
+}

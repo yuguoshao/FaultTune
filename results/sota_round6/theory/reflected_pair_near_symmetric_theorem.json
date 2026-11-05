@@ -1,0 +1,187 @@
+{
+  "status": "complete_analytic_near_symmetric_argument_pending_independent_review",
+  "new_simulation_observations": 0,
+  "previous_theorem_used": "The reviewed A=1/2 all-angle operator certificate in docs/CONTINUOUS_SYMMETRIC_DESIGN.md, with its exact source hash recorded below.",
+  "theorem": {
+    "assumptions": "Fix realB and0<C with B^2+C^2<1/4. There exists epsilon(B,C)>0 such that for A=1/2+alpha and |alpha|<epsilon, the physical model p(x)=A+B cos(x)+C sin(x) has the exact reflected-pair optimal design described below. C<0 follows by reflection.",
+    "design": "Let Q(a,c)=logistic([f(a+c)-f(a-c)]/(2c)), K(a,c)=kl(a+c||Q(a,c)), and R_alpha(z)=K(1/2+alpha+Bz,C sqrt(1-z^2)). Its unique interior maximizer z*(alpha) gives the two reflected angles, with plus weight omega=[Q(p0,c0)-(p0-c0)]/(2c0), p0=A+Bz*, c0=C sqrt(1-z*^2).",
+    "global_certificate": "The tangent to q_alpha(z)=Q(A+Bz,C sqrt(1-z^2)) atz* is a physical affine null q_t(z)=a*+b*z and satisfies kl(p(x)||q_t(cos(x)))<=R_alpha(z*) for EVERY realx.",
+    "oracle_value": "V(A,B,C)=R_alpha(z*), even when arbitrary design supports and physical boundary nulls are allowed. The same equality holds for the larger opposite-sign physical null C_null<=0.",
+    "scope": "This is a neighborhood ofA=1/2 for each fixed strictly physical(B,C), not a uniform neighborhood over all(B,C) or the full global conjecture. No explicit epsilon is supplied."
+  },
+  "baseline_strictness_proof": [
+    {
+      "step": 1,
+      "claim": "The old operator certificate is strict away from the two PSR angles in a full-rank model.",
+      "argument": "Write t=2C, lambda=atanh(t)/t, rho=(I+2B Z+t X)/2, sigma=(I+2B lambda Z)/2, H*=I+tX. Strict B^2+C^2<1/4 makes rho positive definite, and the earlier proof makes sigma positive definite. For Hermitian E!=0, the Hessian of G(H)=Tr(rho log H) is -2 integral_0^infty Tr[rho R E R E R] ds<0, R=(H+sI)^(-1): RERER is positive semidefinite and nonzero, and rho is positive definite. Thus G is strictly concave and its tangent inequality atH* is strict unlessH=H*. For each angle, the likelihood-ratio matrix H_x=(p/q)P_x+((1-p)/(1-q))(I-P_x) is positive definite and Tr(sigma H_x)=1. The earlier proof therefore gives KL(p(x)||q*(x))<Phi(t) unlessH_x=H*. Since C!=0, H* has two distinct eigenvalues, so this equality forces P_x to be an X eigenprojection, precisely x=+/-pi/2 modulo2pi. Both PSR angles attain equality."
+    },
+    {
+      "step": 2,
+      "claim": "Both baseline contacts are strictly nondegenerate.",
+      "argument": "For z=cos(x) near0, p_plus/minus=1/2+Bz+/-C sqrt(1-z^2), q*=1/2+B lambda z. Direct differentiation gives d2F_plus/dz2(0)=d2F_minus/dz2(0)=4B^2 D-t^2 lambda, D=1/(1-t^2)-2lambda+lambda^2=(lambda-1)^2+t^2/(1-t^2)>0. Since4B^2<1-t^2, this is strictly less than (1-t^2)D-t^2 lambda=(lambda-1)((1-t^2)lambda-1)<0. Here lambda>1 and (1-t^2)lambda<1 follow by integrating the elementary inequalities for atanh(t),0<t<1."
+    },
+    {
+      "step": 3,
+      "claim": "The baseline capacity also has a unique nondegenerate global maximum.",
+      "argument": "The constant-at-a-pair interpretation of the affine null gives R_0(z)<=max(F_plus(z),F_minus(z)). Step1 makes this strictly less thanPhi(t) for everyz!=0, while R_0(0)=Phi(t). Moreover q_0(-z)=1-q_0(z), so d2q_0/dz2(0)=0, and q_0(0)=1/2, dq_0/dz(0)=B lambda. At0 it agrees with the old affine null through second derivative. Therefore d2R_0/dz2(0)=d2F_plus/dz2(0)=d2F_minus/dz2(0)=-H<0, H=t^2 lambda-4B^2D."
+    }
+  ],
+  "perturbation_proof": [
+    {
+      "step": 4,
+      "claim": "The capacity maximizer and tangent null persist for small alpha.",
+      "argument": "Choose |alpha|<1/2-sqrt(B^2+C^2) to retain a strict physical margin. The entropy secant and capacity are analytic in the squared half-width, including its zero value atz=+/-1, so R_alpha and q_alpha are analytic around the compact strip alpha=0,z in[-1,1]. The nondegenerate capacity maximum gives analytic z*(alpha) by the implicit-function theorem. LocalC2 convergence keeps strict concavity in a compact neighborhoodJ of0, and uniformC0 convergence preserves the baseline strict gap on the compact complement of interior(J). Thus the global maximizer is unique and remains interior. Its tangent null coefficients converge to(1/2,B lambda), which has a strict physical margin by the old certificate, so the new tangent null remains physical."
+    },
+    {
+      "step": 5,
+      "claim": "Global KL domination persists, not just stationarity.",
+      "argument": "At the newz*, q_t and q_alpha match in value and first derivative. Both KL branches have exactly equal valuesR_alpha(z*) and exactly zero first derivatives there. ChooseJ sufficiently small that both baseline branches have negative second derivatives throughoutJ, using Step2. LocalC2 convergence makes each perturbed branch strictly concave onJ and maximized atz*. On the compact complement of interior(J), Step1 supplies a strictly positive baseline gap; uniformC0 convergence of both branches preserves that gap relative toR_alpha(z*) for smallalpha. This proves the all-angle upper certificate."
+    },
+    {
+      "step": 6,
+      "claim": "The global upper certificate matches the reflected design lower bound.",
+      "argument": "At the chosen pair the capacity weight makes the meanq_alpha(z*). Every sine-zero null has one common rate at the pair, so its weighted KL is minimized there with valueR_alpha(z*), attained by a physical constant null. The single physical affine tangent from Step5 gives the same upper bound for every design distribution. Thus arbitrary three-point or larger-support designs cannot do better in this neighborhood. If C_null<=0 is allowed, the two null rates have reverse order, whose weighted KL projection pools at the same mean; the upper certificate still has C_null=0."
+    }
+  ],
+  "closed_expansions": {
+    "notation": "t=2C, lambda=atanh(t)/t, D=1/(1-t^2)-2lambda+lambda^2, H=t^2 lambda-4B^2D>0; all O constants depend on fixed(B,C).",
+    "symmetry": "Probability complementation with z reflection gives z*(-alpha)=-z*(alpha), V(-alpha)=V(alpha), a*(-alpha)=1-a*(alpha), b*(-alpha)=b*(alpha).",
+    "capacity_derivatives_at_half": "K_A(1/2,C)=0, K_AA(1/2,C)=4D, C*K_C(1/2,C)=t^2 lambda.",
+    "optimal_cosine": "z*(alpha)=4B D alpha/H+O(alpha^3).",
+    "value": "V(1/2+alpha,B,C)=Phi(t)+2D t^2 lambda alpha^2/H+O(alpha^4).",
+    "tangent_null": "a*(alpha)=1/2+lambda alpha+O(alpha^3), b*(alpha)=B lambda+O(alpha^2).",
+    "derivation": "R_zalpha at(alpha,z)=(0,0) equals B*K_AA=4BD, while R_zz=-H, so z* prime=4BD/H. Differentiating the optimized value gives V second=K_AA-(B*K_AA)^2/R_zz=4D*t^2 lambda/H. Center_Q_A at(1/2,C) islambda and center_Q_C is0; the linear z* contributions cancel from the tangent intercept."
+  },
+  "diagnostics": {
+    "mpmath_digits": 110,
+    "cases": [
+      {
+        "B_exact": "49/100",
+        "C_exact": "1/20",
+        "lambda": "1.0033534773107558063572655206003894526336286914595913587458952092779251873800939",
+        "D_positive": "0.01011225591108385500514126869821727119900584533170128690631342791005834997370651",
+        "H_positive": "0.00032172419610262371663498074823602726681107305802999764263553592795921255905320685",
+        "both_baseline_KL_second_derivatives": "-0.00032172419610262371663498074823602726681107305802999764263553592795921255905320685",
+        "strict_negative_factorized_upper_bound": "-0.00002240142113454160848279919476879603932050003621163955020865846182148539983149416",
+        "optimal_cosine_linear_alpha_coefficient": "61.605629373931692592020260077462542883543841359229854798630644483343116920627425",
+        "value_quadratic_alpha_coefficient": "0.63073696381889799954022098136465477066836863931550217763070509486978696123737505",
+        "diagnostic_alpha": "0.0000074555857590099520020911284094213905027487772088065395576703780359437135803147918",
+        "diagnostic_cosine": "0.00045930615399004887138481322247355819681459128304233011242528325970374388471723798",
+        "diagnostic_null_intercept": "0.50000748058789657549229955086325899195274626179100359870074445208211902936277822",
+        "diagnostic_null_slope": "0.49164320389479140488630196840368399496091099210435395031820521957608973015507276",
+        "cosine_remainder_divided_by_alpha_cubed": "243602.74201112488790290972798940372511511520038861152049900306411172652116384252",
+        "value_remainder_divided_by_alpha_fourth": "2493.4366933797547519261846422150076977910759976592752850796745183912169568928511",
+        "null_intercept_remainder_divided_by_alpha_cubed": "-0.27916716687947616402620493752163310003334209377862588104485175708963276745804482",
+        "two_equal_KLs_and_two_zero_derivatives_checked_to_90_digits": true,
+        "scope": "These algebra/contact checks do not supply a numerical epsilon or certify this nonzero diagnostic alpha by themselves."
+      },
+      {
+        "B_exact": "1/5",
+        "C_exact": "2/5",
+        "lambda": "1.3732653608351371142440565461531571308093631972784368146683679170468678665232612",
+        "D_positive": "1.9171048073771628896705695664860977561879003623290634997171776312750037866187323",
+        "H_positive": "0.57215306175414169076890505890024492272792838828554940143300704590599482871589",
+        "both_baseline_KL_second_derivatives": "-0.57215306175414169076890505890024492272792838828554940143300704590599482871589",
+        "strict_negative_factorized_upper_bound": "-0.18873210027870911283479114560302537149034831581973670148957151965099407139214354",
+        "optimal_cosine_linear_alpha_coefficient": "2.6805481756921286109006586437740002726630656772101826598838688580893046552700947",
+        "value_quadratic_alpha_coefficient": "5.8897663323645112224871799789766182068620601970604028002349081444409280823975017",
+        "diagnostic_alpha": "0.00005278640450004206071816526625374475291187632807769485514582055091789581487243902",
+        "diagnostic_cosine": "0.00014149652470185507098066786350284352321404582612398550279232562159890563534835679",
+        "diagnostic_null_intercept": "0.50007248974218958073268018946938428945613620739722058501173178395102417088177662",
+        "diagnostic_null_slope": "0.27465308020428149035525081583678104162676359852025043135502135685998126678334434",
+        "cosine_remainder_divided_by_alpha_cubed": "166.01312784962768160415678095176910010519586602787185282866582945392197174834191",
+        "value_remainder_divided_by_alpha_fourth": "344.31879390029197743957543946283080761309298015605405949658766754670861581894461",
+        "null_intercept_remainder_divided_by_alpha_cubed": "9.2915504819000056778284203997216610960908335967716590410257741742033349711196765",
+        "two_equal_KLs_and_two_zero_derivatives_checked_to_90_digits": true,
+        "scope": "These algebra/contact checks do not supply a numerical epsilon or certify this nonzero diagnostic alpha by themselves."
+      },
+      {
+        "B_exact": "3/10",
+        "C_exact": "3/10",
+        "lambda": "1.1552453009332421823620535357636276134591668906004254235344666824889893699494912",
+        "D_positive": "0.5866011034618529260178443904912585834443133065617757831168003395322028774894467",
+        "H_positive": "0.20471191108970013228391529229805285080534729025391387055035988346444313728561602",
+        "both_baseline_KL_second_derivatives": "-0.20471191108970013228391529229805285080534729025391387055035988346444313728561602",
+        "strict_negative_factorized_upper_bound": "-0.040463602120381312998918862960500447440939564416616651277655788395426331588570939",
+        "optimal_cosine_linear_alpha_coefficient": "3.4385948546285667661538285158612420252105186981842481339114412335779386109148296",
+        "value_quadratic_alpha_coefficient": "2.3834523285737260612367408061057885994473574020671994325216298176056433230478704",
+        "diagnostic_alpha": "0.000075735931288071485359493382737090576429098437386915578046996078602780256461367888",
+        "diagnostic_cosine": "0.00026042523718454076674360700503548306573589457650627927188376322091008853555348875",
+        "diagnostic_null_intercept": "0.50008749357964970711300699403578543971686394341867769611854145429807730757492761",
+        "diagnostic_null_slope": "0.34657359537547821366976961459259398128021747412301394259326919570097530719096089",
+        "cosine_remainder_divided_by_alpha_cubed": "123.26172012096612150922181571886467916085451238109660563366174067516130098321807",
+        "value_remainder_divided_by_alpha_fourth": "84.805095363228035811927497003292094171743672959609631493829304548795646072408329",
+        "null_intercept_remainder_divided_by_alpha_cubed": "2.1117072366880890017088426245406028147193334376727786074664972120262021343748606",
+        "two_equal_KLs_and_two_zero_derivatives_checked_to_90_digits": true,
+        "scope": "These algebra/contact checks do not supply a numerical epsilon or certify this nonzero diagnostic alpha by themselves."
+      },
+      {
+        "B_exact": "1/10",
+        "C_exact": "12/25",
+        "lambda": "2.0269897385992846928180757744199788850386299266477720713118647395183123570334055",
+        "D_positive": "12.809809964004553634300679283476681549373222113822555798372945197150432916695149",
+        "H_positive": "1.3556813445329186275291114623663852784766724558456845089860967360540593515741805",
+        "both_baseline_KL_second_derivatives": "-1.3556813445329186275291114623663852784766724558456845089860967360540593515741805",
+        "strict_negative_factorized_upper_bound": "-0.86378464191514376797196537788088070698074072667489836632857564048348272757308681",
+        "optimal_cosine_linear_alpha_coefficient": "3.7795931958975204686037170911504454084393392021966944190834392294762634827062165",
+        "value_quadratic_alpha_coefficient": "35.302794044147481769968018036024044893013533967545001444666671265991355819704835",
+        "diagnostic_alpha": "0.0000096939731147494858483224850328572059981348990698537951519555825409971881173132407",
+        "diagnostic_cosine": "0.000036639278985254997722840913162352090415657032067062046067397936705481819864540558",
+        "diagnostic_null_intercept": "0.50001964958423932288959632506688247072483904577187155667841345682174526520965014",
+        "diagnostic_null_slope": "0.2026989789067555681746414185055277472440253789191172267215384230918645650600451",
+        "cosine_remainder_divided_by_alpha_cubed": "4566.0354830760817241722258723101521599559107111016702415638320039286545327589486",
+        "value_remainder_divided_by_alpha_fourth": "32208.030072622950809533617273675018305843105156485769939999004646609098676866844",
+        "null_intercept_remainder_divided_by_alpha_cubed": "229.93916462574176425783448063865070119737944166069035750031621928830386582019938",
+        "two_equal_KLs_and_two_zero_derivatives_checked_to_90_digits": true,
+        "scope": "These algebra/contact checks do not supply a numerical epsilon or certify this nonzero diagnostic alpha by themselves."
+      },
+      {
+        "B_exact": "9/20",
+        "C_exact": "1/10",
+        "lambda": "1.0136627702704109549450327886608728414299760586562354940350358103602516781222856",
+        "D_positive": "0.041853337958128692105577442488815446709296121348207028481983270595486629216733708",
+        "H_positive": "0.0066453070647321975922835831304944018226691840542017266909949832320658974593371215",
+        "both_baseline_KL_second_derivatives": "-0.0066453070647321975922835831304944018226691840542017266909949832320658974593371215",
+        "strict_negative_factorized_upper_bound": "-0.00036730637101289377644696675717208481627476585197067241869749264274290307682706532",
+        "optimal_cosine_linear_alpha_coefficient": "11.33672343366237623530934692388340388347586705337369717042674741574250131031535",
+        "value_quadratic_alpha_coefficient": "0.51073842140247509996045416187744801852563407545915540795412183459958309921124895",
+        "diagnostic_alpha": "0.000039022777135355634499886285911860342137659747563876799599612389727866448659906227",
+        "diagnostic_cosine": "0.0004423905391120160564982764607007738414540017483983938856448317663334759892980358",
+        "diagnostic_null_intercept": "0.50003955593639131828423536276660447261033942329215909026570865046474823150049101",
+        "diagnostic_null_slope": "0.45614824687961580747760049707880867166463422072849520923848125488757136051729094",
+        "cosine_remainder_divided_by_alpha_cubed": "1802.5858417935501126528631405425466361774177552039276816559584561962061404495285",
+        "value_remainder_divided_by_alpha_fourth": "81.217300077260682421437232202541631945655774458769247530276386918779124389569933",
+        "null_intercept_remainder_divided_by_alpha_cubed": "0.28017505723780711262014331071635039902764720663293337868431310933510388537856744",
+        "two_equal_KLs_and_two_zero_derivatives_checked_to_90_digits": true,
+        "scope": "These algebra/contact checks do not supply a numerical epsilon or certify this nonzero diagnostic alpha by themselves."
+      },
+      {
+        "B_exact": "0",
+        "C_exact": "49/100",
+        "lambda": "2.3444489031298928198226704345970309740391265150933245299428348859212052093624769",
+        "D_positive": "26.060068105652424452505729237815760330852689105572702475152899095518864807884911",
+        "H_positive": "2.2516087265659490641576926853869885474671771050956288785570986244387254830717228",
+        "both_baseline_KL_second_derivatives": "-2.2516087265659490641576926853869885474671771050956288785570986244387254830717228",
+        "strict_negative_factorized_upper_bound": "-1.2196300295821130558384658075694844383654106165149498605410438202561784366794803",
+        "optimal_cosine_linear_alpha_coefficient": "0.0",
+        "value_quadratic_alpha_coefficient": "52.120136211304848905011458475631520661705378211145404950305798191037729615769822",
+        "diagnostic_alpha": "0.00001",
+        "diagnostic_cosine": "0.0",
+        "diagnostic_null_intercept": "0.50002344448986437105791869178955766830682621637830633098280670905700180028267577",
+        "diagnostic_null_slope": "0.0",
+        "cosine_remainder_divided_by_alpha_cubed": "0.0",
+        "value_remainder_divided_by_alpha_fourth": "87865.661787280262469465835581125149849225304976460390501161956077355620748048117",
+        "null_intercept_remainder_divided_by_alpha_cubed": "833.07212972046508521169799708582511315539773750728070814258823058214190037825995",
+        "two_equal_KLs_and_two_zero_derivatives_checked_to_90_digits": true,
+        "scope": "These algebra/contact checks do not supply a numerical epsilon or certify this nonzero diagnostic alpha by themselves."
+      }
+    ],
+    "scope": "High-precision algebra and stationary-contact checks. The analytic proof, not these finitely many checks, supplies the existence statement; no numeric epsilon is certified."
+  },
+  "source_sha256": {
+    "results/sota_round6/theory/reflected_pair_near_symmetric_theorem.py": "80f71ff8469f3284c314dbe67bc06530bd30f8e795d6787b49e35dacad63a942",
+    "docs/CONTINUOUS_SYMMETRIC_DESIGN.md": "0e16a486bb11c38b179b1d8d2aa8ed18184aefe07ceabd99c44efb59b10cd13d",
+    "results/sota_round5/theory/reflected_pair_weak_signal_peer_review.json": "8c7663df6a63ee8b1f95b607a156ae64a445998bfbeb66c0493717f1cfd6d386"
+  },
+  "claim_boundary": "Full-rank baseline is used for strictness. The unrestricted reflected-pair conjecture, finite-cost superiority, numeric neighborhood size, and novelty remain unresolved. This is an analytic open-region extension of an existing reviewed certificate, with no frozen-source edits."
+}

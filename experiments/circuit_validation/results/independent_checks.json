@@ -1,0 +1,711 @@
+{
+  "adaptive_path_dp": {
+    "accept_probability": {
+      "decimal_approximation": 0.0019169560185185186,
+      "exact_fraction": "53/27648"
+    },
+    "allocation": "first unseen arm, otherwise argmax a_i^2*(s_i+1)*(n_i-s_i+1)/((n_i+2)^2*(n_i+1)^2), first-index ties",
+    "allocation_note": "counts-only adaptive audit rule; not a benchmark implementation or performance test of Track-and-Stop",
+    "certificate_states_checked": 736,
+    "coefficient_note": "proportional to old/new target weights (3/4,1/4)",
+    "coefficients_exact": [
+      -3,
+      -1,
+      3,
+      1
+    ],
+    "combined_null_error": {
+      "decimal_approximation": 0.004297327112268518,
+      "exact_fraction": "1901/442368"
+    },
+    "exact_final_total_probability": "1",
+    "horizon_shots": 12,
+    "passed": true,
+    "prior": 0.5,
+    "reject_probability": {
+      "decimal_approximation": 0.00238037109375,
+      "exact_fraction": "39/16384"
+    },
+    "risk_caveat": "delta=0.2 is for a short exact audit, not the formal experiment's 0.01 target",
+    "risk_decimal": 0.2,
+    "risk_exact": "1/5",
+    "scope": "one fixed four-arm null, one adaptive rule, finite horizon only",
+    "steps": [
+      {
+        "combined_null_error": {
+          "decimal_approximation": 0.0,
+          "exact_fraction": "0"
+        },
+        "live_probability": {
+          "decimal_approximation": 1.0,
+          "exact_fraction": "1"
+        },
+        "live_states": 2,
+        "shots": 1,
+        "states_evaluated": 2
+      },
+      {
+        "combined_null_error": {
+          "decimal_approximation": 0.0,
+          "exact_fraction": "0"
+        },
+        "live_probability": {
+          "decimal_approximation": 1.0,
+          "exact_fraction": "1"
+        },
+        "live_states": 4,
+        "shots": 2,
+        "states_evaluated": 4
+      },
+      {
+        "combined_null_error": {
+          "decimal_approximation": 0.0,
+          "exact_fraction": "0"
+        },
+        "live_probability": {
+          "decimal_approximation": 1.0,
+          "exact_fraction": "1"
+        },
+        "live_states": 8,
+        "shots": 3,
+        "states_evaluated": 8
+      },
+      {
+        "combined_null_error": {
+          "decimal_approximation": 0.0,
+          "exact_fraction": "0"
+        },
+        "live_probability": {
+          "decimal_approximation": 1.0,
+          "exact_fraction": "1"
+        },
+        "live_states": 16,
+        "shots": 4,
+        "states_evaluated": 16
+      },
+      {
+        "combined_null_error": {
+          "decimal_approximation": 0.0,
+          "exact_fraction": "0"
+        },
+        "live_probability": {
+          "decimal_approximation": 1.0,
+          "exact_fraction": "1"
+        },
+        "live_states": 24,
+        "shots": 5,
+        "states_evaluated": 24
+      },
+      {
+        "combined_null_error": {
+          "decimal_approximation": 0.0,
+          "exact_fraction": "0"
+        },
+        "live_probability": {
+          "decimal_approximation": 1.0,
+          "exact_fraction": "1"
+        },
+        "live_states": 36,
+        "shots": 6,
+        "states_evaluated": 36
+      },
+      {
+        "combined_null_error": {
+          "decimal_approximation": 0.0,
+          "exact_fraction": "0"
+        },
+        "live_probability": {
+          "decimal_approximation": 1.0,
+          "exact_fraction": "1"
+        },
+        "live_states": 56,
+        "shots": 7,
+        "states_evaluated": 56
+      },
+      {
+        "combined_null_error": {
+          "decimal_approximation": 0.003689236111111111,
+          "exact_fraction": "17/4608"
+        },
+        "live_probability": {
+          "decimal_approximation": 0.9963107638888888,
+          "exact_fraction": "4591/4608"
+        },
+        "live_states": 62,
+        "shots": 8,
+        "states_evaluated": 64
+      },
+      {
+        "combined_null_error": {
+          "decimal_approximation": 0.003689236111111111,
+          "exact_fraction": "17/4608"
+        },
+        "live_probability": {
+          "decimal_approximation": 0.9963107638888888,
+          "exact_fraction": "4591/4608"
+        },
+        "live_states": 86,
+        "shots": 9,
+        "states_evaluated": 86
+      },
+      {
+        "combined_null_error": {
+          "decimal_approximation": 0.003689236111111111,
+          "exact_fraction": "17/4608"
+        },
+        "live_probability": {
+          "decimal_approximation": 0.9963107638888888,
+          "exact_fraction": "4591/4608"
+        },
+        "live_states": 106,
+        "shots": 10,
+        "states_evaluated": 106
+      },
+      {
+        "combined_null_error": {
+          "decimal_approximation": 0.004127785011574074,
+          "exact_fraction": "913/221184"
+        },
+        "live_probability": {
+          "decimal_approximation": 0.9958722149884259,
+          "exact_fraction": "220271/221184"
+        },
+        "live_states": 140,
+        "shots": 11,
+        "states_evaluated": 142
+      },
+      {
+        "combined_null_error": {
+          "decimal_approximation": 0.004297327112268518,
+          "exact_fraction": "1901/442368"
+        },
+        "live_probability": {
+          "decimal_approximation": 0.9957026728877315,
+          "exact_fraction": "440467/442368"
+        },
+        "live_states": 190,
+        "shots": 12,
+        "states_evaluated": 192
+      }
+    ],
+    "true_probabilities_exact": [
+      "1/4",
+      "3/4",
+      "1/3",
+      "1/2"
+    ],
+    "true_weighted_delta_exact": "0"
+  },
+  "not_established": [
+    "universal safety by finite enumeration",
+    "95 percent power",
+    "comparative cost speedup",
+    "physical-device fidelity"
+  ],
+  "passed": true,
+  "schema_version": "faulttune.independent_statistical_checks.v1",
+  "scope": "deterministic independent audits; no Monte Carlo seed and no device samples",
+  "source_sha256": {
+    "direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "independent_checks.py": "9f959aafd2c752d6bdd8524ff66f6f9d7e16b342b0c61df4873fa3d551a7312a",
+    "kl_trackstop.py": "b5220c7950c13a9bc0dd4102c0e2ef15a721a760a40de62986f75d3cded8f41b"
+  },
+  "weighted_KL_closed_form": {
+    "analytic_argument": "sum a_i/2=0 and 2*n_i-4*s_i+lambda*a_i=0 exactly; convexity proves the feasible KKT point globally optimal",
+    "analytic_optimum": "q_i=1/2 for every arm",
+    "cases": [
+      {
+        "certificate_decimal_lower": "29.11383348506344267540072572121112856366751720588295262861709586",
+        "certificate_decimal_upper": "29.11383348506344267540072572121112856366751720588295262861709794",
+        "certificate_decision": "reject",
+        "exact_KKT_multiplier": "80",
+        "prior": 0.5,
+        "reference_decimal_lower": "29.1138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211968",
+        "reference_decimal_upper": "29.1138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212091",
+        "reflected": false,
+        "scale": 1,
+        "shots": 296,
+        "successes": [
+          0,
+          8,
+          108,
+          32
+        ],
+        "trials": [
+          36,
+          20,
+          180,
+          60
+        ]
+      },
+      {
+        "certificate_decimal_lower": "29.11383348506344267540072572121112856366751720588295262861709586",
+        "certificate_decimal_upper": "29.11383348506344267540072572121112856366751720588295262861709794",
+        "certificate_decision": "reject",
+        "exact_KKT_multiplier": "80",
+        "prior": 1.0,
+        "reference_decimal_lower": "29.1138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211968",
+        "reference_decimal_upper": "29.1138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212091",
+        "reflected": false,
+        "scale": 1,
+        "shots": 296,
+        "successes": [
+          0,
+          8,
+          108,
+          32
+        ],
+        "trials": [
+          36,
+          20,
+          180,
+          60
+        ]
+      },
+      {
+        "certificate_decimal_lower": "29.11383348506344267540072572121112856366751720588295262861709586",
+        "certificate_decimal_upper": "29.11383348506344267540072572121112856366751720588295262861709798",
+        "certificate_decision": "accept",
+        "exact_KKT_multiplier": "-80",
+        "prior": 0.5,
+        "reference_decimal_lower": "29.1138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211968",
+        "reference_decimal_upper": "29.1138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212091",
+        "reflected": true,
+        "scale": 1,
+        "shots": 296,
+        "successes": [
+          36,
+          12,
+          72,
+          28
+        ],
+        "trials": [
+          36,
+          20,
+          180,
+          60
+        ]
+      },
+      {
+        "certificate_decimal_lower": "29.11383348506344267540072572121112856366751720588295262861709586",
+        "certificate_decimal_upper": "29.11383348506344267540072572121112856366751720588295262861709798",
+        "certificate_decision": "accept",
+        "exact_KKT_multiplier": "-80",
+        "prior": 1.0,
+        "reference_decimal_lower": "29.1138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211968",
+        "reference_decimal_upper": "29.1138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212091",
+        "reflected": true,
+        "scale": 1,
+        "shots": 296,
+        "successes": [
+          36,
+          12,
+          72,
+          28
+        ],
+        "trials": [
+          36,
+          20,
+          180,
+          60
+        ]
+      },
+      {
+        "certificate_decimal_lower": "291.1383348506344267540072572121112856366751720588295262861709530",
+        "certificate_decimal_upper": "291.1383348506344267540072572121112856366751720588295262861709787",
+        "certificate_decision": "reject",
+        "exact_KKT_multiplier": "800",
+        "prior": 0.5,
+        "reference_decimal_lower": "291.138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211954",
+        "reference_decimal_upper": "291.138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212078",
+        "reflected": false,
+        "scale": 10,
+        "shots": 2960,
+        "successes": [
+          0,
+          80,
+          1080,
+          320
+        ],
+        "trials": [
+          360,
+          200,
+          1800,
+          600
+        ]
+      },
+      {
+        "certificate_decimal_lower": "291.1383348506344267540072572121112856366751720588295262861709530",
+        "certificate_decimal_upper": "291.1383348506344267540072572121112856366751720588295262861709787",
+        "certificate_decision": "reject",
+        "exact_KKT_multiplier": "800",
+        "prior": 1.0,
+        "reference_decimal_lower": "291.138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211954",
+        "reference_decimal_upper": "291.138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212078",
+        "reflected": false,
+        "scale": 10,
+        "shots": 2960,
+        "successes": [
+          0,
+          80,
+          1080,
+          320
+        ],
+        "trials": [
+          360,
+          200,
+          1800,
+          600
+        ]
+      },
+      {
+        "certificate_decimal_lower": "291.1383348506344267540072572121112856366751720588295262861709530",
+        "certificate_decimal_upper": "291.1383348506344267540072572121112856366751720588295262861709787",
+        "certificate_decision": "accept",
+        "exact_KKT_multiplier": "-800",
+        "prior": 0.5,
+        "reference_decimal_lower": "291.138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211954",
+        "reference_decimal_upper": "291.138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212078",
+        "reflected": true,
+        "scale": 10,
+        "shots": 2960,
+        "successes": [
+          360,
+          120,
+          720,
+          280
+        ],
+        "trials": [
+          360,
+          200,
+          1800,
+          600
+        ]
+      },
+      {
+        "certificate_decimal_lower": "291.1383348506344267540072572121112856366751720588295262861709530",
+        "certificate_decimal_upper": "291.1383348506344267540072572121112856366751720588295262861709787",
+        "certificate_decision": "accept",
+        "exact_KKT_multiplier": "-800",
+        "prior": 1.0,
+        "reference_decimal_lower": "291.138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211954",
+        "reference_decimal_upper": "291.138334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212078",
+        "reflected": true,
+        "scale": 10,
+        "shots": 2960,
+        "successes": [
+          360,
+          120,
+          720,
+          280
+        ],
+        "trials": [
+          360,
+          200,
+          1800,
+          600
+        ]
+      },
+      {
+        "certificate_decimal_lower": "29113.83348506344267540072572121112856366751720588295262861708905",
+        "certificate_decimal_upper": "29113.83348506344267540072572121112856366751720588295262861710337",
+        "certificate_decision": "reject",
+        "exact_KKT_multiplier": "80000",
+        "prior": 0.5,
+        "reference_decimal_lower": "29113.8334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211309",
+        "reference_decimal_upper": "29113.8334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212444",
+        "reflected": false,
+        "scale": 1000,
+        "shots": 296000,
+        "successes": [
+          0,
+          8000,
+          108000,
+          32000
+        ],
+        "trials": [
+          36000,
+          20000,
+          180000,
+          60000
+        ]
+      },
+      {
+        "certificate_decimal_lower": "29113.83348506344267540072572121112856366751720588295262861708905",
+        "certificate_decimal_upper": "29113.83348506344267540072572121112856366751720588295262861710337",
+        "certificate_decision": "reject",
+        "exact_KKT_multiplier": "80000",
+        "prior": 1.0,
+        "reference_decimal_lower": "29113.8334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211309",
+        "reference_decimal_upper": "29113.8334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212444",
+        "reflected": false,
+        "scale": 1000,
+        "shots": 296000,
+        "successes": [
+          0,
+          8000,
+          108000,
+          32000
+        ],
+        "trials": [
+          36000,
+          20000,
+          180000,
+          60000
+        ]
+      },
+      {
+        "certificate_decimal_lower": "29113.83348506344267540072572121112856366751720588295262861708909",
+        "certificate_decimal_upper": "29113.83348506344267540072572121112856366751720588295262861710373",
+        "certificate_decision": "accept",
+        "exact_KKT_multiplier": "-80000",
+        "prior": 0.5,
+        "reference_decimal_lower": "29113.8334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211309",
+        "reference_decimal_upper": "29113.8334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212444",
+        "reflected": true,
+        "scale": 1000,
+        "shots": 296000,
+        "successes": [
+          36000,
+          12000,
+          72000,
+          28000
+        ],
+        "trials": [
+          36000,
+          20000,
+          180000,
+          60000
+        ]
+      },
+      {
+        "certificate_decimal_lower": "29113.83348506344267540072572121112856366751720588295262861708909",
+        "certificate_decimal_upper": "29113.83348506344267540072572121112856366751720588295262861710373",
+        "certificate_decision": "accept",
+        "exact_KKT_multiplier": "-80000",
+        "prior": 1.0,
+        "reference_decimal_lower": "29113.8334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211309",
+        "reference_decimal_upper": "29113.8334850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212444",
+        "reflected": true,
+        "scale": 1000,
+        "shots": 296000,
+        "successes": [
+          36000,
+          12000,
+          72000,
+          28000
+        ],
+        "trials": [
+          36000,
+          20000,
+          180000,
+          60000
+        ]
+      },
+      {
+        "certificate_decimal_lower": "2911383.348506344267540072572121112856366751720588295262861708865",
+        "certificate_decimal_upper": "2911383.348506344267540072572121112856366751720588295262861710507",
+        "certificate_decision": "reject",
+        "exact_KKT_multiplier": "8000000",
+        "prior": 0.5,
+        "reference_decimal_lower": "2911383.34850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211512",
+        "reference_decimal_upper": "2911383.34850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212696",
+        "reflected": false,
+        "scale": 100000,
+        "shots": 29600000,
+        "successes": [
+          0,
+          800000,
+          10800000,
+          3200000
+        ],
+        "trials": [
+          3600000,
+          2000000,
+          18000000,
+          6000000
+        ]
+      },
+      {
+        "certificate_decimal_lower": "2911383.348506344267540072572121112856366751720588295262861708865",
+        "certificate_decimal_upper": "2911383.348506344267540072572121112856366751720588295262861710507",
+        "certificate_decision": "reject",
+        "exact_KKT_multiplier": "8000000",
+        "prior": 1.0,
+        "reference_decimal_lower": "2911383.34850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211512",
+        "reference_decimal_upper": "2911383.34850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212696",
+        "reflected": false,
+        "scale": 100000,
+        "shots": 29600000,
+        "successes": [
+          0,
+          800000,
+          10800000,
+          3200000
+        ],
+        "trials": [
+          3600000,
+          2000000,
+          18000000,
+          6000000
+        ]
+      },
+      {
+        "certificate_decimal_lower": "2911383.348506344267540072572121112856366751720588295262861708865",
+        "certificate_decimal_upper": "2911383.348506344267540072572121112856366751720588295262861710507",
+        "certificate_decision": "accept",
+        "exact_KKT_multiplier": "-8000000",
+        "prior": 0.5,
+        "reference_decimal_lower": "2911383.34850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211512",
+        "reference_decimal_upper": "2911383.34850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212696",
+        "reflected": true,
+        "scale": 100000,
+        "shots": 29600000,
+        "successes": [
+          3600000,
+          1200000,
+          7200000,
+          2800000
+        ],
+        "trials": [
+          3600000,
+          2000000,
+          18000000,
+          6000000
+        ]
+      },
+      {
+        "certificate_decimal_lower": "2911383.348506344267540072572121112856366751720588295262861708865",
+        "certificate_decimal_upper": "2911383.348506344267540072572121112856366751720588295262861710507",
+        "certificate_decision": "accept",
+        "exact_KKT_multiplier": "-8000000",
+        "prior": 1.0,
+        "reference_decimal_lower": "2911383.34850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846211512",
+        "reference_decimal_upper": "2911383.34850634426754007257212111285636675172058829526286170969140971465158793644726040652873672497949173894377846212696",
+        "reflected": true,
+        "scale": 100000,
+        "shots": 29600000,
+        "successes": [
+          3600000,
+          1200000,
+          7200000,
+          2800000
+        ],
+        "trials": [
+          3600000,
+          2000000,
+          18000000,
+          6000000
+        ]
+      }
+    ],
+    "cases_checked": 16,
+    "coefficients_exact": [
+      "-9/10",
+      "-1/10",
+      "9/10",
+      "1/10"
+    ],
+    "largest_total_shots": 29600000,
+    "max_certified_duality_gap_decimal": "1.642E-54",
+    "numerical_scope": "independent directed Decimal arithmetic; relies on Python Decimal correctly rounded ln, not formally verified runtime code",
+    "passed": true,
+    "reference_expression": "sum_i [s_i*log(2*s_i/n_i)+(n_i-s_i)*log(2*(n_i-s_i)/n_i)], with 0*log(0)=0",
+    "reference_precision": 120,
+    "scope": "16 constructed weighted-boundary cases, including empirical endpoint means"
+  },
+  "wrong_context_counterexample": {
+    "fixed_local_certificate": {
+      "anytime_valid": false,
+      "counts": [
+        0,
+        0,
+        100,
+        0
+      ],
+      "decision": "accept",
+      "delta": 0.01,
+      "discordant_pairs": 100,
+      "est_delta": -1.0,
+      "evidence": 69.31471805599452,
+      "method": "fixed_paired_mcnemar",
+      "numeric_status": "outward Decimal tail bounds; exact integer boundary check for K<=4096",
+      "p_accept": 7.888609052210118e-31,
+      "p_accept_bounds": [
+        7.888609052210117e-31,
+        7.88860905221012e-31
+      ],
+      "p_reject": 1.0,
+      "p_reject_bounds": [
+        1.0,
+        1.0
+      ],
+      "pairs": 100,
+      "required_use": "one predeclared fixed final pair count",
+      "shots": 200,
+      "tail_delta": 0.005,
+      "threshold": 5.298317366548037
+    },
+    "fixed_test_requirement": "one final look at a pair count fixed before validation",
+    "global_true_delta": {
+      "decimal_approximation": 0.8,
+      "exact_fraction": "4/5"
+    },
+    "interpretation": "both accept decisions are correct for the fixed sampled context; interpreting either as a mixed-target certificate gives false acceptance with probability one",
+    "local_true_delta": {
+      "decimal_approximation": -1.0,
+      "exact_fraction": "-1"
+    },
+    "new_context_probabilities_exact": [
+      "0",
+      "1"
+    ],
+    "old_context_probabilities_exact": [
+      "1",
+      "0"
+    ],
+    "paid_shots": 200,
+    "pair_counts_00_01_10_11": [
+      0,
+      0,
+      100,
+      0
+    ],
+    "passed": true,
+    "public_target_weights_exact": [
+      "1/10",
+      "9/10"
+    ],
+    "required_scope": "mixed-target direct policies need fresh IID contexts from the public target distribution for each pair; a fixed context certifies only that context",
+    "sampled_context": 0,
+    "sequential_local_certificate": {
+      "anytime_valid": true,
+      "counts": [
+        0,
+        0,
+        100,
+        0
+      ],
+      "decision": "accept",
+      "delta": 0.01,
+      "discordant_pairs": 100,
+      "est_delta": -1.0,
+      "evidence": 66.43851802528395,
+      "evidence_bounds": [
+        66.43851802528395,
+        66.43851802528397
+      ],
+      "method": "paired_beta_mixture",
+      "numeric_status": "decision uses outward Decimal log bounds",
+      "pairs": 100,
+      "prior": 0.5,
+      "shots": 200,
+      "threshold": 4.605170185988092,
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ]
+    },
+    "status": "expected caller-scope counterexample, not a certificate defect"
+  }
+}

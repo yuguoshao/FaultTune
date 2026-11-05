@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T11:25:11.748368+00:00",
+  "reviewer": "stream_design",
+  "scope": "Independent source review of the frozen development-benchmark auditor; this file does not assert completion of the full data audit.",
+  "sources": {
+    "experiments/sota_round2/audit_benchmark.py": "2df1fd5a82767e5d6b626d1e316e4a41df8321908825dcccc18b51569f859a59",
+    "experiments/structured_validation/audit_refined.py": "542bdc715fb434c11bcf96c44748fdac51d539dc341e90b035c34864c3917b44",
+    "experiments/structured_validation/audit_conditional.py": "c605dca6595464338fb529c16bfc2aaccf0d35f38fffea6aec890dfc4176611f",
+    "experiments/sota_round2/benchmark/benchmark_runner.py": "ef09fc795f9c45863e9fa7ccd6dcf8c2efd1745465ed95a577db598a67967f27",
+    "results/sota_round2/benchmark/preliminary_plan.json": "f245d69f688211e7c1b12985b266f5e288decafb951f1a1d72db5fa1fc2f0c33",
+    "results/sota_round2/benchmark/release.json": "75ac7108f6efadf79031c920fba97248d97b901ae0774180fe4102c0693c0aef"
+  },
+  "review": [
+    "Release inspection binds the exact 10-case, four-repetition, four-path matrix, cap 4096, delta 0.01, seed rule, all three single-arm calibrations, six rational arms and both paired checkpoint schedules. Frozen production sources and their review artifacts are rehashed.",
+    "The saved 7141-model rational prior is read directly. Exact positivity, physical feasibility, uniqueness and total weight one are checked without relying on trigonometric regeneration. Independent summation preserves each selected model's original weight.",
+    "Every single-arm observation is reconstructed from its seed and actual chosen arm. The paid six-arm initialization is accounted for before PSR alternation or per-observation DKM updates.",
+    "DKM per-sign AdaHedge losses, mixing gaps, optimistic payoffs and cumulative-ratio tracking are reconstructed. KL confidence endpoints satisfy independent divergence equations, successful projections satisfy physical/confidence-box constraints, and each opposite-model response satisfies physical/sign constraints plus an independently assembled global convex-gap diagnostic.",
+    "For each released eligible checkpoint, both null-fit proposals, every active numerator/threshold screen, the eligible sign list and every resulting exact certificate are reconstructed. The greater certified evidence-minus-threshold margin selects the sign, with the prescribed positive tie break.",
+    "All checkpoints before each method's recorded stop are required and checked. Reconstructed first certified stop or forced-cap abstention must exactly match the stored outcome prefix. The shared path may continue only while another calibration is still active.",
+    "The paired auditor reconstructs all three binomial calls per block, paid pair counts, score, each Fisher expert CGF and the Beta/Fisher mixture screen. Every eligible paired checkpoint is required and checked until its first certified stop or cap.",
+    "The audit_refined.audit_certificate hedge call has the correct argument order and requires only fstate.blocks for this engine. Its returned decision, count, score, interval bounds and retained-term fields match the producer certificate schema.",
+    "The full audit requires 160 ordered path records, 320 matching method records, no extra ledger lines, all 320 terminal certificates and 80 exact original-runner seed replays selected as repetitions 0 and 3 of every case/path.",
+    "Unconditional costs, errors, abstentions and equal-case geometric cost ratios are independently reconstructed. Producer artifacts and audit sources are hashed before and after processing. Existing audit outputs are preserved by exclusive creation."
+  ],
+  "issues": [],
+  "limits": [
+    "This is source review. The separate benchmark_audit/audit.json must pass before the observed experiment is described as fully audited.",
+    "First-stop verification applies to the released monitoring and floating-screen protocol; it does not establish absence of hypothetical mathematical crossings outside that protocol.",
+    "The null-fit proposal optimizer, outward Decimal/null-support arithmetic, KK21 calibration primitive and conditional-CGF primitive are shared with reviewed frozen code. This is not a wholly independent mathematical implementation.",
+    "DKM projection optimality is not independently re-solved. The opposite-model global gap is a floating diagnostic with the released 1e-5 tolerance, not a proof of an exact oracle or inherited asymptotic efficiency.",
+    "The 80 same-seed replays use the original runner and support reproducibility; they are neither fresh independent experiments nor a second controller implementation.",
+    "At cap 4096 both closed-hedge paths remain in their PSR warm-up, so this pilot does not test actual closed-angle adaptation. The fine schedule also changes conditional-Fisher block partitions.",
+    "The benchmark is a small development diagnostic, uses development cases and computes no inferential confidence interval. It cannot establish empirical 1% error control, held-out superiority or a general SOTA claim."
+  ]
+}

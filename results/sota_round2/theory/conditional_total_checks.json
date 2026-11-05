@@ -1,0 +1,108 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T10:42:43.288952+00:00",
+  "sources": {
+    "experiments/sota_round2/theory/conditional_total_checks.py": "097b546a5668af94995b82329b60664363e5594399b2932c9cabb9284234110f",
+    "experiments/sota_round2/theory/conditional_total.py": "f44d94914ca1809115608131c1f1f33b383b55013a29f3fde4e10f0b44c8129b",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/sota_round2/theory/directional_safe.py": "5acf8777aeba279d74732e637f3b6e6190a4420e7102dafd22fbd04d655d821f"
+  },
+  "checks": {
+    "one_sided_unconditional_expectation_checks": 120,
+    "exact_current_total_conditional_normalizations": 24,
+    "allocation_leak_counterexample": {
+      "m": 1,
+      "T": 1,
+      "null_conditional_allocation": "S=0 or 1 with equal probability",
+      "invalid_rule": "Omega=1 if S=0, Omega=9 if S=1",
+      "conditional_mean": "7/5",
+      "conclusion": "Current total is legal; allocation-dependent same-block odds are not"
+    },
+    "certified_arithmetic": {
+      "direct_rational_log_interval_checks": 108,
+      "positive_mixture_certificate": {
+        "method": "current_total_adaptive_conditional_fisher_v1",
+        "decision": "reject",
+        "shots": 16,
+        "positive_log_capital_bounds": [
+          "8.199818312582042740830344622463350869334341069381532082640364441",
+          "8.199818312582042740830344622463350869334341069381532082640364625"
+        ],
+        "negative_log_capital_bounds": [
+          "-11.93913531060467851830428379065156246510560978927366326037949290",
+          "-11.93913531060467851830428379065156246510560978927366326037949275"
+        ],
+        "evidence_bounds": [
+          "7.506671133815854269805672385946279484064782988511932732408471655",
+          "7.506671133815854269805672385946279484064782988511932732408471841"
+        ],
+        "threshold_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "delta": [
+          1,
+          100
+        ],
+        "diagnostics": {
+          "experts": 2,
+          "shots": 16,
+          "expert_diagnostics": [
+            [
+              {
+                "block": 0,
+                "retained_terms": 9,
+                "neutral": false
+              }
+            ],
+            [
+              {
+                "block": 0,
+                "retained_terms": 9,
+                "neutral": false
+              }
+            ]
+          ]
+        },
+        "direction_rule": "argmax normalized directional capital; unresolved intervals abstain",
+        "assumptions": "recorded odds uses past and current total only; balanced independent Bernoulli blocks with common ordering; fixed weights",
+        "scope": "certified arithmetic conditional on audited data flow; no performance claim"
+      },
+      "mirror_certificate_matches": true,
+      "mismatched_expert_observations_rejected": true
+    },
+    "adaptive_design": {
+      "horizon_blocks": 4,
+      "delta": "1/4",
+      "models": [
+        {
+          "A": "1/2",
+          "B": "1/10",
+          "C": "-1/5",
+          "tree_nodes": 1371,
+          "wrong_risk": "49424013/100000000000000",
+          "wrong_risk_float": 4.9424013e-07
+        },
+        {
+          "A": "1/2",
+          "B": "1/10",
+          "C": "0",
+          "tree_nodes": 1371,
+          "wrong_risk": "281912088909837301/488281250000000000000",
+          "wrong_risk_float": 0.0005773559580873468
+        },
+        {
+          "A": "1/2",
+          "B": "1/10",
+          "C": "1/5",
+          "tree_nodes": 1371,
+          "wrong_risk": "7784184023973/1562500000000000000",
+          "wrong_risk_float": 4.98187777534272e-06
+        }
+      ],
+      "design": "past chooses reflected rational angle and m in {1,2}; current T chooses odds; fixed mixture of two past-gap shrinkages"
+    }
+  },
+  "scope": "Exact finite normalization, MLR examples, adaptive physical-model trees, numerical certification and an invalid allocation-leak counterexample; no Monte Carlo or superiority claim"
+}

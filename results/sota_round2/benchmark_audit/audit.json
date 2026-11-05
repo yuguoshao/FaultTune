@@ -1,0 +1,331 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T11:30:30.792824+00:00",
+  "inputs": {
+    "spec.json": "ef2111015ce03f0e4d1ac12bb652fe0ff7217d4a2537e0f0235941a770b7c8fe",
+    "release.json": "75ac7108f6efadf79031c920fba97248d97b901ae0774180fe4102c0693c0aef",
+    "preliminary_plan.json": "f245d69f688211e7c1b12985b266f5e288decafb951f1a1d72db5fa1fc2f0c33",
+    "paths.jsonl": "1b36df11b1dbf1843731619765dcd906a7202ca2442c409d51cd15a013bf7440",
+    "method_results.jsonl": "0c3e8fbbe686e1b7030073405bf63363e854d584fea6113d44b34dadceefb0fb",
+    "summary.json": "de9e3d853e67e583493b8f8ba8fad3d5140b24a7fa318ae45d2830c0e61fcba8"
+  },
+  "sources": {
+    "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f",
+    "experiments/structured_validation/weighted_fisher.py": "1f31c9cbea3c8db4d7d8dc75936dc5304fd3273fb8ad1fafedc90e792fe24e24",
+    "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/structured_validation/conditional_fisher_unequal.py": "011d691f76b798cd0372544156ab86dbf7b6273b02b41de009737f433caef917",
+    "experiments/structured_validation/safe_grid.py": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+    "experiments/structured_validation/rb_grid.py": "a262a4790289505e7846c98334edbf341cded98090ce7bd8bf7c0c3974fb420f",
+    "experiments/structured_validation/predictive.py": "fc16237805139c707e6e076c0c7e69f45e88c111d405349c68daa3f150871fe4",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/structured_validation/design_policy.py": "1e61776de4b3bd8b2fd331b9c9f28b7b68f4e6c9672e19ca38aa9b436e3d4547",
+    "experiments/structured_validation/probe_fixed.py": "bf64f1ab7fb5e1675966704cc315de1f21b51db8135301fc319d8388d67311ec",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/sota_round2/benchmark/benchmark_runner.py": "ef09fc795f9c45863e9fa7ccd6dcf8c2efd1745465ed95a577db598a67967f27",
+    "experiments/sota_round2/benchmark/benchmark_checks.py": "d6310560c16601abab051bdde37a5b48fb3a41754c3b3e94dc07512e39c90014",
+    "experiments/sota_round2/literature/dkm_baseline.py": "e8799facf1494dcf6355f2f2e6069be350f35f788a70381201f55c53e5479c9d",
+    "experiments/sota_round2/structured_grid_predictive.py": "483db5fb5a64cf91a9558af3006c2cdb0192c2cda4bafc99890fd5252238265b",
+    "results/sota_round2/structured_grid_prior.json": "70a9cedde4037c437324c20c7d13caae0507752ab59d14fc4ea972dbac3824f0"
+  },
+  "audit_sources": {
+    "experiments/sota_round2/audit_benchmark.py": "2df1fd5a82767e5d6b626d1e316e4a41df8321908825dcccc18b51569f859a59",
+    "experiments/structured_validation/audit_refined.py": "542bdc715fb434c11bcf96c44748fdac51d539dc341e90b035c34864c3917b44",
+    "experiments/structured_validation/audit_conditional.py": "c605dca6595464338fb529c16bfc2aaccf0d35f38fffea6aec890dfc4176611f"
+  },
+  "counts": {
+    "dkm_initialization_actions_checked": 240,
+    "rng_binomial_calls_checked": 235903,
+    "single_arm_calibration_screens_checked": 10141,
+    "dkm_successful_projection_feasibility_checks": 118744,
+    "dkm_game_actions_checked": 120358,
+    "dkm_projection_failure_previous_label_checks": 1614,
+    "single_arm_certificates_recomputed": 344,
+    "grid_partial_numerators_checked": 108,
+    "terminal_certificates_checked": 320,
+    "paths_checked": 160,
+    "method_records_checked": 320,
+    "physically_generated_shots_accounted": 342720,
+    "psr_actions_checked": 108168,
+    "hedge_blocks_and_screens_checked": 2379,
+    "hedge_certificates_recomputed": 80
+  },
+  "maximum_float_differences_or_gaps": {
+    "checkpoint_kk21_numerator": 0.0,
+    "checkpoint_kk21_threshold": 0.0,
+    "checkpoint_null_loglik": 0.0,
+    "checkpoint_kt_safe_numerator": 0.0,
+    "checkpoint_kt_safe_threshold": 0.0,
+    "checkpoint_structured_grid_safe_numerator": 0.0,
+    "checkpoint_structured_grid_safe_threshold": 0.0,
+    "dkm_exploration_bonus": 0.0,
+    "dkm_adah_edge_allocation": 7.771561172376096e-16,
+    "dkm_independent_convex_gap": 9.65043078085454e-06,
+    "dkm_logged_convex_gap": 4.4686074400512605e-15,
+    "dkm_optimistic_payoffs": 8.881784197001252e-16,
+    "dkm_ratio_tracking_target": 1.1368683772161603e-13,
+    "hedge_beta_screen": 0.0,
+    "hedge_fisher_screen": 0.0,
+    "hedge_mixture_screen": 0.0
+  },
+  "actual_prior": {
+    "model_count": 7141,
+    "table_sha256": "4d3ab802658e18ddc03727b0c2410a4b9cec8dc4b877bcf25d6d07e4a70ddee5",
+    "artifact_sha256": "70a9cedde4037c437324c20c7d13caae0507752ab59d14fc4ea972dbac3824f0",
+    "weights_exactly_sum_to_one": true,
+    "all_models_strictly_physical": true,
+    "actual_table_used_for_all_numerators": true,
+    "table_independent_of_libm_regeneration": true
+  },
+  "original_runner_seed_replay": {
+    "selection": "Every case/path, rep 0 and 3, chosen mechanically before audit",
+    "paths": 80,
+    "all_nontiming_protocol_fields_exact": true,
+    "fully_independent_controller_recomputation": false,
+    "new_simulation_observations": 0
+  },
+  "summary_reconstruction": {
+    "outcomes": [
+      {
+        "kind": "main",
+        "method": "dkm_one_shot__kk21",
+        "trajectories": 32,
+        "wrong": 0,
+        "correct_stops": 20,
+        "abstained": 12,
+        "mean_paid_shots": 2744.6875
+      },
+      {
+        "kind": "main",
+        "method": "dkm_one_shot__kt_safe",
+        "trajectories": 32,
+        "wrong": 0,
+        "correct_stops": 21,
+        "abstained": 11,
+        "mean_paid_shots": 1843.5625
+      },
+      {
+        "kind": "main",
+        "method": "dkm_one_shot__structured_grid_safe",
+        "trajectories": 32,
+        "wrong": 0,
+        "correct_stops": 26,
+        "abstained": 6,
+        "mean_paid_shots": 1593.5
+      },
+      {
+        "kind": "main",
+        "method": "psr_six_arm_init__kk21",
+        "trajectories": 32,
+        "wrong": 0,
+        "correct_stops": 20,
+        "abstained": 12,
+        "mean_paid_shots": 2356.25
+      },
+      {
+        "kind": "main",
+        "method": "psr_six_arm_init__kt_safe",
+        "trajectories": 32,
+        "wrong": 0,
+        "correct_stops": 27,
+        "abstained": 5,
+        "mean_paid_shots": 1382.8125
+      },
+      {
+        "kind": "main",
+        "method": "psr_six_arm_init__structured_grid_safe",
+        "trajectories": 32,
+        "wrong": 0,
+        "correct_stops": 27,
+        "abstained": 5,
+        "mean_paid_shots": 1260.25
+      },
+      {
+        "kind": "main",
+        "method": "closed_hedge_original",
+        "trajectories": 32,
+        "wrong": 0,
+        "correct_stops": 30,
+        "abstained": 2,
+        "mean_paid_shots": 785.6875
+      },
+      {
+        "kind": "main",
+        "method": "closed_hedge_fine_initial",
+        "trajectories": 32,
+        "wrong": 0,
+        "correct_stops": 29,
+        "abstained": 3,
+        "mean_paid_shots": 832.9375
+      },
+      {
+        "kind": "null",
+        "method": "dkm_one_shot__kk21",
+        "trajectories": 8,
+        "wrong": 0,
+        "correct_stops": 0,
+        "abstained": 8,
+        "mean_paid_shots": 4096.0
+      },
+      {
+        "kind": "null",
+        "method": "dkm_one_shot__kt_safe",
+        "trajectories": 8,
+        "wrong": 0,
+        "correct_stops": 0,
+        "abstained": 8,
+        "mean_paid_shots": 4096.0
+      },
+      {
+        "kind": "null",
+        "method": "dkm_one_shot__structured_grid_safe",
+        "trajectories": 8,
+        "wrong": 0,
+        "correct_stops": 0,
+        "abstained": 8,
+        "mean_paid_shots": 4096.0
+      },
+      {
+        "kind": "null",
+        "method": "psr_six_arm_init__kk21",
+        "trajectories": 8,
+        "wrong": 0,
+        "correct_stops": 0,
+        "abstained": 8,
+        "mean_paid_shots": 4096.0
+      },
+      {
+        "kind": "null",
+        "method": "psr_six_arm_init__kt_safe",
+        "trajectories": 8,
+        "wrong": 0,
+        "correct_stops": 0,
+        "abstained": 8,
+        "mean_paid_shots": 4096.0
+      },
+      {
+        "kind": "null",
+        "method": "psr_six_arm_init__structured_grid_safe",
+        "trajectories": 8,
+        "wrong": 0,
+        "correct_stops": 0,
+        "abstained": 8,
+        "mean_paid_shots": 4096.0
+      },
+      {
+        "kind": "null",
+        "method": "closed_hedge_original",
+        "trajectories": 8,
+        "wrong": 0,
+        "correct_stops": 0,
+        "abstained": 8,
+        "mean_paid_shots": 4096.0
+      },
+      {
+        "kind": "null",
+        "method": "closed_hedge_fine_initial",
+        "trajectories": 8,
+        "wrong": 1,
+        "correct_stops": 0,
+        "abstained": 7,
+        "mean_paid_shots": 3673.75
+      }
+    ],
+    "equal_case_geometric_cost_ratios": {
+      "dkm_one_shot__kk21": {
+        "dkm_one_shot__kk21": 1.0,
+        "dkm_one_shot__kt_safe": 2.5926612296552793,
+        "dkm_one_shot__structured_grid_safe": 3.1015677616185604,
+        "psr_six_arm_init__kk21": 1.3092226654616625,
+        "psr_six_arm_init__kt_safe": 4.372950145358249,
+        "psr_six_arm_init__structured_grid_safe": 4.615788694195986,
+        "closed_hedge_original": 6.069195434651759,
+        "closed_hedge_fine_initial": 6.506154361538613
+      },
+      "dkm_one_shot__kt_safe": {
+        "dkm_one_shot__kk21": 0.38570407447060107,
+        "dkm_one_shot__kt_safe": 1.0,
+        "dkm_one_shot__structured_grid_safe": 1.1962873229029405,
+        "psr_six_arm_init__kk21": 0.5049725164578239,
+        "psr_six_arm_init__kt_safe": 1.686664688521484,
+        "psr_six_arm_init__structured_grid_safe": 1.7803285062467276,
+        "closed_hedge_original": 2.340913407903554,
+        "closed_hedge_fine_initial": 2.5094502463801147
+      },
+      "dkm_one_shot__structured_grid_safe": {
+        "dkm_one_shot__kk21": 0.3224175890576538,
+        "dkm_one_shot__kt_safe": 0.8359195829087073,
+        "dkm_one_shot__structured_grid_safe": 1.0,
+        "psr_six_arm_init__kk21": 0.4221164153377845,
+        "psr_six_arm_init__kt_safe": 1.4099160429357236,
+        "psr_six_arm_init__structured_grid_safe": 1.4882114623822462,
+        "closed_hedge_original": 1.9568153595601392,
+        "closed_hedge_fine_initial": 2.0976986032842184
+      },
+      "psr_six_arm_init__kk21": {
+        "dkm_one_shot__kk21": 0.7638120133272949,
+        "dkm_one_shot__kt_safe": 1.980305793698619,
+        "dkm_one_shot__structured_grid_safe": 2.369014716472904,
+        "psr_six_arm_init__kk21": 1.0,
+        "psr_six_arm_init__kt_safe": 3.340111854705971,
+        "psr_six_arm_init__structured_grid_safe": 3.525594855607203,
+        "closed_hedge_original": 4.635724384218187,
+        "closed_hedge_fine_initial": 4.969478861904968
+      },
+      "psr_six_arm_init__kt_safe": {
+        "dkm_one_shot__kk21": 0.2286785732193789,
+        "dkm_one_shot__kt_safe": 0.5928860708387698,
+        "dkm_one_shot__structured_grid_safe": 0.7092620904701549,
+        "psr_six_arm_init__kk21": 0.29939117116424524,
+        "psr_six_arm_init__kt_safe": 1.0,
+        "psr_six_arm_init__structured_grid_safe": 1.0555319728708783,
+        "closed_hedge_original": 1.3878949525857323,
+        "closed_hedge_fine_initial": 1.4878180965416887
+      },
+      "psr_six_arm_init__structured_grid_safe": {
+        "dkm_one_shot__kk21": 0.21664769907197576,
+        "dkm_one_shot__kt_safe": 0.5616940898779356,
+        "dkm_one_shot__structured_grid_safe": 0.6719475190704791,
+        "psr_six_arm_init__kk21": 0.2836400780451482,
+        "psr_six_arm_init__kt_safe": 0.9473895871483267,
+        "psr_six_arm_init__structured_grid_safe": 1.0,
+        "closed_hedge_original": 1.3148772261354431,
+        "closed_hedge_fine_initial": 1.4095433722344397
+      },
+      "closed_hedge_original": {
+        "dkm_one_shot__kk21": 0.1647664852396335,
+        "dkm_one_shot__kt_safe": 0.4271836782273666,
+        "dkm_one_shot__structured_grid_safe": 0.5110344188144474,
+        "psr_six_arm_init__kk21": 0.21571601698418263,
+        "psr_six_arm_init__kt_safe": 0.7205156255788232,
+        "psr_six_arm_init__structured_grid_safe": 0.7605272797515102,
+        "closed_hedge_original": 1.0,
+        "closed_hedge_fine_initial": 1.0719961865772287
+      },
+      "closed_hedge_fine_initial": {
+        "dkm_one_shot__kk21": 0.1537006262734157,
+        "dkm_one_shot__kt_safe": 0.3984936547128206,
+        "dkm_one_shot__structured_grid_safe": 0.47671290739020883,
+        "psr_six_arm_init__kk21": 0.2012283436128082,
+        "psr_six_arm_init__kt_safe": 0.6721251760039874,
+        "psr_six_arm_init__structured_grid_safe": 0.709449613043675,
+        "closed_hedge_original": 0.9328391392817309,
+        "closed_hedge_fine_initial": 1.0
+      }
+    },
+    "all_costs_include_wrong_and_cap_abstentions": true,
+    "inferential_ci_computed": false
+  },
+  "limitations": [
+    "Development comparison only; no held-out superiority claim or empirical 1% risk certification.",
+    "DKM learner, optimism and ratio tracking reconstructed independently; numerical projection optimality was not independently re-solved.",
+    "Logged successful projections checked for physical/confidence-box feasibility and selected-label consistency; failures retain the preceding label.",
+    "All logged opposite-model best responses checked by feasibility and a floating global convex gap, not a rigorous exact-oracle sample-complexity proof.",
+    "The absolute 1e-5 design-oracle tolerance can matter at weak signals; risk certificates use the full physical cone instead of this design margin.",
+    "Outward Decimal/null-support, KK21 threshold and conditional-CGF primitives are reused from hash-bound reviewed sources.",
+    "Original-runner repetitions 0/3 are reproducibility checks, not independent controller implementations.",
+    "Actual rational prior table drives the audit; its data-selected partial sum retains original weights and only lower-bounds full Q.",
+    "Official DKM Julia artifacts were inspected separately but not executed; this is the disclosed formal-schedule Bernoulli-sign adaptation."
+  ],
+  "elapsed_seconds": 387.3106784
+}

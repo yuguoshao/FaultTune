@@ -1,0 +1,227 @@
+{
+  "status": "passed",
+  "scope": "Exact deterministic arithmetic, full small-tree enumeration and fixed-count replay; zero simulator observations",
+  "checks": {
+    "boundary_math": {
+      "status": "passed",
+      "exact_state_comparisons": 6354,
+      "threshold_equality_and_zero_score_checked": true
+    },
+    "integer_dp": {
+      "status": "passed",
+      "three_way_comparisons": [
+        {
+          "maximum": 1,
+          "threshold": "1",
+          "crossing_numerator": 2,
+          "denominator": 2
+        },
+        {
+          "maximum": 1,
+          "threshold": "3/2",
+          "crossing_numerator": 0,
+          "denominator": 2
+        },
+        {
+          "maximum": 1,
+          "threshold": "3",
+          "crossing_numerator": 0,
+          "denominator": 2
+        },
+        {
+          "maximum": 1,
+          "threshold": "10",
+          "crossing_numerator": 0,
+          "denominator": 2
+        },
+        {
+          "maximum": 1,
+          "threshold": "100",
+          "crossing_numerator": 0,
+          "denominator": 2
+        },
+        {
+          "maximum": 2,
+          "threshold": "1",
+          "crossing_numerator": 4,
+          "denominator": 4
+        },
+        {
+          "maximum": 2,
+          "threshold": "3/2",
+          "crossing_numerator": 2,
+          "denominator": 4
+        },
+        {
+          "maximum": 2,
+          "threshold": "3",
+          "crossing_numerator": 0,
+          "denominator": 4
+        },
+        {
+          "maximum": 2,
+          "threshold": "10",
+          "crossing_numerator": 0,
+          "denominator": 4
+        },
+        {
+          "maximum": 2,
+          "threshold": "100",
+          "crossing_numerator": 0,
+          "denominator": 4
+        },
+        {
+          "maximum": 6,
+          "threshold": "1",
+          "crossing_numerator": 64,
+          "denominator": 64
+        },
+        {
+          "maximum": 6,
+          "threshold": "3/2",
+          "crossing_numerator": 32,
+          "denominator": 64
+        },
+        {
+          "maximum": 6,
+          "threshold": "3",
+          "crossing_numerator": 8,
+          "denominator": 64
+        },
+        {
+          "maximum": 6,
+          "threshold": "10",
+          "crossing_numerator": 2,
+          "denominator": 64
+        },
+        {
+          "maximum": 6,
+          "threshold": "100",
+          "crossing_numerator": 0,
+          "denominator": 64
+        },
+        {
+          "maximum": 10,
+          "threshold": "1",
+          "crossing_numerator": 1024,
+          "denominator": 1024
+        },
+        {
+          "maximum": 10,
+          "threshold": "3/2",
+          "crossing_numerator": 564,
+          "denominator": 1024
+        },
+        {
+          "maximum": 10,
+          "threshold": "3",
+          "crossing_numerator": 160,
+          "denominator": 1024
+        },
+        {
+          "maximum": 10,
+          "threshold": "10",
+          "crossing_numerator": 32,
+          "denominator": 1024
+        },
+        {
+          "maximum": 10,
+          "threshold": "100",
+          "crossing_numerator": 2,
+          "denominator": 1024
+        },
+        {
+          "maximum": 14,
+          "threshold": "1",
+          "crossing_numerator": 16384,
+          "denominator": 16384
+        },
+        {
+          "maximum": 14,
+          "threshold": "3/2",
+          "crossing_numerator": 9224,
+          "denominator": 16384
+        },
+        {
+          "maximum": 14,
+          "threshold": "3",
+          "crossing_numerator": 2736,
+          "denominator": 16384
+        },
+        {
+          "maximum": 14,
+          "threshold": "10",
+          "crossing_numerator": 698,
+          "denominator": 16384
+        },
+        {
+          "maximum": 14,
+          "threshold": "100",
+          "crossing_numerator": 32,
+          "denominator": 16384
+        }
+      ],
+      "nonconstant_table_checked": true
+    },
+    "adaptive_ordering_example": {
+      "status": "passed",
+      "ordered_wrong_union": "2063/32768",
+      "fair_negative_union": "5/64",
+      "fair_symmetric_union": "5/32",
+      "scope": "A finite deterministic example supplements the general coupling proof"
+    },
+    "old_beta_compatibility": {
+      "status": "passed",
+      "high_precision_log_enclosures": 36,
+      "old_threshold_100_paid_pair_decisions": 635
+    },
+    "runtime_and_replay": {
+      "status": "passed",
+      "fixture_calibrated_threshold": "100547/2000",
+      "deterministic_fixture_stop_shots": 18,
+      "sparse_and_multiphase_monitoring": "checked",
+      "old_prefix_censoring": "preserved",
+      "rejected_inputs": [
+        "negative",
+        "boolean",
+        "fractional",
+        "wrong_length",
+        "beyond_discordance_cap",
+        "changed_runtime_table",
+        "hashed_but_false_table",
+        "unverified_runtime_constructor",
+        "zero_cap",
+        "invalid_delta",
+        "boolean_scale",
+        "incomplete_physical_checkpoint"
+      ]
+    },
+    "production_N2048": {
+      "status": "passed",
+      "independent_integer_boundary_rows": 2048,
+      "full_vector_integer_dp_reproduced": true,
+      "lower_lattice_neighbor_exceeds_delta": true,
+      "threshold_exact": {
+        "numerator": "40587151",
+        "denominator": "500000"
+      },
+      "fair_null_risk": {
+        "numerator": "80791125866310199847718093084419346301552435437520691550495074450035573196677643195230603162324203962357504117305757116295280718649939567520216373600419922779402620665576027202029447889650683543084926115532026151813350176406640057800307040691956154121464258328074774687097741944093018278260824116212698102852838921073257225304457665803445184984114108883307951385721524493669702194678379254509374068410858150759649261873541478700145532882358040621738015984227109779769714873684393434364954639360885086955330901110504283937899529520500124291181039735259720001777024324204151296515152214908068876295270505253571225833",
+        "denominator": "8079251517827751825178719172167487990111025667428871008032586356881163784716972723299300352880728365922179490230474504873529889787622730273772038096612070780157719341825249022937549437597413026699014409596016892069198054660654939040459523584619042617645411463009076260721893972885266452151888099780982596380478583347417085605171243696641142373714044008831580514519451414832756548177115078537564648216044279181485900929615464339399587788075411476100924403308321807806781421177705052431289275431732830867419635645164174483761499317088249659553881291597359333885900533858307401161329619651238037048388963402764899057664"
+      }
+    }
+  },
+  "boundary_artifact": {
+    "path": "results/sota_round3/beta_boundary_N2048.json",
+    "file_sha256": "b6d215f23593d1d0151ec03c918bbcd6173a55154d44fcb840ad9d056652f84e",
+    "artifact_sha256": "93cefb682cba282a695af1eb8d3dbac2882b386157dd6ae7969e3cc647f32744",
+    "boundary_sha256": "eef30feb95d3504f77d4ef7cf0a9099df3c7a89b78fcdc1cc6a7982d71473188"
+  },
+  "sources": {
+    "experiments/sota_round3/exact_sign_boundary.py": "ae47df47a5d2bd0f83aeefd0c3bce1711ed697a54457b0ed4206830008cb283b",
+    "results/sota_round2/theory/finite_cap_jeffreys_dp_lemma.json": "95cbc30eb66f788c8ab9d60228cc7d435de0fc06ec79993b538e8e75d68bdf93",
+    "experiments/sota_round3/exact_sign_boundary_checks.py": "39c6528d25ad95a1601f8f03ef00757ff7ceb2b43bba66a04ae4286874f5990b",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a"
+  },
+  "elapsed_seconds": 7.7057893
+}

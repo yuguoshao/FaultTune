@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "reviewer": "stream_sota independent mathematical and deterministic numeric review",
+  "reviewed_utc": "2026-11-03T16:50:09.367378+00:00",
+  "sources": {
+    "docs/CONTINUOUS_PSR_INFORMATION_BOUND.md": "8f9dce032aefcee81dae2b33fe808c8885413d35fc46ecaebd69891a591a19d4",
+    "experiments/structured_validation/psr_information_bound_table.py": "420ba4529ee2ee4f27f661a79c03ff58bfda24182052f208d86fbd3cdb9840be",
+    "results/structured_validation/psr_information_bound_table.json": "cc33067f1184fd0df867abf72e738c0815049f10707084844daa6df3d455f179",
+    "docs/CONTINUOUS_SYMMETRIC_DESIGN.md": "0e16a486bb11c38b179b1d8d2aa8ed18184aefe07ceabd99c44efb59b10cd13d",
+    "results/structured_validation/continuous_symmetric_design_review.json": "4837d4d35c9247c0328fe6c78ff86de5754d8a587e81453d73ef74a4a49f7784"
+  },
+  "blocking_findings": [],
+  "mathematical_checks": [
+    "Equal-PSR full-Bernoulli oracle value is exactly E=A Phi(C/A)+(1-A) Phi(C/(1-A)), by minimizing the common null probability at a=A.",
+    "For A=m<=1/2, p=2m r is an admissible symmetric submodel. The three-outcome thinning construction has KL exactly 2m KL(r||s), and merging inactive/failure outcomes gives the claimed Bernoulli KL upper bound.",
+    "For A>1/2, complementing probabilities changes both B and C signs; the even lambda restores q=A+B lambda(C/m) cos(x). The same q is globally physical.",
+    "The explicit uniform null proves V<=2m Phi(C/m) without a minimax exchange. Positive second term of E proves V<2E for C nonzero.",
+    "Writing t=m/(1-m), u=|C|/m gives R=2/[1+Phi(tu)/(t Phi(u))] with the stated coefficients.",
+    "Positive-series normalization yields u d/du [Phi(tu)/Phi(u)]=Cov(2N,t^(2N))<=0 for u<1. Continuity suffices at u=1; no finite boundary moment is assumed.",
+    "Phi(t)/t is nondecreasing, hence G(m) is nonincreasing and the uniform mean-neighborhood bound follows. G approaches one at the symmetric mean.",
+    "The extended opposite-sign physical null has the same PSR lower bound, by convexity and the displayed ordered-probability gradient.",
+    "C=0, A endpoints, and |C|=m are treated separately; no undefined V/E or zero-times-infinite lambda is used.",
+    "The factor-two sharpness family is strictly physical for 0<epsilon<1. For fixed epsilon, the nonleading Bernoulli terms are O_epsilon(A^2), so the stated J/E inner limit holds.",
+    "The positive series bounds the Taylor remainder by v^4/[12(1-v^2)]. It gives g/f~sqrt(2) epsilon^(3/4) and the exact rational expression tending to two. Sequential parameter selection establishes sharpness without assuming an inner limit for V/E.",
+    "The pure-PSR counterexample has full information log(2) per query, whereas paired-beta and its continuous-prior pairing Rao-Blackwellization have asymptotic rate log(2)/2; a fixed finite odds-grid RB rate is strictly smaller."
+  ],
+  "numeric_checks": {
+    "independent_reference_arithmetic": "Direct Python Decimal formulas at 120 digits; did not call the table-generation functions or their _Bounds arithmetic.",
+    "independent_reference_enclosures_checked": 46,
+    "all_reference_values_inside_original_outward_intervals": true,
+    "all_six_decimal_ceiling_values_verified": true,
+    "markdown_numeric_cells_matched_to_table": 46,
+    "new_observations_generated": 0,
+    "table_generator_main_rerun": false
+  },
+  "claim_boundaries_checked": [
+    "The theorem concerns full-Bernoulli oracle information; it is not a factor-two bound on current paired-beta/RB evidence efficiency or finite stopping costs.",
+    "The factor two is a supremum over a limiting parameter family, not equality at a fixed nondegenerate instance.",
+    "No exact general-A two-point-support theorem or continuity of optimal angles is claimed.",
+    "Novelty remains unverified and no full-field SOTA superiority is inferred."
+  ],
+  "verification_limits": "Paper mathematical review plus deterministic high-precision numerical cross-checks; not a proof-assistant formalization. The symmetric theorem is separately independently reviewed and uses established matrix-log concavity."
+}

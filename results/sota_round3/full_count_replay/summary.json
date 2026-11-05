@@ -1,0 +1,1268 @@
+{
+  "status": "complete",
+  "version": "full_count_controls_readonly_replay_v1",
+  "source_sha256": {
+    "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f",
+    "experiments/structured_validation/weighted_fisher.py": "1f31c9cbea3c8db4d7d8dc75936dc5304fd3273fb8ad1fafedc90e792fe24e24",
+    "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/structured_validation/conditional_fisher_unequal.py": "011d691f76b798cd0372544156ab86dbf7b6273b02b41de009737f433caef917",
+    "experiments/structured_validation/safe_grid.py": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+    "experiments/structured_validation/rb_grid.py": "a262a4790289505e7846c98334edbf341cded98090ce7bd8bf7c0c3974fb420f",
+    "experiments/structured_validation/predictive.py": "fc16237805139c707e6e076c0c7e69f45e88c111d405349c68daa3f150871fe4",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/structured_validation/design_policy.py": "1e61776de4b3bd8b2fd331b9c9f28b7b68f4e6c9672e19ca38aa9b436e3d4547",
+    "experiments/structured_validation/probe_fixed.py": "bf64f1ab7fb5e1675966704cc315de1f21b51db8135301fc319d8388d67311ec",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/sota_round3/replay_full_count_controls.py": "8af6983c2fe3f62a9303ee1a6e37eca6fa732bd4912d719bfc2011142acc0236"
+  },
+  "input_sha256": {
+    "results/sota_round3/paired_benchmark/preliminary_plan.json": "f89aefeab89c5ea26716c8cf4fa8b91902fdcdbc1d2853eeaea1f52022ea56f7",
+    "results/sota_round3/paired_benchmark/release.json": "f525c62cbf2af660dc58c1a6da4ce3f77f2d7fa9bf67bf788ffa7a8897009f86",
+    "results/sota_round3/paired_benchmark/spec.json": "d44d70ec5e1c27c9684ebaf2f8acdfb28c2ef2737ce3533f3dbe782b56af2f1a",
+    "results/sota_round3/paired_benchmark/paths.jsonl": "56361be6ceb9e1cea62345666ec4efd72d1ac9303092f83ff7cfc74b59ab9ef9",
+    "results/sota_round3/paired_benchmark/method_results.jsonl": "c46e96f8b27fe3494e3c27ab8b581299b0c754afcff0e5e7eb9fade97318c3e7",
+    "results/sota_round3/paired_benchmark/summary.json": "b2d5dbe8281302408fa2e8e0ad1e2e7f3ba8403b903b938b84528f298325796e",
+    "results/sota_round3/paired_benchmark_audit/audit.json": "bf12f8fc9bc21c10d1ebc904a85c30ed54a189fd8c0b33072661a631806cfa4a"
+  },
+  "spec_sha256": "c62ef75fd42d6c852f8f56d4f0175e7ca57c6ce4fd544ee39592b062a072bc9f",
+  "records_sha256": "52998ac5ca32ea85a2aea45458513e498d2fcd5d1f54e23b098b14c550b97486",
+  "path_records": 576,
+  "method_records": 2304,
+  "new_simulation_observations": 0,
+  "previously_generated_physical_shots": 1254704,
+  "elapsed_seconds": 621.2436907,
+  "outcomes": [
+    {
+      "method": "full_safe_fine",
+      "kind": "main",
+      "trajectories": 512,
+      "case_count": 16,
+      "right_censored": 0,
+      "observed_cap_abstentions": 54,
+      "observed_correct_stops": 458,
+      "observed_wrong_stops": 0,
+      "mean_shots_lower": 908.28515625,
+      "mean_shots_upper": 908.28515625,
+      "per_case": [
+        {
+          "case_id": 7,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1234.3125,
+          "mean_shots_upper": 1234.3125
+        },
+        {
+          "case_id": 9,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 24,
+            "observed_stop": 8
+          },
+          "mean_shots_lower": 3732.8125,
+          "mean_shots_upper": 3732.8125
+        },
+        {
+          "case_id": 19,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 230.5,
+          "mean_shots_upper": 230.5
+        },
+        {
+          "case_id": 21,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1426.4375,
+          "mean_shots_upper": 1426.4375
+        },
+        {
+          "case_id": 31,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 52.9375,
+          "mean_shots_upper": 52.9375
+        },
+        {
+          "case_id": 33,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 346.875,
+          "mean_shots_upper": 346.875
+        },
+        {
+          "case_id": 43,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 12.4375,
+          "mean_shots_upper": 12.4375
+        },
+        {
+          "case_id": 45,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 78.9375,
+          "mean_shots_upper": 78.9375
+        },
+        {
+          "case_id": 1007,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1254.3125,
+          "mean_shots_upper": 1254.3125
+        },
+        {
+          "case_id": 1009,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 30,
+            "observed_stop": 2
+          },
+          "mean_shots_lower": 4096.0,
+          "mean_shots_upper": 4096.0
+        },
+        {
+          "case_id": 1019,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 251.625,
+          "mean_shots_upper": 251.625
+        },
+        {
+          "case_id": 1021,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1366.6875,
+          "mean_shots_upper": 1366.6875
+        },
+        {
+          "case_id": 1031,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 54.375,
+          "mean_shots_upper": 54.375
+        },
+        {
+          "case_id": 1033,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 297.9375,
+          "mean_shots_upper": 297.9375
+        },
+        {
+          "case_id": 1043,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 13.0,
+          "mean_shots_upper": 13.0
+        },
+        {
+          "case_id": 1045,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 83.375,
+          "mean_shots_upper": 83.375
+        }
+      ],
+      "comparisons": [
+        {
+          "reference_method": "beta_ville100",
+          "geometric_cost_ratio_lower": 0.973771581347867,
+          "geometric_cost_ratio_upper": 0.973771581347867
+        },
+        {
+          "reference_method": "beta_exact",
+          "geometric_cost_ratio_lower": 1.0666809077235153,
+          "geometric_cost_ratio_upper": 1.0666809077235153
+        },
+        {
+          "reference_method": "maxsprt",
+          "geometric_cost_ratio_lower": 0.98023234685531,
+          "geometric_cost_ratio_upper": 0.98023234685531
+        },
+        {
+          "reference_method": "pair_grid",
+          "geometric_cost_ratio_lower": 1.0666809077235153,
+          "geometric_cost_ratio_upper": 1.0666809077235153
+        },
+        {
+          "reference_method": "pairwise_hedge",
+          "geometric_cost_ratio_lower": 1.0666809077235153,
+          "geometric_cost_ratio_upper": 1.0666809077235153
+        },
+        {
+          "reference_method": "sprt_0.6",
+          "geometric_cost_ratio_lower": 0.49245052916868337,
+          "geometric_cost_ratio_upper": 0.49245052916868337
+        },
+        {
+          "reference_method": "sprt_0.75",
+          "geometric_cost_ratio_lower": 0.8961109407129124,
+          "geometric_cost_ratio_upper": 0.8961109407129124
+        },
+        {
+          "reference_method": "sprt_0.9",
+          "geometric_cost_ratio_lower": 0.8677715381695589,
+          "geometric_cost_ratio_upper": 0.8677715381695589
+        },
+        {
+          "reference_method": "sprt_0.99",
+          "geometric_cost_ratio_lower": 0.6159813121246489,
+          "geometric_cost_ratio_upper": 0.6159813121246489
+        },
+        {
+          "reference_method": "closed_hedge_original",
+          "geometric_cost_ratio_lower": 0.9499426658099265,
+          "geometric_cost_ratio_upper": 0.9499426658099265
+        },
+        {
+          "reference_method": "closed_hedge_fine_initial",
+          "geometric_cost_ratio_lower": 0.9950256729364102,
+          "geometric_cost_ratio_upper": 0.9950256729364102
+        }
+      ]
+    },
+    {
+      "method": "full_safe_fine",
+      "kind": "null",
+      "trajectories": 64,
+      "case_count": 2,
+      "right_censored": 0,
+      "observed_cap_abstentions": 64,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "mean_shots_lower": 4096.0,
+      "mean_shots_upper": 4096.0,
+      "per_case": [
+        {
+          "case_id": 100,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 32
+          },
+          "mean_shots_lower": 4096.0,
+          "mean_shots_upper": 4096.0
+        },
+        {
+          "case_id": 101,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 32
+          },
+          "mean_shots_lower": 4096.0,
+          "mean_shots_upper": 4096.0
+        }
+      ],
+      "comparisons": [
+        {
+          "reference_method": "beta_ville100",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "beta_exact",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "maxsprt",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "pair_grid",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "pairwise_hedge",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.6",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.75",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.9",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.99",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "closed_hedge_original",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "closed_hedge_fine_initial",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "method": "full_safe_coarse",
+      "kind": "main",
+      "trajectories": 512,
+      "case_count": 16,
+      "right_censored": 0,
+      "observed_cap_abstentions": 61,
+      "observed_correct_stops": 451,
+      "observed_wrong_stops": 0,
+      "mean_shots_lower": 1068.0,
+      "mean_shots_upper": 1068.0,
+      "per_case": [
+        {
+          "case_id": 7,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 2007.125,
+          "mean_shots_upper": 2007.125
+        },
+        {
+          "case_id": 9,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 30,
+            "observed_stop": 2
+          },
+          "mean_shots_lower": 4002.0,
+          "mean_shots_upper": 4002.0
+        },
+        {
+          "case_id": 19,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 345.1875,
+          "mean_shots_upper": 345.1875
+        },
+        {
+          "case_id": 21,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1608.25,
+          "mean_shots_upper": 1608.25
+        },
+        {
+          "case_id": 31,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 72.3125,
+          "mean_shots_upper": 72.3125
+        },
+        {
+          "case_id": 33,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 383.3125,
+          "mean_shots_upper": 383.3125
+        },
+        {
+          "case_id": 43,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 32.0,
+          "mean_shots_upper": 32.0
+        },
+        {
+          "case_id": 45,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 76.4375,
+          "mean_shots_upper": 76.4375
+        },
+        {
+          "case_id": 1007,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 2027.875,
+          "mean_shots_upper": 2027.875
+        },
+        {
+          "case_id": 1009,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 31,
+            "observed_stop": 1
+          },
+          "mean_shots_lower": 4096.0,
+          "mean_shots_upper": 4096.0
+        },
+        {
+          "case_id": 1019,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 390.6875,
+          "mean_shots_upper": 390.6875
+        },
+        {
+          "case_id": 1021,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1539.5625,
+          "mean_shots_upper": 1539.5625
+        },
+        {
+          "case_id": 1031,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 68.6875,
+          "mean_shots_upper": 68.6875
+        },
+        {
+          "case_id": 1033,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 325.4375,
+          "mean_shots_upper": 325.4375
+        },
+        {
+          "case_id": 1043,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 32.0,
+          "mean_shots_upper": 32.0
+        },
+        {
+          "case_id": 1045,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 81.125,
+          "mean_shots_upper": 81.125
+        }
+      ],
+      "comparisons": [
+        {
+          "reference_method": "beta_ville100",
+          "geometric_cost_ratio_lower": 1.3013009999770913,
+          "geometric_cost_ratio_upper": 1.3013009999770913
+        },
+        {
+          "reference_method": "beta_exact",
+          "geometric_cost_ratio_lower": 1.4254605068220936,
+          "geometric_cost_ratio_upper": 1.4254605068220936
+        },
+        {
+          "reference_method": "maxsprt",
+          "geometric_cost_ratio_lower": 1.3099348529016304,
+          "geometric_cost_ratio_upper": 1.3099348529016304
+        },
+        {
+          "reference_method": "pair_grid",
+          "geometric_cost_ratio_lower": 1.4254605068220936,
+          "geometric_cost_ratio_upper": 1.4254605068220936
+        },
+        {
+          "reference_method": "pairwise_hedge",
+          "geometric_cost_ratio_lower": 1.4254605068220936,
+          "geometric_cost_ratio_upper": 1.4254605068220936
+        },
+        {
+          "reference_method": "sprt_0.6",
+          "geometric_cost_ratio_lower": 0.6580869459749912,
+          "geometric_cost_ratio_upper": 0.6580869459749912
+        },
+        {
+          "reference_method": "sprt_0.75",
+          "geometric_cost_ratio_lower": 1.19751909541869,
+          "geometric_cost_ratio_upper": 1.19751909541869
+        },
+        {
+          "reference_method": "sprt_0.9",
+          "geometric_cost_ratio_lower": 1.1596476956214463,
+          "geometric_cost_ratio_upper": 1.1596476956214463
+        },
+        {
+          "reference_method": "sprt_0.99",
+          "geometric_cost_ratio_lower": 0.8231674786868254,
+          "geometric_cost_ratio_upper": 0.8231674786868254
+        },
+        {
+          "reference_method": "closed_hedge_original",
+          "geometric_cost_ratio_lower": 1.2694571957299285,
+          "geometric_cost_ratio_upper": 1.2694571957299285
+        },
+        {
+          "reference_method": "closed_hedge_fine_initial",
+          "geometric_cost_ratio_lower": 1.329703934677129,
+          "geometric_cost_ratio_upper": 1.329703934677129
+        }
+      ]
+    },
+    {
+      "method": "full_safe_coarse",
+      "kind": "null",
+      "trajectories": 64,
+      "case_count": 2,
+      "right_censored": 0,
+      "observed_cap_abstentions": 64,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "mean_shots_lower": 4096.0,
+      "mean_shots_upper": 4096.0,
+      "per_case": [
+        {
+          "case_id": 100,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 32
+          },
+          "mean_shots_lower": 4096.0,
+          "mean_shots_upper": 4096.0
+        },
+        {
+          "case_id": 101,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 32
+          },
+          "mean_shots_lower": 4096.0,
+          "mean_shots_upper": 4096.0
+        }
+      ],
+      "comparisons": [
+        {
+          "reference_method": "beta_ville100",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "beta_exact",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "maxsprt",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "pair_grid",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "pairwise_hedge",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.6",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.75",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.9",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.99",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "closed_hedge_original",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "closed_hedge_fine_initial",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "method": "rb_fine",
+      "kind": "main",
+      "trajectories": 512,
+      "case_count": 16,
+      "right_censored": 0,
+      "observed_cap_abstentions": 53,
+      "observed_correct_stops": 459,
+      "observed_wrong_stops": 0,
+      "mean_shots_lower": 876.734375,
+      "mean_shots_upper": 876.734375,
+      "per_case": [
+        {
+          "case_id": 7,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1121.875,
+          "mean_shots_upper": 1121.875
+        },
+        {
+          "case_id": 9,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 24,
+            "observed_stop": 8
+          },
+          "mean_shots_lower": 3732.8125,
+          "mean_shots_upper": 3732.8125
+        },
+        {
+          "case_id": 19,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 203.375,
+          "mean_shots_upper": 203.375
+        },
+        {
+          "case_id": 21,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1404.3125,
+          "mean_shots_upper": 1404.3125
+        },
+        {
+          "case_id": 31,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 53.9375,
+          "mean_shots_upper": 53.9375
+        },
+        {
+          "case_id": 33,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 312.1875,
+          "mean_shots_upper": 312.1875
+        },
+        {
+          "case_id": 43,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 20.3125,
+          "mean_shots_upper": 20.3125
+        },
+        {
+          "case_id": 45,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 71.5625,
+          "mean_shots_upper": 71.5625
+        },
+        {
+          "case_id": 1007,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1145.9375,
+          "mean_shots_upper": 1145.9375
+        },
+        {
+          "case_id": 1009,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 29,
+            "observed_stop": 3
+          },
+          "mean_shots_lower": 3996.4375,
+          "mean_shots_upper": 3996.4375
+        },
+        {
+          "case_id": 1019,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 231.1875,
+          "mean_shots_upper": 231.1875
+        },
+        {
+          "case_id": 1021,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1274.125,
+          "mean_shots_upper": 1274.125
+        },
+        {
+          "case_id": 1031,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 57.0625,
+          "mean_shots_upper": 57.0625
+        },
+        {
+          "case_id": 1033,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 300.875,
+          "mean_shots_upper": 300.875
+        },
+        {
+          "case_id": 1043,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 20.6875,
+          "mean_shots_upper": 20.6875
+        },
+        {
+          "case_id": 1045,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 81.0625,
+          "mean_shots_upper": 81.0625
+        }
+      ],
+      "comparisons": [
+        {
+          "reference_method": "beta_ville100",
+          "geometric_cost_ratio_lower": 0.99183854948302,
+          "geometric_cost_ratio_upper": 0.99183854948302
+        },
+        {
+          "reference_method": "beta_exact",
+          "geometric_cost_ratio_lower": 1.086471678310126,
+          "geometric_cost_ratio_upper": 1.086471678310126
+        },
+        {
+          "reference_method": "maxsprt",
+          "geometric_cost_ratio_lower": 0.9984191854475472,
+          "geometric_cost_ratio_upper": 0.9984191854475472
+        },
+        {
+          "reference_method": "pair_grid",
+          "geometric_cost_ratio_lower": 1.086471678310126,
+          "geometric_cost_ratio_upper": 1.086471678310126
+        },
+        {
+          "reference_method": "pairwise_hedge",
+          "geometric_cost_ratio_lower": 1.086471678310126,
+          "geometric_cost_ratio_upper": 1.086471678310126
+        },
+        {
+          "reference_method": "sprt_0.6",
+          "geometric_cost_ratio_lower": 0.5015872591668158,
+          "geometric_cost_ratio_upper": 0.5015872591668158
+        },
+        {
+          "reference_method": "sprt_0.75",
+          "geometric_cost_ratio_lower": 0.9127370244080357,
+          "geometric_cost_ratio_upper": 0.9127370244080357
+        },
+        {
+          "reference_method": "sprt_0.9",
+          "geometric_cost_ratio_lower": 0.8838718239337019,
+          "geometric_cost_ratio_upper": 0.8838718239337019
+        },
+        {
+          "reference_method": "sprt_0.99",
+          "geometric_cost_ratio_lower": 0.6274099828223514,
+          "geometric_cost_ratio_upper": 0.6274099828223514
+        },
+        {
+          "reference_method": "closed_hedge_original",
+          "geometric_cost_ratio_lower": 0.967567521784522,
+          "geometric_cost_ratio_upper": 0.967567521784522
+        },
+        {
+          "reference_method": "closed_hedge_fine_initial",
+          "geometric_cost_ratio_lower": 1.0134869809792244,
+          "geometric_cost_ratio_upper": 1.0134869809792244
+        }
+      ]
+    },
+    {
+      "method": "rb_fine",
+      "kind": "null",
+      "trajectories": 64,
+      "case_count": 2,
+      "right_censored": 0,
+      "observed_cap_abstentions": 64,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "mean_shots_lower": 4096.0,
+      "mean_shots_upper": 4096.0,
+      "per_case": [
+        {
+          "case_id": 100,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 32
+          },
+          "mean_shots_lower": 4096.0,
+          "mean_shots_upper": 4096.0
+        },
+        {
+          "case_id": 101,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 32
+          },
+          "mean_shots_lower": 4096.0,
+          "mean_shots_upper": 4096.0
+        }
+      ],
+      "comparisons": [
+        {
+          "reference_method": "beta_ville100",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "beta_exact",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "maxsprt",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "pair_grid",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "pairwise_hedge",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.6",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.75",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.9",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.99",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "closed_hedge_original",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "closed_hedge_fine_initial",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "method": "rb_coarse",
+      "kind": "main",
+      "trajectories": 512,
+      "case_count": 16,
+      "right_censored": 0,
+      "observed_cap_abstentions": 53,
+      "observed_correct_stops": 459,
+      "observed_wrong_stops": 0,
+      "mean_shots_lower": 875.0234375,
+      "mean_shots_upper": 875.0234375,
+      "per_case": [
+        {
+          "case_id": 7,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1121.875,
+          "mean_shots_upper": 1121.875
+        },
+        {
+          "case_id": 9,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 24,
+            "observed_stop": 8
+          },
+          "mean_shots_lower": 3732.8125,
+          "mean_shots_upper": 3732.8125
+        },
+        {
+          "case_id": 19,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 203.375,
+          "mean_shots_upper": 203.375
+        },
+        {
+          "case_id": 21,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1415.125,
+          "mean_shots_upper": 1415.125
+        },
+        {
+          "case_id": 31,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 53.125,
+          "mean_shots_upper": 53.125
+        },
+        {
+          "case_id": 33,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 303.5,
+          "mean_shots_upper": 303.5
+        },
+        {
+          "case_id": 43,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 32.0,
+          "mean_shots_upper": 32.0
+        },
+        {
+          "case_id": 45,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 66.875,
+          "mean_shots_upper": 66.875
+        },
+        {
+          "case_id": 1007,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1145.9375,
+          "mean_shots_upper": 1145.9375
+        },
+        {
+          "case_id": 1009,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 29,
+            "observed_stop": 3
+          },
+          "mean_shots_lower": 3996.4375,
+          "mean_shots_upper": 3996.4375
+        },
+        {
+          "case_id": 1019,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 226.8125,
+          "mean_shots_upper": 226.8125
+        },
+        {
+          "case_id": 1021,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 1270.75,
+          "mean_shots_upper": 1270.75
+        },
+        {
+          "case_id": 1031,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 56.375,
+          "mean_shots_upper": 56.375
+        },
+        {
+          "case_id": 1033,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 269.6875,
+          "mean_shots_upper": 269.6875
+        },
+        {
+          "case_id": 1043,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 32.0,
+          "mean_shots_upper": 32.0
+        },
+        {
+          "case_id": 1045,
+          "trajectories": 32,
+          "statuses": {
+            "observed_stop": 32
+          },
+          "mean_shots_lower": 73.6875,
+          "mean_shots_upper": 73.6875
+        }
+      ],
+      "comparisons": [
+        {
+          "reference_method": "beta_ville100",
+          "geometric_cost_ratio_lower": 1.0264315640443142,
+          "geometric_cost_ratio_upper": 1.0264315640443142
+        },
+        {
+          "reference_method": "beta_exact",
+          "geometric_cost_ratio_lower": 1.124365275617678,
+          "geometric_cost_ratio_upper": 1.124365275617678
+        },
+        {
+          "reference_method": "maxsprt",
+          "geometric_cost_ratio_lower": 1.0332417172380943,
+          "geometric_cost_ratio_upper": 1.0332417172380943
+        },
+        {
+          "reference_method": "pair_grid",
+          "geometric_cost_ratio_lower": 1.124365275617678,
+          "geometric_cost_ratio_upper": 1.124365275617678
+        },
+        {
+          "reference_method": "pairwise_hedge",
+          "geometric_cost_ratio_lower": 1.124365275617678,
+          "geometric_cost_ratio_upper": 1.124365275617678
+        },
+        {
+          "reference_method": "sprt_0.6",
+          "geometric_cost_ratio_lower": 0.5190814525203222,
+          "geometric_cost_ratio_upper": 0.5190814525203222
+        },
+        {
+          "reference_method": "sprt_0.75",
+          "geometric_cost_ratio_lower": 0.9445711623253785,
+          "geometric_cost_ratio_upper": 0.9445711623253785
+        },
+        {
+          "reference_method": "sprt_0.9",
+          "geometric_cost_ratio_lower": 0.9146992110034963,
+          "geometric_cost_ratio_upper": 0.9146992110034963
+        },
+        {
+          "reference_method": "sprt_0.99",
+          "geometric_cost_ratio_lower": 0.649292579221723,
+          "geometric_cost_ratio_upper": 0.649292579221723
+        },
+        {
+          "reference_method": "closed_hedge_original",
+          "geometric_cost_ratio_lower": 1.0013140195260886,
+          "geometric_cost_ratio_upper": 1.0013140195260886
+        },
+        {
+          "reference_method": "closed_hedge_fine_initial",
+          "geometric_cost_ratio_lower": 1.0488350423234531,
+          "geometric_cost_ratio_upper": 1.0488350423234531
+        }
+      ]
+    },
+    {
+      "method": "rb_coarse",
+      "kind": "null",
+      "trajectories": 64,
+      "case_count": 2,
+      "right_censored": 0,
+      "observed_cap_abstentions": 64,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "mean_shots_lower": 4096.0,
+      "mean_shots_upper": 4096.0,
+      "per_case": [
+        {
+          "case_id": 100,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 32
+          },
+          "mean_shots_lower": 4096.0,
+          "mean_shots_upper": 4096.0
+        },
+        {
+          "case_id": 101,
+          "trajectories": 32,
+          "statuses": {
+            "observed_cap_abstention": 32
+          },
+          "mean_shots_lower": 4096.0,
+          "mean_shots_upper": 4096.0
+        }
+      ],
+      "comparisons": [
+        {
+          "reference_method": "beta_ville100",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "beta_exact",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "maxsprt",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "pair_grid",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "pairwise_hedge",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.6",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.75",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.9",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "sprt_0.99",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "closed_hedge_original",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        },
+        {
+          "reference_method": "closed_hedge_fine_initial",
+          "geometric_cost_ratio_lower": 1.0,
+          "geometric_cost_ratio_upper": 1.0
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Development data reused for four fixed control descriptions; this is not a new holdout.",
+    "Right-censored costs are logical intervals, not cap abstentions or confidence intervals.",
+    "Comparisons are equal-case geometric ratios of within-case mean physical-shot costs.",
+    "Stopping uses frozen run_refined.py float screens followed by outward Decimal certificates.",
+    "A performance result here does not itself establish SOTA superiority or empirical1% risk."
+  ]
+}

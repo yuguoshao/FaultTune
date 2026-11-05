@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T13:20:04.560372+00:00",
+  "sources": {
+    "experiments/sota_round3/piecewise_gate_boundary.py": "770a9fc4ec114d843f9d1139bbf7e0a3e13f75b2cf9de7b55bd8ba83d1b8a504",
+    "experiments/sota_round3/piecewise_gate_boundary_checks.py": "10e3bc9881d0e8f41be2b40e50368ab0a9ce4a9c6d875bd38af4839534f822f9",
+    "experiments/sota_round3/replay_piecewise_gate.py": "88e82f87425d2da8331c18b1b09552cdc5a2dd0d9587001775d6ad0d536d3ffb",
+    "results/sota_round3/piecewise_gate_boundary.json": "5eb0e31307f74f3869271bb704cddfda42d10ef032c64307996158915a70b5db",
+    "results/sota_round3/piecewise_gate_boundary_checks.json": "ba47c39e8a76f8bc342ce3a28082410f38adb57d63e5f792cf7177b84dcb1680",
+    "results/sota_round2/theory/piecewise_physical_gate_independent_audit.json": "5c1c75a0db33b750eb2466568abc4d9f98b638b068798b0f3e65718e4ea3fe9c",
+    "results/sota_round2/theory/piecewise_gate_replay_independent_audit.json": "1b5c0b37b8d1b49c9d1158e3e789c22eab8955a3ee2cf197fa4fe310f00f1a9a",
+    "experiments/sota_round2/theory/verify_piecewise_physical_gate.py": "4091666b2f132a9909911f4b2a6c6292840435da0ad795d64995fa66d8d5f812",
+    "experiments/sota_round2/theory/audit_piecewise_gate_replay.py": "abd7f2ea11ca390ccc5ca23fc394e5f07952501e5fded998ee5a5ad4d7a623f7"
+  },
+  "review": [
+    "The new method fixes physical gate m=6 and H=2048 and preserves the saved beta_exact integer boundary at every D from 0 through 512. Only the late threshold at D>=513 is calibrated.",
+    "The concatenated table remains a deterministic symmetric sign-tail table, so the previously proved conservative physical-gate null and strict-sign bounds apply without requiring a single global evidence threshold.",
+    "The no-late-stop table is exactly checked for feasibility. Nested late contours and monotone risk bounds justify upper-bracket expansion and binary search; the selected late threshold and the next lower grid point are both certified.",
+    "An independent verifier reconstructed the full early, late and next-lower late contours with binomial-coefficient inequalities and re-spliced them without importing production code. It recomputed all ordinary and homogeneous-prefix survivor counts from d=0.",
+    "The late threshold 281.716172 gives null upper bound 0.009999982346466218 and strict wrong-sign upper bound 0.009829722860308313. The immediately lower grid point has null upper bound 0.010000000714990596 and fails.",
+    "Runtime objects must be verified, budgets are enforced, and the fixed first-six prefix must be captured from actual chronology. The replay rejects an aggregate block that straddles this prefix and never invents an earlier physical checkpoint.",
+    "The wrapper binds audited original inputs and sources, the passed independent boundary audit, and both summary dependencies at start and end. All 576 development paths are included; any unobserved continuation would remain right-censored.",
+    "The full replay was independently reconstructed without importing the gate or replay producers. Every checkpoint certificate and first stopping prefix matched. All combined costs and outcomes matched, with zero censoring.",
+    "Against beta_exact on these 576 paths: 58 use fewer shots, 518 use the same number, zero use more, and there are zero decision changes or lost correct decisions. This is an observed development result."
+  ],
+  "issues": [],
+  "limits": [
+    "The D512 switch and gate were selected during development. The replay is not held-out validation and supplies no inferential confidence interval.",
+    "No observed pathwise regression does not establish uniform dominance: on other paths where beta_exact crosses after D512, the higher late threshold can delay or prevent its decision before cap.",
+    "The main-case correct-stop rate remains below the 95% acceptance target; geometric cost improvement alone does not meet that target.",
+    "The finite-budget, independent-pair and common-ordering assumptions remain essential. The method is one fixed gate/table pair, not a union over explored candidates.",
+    "No novelty, hardware performance or SOTA acceptance claim follows from this review."
+  ]
+}

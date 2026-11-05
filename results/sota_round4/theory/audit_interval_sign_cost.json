@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "new_simulation_observations": 0,
+  "target_source_sha256": "14a01510987617c05e37d991c995698e99d8f6cc28d5e7e7c5afe51512b48c40",
+  "checks": {
+    "exact_physical_time_comparisons": 480,
+    "exact_binomial_pmf_head_tail_comparisons": 591,
+    "exact_prefix_sum_comparisons": 21505,
+    "covered": [
+      "r=0 and1",
+      "q=0 and1",
+      "minimum binary64 subnormal r",
+      "positive rational r below binary64 range",
+      "near-one probabilities",
+      "cap1 and shortened horizons",
+      "mode ties",
+      "never-stop and immediate-stop integer tables",
+      "physical-time recursion independent of negative-binomial mixture"
+    ]
+  },
+  "source_review": {
+    "probability_semantics": "pminus and pplus are converted to exact Fractions; r and q are computed exactly before binary64 enclosure. Enclose_fraction compares the exact rational to Fraction(float(value)) and moves only a needed endpoint.",
+    "binomial_normalization": "A mode has relative unnormalized mass1. Exact adjacent ratios are<=1 away from a mode, and positive interval multiplication encloses every relative mass. Their total is at least1, so max(1,total_lo) is a valid strengthened lower total. Dividing lower mass by total_hi and upper mass by total_lo gives valid pmf intervals.",
+    "point_operations": "Under correctly rounded IEEE-754 binary64 basic arithmetic and gradual underflow, one nextafter step outward bounds each operation; clipping a negative lower endpoint to0 is valid for nonnegative quantities. Subnormal positive upper endpoints intentionally persist after numerical zero.",
+    "prefix_sum": "For n*eps<1/16, the standard cumulative-addition relative error gamma_(n-1), with unit roundoff eps/2, is strictly below4*n*eps. The n*TINY absolute allowance covers gradual-underflow errors. Outward division by1+relative or1-relative and outward endpoint correction conservatively enclose prefixes. This assumes numpy.cumsum uses no more than n additions on a dependency path.",
+    "sign_dp": "The contiguous unabsorbed interval is indexed by origin. Bernoulli transitions reach origin through origin+len(row), then symmetric upper/lower tails absorb first-crossing mass. Sign-only stopping has no direct dependence on physical waiting times.",
+    "waiting_identity": "For d>=1 and r>0, E[min(NB(d,r),T)]=(d/r)P(Bin(T+1,r)>=d+1)+T*P(Bin(T,r)<d). The next-tail[2:] and head[:-1] slices correctly match d+1 and d-1 for d=1,...,T.",
+    "waiting_overflow_fix": "Divide next-tail by r before multiplying by d. The upper first term may overflow but is safely capped atT; the whole truncated wait is<=T. If a positive exact r has binary64 lower endpoint0, use the rigorous upper waitT directly. The lower tail/rhi cannot overflow for these valid probabilities because its exact value is<= (T+1)/(d+1).",
+    "total_cost": "Multiply first-crossing probabilities by truncated waits and add T times sign-survival probability. Multiply pair cost by2. This includes wrong reports and abstentions and agrees with an independent physical-time exact DP.",
+    "abstention": "It equals1-P(plus)-P(minus); outward subtractions and probability clipping enclose it. Small floating widths are not empirical uncertainty intervals.",
+    "limitations": "Analysis requires stationary independent Bernoulli arms, sign-only frozen boundary and inspection after every physical pair. It does not analyze old sparse checkpoints, adaptive arm selection, or physical-prefix gates. Source-level arithmetic review and finite exact checks are not formal verification of Python/numpy/IEEE execution."
+  },
+  "source_sha256": {
+    "results/sota_round4/theory/audit_interval_sign_cost.py": "aa9d95712757d3b9c9f2e4b7d9161b4d81e6a41baaf8cf32b6300ba13f1fed56",
+    "experiments/sota_round4/interval_sign_cost.py": "14a01510987617c05e37d991c995698e99d8f6cc28d5e7e7c5afe51512b48c40"
+  },
+  "runtime": {
+    "python": "3.8.3 (default, Jul  2 2020, 17:30:36) [MSC v.1916 64 bit (AMD64)]",
+    "numpy": "1.18.5"
+  }
+}

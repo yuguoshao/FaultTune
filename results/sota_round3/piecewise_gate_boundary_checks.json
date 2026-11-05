@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "scope": "Exact deterministic checks only; no simulator or development-history replay",
+  "checks": {
+    "small_integer_dp": {
+      "status": "passed",
+      "enumeration_dense_compact_cases": 9
+    },
+    "production_piecewise": {
+      "status": "passed",
+      "unchanged_early_rows": 513,
+      "independent_late_contour_rows": 1536,
+      "late_threshold_exact": {
+        "numerator": "70429043",
+        "denominator": "250000"
+      },
+      "null_upper": 0.009999982346466218,
+      "strict_upper": 0.009829722860308313,
+      "lower_neighbor_null": 0.010000000714990596,
+      "lower_neighbor_strict": 0.009829741237127945,
+      "never_late_null": 0.009853234889911034,
+      "never_late_strict": 0.009682907331415237
+    },
+    "runtime_and_fixed_fixture": {
+      "status": "passed",
+      "prefix_stop_physical_shots": 12,
+      "transition_D512_D513_checked": true,
+      "replay_censoring_preserved": true,
+      "invalid_inputs_rejected": [
+        "aggregate_straddles_prefix",
+        "missing_first6",
+        "concordant_physical_overrun",
+        "modified_early_runtime"
+      ]
+    }
+  },
+  "artifact": {
+    "path": "results/sota_round3/piecewise_gate_boundary.json",
+    "file_sha256": "5eb0e31307f74f3869271bb704cddfda42d10ef032c64307996158915a70b5db",
+    "artifact_sha256": "5ebf8adf0e5600fc406a17341603f3dc049ebb5a2576e5740e9ada45fecc105b",
+    "boundary_sha256": "22f7677da9d4cac010e4745e56d13c2a93428d054854474d9c2529068de41bb6"
+  },
+  "sources": {
+    "experiments/sota_round3/exact_sign_boundary.py": "ae47df47a5d2bd0f83aeefd0c3bce1711ed697a54457b0ed4206830008cb283b",
+    "results/sota_round2/theory/finite_cap_jeffreys_dp_lemma.json": "95cbc30eb66f788c8ab9d60228cc7d435de0fc06ec79993b538e8e75d68bdf93",
+    "experiments/sota_round3/fast_gate_boundary.py": "9079714c90379c36db80a6e9a639a64818578c5dc25fecc2c17089b7ed1995d2",
+    "results/sota_round2/theory/physical_fast_gate_lemma.json": "de8de7e005e0b4ffbd3150b6636f0e2505b9dd50ceb3ce572b1742906a6e30de",
+    "experiments/sota_round3/piecewise_gate_boundary.py": "770a9fc4ec114d843f9d1139bbf7e0a3e13f75b2cf9de7b55bd8ba83d1b8a504",
+    "results/sota_round3/beta_boundary_N2048.json": "b6d215f23593d1d0151ec03c918bbcd6173a55154d44fcb840ad9d056652f84e",
+    "results/sota_round2/theory/generic_symmetric_tail_dp_lemma.json": "e8d51fddd0a021c66374daee4b504aba17c427e578319920ca83a01343a5e43d",
+    "experiments/sota_round3/piecewise_gate_boundary_checks.py": "10e3bc9881d0e8f41be2b40e50368ab0a9ce4a9c6d875bd38af4839534f822f9"
+  },
+  "elapsed_seconds": 16.98932
+}

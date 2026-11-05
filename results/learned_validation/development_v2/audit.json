@@ -1,0 +1,36 @@
+{
+  "artifact_sha256": {
+    "spec.json": "0f8a886599960a7cbcfcdbb197708e50fac6b015a5cfa3937cdefd1296ab607b",
+    "summary.json": "4d6f3249837dea7a820c2ff139fed39504ac2d44ef57d55de69060345bdddfaa",
+    "trials.jsonl": "af6b1ce9390c29c7eead4757624eed75a8e1a999aa156ec180e7ed9bff05ec10"
+  },
+  "audit_helper_source_sha256": "b7542927ab06774ac20666dbafeb4c69e1182b9e368e18dd240bfb29b240e2d9",
+  "audit_source_path": "experiments/learned_validation/audit_adaptive_independent.py",
+  "audit_source_sha256": "465dbfa350b50e89de1ab808c6a5f28ab400ab098d54dd983f03367ea256f0e2",
+  "audit_source_unchanged_during_execution": true,
+  "cells_and_cost_summaries_recomputed": 432,
+  "common_routing_records_reproduced": 36864,
+  "cost_review": "Early stops pay actual early shots. Survivors pay512early+512axes+holdout. Early counts reused only for design, with no double-counting or holdout overlap.",
+  "count_only_holdout_designs_recomputed": 28588,
+  "early_stop_certificates_recomputed": 8276,
+  "elapsed_seconds": 105.4806409,
+  "fairness_review": "Four wrapped policies share identical routing/pilot realizations. Original controls are reused and counted separately from new trajectories.",
+  "full_cap_holdout_abstention_certificates_recomputed": 12062,
+  "holdout_decision_certificates_recomputed": 16526,
+  "ledger_records": 55296,
+  "new_wrapped_trajectories": 36864,
+  "old_frozen_python_sources_unchanged": 31,
+  "previous_phase_manifest_files_unchanged": 18,
+  "replayed_case_ids": [
+    0,
+    42,
+    49
+  ],
+  "reused_control_records_exactly_matched": 18432,
+  "risk_review": "Early anytime PSR .005 plus fresh conditional holdout .005 gives total <=.01, including equality. Survival-dependent fitting affects power, not conditional holdout safety.",
+  "run_source_hashes_verified": 6,
+  "scope": "Development implementation audit; no simultaneous empirical performance qualification or SOTA claim.",
+  "status": "passed",
+  "unique_early_transcript_certificates_recomputed": 4766,
+  "vector_seed_replay_new_records": 1536
+}

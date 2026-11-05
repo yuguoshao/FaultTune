@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T11:54:41.159477+00:00",
+  "scope": "Independent source review and deterministic implementation verification of finite-discordance exact-risk boundaries; no new simulation observations.",
+  "sources": {
+    "experiments/sota_round3/exact_sign_boundary.py": "ae47df47a5d2bd0f83aeefd0c3bce1711ed697a54457b0ed4206830008cb283b",
+    "experiments/sota_round3/exact_sign_boundary_checks.py": "39c6528d25ad95a1601f8f03ef00757ff7ceb2b43bba66a04ae4286874f5990b",
+    "experiments/sota_round3/generic_sign_boundary.py": "826cc5a3fd5768ca259c0e6a37f4ffa05991d37432456e51d547fdcb52901a1c",
+    "experiments/sota_round2/theory/verify_integer_tail_dp.py": "3b13e6b988d8c06e0ac17c48630e270068d1fc1833c07d098059f68010cfc97f",
+    "experiments/sota_round2/theory/audit_generic_boundaries.py": "183d5d4b2069b2d68d987206fd530dadc68663a70c954328db3b9f9f06e9766b",
+    "experiments/sota_round2/theory/integer_tail_dp_checks.py": "2bb96e9b702713db606e69ee2734cfc8db26607694768cb856682c667d7ec2c4",
+    "results/sota_round3/exact_sign_boundary_checks.json": "e0c0904fdabf0d93e05dec808be456561d4c11d51b9217adfec921e59476ba1f",
+    "results/sota_round3/beta_boundary_N2048.json": "b6d215f23593d1d0151ec03c918bbcd6173a55154d44fcb840ad9d056652f84e",
+    "results/sota_round2/theory/beta_boundary_N2048_independent_audit.json": "9e37b68b0f889298e735ef285f16db5cfc4500119707e6fc8b0aedcc32a181b4",
+    "results/sota_round2/theory/generic_boundaries_independent_audit.json": "4aa515bc974f30857e07afb4933b958539828559040b1d62778f61e58077cb16",
+    "results/sota_round2/theory/finite_cap_jeffreys_dp_lemma.json": "95cbc30eb66f788c8ab9d60228cc7d435de0fc06ec79993b538e8e75d68bdf93",
+    "results/sota_round2/theory/generic_symmetric_tail_dp_lemma.json": "e8d51fddd0a021c66374daee4b504aba17c427e578319920ca83a01343a5e43d"
+  },
+  "review": [
+    "The constant-Jeffreys producer uses the exact paired Beta(1/2,1/2) capital. Its Fraction walk appends a minus symbol then moves to the first positive-tail crossing. A previous positive-tail state below threshold cannot become a new earlier positive-tail crossing after appending a minus: the predictive multiplier is less than one. This justifies the nondecreasing boundary walk.",
+    "The compact survivor DP counts every fair-sign string and independently reconciles its first-crossing decomposition with final survival. Integer cross multiplication decides the risk budget; no floating probability controls certification.",
+    "The Jeffreys lattice search supplies both the selected safe rational threshold and the next lower unsafe lattice point. The independent verifier reconstructs both contours using binomial products and recomputes their full-vector DPs without importing the producer.",
+    "At H=2048, the selected Jeffreys threshold is 81.174302. Its exact risk is below 1/100 (display value 0.009999828039520214). The next lower lattice value 81.174301 exceeds 1/100. This is lattice minimality for a constant-capital threshold, not global boundary optimality.",
+    "The generic producer uses floating statistics only to propose a symmetric integer table. Its complete Pascal-row DP certifies the risk of that table exactly; score-zero states cannot cross. Neither a martingale score nor monotonicity of the cutoffs across time is needed.",
+    "Generic floating search is followed by exact integer acceptance and reports whether the preceding search tick is unsafe. It does not assert unconditional search optimality or exact agreement with an ideal real-arithmetic GLR contour.",
+    "All seven generic H=2048 tables were independently audited from their saved integer entries and source-bound artifacts. Their exact fair symmetric crossing risks are at most 1/100, including fixed-effect SPRT shapes whose discrete risk spending leaves visible slack.",
+    "Exhaustive checks covered every one of the 774 symmetric tables through H=6 and 42164 complete sign strings. Independent full-vector DP, compact DP and generic DP agreed. Another 8568 exact factorial-contour states and 48 floating-designed integer tables agreed with their stated checks.",
+    "Artifact verification checks frozen source bindings, payload consistency, positive risk budgets and horizon/table agreement before constructing the runtime boundary. Runtime decisions use integer paired counts and the verified table; invalid counts and discordance-cap overruns are rejected.",
+    "Sparse replay tests only existing physical endpoints, combines phases at a shared budget, and distinguishes exhausted old stopped prefixes from newly observed capped outcomes. It does not invent within-block observations or fill in unobserved stopping costs.",
+    "Validity for adaptive common-ordering pairs follows by coupling the latent full sign sequence, not by conditioning on the observed final discordance count or on survival under strict alternatives."
+  ],
+  "issues": [],
+  "limits": [
+    "All guarantees depend on predictable pair actions, a consistent sign orientation and the stated common ordering. Real hardware assumptions and simulator fidelity are separate questions.",
+    "The mathematical limit is D<=2048. Production experiments with a 4096-shot cap must additionally enforce their physical budget. Keeping D<=2048 can remain statistically valid with more concordant pairs, but this does not authorize changing a released physical-cost protocol.",
+    "Each saved table separately controls 1% error. Stopping at the first crossing of several tables requires an independently certified union table or another valid risk allocation.",
+    "The finite-horizon procedure uses knowledge unavailable to an unrestricted-horizon threshold-100 rule. Comparisons must disclose this guarantee difference or use a matched finite-budget baseline.",
+    "The generic scores and current exact sequential calibration are established types of methods. This review establishes correctness of these specific artifacts, not novelty, practical superiority or SOTA status.",
+    "Actual simulation or held-out performance has not been assessed by this source review."
+  ]
+}

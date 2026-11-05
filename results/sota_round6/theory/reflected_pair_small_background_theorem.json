@@ -1,0 +1,205 @@
+{
+  "status": "complete_analytic_small_background_argument_pending_independent_review",
+  "new_simulation_observations": 0,
+  "distinction_from_round5": "This fixes arbitrary nonzero C strictly inside its physical range and perturbs B around zero. C is not assumed small. The older theorem instead fixed interior (A,B) and required sufficiently small C.",
+  "definitions": {
+    "model": "p(x)=A+B cos(x)+C sin(x), B^2+C^2<=min(A,1-A)^2; take C>0 by reflection.",
+    "oracle": "V(A,B,C)=sup_w inf_{physical(a,b)} integral kl(p(x)||a+b cos(x)) w(dx), with natural logarithms.",
+    "center_function": "Q(a,c)=logistic([f(a+c)-f(a-c)]/(2c)), f(p)=p log(p)+(1-p)log(1-p).",
+    "capacity_function": "K(a,c)=kl(a+c||Q(a,c))=kl(a-c||Q(a,c)).",
+    "reflection_objective": "R_B(z)=K(A+Bz,C sqrt(1-z^2)), z in[-1,1], with the continuous value0 at endpoints.",
+    "reflection_center": "q_B(z)=Q(A+Bz,C sqrt(1-z^2)), continuously extended by q_B(+/-1)=A+/-B."
+  },
+  "theorem": {
+    "assumptions": "Fix0<A<1 and0<C<min(A,1-A). There exists epsilon(A,C)>0 such that all |B|<epsilon satisfy physicality and the statements below.",
+    "unique_optimum": "R_B has a unique interior maximizer z*(B), real analytic in B near0, with z*(0)=0.",
+    "exact_design": "V(A,B,C)=R_B(z*(B)). The reflection angles +/-arccos(z*) with plus weight omega=[q_B(z*)-(A+Bz*-C sqrt(1-z*^2))]/[2C sqrt(1-z*^2)] attain it.",
+    "global_null_certificate": "b*=partial_z q_B(z*), a*=q_B(z*)-b*z*. This physical affine null satisfies kl(p(x)||a*+b*cos(x))<=R_B(z*) for every real x.",
+    "one_sided_null": "The same design/value hold when the null includes all physical sine coefficients C_null<=0; negative C follows by reflection.",
+    "scope": "The neighborhood depends on the fixed(A,C); no uniform statement as C approaches0 or min(A,1-A), and no numeric epsilon is supplied."
+  },
+  "proof": [
+    {
+      "step": 1,
+      "claim": "The B=0 certificate is a strict global two-contact saddle.",
+      "argument": "Let q0=Q(A,C), K0=K(A,C)>0. The two rates A+/-C lie strictly in(0,1) and q0 is strictly between them. For every z!=0, both A+/-C sqrt(1-z^2) lie strictly between A-C and A+C. Strict convexity of p->kl(p||q0) and equality of its two endpoint values therefore give F_plus(z),F_minus(z)<K0; both reach K0 atz=0. Their second derivatives there are -C[logit(A+C)-logit(q0)]<0 and C[logit(A-C)-logit(q0)]<0, respectively."
+    },
+    {
+      "step": 2,
+      "claim": "The reflection capacity maximizer is nondegenerate.",
+      "argument": "With omega=(q0-A+C)/(2C), g_plus=logit(A+C)-logit(q0)>0 and g_minus=logit(A-C)-logit(q0)<0, the envelope derivative is K_C=omega*g_plus-(1-omega)*g_minus>0. AtB=0,z=0, partial_z R_0=0 and partial_zz R_0=-C*K_C<0. Since the constant null in Step1 has strictly smaller maximal KL away fromz=0, the capacity R_0 also has its unique global maximum atz=0."
+    },
+    {
+      "step": 3,
+      "claim": "The capacity maximum persists uniquely for small B.",
+      "argument": "Fixed C<min(A,1-A) supplies a uniform positive probability margin for sufficiently smallB. The symmetric entropy secant and capacity are analytic in the squared half-width c^2, includingc=0, so R_B and q_B are analytic in(B,z) around the compact strip B=0,z in[-1,1]. The implicit-function theorem at the nondegenerate maximum gives analytic z*(B). Choose a compact interval J around0 where R_0 has uniformly negative second derivative. LocalC2 convergence preserves strict concavity onJ; uniformC0 convergence and the strict gap on the compact complement of interior(J) exclude maximizers outsideJ. Thus the global maximizer is unique."
+    },
+    {
+      "step": 4,
+      "claim": "The tangent null remains physical and has two equal stationary contacts.",
+      "argument": "AtB=0 the center is q0 atz=0 and its z derivative is0. Hence(a*,b*) tends to(q0,0), strictly inside the physical affine-null region, so physicality persists. Atz* the tangent line matches q_B in value and first z derivative. Each branch F_plus/minus=kl(A+Bz+/-C sqrt(1-z^2)||a*+b*z) therefore equals R_B(z*) and has derivative partial_z R_B(z*)=0."
+    },
+    {
+      "step": 5,
+      "claim": "The two stationary contacts globally dominate the full circle.",
+      "argument": "Choose a smaller compact J around0 where the two B=0 branch second derivatives are uniformly negative; this is possible by Step1. OnJ, the perturbed branches converge in the C2 function norm, so they remain strictly concave and attain their unique maxima atz*. On K=[-1,1] minus interior(J), Step1 and compactness give a strictly positive gap belowK0 for both branches. Their uniformC0 convergence on[-1,1] and R_B(z*)->K0 preserve the gap for smallB. Thus F_plus/minus(z)<=R_B(z*) for everyz. This is a global domination proof, not merely a local stationary-point argument."
+    },
+    {
+      "step": 6,
+      "claim": "The design lower bound matches the global null upper bound.",
+      "argument": "At a reflected pair every C_null=0 affine null has one common rate. The chosen capacity weight makes that rate minimized at q_B(z*), with valueR_B(z*), and a constant physical null attains the minimum. Thus the design gives V>=R_B(z*). The physical tangent null from Step5 gives V<=R_B(z*) for every design, regardless of support size; it also rules out a better boundary null design indirectly through this global upper bound. No minimax exchange is assumed."
+    },
+    {
+      "step": 7,
+      "claim": "Opposite-sign null extension.",
+      "argument": "At the reflected pair, an opposite-sign null has q_plus<=q_minus while the true endpoints are strictly ordered the other way. Weighted Bernoulli-KL projection onto this order cone pools at the weighted mean q_B(z*), which the constant physical null attains. The same C_null=0 tangent line gives the upper certificate, completing the sandwich."
+    }
+  ],
+  "closed_local_expansions": {
+    "notation": "All Q,K and their A,C derivatives below are evaluated at the fixed(A,C), and all O constants depend on(A,C).",
+    "symmetry": "R_{-B}(-z)=R_B(z), so uniqueness implies z*(-B)=-z*(B), V(-B)=V(B), a*(-B)=a*(B), and b*(-B)=-b*(B).",
+    "optimal_cosine": "z*(B)=B K_A/(C K_C)+O(B^3).",
+    "value": "V(A,B,C)=K(A,C)+B^2 K_A^2/(2 C K_C)+O(B^4).",
+    "null_intercept": "a*(B)=Q(A,C)+O(B^2).",
+    "null_slope": "b*(B)=B[Q_A-(K_A/K_C)Q_C]+O(B^3). The coefficient equals -Q(1-Q)g_plus*g_minus/(C K_C)>0.",
+    "derivative_formulas": "K_A=omega*g_plus+(1-omega)*g_minus; K_C=omega*g_plus-(1-omega)*g_minus>0; Q_A=Q(1-Q)(g_plus-g_minus)/(2C); Q_C=Q(1-Q)(g_plus+g_minus)/(2C).",
+    "interpretation": "The quadratic improvement relative to the B-independent PSR capacity K(A,C) is nonnegative. This is oracle information only; it is not a finite stopping-cost gain."
+  },
+  "diagnostics": {
+    "mpmath_digits": 110,
+    "cases": [
+      {
+        "A_exact": "1/100",
+        "C_exact": "9/1000",
+        "C_over_physical_maximum": "0.9",
+        "base_capacity": "0.0051632187298425708665069891483379215523045978572605477088035259288177210542729011",
+        "base_capacity_center": "0.0082466102007877862393748354318256682600045365254014929762414841205251713392513773",
+        "capacity_A_derivative": "-0.9243624368103123301353747023285570995431059192804662063113685851057116661663955",
+        "capacity_C_derivative_positive": "1.6051724196575920134713060085621470431541416118859204634698114569322381382276161",
+        "cosine_linear_in_B_coefficient": "-63.984987634709676525449286499213249371301415657023779709066912265498969462899559",
+        "null_slope_linear_in_B_coefficient": "1.0134125415315045429264008001273125351403478338172705017626350685633763031941732",
+        "value_quadratic_in_B_coefficient": "29.572659544648969584900526988151508090028738731888611398684291594598635132263706",
+        "diagnostic_B": "0.0000043588989435406735522369819838596156591370039252324449368903441381595573282031581",
+        "diagnostic_cosine": "-0.00027890413022863598443294013649906626312857622299632147435678109622490192365514964",
+        "diagnostic_null_intercept": "0.0082466099985508907260436501578240168732873248879828845411514692827316094499374032",
+        "diagnostic_null_slope": "0.0000044173628927538523960010337680416921542182385146181283747188227036765525218393799",
+        "cosine_remainder_divided_by_B_cubed": "-425327.55671389820835398781474489278632216448531806558585822719108579372463322548",
+        "value_remainder_divided_by_B_fourth": "454690.18446305133237284994197419697771105473710597180374507865026399772654896289",
+        "two_equal_values_and_two_stationary_contacts_checked_to_90_digits": true,
+        "scope": "Pointwise algebra checks do not certify a numerical neighborhood or global optimality at the particular nonzero diagnostic B."
+      },
+      {
+        "A_exact": "1/20",
+        "C_exact": "1/25",
+        "C_over_physical_maximum": "0.8",
+        "base_capacity": "0.01967511969595168016663085401044677756820198030059794141292526141067644004841839",
+        "base_capacity_center": "0.043868303867804330451554724335969126213642248380207709543584493916885356411314363",
+        "capacity_A_derivative": "-0.5475409336929276581440940792223569209823537510311929484576150046141283461549137",
+        "capacity_C_derivative_positive": "1.1978705199193024526697922410854972125466116124823292986317066624177449542471773",
+        "cosine_linear_in_B_coefficient": "-11.427381436221798920230709171860062402815035019783616010731978635667524351523128",
+        "null_slope_linear_in_B_coefficient": "1.0175532285015408490990981624187636527624183004885211386063916740817040286159726",
+        "value_quadratic_in_B_coefficient": "3.1284795506270562165209902877646723728973519072055145695826219844197926778884164",
+        "diagnostic_B": "0.00003",
+        "diagnostic_cosine": "-0.00034282150376174298547549067420906946355553476129286070456241496469986392424990505",
+        "diagnostic_null_intercept": "0.043868302949252825031173430380253952380662707600816582700963455476984745853650647",
+        "diagnostic_null_slope": "0.000030526597037861006342994678252687776108568754801894644866805565152534543998292111",
+        "cosine_remainder_divided_by_B_cubed": "-2247.225519180317385150121021906336433729605637934831689097401414581637452445405",
+        "value_remainder_divided_by_B_fourth": "1252.4930842560180781407282617538057996217176999983360555807048474211601065103009",
+        "two_equal_values_and_two_stationary_contacts_checked_to_90_digits": true,
+        "scope": "Pointwise algebra checks do not certify a numerical neighborhood or global optimality at the particular nonzero diagnostic B."
+      },
+      {
+        "A_exact": "1/5",
+        "C_exact": "9/50",
+        "C_over_physical_maximum": "0.9",
+        "base_capacity": "0.12201592746171850693708588340298264956776848686100194725652715036162407943303752",
+        "base_capacity_center": "0.17188993664209062095608402258710852686099252870591310397889206498245149146862491",
+        "capacity_A_derivative": "-0.88405390127758434930501569981192994755486274898116429300784700332439233698156912",
+        "capacity_C_derivative_positive": "1.7977085585602413279505130582296785459892540455224268912354981531258566743426477",
+        "cosine_linear_in_B_coefficient": "-2.7320393727149654136791098724208685331129142051594500000626567739729154732892012",
+        "null_slope_linear_in_B_coefficient": "1.1047704005629276256978540385355661299443031260359885296806098333705492424050774",
+        "value_quadratic_in_B_coefficient": "1.2076350329463147532969313915086569186812395864336127669983508017978514692066092",
+        "diagnostic_B": "0.000087177978870813471044739639677192313182740078504648898737806882763191146564063162",
+        "diagnostic_cosine": "-0.00023817371279812830837712937754405246584713056221358584258983437415613058093755876",
+        "diagnostic_null_intercept": "0.1718899341454248848237664465392358490400826578807593978505194122295623591466586",
+        "diagnostic_null_slope": "0.000096311652183511461561036660727190544744705353262731887841709850553950051506134099",
+        "cosine_remainder_divided_by_B_cubed": "-63.52605070149356658865485209874608852406155330253477165136353014501422955873407",
+        "value_remainder_divided_by_B_fourth": "48.293591041180017357323125738214291561583719103681761507323198153902474579351397",
+        "two_equal_values_and_two_stationary_contacts_checked_to_90_digits": true,
+        "scope": "Pointwise algebra checks do not certify a numerical neighborhood or global optimality at the particular nonzero diagnostic B."
+      },
+      {
+        "A_exact": "49/100",
+        "C_exact": "9/20",
+        "C_over_physical_maximum": "0.91836734693877551020408163265306122448979591836734693877551020408163265306122449",
+        "base_capacity": "0.49557305094489660729711118883453263971174942519474066124245939016385562142508785",
+        "base_capacity_center": "0.48361049188588617204138744587147731410094939811300162096818279294166805957839217",
+        "capacity_A_derivative": "-0.18977457329590896468214729958225521413022762016388026474099242790548655282766622",
+        "capacity_C_derivative_positive": "2.9668914340535235889626544778538685938543889486845651788615338213275140569514981",
+        "cosine_linear_in_B_coefficient": "-0.14214246910097784026783981882519024794819706129171873639463043765737523697355543",
+        "null_slope_linear_in_B_coefficient": "1.6400961564489094810799853436931212630327294811927119012888753977381879317045738",
+        "value_quadratic_in_B_coefficient": "0.013487513210432497194162986401873995017796225622822435407440182055261468174796062",
+        "diagnostic_B": "0.00019390719429665316056297762301690626787304301975909359181079434972466079735146601",
+        "diagnostic_cosine": "-0.000027562462277421805215013641565115823020497311560879289712331140842722893288549718",
+        "diagnostic_null_intercept": "0.48361049187187760288860184331121039181500403307816457155210743173540152081656591",
+        "diagnostic_null_slope": "0.00031802644470718745454442862325652597075612329993762279469402330872845154491489066",
+        "cosine_remainder_divided_by_B_cubed": "-2.0441414642917341765131002244060322145059577768827848923759113740884714991856628",
+        "value_remainder_divided_by_B_fourth": "0.19528545604861312019572006402143884266157213200315889517686917982959216912237638",
+        "two_equal_values_and_two_stationary_contacts_checked_to_90_digits": true,
+        "scope": "Pointwise algebra checks do not certify a numerical neighborhood or global optimality at the particular nonzero diagnostic B."
+      },
+      {
+        "A_exact": "1/2",
+        "C_exact": "9/20",
+        "C_over_physical_maximum": "0.9",
+        "base_capacity": "0.49463193721407275299058460560909665277440880960539940157773432362125545728363494",
+        "base_capacity_center": "0.5",
+        "capacity_A_derivative": "-3.3265311250063677499297294658182100376926536986802200007226953842550068974574626e-111",
+        "capacity_C_derivative_positive": "2.9444389791664404600090274318878535372373792612991288185379602364092927020641973",
+        "cosine_linear_in_B_coefficient": "-2.5105941883012869164613211265389615881038002617137660123242130682507384006817292e-111",
+        "null_slope_linear_in_B_coefficient": "1.6357994328702447000050152399376964095763218118328493436322001313384959455912207",
+        "value_quadratic_in_B_coefficient": "4.1757848548221643205649971555442935091214778585676627476903126647069370757932295e-222",
+        "diagnostic_B": "0.0002179449471770336776118490991929807829568501962616222468445172069079778664101579",
+        "diagnostic_cosine": "-5.5746488585256757502599033059818905150589723094673347111773624017980745382534035e-127",
+        "diagnostic_null_intercept": "0.5",
+        "diagnostic_null_slope": "0.00035651422098912712845602043879611135257767460119386420158313827692232717335293711",
+        "cosine_remainder_divided_by_B_cubed": "5.2854614490499559834598366564771531409536772021596083247757203886088073174169035e-104",
+        "value_remainder_divided_by_B_fourth": "-8.7911260101519248853999940116721968613083744390898163109269740309619727911436411e-215",
+        "two_equal_values_and_two_stationary_contacts_checked_to_90_digits": true,
+        "scope": "Pointwise algebra checks do not certify a numerical neighborhood or global optimality at the particular nonzero diagnostic B."
+      },
+      {
+        "A_exact": "7/10",
+        "C_exact": "1/4",
+        "C_over_physical_maximum": "0.83333333333333333333333333333333333333333333333333333333333333333333333333333333",
+        "base_capacity": "0.16933257827445727030499462036870896602082299785635657476754720457838973065897366",
+        "base_capacity_center": "0.72695880706796957551712418646972511940589329039948378645290561267516212579109684",
+        "capacity_A_derivative": "0.56221381096854635380966141518887840797205153538446906133643080084135777910608525",
+        "capacity_C_derivative_positive": "1.6148949379577022732083876946976782957638478505559588510306002911202441899329785",
+        "cosine_linear_in_B_coefficient": "1.3925706193111418291115447690130708641733934328822696329644242834455572557450387",
+        "null_slope_linear_in_B_coefficient": "1.1400145945068244172570768473749435416229396305041952105225062800373504985696637",
+        "value_quadratic_in_B_coefficient": "0.39146121746287290947571949440302818337951853126837047397630450747242267090243769",
+        "diagnostic_B": "0.00016583123951776999245574663683353433419635442727946767985293410730582423213045219",
+        "diagnostic_cosine": "0.00023093177754864453713950379703002771109257823828032846906372411910981438389959658",
+        "diagnostic_null_intercept": "0.72695880914606988914740203451038945590101370356208113604304250627684958780123857",
+        "diagnostic_null_slope": "0.00018905003596256293985094412495996175727217275870117267511054991962023037967286775",
+        "cosine_remainder_divided_by_B_cubed": "14.391903802688280055431647987103670766651972553780796635899018611109722135766561",
+        "value_remainder_divided_by_B_fourth": "5.4508972787911987576553168294740757957702241915193767526320550526395785402386632",
+        "two_equal_values_and_two_stationary_contacts_checked_to_90_digits": true,
+        "scope": "Pointwise algebra checks do not certify a numerical neighborhood or global optimality at the particular nonzero diagnostic B."
+      }
+    ],
+    "scope": "Deterministic high-precision algebra and contact checks supplement, but do not replace, the analytic compactness and implicit-function proof."
+  },
+  "unresolved": [
+    "Arbitrary physical B at a fixed nonzero C.",
+    "Uniform or explicit admissible epsilon(A,C).",
+    "Boundary models with |C|=min(A,1-A); this boundary forces B=0 and has an elementary exact solution, but no open physical B-neighborhood.",
+    "Finite-risk finite-cost benefit, paid parameter learning, and independent novelty review."
+  ],
+  "source_sha256": {
+    "results/sota_round6/theory/reflected_pair_small_background_theorem.py": "b7e31bd24b05b7a5eb8d4d9b6a2090af7e9dc81051adde466ce09fe03e1cf825",
+    "results/sota_round5/theory/reflected_pair_weak_signal_theorem.json": "e695769b81be5962e2e85945448532bd131b2fe7203ec1ee995d58293774270d"
+  },
+  "claim_boundary": "This proves a different local parameter neighborhood from the earlier weak-C theorem. The general all-C/all-B reflected-pair conjecture remains unresolved. No frozen Round5 source is changed."
+}

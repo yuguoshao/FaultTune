@@ -1,0 +1,78 @@
+{
+  "version": "classical_sign_stopping_occupancy_lp_development_v1",
+  "status": "design_fixed_before_optimizer_execution",
+  "discordance_horizon": 128,
+  "positive_alternatives_exact": [
+    [
+      7,
+      10
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      99,
+      100
+    ]
+  ],
+  "alternative_weighting": "Equal prior weights; mirrored alternatives have identical cost by symmetry.",
+  "external_parameter_cases_read": false,
+  "selection_policy": "Run one LP with the fixed grid, horizon, cost and constraints. Save all fixed classical controls without choosing a favorable subset. Abort on exact feasibility failure; do not retune constraints after seeing results.",
+  "null_report_bound_exact": [
+    1,
+    100
+  ],
+  "minimum_each_alternative_correct_report_exact": [
+    19,
+    20
+  ],
+  "optimizer_null_interior_exact": [
+    999,
+    100000
+  ],
+  "optimizer_power_interior_exact": [
+    95001,
+    100000
+  ],
+  "objective": "Minimize equal-alternative mean expected discordances over all paths, including wrong reports and terminal abstentions.",
+  "allowed_actions": "At each non-tie state: report majority sign with a frozen state-dependent probability, otherwise continue; at H continue becomes terminal abstention. At ties continue or terminal abstention. No early abstention, no truth input, no data-dependent prior.",
+  "numerical_policy": {
+    "solver": "scipy.optimize.linprog(method=interior-point, sparse=True)",
+    "solver_tolerance": 1e-09,
+    "probability_denominator": 1000000000000,
+    "snap_to_0_or_1_tolerance": 1e-09,
+    "acceptance": "Round policy probabilities once under this fixed rule, then require exact rational null<=.01 and each design q correct>=.95; optimization feasibility is not certification."
+  },
+  "comparators": [
+    "beta_exact",
+    "sprt_0.6",
+    "sprt_0.7",
+    "sprt_0.75",
+    "sprt_0.85",
+    "sprt_0.9",
+    "sprt_0.99",
+    "mix_0.75_0.99_w0.25",
+    "mix_0.75_0.99_w0.5",
+    "mix_0.75_0.99_w0.75",
+    "mix_0.7_0.9_0.99_equal",
+    "mix_beta_0.75_half"
+  ],
+  "fairness": "All 12 classical controls receive exact null calibration at the same H and .01 budget; the LP is an additional classical optimized control, not an exclusive FaultTune method. LP design-grid performance is in-sample development, not independent confirmation.",
+  "physical_scope": "This prototype minimizes discordances, not physical shots. A physical cap and discordance waiting process need explicit integration before a physical-cost advantage claim.",
+  "prior_art": [
+    {
+      "title": "Optimal Alpha Spending for Sequential Analysis with Binomial Data",
+      "authors": "Silva, Kulldorff and Yih",
+      "year": 2020,
+      "doi": "10.1111/rssb.12379",
+      "relation": "Classical finite-horizon optimization prior art; this local occupancy formulation is not asserted to reproduce the paper's exact algorithm."
+    }
+  ],
+  "source_sha256": {
+    "experiments/sota_round5/optimal_sign_stopping.py": "d28cb74f58685ea85914e3c8304fcfe048159b2517ee302e9445b8d9a9f2f72d",
+    "experiments/sota_round3/exact_sign_boundary.py": "ae47df47a5d2bd0f83aeefd0c3bce1711ed697a54457b0ed4206830008cb283b",
+    "experiments/sota_round3/generic_sign_boundary.py": "826cc5a3fd5768ca259c0e6a37f4ffa05991d37432456e51d547fdcb52901a1c",
+    "experiments/sota_round4/lr_mixture_boundaries.py": "083cd25d2cbbae5a7429e8749a037b5323660bac8f500bca56bff51ec39cb735"
+  }
+}

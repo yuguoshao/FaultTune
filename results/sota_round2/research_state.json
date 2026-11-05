@@ -1,0 +1,81 @@
+{
+  "status": "active_research_continued_in_round3",
+  "objective": "Continue pursuing a defensible advantage over SOTA; current small comparisons are development evidence, not goal completion.",
+  "updated_utc": "2026-11-04T12:51:34.810641+00:00",
+  "current_goal_turn_classification": "progress",
+  "preserved_prior_snapshot": {
+    "path": "results/structured_validation/evidence_manifest.json",
+    "sha256": "275cc3331b583d5f180502ad6a5fee84bc3a3fd173a290a249ceb807a9b15289",
+    "verified_at_round_start": true
+  },
+  "completed_evidence": [
+    {
+      "path": "results/sota_round2/diagnostics/development_cost_diagnosis.json",
+      "finding": "Existing-engine choice and block-conditioning loss are too small on this development sample to explain a 10 percent breakthrough."
+    },
+    {
+      "path": "results/sota_round2/diagnostics/loco_prior_diagnosis.json",
+      "finding": "Equal-budget leave-one-case-out prior tuning gives only a few percent exploratory improvement; comparator tuning must be matched."
+    },
+    {
+      "path": "results/sota_round2/adaptive_safe_replay_v1/analysis.json",
+      "finding": "35 adaptive/full-safe screening variants; many right-censored. No confirmed superiority."
+    },
+    {
+      "path": "results/sota_round2/conditional_predictive_replay_v1/analysis.json",
+      "finding": "Past/total-conditioned predictable odds screening, with controls matching old stops. No confirmed superiority."
+    },
+    {
+      "path": "results/sota_round2/theory/directional_safe_checks.json",
+      "finding": "Certified directional-capital interface plus raw-score and pooled-Fisher counterexamples."
+    },
+    {
+      "path": "results/sota_round2/theory/conditional_total_checks.json",
+      "finding": "Current total T can inform conditional odds; allocation S cannot. Exact checks passed."
+    },
+    {
+      "path": "results/sota_round2/theory/dkm_review.json",
+      "finding": "Reviewed paper-based finite-arm DKM sampler and formal KK/KT certificates, with numerical and official-code limitations."
+    },
+    {
+      "path": "results/sota_round2/theory/structured_grid_review.json",
+      "finding": "Fixed physical-grid shared predictive numerator, KT fallback, retained-positive-sum lower bound reviewed."
+    },
+    {
+      "path": "results/sota_round2/benchmark/summary.json",
+      "finding": "Fixed 160-path, 320-method development comparison complete; shared structural prior improves the DKM certificate but does not beat paired controls."
+    },
+    {
+      "path": "results/sota_round2/benchmark_audit/audit.json",
+      "finding": "Full accounting/certificate audit passed; 80 same-seed runner replays matched. One fine-initial hedge null false stop is retained."
+    },
+    {
+      "path": "results/sota_round2/gap_assessment.json",
+      "finding": "Quantified candidate gaps and retained power/risk limitations; no SOTA success established."
+    }
+  ],
+  "live_work": {
+    "status": "released_probe_and_audit_complete",
+    "producer_progress": {
+      "status": "complete",
+      "written_path_records": 160,
+      "completed_path_records": 160,
+      "completed_method_records": 320,
+      "physically_generated_shots": 342720,
+      "case_id": 101,
+      "rep": 3,
+      "path": "closed_hedge_fine_initial",
+      "elapsed_seconds": 541.3050294999999,
+      "error": null
+    },
+    "audit_status": "passed",
+    "new_observations_during_gap_assessment": 0
+  },
+  "next_required": [
+    "Start from the strongest implemented paired protocol and quantify whether reviewed finite-sample threshold or predictable-evidence improvements can add a stable gain.",
+    "Apply transferable improvements equally to appropriate comparators and account for all measurements, computation, wrong stops and abstentions.",
+    "Freeze a successful candidate before new held-out cases and seeds; require cost advantage with adequate correct-stop performance and validated risk control.",
+    "Complete literature and implementation-scope comparison before making an international SOTA claim; official DKM Julia artifacts were inspected but not executed."
+  ],
+  "latest_research_state": "results/sota_round3/research_state.json"
+}

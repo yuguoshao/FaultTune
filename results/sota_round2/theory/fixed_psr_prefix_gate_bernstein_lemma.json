@@ -1,0 +1,68 @@
+{
+  "status": "proved_fixed_iid_psr_lemma_implementation_not_yet_reviewed",
+  "title": "Bernstein-polynomial overlap bounds for a fixed physical-prefix two-sample gate",
+  "scope": "An extension for a fixed iid paired PSR experiment only. This does not replace the adaptive-p physical perfect-separation gate proof.",
+  "assumptions": [
+    "Fix integers 1<=m<=H, a symmetric discordant-sign tail table through H, and a deterministic gate G on the two marginal success counts after exactly m complete physical pairs before evaluation observations.",
+    "All physical pairs use the same PSR action and independent Bernoulli draws. Under the null all 2m prefix outcomes share a single constant probability p; under a strict sign the two constant arm probabilities satisfy the corresponding ordering.",
+    "Write a=k_minus and b=k_plus. The negative gate G_minus is increasing in a and decreasing in b. The positive gate is its arm-swapped image G_plus(a,b)=G_minus(b,a). They are disjoint and both exclude a=b.",
+    "The same ordinary beta/sign process runs from the beginning; it is not reset after the gate. All physical monitoring remains within H complete pairs."
+  ],
+  "ordinary_boundary": {
+    "safe": "At discordance index d with u plus-only symbols, safe(d,u) means d=0 or d-B_d<u<B_d.",
+    "suffix_counts": "w_d(u) is the number of length-(H-d) sign suffixes for which the current state and all subsequent sign states are safe.",
+    "backward_recurrence": "w_H(u)=1{safe(H,u)} and w_d(u)=1{safe(d,u)}*[w_(d+1)(u)+w_(d+1)(u+1)].",
+    "fair_crossing_probability": "p_B=1-w_0(0)/2^H."
+  },
+  "safe_physical_prefix_dp": {
+    "state": "After i physical pairs, let d be discordances, u plus-only discordances and j both-one outcomes. Then k_plus=u+j, k_minus=d-u+j and total successes T=d+2j.",
+    "count": "c_i(d,u,j) counts ordered four-category physical words that have never crossed the ordinary sign boundary through their observed discordance index.",
+    "initial": "c_0(0,0,0)=1.",
+    "transitions": [
+      "00: (d,u,j) to (d,u,j).",
+      "plus-only: (d,u,j) to (d+1,u+1,j).",
+      "minus-only: (d,u,j) to (d+1,u,j).",
+      "11: (d,u,j) to (d,u,j+1)."
+    ],
+    "absorption": "After every transition, discard the new state if its ordinary sign boundary crosses. Every category transition has integer multiplicity one.",
+    "gate_restriction": "At i=m retain a state in the gate-overlap sum only when G(k_minus,k_plus)=G_minus OR G_plus is true. Omitting this indicator would compute a different event."
+  },
+  "null_overlap_polynomial": {
+    "coefficients": "q_T = [sum_{d,u,j: d+2j=T} c_m(d,u,j)*1{G(d-u+j,u+j)}*w_d(u)*2^d] / [2^H*binom(2m,T)], for T=0,...,2m.",
+    "polynomial": "Q(p)=sum_T binom(2m,T)*p^T*(1-p)^(2m-T)*q_T.",
+    "meaning": "Q(p) is the probability, under the fixed iid physical null p, that the prefix gate occurs and the latent ordinary sign boundary never crosses through discordance H.",
+    "null_union_bound": "The actual monitored procedure has null error at most p_B+sup_{p in [0,1]} Q(p).",
+    "why_the_weights_are_correct": [
+      "Each ordered physical prefix word with T total successes has probability p^T*(1-p)^(2m-T); its safe-prefix multiplicity is c_m(d,u,j).",
+      "Conditional on the full observed physical prefix, exactly d latent discordant signs have been consumed. The unused fair-sign suffix is independent and avoids future crossings with probability w_d(u)/2^(H-d).",
+      "Collecting the preceding product by T gives the factor 2^d/2^H. Expressing the resulting polynomial in the normalized Bernstein basis divides its coefficients by binom(2m,T).",
+      "The observed prefix conditioned only on its final random d need not be iid fair. The argument concerns unused independent signs after the complete prefix and makes no such assertion about the used signs."
+    ]
+  },
+  "gate_alone_polynomial": {
+    "coefficients": "g_T = [sum_{a+b=T} 1{G(a,b)}*binom(m,a)*binom(m,b)]/binom(2m,T).",
+    "meaning": "G0(p)=sum_T binom(2m,T)*p^T*(1-p)^(2m-T)*g_T is the symmetric gate-alone probability under common probability p.",
+    "coefficient_sanity_checks": "All q_T and g_T are rational and satisfy 0<=q_T<=g_T<=1. The overlap restriction and suffix survival can only remove gate-alone words."
+  },
+  "strict_sign_gate_bound": [
+    "For positive truth p_plus>=p_minus, hold all minus-arm draws fixed and use common uniforms to lower each plus-arm probability from p_plus to p_minus. The coupled common-probability experiment has no more plus successes. Since G_minus decreases with plus successes, every actual negative gate is contained in the coupled null negative gate.",
+    "At any common p, arm-exchange symmetry and disjointness give P_p(G_minus)=P_p(G_plus)=G0(p)/2. Hence the strict wrong-gate probability is at most (1/2)*sup_p G0(p). Negative truth is symmetric.",
+    "The ordinary wrong-sign event is at most p_B by its sign-sequence coupling. A conservative sufficient strict-sign condition is p_B+(1/2)*sup_p G0(p)<=delta.",
+    "This is a gate-alone least-favorable-null argument followed by a union bound. It does not assert a joint least-favorable-null theorem for the gate plus the ordinary sequential boundary."
+  ],
+  "machine_certification": [
+    "Construct the finite gate table and verify its arm-exchange symmetry, zero-score exclusion, disjoint signs and coordinate monotonicity using integer table comparisons. A floating GLR calculation may propose the table, but the table is the actual rule.",
+    "Compute c_m and w_d with exact integer recurrences. Retain only the small d<=m rows of the backward DP when forming the physical-prefix polynomial; all boundary states still need correct propagation from H.",
+    "Compute q_T and g_T as exact rationals and check 0<=q_T<=g_T<=1.",
+    "A Bernstein polynomial lies between its smallest and largest control coefficients on [0,1]. Dyadic de Casteljau subdivision uses rational averages and yields rational control coefficients on each subinterval. The largest coefficient over all retained subintervals is a rigorous global upper bound.",
+    "Stop subdivision according to a declared resource rule and use the current upper bound conservatively. A numerical optimizer may supply a lower bound or guide subdivision, but cannot certify the supremum.",
+    "Given certified upper bounds U_Q and U_G, require both p_B+U_Q<=delta and p_B+U_G/2<=delta by rational cross multiplication. Report these as upper bounds, not as exactly computed physical error probabilities or exact polynomial suprema."
+  ],
+  "relevant_gate_shape": "The fixed equal-sample Bernoulli two-sample GLR has sign according to k_plus-k_minus and magnitude 2m*h((k_plus+k_minus)/(2m))-m*h(k_plus/m)-m*h(k_minus/m), where h is binary entropy. Its exact negative-tail contour is coordinate-monotone. A finite floating-designed implementation must still verify its discrete gate table rather than assume rounding preserved that property.",
+  "limits": [
+    "The single-p Bernstein formula requires fixed iid PSR sampling throughout the physical prefix. Under adaptive changing null probabilities p_i, a multivariate or different domination argument is needed.",
+    "The physical gate must be evaluated at the fixed first-m endpoint. Multiple endpoints, sliding windows or repeated gate restarts require joint certification.",
+    "A gate selected using evaluation outcomes is not covered by a pre-data guarantee for that same retrospectively selected procedure. Development selection must be followed by a frozen independently evaluated method.",
+    "The construction belongs to unconditional exact two-sample testing and sequential boundary calibration. No new-method novelty, runtime feasibility at every cap or SOTA claim is established here."
+  ]
+}

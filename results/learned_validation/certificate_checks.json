@@ -1,0 +1,57 @@
+{
+  "api": {
+    "invalid_inputs_rejected": 13,
+    "nondirectional_boundary_checks": 6,
+    "power_design_function_checks": 3
+  },
+  "conditional_tests": {
+    "arm_size_range": [
+      1,
+      8
+    ],
+    "conditional_null_events": 640,
+    "delta_exact": "1/4",
+    "exact_count_tables": 1936,
+    "largest_direction_error_exact": "8/65",
+    "largest_either_direction_error_exact": "8/33"
+  },
+  "elapsed_seconds": 2.6383859999999997,
+  "large_and_boundary": {
+    "certified_crossings_checked": 39,
+    "exact_complement_symmetry_checks": 102,
+    "largest_relative_upper_slack": 0.1871951948439956,
+    "note": "Truncated tail enclosures may be conservative; screens cannot authorize decisions.",
+    "scipy_tail_checks": 102,
+    "screen_finiteness_checks": 102
+  },
+  "passed": true,
+  "scope": "finite numerical cross-checks plus independent review of the statistical argument",
+  "small_tails": {
+    "exhaustive_population_range": [
+      2,
+      16
+    ],
+    "including_truncated_geometric_remainders": 910,
+    "rational_tail_enclosures": 6324,
+    "term_caps": [
+      1,
+      3,
+      32
+    ]
+  },
+  "source_sha256": {
+    "experiments\\circuit_validation\\direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments\\learned_validation\\certificate_checks.py": "d56091150451dbc52e18dccd6eb18156f1c68446da47aba5865732860d843e18",
+    "experiments\\learned_validation\\certificates.py": "d87a462aa18dc293a68f8c681133f717748b435b0e2751cfb1765af706395cae"
+  },
+  "statistical_review": {
+    "composite_null": "The conditional noncentral hypergeometric family is monotone in its odds ratio.",
+    "hoeffding": "Both the selected and complementary samples have deviation cross/(n0+n1); the smaller sample gives a valid Hoeffding upper bound.",
+    "multiple_looks": "Each of two directions at every predeclared look receives delta/(2L); union bound controls equality error by delta and each wrong direction by delta/2.",
+    "null_test": "Conditional on total successes, equality gives a central hypergeometric distribution.",
+    "pilot": "Condition on an independent pilot freezing the angle, allocation and entire finite look schedule, then integrate over that pilot.",
+    "power": "True gap strictly exceeding safety threshold plus concentration margin implies potential final-look power >=1-beta. Earlier wrong stopping costs <=delta/2; a good-pilot event costs its failure probability.",
+    "required_assumptions": "Independent stationary Bernoulli validation observations; validation counts exclude pilot; all look-specific sample sizes fixed conditional on pilot; known orientation of the target contrast.",
+    "tail_enclosure": "Lower partial sum and decreasing-ratio geometric remainder enclose the conditional tail with outward arithmetic."
+  }
+}

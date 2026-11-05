@@ -1,0 +1,800 @@
+# -------------------------------------------------------------------------
+# Function to perform the unpredictable multinomial marginal MaxSPRT surveillance - Version 4.6.1
+# -------------------------------------------------------------------------
+
+Analyze.Multinomial<- function(name,test,cases,controls,N_exposures,N_controls,exposure_group,strata_group_cases="n",strata_group_controls="n", AlphaSpend="n")
+{
+
+# name: name to be used in each analysis to read the information saved from previus test.
+# test: the number of tests already performed plus the current test.
+# cases: vector with the number of events per combination of exposure_group and strata_group_cases.
+# controls: the number of events in the control window per strata_group_controls.
+# N_exposures: vector with the number of individuals in the same risk window per combination of exposure_group and strata_group_cases excluding the entry for the control group. Must have the same dimension as cases. 
+# N_controls: number of individuals in the control group per strata_group_controls. 
+# exposure_group: the labels of each exposure group, which must coincide with the "ExposuresNames" informed in the AnalyzeSet.Multinomial function.
+# AlphaSpend: Acummulative alpha spending up to the current test. The default is the power-type with rho defined in the AnalyzeSetUp.Multinomial function.
+
+
+
+#### Setting the local where the files from previous tests are located
+
+name1<- name
+
+safedir<- getwd()
+address1<- tempdir()
+y<- substr(address1,1:4,4) ; i<- 2
+while(i<=nchar(address1)-3&y!="Temp"&y!="TEMP"){y<- substr(address1,i:(i+3),i+3);i<- i+1}
+address1<- substr(address1,1:(i+3),i+3)
+setwd(address1)
+
+if(file.exists(paste(name,"address.txt",sep=""))==FALSE){
+stop(c("There is no file called"," '",name,"' yet."," You must run the function 'AnalyzeSetUp.Binomial' first."),call. =FALSE)
+                                                        }
+
+address<- as.character(read.table(paste(name,"address.txt",sep=""),sep=";")[1,1])
+setwd(address)
+
+name<- paste(name,".","txt",sep="")
+
+if(file.exists(name)==FALSE){
+stop(c("There is no file called"," '",name,"' yet."," You must run the function 'AnalyzeSetUp.Binomial' first."),call. =FALSE)
+                            }
+
+
+titlecheck<- paste(name1,"title.txt",sep="")
+title<- read.table(titlecheck)
+title<- title[1,1]
+if(title==0){title<- " "}else{title<- as.character(title)}
+
+
+
+
+
+NN<- sum(cases)+sum(controls) # number of events in the current test.
+
+if(NN==0){
+  stop(c("The total number of events, cases+controls, must be greater than zero."),call. =FALSE)
+         }
+
+
+#### Bringing the information from the setup step:
+inputSetUp<- read.table(name)
+if(inputSetUp[1,1]!=test-1){
+aux_aux<- 1
+message(c("The current test should be"," ",inputSetUp[1,1]+1,". ",
+"If you do not have information about previous tests, see the user manual for more details."),domain = NULL, appendLF = TRUE)
+                           }else{aux_aux<- 0}
+
+
+
+
+
+if(inputSetUp[1,1]>0&aux_aux==1){nameb<- paste(name1,"results.txt",sep=""); result2<- readRDS(nameb)}
+
+
+#####
+#####  OPEN IMPORTANT GLOBAL TEST FOR THE CASE WHEN THE WRONG test INPUT IS ENTERED. THUS, THIS FUNCTION ONLY RETURNS THE TABLE WITH INFORMATION FROM PREVIOUS TESTS
+#####
+
+if(aux_aux==0){
+
+
+
+k<- as.numeric(inputSetUp[1,4]) # number of exposures
+
+
+
+
+
+
+
+
+#### Adjusting for confounding covariates
+ExposuresNamesCheck<- paste(name1,"ExposuresNames.txt",sep="")
+ExposuresNames<- read.table(ExposuresNamesCheck) 
+ExposuresNames<- ExposuresNames[1:k,1]
+
+aux_exg<- 0
+for(i in 1:length(exposure_group)){aux_exg<- aux_exg + 1*(sum(ExposuresNames==exposure_group[i])==0) }
+
+
+if( aux_exg>0 ){
+           stop(c("The labels in the input 'exposure_group' must coincide exactly with the entries of the input 'ExposuresNames' informed in the AnalyzeSetUp.Multinomial function. See the examples in the user guide of Analyze.Multinomial."),call. =FALSE)
+               }
+
+
+
+# Matrix with the events and population per exposure-stratum combination
+
+StratNamesCases<- names(table(strata_group_cases))
+StratNamesControls<- names(table(strata_group_controls))
+StratNames<- levels(factor(c(StratNamesControls,StratNamesCases)))
+
+cases_a<- matrix(0,length(StratNames),k)
+N_exposures_a<- matrix(0,length(StratNames),k)
+
+for(i in 1:k){
+   for(j in 1:length(StratNames)){
+       if(sum(exposure_group==ExposuresNames[i])>0&sum(strata_group_cases==StratNames[j])>0 ){
+       cases_a[j,i]<- sum(cases[exposure_group==ExposuresNames[i]&strata_group_cases==StratNames[j]])
+       N_exposures_a[j,i]<- sum(N_exposures[exposure_group==ExposuresNames[i]&strata_group_cases==StratNames[j]])
+                                                                                             }
+                                 }
+             }
+
+
+# Vector with the controls and population per stratum combination
+
+controls_a<- rep(0,length(StratNames))
+N_controls_a<- rep(0,length(StratNames))
+
+for(j in 1:length(StratNames)){
+    if(sum(strata_group_controls==StratNames[j])>0 ){
+    controls_a[j]<- sum(controls[StratNames[j]==strata_group_controls])
+    N_controls_a[j]<- sum(N_controls[StratNames[j]==strata_group_controls])
+                                                    }
+                              }
+
+
+cases<- cases_a
+N_exposures<- N_exposures_a
+controls<- controls_a
+N_controls<- N_controls_a
+
+
+# Defining the reference strata group
+ref_group<- 0
+aux_eg<- 0
+while(aux_eg==0){
+       ref_group<- ref_group+1
+       if(sum(cases[ref_group,])+controls[ref_group]>0){aux_eg<- 1}
+                }
+
+
+  theta_cases<- matrix(0,nrow(cases),ncol(cases))
+  theta_controls<- rep(0,length(controls))
+
+  theta_cases[ref_group,]<- 1
+  theta_controls[ref_group]<- 1
+
+
+
+
+
+#### Exact MLE for theta_c to adjust for the strata effects:
+
+if(nrow(cases)>1){ # if there are covariates to adjust for.
+  cs<- seq(1,nrow(cases))[-ref_group]
+  yj1<- c( cases[ref_group,], controls[ref_group])
+  Nj1<- c( N_exposures[ref_group,], N_controls[ref_group])
+   for(j in 1:length(cs)){   
+     Njc<- c( N_exposures[cs[j],], N_controls[cs[j]])
+     yjc<- c( cases[cs[j],], controls[cs[j]])
+     theta_c<- sum(Nj1)*sum(yjc)/(sum(Njc)*sum(yj1))
+     theta_cases[cs[j],]<- theta_c
+     theta_controls[cs[j]]<- theta_c
+                        }
+                  } 
+
+
+                    
+
+
+
+#=> Collapsing the information through a weighted sum over strata groups
+
+if(is.matrix(cases)==TRUE){      
+       
+           # finally adjusting N_exposures and N_controls
+           N_exposures2<- rep(0,ncol(cases)); cases2<- rep(0,ncol(cases)) ; N_controls<- sum( theta_controls*N_controls) ; controls<- sum(controls)
+           for(j in 1:ncol(cases)){
+                              N_exposures2[j]<- sum( theta_cases[,j]*N_exposures[,j])
+                              cases2[j]<- sum(cases[,j]) 
+                                  } 
+           N_exposures<- N_exposures2
+           cases<- cases2    
+                             
+                           }
+
+N_exposures<- round(N_exposures)
+N_controls<- round(N_controls)
+
+
+
+
+
+
+
+
+
+
+####
+## Uploading information from previous tests
+####
+
+## inputSetUp matrix contains:
+# line 1: (C11) the index for the order of the test (zero entry if we did not have a first test yet), (C12) Maximum SampleSize, (C13) alpha, (C14) k, (C15) m, (C16) title, (C17) reject (the index indicating if and when H0 was rejected), (C18) rho, (C19) M (minimum events to signal), (C1,10) vazio
+# line 2: says if the analysis has been started or not. 0 for not started. 1 for already started.
+# line 3: critical values in the scale of MaxSPRT
+# line 4: sum of the cases per test  
+# line 5: AlphaOld, actual alpha spent up to the last previous test
+# line 6: cumulative expected value of Sn E[sum(w*C)] under H0, test by test
+# line 7: has the target alpha spending until the (test-1)th look.
+# line 8: observed controls
+# line 9: rejection time. It has zero for those exposures not rejected.
+# line 10: the number of rows (different weights/z ) per test
+# line 11: matched case-control
+# line 12: Target alpha spending defined with AnalyzeSetUp
+# line 13: weight for each observation
+# line 14: test per weight
+# line 15: vector with test margins R0.
+# line 16: AlphaSpendType
+# line 17: active, vector informing which entries are still elegible for alpha spending in the current test. Entries must be settled equal to 1 for active(elegible), or equal to zero if the null hypothesis related to it has been rejected in some previous test.
+# line 18: Ns, vector with test-specific number of events
+# line 19: N_old, total cumulative number of events in previous tests
+
+
+
+AlphaSpendType<- inputSetUp[16,1]
+pmin<- inputSetUp[16,2]
+pmax<- inputSetUp[16,3]
+target_power<- inputSetUp[16,4] 
+R1<- inputSetUp[16,5] # relative risk under the alternative hypothesis given the target_power
+N<- as.numeric(inputSetUp[1,2])
+alpha<- as.numeric(inputSetUp[1,3])
+m<- as.numeric(inputSetUp[1,5])
+rho<- as.numeric(inputSetUp[1,8])
+M<- as.numeric(inputSetUp[1,9])
+gamma<- as.numeric(inputSetUp[16,8])
+
+R0<- as.numeric(inputSetUp[15,1])
+active<- as.numeric(inputSetUp[17,1:k])
+if(test>1){Ns<- as.numeric(inputSetUp[18,1:(test-1)])}; if(test==1){Ns<- NN}else{Ns<- c(Ns,NN)}
+if(test>1){N_old<- as.numeric(inputSetUp[19,test-1])}else{N_old<- 0}
+if(test>1){cvs_old<- inputSetUp[20:(20+k),1:(test-1)]; cv_llr_old<- inputSetUp[3,test-1]}
+if(test>2){CumCases<- inputSetUp[(20+k+1):(20+2*k),1:(test-1)]}; if(test==2){CumCases<- matrix(inputSetUp[(20+k+1):(20+2*k),1:(test-1)],k,1)}
+if(test>1){CumControls<- as.numeric(inputSetUp[20+3*k+1,1:(test-1)])}
+if(test==1){AlphaOld<- 0}else{AlphaOld<- as.numeric(inputSetUp[5,test-1])} 
+if(test>2){ps<- inputSetUp[(20+3*k+2):(20+3*k+2+k),1:(test-1)]}; if(test==2){ps<- matrix(inputSetUp[(20+3*k+2):(20+3*k+2+k),1:(test-1)],k+1,1)}
+
+
+
+# NN: number of events in the current test.
+# alpha: overall significance level
+# N: maximum length of surveillance
+# probs_old: probabilities of each state under the non-reject H0 status in the previous tests.
+# cvs_old: critical values used in the previous tests.
+# N_old: total cumulative number of events in previous tests
+# Ns: vector with test-specific number of events 
+# R0: test margin under the null hypothesis
+# m: Monte Carlo replications of the multinomial for critical values calculations
+# active: vector informing which entries are still elegible for alpha spending in the current test. Entries must be settled equal to 1 for active(elegible), or equal to zero if the null hypothesis related to it has been rejected in some previous test. 
+# ExposuresNames: Optional. This is to inform the name of the exposures related to each entry of the multinomial vector. For example, it can be c("A","B","AB") indicating that the count entries in the "cases" vector are related to populations exposed to vaccines A, B, and AB, respectively.
+# rho: parameter for the power-type alpha spending function
+
+
+
+#### vector with probabilities under H0 per multinomial entry excluding the entry for the control group. Must have the same dimension as cases.
+p<- N_exposures/(sum(N_exposures)+N_controls) 
+
+p_h0<- c(p,1-sum(p))  # probabilities of events under H0
+
+#### Updating the multinomial probability vector for the active entries
+activeh<- c(active,1) 
+p0a<- p_h0
+p0a[activeh==0]<- 0 
+for(i in 1:(k+1)){p_h0[i]<- p0a[i]/sum(p0a)}
+
+if(test==1){ps<- matrix(p_h0,k+1,1)}else{ps<- cbind(ps,matrix(p_h0,k+1,1))}
+
+
+
+
+
+
+
+#  Using the power calculation up to the last test
+if(test==1){power<- matrix(0,k,test)}else{
+    power<- read.table(paste(name1,"power.txt",sep=""))
+    power<- cbind( power  , rep(0,k) )       
+                                         }
+
+
+
+
+#### Setting the robust alpha spending function
+
+if(AlphaSpendType==1){alpha1<- alpha/2; alpha2<- alpha/2}else{alpha1<- alpha/(k+1); alpha2<- k*alpha/(k+1)}
+
+
+
+NNs<- matrix(0,k,test)
+
+for(i in 1:test){if(i!=test){NNs[,i]<- Ns[i]}else{NNs[,i]<- NN}}
+
+
+if(AlphaSpend=="n"){# first check
+
+Mm<- c(as.numeric(inputSetUp[9,1:k]),1)
+Rejection<- matrix(0,k+1,test); Rejection[k+1,]<- 1
+
+for(i in 1:k){if(Mm[i]>0){Rejection[i,Mm[i]:test]<- 1}}
+
+
+tentative_alpha<- min( alpha1,alpha1*(sum(Ns[1:test])/N)^rho )
+
+
+if(test>1){powers<- rbind(power,rep(1,ncol(power)))}else{powers<- matrix(0,k+1,1); powers[k+1]<- 1}
+
+
+    for(i in 1:k){
+     pss<- as.numeric(ps[i,1:test])
+     Nss<- Ns[1:test][pss>0]
+      if(ps[i,test]==0|ps[i,test]==1|sum(Ns)<=2){if(test>1){powers[i,test]<- powers[i,test-1]}}else{
+             res<- try(Performance.AlphaSpend.Binomial(N=sum(Nss), alpha= tentative_alpha/k,
+                       AlphaSpend=1,p=pss,GroupSizes=Nss,Tailed="upper",RR=R1,
+                       Statistic="MaxSPRT",rho) , silent = TRUE )
+                       if(is.numeric(res[[1]])==TRUE){powers[i,test]<- res$Performance[2]}
+                                                                                                   }
+                 }
+
+
+
+
+I<- 1*( (ps>=pmin & ps<=pmax) | Rejection==1 | powers>= target_power)
+
+if(test>1){MI<- (I[1:k,]*NNs[1:k,])}else{MI<- matrix((I[1:k,]*NNs[1:k,]),,1)}
+
+
+
+contribution<- 0 
+for(l in 1:k){contribution<- contribution + min( alpha2/k, (alpha2/k)*(sum(MI[l,])/N)^(rho) ) }
+
+AlphaSpend = min( alpha1,alpha1*((N_old+NN)/N)^rho ) + contribution
+
+                       
+                  }# closes first check
+
+
+
+
+if(AlphaSpend<=AlphaOld){
+stop(c("Choose AlphaSpend greater than"," ",AlphaOld),call. =FALSE)
+                        }
+
+
+
+alphah<- AlphaSpend - AlphaOld
+
+
+
+
+
+
+
+
+
+
+#### Actual lower bound for power
+
+ for(i in 1:k){
+     pss<- as.numeric(ps[i,1:test])
+     Nss<- Ns[1:test][pss>0]
+      if(ps[i,test]==0|ps[i,test]==1|sum(Ns)<=2){if(test>1){power[i,test]<- power[i,test-1]}}else{
+             res<- try(Performance.AlphaSpend.Binomial(N=sum(Nss), alpha= AlphaSpend/k,
+                       AlphaSpend=1,p=pss,GroupSizes=Nss,Tailed="upper",RR=R1,
+                       Statistic="MaxSPRT",rho) , silent = TRUE )
+                       if(is.numeric(res[[1]])==TRUE){power[i,test]<- res$Performance[2]}
+                                                                                                   }
+              }
+
+
+
+
+
+
+
+
+
+
+#### Maximum likelihood estimator for the vector of relative risks
+##### NEW VERSION. THE PREVIOUS METHOD WORKED UNTIL  Sequential 4.5.1 
+#####
+
+# Test specific information per test and exposure 
+if(test>1){
+hcontrols<- c(as.numeric(inputSetUp[8,1:(test-1)]), controls)
+hcases<- t(inputSetUp[(20+k+1):(20+2*k),1:(test-1)])
+hcasesaux<- matrix(0,nrow(hcases),ncol(hcases)); hcasesaux[1,]<- hcases[1,]
+if(test>2){for(ii in 2:nrow(hcases)){hcasesaux[ii,]<- hcases[ii,]-hcases[ii-1,]}}
+hcases<- rbind(hcasesaux, cases)
+
+hN_exposures<- read.table(paste(name1,"MatrixN_exposures.txt",sep=""))
+hN_exposures<- rbind( hN_exposures  , N_exposures )
+hN_controls<- as.numeric(read.table(paste(name1,"VectorN_controls.txt",sep=""))[,1])
+hN_controls<- c( hN_controls , N_controls )
+          }
+
+if(test==1){
+    hcontrols<- controls
+    hcases<- matrix(cases,nrow=1)
+    hN_exposures<- matrix(N_exposures, nrow=1)  
+    hN_controls<- N_controls  
+           }
+
+# Information of populations for future tests.
+MatrixN_exposures<- hN_exposures
+VectorN_controls<- hN_controls
+
+
+#  Taking only the entries with non-zero values in hN_exposures
+Individuals_non_zero_pop<- seq(1,k)[apply(hN_exposures,2,sum)>0]
+hcases<- matrix(hcases[,Individuals_non_zero_pop],ncol=length(Individuals_non_zero_pop), byrow=FALSE)
+if(test>1){hN_exposures<- hN_exposures[,Individuals_non_zero_pop]}else{hN_exposures<- matrix(hN_exposures[,Individuals_non_zero_pop],ncol=length(Individuals_non_zero_pop),byrow=TRUE)}
+
+
+
+
+# Log-likelihood function for RR
+lRo<- function(RRR)
+{
+
+if (any(RRR <= 0)){ return(-Inf) }else{
+
+lR<- 0
+for(tt in 1:test){      
+    lR<- lR + sum( hcases[tt,]*log(RRR) ) - ( sum(hcases[tt,])+hcontrols[tt] )*log( sum(hN_exposures[tt,]*RRR)+ hN_controls[test] )                     
+                 }
+
+return(lR)
+                                      }
+}
+# CLOSES THE LOG-LIKELIHOOD FUNCTION
+
+
+###### EXACT MLE ESTIMATOR OF RR
+
+hR<- matrix(0,k,1)
+for(i in 1:k){ hR[i,1]<- ( sum(hN_controls)/sum(hN_exposures[,i]) ) * sum(hcases[,i])/sum(hcontrols)  }
+
+hR1<- rep(NA,k); hR1[Individuals_non_zero_pop]<- hR[Individuals_non_zero_pop]; hR<- matrix(hR1,k,1)
+
+
+#### Confidence Interval for RR
+# Sison-Glaz method using the DescTools package
+# The confidence interval is obtained by inverting the simultaneous interval for the ps in terms of the RR vector.
+
+cumEvents<- rep(0,k+1); cumPops<- rep(0,k+1)
+for(i in 1:(k+1)){
+ if(i==(k+1)){
+   cumEvents[i]<- sum(hcontrols)
+   cumPops[i]<- sum(hN_controls)
+             }else{
+ cumEvents[i]<- sum(hcases[,i])
+ cumPops[i]<- sum(hN_exposures[,i]) 
+                  }
+                 }
+#library("DescTools")
+intres<- MultinomCI(cumEvents, conf.level =gamma, method = "sisonglaz")
+CI_RR<- matrix(NA,k,2)
+for(i in 1:k){if(cumPops[i]>0){CI_RR[i,1]<- intres[i,2]*cumPops[k+1]/(intres[k+1,3]*cumPops[i])
+                               CI_RR[i,2]<- intres[i,3]*cumPops[k+1]/(intres[k+1,2]*cumPops[i])
+                              }
+             }
+
+
+
+
+
+############################################################
+###### INTERNAL AUXILIARY FUNCTIONS
+############################################################
+
+
+###########################################
+#------ Expanded version of the LLR (MAXSPRT STATISTIC - Wald-type), which considers different Bernoulli probabilities over time
+#------ This replaced the original MAXSPRT for version 4.6.2 of the Sequential package  
+
+LLR <- function(cc,ij){
+
+hRh<- ( sum(hN_controls)/sum(hN_exposures[,ij]) ) * cc/sum(hcontrols)
+
+ if(hRh>R0& min(ps[ij,])<1&max(ps[ij,])>0){
+#zs<- 1/ps[ij,]-1
+ zs<- hN_controls/hN_exposures[,ij] #<= esar estes zs
+ NS<- hcases[,ij]+hcontrols #<= usar estes NS no lugar dos Ns abaixo
+max(0,cc*( log(hRh)-log(R0) ) + sum( NS*( log(R0+zs) - log(hRh+zs) ) ))
+
+                                          }else{0}
+
+                       }
+
+
+
+
+
+#-------------------------------------------------
+## Finding the critical values for the current test
+
+
+#### SAMPLE SPACE IN THE LLR SCALE
+aux3<- 0
+for(i in 1:k){
+  for(x in 0:(NN+N_old)){
+    if(aux3==0){aux3<- 1; llrs<-  LLR(x,i)}else{
+             llrh<- LLR(x,i)
+             llrs<-  c(llrs, llrh) 
+                                               } 
+
+                        }
+             }
+
+llrs<- unique(llrs); llrs<- llrs[order(llrs)]
+#------
+
+
+
+
+
+#library(pmultinom)
+
+if(test==1){
+
+cv_new<- rep(NN+1,k+1 )
+
+    ii<- length(llrs)
+    probE1<- 0
+       while(probE1<= alphah& ii>0){ 
+           cv_llr<- llrs[ii] 
+           for(j in 1:k){
+                         if(p[j]>0 & p[j]<1){                         
+                         x<- NN; llr2<- LLR(x,j) ; while(llr2>=cv_llr){cv_new[j]<- x; x<- x-1; llr2<- LLR(x,j) }
+                                            }
+                        }      
+          probE1<- max(0,1-pmultinom(upper = cv_new-1, size=NN, probs= p_h0, method="exact"))
+          if(probE1<= alphah){ ii<- ii-1; probE1ref<- probE1; cvs<- cv_new}   
+                                  }
+  if(ii==0&probE1>alphah){cv_new<- rep(N_old+NN+1,k+1); probE1ref<- 0}else{cv_new<- cvs}
+           } 
+
+
+
+
+
+### VERSION 4
+
+
+
+if(test>1){
+
+
+cv_new<- rep(N_old+NN+1,k+1 )
+
+    ii<- sum(llrs<cv_llr_old/4)
+    
+    probE1<- 1
+       while(probE1> alphah & ii<=length(llrs)){ # first while
+           cv_llr<- llrs[ii] 
+           for(j in 1:k){
+                        if(p[j]>0 & p[j]<1){                        
+ ### THE while(llr2>=cv_llr) BELOW WAS REPLACED BY while(llr2>cv_llr)
+                        x<- NN+N_old; llr2<- LLR(x,j) ; while(llr2>cv_llr){cv_new[j]<- x; x<- x-1; llr2<- LLR(x,j) }
+                                           }
+                        } 
+             
+cvs<- cbind(cvs_old,cv_new)
+
+ys<- matrix(0,k+1,test)
+G<- 0
+ for(i in 1:m){
+         ys[,1]<- rmultinom(1,as.numeric(Ns[1]),ps[,1]); aux<- sum(sum(ys[,1]<cvs[,1])==(k+1))
+         for(j in 2:test){ys[,j]<- ys[,j-1]+rmultinom(1,as.numeric(Ns[j]),ps[,j]); if(j==test){aux<- aux+sum(sum(ys[1:k,j]>=cvs[1:k,j])>0)}else{aux<- aux+sum(sum(ys[,j]<cvs[,j])==(k+1))}} 
+         G<- G + sum(aux==test)        
+              }
+         
+         
+     
+          probE1<- G/m
+          if(probE1> alphah){ ii<- ii+1}else{ probE1ref<- probE1}   
+                                  }# close first while
+  cv_new<- cvs ; if(ii== (length(llrs)+1) ){cv_new<- rep(N_old+NN+1,k+1)}
+ 
+          }
+
+
+
+
+
+
+
+############################################################
+## UPDATING INFORMATION FOR FUTURE TESTS
+############################################################
+
+if(ncol(inputSetUp)<test){inputSetUp<- cbind(inputSetUp,rep(0,nrow(inputSetUp)))}
+N_old<- N_old+NN
+AlphaOld<- AlphaOld + probE1ref
+cvs_old<- cv_new
+cv_llr_old<- cv_llr
+
+
+inputSetUp[1,1]<- test
+inputSetUp[3,test]<- cv_llr_old
+inputSetUp[4,test]<- sum(cases)
+inputSetUp[5,test]<- AlphaOld
+inputSetUp[7,test]<- AlphaSpend
+inputSetUp[8,test]<- controls
+inputSetUp[18,test]<- NN
+inputSetUp[19,test]<- N_old
+if(test==1){inputSetUp[20:(20+k),test]<- cvs_old}else{
+inputSetUp[20:(20+k),test]<- cvs_old[,test] # critical values for this test
+                                                     }
+# CumCases
+if(test==1){inputSetUp[(20+k+1):(20+2*k),test]<- cases}else{inputSetUp[(20+k+1):(20+2*k),test]<- cases + as.numeric(inputSetUp[(20+k+1):(20+2*k),test-1])}   
+
+if(test==1){new_active<- 1*( cv_new[1:k]> as.numeric(inputSetUp[(20+k+1):(20+2*k),test]) )}else{
+new_active<- active*1*( cv_new[1:k,test]> as.numeric(inputSetUp[(20+k+1):(20+2*k),test]) )
+                                                                                    }
+
+
+
+
+
+
+inputSetUp[17,1:k]<- new_active
+
+inputSetUp[(20+2*k+1):(20+3*k),test]<- hR  # MLE for the relative risk vector 
+
+# CumControls
+if(test>1){inputSetUp[20+3*k+1,test]<- inputSetUp[20+3*k+1,test-1]+controls}else{inputSetUp[20+3*k+1,test]<- controls} 
+
+# ps
+
+inputSetUp[(20+3*k+2):(20+3*k+2+k),test]<- p_h0
+
+
+if(sum(new_active==0&active==1)>0){inputSetUp[9,new_active==0&active==1]<- test}  
+Reject_Test_Time<- inputSetUp[9,1:k]
+if(sum(Reject_Test_Time==0)>0){Reject_Test_Time[Reject_Test_Time==0]<- NA}
+names(Reject_Test_Time)<- ExposuresNames
+rownames(Reject_Test_Time)<- " "
+
+
+# Confidence intervals for the relative risk
+
+inputSetUp[(20+4*k+3):(20+4*k+3+k-1),test]<- CI_RR[,1]
+inputSetUp[(20+4*k+3+k):(20+5*k+3+k-1),test]<- CI_RR[,2]
+
+
+
+############################################################
+## SAVING INFORMATION FOR FUTURE TESTS
+############################################################
+
+write.table(inputSetUp,name)
+write.table(MatrixN_exposures, paste(name1,"MatrixN_exposures.txt",sep="") )
+write.table(VectorN_controls, paste(name1,"VectorN_controls.txt",sep="") )
+write.table(power, paste(name1,"power.txt",sep="") )
+
+##########################################################
+## PRINTING OUTPUT TABLES
+##########################################################
+
+linhas<- rep(0,test)
+for(i in 1:test){linhas[i]<- paste("test",i)}
+
+Reject_H0<- rep("No",k); Reject_H0[new_active==0]<- "Yes"
+names(Reject_H0)<- ExposuresNames
+
+
+
+ps_under_H0<- cbind( round(t(ps[1:k,]),4) , matrix( round( 1- apply ( t(ps[1:k,]),1,sum )  ,4),ncol=1 ) )
+colnames(ps_under_H0)<- c( ExposuresNames, "Controls")
+rownames(ps_under_H0)<- linhas
+
+
+power<- round(t(power),4)
+colnames(power)<- ExposuresNames
+rownames(power)<- linhas
+
+
+
+Critical_Values<- t(inputSetUp[20:(20+k-1),1:test])
+colnames(Critical_Values)<- ExposuresNames
+rownames(Critical_Values)<- linhas
+
+Cumulative_Cases<-  t(inputSetUp[(20+k+1):(20+2*k),1:test])
+Cumulative_Cases<- cbind(Cumulative_Cases, matrix(c(inputSetUp[20+3*k+1,1:test]),,1) )
+
+Cumulative_Cases2<- Cumulative_Cases
+colnames(Cumulative_Cases2)<- c(ExposuresNames,"Controls")
+rownames(Cumulative_Cases2)<- linhas
+
+totals<- sum(as.numeric(Cumulative_Cases[1,])); if(test>1){for(i in 2:nrow(Cumulative_Cases)){totals<- c(totals,sum(as.numeric(Cumulative_Cases[i,])))}}
+Cumulative_Cases<- cbind(Cumulative_Cases, matrix(totals,,1) )
+colnames(Cumulative_Cases)<- c(ExposuresNames,"Controls","Total")
+rownames(Cumulative_Cases)<- linhas
+
+
+Expected_events_under_H0<- matrix(0,nrow(Cumulative_Cases2),ncol(Cumulative_Cases2))
+Expected_events_under_H0[1,]<- ps_under_H0[1,]*sum(as.numeric(Cumulative_Cases2[1,]))
+if(test>1){
+for(i in 2:test){ 
+Expected_events_under_H0[i,]<- ps_under_H0[i,]*sum(as.numeric(Cumulative_Cases2[i,])-as.numeric(Cumulative_Cases2[i-1,]))+Expected_events_under_H0[i-1,]
+                }
+          } 
+colnames(Expected_events_under_H0)<- c(ExposuresNames,"Controls")
+rownames(Expected_events_under_H0)<- linhas
+
+
+
+Relative_Risk_estimates<-  round(t(inputSetUp[(20+2*k+1):(20+3*k),1:test]),2)
+#if(test>1){for(i in 2:test){for(j in 1:ncol(Relative_Risk_estimates)){if(Relative_Risk_estimates[i,j]==0){Relative_Risk_estimates[i,j]<- Relative_Risk_estimates[i-1,j]}}}}
+colnames(Relative_Risk_estimates)<- ExposuresNames
+rownames(Relative_Risk_estimates)<- linhas
+
+Critical_Values_LLR<- matrix(round(as.numeric(inputSetUp[3,1:test]),6),1,test)
+colnames(Critical_Values_LLR)<- linhas
+rownames(Critical_Values_LLR)<- " "
+
+Alpha_spending<- matrix(0,2,test); rownames(Alpha_spending)<- c("Target","Actual")
+Alpha_spending[1,]<- round(as.numeric(inputSetUp[7,1:test]),6)
+Alpha_spending[2,]<- round(as.numeric(inputSetUp[5,1:test]),6) 
+colnames(Alpha_spending)<- linhas
+
+Lower_bound_CI<- round(t(inputSetUp[(20+4*k+3):(20+4*k+3+k-1),1:test]),2); Lower_bound_CI[Lower_bound_CI<0] <- 0
+#if(test>1){for(i in 2:test){for(j in 1:ncol(Lower_bound_CI)){if(Lower_bound_CI[i,j]==0){Lower_bound_CI[i,j]<- Lower_bound_CI[i-1,j]}}}}
+colnames(Lower_bound_CI)<- ExposuresNames
+rownames(Lower_bound_CI)<- linhas
+
+
+Upper_bound_CI<- round(t(inputSetUp[(20+4*k+3+k):(20+5*k+3+k-1),1:test]),2)
+colnames(Upper_bound_CI)<- ExposuresNames
+rownames(Upper_bound_CI)<- linhas
+
+
+Up_to_date_summary<- matrix(c( ps_under_H0[nrow(ps_under_H0),],
+                               Expected_events_under_H0[nrow(Expected_events_under_H0),],
+                               Cumulative_Cases2[nrow(Cumulative_Cases2),],
+                               c(Critical_Values[nrow(Critical_Values),],NA),
+                               c(Reject_H0[1:k],NA),
+                               c(Reject_Test_Time,NA),
+                               c(Relative_Risk_estimates[nrow(Relative_Risk_estimates),],1),
+                               c(Lower_bound_CI[nrow(Lower_bound_CI),],1),
+                               c(Upper_bound_CI[nrow(Upper_bound_CI),],1),
+                               c(power[nrow(power),],NA)
+                               ), byrow=T , ncol=length(ExposuresNames)+1,
+                            ) 
+
+colnames(Up_to_date_summary)<- c(ExposuresNames,"Controls")
+rownames(Up_to_date_summary)<- c("ps_under_H0", "Expected_events_under_H0","Observed_events_(Cumulative_Cases)","Critical_Values","Reject_H0","Rejection_time","Relative_Risk_estimates","Relative_Risk_lower_bound","Relative_Risk_upper_bound","Cumulative_power")
+
+
+
+result2<-      list(Reject_H0,   Reject_Test_Time, ps_under_H0,   power,               Critical_Values_LLR,               Cumulative_Cases,   Critical_Values,                               Expected_events_under_H0,                                      Relative_Risk_estimates,   Lower_bound_CI,              Upper_bound_CI,               Alpha_spending,  Up_to_date_summary)
+names(result2)<- c("Reject_H0", "Rejection_time",  "ps_under_H0", "Cumulative_power", "Critical_values_in_LLR_scale", "Cumulative_cases", "Critical_values_in_cumulative_cases_scale",   "Expected_number_of_events_under_H0",                          "Relative_risk_estimates", "Relative_Risk_Lower_bound", "Relative_Risk_Upper_bound", "Alpha_spending", "Up_to_date_summary" )
+
+
+
+message("===========================================================================================",domain = NULL, appendLF = TRUE)
+message(c("Parameter settings: N= ",N,", alpha= ",alpha,", rho= ", rho, ", M= ",M, ", H0: RR<=",R0, "."),domain = NULL, appendLF = TRUE)
+message(c("Analysis performed on ",date(),"."),domain = NULL, appendLF = TRUE)
+message(c("Managing power per exposure with robust alpha spending: pmin= ",pmin, " pmax= ", pmax, "."),domain = NULL, appendLF = TRUE)
+message(c("The target power is ", target_power, " for RR>= ", R1, "."),domain = NULL, appendLF = TRUE)
+message(c("The global confidence coefficient for the simultaneous confidence intervals is ", gamma, "."),domain = NULL, appendLF = TRUE)
+message("===========================================================================================",domain = NULL, appendLF = TRUE)
+
+saveRDS(result2,paste(name1,"results.txt",sep=""))
+
+#####
+#####  CLOSES IMPORTANT GLOBAL TEST
+#####
+                   } 
+
+
+
+invisible(result2)
+
+#####################################
+}##### Close function Analyze.Multinomial
+#####################################

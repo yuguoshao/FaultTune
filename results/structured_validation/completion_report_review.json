@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T09:24:20.273368+00:00",
+  "scope": "Independent final report consistency review before the final archive is created. Read-only except this review; no new observations, seed expansion, trajectory replay, or bootstrap rerun.",
+  "sources": {
+    "docs/STRUCTURED_VALIDATION_RESEARCH.md": "80ea7df574dd92ee59dfcbd36b03f680bcc4e2c7b16b97f7c44bf2ef73c44d60",
+    "results/structured_validation/prospective_completion_v1/analysis.json": "adc7d6630c81784fee2158bf24d69195843c7524016f3faa94494e1fb109d1cb",
+    "results/structured_validation/prospective_completion_v1/audit.json": "6b28123b47b374aa9722f1e09820dd3f61a51fdda683d2bdd130dfbab2236900",
+    "results/structured_validation/prospective_completion_v1/summary.json": "06f7e486aadc9d3f2c5a6df0cd936b9925ba2b5fcc452173889264984c63e4d4",
+    "results/structured_validation/prospective_completion_v1/progress.json": "752880bbbae21ea7492ec6a494bf9ff0772be025d00909db3e27b9427c7c5425",
+    "results/structured_validation/prospective_completion_v1/audit_progress.json": "e437f123548057a1934ca66ca40f50a231e8dff466d22b5ce7c793f527dad152",
+    "results/structured_validation/prospective_completion_v1/analysis_provenance.json": "c583d7a54a18de3f2b3a93652eca4c9c7362017d6d5c3a6a55a01def6c44b62e",
+    "results/structured_validation/prospective_completion_v1/plot_manifest.json": "f4477ae24bb16ea10d19869601204c05b42ec0381316043f4466949f51b01c48",
+    "results/structured_validation/prospective_completion_v1/comparison.png": "29d4e1d33e1bbca096ba40ff601034eceed1256c235bb4d8555f86c067f358e8"
+  },
+  "checks": [
+    "Primary and secondary points independently recomputed from all 48 case means; saved confidence bounds, rounding, case wins and worst cases match the report.",
+    "Per-method main/null sample counts, errors and abstentions recomputed from summary; null cells all end at the stated cap.",
+    "56 case-audit hashes, 9 final audit inputs and all auditor source bindings match; total checks equal reused plus fresh checks.",
+    "7937 old plus 1663 new records, 3200 joint labels, 41 reused plus 15 fresh audits, and 65 old tail records are distinguished correctly.",
+    "Actual completion, analysis, audit-file time and phase durations match local metadata; the extension changes no scientific plan.",
+    "The report distinguishes audited computations from failed superiority, does not claim equivalence or full-field SOTA, and preserves secondary and mathematical limitations.",
+    "Final comparison image visually inspected: labels, intervals, counts, administrative-extension note and claim boundary are legible and consistent."
+  ],
+  "comparisons": [
+    {
+      "comparison": "primary",
+      "geometric_mean_ratio": 0.9982965658422733,
+      "percentile_95_ci": [
+        0.994338232299159,
+        1.0024778683822761
+      ]
+    },
+    {
+      "comparison": "secondary",
+      "geometric_mean_ratio": 0.9735212782017132,
+      "percentile_95_ci": [
+        0.9614237837606086,
+        0.9851804137420687
+      ]
+    }
+  ],
+  "audit_status": "passed",
+  "primary_accepted": false,
+  "issues": [],
+  "archive_claims_pending_root_freeze": true,
+  "limits": "This review checks report/evidence consistency. The passed independent audit supplies protocol and bootstrap validation; final source archive and manifest will be verified separately after root freezes them."
+}

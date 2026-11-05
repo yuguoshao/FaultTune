@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-03",
+  "reviewer": "stream_sota",
+  "status": "passed",
+  "review_type": "Mathematical derivation with independent cross-agent checks by stream_stats, targeted primary-source review, and deterministic implementation checks",
+  "source": {
+    "path": "docs/STRUCTURED_EVIDENCE_THEORY.md",
+    "sha256": "e2149844575883e7382249769c63636001fd58dd4b75f77515d19b48a0b2725a"
+  },
+  "scope": {
+    "model": "Predictable independent Bernoulli blocks whose two settings have a common ordering; balanced paired settings are required for the full-safe grid implementation.",
+    "time_uniform_error": "At most delta total wrong-direction risk at evidence threshold 1/delta, under the stated common-order or shared-numerator conditions.",
+    "finite_budget_superiority_proved": false,
+    "literature_priority_established": false,
+    "formal_proof_assistant_verification": false,
+    "old_frozen_sources_modified": false
+  },
+  "mathematical_review": [
+    {
+      "claim": "Predictable normalized numerator and certified null profile likelihood",
+      "status": "passed",
+      "reason": "For each true model, the common predictive density divided by the true likelihood is a nonnegative martingale, or a supermartingale at support boundaries. Each true-null profile denominator is at least that likelihood. Adaptive queries are allowed when selected using the past and their common action probabilities cancel. A profile optimizer value alone is not a certified upper bound."
+    },
+    {
+      "claim": "One shared numerator avoids an unnecessary two-direction risk split",
+      "status": "passed",
+      "reason": "At a nonzero true sign only one direction is wrong. At a zero sign both null profile ratios are dominated by the same true-parameter likelihood-ratio martingale. Hence every wrong crossing lies inside one Ville crossing event at 1/delta, without a union bound over two different numerators."
+    },
+    {
+      "claim": "Block posterior prediction and nuisance-regret limitation",
+      "status": "passed",
+      "reason": "The Beta-function ratio is a normalized joint block predictive distribution after accounting for the count combinatorial coefficient. Fixed-arm posterior updates telescope to one Bayes marginal. Predictable pseudo-counts at changing arms remain valid predictors but are not exact structural posteriors or real observations. Full two-parameter marginal regret can exceed the one-parameter discordant-sign regret; no blanket efficiency advantage follows from using complete counts."
+    },
+    {
+      "claim": "Conditional noncentral hypergeometric likelihood under random block totals",
+      "status": "passed",
+      "reason": "Conditioning independent binomial arm counts on their sum gives Fisher's noncentral hypergeometric law with odds ratio odds(p_plus)/odds(p_minus). Every conditional predictive density must normalize for each realized total. Taking the conditional expectation given past and total, then averaging over the random total, gives a legal block likelihood ratio. The binomial coefficients must remain in the conditional partition function."
+    },
+    {
+      "claim": "Fixed-PSR profile simplification",
+      "status": "passed",
+      "reason": "The conditional log likelihood is concave in log odds and its derivative at zero equals the cumulative centered score. The profile on the wrong-sign half-line is therefore attained at zero. A fixed mixture is bounded by the unconstrained likelihood supremum, so a central-mixture threshold together with the score sign gives the shared-profile decision without numerical optimization."
+    },
+    {
+      "claim": "Signed expert mixture under changing true odds and adaptive angles",
+      "status": "passed",
+      "reason": "Under a positive common ordering, negative log-odds experts have conditional mean at most one by the monotone likelihood ratio property. On a negative aggregate-score event, each positive expert is at most one because its log capital is lambda times the score minus nonnegative cumulant generators. The full mixture is then bounded by a constant plus the negative-expert mixture, a nonnegative supermartingale starting at one. Null ordering uses the whole mixture. Reciprocal symmetry is useful but not essential to this bound; fixed signed expert identities and weights are essential."
+    },
+    {
+      "claim": "Sharper one-wrong-direction bound",
+      "status": "passed",
+      "reason": "Normalizing the opposite-sign expert sub-mixture of total weight w gives wrong-crossing probability at most w*delta/[1-delta*(1-w)], which is no larger than delta. This is a consequence of the same Ville argument and does not claim an empirical error rate or extra power."
+    },
+    {
+      "claim": "Fixed-odds full-safe experts with adaptive nuisance endpoints",
+      "status": "passed",
+      "reason": "Setting v=omega*u/(1-u+omega*u) keeps each expert's exact odds fixed while u varies predictably. Mirror experts swap the same endpoints. Their ratio is omega^(Y_plus-Y_minus), and their product is at most one for each of the four outcomes. Thus the positive expert log factor is at most log(omega)*(Y_plus-Y_minus)/2. The existing ordered-null safe-factor expectation bound controls the opposite expert, so the signed mixture theorem applies at 1/delta without the older split and hedge penalties."
+    },
+    {
+      "claim": "Oracle conditional information loss is at most log(N+1)+1 per block",
+      "status": "passed",
+      "reason": "The two arm counts are sufficient for the full Bernoulli likelihood. KL chain decomposition separates the conditional log-odds information from the KL of the total count versus the pooled-null binomial. The binomial type-class lower bound and H(T)>=0 bound this latter KL by log(N+1)+N*E kl(T/N,q). Bernoulli KL is at most chi-square, while Var(T)<=N*q*(1-q), giving log(N+1)+1. This is an oracle block bound and does not certify finite-grid prediction or stopping performance."
+    },
+    {
+      "claim": "Unequal conditional blocks and limits of transferring the balanced proof",
+      "status": "passed",
+      "reason": "The unequal conditional hypergeometric cumulant is centered at T*n_plus/(n_minus+n_plus), remains nonnegative, and retains the monotone likelihood ratio property. The signed mixture proof therefore survives, though the cumulant need not be even. The balanced full-safe pair proof and a shared-score hedge with paired Beta do not automatically extend to unequal allocation."
+    },
+    {
+      "claim": "Conditional Fisher normalizer certification inspected independently",
+      "status": "passed for conditional_fisher.py v1",
+      "reason": "The exact binary search identifies the leftmost mode. Ratios decrease moving away from that mode on each side, so current_term*next_ratio/(1-next_ratio) is a valid geometric upper tail bound whenever the ratio upper bound is below one. Both side sums avoid counting the mode twice. The success/failure complement preserves the centered cumulant by symmetry. A max-step truncation retains the tail upper bound and may widen the interval but does not invalidate it."
+    }
+  ],
+  "peer_mathematical_checks": {
+    "reviewer": "stream_stats",
+    "confirmed": [
+      "Random-total conditional likelihood martingale and fixed-PSR central profile simplification",
+      "Adaptive common-order signed conditional mixtures without a direction split",
+      "Fixed-odds mirrored full-safe factors with predictable nuisance endpoints",
+      "Oracle conditional block information loss bound and its unequal-allocation extension"
+    ]
+  },
+  "implementation_checks": {
+    "safe_grid_source": "experiments/structured_validation/safe_grid.py",
+    "safe_grid_sha256": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+    "safe_grid_checks": "results/structured_validation/safe_grid_checks.json",
+    "safe_grid_checks_source_sha256": "f6853aafc617189fe4a3bd0a57ad4f454772dd285eca0daee093e58f7f55fcdb",
+    "conditional_fisher_v1_source_sha256": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "safe_grid_checks_status": "passed",
+    "exact_ordered_null_expectation_checks": 990,
+    "rational_capital_enclosures": 25,
+    "adaptive_exhaustive_paths": 768,
+    "supported_configs_tested": ["default CF33", "Jeffreys-cell CF71", "symmetric custom prior", "asymmetric custom prior"]
+  },
+  "literature_review": {
+    "retrieval_date": "2026-11-03",
+    "status": "Targeted primary-source check; not an exhaustive novelty search",
+    "access": "The search connector failed; read-only direct access to public arXiv and PMC full HTML succeeded.",
+    "sources": [
+      {
+        "title": "Universal Inference",
+        "authors": "Wasserman, Ramdas and Balakrishnan",
+        "year": 2020,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7382245/",
+        "inspected": "Section 7, Theorem 9 and the true-parameter martingale domination proof",
+        "relevance": "Running predictive likelihoods, null profile maxima and their upper bounds are established methods."
+      },
+      {
+        "title": "Safe Testing",
+        "authors": "Gruenwald, de Heide and Koolen",
+        "url": "https://arxiv.org/html/1906.07801v5",
+        "inspected": "Full HTML introduction, conditional e-variable framework and nuisance/contingency-table discussion",
+        "relevance": "GRO e-values, safe continuation and nuisance-aware evidence already have a substantial theory."
+      },
+      {
+        "title": "Generic E-Variables for Exact Sequential k-Sample Tests that allow for Optional Stopping",
+        "authors": "Turner, Ly and Gruenwald",
+        "url": "https://arxiv.org/html/2106.02693v3",
+        "inspected": "Conditional block e-variable definition, Fisher comparison and hypergeometric-sampling discussion",
+        "relevance": "Full-count safe tests are an existing strong comparator. Ordinary Fisher p-value monitoring is not anytime safe; the present conditional factor requires its own normalization and tower argument."
+      },
+      {
+        "title": "Non-Asymptotic Pure Exploration by Solving Games",
+        "authors": "Degenne, Koolen and Menard",
+        "year": 2019,
+        "url": "https://arxiv.org/abs/1906.10431",
+        "inspected": "Primary abstract in this round; full original publication had been checked in the prior project literature review",
+        "relevance": "Published general structured exponential-family exploration algorithms remain stronger scope comparators than calling an arbitrary grid SOTA."
+      },
+      {
+        "title": "Pure Exploration via Frank-Wolfe Self-Play",
+        "authors": "Liu, Qin and You",
+        "year": 2025,
+        "status": "preprint in the inspected arXiv record",
+        "url": "https://arxiv.org/html/2509.19901v1",
+        "inspected": "Full HTML introduction, mixed-game formulation and Bernoulli/linear-bandit scope",
+        "relevance": "Recent structured allocation games are relevant literature, but their linear-bandit analysis is not a reproduced Bernoulli single-frequency benchmark here."
+      },
+      {
+        "title": "Quantum Sequential Universal Hypothesis Testing",
+        "authors": "Zecchin, Simeone and Ramdas",
+        "year": 2025,
+        "status": "preprint in the inspected arXiv record",
+        "url": "https://arxiv.org/html/2508.21594v1",
+        "inspected": "Full HTML introduction, adaptive-measurement description and Theorem 4.1",
+        "relevance": "Adaptive quantum universal inference has direct prior art; its general quantum-state and joint-measurement resources differ from this Bernoulli protocol."
+      }
+    ],
+    "priority_claim_supported": false
+  },
+  "blocking_errors": [],
+  "claim_boundaries": [
+    "The mathematical risk guarantee assumes the documented within-block distributions, independence and predictable design.",
+    "A fixed finite odds grid can lack positive growth at weak alternatives; cap abstentions remain part of cost and power results.",
+    "Full-count information gains do not remove prediction or prior regret automatically.",
+    "The oracle block information calculation is not a finite-budget unknown-parameter guarantee.",
+    "Normal numerical optimization, empirical Bayes tuning after current outcomes, or unnormalized generalized Bayes likelihoods do not replace certified valid evidence.",
+    "No complete all-angle structured SOTA implementation, hardware superiority, or literature-priority claim is established by these checks.",
+    "The earlier streaming holdout failed its primary criterion and remains unchanged."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "status": "local CPU microbenchmark",
+  "batch_designs": 384,
+  "rounds": 7,
+  "iterations_per_round": 10,
+  "python": "3.8.3",
+  "numpy": "1.18.5",
+  "median_seconds_per_batch": {
+    "learned_closed_form": 0.0002512700000000034,
+    "learned_grid_design": 0.009835709999999987,
+    "learned_kl_grid": 0.06908402000000002
+  },
+  "all_seconds_per_batch": {
+    "learned_closed_form": [
+      0.0002512700000000034,
+      0.00024163999999999853,
+      0.00023498000000001795,
+      0.00044683000000000916,
+      0.00029009999999995983,
+      0.00041254999999997823,
+      0.00023631000000001734
+    ],
+    "learned_grid_design": [
+      0.009666010000000003,
+      0.010454000000000008,
+      0.012587260000000012,
+      0.009835709999999987,
+      0.009575859999999992,
+      0.010611110000000057,
+      0.00968933999999999
+    ],
+    "learned_kl_grid": [
+      0.06873160999999998,
+      0.07272677999999999,
+      0.06898369,
+      0.06908402000000002,
+      0.06563073,
+      0.06916948000000005,
+      0.07098449000000003
+    ]
+  },
+  "runtime_over_closed": {
+    "learned_closed_form": 1.0,
+    "learned_grid_design": 39.14398853822523,
+    "learned_kl_grid": 274.9393879094165
+  },
+  "scope": "includes identical pilot fitting and public caps; 513-point grids; one Windows machine, background processes may affect timings; not a measurement-saving or SOTA claim",
+  "source_sha256": {
+    "planning_benchmark.py": "7b51f03c2546358f08c8e93e27bf2959b1642024493490ec480a1c494a987da9",
+    "designs.py": "4b1cbb8ce96fa65650bfd84e46e2a0b2f74ca45470a1ce65c8872fdc0bc2dc8b",
+    "kl_designs.py": "38e34df64051318a0f3588653c49c2ed4aba9c837e6eab7d8eeab6f3b8cd79af"
+  }
+}

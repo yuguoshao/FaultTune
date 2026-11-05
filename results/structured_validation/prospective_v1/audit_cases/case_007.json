@@ -1,0 +1,4893 @@
+{
+  "status": "passed_case",
+  "case_id": 7,
+  "kind": "main",
+  "checks": {
+    "replayed_rng_blocks": 3490,
+    "causal_angle_and_prediction_blocks": 3490,
+    "checkpoint_screens_recomputed": 5224,
+    "full_interval_final_certificates": 70,
+    "all_decisions_strictly_certified": 192,
+    "terminal_records_checked": 192,
+    "seed_replayed_method_trajectories": 192,
+    "full_runner_replay_groups": 4,
+    "full_runner_replay_method_records": 6,
+    "independent_decision_final_certificates": 122
+  },
+  "cells": [
+    {
+      "case_id": 7,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 884.0625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 7,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 878.90625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 7,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 889.71875,
+      "wrong": 0,
+      "abstained": 0
+    }
+  ],
+  "decision_proofs": [
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 0,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        "5.238340281774031787264508939941350579201623178518177784840778388",
+        "5.238340281774031862686279684845933671520277931982539378714366948"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "35d0df3a59d958c4b990f67af0efd5d5c37167b1f369d21fafd9560019d9b99f"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 0,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        "5.196286722431068256692851626380980536821812521355852398672760483",
+        "5.196286722431068256692851626380980536821812521355852398672760563"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "fe5dcec5ee05cf3fea7f15a5d1ccd94b7bf9b2576c7c4c18ab7ae89b7201aafd"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 0,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d2f459b75dc0f04b1c42b644244e4b52fffe505286c51fd7b64ed67ac14b1d8e"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 1,
+      "shots": 1152,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "7.03123747171456512619254498511948326262644644448309490600967690",
+        "78.54116592016370831352979900166964525314862656958091687831229443"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "c6add0b91e3abb490b9c57606d074f71129d7bcaf8af774ffe43c1f5c7e61cc3"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 1,
+      "shots": 1152,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.824195036346047501753416381048499856699012621928674413515337248",
+        "79.23431310072365362294703112312776969469236866941966445969513054"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "323edbba7105f4701e1a7779efaecee9570aece23c1856ac97f3fd5f54bbb681"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 1,
+      "shots": 1152,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        7.146460707475867,
+        7.1464607074758675
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "4078281bc9b8a275fcbaf5255216a7c5457dd7accce1c7f7742478e30d908249"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 2,
+      "shots": 396,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.04630835125119761707779614801080766606028337239180489244208444",
+        "58.88036593864975105563971901060788055141277106931660931151097844"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "5f15cf8261dfe3dd28a746db4ba308ff63da3b79eccd3b36a9b9688ffe069c37"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 2,
+      "shots": 396,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605538",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "1c95aebd99c4193d5de7453863b99907f1281771c2b22a61b72c1604d52d242d"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 2,
+      "shots": 396,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ff162f714d29312698040285cdc473df828975133eb32a33817207d856360d03"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 3,
+      "shots": 1642,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.01285160405846690952554462435159601057491217030948466560390411",
+        "78.54116592016370831690655739590699892346409298972080457862691244"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "12be9dcaca50673fa782fd04cfd5069052059296816e7d1215495d10e1e88e58"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 3,
+      "shots": 1642,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.900343895204298001540567207337096574091398162470985785895686679",
+        "79.23431310072365362632378951736516903581870323721082742261747953"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "45708b915e81b4aec58f10e83f4d0d69e11b8ed10f950a2dad39f658b076fe5b"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 3,
+      "shots": 1642,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.095190042762727,
+        5.095190042762728
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "a8755029dfd540d85bd39cdec1514e16eb8e22e146033b98881599eb075cec34"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 4,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.04556448795443025978379343808278165800432377413472518302879277",
+        "58.88036593864975105563971900750691127035021339716508354053731301"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "b6df7f1ac87a5c760c163ec48503dfe02af8ff28d83f0cd7b4da5de52f81a577"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 4,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605543",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "5b458506e11a8ff7c745b05ca419a1ee01bfe240bda245ffb002e7e04b2b1eb0"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 4,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d03a66dad294eda6f862903b85b2153fa5166faf97e2de85c7f0d8a38d7edf9c"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 5,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.69289501752762177440625162060984594005524175011047851982779642",
+        "65.43396592282526255771901210036289062645289308922847740813519562"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "a5bf1268d340355e9174622a4c728d73c426a7cfe220c689bd36f0e822c97fc5"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 5,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.473958397113535404915219971428406219430709894890689605039854864",
+        "66.12711310338520786713624421503354132554567046888848464528004305"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "1e725cffb530fe04750fbe05f3cd69431d19564bd71eeae4094bd1d80028d603"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 5,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.841946673928053,
+        5.841946673928054
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ce9471fc47832e0ccfa9a77cdfed2b9f3a069b535c77a88871bab78144aa452c"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 6,
+      "shots": 502,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.03231028991364048742192509712071057294754957145111901804538810",
+        "58.88036593864975105563971895263863491198969702736593397164346006"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "1faf8b0d29d757a0b2d1a747dc8a4bb118e57e7ee4020ac699af7a2f0c1391bd"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 6,
+      "shots": 502,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605542",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "75135589e3a371253a37b6bcd347c059508e831959b1825bff87b83a66ada628"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 6,
+      "shots": 502,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "dd21ee7df2f0b16450836c8a2d6c95185411f8d1140eaaf827867457d186d44f"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 7,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.04988537635509428606864348441016247353068102123523708726075528",
+        "58.88036593864975105563971902555181012123149111699289795626574847"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "a100f10147c5990c80b74746b6521945d6b468771162b3899a02ab719ff8c15f"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 7,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605539",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "fba82324e2fbf935286ec237040f19d27f8715b6db94868f2ab54b5e0f891594"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 7,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "877d5e503f6f6466158980b7e0b7665795f24ec6f52a511daf24affd88b8ba39"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 8,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.04891400040050113798931256217281509896971201594451470327777166",
+        "58.88036593864975105563971902148835219059219114272482677109728380"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "af18cc9555d2931a661ec5bc6b01b2e4f5dc600bc25512995e940da6943f6543"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 8,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605539",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "ddafbb111eb2d7ce8e022035a3f5842058a25af57209a30a786ef90f2e710cec"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 8,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ce28494b4ed583fb682fd8caca6a21861f7beba835e3e525816a395939dff284"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 9,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.38172402003854448106310250604384661777889306204029194926616927",
+        "71.98756592050415509735506798430779107818273944349837824647813650"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "abd51148c950f87a76ab81146fb9eacd32fef3b09b659862970b3f36f14bbdb4"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 9,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.148962461525418054262059091140812453037118347280192662487262436",
+        "72.68071310106410040677230010574652932851262059518936736885426198"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "3e6a881926684f773a6a2ea90826527a61c14f17f49b0f57a508ad06639b1974"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 9,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        6.492534240069203,
+        6.492534240069204
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "1d8e7b437ccf23cf23b91bbe74c734f9015f5bb7d2eb689a47879ef8cfd4c608"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 10,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.02892088002594285804840555779172657381340182983886253092833887",
+        "58.88036593864975105563971893872390216530738548418429669927183409"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "4c64954e2a193b9186aaa7749a2d66c2da95040e6f616a6a236138045f97480d"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 10,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605537",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "ee1b9aadbdd504c4cd0e79637027303c7dcc9d7e5fd41cf96cf850913011b855"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 10,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "2af1c49070a68189a20afa4db28b9bbcbe124b6c94ad3ea9a7552be6eaa96e88"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 11,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.70304646283134973704555082491263585284057747852631173336593121",
+        "65.43396592282526255771901210047863947114133193974531301588219921"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "1339aaf1b0fcaac252541718176dfadeef3765d166e31e7e06155157e0db5a73"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 11,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.473958397113535404915219971428406219430709894890689605039854862",
+        "66.12711310338520786713624421503354132554567046888848464528004305"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "7eed663e67491b49e75cee11866e1b3a768aca69b6f17a8b10b9765245c25efc"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 11,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.841946673928053,
+        5.841946673928054
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "1a3662ce59b638819e9d4e7f848b11990e123bf003a7cbdf11bdb8c5757e2fbb"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 12,
+      "shots": 446,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.04014125236060824101087862062625533827804519151563228171215839",
+        "58.88036593864975105563971898496845541943542556606787123617471808"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "28e4cbcde09eed6470a021a0f0a026a353ae34f4367d177b044c648804d7b526"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 12,
+      "shots": 446,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605543",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "4d21221550eab2a6eb3727463b0761d952d17ba53e48bca8697b3b1f00781da1"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 12,
+      "shots": 446,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d96e454699ee18b96aed9343a595e0644a372ccca76c088d22bfa6c33a63c176"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 13,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.04958638186737587672370756785795159821729622284017246377862891",
+        "58.88036593864975105563971902430063646653565294315120536243614005"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "908297ae896a7284dfd66ebf27e182386f46dfd7dead77247eb4bed46bdfd776"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 13,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605544",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "700c88d4185e20675bf0ce941108154a734df90c88f3cf5d4fae1693f9dc1c43"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 13,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ce28494b4ed583fb682fd8caca6a21861f7beba835e3e525816a395939dff284"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 14,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.03932320664614227440157909080407324882041092087767694507161859",
+        "58.88036593864975105563971898157933138083863890283243313170619098"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "a16cb2d709ae5a57c3c260ab61c259adc03db50d42401c6589ab1dc3640987f1"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 14,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605539",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "87dc832e0adc498200e8710150191868705a65b00cd9f38ea248ba322159abd7"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 14,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "b3e83e56a26abe067ebfd846833812b79d9bac017f8059752caf55a23357e9e6"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 15,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.67858007658499125935046299938549685436867616698639969302996613",
+        "65.43396592282526255771901210020165263419758007234405714805022753"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "f00c6b4028775750d2fe9f7eac6adfd3c97c551caafeff0d246a37f0c4f097e1"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 15,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.473958397113535404915219971428406219430709894890689605039854859",
+        "66.12711310338520786713624421503354132554567046888848464528004305"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "7cd93211392e5ab626eaeb9d0ad1054eee3c4d89720c5225a8dfe691acbf6b4d"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 15,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.841946673928053,
+        5.841946673928054
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d6f5042ed846c7d82909b565a4ef5d3574acf87dcc54c79e10c33a6e0d0c5727"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 16,
+      "shots": 396,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        "4.620405776133135613998853001373143679725185388434632757493700467",
+        "4.620405776133135638450173830582173751626015478686573387970658795"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "79b039ea5353701c13133c6264fb8d597b25c971a0b2c61837fa05ccea5709b2"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 16,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605537",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "d87a2fb6b7afdd4a1ae70fc893f01b39c0bdb0a06ec29cd016750b18bdf523f1"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 16,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d03a66dad294eda6f862903b85b2153fa5166faf97e2de85c7f0d8a38d7edf9c"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 17,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.02607911964067110863123749947502749902971340282428437846046026",
+        "58.88036593864975105563971892709375821868074425817345602569505004"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "faaf3b303bfd6fec80c39f7a650e9baa342d5e540f134c135f052a03df9f9e07"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 17,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605539",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "87dc832e0adc498200e8710150191868705a65b00cd9f38ea248ba322159abd7"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 17,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "b3e83e56a26abe067ebfd846833812b79d9bac017f8059752caf55a23357e9e6"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 18,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.04162567140247313502520888245596013728103040964808388655113701",
+        "58.88036593864975105563971899112541650166645702192194439683454700"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "775e553ed293bfed723c4466053aa1180e0b6c9f3dd04daf7f38208976ffe878"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 18,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605544",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "74d375fda38a47e8824ccda8270d4aa0484e4aa593780aa752687722a4b0a294"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 18,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d03a66dad294eda6f862903b85b2153fa5166faf97e2de85c7f0d8a38d7edf9c"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 19,
+      "shots": 1642,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.36032818155667879725340924879412556065919403008288674708114378",
+        "71.98756592050415509735506798430710962436451828305868665444061159"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ae7fc296b704e68cd70e2cfbc4e0881e26865bbaa15f5a90760daf1387cb04fc"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 19,
+      "shots": 1642,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.148962461525418054262059091140812453037118347280192662487262436",
+        "72.68071310106410040677230010574652932851262059518936736885426198"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "beaaad2e2b9072a38f4b01e32bb8127db00dff18b35af804f0b55fb4407aa709"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 19,
+      "shots": 1642,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        6.492534240069203,
+        6.492534240069204
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ae72377c4dfa125aa227213bdfec052f2b09fa58e0de70fc1f07e10623166a30"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 20,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.02447323930147102094645030535578019073842813112670484521457126",
+        "78.54116592016370831690655739590699905987594947749356415152936560"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "824d62e5dddbe41443f6ef2a4566b1a4c3dd9866b70f39ee4d474099a1de0382"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 20,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.093414579422023702585534241098515973396930004392668653543510651",
+        "79.23431310072365362632376624157065692521828188031873211030014954"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "f2c77a25d151f3771d5605dc96c3a5e97b0ef1ba5a5022370774b3324f7e83ce"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 20,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.095190042762727,
+        5.095190042762728
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "877df3ad804c9bdd0f15723b3b268258903acd886512b26d0b9e0365fe3e0757"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 21,
+      "shots": 1152,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.87892537721177637501794810292038992934274054451363856431582996",
+        "98.20196592010541317157876410650290728521775229850262113632692741"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "31435e4a0145420259442e55d0e72d44e19757a64f6e7c5762fff8304cbe6d31"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 21,
+      "shots": 1152,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.714997777707585957166624236256211988580645988651844525187126854",
+        "98.89511310066535848099599622796108385329312682208749068274816073"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "6eda21eeb78e06fbb00a3260afa464cc1ebbf5b313aebae03da5571b4e4300ec"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 21,
+      "shots": 1152,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        6.896806814508666,
+        6.8968068145086665
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "a8e43b7dad6e00e4de706bdc44133ae410378fa112008c9c367cff69a6bb4152"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 22,
+      "shots": 1152,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.03202968295424952804772916514468547191035642863060704441417016",
+        "58.88036593864975105563971895148485206854375444036281014780353040"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "8a1a3a6e59ae99c3b46948518938d2c2a59ed1aacf22ff5db66725a9cc10d32f"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 22,
+      "shots": 1152,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605539",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "76749f82928193dab792e17e85488b080a518d25451dcc669ebc6020fa8c8f46"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 22,
+      "shots": 1152,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "22991f84fd37a5a301040aa0ef3aa2d426425cacae0c5a8c95b5acf46c1af99f"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 23,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.03140937283808030883840581510504717923358896841383350227876329",
+        "58.88036593864975105563971894893544681385746276169121489456781775"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d0f36991c9faf2718ab61860b2cadd9e06afdafe5d83d3ebab20b0a80688bb70"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 23,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605538",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "ef68b1aa2619cab239db3567c56f12ff5406009d1873a8052232461445aac597"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 23,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d2f459b75dc0f04b1c42b644244e4b52fffe505286c51fd7b64ed67ac14b1d8e"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 24,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.03423709577669763430584959185315806494717049298552656021285171",
+        "58.88036593864975105563971896056990971249827884188012876184314304"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "3471366276c7170a54fac97ced3727c4e3009a7920c3d8e3bebb714224b28456"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 24,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605539",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "2c2f6693970e331aadf410371b807f9435a2e4c6ffe7aea2ce457bbfb6e40a58"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 24,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "2af1c49070a68189a20afa4db28b9bbcbe124b6c94ad3ea9a7552be6eaa96e88"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 25,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.03404504329502291478680220841644223086807634531571707919944943",
+        "58.88036593864975105563971895977868181373744688923660228459915947"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "422ab7a48a7999bd13617ec08be5ea78191b9a154bbac85e2e618e4c14a876fe"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 25,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605538",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "4697abef24736b9d854e9f885db655bb6262e3c86b3fcaffad0ac16f681b17b4"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 25,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "f53bfc1aeef50c69648d664f82969a3b79e7ca6761c57374e636e7a036805e3a"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 26,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.04202141567657344140516116768043406186568103035601893878141860",
+        "58.88036593864975105563971899276839835551317220020162760045470030"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d60f41078af9638f2e92c93be5e8ed3b60e0bb3f4c64dc07e870b97f32737f4d"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 26,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605539",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "5cf176ae32954b0a0cb2d703fb4b726f25db37183bb6608d0dfcc398af49eadd"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 26,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "f53bfc1aeef50c69648d664f82969a3b79e7ca6761c57374e636e7a036805e3a"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 27,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.02090296423269761970321943535958661583726038871291091618681317",
+        "58.88036593864975105563971890599464455848892581215762900762006430"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "7093db43df182885e1f9a489c47971a260fbb28895f61ba436a452bd3bcadef8"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 27,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605536",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "f62c3652057696bbb2cb5de4faa6e952c337ef4440e24133be18f5df0188fccd"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 27,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d03a66dad294eda6f862903b85b2153fa5166faf97e2de85c7f0d8a38d7edf9c"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 28,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.67858007658499126101037329818192088837789341309003826867617001",
+        "65.43396592282526255771901210020165263419758006130930200678570909"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d6c0323fd66a675d37aa8f72d9f100406061ba36e18c09e7565b6f2fb51f948c"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 28,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.473958397113535404915219971428406219430709894890689605039854859",
+        "66.12711310338520786713624421503354132554567046888848464528004305"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "7cd93211392e5ab626eaeb9d0ad1054eee3c4d89720c5225a8dfe691acbf6b4d"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 28,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.841946673928053,
+        5.841946673928054
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d6f5042ed846c7d82909b565a4ef5d3574acf87dcc54c79e10c33a6e0d0c5727"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 29,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.05290446623107219681122884585387277970853492150194136006876348",
+        "58.88036593864975105563971903820648895011090059296184566140182840"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "9c6aa7c3dd9b89411d28a3d895b2c4c130fa6c175aa401061954eeb253ccd983"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 29,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605539",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "5cf176ae32954b0a0cb2d703fb4b726f25db37183bb6608d0dfcc398af49eadd"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 29,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "f53bfc1aeef50c69648d664f82969a3b79e7ca6761c57374e636e7a036805e3a"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 30,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.823509954634826521752327904305988311195076052486325512725336538",
+        "72.68071310106410040677230010354689259237244866116131204524749715"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 6,
+      "certificate_sha256": "4ce69437a4fa409bdeee89f2fb3dc74c903c41caa562fd80e38a4b127c190370"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 30,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.06084740221091806691992774232054897265379583773259518579691108",
+        "78.54116592016370831690655739590699949721830452305374724595127634"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "5bd17f5f36ad86379fcb71903eef31af58e9a9571a11e85ad4288e74bbc14cfe"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 30,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.095190042762727,
+        5.095190042762728
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "5cb1cf23d3c72c4c54c4ae429fd71369132ad47c68a7b2efc090b7957a715975"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 31,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.03680054460397805401598872328177393323534695846098450773816753",
+        "58.88036593864975105563971897114550417384398327026853265421970664"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "60fd8d2496a9a6cade56408023bdd1b5c35d539dc7f31502cb6c020cba2f6e15"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 31,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605539",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "a1cff476e91ce95a3c693d61d197093adc9ac98c072d8ce511a27ad87d0e3fa1"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 31,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d2f459b75dc0f04b1c42b644244e4b52fffe505286c51fd7b64ed67ac14b1d8e"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 32,
+      "shots": 502,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.03637976549405634388575200590977920937398022462484878640166416",
+        "58.88036593864975105563971896940770548119451804900654536587017740"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ec0f3d3babc267734bfa9fd4b746083e67c29c48e46e2fdb69684ede21484dbf"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 32,
+      "shots": 502,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605538",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "a0836ee2b3c47a54986f9b3e97ce92fa24696a1ca252b8f10b66fd71c626c286"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 32,
+      "shots": 502,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "dd21ee7df2f0b16450836c8a2d6c95185411f8d1140eaaf827867457d186d44f"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 33,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.05961877134880104692184052025026863204619843324486605127059921",
+        "58.88036593864975105563971906648720421424372265913878199474580860"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "fc3c20de6c80b01fe97289e8562db18cd86da3d7466aa161efae206d9edcb159"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 33,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605538",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "6780bb3f5ffcc874ade0facfe44915c91ab527c78f6e0ed0e00032b92f6de423"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 33,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d03a66dad294eda6f862903b85b2153fa5166faf97e2de85c7f0d8a38d7edf9c"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 34,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.61826306014759851975157044034223255563731172653671721231519183",
+        "85.09476592011378394842779883312271824587334387935294361235693076"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "6e13eddd5d3de3db7b541613173bb37dab5a86e308b2ae0f1dafdcfe0c40e4ca"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 34,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.502658413761745177102513665202884459056724003560594403756551845",
+        "85.78791310067372925784503095458089479705367560017403097842076058"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "a42e83acee0409e3efea2987f370d01f7fbbdcbb73c32d84ef50b738ac7dab3f"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 34,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.68989715050942,
+        5.689897150509421
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "51a5838b407a932b16914ff12048737c9ebc6a233b5b8464c12d4bb0ec720bb4"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 35,
+      "shots": 1458,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.03741434293823395851728179934957183191242839224618678490648265",
+        "78.54116592016370831690655739590699921365264053113294448633130304"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "cae9fd24adeba732e243ed658a828a0eb62e1a1e54dddd2d380b27b50bf16533"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 35,
+      "shots": 1458,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.034696102476784406190537008949164655251434143795129911531101749",
+        "79.23431310072365362632378951736516978556263418920511230843320184"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "db8186053275a5e6d9f375d2b4611d7c2de4ef70c824f5cdc37e19523b3942a1"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 35,
+      "shots": 1458,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.095190042762727,
+        5.095190042762728
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ac2fb8eb409eba35fcc6eb330fb4f183db1481469e81d40be105624610012f86"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 36,
+      "shots": 446,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        "4.618026978079798949129250230272744586743708092745492850114751075",
+        "4.618026978079798974032996774887881944696330526399668443504232309"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "f01aaaafdc7abd9e6ce5a8b32a46501e0a14c8a36dd33dcd06dd9a2fd90c8420"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 36,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605543",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "10c7e4d593d620194e51c3701129ff832319c3f49995562925c599d76fa49c1c"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 36,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ce28494b4ed583fb682fd8caca6a21861f7beba835e3e525816a395939dff284"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 37,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.02581996248122867095814614674451808037209495352947148428729434",
+        "58.88036593864975105563971892603477922653935101887516486091124221"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d89eb0fbb506c0bde821d14e3b090f57ef68a0fa41b6d0fee446a9fab9e5dd4d"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 37,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605544",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "74d375fda38a47e8824ccda8270d4aa0484e4aa593780aa752687722a4b0a294"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 37,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d03a66dad294eda6f862903b85b2153fa5166faf97e2de85c7f0d8a38d7edf9c"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 38,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.37597016454754599575148353937870406230100019853440539896805612",
+        "71.98756592050415509735506798430760638324268518095496205325392843"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "00f6799011a41b4405e882b6a8e693d2f8a5b7dbd5fc68fa93693c76c327a884"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 38,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.148962461525418054262059091140812453037118347280192662487262442",
+        "72.68071310106410040677230010574652932851262059518936736885426198"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "72c348605e06419fa735c3cbc19e1eb44f550aa12a6191110d0310cd5d2bc85e"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 38,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        6.492534240069203,
+        6.492534240069204
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "6faeb9bcb4bba603c5aad648a3562f19596d95be3cc0cf758745349f261d07ba"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 39,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.02645131921870969871030200539633536833385434773120551767646397",
+        "58.88036593864975105563971892861513613778646292783519937949286297"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "e8b7078acea05443956196aea8a2a945e76519922dc3abbfe6ad63ce8138c7cc"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 39,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605542",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "617c34e99a7e9896470a4034ccd532a33bcf4138f387d035bdefb083b9b2ec20"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 39,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "2af1c49070a68189a20afa4db28b9bbcbe124b6c94ad3ea9a7552be6eaa96e88"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 40,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.69138421903750919467226952741151895218935157982096710898312774",
+        "65.43396592282526255771901210034576442372683159194859166156636018"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "47de64ac4ad44dbb9bfa5fe5d920240c84e8c063ce198d3f7607c29a27ea1b73"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 40,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.473958397113535404915219971428406219430709894890689605039854864",
+        "66.12711310338520786713624421503354132554567046888848464528004305"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "6e0389e7d6ebe3be5b35dad81139220a7f69758ed0eb5cb7a63e97bbb5a503c3"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 40,
+      "shots": 638,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.841946673928053,
+        5.841946673928054
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "b6c418a6891b594900df36c0e5d2bd311ce39e6d323d466a114c0c843f9515a3"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 41,
+      "shots": 1458,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.769622483434025717017148308639491321497380621926559848875921317",
+        "72.68071310106410040677230010354671483404716007133444171856557342"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 6,
+      "certificate_sha256": "19d2eaa827d7e2e9443312870417b53974bb9bb5313476af17b4dff81c536274"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 41,
+      "shots": 1642,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.84312131140994667398750197096424576117927944475360888414014203",
+        "98.20196592010541317157876410650290728521774462332895258733450435"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "9520a8812ec656f7a0bb802d2d0522138df4485cc677a3ec132c7f575477f1ef"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 41,
+      "shots": 1642,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        6.896806814508666,
+        6.8968068145086665
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "99c2ec1b7daf62e9761c2bd1249a421c85e782e6e1304e300ba9df9ef621e8d9"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 42,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.02925835591131640818946952102583871219410282408578995822726938",
+        "58.88036593864975105563971894010724746228413993551394907869504909"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "a39f41d7fe21d36f487b174808762fa393613487dba5fe5a298335210aaf4015"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 42,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605538",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "c7d59749f7dd252cb48dd522b067c544f19810b490e33d5c7364f1e423a41b77"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 42,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "877d5e503f6f6466158980b7e0b7665795f24ec6f52a511daf24affd88b8ba39"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 43,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.40082218805707795947721663623897425007152265661902801247787714",
+        "71.98756592050415509735506798430841179041846622183265017646484915"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "f631318f0f7b306ca90007840500770e81e6be9867709cc2a3372b9d5ea81c3f"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 43,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.148962461525418054262059091140812453037118347280192662487262438",
+        "72.68071310106410040677230010574652932851262059518936736885426198"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "0b8d9d8871882a607489390cb3d490f98a9b4b3f1256f07abd775abba5dd14cb"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 43,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        6.492534240069203,
+        6.492534240069204
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "f0ac884547750d55fb2297b72387657235fc3179b7815d8d41ab62ae027fdfaa"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 44,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.02925835591131640714356073788208635037544769383855333783421144",
+        "58.88036593864975105563971894010724746228414563236004235867912910"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "42e273b84eadbdb940467343f26fc730694026ec6424be3f6b2eca6e5a3c92fa"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 44,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605543",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "793f1340fca1169665832ef82d750afe9ca53f309bedd96142f488ccdee82ae0"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 44,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "2af1c49070a68189a20afa4db28b9bbcbe124b6c94ad3ea9a7552be6eaa96e88"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 45,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.71375271764105408461682928755181267202861904075422925978479171",
+        "65.43396592282526255771901210060199418857942590385784233454235846"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "329ce71f6c252cc914475a7cb2f35339a239a6517c6d3e1e0ba1840b24416360"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 45,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.473958397113535404915219971428406219430709894890689605039854870",
+        "66.12711310338520786713624421503354132554567046888848464528004305"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "fc5efb0b3ca0194ef973d43b9335d21b7df799be6833db1053e45c55dd80fd78"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 45,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.841946673928053,
+        5.841946673928054
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "c5dd4fa26d1015a3f948aea4d5ede2e67b07619c9d89757b88396be757ad1e0c"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 46,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.02090296423269761755825008803453431847749031953076248392747152",
+        "58.88036593864975105563971890599464455848893248721621936313577169"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "35e4c02fb19ea7771575f7bc0664d5b46a4f66863b4c0d3437ce151f731826b6"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 46,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605537",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "f3c0ccc9bc6813a9bde8415196b55a5ae9b408910c14b81af6c78d12668cdeb7"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 46,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d2f459b75dc0f04b1c42b644244e4b52fffe505286c51fd7b64ed67ac14b1d8e"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 47,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.72425431185657409883649215862949948875695004691196702488210340",
+        "65.43396592282526255771901210072428070341182077027571141346865328"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "8403011f75d8db9fc2e01e4c101200270b3743f4e3574d55def8afde249e347e"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 47,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.473958397113535404915219971428406219430709894890689605039854868",
+        "66.12711310338520786713624421503354132554567046888848464528004305"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "5bdb1be0d33d787ee56ccb8d20118b9db726b8f34ccb7df70bcc258bb2d7f4b2"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 47,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.841946673928053,
+        5.841946673928054
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ce9471fc47832e0ccfa9a77cdfed2b9f3a069b535c77a88871bab78144aa452c"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 48,
+      "shots": 396,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.07570172281536101890102196956432181369187790734042703467877949",
+        "58.88036593864968828082194158719199258012779775233741227798361493"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "fa07ba2584412656a40e728707c4f47946933f1079bfa0ed0a3d6125c9c04380"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 48,
+      "shots": 396,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605539",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "c46a130ca55699b029e51b4f5d420c92d736a5e6dbb0b5661aac5c860c0f8e30"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 48,
+      "shots": 396,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ff162f714d29312698040285cdc473df828975133eb32a33817207d856360d03"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 49,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.683323962420952079080689903096722319629325026951480996318495678",
+        "72.68071310106410040677230010354644938161472911051762187422671644"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 6,
+      "certificate_sha256": "98550431ddb792b777cff9e45338afe64fe8620a376763c2f740e56f2e4fa33f"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 49,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.02382599844866353779050172119488940853755867447915682042258007",
+        "78.54116592016370831690655739590699905223703894825660512297009040"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "f7612b4fb8f7b97c31f0f064d819e3a0def95ffac77a552d393467d26e79196f"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 49,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.095190042762727,
+        5.095190042762728
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "5cb1cf23d3c72c4c54c4ae429fd71369132ad47c68a7b2efc090b7957a715975"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 50,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.67745955309760008501388346001210824704970313083112544645237517",
+        "65.43396592282526255771901210018912862634161068088298726701310460"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "f81148b27004c2d2c4538c43b77d89e6a3488dddc8e14670410d349228acfcc6"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 50,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.473958397113535404915219971428406219430709894890689605039854856",
+        "66.12711310338520786713624421503354132554567046888848464528004305"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "5e6bcba83148908533de39b3203ccbefe2f80f50597d797f294e1e008a2e2886"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 50,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.841946673928053,
+        5.841946673928054
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "c5dd4fa26d1015a3f948aea4d5ede2e67b07619c9d89757b88396be757ad1e0c"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 51,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.35875611681374034244847021040891655277670077668497898253993298",
+        "71.98756592050415509735506798430706012702110523433243763942689591"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "209ad9e446c605a6f4a71cc5d5c8e3a1268ad0370ab9a0489de7665a047d6b71"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 51,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.148962461525418054262059091140812453037118347280192662487262442",
+        "72.68071310106410040677230010574652932851262059518936736885426198"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "10257ad8f0dbb6df09923cf10c80402937c188ef231933e0078b20c5700c1426"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 51,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        6.492534240069203,
+        6.492534240069204
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "c2b4d2a149e568b9fdb9e6c3c913ce3f7a663655db7244672b7a782eec9e363e"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 52,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.02090296423269761525490959568050740006355143986495805373444579",
+        "58.88036593864975105563971890599464455848886444003304602597966814"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d99e510a272d8f2692e9cabfa8c0ebf89f0c3eb7e740ac972917926e8d6b0f00"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 52,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605537",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "611b900c613d48f426e75adbd6e5708c50769b7616b1e619f7e4466b993b2ebe"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 52,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "f53bfc1aeef50c69648d664f82969a3b79e7ca6761c57374e636e7a036805e3a"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 53,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.02976366157834878367443788151576162619647161851188449430601461",
+        "58.88036593864975105563971894217941579141986017657820462701920349"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "426492360a10684c211adb7fd60eb44754dbac800d6c458272911cebbe78055f"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 53,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605539",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "5cf176ae32954b0a0cb2d703fb4b726f25db37183bb6608d0dfcc398af49eadd"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 53,
+      "shots": 808,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "f53bfc1aeef50c69648d664f82969a3b79e7ca6761c57374e636e7a036805e3a"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 54,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.04563605956925738265341488339501226921803490774103048097071128",
+        "58.88036593864975105563971900780517411345250533412149220507591813"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "59d7ddeb3cfa8222c5e8c76219616eb3f7c2fb7d011c3d4b26b4709ee80bb4e8"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 54,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605543",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "10c7e4d593d620194e51c3701129ff832319c3f49995562925c599d76fa49c1c"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 54,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ce28494b4ed583fb682fd8caca6a21861f7beba835e3e525816a395939dff284"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 55,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.05145148658170200867248552085443415567948950897358101817242950",
+        "58.88036593864975105563971903211147692347056454775515786195573695"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "3b3adf2c3ebb790aadc148558981726f48c03e854035ee587725d95b283a704a"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 55,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605544",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "700c88d4185e20675bf0ce941108154a734df90c88f3cf5d4fae1693f9dc1c43"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 55,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ce28494b4ed583fb682fd8caca6a21861f7beba835e3e525816a395939dff284"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 56,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.03637976549405634290232717909019898495589057280049327143385718",
+        "58.88036593864975105563971896940770548119459751450127757560869090"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "5445ba56e5330b2233cfd65df4e58b3eb9021055eb9f20fdc7c249c4bb72e5b3"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 56,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605538",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "c7d59749f7dd252cb48dd522b067c544f19810b490e33d5c7364f1e423a41b77"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 56,
+      "shots": 910,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "877d5e503f6f6466158980b7e0b7665795f24ec6f52a511daf24affd88b8ba39"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 57,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.03140937283808030998650023955824987597686313275447997083582092",
+        "58.88036593864975105563971894893544681385745573048646559404124782"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "76d9088b161d3d9432f85ea251b5851c699c32858fba24d3e4fea0154d22a8c7"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 57,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605539",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "2c2f6693970e331aadf410371b807f9435a2e4c6ffe7aea2ce457bbfb6e40a58"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 57,
+      "shots": 1024,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "2af1c49070a68189a20afa4db28b9bbcbe124b6c94ad3ea9a7552be6eaa96e88"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 58,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "7.03161851893744489209449333338409804625543481347147650003386939",
+        "78.54116592016370831352979900166964528662159441318584728703110344"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "8522ce0d74c0afd574c5d6c54f31c30a47a29f01b5d9900e6b9c952d259ebbf9"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 58,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.824195036346047501753416381048499856699012621928674413515337242",
+        "79.23431310072365362294703112312776969469236866941966445969513054"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "743f9eb1a63c5f886cf5808d8b89bc112051485aa08a98dd2a8d7817ebdd0c86"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 58,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        7.146460707475867,
+        7.1464607074758675
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "71210d5af82f399cdb70f2ab90cb9bb1c9fae6a4c333a4da2936e9f272dcbc3f"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 59,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.05905591365280779745695154019946393250293542278703991764451804",
+        "58.88036593864975105563971906410914379414855987296613643677179088"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ce60c276db2df874a91b94cbc88c3fac001f768c734e256b161e14963123e8b9"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 59,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605544",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "929a363ca63f31bdb2d0b99f67f2e112f7861e61dc5f56f48389de84961aaf45"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 59,
+      "shots": 718,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "d2f459b75dc0f04b1c42b644244e4b52fffe505286c51fd7b64ed67ac14b1d8e"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 60,
+      "shots": 1152,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.730095394436780489045219483401178647792408290839477776490657493",
+        "72.68071310106410040677230010354659040321945805847878249995026277"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 6,
+      "certificate_sha256": "d581957f2f5850f56e6a9d4d3f35bfa61ce38a02cd19708a97f59762e1856537"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 60,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "6.22903278771504918782052444448978129783202473774354861491595506",
+        "91.64836592010647328091731885521666715265973899145400468814316559"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "db9ae423a32e72caa80aa3dbded18a1d18bb688ad097a310117da7e1e9973699"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 60,
+      "shots": 1296,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        6.29067101093835,
+        6.290671010938351
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "f140bcae945f0b61c3853f1f18c87fcb002f6c9dda7f0f56a94cdaaeaef4a9e5"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 61,
+      "shots": 396,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.05241691811092629646993159117722140491015932061381895715262039",
+        "58.88036593864975105563971903616031699227953387681388375646923190"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "32435a965d9821ede59e63811987f035065ff66ee85b95b07ecaa73afe4355d7"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 61,
+      "shots": 396,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "4.809500984457576281149562585647418928922026246800379447346605538",
+        "59.57351311920969636505694860725659598558779354782069374002398167"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "1c95aebd99c4193d5de7453863b99907f1281771c2b22a61b72c1604d52d242d"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 61,
+      "shots": 396,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.195319509003001,
+        5.195319509003002
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ff162f714d29312698040285cdc473df828975133eb32a33817207d856360d03"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 62,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.70379758925293041282842770693770893800122807416408478823009137",
+        "65.43396592282526255771901210048725074564821798195504942112620401"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "5d1f1f259e56287d469c082a29c58ca2aa92047e18d91542b6f4dde3e158c659"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 62,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "independent_decision_lower_bound",
+      "evidence_bounds": [
+        "5.473958397113535404915219971428406219430709894890689605039854868",
+        "66.12711310338520786713624421503354132554567046888848464528004305"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": 3,
+      "certificate_sha256": "31208cfef2f4771ff2e551a424a7b401247ef64b8b3d930731a6e2e8fd0c92ab"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 62,
+      "shots": 566,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.841946673928053,
+        5.841946673928054
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "370e64f6d25714a3996e6608b255fd86175ca2a0c756d2d461a4fe3cee7670e9"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 63,
+      "shots": 1458,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        "4.618887473921295927980291098000099062995793476454159514361434859",
+        "4.618887473921295929716524024838876898622676424894372670259023185"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "6bd4e5b059bd7699e93ddcadd5124370fe5bb46ccc81b77f15ad0e830dac6dd7"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 63,
+      "shots": 1642,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        "5.707407386928334696777418609499169536168520396655047509557704151",
+        "5.707407386928334747586427331657337102889694272300248239024987511"
+      ],
+      "threshold_bounds": [
+        "4.605170185988091368035982909368728415202202977257545952066655801",
+        "4.605170185988091368035982909368728415202202977257545952066655803"
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "ad9f7b7e4b2195f74b8d5d00feb5df17661afdc2961a1f42f1d8cf4a988fa071"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 63,
+      "shots": 1642,
+      "decision": "reject",
+      "check_kind": "full_interval_recomputation",
+      "evidence_bounds": [
+        5.68989715050942,
+        5.689897150509421
+      ],
+      "threshold_bounds": [
+        4.605170185988091,
+        4.605170185988092
+      ],
+      "certified_experts": null,
+      "certificate_sha256": "fa7002427fcc637b33ffce381f68ebbf6ee8354979976ee9b3e4663fc759abfe"
+    }
+  ],
+  "full_runner_replays": [
+    {
+      "rep": 0,
+      "policy": "closed",
+      "family": "refined",
+      "reason": "mechanical endpoint",
+      "records_sha256": "19ec83ef3122f5752f33505e4f1266e390cab5e4d5b322bcf7f800239aeadf91"
+    },
+    {
+      "rep": 0,
+      "policy": "psr",
+      "family": "refined",
+      "reason": "mechanical endpoint",
+      "records_sha256": "6c951150ff602bc69d6a9ad9e354d2da8fa93ad34e57f2a6faaf48ca1264d022"
+    },
+    {
+      "rep": 63,
+      "policy": "closed",
+      "family": "refined",
+      "reason": "mechanical endpoint",
+      "records_sha256": "dea233c56541978442da2e65b472190ac426c285b7532897879cabd71983463a"
+    },
+    {
+      "rep": 63,
+      "policy": "psr",
+      "family": "refined",
+      "reason": "mechanical endpoint",
+      "records_sha256": "357680d6b081202ee46921fa8072e3528cd9d3464c6d63c3b446b9501111f700"
+    }
+  ],
+  "cost_rows": [
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 0,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 0,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 0,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 1,
+      "shots": 1152,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 1,
+      "shots": 1152,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 1,
+      "shots": 1152,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 2,
+      "shots": 396,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 2,
+      "shots": 396,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 2,
+      "shots": 396,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 3,
+      "shots": 1642,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 3,
+      "shots": 1642,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 3,
+      "shots": 1642,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 4,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 4,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 4,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 5,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 5,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 5,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 6,
+      "shots": 502,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 6,
+      "shots": 502,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 6,
+      "shots": 502,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 7,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 7,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 7,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 8,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 8,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 8,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 9,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 9,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 9,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 10,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 10,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 10,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 11,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 11,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 11,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 12,
+      "shots": 446,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 12,
+      "shots": 446,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 12,
+      "shots": 446,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 13,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 13,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 13,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 14,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 14,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 14,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 15,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 15,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 15,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 16,
+      "shots": 396,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 16,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 16,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 17,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 17,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 17,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 18,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 18,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 18,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 19,
+      "shots": 1642,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 19,
+      "shots": 1642,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 19,
+      "shots": 1642,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 20,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 20,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 20,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 21,
+      "shots": 1152,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 21,
+      "shots": 1152,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 21,
+      "shots": 1152,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 22,
+      "shots": 1152,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 22,
+      "shots": 1152,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 22,
+      "shots": 1152,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 23,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 23,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 23,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 24,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 24,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 24,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 25,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 25,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 25,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 26,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 26,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 26,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 27,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 27,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 27,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 28,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 28,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 28,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 29,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 29,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 29,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 30,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 30,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 30,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 31,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 31,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 31,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 32,
+      "shots": 502,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 32,
+      "shots": 502,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 32,
+      "shots": 502,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 33,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 33,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 33,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 34,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 34,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 34,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 35,
+      "shots": 1458,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 35,
+      "shots": 1458,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 35,
+      "shots": 1458,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 36,
+      "shots": 446,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 36,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 36,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 37,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 37,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 37,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 38,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 38,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 38,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 39,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 39,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 39,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 40,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 40,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 40,
+      "shots": 638,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 41,
+      "shots": 1458,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 41,
+      "shots": 1642,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 41,
+      "shots": 1642,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 42,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 42,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 42,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 43,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 43,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 43,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 44,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 44,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 44,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 45,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 45,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 45,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 46,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 46,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 46,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 47,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 47,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 47,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 48,
+      "shots": 396,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 48,
+      "shots": 396,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 48,
+      "shots": 396,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 49,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 49,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 49,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 50,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 50,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 50,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 51,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 51,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 51,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 52,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 52,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 52,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 53,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 53,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 53,
+      "shots": 808,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 54,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 54,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 54,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 55,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 55,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 55,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 56,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 56,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 56,
+      "shots": 910,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 57,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 57,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 57,
+      "shots": 1024,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 58,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 58,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 58,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 59,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 59,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 59,
+      "shots": 718,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 60,
+      "shots": 1152,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 60,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 60,
+      "shots": 1296,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 61,
+      "shots": 396,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 61,
+      "shots": 396,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 61,
+      "shots": 396,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 62,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 62,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 62,
+      "shots": 566,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_rb",
+      "rep": 63,
+      "shots": 1458,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_hedge",
+      "rep": 63,
+      "shots": 1642,
+      "decision": "reject"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_beta",
+      "rep": 63,
+      "shots": 1642,
+      "decision": "reject"
+    }
+  ],
+  "start_byte": 157044404,
+  "end_byte": 165338593,
+  "input_prefix_part_sha256": "43592a1a9c6f479f0623432c98a312bdca021b0c46f3ddbf6d7a8aa4aaee5ed8",
+  "audit_sources_sha256": {
+    "experiments/structured_validation/prospective/audit.py": "da2be2884828d81919530ce3997482ba387ea535ded66c3aa1cc461664dcba10",
+    "experiments/structured_validation/audit_refined.py": "542bdc715fb434c11bcf96c44748fdac51d539dc341e90b035c34864c3917b44",
+    "experiments/structured_validation/audit_conditional.py": "c605dca6595464338fb529c16bfc2aaccf0d35f38fffea6aec890dfc4176611f",
+    "experiments/structured_validation/audit_unequal.py": "061daa58573f90361f19ec2ac88847bfc06712058d95ca806b0e445168d2f0cb",
+    "experiments/structured_validation/run_conditional.py": "ea79e9c7bef12bf162582851ff3ef6db3b83af988310d02263924d1c7fd17ca1",
+    "experiments/structured_validation/fast_rb_certificate.py": "4cdbba1a913aac7e9f843f61f5ffffc6fe3c09871e991b33633187d5a486d73c",
+    "experiments/structured_validation/fast_weighted_fisher.py": "22b1dd9ff9a2d95e5bfcc7054e0cbb4b334e9e15ee45d81484e24d6c4562783a"
+  },
+  "elapsed_seconds": 19.68272409999986
+}

@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "sources": {
+    "experiments/structured_validation/replay_stored.py": "905df3151f4e6a0e953edeee74809a96d388b69778bdd3a71449bc69a2d733bb"
+  },
+  "scope": "Existing seeds only, including a real unequal full-grid plan. No new experimental trajectories. Planner elapsed_seconds excluded; all protocol history, allocations, costs, decisions and certificates exact.",
+  "checks": [
+    {
+      "status": "passed",
+      "case_id": 1,
+      "policy": "psr",
+      "rep": 0,
+      "seed": 710001009,
+      "method_trajectories_replayed": 6,
+      "records_sha256": "6f3f775fc333a5884bce7133f3e157776362dc5763ac63fcc30e0d58414810ac",
+      "input_sha256": {
+        "spec.json": "f0cca6e6156211401fbd23bb7ed8527a21652be89c4d74b34402623af533c635",
+        "summary.json": "948c1d795a2c2b15ccb2fa50afc2e3f34620daf304cecbec295765d0e2c61f92",
+        "trials.jsonl": "48e1b7b187a3e2d45d3273ffdb87f1c8639f42c684eb7b1c28faee261835d64b"
+      },
+      "comparison_exclusions": [
+        "elapsed_seconds: nondeterministic planner wall-clock diagnostics only"
+      ],
+      "elapsed_seconds": 2.4593173999999998,
+      "scope": "One existing stored group; not a replacement for the full dataset audit.",
+      "dataset": "refined_smoke_v1"
+    },
+    {
+      "status": "passed",
+      "case_id": 1,
+      "policy": "grid",
+      "rep": 0,
+      "seed": 710001009,
+      "method_trajectories_replayed": 1,
+      "records_sha256": "eda0de1598635450193f1ce2c214f2a29eb91fa69b46f8160b5b0ac34caff473",
+      "input_sha256": {
+        "spec.json": "2457c9cccb5cb532a83f4c4b724915c2d4259dac178d458b01f08f90c43455f2",
+        "summary.json": "6f08aa80054a897c6732476add63b6dbfdeb00bdf5dfe77e9dab555333ba549a",
+        "trials.jsonl": "d314530bc24b734901af7b1e2694f5331c63d3d3207922a6f778af4f5ebf1da8"
+      },
+      "comparison_exclusions": [
+        "elapsed_seconds: nondeterministic planner wall-clock diagnostics only"
+      ],
+      "elapsed_seconds": 0.45123029999999975,
+      "scope": "One existing stored group; not a replacement for the full dataset audit.",
+      "dataset": "unequal_smoke_v1"
+    },
+    {
+      "status": "passed",
+      "case_id": 1,
+      "policy": "grid",
+      "rep": 0,
+      "seed": 810001009,
+      "method_trajectories_replayed": 1,
+      "records_sha256": "761d9d48b3e389e76ecda86f7de37a8b753e2b4208c45c464c7a75c61a844fae",
+      "input_sha256": {
+        "spec.json": "a13a5356446a2e0b4448e938ca68b048d500f6d4f3b988f61468d627fdf290ee",
+        "summary.json": "7deb8ff6be8e87c339b86558726b6559524a3ee572389abbc251df727e2f7564",
+        "trials.jsonl": "c8a998941fefcf387e6fbcc439c78fad1ed5bc034db6471f9ad14ca3f632355b"
+      },
+      "comparison_exclusions": [
+        "elapsed_seconds: nondeterministic planner wall-clock diagnostics only"
+      ],
+      "elapsed_seconds": 1.5207390999999997,
+      "scope": "One existing stored group; not a replacement for the full dataset audit.",
+      "dataset": "unequal_development_v1"
+    }
+  ]
+}

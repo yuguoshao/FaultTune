@@ -1,0 +1,57 @@
+{
+  "status": "proved_lemma_unimplemented_literature_comparison_pending",
+  "title": "Exact finite-prefix calibration plus surviving-capital continuation for paired Jeffreys evidence",
+  "scope": "A mathematical follow-up only. The current development pilot and its frozen stopping rules are unchanged.",
+  "assumptions": [
+    "Each measurement pair and its orientation are chosen predictably. Conditional on the past, the probabilities of discordant plus and minus outcomes satisfy q_plus>=q_minus whenever the true sign is positive, q_plus<=q_minus for a negative true sign, and q_plus=q_minus at the null.",
+    "For the physical model, choosing a pair with common center and positive sine gives p_plus=A+B*cos(phi)+C*sin(phi), p_minus=A+B*cos(phi)-C*sin(phi), so common ordering follows from the sign of C. Independent conditional Bernoulli pair draws satisfy the assumption.",
+    "Pairs can be expanded into a chronological latent sequence even when observations are processed in blocks. Block actions must be chosen before their outcomes. A physical checkpoint uses the cumulative discordant counts without changing their orientation retrospectively.",
+    "Fix delta in (0,1), an integer d0>=1, and a positive early threshold h0 before observing the data. Any threshold selection by exact deterministic null calculations must be completed before the evaluation data are collected.",
+    "A decision with zero discordant score is always abstain."
+  ],
+  "discordance_evidence": {
+    "state": "At discordance index d, b counts plus-only outcomes and c=d-b counts minus-only outcomes; score=2*b-d.",
+    "capital": "M_d(b)=2^d * B(b+1/2,c+1/2)/B(1/2,1/2) = (2*b)!*(2*c)!/[2^d*b!*c!*d!].",
+    "null_law": "Under the zero-sign null, the discordant signs are conditionally fair; their finite prefixes have the iid fair-sign law. The process M_d is a nonnegative martingale with M_0=1.",
+    "tail_shape": "M_d(b)=M_d(d-b). At fixed d, M_d(b+1)/M_d(b)=(2*b+1)/(2*(d-b)-1), so M_d is nondecreasing with absolute score. Each negative-direction crossing set is a lower set in b and each positive-direction set is an upper set."
+  },
+  "exact_prefix_quantities": {
+    "early_event": "A={there exists 1<=d<=d0 such that 2*b_d-d is nonzero and M_d(b_d)>=h0}.",
+    "early_probability": "p_early=P_fair(A).",
+    "surviving_mass": "S=E_fair[M_d0(b_d0)*1_{A does not occur}].",
+    "requirement": "p_early<delta.",
+    "late_threshold": "h_late=S/(delta-p_early). A positive conservative upper bound on this ratio may be used in an implementation.",
+    "finite_arithmetic": "For rational h0, M_d(b), p_early and S are rational and can be calculated exactly with integer dynamic programming. No Monte Carlo calibration is required."
+  },
+  "stopping_rule": {
+    "early": "For 1<=D<=d0, a nonzero cumulative discordant score may stop at M_D>=h0.",
+    "late": "For D>d0, a nonzero score may stop at M_D>=h_late.",
+    "direction": "Choose the sign of the cumulative discordant score.",
+    "monitoring": "The rule may be checked at all discordance indices or any physical-checkpoint subset, including adaptively selected checkpoints. Missing a latent early crossing does not invalidate the bound.",
+    "zero_surviving_mass": "If S=0, the late surviving null event has zero probability. A practical implementation should retain any strictly positive late threshold rather than divide by zero or encode a zero evidence threshold."
+  },
+  "theorem": "Under these assumptions the probability of ever reporting the wrong sign is at most delta for either strict sign, and the probability of any non-abstaining report is at most delta at the zero-sign null. The guarantee is not limited to a finite physical-shot horizon.",
+  "proof": [
+    "Under the fair null, expose all discordance indices whether or not physical monitoring would inspect them. The probability of an early crossing is exactly p_early.",
+    "For d>=d0, the process Y_d=1_{A does not occur}*M_d is a nonnegative martingale with initial expectation S. Ville's inequality gives P_fair(A does not occur and some later M_d>=h_late)<=S/h_late=delta-p_early. Adding the early event gives at most delta for the symmetric two-stage boundary at all discordance indices.",
+    "If a sparse physical checkpoint crosses the late threshold after a latent early crossing that was never inspected, its latent path already belongs to A. Otherwise it belongs to the surviving late event. Therefore physical monitoring, including missed early crossings, is contained in the same full-discordance event.",
+    "Under a positive true sign, at each next discordance the conditional probability of a plus symbol is at least 1/2. Waiting through nondiscordant observations and changing future pairs predictably preserves this inequality; condition on the waiting history and then average over it.",
+    "A sequential coupling uses fresh independent uniforms U_d and generates the actual sign as 1{U_d<=p_d} and a fair sign as 1{U_d<=1/2}. Since p_d>=1/2, every actual cumulative plus count is at least the coupled fair count. Predictable p_d may depend on the actual past; this does not change the coordinatewise comparison or the iid fair marginal.",
+    "Ignore stopping by the opposite direction and consider the union of all negative-direction boundary crossings over d. Each constituent event is decreasing in the symbol coordinates because M_d is monotone on its negative tail. Hence the actual negative-crossing union is contained in the coupled fair negative-crossing union, which is contained in the fair symmetric two-stage crossing event already bounded by delta. Every actual wrong negative report belongs to this union.",
+    "Under a negative true sign, reverse the symbols and repeat the argument. At the zero-sign null the fair symmetric bound applies directly. A process that produces only finitely many discordances can be extended with auxiliary fair or correctly ordered symbols; observed wrong reports remain a subset, so infinite discordance production is not required."
+  ],
+  "exact_integer_dp_blueprint": [
+    "Let c_0(0)=1. The integer c_d(b) counts length-d fair sign sequences with b plus symbols that have not crossed any early boundary.",
+    "At step d, propose a_d(b)=c_{d-1}(b)+c_{d-1}(b-1), taking missing states as zero. If 2*b-d is nonzero and M_d(b)>=h0, remove this state; otherwise set c_d(b)=a_d(b). Use exact rational comparison for the boundary.",
+    "At d0, p_early=1-2^(-d0)*sum_b c_d0(b), and S=2^(-d0)*sum_b c_d0(b)*M_d0(b).",
+    "Store exact numerator/denominator pairs for p_early, S and h_late and record the strict versus nonstrict crossing convention. Verify the DP with independent enumeration for small d0 before releasing an implementation."
+  ],
+  "selection_and_validity_boundaries": [
+    "The proof does not condition a strict alternative on survival and then assume that its signs are still unbiased. Coupling is applied to the unconditional union of wrong-direction tail crossings, while the survival decomposition is used only under the fair reference law.",
+    "Symmetric early calibration spends p_early on both directions. No extra factor two is needed, but this theorem alone does not show that the calibrated thresholds improve on the original threshold.",
+    "A threshold chosen from evaluation outcomes is not covered. A data-dependent h0, d0 or h_late would require a separate valid selection mechanism.",
+    "The argument requires every paired observation to have the same true-sign ordering. Retrospective reorientation, selection based on the current discordant sign, or heterogeneous signed effects can break the coupling.",
+    "For arbitrary expert mixtures with delayed starts or varying directional normalizers, the sign of the pooled raw score need not identify the larger directional capital. This lemma is specific to the symmetric cumulative Jeffreys statistic described above.",
+    "No DP implementation, numerical threshold improvement, performance result, novelty conclusion or comparison with existing boundary-calibration literature is asserted by this file."
+  ]
+}

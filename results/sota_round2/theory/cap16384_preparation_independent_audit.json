@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "physical_shot_cap": 16384,
+  "discordance_horizon": 8192,
+  "artifacts": [
+    {
+      "status": "passed",
+      "path": "results/sota_round3/cap16384_preparation/beta_exact.json",
+      "file_sha256": "d2dbc9579dcaa4789bd56272f1ecd7bf0cacea22d60e24836fc71b37b67423ee",
+      "threshold_exact": "88630279/1000000",
+      "all_8192_contour_edges_independently_checked": true,
+      "full_integer_risk_recomputed_without_producer_import": true,
+      "lattice_minimality_independently_recomputed": false,
+      "risk": {
+        "fair_beta_crossing_probability": 0.009999715234949313
+      }
+    },
+    {
+      "status": "passed",
+      "path": "results/sota_round3/cap16384_preparation/physical_gate_m6.json",
+      "file_sha256": "5217a969aed0b52539ee6f524ac4d96cbd5f20703633a9a59bbbfea74b0abee7",
+      "threshold_exact": "45066591/500000",
+      "all_8192_contour_edges_independently_checked": true,
+      "full_integer_risk_recomputed_without_producer_import": true,
+      "lattice_minimality_independently_recomputed": false,
+      "risk": {
+        "null_union_upper": 0.009999795420580252,
+        "strict_wrong_upper": 0.009828457917803115
+      }
+    },
+    {
+      "status": "passed",
+      "path": "results/sota_round3/cap16384_preparation/physical_gate_m7.json",
+      "file_sha256": "77d00a77e4fe1ee67c49779c732c07379deeb2e5c35cb1ff68d4dddf4f995689",
+      "threshold_exact": "88766279/1000000",
+      "all_8192_contour_edges_independently_checked": true,
+      "full_integer_risk_recomputed_without_producer_import": true,
+      "lattice_minimality_independently_recomputed": false,
+      "risk": {
+        "null_union_upper": 0.009961807312499018,
+        "strict_wrong_upper": 0.009935112058090265
+      }
+    }
+  ],
+  "new_simulation_observations": 0,
+  "verifier_source_sha256": "c7c620881c9a8060cd28cd0fff7443ddfde99c6860383184c9b410d81abdd470",
+  "shared_independent_helpers": {
+    "experiments/sota_round2/theory/verify_integer_tail_dp.py": "3b13e6b988d8c06e0ac17c48630e270068d1fc1833c07d098059f68010cfc97f",
+    "experiments/sota_round2/theory/verify_physical_fast_gate.py": "e4e4216b46ff9b891e5e195f2c9ebc72f945100df0e75b6df4a7f78a9922dd32"
+  },
+  "limits": [
+    "Only deterministic boundary safety is established; no larger-budget observations were generated.",
+    "Lower-neighbor lattice optimality is producer evidence and was not independently repeated in this audit.",
+    "Each prepared method is separately certified; their union and switching caps after observing outcomes are not covered."
+  ]
+}

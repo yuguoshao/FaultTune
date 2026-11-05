@@ -1,0 +1,79 @@
+{
+  "status": "existing general theorem directly applicable; exact closed-form special-case priority unresolved",
+  "checked_utc": "2026-11-03T16:32:01.762294+00:00",
+  "reviewer": "stream_sota targeted primary-source literature check",
+  "local_proof": {
+    "path": "docs/CONTINUOUS_SYMMETRIC_DESIGN.md",
+    "sha256": "0e16a486bb11c38b179b1d8d2aa8ed18184aefe07ceabd99c44efb59b10cd13d",
+    "modified": false
+  },
+  "search_limits": {
+    "time_budget_minutes": 10,
+    "connector_attempts": 1,
+    "connector_result": "Transport HTTP request failure; connector search stopped without retries",
+    "fallback": "Read only the known original arXiv article 1512.02615, abstract and full HTML. No broader search chain.",
+    "new_monte_carlo_observations": 0
+  },
+  "primary_sources": [
+    {
+      "title": "On Variational Expressions for Quantum Relative Entropies",
+      "authors": [
+        "Mario Berta",
+        "Omar Fawzi",
+        "Marco Tomamichel"
+      ],
+      "arxiv": "1512.02615v2",
+      "arxiv_first_submission": "2015-12-08",
+      "arxiv_version_date": "2017-11-08",
+      "journal": "Letters in Mathematical Physics 107 (12), 2239-2265 (2017)",
+      "doi": "10.1007/s11005-017-0990-7",
+      "url": "https://arxiv.org/html/1512.02615",
+      "abstract_url": "https://arxiv.org/abs/1512.02615",
+      "read_scope": [
+        "Section I, Lemma 1 and equation (4), including its proof",
+        "Section I, Theorem 2 and equations (10)-(14)",
+        "Section V.1, equations (64) and (67)",
+        "Bibliographic attribution to Petz in the paragraph immediately before Lemma 1"
+      ],
+      "verified_results": [
+        {
+          "location": "Section I, Lemma 1, equation (4)",
+          "paraphrase": "Projectively measured relative entropy equals sup over positive omega of Tr(rho log omega)-log Tr(sigma omega), and also equals sup of Tr(rho log omega)+1-Tr(sigma omega). The second objective is concave in omega."
+        },
+        {
+          "location": "Section I, Theorem 2",
+          "paraphrase": "Optimizing classical KL over general finite POVMs gives the same measured relative entropy as optimizing over rank-one projective measurements."
+        },
+        {
+          "location": "Section V.1, equations (64) and (67)",
+          "paraphrase": "The paper discusses minimization of quantum or measured relative entropy over convex compact sets of states and the corresponding variational/minimax approach."
+        }
+      ],
+      "source_artifacts_sha256": {
+        "results/structured_validation/literature_cache/berta_fawzi_tomamichel_abs.html": "6ff4fc31bcce35f7a278b82e1c8f0d3c4f7f63b8cc58bbd2704a811a0780a8cf",
+        "results/structured_validation/literature_cache/berta_fawzi_tomamichel_html.html": "83c4e7b12bb8a005d5e93939cb02967a90ea2c5cd222157ab2bf5f21f6b66f6f",
+        "results/structured_validation/literature_cache/berta_fawzi_tomamichel_html.txt": "d469ed5be74c0a2570f12e0e76d3dea3739d7b826819efb08568b04eec624344"
+      }
+    }
+  ],
+  "exact_relationship_to_local_proof": [
+    "Our objective Tr(rho log H)+1-Tr(sigma H) is precisely the concave objective in Lemma 1, equation (4), rather than a new variational principle.",
+    "Its first-order stationarity condition is Dlog(H)[rho]=sigma because the log Frechet derivative is self-adjoint for the trace inner product. Concavity makes this condition globally sufficient.",
+    "The local choice rho=(I+beta Z+gamma X)/2 and H*=I+gamma X explicitly solves that stationarity condition with sigma=(I+beta atanh(gamma)/gamma Z)/2.",
+    "Thus the local all-angle upper bound can be obtained directly by applying the established variational theorem to this explicit 2-by-2 stationary point. Our proof spells out the same supporting-hyperplane argument without needing the full measured-relative-entropy theorem.",
+    "The physical positivity inequality for sigma, the explicit scalar b*=B atanh(2C)/(2C), and the equal-PSR lower bound specialize the general framework to this oracle design problem."
+  ],
+  "what_was_not_established": [
+    "This limited primary-source check did not establish whether the explicit A=1/2 continuous-angle oracle optimum or its closed-form least-favorable null has previously been published.",
+    "The inspected article was not verified to state the FaultTune A=1/2 PSR result as an explicit theorem; absence of an explicit statement in these inspected sections is not a novelty finding.",
+    "The phrase reverse information projection was not used as a verified theorem label in this source; the precise confirmed link is the measured-relative-entropy variational objective and stationarity condition.",
+    "No finite-sample stopping-cost superiority or general-A two-point optimality follows from this literature check."
+  ],
+  "secondary_attribution_only": {
+    "claim": "The paragraph before Lemma 1 attributes the first variational expression to Petz, reference 37.",
+    "reference": "D. Petz, Quantum Information Theory and Quantum Statistics, Springer (2008).",
+    "original_book_read": false,
+    "use_limit": "Report only as attribution made by Berta-Fawzi-Tomamichel; do not claim a checked theorem number from the book."
+  },
+  "recommended_claim": "A fully checked closed-form specialization of an established measured-relative-entropy variational framework. Priority of this specific oracle-design corollary remains unverified; no first-international or new-statistical-framework claim."
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-03",
+  "reviewer": "stream_sota",
+  "status": "passed",
+  "review_type": "Independent mathematical audit of the learned-policy asymptotic argument, with deterministic constant and frozen-source checks",
+  "source": {
+    "path": "docs/STREAMING_LEARNED_ASYMPTOTIC_NOTE.md",
+    "sha256": "7dec736e6f5b6050b19fedb462225a58973c806079b93c233365f3caae389a9a"
+  },
+  "scope": {
+    "model": "A fixed strictly physical Bernoulli sinusoid p(x)=A+B*cos(x)+C*sin(x), with C nonzero and predictable paired queries.",
+    "algorithm": "The explicitly defined uncapped, exact-arithmetic, nonstopping background extension of guarded_closed_beta; the frozen finite implementation itself is not an infinite algorithm.",
+    "cost_unit": "Every physical Bernoulli observation, including initialization, exploration and exploitation, counts as one shot.",
+    "randomness": "Conditional Bernoulli observations with the stipulated independence within each pair; adaptively selected future angles use only completed past observations.",
+    "numerical_experiments_added": false,
+    "new_policy_or_run_source_changes": false,
+    "formal_proof_assistant_verification": false,
+    "literature_priority_established": false
+  },
+  "mathematical_review": [
+    {
+      "claim": "The infinite extension and per-shot normalization are explicit",
+      "status": "passed",
+      "reason": "Removing the finite cap and ignoring stopping on one background path makes n tending to infinity well defined. Retaining finite initial checkpoints and the initial PSR phase does not change the limiting ratio of adjacent checkpoints, which is 1.125. Exact real statistics and unbounded integers are separately stipulated, so no asymptotic claim is incorrectly assigned to the finite-precision capped Python run."
+    },
+    {
+      "claim": "Exploration Gram and minimum-eigenvalue bound",
+      "status": "passed",
+      "reason": "One symmetric pair contributes Q(t) with entries 2, 2*cos(t), 2*cos(t)^2 and 2*sin(t)^2 as stated. At pi/3 and 2*pi/3 the total exploration Gram is [[2E,d,0],[d,E/2,0],[0,0,3E/2]]. The sum of the two pair Grams is diag(4,1,3), so subtracting min(e1,e2) copies leaves a positive semidefinite matrix and gives lambda_min at least (E-|d|)/2. The per-checkpoint rounding imbalance is at most one, hence |d|=O(log n)."
+    },
+    {
+      "claim": "Persistent exploration gives lambda_min(G_n)=Omega(sqrt(n)) at fitting times",
+      "status": "passed",
+      "reason": "Eventually a geometric outer block has Theta(N_k) available pairs, more than the entire target ceil(4*sqrt(N_k/2)). It can therefore fill any prior deficit, and its terminal exploration count equals the target. This gives a deterministic square-root Gram lower bound at outer checkpoints. At intermediate completed-pair or subblock times the previous completed Gram remains present, while n is at most a bounded multiple of the previous checkpoint. Other paid observations only add positive semidefinite information. The exploration fraction is O(n^(-1/2))."
+    },
+    {
+      "claim": "Gaussian-mixture self-normalization remains valid for adaptive queries",
+      "status": "passed",
+      "reason": "For a fixed vector v, centered bounded Bernoulli noise has the conservative conditional moment bound E exp(v^T f_i epsilon_i) <= exp((v^T f_i)^2/2). Predictability of f_i permits the standard exponential-supermartingale recursion. Integrating over a standard three-dimensional Gaussian measure and applying Tonelli yields det(I+G_n)^(-1/2)*exp(S_n^T(I+G_n)^(-1)S_n/2) with expectation at most one. The Gaussian is an integration measure; Gaussian observation noise is not assumed. Random, adaptively selected G_n causes no invalid exchange of expectation and matrix inversion."
+    },
+    {
+      "claim": "Almost-sure ridge error rate",
+      "status": "passed",
+      "reason": "On the event S_n^T V_n^(-1)S_n > log det V_n + 4 log n, the Gaussian mixture exceeds n^2; Markov gives probability at most n^(-2). The trace identity tr(V_n)=3+2n and the arithmetic-geometric mean inequality give det V_n <= (1+2n/3)^3. Borel-Cantelli then yields self-normalized noise O(sqrt(log n)) almost surely. The source uses ridge one and center (1/2,0,0), so the displayed normal equation is exact. Dividing the noise bound by sqrt(lambda_min(V_n)) gives O(n^(-1/4)*sqrt(log n)); the fixed prior bias is O(n^(-1/2))."
+    },
+    {
+      "claim": "Projection continuity and conditions for retaining the true oracle limit",
+      "status": "passed",
+      "reason": "Mean clipping and radial truncation are continuous, including the radius-zero extension. The projected model remains a positive distance inside the physical domain, so the closed-angle map is continuous on its range. Thus exploitation angles converge to the angle computed from P(theta). The inclusive conditions mean in [1e-4,1-1e-4] and radius at most 0.98*min(A,1-A) make P(theta)=theta. Equality at the projection boundary does not prevent consistency; only the stronger claim that projection eventually switches off would require strict inequalities. Outside this domain permanent projection bias is correctly retained in G_theta(t_infinity)."
+    },
+    {
+      "claim": "The 0.2 shift cap is inactive for every projected closed-variance angle",
+      "status": "passed",
+      "reason": "With m=min(a,1-a) and s_b=|b|/m<=0.98, the denominator 1-m*(1+s_b^2) is positive and h=s_b*(1-2m)/(1-m*(1+s_b^2))<=s_b. The function h/(1+sqrt(1-h^2)) is increasing on [0,1), so |cos(t0)| is at most 49/(50+sqrt(99)). This gives a minimum angle about 0.614000857964, strictly above 0.2. The strict exclusion also follows without decimal reliance from the bound on |cos(t0)| being below 0.82 while cos(0.2)>=0.98. This proof applies to the closed variance formula and is not asserted for the KL grid policies."
+    },
+    {
+      "claim": "Variable-angle counts converge to the limiting exploitation probabilities",
+      "status": "passed",
+      "reason": "The entire angle sequence need not converge because exploration never ends. The note correctly uses convergence only along exploitation pairs and the vanishing density of exploration. Continuity and boundedness of the pair probabilities then give their Cesaro averages. Pair indicators minus their predictable conditional means are bounded martingale differences, so Azuma with Borel-Cantelli gives empirical count convergence. Strict physicality and an interior limiting angle ensure both discordant category probabilities are positive and their limiting conditional sign probability differs from one half."
+    },
+    {
+      "claim": "Pooled Jeffreys Beta growth per paid physical shot",
+      "status": "passed",
+      "reason": "The exact mixture uses all accumulated 01 and 10 counts. Since both counts have positive linear limiting proportions, Stirling's formula gives log M_n = D_n*kl(N01/D_n,1/2)+O(log n). Dividing by n=2*(number of pairs) produces d_infinity*kl(alpha_infinity,1/2)/2, which is the stated G_theta(t_infinity). This does not incorrectly average fixed-angle KL rates, or assume that conditional discordant probabilities were equal across past angles. All exploration observations are retained and charged."
+    },
+    {
+      "claim": "Inheritance of the prior oracle information-rate bound",
+      "status": "passed under condition (B)",
+      "reason": "Within the stated projection-identity domain, the learned limiting angle equals the uncapped true-parameter oracle angle, so the separately audited bound on I_star/G0 applies to this limiting growth rate. The additional eta<=0.1 restriction yields approximately 95.65 percent retained all-angle information. The note does not apply this percentage unconditionally outside the projection domain, identify G0 with I_star in general, or convert an information-rate statement into a finite-budget cost guarantee."
+    },
+    {
+      "claim": "Pathwise first-crossing sandwich as delta tends to zero",
+      "status": "passed",
+      "reason": "For each almost-sure background path with log M_n/n tending to g>0, every finite prefix has bounded evidence and is left behind as the threshold grows. At sufficiently large checkpoints, the bounds (g-epsilon)*n <= log M_n <= (g+epsilon)*n imply the lower stopping bound and an upper bound using the next checkpoint above the required budget. The adjacent budget ratio tends to 1.125, yielding the stated liminf and limsup after epsilon tends to zero. Monotonicity of M_n is not required. The accumulated sign is eventually correct because its limiting imbalance is nonzero. The corrected text explicitly compares log M_n to log(1/delta)."
+    },
+    {
+      "claim": "Separation of pathwise asymptotics, expected stopping cost and finite experiments",
+      "status": "passed",
+      "reason": "The note explicitly avoids taking expectations of almost-sure upper bounds without tail control or uniform integrability. It identifies 1.125 as checkpoint overshoot rather than an information-optimality constant. It also distinguishes fixed-theta delta-to-zero asymptotics from fixed-delta C-to-zero limits, and from the capped finite experiment. An o(n) certified log-evidence error must hold along the same background path for the displayed robustness statement; no such infinite-scale property is claimed for the existing fixed floating screen."
+    }
+  ],
+  "deterministic_constant_check": {
+    "radial_fraction": 0.98,
+    "exact_maximum_absolute_cosine_bound": "49/(50+sqrt(99))",
+    "maximum_absolute_cosine_bound_decimal": 0.8173495026313018,
+    "minimum_closed_shift_decimal": 0.6140008579640425,
+    "implementation_shift_cap": 0.2,
+    "minimum_shift_margin_above_cap_decimal": 0.41400085796404246,
+    "proof_depends_on_rounded_decimals": false,
+    "calculation_type": "Deterministic algebra and scalar evaluation; no Monte Carlo"
+  },
+  "frozen_sources_verified": {
+    "experiments/streaming_validation/run_guarded.py": "0364781f54f0368af3de4fef0765cfe8d642e5e988a7d73ae5d4d46823f25cbc",
+    "experiments/streaming_validation/designs.py": "518139aa874db8533fc9ca4b1417b5025a488745e4c20548d9bc344512ab0a26",
+    "experiments/streaming_validation/benchmark.py": "19fe60408a74b68e18dbea4f40472ee448b608be2accabe39c024a3ede0f486f"
+  },
+  "dependent_oracle_result": {
+    "path": "docs/STREAMING_KL_THEORY_NOTE.md",
+    "sha256": "f71f0fa4fef50e9673f1a29c459c6d9096a8fe88cbc1126e3c1ccec5fd69bc1f",
+    "independent_review": "results/streaming_validation/theory_review.json"
+  },
+  "blocking_errors": [],
+  "resolved_clarifications": [
+    "Section 7 now explicitly compares the exact log evidence log M_n with log(1/delta), removing the earlier evidence-versus-log-evidence wording ambiguity.",
+    "Section 8 now records completed independent review and links to this artifact, while retaining the lack of formal proof-assistant certification and unresolved literature priority."
+  ],
+  "claim_boundaries": [
+    "The result is for an explicitly defined infinite exact-arithmetic extension, not the frozen finite-cap executable itself.",
+    "The convergence statement is for each fixed true parameter; no uniform rate near physical or vanishing-signal boundaries is asserted.",
+    "Fixed clipping can leave a persistent projected-parameter design outside condition (B), although the raw paid-data regression remains consistent.",
+    "Persistent exploration means the full angle sequence usually does not converge; only exploitation angles converge and exploration has vanishing density.",
+    "Pooled Beta evidence has the proved almost-sure information growth rate, not an established finite-confidence expected-cost guarantee.",
+    "The stopping sandwich is pathwise and its 1.125 factor comes from geometric checkpoints; no corresponding expected upper bound is established here.",
+    "No new simulation, hardware result, benchmark-wide dominance, SOTA superiority or literature priority follows from this review.",
+    "The frozen prospective holdout primary result remains failed; this asymptotic theorem does not change its criterion or outcome."
+  ]
+}

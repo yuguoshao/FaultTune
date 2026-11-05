@@ -1,0 +1,220 @@
+{
+  "status": "audited_development_gap_not_sota_success",
+  "created_utc": "2026-11-04T11:32:50.503352+00:00",
+  "metric": "Equal-case geometric mean of unconditional per-case mean paid-shot cost ratios over 8 main cases, four repetitions each. Errors and cap abstentions included.",
+  "audit": {
+    "path": "results/sota_round2/benchmark_audit/audit.json",
+    "sha256": "b3a60d654f65edafa101c86f893dd8e36f4835c75c7c0476839d906190b2058b",
+    "counts": {
+      "dkm_initialization_actions_checked": 240,
+      "rng_binomial_calls_checked": 235903,
+      "single_arm_calibration_screens_checked": 10141,
+      "dkm_successful_projection_feasibility_checks": 118744,
+      "dkm_game_actions_checked": 120358,
+      "dkm_projection_failure_previous_label_checks": 1614,
+      "single_arm_certificates_recomputed": 344,
+      "grid_partial_numerators_checked": 108,
+      "terminal_certificates_checked": 320,
+      "paths_checked": 160,
+      "method_records_checked": 320,
+      "physically_generated_shots_accounted": 342720,
+      "psr_actions_checked": 108168,
+      "hedge_blocks_and_screens_checked": 2379,
+      "hedge_certificates_recomputed": 80
+    },
+    "original_runner_replay_paths": 80
+  },
+  "outcomes": [
+    {
+      "kind": "main",
+      "method": "dkm_one_shot__kk21",
+      "trajectories": 32,
+      "wrong": 0,
+      "correct_stops": 20,
+      "abstained": 12,
+      "mean_paid_shots": 2744.6875
+    },
+    {
+      "kind": "main",
+      "method": "dkm_one_shot__kt_safe",
+      "trajectories": 32,
+      "wrong": 0,
+      "correct_stops": 21,
+      "abstained": 11,
+      "mean_paid_shots": 1843.5625
+    },
+    {
+      "kind": "main",
+      "method": "dkm_one_shot__structured_grid_safe",
+      "trajectories": 32,
+      "wrong": 0,
+      "correct_stops": 26,
+      "abstained": 6,
+      "mean_paid_shots": 1593.5
+    },
+    {
+      "kind": "main",
+      "method": "psr_six_arm_init__kk21",
+      "trajectories": 32,
+      "wrong": 0,
+      "correct_stops": 20,
+      "abstained": 12,
+      "mean_paid_shots": 2356.25
+    },
+    {
+      "kind": "main",
+      "method": "psr_six_arm_init__kt_safe",
+      "trajectories": 32,
+      "wrong": 0,
+      "correct_stops": 27,
+      "abstained": 5,
+      "mean_paid_shots": 1382.8125
+    },
+    {
+      "kind": "main",
+      "method": "psr_six_arm_init__structured_grid_safe",
+      "trajectories": 32,
+      "wrong": 0,
+      "correct_stops": 27,
+      "abstained": 5,
+      "mean_paid_shots": 1260.25
+    },
+    {
+      "kind": "main",
+      "method": "closed_hedge_original",
+      "trajectories": 32,
+      "wrong": 0,
+      "correct_stops": 30,
+      "abstained": 2,
+      "mean_paid_shots": 785.6875
+    },
+    {
+      "kind": "main",
+      "method": "closed_hedge_fine_initial",
+      "trajectories": 32,
+      "wrong": 0,
+      "correct_stops": 29,
+      "abstained": 3,
+      "mean_paid_shots": 832.9375
+    },
+    {
+      "kind": "null",
+      "method": "dkm_one_shot__kk21",
+      "trajectories": 8,
+      "wrong": 0,
+      "correct_stops": 0,
+      "abstained": 8,
+      "mean_paid_shots": 4096.0
+    },
+    {
+      "kind": "null",
+      "method": "dkm_one_shot__kt_safe",
+      "trajectories": 8,
+      "wrong": 0,
+      "correct_stops": 0,
+      "abstained": 8,
+      "mean_paid_shots": 4096.0
+    },
+    {
+      "kind": "null",
+      "method": "dkm_one_shot__structured_grid_safe",
+      "trajectories": 8,
+      "wrong": 0,
+      "correct_stops": 0,
+      "abstained": 8,
+      "mean_paid_shots": 4096.0
+    },
+    {
+      "kind": "null",
+      "method": "psr_six_arm_init__kk21",
+      "trajectories": 8,
+      "wrong": 0,
+      "correct_stops": 0,
+      "abstained": 8,
+      "mean_paid_shots": 4096.0
+    },
+    {
+      "kind": "null",
+      "method": "psr_six_arm_init__kt_safe",
+      "trajectories": 8,
+      "wrong": 0,
+      "correct_stops": 0,
+      "abstained": 8,
+      "mean_paid_shots": 4096.0
+    },
+    {
+      "kind": "null",
+      "method": "psr_six_arm_init__structured_grid_safe",
+      "trajectories": 8,
+      "wrong": 0,
+      "correct_stops": 0,
+      "abstained": 8,
+      "mean_paid_shots": 4096.0
+    },
+    {
+      "kind": "null",
+      "method": "closed_hedge_original",
+      "trajectories": 8,
+      "wrong": 0,
+      "correct_stops": 0,
+      "abstained": 8,
+      "mean_paid_shots": 4096.0
+    },
+    {
+      "kind": "null",
+      "method": "closed_hedge_fine_initial",
+      "trajectories": 8,
+      "wrong": 1,
+      "correct_stops": 0,
+      "abstained": 7,
+      "mean_paid_shots": 3673.75
+    }
+  ],
+  "gaps": [
+    {
+      "candidate": "psr_six_arm_init__structured_grid_safe",
+      "comparator": "closed_hedge_original",
+      "candidate_to_comparator_cost": 1.3148772261354431,
+      "fraction_of_current_cost_to_remove_to_tie": 0.23947272024848976,
+      "fraction_of_current_cost_to_remove_to_cost_10_percent_less": 0.3155254482236407
+    },
+    {
+      "candidate": "psr_six_arm_init__structured_grid_safe",
+      "comparator": "closed_hedge_fine_initial",
+      "candidate_to_comparator_cost": 1.4095433722344397,
+      "fraction_of_current_cost_to_remove_to_tie": 0.29055038695632496,
+      "fraction_of_current_cost_to_remove_to_cost_10_percent_less": 0.3614953482606925
+    },
+    {
+      "candidate": "dkm_one_shot__structured_grid_safe",
+      "comparator": "closed_hedge_original",
+      "candidate_to_comparator_cost": 1.9568153595601392,
+      "fraction_of_current_cost_to_remove_to_tie": 0.48896558118555244,
+      "fraction_of_current_cost_to_remove_to_cost_10_percent_less": 0.5400690230669971
+    },
+    {
+      "candidate": "dkm_one_shot__structured_grid_safe",
+      "comparator": "closed_hedge_fine_initial",
+      "candidate_to_comparator_cost": 2.0976986032842184,
+      "fraction_of_current_cost_to_remove_to_tie": 0.5232870926097912,
+      "fraction_of_current_cost_to_remove_to_cost_10_percent_less": 0.5709583833488121
+    }
+  ],
+  "same_path_grid_vs_kt_dkm_fraction_saved": 0.16408041709129273,
+  "interpretation": [
+    "The 16.4 percent benefit compares certificates on the same DKM observation path; it is not an advantage over the strongest implemented comparator.",
+    "The PSR path with the same structured prior is the closer newly tested candidate; DKM plus the prior is not the best-performing project implementation.",
+    "Fine-initial hedge has the lowest equal-case geometric cost; original hedge has lower arithmetic mean paid cost and one more main correct stop. Neither dominates all reported endpoints.",
+    "Fine-initial hedge makes one false stop among eight null trials; this small sample cannot certify or refute the intended 1 percent risk guarantee.",
+    "An implementation audit and same-seed replay establish accounting and reproducibility within their stated limits, not statistical superiority.",
+    "The 10 percent cost advantage is a proposed next development milestone, not a replacement for the original international-leading acceptance criteria."
+  ],
+  "next_research": [
+    "Start from the strongest implemented paired protocol and quantify whether reviewed finite-sample threshold or predictable-evidence improvements can add a stable gain.",
+    "Apply transferable improvements equally to appropriate comparators and account for all measurements, computation, wrong stops and abstentions.",
+    "Freeze a successful candidate before new held-out cases and seeds; require cost advantage with adequate correct-stop performance and validated risk control.",
+    "Complete literature and implementation-scope comparison before making an international SOTA claim; official DKM Julia artifacts were inspected but not executed."
+  ],
+  "inferential_confidence_intervals": false,
+  "sota_goal_complete": false
+}

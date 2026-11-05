@@ -1,0 +1,388 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-11-04T10:56:06.630129+00:00",
+  "source_sha256": "e8799facf1494dcf6355f2f2e6069be350f35f788a70381201f55c53e5479c9d",
+  "checker_sha256": "4140adaf63f252b0495b9db85c992ee3324ec6f69f330554775d159156e820ac",
+  "thresholds": [
+    {
+      "delta": 0.5,
+      "arms": 1,
+      "counts": [
+        1
+      ],
+      "outward_excess": "3.29521531932e-42",
+      "threshold": "8.466117217994089403798"
+    },
+    {
+      "delta": 0.5,
+      "arms": 2,
+      "counts": [
+        1,
+        18
+      ],
+      "outward_excess": "7.75897146996e-42",
+      "threshold": "19.29429446696886167767"
+    },
+    {
+      "delta": 0.5,
+      "arms": 6,
+      "counts": [
+        1,
+        18,
+        69,
+        154,
+        273,
+        426
+      ],
+      "outward_excess": "4.79417482571e-42",
+      "threshold": "66.973150818923337686"
+    },
+    {
+      "delta": 0.5,
+      "arms": 14,
+      "counts": [
+        1,
+        18,
+        69,
+        154,
+        273,
+        426,
+        613,
+        834,
+        1089,
+        1378,
+        1701,
+        2058,
+        2449,
+        2874
+      ],
+      "outward_excess": "1.53784033707e-41",
+      "threshold": "167.8753615027949401933"
+    },
+    {
+      "delta": 0.1,
+      "arms": 1,
+      "counts": [
+        1
+      ],
+      "outward_excess": "5.89078618222e-42",
+      "threshold": "11.35028634032098114533"
+    },
+    {
+      "delta": 0.1,
+      "arms": 2,
+      "counts": [
+        1,
+        18
+      ],
+      "outward_excess": "8.92017447572e-42",
+      "threshold": "22.86748757664395365327"
+    },
+    {
+      "delta": 0.1,
+      "arms": 6,
+      "counts": [
+        1,
+        18,
+        69,
+        154,
+        273,
+        426
+      ],
+      "outward_excess": "2.2703899287e-41",
+      "threshold": "72.23883330440796644817"
+    },
+    {
+      "delta": 0.1,
+      "arms": 14,
+      "counts": [
+        1,
+        18,
+        69,
+        154,
+        273,
+        426,
+        613,
+        834,
+        1089,
+        1378,
+        1701,
+        2058,
+        2449,
+        2874
+      ],
+      "outward_excess": "2.20840109954e-41",
+      "threshold": "175.0053476078423059923"
+    },
+    {
+      "delta": 0.01,
+      "arms": 1,
+      "counts": [
+        1
+      ],
+      "outward_excess": "1.23950208245e-41",
+      "threshold": "14.66226991037628343411"
+    },
+    {
+      "delta": 0.01,
+      "arms": 2,
+      "counts": [
+        1,
+        18
+      ],
+      "outward_excess": "1.17815723644e-41",
+      "threshold": "26.77608684258184043442"
+    },
+    {
+      "delta": 0.01,
+      "arms": 6,
+      "counts": [
+        1,
+        18,
+        69,
+        154,
+        273,
+        426
+      ],
+      "outward_excess": "1.58715651449e-41",
+      "threshold": "77.72973486249035885508"
+    },
+    {
+      "delta": 0.01,
+      "arms": 14,
+      "counts": [
+        1,
+        18,
+        69,
+        154,
+        273,
+        426,
+        613,
+        834,
+        1089,
+        1378,
+        1701,
+        2058,
+        2449,
+        2874
+      ],
+      "outward_excess": "1.73449704553e-41",
+      "threshold": "182.4582555544120465738"
+    },
+    {
+      "delta": 1e-06,
+      "arms": 1,
+      "counts": [
+        1
+      ],
+      "outward_excess": "3.56650376496e-41",
+      "threshold": "25.92161621925957649538"
+    },
+    {
+      "delta": 1e-06,
+      "arms": 2,
+      "counts": [
+        1,
+        18
+      ],
+      "outward_excess": "2.72463732804e-41",
+      "threshold": "39.38974655960508180043"
+    },
+    {
+      "delta": 1e-06,
+      "arms": 6,
+      "counts": [
+        1,
+        18,
+        69,
+        154,
+        273,
+        426
+      ],
+      "outward_excess": "3.53447170933e-41",
+      "threshold": "94.06300126879630016654"
+    },
+    {
+      "delta": 1e-06,
+      "arms": 14,
+      "counts": [
+        1,
+        18,
+        69,
+        154,
+        273,
+        426,
+        613,
+        834,
+        1089,
+        1378,
+        1701,
+        2058,
+        2449,
+        2874
+      ],
+      "outward_excess": "8.49285210845e-41",
+      "threshold": "203.7337545866164696506"
+    }
+  ],
+  "adahedge": {
+    "rounds": 49,
+    "independent_method": "90-digit direct exponential-weight and mix-loss formulas",
+    "maximum_weight_error": 2.220446049250313e-16,
+    "maximum_gap_error": 1.0658141036401503e-14
+  },
+  "engineering_probes": [
+    {
+      "case": {
+        "A": 0.5,
+        "B": 0.0,
+        "C": 0.45
+      },
+      "seed": 2200101,
+      "cap": 512,
+      "calibration": "kk21",
+      "batch_size": 1,
+      "check_every": 1,
+      "shots": 206,
+      "decision": "reject",
+      "runner_seconds": 0.9024318999999998,
+      "milliseconds_per_paid_shot": 4.3807373786407755,
+      "linear_extrapolation_4096_seconds": 17.943500302912618,
+      "checks": {
+        "rng_blocks_replayed": 206,
+        "maximum_interval_KL_excess": 1.559866369404972e-08,
+        "maximum_oracle_gap_float_diagnostic": 2.927705414619017e-07,
+        "unsuccessful_best_responses": 0,
+        "current_count_terminal_label_verified": true
+      },
+      "timing_limit": "Engineering measurement on this machine, not a performance comparison or precise runtime prediction."
+    },
+    {
+      "case": {
+        "A": 0.5,
+        "B": 0.0,
+        "C": 0.45
+      },
+      "seed": 2200102,
+      "cap": 512,
+      "calibration": "kt_safe",
+      "batch_size": 1,
+      "check_every": 1,
+      "shots": 17,
+      "decision": "reject",
+      "runner_seconds": 0.0493901000000001,
+      "milliseconds_per_paid_shot": 2.905300000000006,
+      "linear_extrapolation_4096_seconds": 11.900108800000025,
+      "checks": {
+        "rng_blocks_replayed": 17,
+        "maximum_interval_KL_excess": 2.673417043297377e-13,
+        "maximum_oracle_gap_float_diagnostic": 5.60113915325669e-07,
+        "unsuccessful_best_responses": 0,
+        "current_count_terminal_label_verified": true
+      },
+      "timing_limit": "Engineering measurement on this machine, not a performance comparison or precise runtime prediction."
+    },
+    {
+      "case": {
+        "A": 0.07,
+        "B": 0.06,
+        "C": 0.01
+      },
+      "seed": 2200103,
+      "cap": 512,
+      "calibration": "kt_safe",
+      "batch_size": 1,
+      "check_every": 1,
+      "shots": 512,
+      "decision": "abstain",
+      "runner_seconds": 2.5167818,
+      "milliseconds_per_paid_shot": 4.9155894531249995,
+      "linear_extrapolation_4096_seconds": 20.1342544,
+      "checks": {
+        "rng_blocks_replayed": 512,
+        "maximum_interval_KL_excess": 8.617428548518546e-09,
+        "maximum_oracle_gap_float_diagnostic": 1.0142987672253515e-06,
+        "unsuccessful_best_responses": 0,
+        "current_count_terminal_label_verified": true
+      },
+      "timing_limit": "Engineering measurement on this machine, not a performance comparison or precise runtime prediction."
+    },
+    {
+      "case": {
+        "A": 0.012,
+        "B": 0.0114,
+        "C": 0.0015
+      },
+      "seed": 2200104,
+      "cap": 512,
+      "calibration": "kt_safe",
+      "batch_size": 1,
+      "check_every": 1,
+      "shots": 512,
+      "decision": "abstain",
+      "runner_seconds": 2.726472000000001,
+      "milliseconds_per_paid_shot": 5.325140625000002,
+      "linear_extrapolation_4096_seconds": 21.81177600000001,
+      "checks": {
+        "rng_blocks_replayed": 512,
+        "maximum_interval_KL_excess": 2.2876463390275603e-08,
+        "maximum_oracle_gap_float_diagnostic": 3.735287236950632e-06,
+        "unsuccessful_best_responses": 0,
+        "current_count_terminal_label_verified": true
+      },
+      "timing_limit": "Engineering measurement on this machine, not a performance comparison or precise runtime prediction."
+    },
+    {
+      "case": {
+        "A": 0.28,
+        "B": 0.2,
+        "C": 0.0
+      },
+      "seed": 2200105,
+      "cap": 4096,
+      "calibration": "kt_safe",
+      "batch_size": 1,
+      "check_every": 1,
+      "shots": 4096,
+      "decision": "abstain",
+      "runner_seconds": 18.2858845,
+      "milliseconds_per_paid_shot": 4.4643272705078125,
+      "linear_extrapolation_4096_seconds": 18.2858845,
+      "checks": {
+        "rng_blocks_replayed": 4096,
+        "maximum_interval_KL_excess": 3.319748032026837e-09,
+        "maximum_oracle_gap_float_diagnostic": 6.469935027595534e-07,
+        "unsuccessful_best_responses": 0,
+        "current_count_terminal_label_verified": true
+      },
+      "timing_limit": "Engineering measurement on this machine, not a performance comparison or precise runtime prediction."
+    },
+    {
+      "case": {
+        "A": 0.28,
+        "B": 0.2,
+        "C": 0.0
+      },
+      "seed": 2200106,
+      "cap": 256,
+      "calibration": "kt_safe",
+      "batch_size": 8,
+      "check_every": 1,
+      "shots": 256,
+      "decision": "abstain",
+      "runner_seconds": 0.19779980000000208,
+      "milliseconds_per_paid_shot": 0.7726554687500081,
+      "linear_extrapolation_4096_seconds": 3.1647968000000333,
+      "checks": {
+        "rng_blocks_replayed": 38,
+        "maximum_interval_KL_excess": 4.987912305409736e-10,
+        "maximum_oracle_gap_float_diagnostic": 4.014754374001058e-07,
+        "unsuccessful_best_responses": 0,
+        "current_count_terminal_label_verified": true
+      },
+      "timing_limit": "Engineering measurement on this machine, not a performance comparison or precise runtime prediction."
+    }
+  ],
+  "elapsed_seconds": 30.342391,
+  "scope": "Independent formula and mechanical checks plus runtime probes; not proof of SOTA superiority or a new held-out comparison."
+}

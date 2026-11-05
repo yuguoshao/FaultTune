@@ -1,0 +1,56 @@
+{
+  "status": "proved_lemma_no_shape_optimality_or_performance_claim",
+  "title": "Exact finite-horizon risk certification for any predetermined symmetric sign-count tail table",
+  "sources": {
+    "results/sota_round2/theory/finite_cap_jeffreys_dp_lemma.json": "95cbc30eb66f788c8ab9d60228cc7d435de0fc06ec79993b538e8e75d68bdf93",
+    "experiments/structured_validation/weighted_fisher.py": "1f31c9cbea3c8db4d7d8dc75936dc5304fd3273fb8ad1fafedc90e792fe24e24",
+    "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c"
+  },
+  "table": {
+    "horizon": "Fix an integer H>=1 and a risk budget delta in (0,1) before the evaluation observations.",
+    "upper_boundary": "For every d=1,...,H choose an integer B_d satisfying floor(d/2)+1<=B_d<=d+1. B_d=d+1 means no crossing at that index.",
+    "lower_boundary": "L_d=d-B_d; thus L_d<d/2<B_d.",
+    "decision": "At discordance count d with b plus symbols, reject if b>=B_d, accept if b<=L_d, and otherwise abstain. The d=0 rule is abstain.",
+    "time_variation": "B_d may vary arbitrarily with d. Monotonicity of B_d across time is not required; only each fixed-d decision region must be a pair of sign-consistent tails.",
+    "fixedness": "The final table is fixed before the observations covered by its risk guarantee. Choosing it by deterministic reference-law calculations is allowed."
+  },
+  "reference_event": "E_B={there exists 1<=d<=H with b_d>=B_d or b_d<=d-B_d}, for a latent length-H iid fair-sign sequence.",
+  "exact_risk_certificate": {
+    "initial": "c_0(0)=1.",
+    "recurrence": "c_d(b)=[c_(d-1)(b)+c_(d-1)(b-1)]*1{d-B_d<b<B_d}, with missing parents zero.",
+    "probability": "P_fair(E_B)=[2^H-sum_b c_H(b)]/2^H.",
+    "acceptance": "For rational delta=r/s, require s*[2^H-sum_b c_H(b)]<=r*2^H using integers only.",
+    "certificate_contents": "Store H, delta as an exact rational, the full integer table, final survivor count, exact crossing numerator/denominator, crossing convention and source/table hashes. An independent verifier reconstructs the whole integer DP."
+  },
+  "theorem": "Under predictable paired actions with common true-sign ordering and at most H observed discordances, P(ever reporting the wrong sign)<=delta for either strict sign, and P(any non-abstaining report)<=delta at the zero-sign null, whenever the exact fair-risk certificate passes.",
+  "proof": [
+    "At the zero-sign null, actual discordant signs can be embedded into a latent fair sequence. Physical monitoring and any adaptive cessation reveal only a subset of its prefixes; every actual report is contained in E_B. Conditioning on the final observed discordance count is neither needed nor generally valid.",
+    "For a positive true sign, each actual next discordant plus probability is at least 1/2. A sequential uniform coupling makes every actual cumulative plus count at least its coupled fair count. Each wrong negative event b_d<=d-B_d is coordinatewise decreasing, regardless of how B_d changes with d.",
+    "The union of all actual wrong negative crossings is therefore contained in the coupled fair negative-crossing union, which is contained in E_B. This argument enlarges the event by ignoring any previous correct-direction stop; it does not condition alternatives on survival.",
+    "Reverse plus and minus for a negative true sign. The exact DP controls the symmetric fair event once, so the result does not require a factor-two risk split.",
+    "The proof relies on the integer tail regions and their fair crossing probability. It does not require a likelihood-ratio, e-process, martingale evidence statistic or any particular threshold shape."
+  ],
+  "floating_shape_design": [
+    "Floating scores, approximate likelihood calculations or numerical optimization may propose the table. Once each entry is a valid integer tail cutoff, that discrete table defines the procedure.",
+    "The final risk computation and runtime decisions can remain exact even when the table only approximates a nominal real-valued score contour. The accurate description is approximate score shape with exact risk certification for the frozen integer table.",
+    "If the advertised procedure is an exact level set of a particular score, separately verify every integer cutoff against that score. Otherwise avoid claiming exact agreement with an ideal GLR, MaxSPRT or mixture level set.",
+    "Search over many candidate shapes using only deterministic fair-law calculations is legal: only the final predetermined table is used on evaluation outcomes. Selection from evaluation outcomes or switching between tables during an experiment requires a separately certified combined rule."
+  ],
+  "eligible_examples": [
+    "Jeffreys mixture capital yields one symmetric table via a constant rational threshold; its exact score-to-table relation can also be certified by binomial-coefficient inequalities.",
+    "A symmetric Bernoulli generalized-likelihood-ratio score d*KL(b/d || 1/2), with endpoint conventions, can propose a table. It need not be an e-process because the finite event is certified directly.",
+    "A symmetric sign-count MaxSPRT-style score or a predetermined time-dependent threshold curve can propose a table. The exact original published method and its observation model must be distinguished in comparisons.",
+    "The current weighted_fisher.pair_grid_log and pair_grid_bounds depend only on b,c. Reciprocal odds with equal weights give paired terms proportional to cosh((b-c)*log(odds)/2), so their sum is symmetric and nondecreasing with absolute score. Their fixed contours therefore have the required tail shape.",
+    "A Fisher or other statistic that also depends on the block totals, partition history or nuisance predictors is not generally determined by (d,b). It cannot be replaced by this two-dimensional DP without proving a valid dominating tail table or augmenting the reference state."
+  ],
+  "combining_tables": [
+    "The union of a fixed finite set of symmetric tables is again a symmetric table with B_union(d)=min_j B_j(d). Exact DP may certify that union as one rule.",
+    "Running several individually delta-calibrated tables and stopping at their first crossing does not automatically preserve delta. Certify the union table or allocate risk appropriately.",
+    "A data-dependent choice whose crossing set is always a subset of one already certified deterministic table inherits that table's risk bound. This is an event-containment argument, not a free post-selection guarantee."
+  ],
+  "limits": [
+    "The finite-horizon guarantee ends when the observed discordance count exceeds H. A fixed 4096-shot budget of complete two-shot pairs implies H=2048; a separate physical budget may be stricter than this mathematical discordance limit.",
+    "The common-ordering, predictable-action and correct orientation assumptions remain essential. Retrospective orientation or selection based on the current discordant symbol can invalidate coupling.",
+    "This lemma certifies reference-model risk, not uniform power, expected stopping cost, simulator fidelity, hardware performance, novelty or superiority over existing exact sequential methods."
+  ]
+}

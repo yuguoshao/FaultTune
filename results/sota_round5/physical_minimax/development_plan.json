@@ -1,0 +1,78 @@
+{
+  "version": "physical_minimax_classical_stopping_v1",
+  "status": "fixed_before_design_grid_control_evaluation_and_optimization",
+  "positive_q_exact": [
+    [
+      7,
+      10
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      99,
+      100
+    ]
+  ],
+  "discordance_rate_exact": [
+    [
+      1,
+      50
+    ],
+    [
+      1,
+      10
+    ],
+    [
+      2,
+      5
+    ]
+  ],
+  "sign_horizon": 128,
+  "physical_pair_cap": 8192,
+  "physical_shot_cap": 16384,
+  "scientific_null_constraint_exact": [
+    999,
+    100000
+  ],
+  "scientific_each_point_power_constraint_exact": [
+    95001,
+    100000
+  ],
+  "fixed_numerical_guard_exact": [
+    1,
+    10000000
+  ],
+  "guard_rule": "Before optimization, reserve this fixed guard on both constraints for numerical solver error and policy rounding: solver null<=.0099899 and each power>=.9500101. Exact final acceptance uses the scientific .00999/.95001 constraints; no result-dependent guard changes.",
+  "classical_controls": "Frozen H8192 beta_exact and all11 LR-mixture registry artifacts; no recalibration or removal based on candidate results.",
+  "pool_qualification": "A fixed control must reach .95 correct-report probability at ALL9 design points. Initial pool membership is a float analytic design calculation; margins are reported and it is not called an interval certificate.",
+  "offline_objective": "Minimize t such that candidate all-path expected physical cost at each of9 points is <= t times the minimum cost among the globally qualified fixed-control pool at that point.",
+  "oracle_boundary": "This hindsight envelope defines an offline optimization target only; online policy does not know q,r,case ID or which control is best.",
+  "abstention_accounting": "All paths without a report through H128 pay the full8192 physical pairs; subsequent reports are forbidden. Earlier physical-cap expiry also abstains and pays the full cap.",
+  "allowed_policy": "Symmetric randomized majority report after each discordance, depending only on d and minority-count j; at ties no report. A fresh independent integer coin is consumed only on discordant pairs.",
+  "rounding": {
+    "denominator": 1000000000000,
+    "snap_tolerance": 1e-09,
+    "rule": "Snap only within the predeclared tolerance of0 or1, otherwise round to nearest integer numerator."
+  },
+  "solver": {
+    "method": "scipy1.5 sparse interior-point",
+    "tolerance": 1e-09,
+    "maximum_iterations": 200,
+    "redundancy_removal": false
+  },
+  "failure_rule": "Save numerical solver failure or exact-audit failure without changing q,r,H,cap,targets or objective. Do not claim an infeasibility certificate unless the solver supplied one.",
+  "reporting": "Keep t>=1 outcomes and regressions; report arithmetic and equal-point geometric costs on all9 grid points and all fixed controls. Development only, no SOTA, novelty or threefold claim.",
+  "prior_art": "Classical constrained optimal stopping/alpha spending; Silva, Kulldorff and Yih (2020), doi:10.1111/rssb.12379, is prior art rather than an equivalence claim for this implementation.",
+  "new_observations": 0,
+  "source_sha256": {
+    "experiments/sota_round5/physical_cost_minimax.py": "d7f298633b4d3e69f27479ac811cc4b732125ee235b1b2b95a722068e72589ce",
+    "experiments/sota_round5/optimal_sign_stopping.py": "4477510b1e05894282c45f9875e3bf83de832a4fc4b0cd7733c931eb9a46c202",
+    "experiments/sota_round4/analytic_sign_cost.py": "4fd0e9fae85f9153f3436ce3ecdad03bdda90a5024e8b4838a7951241c80ff3a",
+    "experiments/sota_round5/evaluate_optimal_sign_physical.py": "9f0a3647bfbcffb013c7ebf5052726ddd6902751bf7b9bf7683887cf4ef92c50",
+    "experiments/sota_round5/optimal_sign_policy.py": "f912c910442cfb961fe698189b754914c477045dd01114089bf6defab661d546",
+    "results/sota_round4/lr_mixture_boundaries/calibration_manifest.json": "2776f147456bca31fc8eeec3e83324fcb8d9e33e20c967c40909a1ed633537f6",
+    "results/sota_round3/cap16384_preparation/beta_exact.json": "d2dbc9579dcaa4789bd56272f1ecd7bf0cacea22d60e24836fc71b37b67423ee"
+  }
+}

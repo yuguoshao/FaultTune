@@ -1,0 +1,12 @@
+{
+  "status": "fixed_physical_protocol_before_evaluation",
+  "pair_cap": 8192,
+  "physical_shot_cap": 16384,
+  "candidate_source": "results/sota_round5/optimal_sign_stopping/prototype.json",
+  "candidate_sha256": "9193d84bbfa11761ee800a7175e76d5ffd5bbe6cd76c020c4dca0180cdf23030",
+  "monitoring": "Inspect after each physical pair, with a fresh policy coin only when that pair is discordant. A concordant pair neither changes the sign state nor redraws the policy coin.",
+  "sign_horizon_abstention": "At discordance H128, all remaining non-reporting paths are forbidden to report later and are charged through the full physical cap. No early-abstention cost saving.",
+  "comparison": "All original 16 main cases and 2 null cases. Original H8192 controls are compared at the same physical cap and monitoring, with per-case >=95% power qualification. Original controls may use more than128 discordances, a permitted advantage to them.",
+  "new_observations": 0,
+  "status_of_results": "Floating estimates pending independent interval verification."
+}

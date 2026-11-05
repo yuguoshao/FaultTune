@@ -1,0 +1,365 @@
+{
+  "status": "passed",
+  "source_hashes": {
+    "experiments/sota_round4/lr_mixture_boundaries.py": "083cd25d2cbbae5a7429e8749a037b5323660bac8f500bca56bff51ec39cb735",
+    "experiments/sota_round3/generic_sign_boundary.py": "826cc5a3fd5768ca259c0e6a37f4ffa05991d37432456e51d547fdcb52901a1c",
+    "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c",
+    "results/sota_round2/theory/generic_symmetric_tail_dp_lemma.json": "e8d51fddd0a021c66374daee4b504aba17c427e578319920ca83a01343a5e43d"
+  },
+  "fixed_registry": {
+    "sprt_0.6": {
+      "components": [
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            3,
+            5
+          ],
+          "weight": [
+            1,
+            1
+          ]
+        }
+      ],
+      "registry_version": "fixed_classical_lr_mixture_priors_v1",
+      "name": "sprt_0.6",
+      "orientation_rule": "Each two-point component puts half its weight at q and half at1-q; beta is symmetric."
+    },
+    "sprt_0.7": {
+      "components": [
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            7,
+            10
+          ],
+          "weight": [
+            1,
+            1
+          ]
+        }
+      ],
+      "registry_version": "fixed_classical_lr_mixture_priors_v1",
+      "name": "sprt_0.7",
+      "orientation_rule": "Each two-point component puts half its weight at q and half at1-q; beta is symmetric."
+    },
+    "sprt_0.75": {
+      "components": [
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            3,
+            4
+          ],
+          "weight": [
+            1,
+            1
+          ]
+        }
+      ],
+      "registry_version": "fixed_classical_lr_mixture_priors_v1",
+      "name": "sprt_0.75",
+      "orientation_rule": "Each two-point component puts half its weight at q and half at1-q; beta is symmetric."
+    },
+    "sprt_0.85": {
+      "components": [
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            17,
+            20
+          ],
+          "weight": [
+            1,
+            1
+          ]
+        }
+      ],
+      "registry_version": "fixed_classical_lr_mixture_priors_v1",
+      "name": "sprt_0.85",
+      "orientation_rule": "Each two-point component puts half its weight at q and half at1-q; beta is symmetric."
+    },
+    "sprt_0.9": {
+      "components": [
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            9,
+            10
+          ],
+          "weight": [
+            1,
+            1
+          ]
+        }
+      ],
+      "registry_version": "fixed_classical_lr_mixture_priors_v1",
+      "name": "sprt_0.9",
+      "orientation_rule": "Each two-point component puts half its weight at q and half at1-q; beta is symmetric."
+    },
+    "sprt_0.99": {
+      "components": [
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            99,
+            100
+          ],
+          "weight": [
+            1,
+            1
+          ]
+        }
+      ],
+      "registry_version": "fixed_classical_lr_mixture_priors_v1",
+      "name": "sprt_0.99",
+      "orientation_rule": "Each two-point component puts half its weight at q and half at1-q; beta is symmetric."
+    },
+    "mix_0.75_0.99_w0.25": {
+      "components": [
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            3,
+            4
+          ],
+          "weight": [
+            1,
+            4
+          ]
+        },
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            99,
+            100
+          ],
+          "weight": [
+            3,
+            4
+          ]
+        }
+      ],
+      "registry_version": "fixed_classical_lr_mixture_priors_v1",
+      "name": "mix_0.75_0.99_w0.25",
+      "orientation_rule": "Each two-point component puts half its weight at q and half at1-q; beta is symmetric."
+    },
+    "mix_0.75_0.99_w0.5": {
+      "components": [
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            3,
+            4
+          ],
+          "weight": [
+            1,
+            2
+          ]
+        },
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            99,
+            100
+          ],
+          "weight": [
+            1,
+            2
+          ]
+        }
+      ],
+      "registry_version": "fixed_classical_lr_mixture_priors_v1",
+      "name": "mix_0.75_0.99_w0.5",
+      "orientation_rule": "Each two-point component puts half its weight at q and half at1-q; beta is symmetric."
+    },
+    "mix_0.75_0.99_w0.75": {
+      "components": [
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            3,
+            4
+          ],
+          "weight": [
+            3,
+            4
+          ]
+        },
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            99,
+            100
+          ],
+          "weight": [
+            1,
+            4
+          ]
+        }
+      ],
+      "registry_version": "fixed_classical_lr_mixture_priors_v1",
+      "name": "mix_0.75_0.99_w0.75",
+      "orientation_rule": "Each two-point component puts half its weight at q and half at1-q; beta is symmetric."
+    },
+    "mix_0.7_0.9_0.99_equal": {
+      "components": [
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            7,
+            10
+          ],
+          "weight": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            9,
+            10
+          ],
+          "weight": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            99,
+            100
+          ],
+          "weight": [
+            1,
+            3
+          ]
+        }
+      ],
+      "registry_version": "fixed_classical_lr_mixture_priors_v1",
+      "name": "mix_0.7_0.9_0.99_equal",
+      "orientation_rule": "Each two-point component puts half its weight at q and half at1-q; beta is symmetric."
+    },
+    "mix_beta_0.75_half": {
+      "components": [
+        {
+          "kind": "jeffreys_beta",
+          "alpha": [
+            1,
+            2
+          ],
+          "weight": [
+            1,
+            2
+          ]
+        },
+        {
+          "kind": "symmetric_two_point",
+          "q": [
+            3,
+            4
+          ],
+          "weight": [
+            1,
+            2
+          ]
+        }
+      ],
+      "registry_version": "fixed_classical_lr_mixture_priors_v1",
+      "name": "mix_beta_0.75_half",
+      "orientation_rule": "Each two-point component puts half its weight at q and half at1-q; beta is symmetric."
+    }
+  },
+  "registry_sha256": "148ecc63e771b2c5c001488b7eb37bc8ec128f63686c54e34ba387248c8febd7",
+  "cases_and_observations_read": false,
+  "checks": [
+    "exact rational prior weights and mirrored orientations",
+    "exact small-count fair mean-one and symmetry",
+    "float scores versus exact rational LR mixtures",
+    "single-q equality to frozen round3 shape",
+    "every one of4096 fair sign sequences atH12 for each shape",
+    "runtime mirror and physical horizon guard"
+  ],
+  "results": [
+    {
+      "shape": "sprt_0.6",
+      "horizon": 12,
+      "exhaustive_paths": 4096,
+      "exact_crossings": 34,
+      "risk": 0.00830078125
+    },
+    {
+      "shape": "sprt_0.7",
+      "horizon": 12,
+      "exhaustive_paths": 4096,
+      "exact_crossings": 34,
+      "risk": 0.00830078125
+    },
+    {
+      "shape": "sprt_0.75",
+      "horizon": 12,
+      "exhaustive_paths": 4096,
+      "exact_crossings": 34,
+      "risk": 0.00830078125
+    },
+    {
+      "shape": "sprt_0.85",
+      "horizon": 12,
+      "exhaustive_paths": 4096,
+      "exact_crossings": 34,
+      "risk": 0.00830078125
+    },
+    {
+      "shape": "sprt_0.9",
+      "horizon": 12,
+      "exhaustive_paths": 4096,
+      "exact_crossings": 34,
+      "risk": 0.00830078125
+    },
+    {
+      "shape": "sprt_0.99",
+      "horizon": 12,
+      "exhaustive_paths": 4096,
+      "exact_crossings": 32,
+      "risk": 0.0078125
+    },
+    {
+      "shape": "mix_0.75_0.99_w0.25",
+      "horizon": 12,
+      "exhaustive_paths": 4096,
+      "exact_crossings": 32,
+      "risk": 0.0078125
+    },
+    {
+      "shape": "mix_0.75_0.99_w0.5",
+      "horizon": 12,
+      "exhaustive_paths": 4096,
+      "exact_crossings": 32,
+      "risk": 0.0078125
+    },
+    {
+      "shape": "mix_0.75_0.99_w0.75",
+      "horizon": 12,
+      "exhaustive_paths": 4096,
+      "exact_crossings": 32,
+      "risk": 0.0078125
+    },
+    {
+      "shape": "mix_0.7_0.9_0.99_equal",
+      "horizon": 12,
+      "exhaustive_paths": 4096,
+      "exact_crossings": 32,
+      "risk": 0.0078125
+    },
+    {
+      "shape": "mix_beta_0.75_half",
+      "horizon": 12,
+      "exhaustive_paths": 4096,
+      "exact_crossings": 32,
+      "risk": 0.0078125
+    }
+  ],
+  "new_simulation_observations": 0
+}

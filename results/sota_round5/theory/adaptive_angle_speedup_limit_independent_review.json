@@ -1,0 +1,315 @@
+{
+  "status": "passed_with_explicit_scope",
+  "created_utc": "2026-11-04T14:37:34.425033+00:00",
+  "reviewer": "stream_sota independent of producer",
+  "reviewer_source": "experiments/sota_round5/review_adaptive_angle_speedup_limit.py",
+  "reviewed_artifact": "results/sota_round5/theory/certify_adaptive_angle_speedup_limit.json",
+  "input_sha256": {
+    "experiments/sota_round5/review_adaptive_angle_speedup_limit.py": "ec104c94a195c7517e6e5c949d5c45429861bcfa83c5931d3236fcf34331596e",
+    "results/sota_round5/theory/certify_adaptive_angle_speedup_limit.py": "37634a6b5805bfa0c8a36cb69b6e17f51a2d31e13dab9e8f572dd3c390a2ad00",
+    "results/sota_round5/theory/certify_adaptive_angle_speedup_limit.json": "3bc160cdcd5ef774898c163ed4901d6f793f93e42b25214fc2cde78d53209546",
+    "results/sota_round3/paired_benchmark/preliminary_plan.json": "f89aefeab89c5ea26716c8cf4fa8b91902fdcdbc1d2853eeaea1f52022ea56f7",
+    "results/sota_round3/cap16384_preparation/beta_exact.json": "d2dbc9579dcaa4789bd56272f1ecd7bf0cacea22d60e24836fc71b37b67423ee",
+    "experiments/sota_round4/interval_sign_cost.py": "14a01510987617c05e37d991c995698e99d8f6cc28d5e7e7c5afe51512b48c40",
+    "experiments/sota_round4/review_information_bounds.py": "d942146132cf9f20259942a3d2d540ca20f4fe2d780c562fa241c383f42edb4c",
+    "results/structured_validation/continuous_symmetric_design_review.json": "4837d4d35c9247c0328fe6c78ff86de5754d8a587e81453d73ef74a4a49f7784",
+    "results/structured_validation/continuous_psr_bound_sota_review.json": "f6e3e546a0ace2f7958f31f58588e1518dfc3efad573694be641d0c556edd78f",
+    "results/structured_validation/continuous_psr_bound_root_review.json": "ab25f4a234039ae04ace791467f2ff53be1da234b4ac13dfba7d50a8756d763a",
+    "results/sota_round4/theory/audit_interval_sign_cost.json": "53fd8ee03cdaf49050dee6a5774cd20da93996ccc360bd99fcf9e4fbff8f1b99",
+    "results/sota_round4/theory/finite_budget_information_bounds_independent_review.json": "09bfd5b7846e93ab0fb89a4c6ac1c88eca1e5f9e4e30951a09a20b6bf3161d76",
+    "results/sota_round2/theory/cap16384_preparation_independent_audit.json": "56553f36e5d35899cd1b07951bd029af6aabb78a7c70d9fc35b120879603bf8c",
+    "results/sota_round2/theory/generic_symmetric_tail_dp_lemma.json": "e8d51fddd0a021c66374daee4b504aba17c427e578319920ca83a01343a5e43d",
+    "results/sota_round4/theory/finite_budget_information_bounds.py": "45ed1cc83ce2006940cab1df14a982c922274ef3400e3bbf9a9afc65310e11fd",
+    "results/sota_round4/theory/finite_budget_information_bounds.json": "21108102dedd5897426c07757a8c1a05ae43cc1bad6df096c1866e3f6aac387c",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "docs/CONTINUOUS_PSR_INFORMATION_BOUND.md": "8f9dce032aefcee81dae2b33fe808c8885413d35fc46ecaebd69891a591a19d4",
+    "docs/CONTINUOUS_SYMMETRIC_DESIGN.md": "0e16a486bb11c38b179b1d8d2aa8ed18184aefe07ceabd99c44efb59b10cd13d"
+  },
+  "new_simulation_observations": 0,
+  "goal_achieved": false,
+  "blocking_findings": [],
+  "checks": {
+    "positive_cases_with_full_baseline_interval_rerun": 8,
+    "main_cases_including_exact_mirrors": 16,
+    "independent_rational_series_information_cases": 8,
+    "all_target_source_bindings_verified": true,
+    "prior_symmetric_and_pointwise_theorem_review_bindings_verified": true,
+    "baseline_exact_risk_certificate_bound_to_independent_audit": true,
+    "second_rounding_would_change_psr_rates_in_cases": [
+      7,
+      21,
+      33,
+      45
+    ]
+  },
+  "independent_numeric_method": {
+    "logarithms": "Exact Fraction range reduction and 80-term atanh log series with an exact positive residual bound, reusing the prior independent reviewer, not the information producer.",
+    "baseline": "All 8 outward operating interval records recomputed at exact Fraction A-C,A+C with the hash-bound independently audited round4 primitive; no producer main rerun.",
+    "information": "Independent rational-series kappa, lambda, bstar, physical margin, all-outcome pair KL E, U via Bernoulli KL, and kappa/U; each tighter enclosure lies inside the recorded interval.",
+    "products": "Exact Fraction ratios, product, integer root-bracket comparisons, and positive cross-multiplication slacks; floating ratios are diagnostic only.",
+    "producer_information_code_imported": false,
+    "producer_Decimal_helper_imported": false,
+    "mpmath_used": false
+  },
+  "mathematical_findings": [
+    {
+      "topic": "matched parameter semantics",
+      "status": "passed",
+      "reason": "A,B,C are the exact rationals represented by parsed binary64 tokens. The model uses exact real trigonometric coordinates. At PSR coordinates cos=0,sin=+/-1 the rates are exact A-C,A+C, passed as Fractions without a second binary64 rounding. Candidate U and baseline costs therefore refer to the same exact continuous-angle law. This is not a statement about arbitrary finite-precision simulator trigonometric evaluation."
+    },
+    {
+      "topic": "one globally physical null",
+      "status": "passed",
+      "reason": "For every recorded case, exact physicality and 0<C<m hold. Independent rational intervals certify m-|B|*atanh(C/m)/(C/m)>0. All current B are nonnegative, so the producer margin m-B*lambda is correctly labeled here. The cited reviewed theorem supplies one qstar(x)=A+B*lambda*cos(x) with C=0 and pointwise kl(p(x),qstar(x))<=U for every real angle."
+    },
+    {
+      "topic": "adaptive transcript and stopped cost",
+      "status": "passed",
+      "reason": "Pad to the finite cap with deterministic stop symbols and include all paid outcomes and independent internal randomness. Identical policy, angle, stop, and output kernels under theta and qstar add zero conditional KL. Each paid observation has conditional KL at most U, so chain rule gives KL<=U E_theta[N], including unbalanced allocation, mid-pair stopping, errors and abstentions. No optional-stopping limit, grid replacement, or minimax interchange is required."
+    },
+    {
+      "topic": "binary terminal event lower bound",
+      "status": "passed",
+      "reason": "Use the event of a correct terminal sign report for the selected alternative. Its true probability is at least .95; under the single physical C=0 null it is at most the allowed .01 probability of any sign report. Data processing and monotonicity of Bernoulli KL for p>q give KL>=kl(.95,.01). Hence every admissible candidate has unconditional expected paid-shot cost at least kappa/U."
+    },
+    {
+      "topic": "power-qualified baseline",
+      "status": "passed",
+      "reason": "The frozen symmetric beta table has an independently recomputed exact fair-sign crossing risk <=.01. Every completed fixed independent PSR pair is inspected up to 8192 pairs. Null reports embed into the latent fair-sign crossing event. Rerun operating intervals certify correct power >=.95 separately on every positive main case. Wrong and capped-abstaining trajectories are charged in baseline E[N]."
+    },
+    {
+      "topic": "mirrors and geometric aggregation",
+      "status": "passed",
+      "reason": "The plan has precisely these 8 positives and their 8 exact C-negated mirrors. Swapping plus and minus outcomes is a probability-preserving path bijection for the symmetric beta boundary, hence mirrored expected cost and correct power agree exactly. U and lambda are even in C. Each mirror candidate separately obeys the same lower bound, even for a nonsymmetric candidate. Thus the 16-case product is bounded by the square of the 8-case bound, giving the identical eighth-root geometric ceiling."
+    },
+    {
+      "topic": "exact speedup comparisons",
+      "status": "passed",
+      "reason": "The baseline upper endpoint divided by the candidate lower endpoint is an upper bound on each actual expected-cost speedup. All 8 exact Fraction ratios are <3. Their exact product lies below (2593/1000)^8<3^8, and its square lies below (2593/1000)^16<3^16. The reported integer bisection root bracket and both integer slacks are independently reproduced."
+    }
+  ],
+  "kappa_independent": {
+    "lower": "4.17689895013548931526671369092913946444527725402354429558931229724272894415112124297167364",
+    "upper": "4.17689895013548931526671369092913946444527725402354429558931229724272894415112251165022594"
+  },
+  "beta_exact_fair_risk": {
+    "numerator": "2726792687311508011973451044445805268990965005531131521695809425226326561936516213536242707587537074037126739642812448126392927734019522596601074386040647000440648621451743048300578573244408996982525254872848731873905835065461821229343918958003203635523878415355421230005157606211327923096944332361970985993997630637245526374401039397489897836978065014359403972644148809367455253743122016642960874714014196383105116753034712318924218306719651078857132607515674689343105914654539283096181904554650645470536633851029475860737945830292210093367299436026622747509442425974126191902862905255816693101743283531749143747173991904483555591289535004709981157805880217103481135258727601611089787648347660279382035473454407890793819902577611711153503729719977307553035736698817257972804350108102670706929385159880298176391411246202226569009545123397840117301515424585456635471920405201134157149094582181706935240743310759007850388531028949554217860853425623283889338822922217230868949054010986460297083152347107989824731678150840400306883850135297999377557568190322248384096507110127514838057497011619898808421089563595618301414659881250094063027133931851217345961577957811073478559718519084999647808211528059008786637207278413461471716622565036574837059489440276332699764292397666847908279936740880690597930842515686626690911777406856772400072398127051137338271193194988371180783540564976449451634942613936490243695731634047631889778723627432898411715416579047276027893720309201726034948228734133837510032784023009844271151516854509953981462713677929968870794887766160838757588786136577780516740349246103589738064596652446425266037674338767545498264026111434376403557309118124473608894288641036022595761406486900010406520748780675641736067971125861677218323288183486226008014140243260659160277613596359000224603335478659453423251709621927030763778263522447785601275730823164294323988837474586206449712610122982935537573051835047913892719226701789336288011230628117299720912375880263912733290707522945005125310333458454160437680099811739921061503218413261608036898336595223356664288291836897338044095202273149542911844760523929465799055077471190733272232748621206179491373443447188632524312870187354918636170030225735374230998949963409997729546123394556725963292196955091191899330212150961464437034804418473221732879569176159597935057673592739522819275152003267348148443081422113249530020240455521393677611496040270659145770235415213832142058210342679378752808095806688339903",
+    "denominator": "272687033904853982365746061183445715612066040499058173107958196547430332962279823804066058631300496805989322949039256318277467705044296015902744941269388699769726574710548247384652456307012051289924212903397909549192971635652331140030322638475471575254475063133949979300002519900006633959200226324451470238087625407548868913477751328091140003711856508823387811460982229688192174069836022013904378923587486351669456285203725154026480064109626144503331623391459011810601845610703061282879439379791224806591435930608069342018756906970761301625448190425236424792124314469920962934262499225240280128913762528890317872873128835526437241657386758196580376432707107555416242581099034658812906602379042001356905858999077230422861545296851598827666351221434858708219357041851873842748377967189089992597529255455904187364655242464251565903020676678852039266643784320256755577731891227569189790130219576158102762341142188730241830745614796190856845947568112109504631744441235268178902895108672706864834997990353560685352649779356515139120940939078631902840664657095842155289498409505219634418886334197478923558608488916578767521803383867563917578001032681373958627089359913457234019270244637644728241976838195013733905390272698961293238528993231869969381934640002051029639732501194437181940463453377623460145465399663052901490077089101485455297428509467181554870374681900913404074714043705603258371359696331006187854854295753070269552432325884343201143593023807175905694090986322717451564605588787126892759904846862407466702047192415703944538269848294773285912085190434645454890750748605697688738765322204577107519912173308044789691479508891304039278850748030069038901968276984369366710382090746927174862538007807965648550771423459736164265336559176058506705275739738737799271769136546655699073634112905189127337754726505943455384883194052169244647432991582577223326166292359046269587660392084236132512859372827824708591816309648851226068363982180987381306796154351091963688652618594254942006394151470259519317676929485555494272596359646461023873029024963134725993663925985993271522732649240840191882491234603649546426490938640374338956953405958322226577251072004330356202165990667833382002308189587718264903529680945355525365049653936846713774224022297295110334889631205716885278303159698418891912585090742507982505849457116329636809561058007003797422415104705744000203859402663063567540898912718858462786780803556816651350895445367272701644117237646915499296626416368928948224"
+  },
+  "rows": [
+    {
+      "case_id": 9,
+      "mirror_case_id": 1009,
+      "matched_exact_parameter_and_psr_probabilities": true,
+      "all_operating_interval_fields_recomputed_and_identical": true,
+      "certified_beta_correct_probability_lower": 0.979303172581761,
+      "certified_beta_cost_upper": 6518.890596582023,
+      "independent_qstar_physical_margin": {
+        "lower": "0.000575849496179094873750771803501128263023594245142853822487586424467079906088952866419313880",
+        "upper": "0.000575849496179094873750771803501128263023594245142853822487586424467079906088955067674263531"
+      },
+      "independent_any_angle_expected_cost_lower_bound": {
+        "lower": "2216.15088784510695420729074396211948295867244144231623653807712283057966025946311510829235",
+        "upper": "2216.15088784510695420729074396211948295867244144231623653807712283057966025946522439737081"
+      },
+      "exact_ratio": {
+        "numerator": "65188905965820231358520686626434326171875000000000000000000000",
+        "denominator": "22161508878451069542072907439621194829586724414423162365380771"
+      },
+      "ratio_float_diagnostic_only": 2.9415373440211563,
+      "individual_threefold_excluded": true,
+      "elapsed_seconds": 1.3103766000000001
+    },
+    {
+      "case_id": 7,
+      "mirror_case_id": 1007,
+      "matched_exact_parameter_and_psr_probabilities": true,
+      "all_operating_interval_fields_recomputed_and_identical": true,
+      "certified_beta_correct_probability_lower": 0.9999999999927129,
+      "certified_beta_cost_upper": 945.9456104162283,
+      "independent_qstar_physical_margin": {
+        "lower": "0.01000000000000000020816681711721685132943093776702880859375",
+        "upper": "0.01000000000000000020816681711721685132943093776702880859375"
+      },
+      "independent_any_angle_expected_cost_lower_bound": {
+        "lower": "327.782115048067133066420423435371121294550939646968980607491714881457591102588155058723134",
+        "upper": "327.782115048067133066420423435371121294550939646968980607491714881457591102588273487641594"
+      },
+      "exact_ratio": {
+        "numerator": "4729728052081141527196450624614953994750976562500000000000000000",
+        "denominator": "1638910575240335665332102117176855606472754698234844903037458569"
+      },
+      "ratio_float_diagnostic_only": 2.885897573385026,
+      "individual_threefold_excluded": true,
+      "elapsed_seconds": 1.5288091000000001
+    },
+    {
+      "case_id": 19,
+      "mirror_case_id": 1019,
+      "matched_exact_parameter_and_psr_probabilities": true,
+      "all_operating_interval_fields_recomputed_and_identical": true,
+      "certified_beta_correct_probability_lower": 0.9999999999927074,
+      "certified_beta_cost_upper": 188.74289857880925,
+      "independent_qstar_physical_margin": {
+        "lower": "0.05000000000000000277555756156289135105907917022705078125",
+        "upper": "0.05000000000000000277555756156289135105907917022705078125"
+      },
+      "independent_any_angle_expected_cost_lower_bound": {
+        "lower": "65.5564230096134159731096117564714509791095353925604225496790907200769537530045208201143864",
+        "upper": "65.5564230096134159731096117564714509791095353925604225496790907200769537530045445058980782"
+      },
+      "exact_ratio": {
+        "numerator": "377485797157618492292385781183838844299316406250000000000000000",
+        "denominator": "131112846019226831946219223512942901958219070785120845099358181"
+      },
+      "ratio_float_diagnostic_only": 2.879090864233568,
+      "individual_threefold_excluded": true,
+      "elapsed_seconds": 1.6839117
+    },
+    {
+      "case_id": 21,
+      "mirror_case_id": 1021,
+      "matched_exact_parameter_and_psr_probabilities": true,
+      "all_operating_interval_fields_recomputed_and_identical": true,
+      "certified_beta_correct_probability_lower": 0.9999898662781063,
+      "certified_beta_cost_upper": 1261.4088964105463,
+      "independent_qstar_physical_margin": {
+        "lower": "0.00287924748089547393251037376674352376255381922631190165084265630846573758454115509016539020",
+        "upper": "0.00287924748089547393251037376674352376255381922631190165084265630846573758454116609644013846"
+      },
+      "independent_any_angle_expected_cost_lower_bound": {
+        "lower": "443.230177569021332799426828552348554619231926773857014178929837261634636667842232184424306",
+        "upper": "443.230177569021332799426828552348554619231926773857014178929837261634636667842654042239995"
+      },
+      "exact_ratio": {
+        "numerator": "525587040171060948523518163710832595825195312500000000000000000",
+        "denominator": "184679240653758888666427845230145231091346636155773755907887431"
+      },
+      "ratio_float_diagnostic_only": 2.8459454257581895,
+      "individual_threefold_excluded": true,
+      "elapsed_seconds": 1.3628577000000002
+    },
+    {
+      "case_id": 31,
+      "mirror_case_id": 1031,
+      "matched_exact_parameter_and_psr_probabilities": true,
+      "all_operating_interval_fields_recomputed_and_identical": true,
+      "certified_beta_correct_probability_lower": 0.9999999999927016,
+      "certified_beta_cost_upper": 46.767662905275216,
+      "independent_qstar_physical_margin": {
+        "lower": "0.200000000000000011102230246251565404236316680908203125",
+        "upper": "0.200000000000000011102230246251565404236316680908203125"
+      },
+      "independent_any_angle_expected_cost_lower_bound": {
+        "lower": "16.3891057524033539932774029391178627447773838481401056374197726800192384382511302050285966",
+        "upper": "16.3891057524033539932774029391178627447773838481401056374197726800192384382511361264745196"
+      },
+      "exact_ratio": {
+        "numerator": "2338383145263760809484665514901280403137207031250000000000000000",
+        "denominator": "819455287620167699663870146955893137238869192407005281870988631"
+      },
+      "ratio_float_diagnostic_only": 2.8535823498739123,
+      "individual_threefold_excluded": true,
+      "elapsed_seconds": 1.3664401000000002
+    },
+    {
+      "case_id": 33,
+      "mirror_case_id": 1033,
+      "matched_exact_parameter_and_psr_probabilities": true,
+      "all_operating_interval_fields_recomputed_and_identical": true,
+      "certified_beta_correct_probability_lower": 0.9999967732098476,
+      "certified_beta_cost_upper": 266.45010729241847,
+      "independent_qstar_physical_margin": {
+        "lower": "0.0115169899235818957300414950669740950502152769052476066033706252338629503381646203606615608",
+        "upper": "0.0115169899235818957300414950669740950502152769052476066033706252338629503381646643857605539"
+      },
+      "independent_any_angle_expected_cost_lower_bound": {
+        "lower": "110.807544392255333199856707138087138654807981693464253544732459315408659166960558046106076",
+        "upper": "110.807544392255333199856707138087138654807981693464253544732459315408659166960663510559999"
+      },
+      "exact_ratio": {
+        "numerator": "1332250536462092327383288647979497909545898437500000000000000000",
+        "denominator": "554037721961276665999283535690435693274039908467321267723662293"
+      },
+      "ratio_float_diagnostic_only": 2.404620630786593,
+      "individual_threefold_excluded": true,
+      "elapsed_seconds": 1.2666341
+    },
+    {
+      "case_id": 43,
+      "mirror_case_id": 1043,
+      "matched_exact_parameter_and_psr_probabilities": true,
+      "all_operating_interval_fields_recomputed_and_identical": true,
+      "certified_beta_correct_probability_lower": 0.9999999999927119,
+      "certified_beta_cost_upper": 18.372969596572844,
+      "independent_qstar_physical_margin": {
+        "lower": "0.5",
+        "upper": "0.5"
+      },
+      "independent_any_angle_expected_cost_lower_bound": {
+        "lower": "6.55564230096134198746763715611187602681642588519844820672049596155899883458414441021089240",
+        "upper": "6.55564230096134198746763715611187602681642588519844820672049596155899883458414677878926158"
+      },
+      "exact_ratio": {
+        "numerator": "4593242399143210974443718441762030124664306640625000000000000000",
+        "denominator": "1638910575240335496866909289027969006704106471299612051680123987"
+      },
+      "ratio_float_diagnostic_only": 2.8026192938987182,
+      "individual_threefold_excluded": true,
+      "elapsed_seconds": 1.3592271999999994
+    },
+    {
+      "case_id": 45,
+      "mirror_case_id": 1045,
+      "matched_exact_parameter_and_psr_probabilities": true,
+      "all_operating_interval_fields_recomputed_and_identical": true,
+      "certified_beta_correct_probability_lower": 0.9999999808806997,
+      "certified_beta_cost_upper": 67.54238623596616,
+      "independent_qstar_physical_margin": {
+        "lower": "0.0287924748089547188647317975387876564787198475604666265677673581628332245493452021225932345",
+        "upper": "0.0287924748089547188647317975387876564787198475604666265677673581628332245493453121853407171"
+      },
+      "independent_any_angle_expected_cost_lower_bound": {
+        "lower": "44.3230177569021455458797870306799918538541040045128932489780745082961885312937800072864056",
+        "upper": "44.3230177569021455458797870306799918538541040045128932489780745082961885312938221930679746"
+      },
+      "exact_ratio": {
+        "numerator": "1688559655899154066105438687372952699661254882812500000000000000",
+        "denominator": "1108075443922553638646994675766999796346352600112822331224451859"
+      },
+      "ratio_float_diagnostic_only": 1.5238670481873544,
+      "individual_threefold_excluded": true,
+      "elapsed_seconds": 1.4478267000000002
+    }
+  ],
+  "exact_product": {
+    "numerator": "164229044874414722476059539666709166951820347485414256204376706256977530090997972307231509228676383304311261690853816291776081201963434415067882716341660362441324084371124067558016373118686679218832420276927123255568609316289600814490574606792617399047531124009087173600902733311068127844303366941693943506228885093855551322597702626482352172843093285337090492248535156250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "denominator": "80568371242548063348523196002667820370357750097100956053472694190920181332312714857966639086146440140338533656825304998146711553256145379820079808318981669553916935693753781245965341290960639940209884704616487375918963447598029700880924198042815682471093018915906525070681793129618135022799536600325187615302272486690260874644616120093727904614100912043150749174408792933827255327406819121423866588147707251262838558056093958343594128091862314354544369604834160162773415795757175618797334064838484819"
+  },
+  "strict_geometric_upper": {
+    "numerator": "2593",
+    "denominator": "1000"
+  },
+  "root_bracket_verified": {
+    "scale": 1000000000000,
+    "lower_integer_tick": 2592153244691,
+    "upper_integer_tick": 2592153244692,
+    "lower_exact": {
+      "numerator": "2592153244691",
+      "denominator": "1000000000000"
+    },
+    "strict_upper_exact": {
+      "numerator": "648038311173",
+      "denominator": "250000000000"
+    }
+  },
+  "eight_and_sixteen_case_geometric_threefold_excluded": true,
+  "limits": [
+    "The ceiling is a necessary bound, not an achievable speedup, a full SOTA comparison, or completion of the research goal.",
+    "It applies to the same stationary independent Bernoulli single-harmonic query model, equal one-shot cost, truth-independent candidate kernels, finite cap, <=1% sign-report probability at every physical zero-sign null, and >=95% correct power on each compared case.",
+    "It compares expected unconditional cost to this specified power-qualified beta baseline. It neither claims a globally best baseline nor bounds tasks with genuinely different resources, certified prior restrictions, or evaluation endpoints.",
+    "The continuous pointwise theorem and operating primitive were already independently reviewed and hash-bound here. They were not re-proved or formally verified by a proof assistant in this audit.",
+    "The production information routine must use abs(B) in its physical margin if later extended to negative B; all present positives and their C mirrors have B>=0 and pass the exact check."
+  ],
+  "elapsed_seconds": 11.447491399999999
+}

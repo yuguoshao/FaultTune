@@ -1,0 +1,69 @@
+{
+  "version": "hybrid_prefix_minimax_frozen_beta_continuation_v1",
+  "status": "scientific_design_fixed_before_coefficient_validation_and_optimization",
+  "q_exact": [
+    [
+      7,
+      10
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      99,
+      100
+    ]
+  ],
+  "r_exact": [
+    [
+      1,
+      50
+    ],
+    [
+      1,
+      10
+    ],
+    [
+      2,
+      5
+    ]
+  ],
+  "prefix_sign_horizon": 128,
+  "full_sign_horizon": 8192,
+  "physical_pair_cap": 8192,
+  "physical_shot_cap": 16384,
+  "null_constraint_exact": [
+    999,
+    100000
+  ],
+  "each_power_constraint_exact": [
+    95001,
+    100000
+  ],
+  "fixed_solver_guard_exact": [
+    1,
+    10000000
+  ],
+  "objective": "Minimize worst9-point physical expected-cost ratio to the pre-existing globally-qualified fixed-control cost envelope. Preserve the same grid, minimax objective, qualification pool and targets as the previous physical_minimax design.",
+  "prefix_rule": "One symmetric randomized majority-sign rule indexed by(d,min(k,d-k)), with a fresh independent integer coin only on discordant pairs, for1<=d<=128. Probability denominator10^12; fixed snap tolerance1e-9.",
+  "continuation_rule": "If prefix rule has not reported at128, continue with the unchanged frozen H8192 beta boundary at d=129,130,...8192. Do not evaluate beta at d=128. All physical observations including concordances and non-reporting paths are charged; physical cap expiry abstains.",
+  "null_accounting": "Prefix report probability plus the conditional fair-sign beta-continuation report probability is constrained through the entire8192-sign horizon, even when a physical cap would reduce crossing risk.",
+  "terminal_cost_semantics": "For each possible prefix state k, backward-DP terminal values integrate the TOTAL NB(d,r) waiting time from the start to a later report, truncated at physical cap. Terminal no-report paths cost the full physical cap. Prefix-suffix costs are never added twice.",
+  "folding": "For a folded state j and k=128-j, multiply each suffix value by its own orientation likelihood ratio and average the two. A currently negative-majority state may later correctly report plus, so its positive-suffix contribution is retained.",
+  "solver": {
+    "method": "scipy1.5 sparse interior-point",
+    "tol": 1e-09,
+    "maxiter": 200,
+    "rr": false
+  },
+  "validation_order": "First exact small-horizon physical DP, full sign-string enumeration, and folded/unfolded coefficient checks; then production coefficients; only afterward solve the LP.",
+  "failure_rule": "Save failures without automatically changing grid, horizons, targets, continuation or objective.",
+  "claim_boundary": "Classical finite-horizon planning with a fixed classical continuation, not an originality, SOTA or3x claim; development and benchmark evidence remain separate.",
+  "new_observations": 0,
+  "input_sha256": {
+    "results/sota_round3/cap16384_preparation/beta_exact.json": "d2dbc9579dcaa4789bd56272f1ecd7bf0cacea22d60e24836fc71b37b67423ee",
+    "results/sota_round5/physical_minimax/control_grid_float.json": "c272a88131ffa4de0cd1cbbb7b64d08e252bac4c276ba10e35d7da7ed3094d32",
+    "experiments/sota_round5/hybrid_terminal_coefficients.py": "76e71cc43315f3d8f20af15edbf168a4031d8920ac8611f9440eca14e8d589d3"
+  }
+}

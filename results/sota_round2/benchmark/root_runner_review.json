@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T11:09:51.349032+00:00",
+  "reviewer": "root independent of benchmark runner implementation",
+  "sources": {
+    "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f",
+    "experiments/structured_validation/weighted_fisher.py": "1f31c9cbea3c8db4d7d8dc75936dc5304fd3273fb8ad1fafedc90e792fe24e24",
+    "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/structured_validation/conditional_fisher_unequal.py": "011d691f76b798cd0372544156ab86dbf7b6273b02b41de009737f433caef917",
+    "experiments/structured_validation/safe_grid.py": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+    "experiments/structured_validation/rb_grid.py": "a262a4790289505e7846c98334edbf341cded98090ce7bd8bf7c0c3974fb420f",
+    "experiments/structured_validation/predictive.py": "fc16237805139c707e6e076c0c7e69f45e88c111d405349c68daa3f150871fe4",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/structured_validation/design_policy.py": "1e61776de4b3bd8b2fd331b9c9f28b7b68f4e6c9672e19ca38aa9b436e3d4547",
+    "experiments/structured_validation/probe_fixed.py": "bf64f1ab7fb5e1675966704cc315de1f21b51db8135301fc319d8388d67311ec",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/sota_round2/benchmark/benchmark_runner.py": "ef09fc795f9c45863e9fa7ccd6dcf8c2efd1745465ed95a577db598a67967f27",
+    "experiments/sota_round2/benchmark/benchmark_checks.py": "d6310560c16601abab051bdde37a5b48fb3a41754c3b3e94dc07512e39c90014",
+    "experiments/sota_round2/literature/dkm_baseline.py": "e8799facf1494dcf6355f2f2e6069be350f35f788a70381201f55c53e5479c9d",
+    "experiments/sota_round2/structured_grid_predictive.py": "483db5fb5a64cf91a9558af3006c2cdb0192c2cda4bafc99890fd5252238265b",
+    "results/sota_round2/structured_grid_prior.json": "70a9cedde4037c437324c20c7d13caae0507752ab59d14fc4ea972dbac3824f0"
+  },
+  "plan_sha256": "f245d69f688211e7c1b12985b266f5e288decafb951f1a1d72db5fa1fc2f0c33",
+  "preflight": {
+    "dkm_checks": {
+      "path": "results/sota_round2/literature/dkm_checks.json",
+      "sha256": "08948e06398f09bc4b8529e2fddbe181d9bcaffdda6c8e3d8e6acb85a11d3dea"
+    },
+    "dkm_review": {
+      "path": "results/sota_round2/theory/dkm_review.json",
+      "sha256": "fcb433fe439e8d7cc172075a84b6efdd5dba91c7de9f29def7524e72369627e7"
+    },
+    "structured_grid_checks": {
+      "path": "results/sota_round2/structured_grid_checks.json",
+      "sha256": "5a20ad33b1940d5e13070a9a5bbd334e9ecbe4240ae031d1bdaff0ed85b373be"
+    },
+    "structured_grid_review": {
+      "path": "results/sota_round2/theory/structured_grid_review.json",
+      "sha256": "40a911c0e493ec26b69e5d4bdc272c79ed94b8af96b9b927bd5ad9eb30434121"
+    }
+  },
+  "bookkeeping_checks": {
+    "path": "results/sota_round2/benchmark/synthetic_checks.json",
+    "sha256": "3b989c35af9dcd828b18fc0a147715e222d5679fcd494cb02f3c84763b990203"
+  },
+  "checks": [
+    "Read runner controller/simulator separation, predictable DKM choices and paired hedge equations against frozen original.",
+    "Reviewed complete-case/rep/path/calibration matrices, fixed cap and all-error/all-abstention costing.",
+    "Reviewed shared path stopped-prefix bookkeeping, common eligible checkpoints, Decimal direction margins, incomplete-path retention and no partial-data aggregate.",
+    "Verified all 17 current source/prior hashes and preflight bindings, actual exact prior table, model-specific and calibration-specific independent reviews.",
+    "Reviewed synthetic negative cases and zero-new-observation old-hedge replay; first eligible single-arm check at six paid shots."
+  ],
+  "issues": [],
+  "limits": [
+    "Small development comparison only; default six-arm DKM, conservative formal KK21 boundary, named KT and structured-predictive adaptations.",
+    "Cap 4096 leaves original closed method in PSR warm-up; fine-initial changes Fisher blocks. No general adaptive-design/SOTA win follows.",
+    "Independent post-run ledger/seed/certificate audit is still required."
+  ]
+}

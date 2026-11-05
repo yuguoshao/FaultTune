@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T11:06:53.985439+00:00",
+  "sources": {
+    "results/sota_round2/theory/dkm_review.json": "fcb433fe439e8d7cc172075a84b6efdd5dba91c7de9f29def7524e72369627e7",
+    "results/sota_round2/literature/baseline_literature_review.json": "a8e6678e588e998d2407f3a16aa6895a26b259e91e9ded562257d5679266652f",
+    "results/sota_round2/literature/tidnabbil_samplingrules.jl": "811425b621f2d0154768407c14ec53d0645662a603d39d741a165d033bc32a08",
+    "results/sota_round2/literature/tidnabbil_tracking.jl": "4e667156a1f0760d4f02b9ae01a6d8fbc33885ed8e8fa2d1bd5de5cb8dd29715",
+    "results/sota_round2/literature/tidnabbil_thresholds.jl": "073885481f2c0502fa814631bca8b11c2bf388e47729496126bd2dc18f69b6b1",
+    "results/sota_round2/literature/tidnabbil_purex_README.txt": "a1851004cbce7acaabd651ac61dcc1cf205b1806566872b7109e794304a6f3d6"
+  },
+  "scope": "Late-arriving literature note reviewed for its DKM/KK21/KT and public-code claims. The separate FWSP literature conclusions were not independently re-derived in this addendum.",
+  "checks": [
+    "DKM sampling, calibration, numerical-oracle limitations and corrected stopping order agree with the independently reviewed implementation.",
+    "The official purex README names the 2019 DKM paper and Julia 1.1.0; the public code was read but not executed.",
+    "Official optimistic_gradient uses log(t), official CTracking uses count-minus-cumulative-weight, and official GK16 threshold is log((1+log(t))/delta); these differ from the printed theorem-setting implementation and are explicitly disclosed.",
+    "The note correctly preserves the initial oracle issue, separates the full physical stopping null from the numerical design margin, and requires same-grid/same-certificate controls before attributing performance gains."
+  ],
+  "issues": []
+}

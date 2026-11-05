@@ -1,0 +1,903 @@
+{
+  "version": "piecewise_candidate_vs_frozen15_cost_envelope_v1",
+  "status": "complete_development_cost_diagnostic",
+  "created_utc": "2026-11-04T13:16:46.536911+00:00",
+  "input_sha256": {
+    "results/sota_round3/comparator_envelope_diagnostic.json": "38bb030b39918bdd0122449a06c275a6d126a69354948955a906a12363f694c7",
+    "results/sota_round3/piecewise_gate_replay/records.jsonl": "56cd5555581d9191d1705b45019a8c137907b3989f9dfa773a627fe31aa966e7",
+    "results/sota_round3/piecewise_gate_replay/summary.json": "44d579d8f95ec2b2a1051ecd7fa8cecd67d302f4ad91c8608b3308055822eb40",
+    "results/sota_round2/theory/piecewise_gate_replay_independent_audit.json": "1b5c0b37b8d1b49c9d1158e3e789c22eab8955a3ee2cf197fa4fe310f00f1a9a"
+  },
+  "producer_source": "experiments/sota_round3/piecewise_comparator_envelope_diagnostic.py",
+  "producer_sha256": "2f702f093c5b59e56d500156600f5c310c5fb98c3427467efb23833432e6249a",
+  "new_simulation_observations": 0,
+  "candidate": "physical_gate_m6_piecewise_D512",
+  "frozen_envelope_binding": {
+    "path": "results/sota_round3/comparator_envelope_diagnostic.json",
+    "file_sha256": "38bb030b39918bdd0122449a06c275a6d126a69354948955a906a12363f694c7",
+    "envelope_payload_sha256": "68b0f7b18813383445226713fba67ceb1b9ba507147ae8c6ae53c3b65c6bbc13",
+    "control_pool_unchanged": true,
+    "candidate_added_to_control_pool": false
+  },
+  "main": {
+    "cases": 16,
+    "trajectories": 512,
+    "geometric_cost_ratio_to_casewise_control_envelope": 1.0616079966409286,
+    "geometric_cost_ratio_to_single_global_beta_exact": 0.9567062602247729,
+    "global_full_count_comparisons": {
+      "full_safe_fine": 0.8969001444551514,
+      "full_safe_coarse": 0.6711559216450294,
+      "rb_fine": 0.8805625395710384,
+      "rb_coarse": 0.8508856338516853
+    },
+    "all15_global_fixed_control_comparisons": {
+      "beta_ville100": 0.8733758719772231,
+      "beta_exact": 0.9567062602247729,
+      "maxsprt": 0.8791705334941396,
+      "pair_grid": 0.9567062602247729,
+      "pairwise_hedge": 0.9567062602247729,
+      "sprt_0.6": 0.4416789507484079,
+      "sprt_0.75": 0.8037220321732528,
+      "sprt_0.9": 0.7783044179383463,
+      "sprt_0.99": 0.5524737278262714,
+      "closed_hedge_original": 0.8520037141890348,
+      "closed_hedge_fine_initial": 0.8924386697932505,
+      "full_safe_fine": 0.8969001444551514,
+      "full_safe_coarse": 0.6711559216450294,
+      "rb_fine": 0.8805625395710384,
+      "rb_coarse": 0.8508856338516853
+    },
+    "mean_cost_shots": 824.0859375,
+    "observed_correct_stops": 462,
+    "observed_correct_stop_rate": 0.90234375,
+    "observed_wrong_stops": 0,
+    "observed_cap_abstentions": 50,
+    "minimum_case_correct_stop_rate": 0.1875,
+    "cases_below_envelope": 0,
+    "cases_tying_envelope": 0,
+    "cases_above_envelope": 16
+  },
+  "null": {
+    "trajectories": 64,
+    "observed_wrong_stops": 0,
+    "observed_cap_abstentions": 64
+  },
+  "all576_pathwise_comparison_to_beta_exact": {
+    "fewer_shots": 58,
+    "same_shots": 518,
+    "more_shots": 0,
+    "different_decision": 0
+  },
+  "per_case": [
+    {
+      "case_id": 7,
+      "A": 0.01,
+      "B": 0.0,
+      "C": 0.0098,
+      "replicates": 32,
+      "candidate_total_cost_shots": 31934,
+      "candidate_mean_cost_shots": 997.9375,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 909.0625,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.99",
+          "replicates": 32,
+          "total_cost_shots": 29090,
+          "mean_cost_shots": 909.0625,
+          "correct_stops": 32,
+          "wrong_stops": 0,
+          "cap_abstentions": 0,
+          "correct_stop_rate": 1.0,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 88.875,
+      "ratio_to_envelope": 1.0977655551735992,
+      "ratio_to_envelope_exact": [
+        15967,
+        14545
+      ],
+      "relative_cost_gap_to_envelope": 0.09776555517359918,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.8844513377278015,
+        "beta_exact": 1.0,
+        "maxsprt": 0.8844513377278015,
+        "pair_grid": 1.0,
+        "pairwise_hedge": 1.0,
+        "sprt_0.6": 0.31579051461571933,
+        "sprt_0.75": 0.698866371952554,
+        "sprt_0.9": 1.010953526655692,
+        "sprt_0.99": 1.0977655551735992,
+        "closed_hedge_original": 0.886907737599289,
+        "closed_hedge_fine_initial": 0.886907737599289,
+        "full_safe_fine": 0.8084966327408982,
+        "full_safe_coarse": 0.4971974839633805,
+        "rb_fine": 0.8895264623955432,
+        "rb_coarse": 0.8895264623955432
+      }
+    },
+    {
+      "case_id": 9,
+      "A": 0.01,
+      "B": 0.00882,
+      "C": 0.004271720964669859,
+      "replicates": 32,
+      "candidate_total_cost_shots": 116812,
+      "candidate_mean_cost_shots": 3650.375,
+      "candidate_correct_stops": 8,
+      "candidate_correct_stop_rate": 0.25,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 24,
+      "envelope_mean_cost_shots": 3599.0,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.9",
+          "replicates": 32,
+          "total_cost_shots": 115168,
+          "mean_cost_shots": 3599.0,
+          "correct_stops": 9,
+          "wrong_stops": 0,
+          "cap_abstentions": 23,
+          "correct_stop_rate": 0.28125,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 51.375,
+      "ratio_to_envelope": 1.0142747985551541,
+      "ratio_to_envelope_exact": [
+        29203,
+        28792
+      ],
+      "relative_cost_gap_to_envelope": 0.014274798555154209,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.9779154457932189,
+        "beta_exact": 1.0,
+        "maxsprt": 0.9779154457932189,
+        "pair_grid": 1.0,
+        "pairwise_hedge": 1.0,
+        "sprt_0.6": 0.8935362961829726,
+        "sprt_0.75": 1.0023855698766024,
+        "sprt_0.9": 1.0142747985551541,
+        "sprt_0.99": 1.012270789282124,
+        "closed_hedge_original": 0.9779154457932189,
+        "closed_hedge_fine_initial": 0.9779154457932189,
+        "full_safe_fine": 0.9779154457932189,
+        "full_safe_coarse": 0.9121376811594203,
+        "rb_fine": 0.9779154457932189,
+        "rb_coarse": 0.9779154457932189
+      }
+    },
+    {
+      "case_id": 19,
+      "A": 0.05,
+      "B": 0.0,
+      "C": 0.049,
+      "replicates": 32,
+      "candidate_total_cost_shots": 5968,
+      "candidate_mean_cost_shots": 186.5,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 173.0625,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.99",
+          "replicates": 32,
+          "total_cost_shots": 5538,
+          "mean_cost_shots": 173.0625,
+          "correct_stops": 32,
+          "wrong_stops": 0,
+          "cap_abstentions": 0,
+          "correct_stop_rate": 1.0,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 13.4375,
+      "ratio_to_envelope": 1.0776453593355002,
+      "ratio_to_envelope_exact": [
+        2984,
+        2769
+      ],
+      "relative_cost_gap_to_envelope": 0.07764535933550018,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.8894187779433681,
+        "beta_exact": 1.0,
+        "maxsprt": 0.8894187779433681,
+        "pair_grid": 1.0,
+        "pairwise_hedge": 1.0,
+        "sprt_0.6": 0.3136760222852938,
+        "sprt_0.75": 0.7036076397076161,
+        "sprt_0.9": 1.0310988251554942,
+        "sprt_0.99": 1.0776453593355002,
+        "closed_hedge_original": 0.9632020658489348,
+        "closed_hedge_fine_initial": 0.9479034307496823,
+        "full_safe_fine": 0.8091106290672451,
+        "full_safe_coarse": 0.5402860764077494,
+        "rb_fine": 0.9170251997541488,
+        "rb_coarse": 0.9170251997541488
+      }
+    },
+    {
+      "case_id": 21,
+      "A": 0.05,
+      "B": 0.0441,
+      "C": 0.021358604823349298,
+      "replicates": 32,
+      "candidate_total_cost_shots": 43184,
+      "candidate_mean_cost_shots": 1349.5,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 1276.375,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.75",
+          "replicates": 32,
+          "total_cost_shots": 40844,
+          "mean_cost_shots": 1276.375,
+          "correct_stops": 31,
+          "wrong_stops": 0,
+          "cap_abstentions": 1,
+          "correct_stop_rate": 0.96875,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 73.125,
+      "ratio_to_envelope": 1.057291156595828,
+      "ratio_to_envelope_exact": [
+        10796,
+        10211
+      ],
+      "relative_cost_gap_to_envelope": 0.05729115659582803,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.9778542638467461,
+        "beta_exact": 1.0,
+        "maxsprt": 1.024628671760072,
+        "pair_grid": 1.0,
+        "pairwise_hedge": 1.0,
+        "sprt_0.6": 0.8060024636977864,
+        "sprt_0.75": 1.057291156595828,
+        "sprt_0.9": 0.5850380686590619,
+        "sprt_0.99": 0.3971307706455766,
+        "closed_hedge_original": 0.9802515095110547,
+        "closed_hedge_fine_initial": 0.9880113480369727,
+        "full_safe_fine": 0.9460631818779301,
+        "full_safe_coarse": 0.8391108347582776,
+        "rb_fine": 0.9609684454136811,
+        "rb_coarse": 0.9536260047698967
+      }
+    },
+    {
+      "case_id": 31,
+      "A": 0.2,
+      "B": 0.0,
+      "C": 0.196,
+      "replicates": 32,
+      "candidate_total_cost_shots": 1600,
+      "candidate_mean_cost_shots": 50.0,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 46.8125,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.99",
+          "replicates": 32,
+          "total_cost_shots": 1498,
+          "mean_cost_shots": 46.8125,
+          "correct_stops": 32,
+          "wrong_stops": 0,
+          "cap_abstentions": 0,
+          "correct_stop_rate": 1.0,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 3.1875,
+      "ratio_to_envelope": 1.0680907877169559,
+      "ratio_to_envelope_exact": [
+        800,
+        749
+      ],
+      "relative_cost_gap_to_envelope": 0.06809078771695594,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.922722029988466,
+        "beta_exact": 1.0,
+        "maxsprt": 0.922722029988466,
+        "pair_grid": 1.0,
+        "pairwise_hedge": 1.0,
+        "sprt_0.6": 0.31545741324921134,
+        "sprt_0.75": 0.721370604147881,
+        "sprt_0.9": 1.0075566750629723,
+        "sprt_0.99": 1.0680907877169559,
+        "closed_hedge_original": 0.9864364981504316,
+        "closed_hedge_fine_initial": 0.9501187648456056,
+        "full_safe_fine": 0.9445100354191264,
+        "full_safe_coarse": 0.6914433880726015,
+        "rb_fine": 0.9269988412514485,
+        "rb_coarse": 0.9411764705882353
+      }
+    },
+    {
+      "case_id": 33,
+      "A": 0.2,
+      "B": 0.1764,
+      "C": 0.08543441929339719,
+      "replicates": 32,
+      "candidate_total_cost_shots": 9678,
+      "candidate_mean_cost_shots": 302.4375,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 268.1875,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.75",
+          "replicates": 32,
+          "total_cost_shots": 8582,
+          "mean_cost_shots": 268.1875,
+          "correct_stops": 32,
+          "wrong_stops": 0,
+          "cap_abstentions": 0,
+          "correct_stop_rate": 1.0,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 34.25,
+      "ratio_to_envelope": 1.1277091587042647,
+      "ratio_to_envelope_exact": [
+        4839,
+        4291
+      ],
+      "relative_cost_gap_to_envelope": 0.12770915870426475,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.931651906045437,
+        "beta_exact": 1.0,
+        "maxsprt": 0.9365202245016451,
+        "pair_grid": 1.0,
+        "pairwise_hedge": 1.0,
+        "sprt_0.6": 0.6913844834976425,
+        "sprt_0.75": 1.1277091587042647,
+        "sprt_0.9": 0.342196450038894,
+        "sprt_0.99": 0.08416823210185764,
+        "closed_hedge_original": 0.954626159005721,
+        "closed_hedge_fine_initial": 0.9565131448902945,
+        "full_safe_fine": 0.8718918918918919,
+        "full_safe_coarse": 0.7890102722974075,
+        "rb_fine": 0.9687687687687687,
+        "rb_coarse": 0.996499176276771
+      }
+    },
+    {
+      "case_id": 43,
+      "A": 0.5,
+      "B": 0.0,
+      "C": 0.49,
+      "replicates": 32,
+      "candidate_total_cost_shots": 402,
+      "candidate_mean_cost_shots": 12.5625,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 12.4375,
+      "envelope_winning_controls": [
+        {
+          "method": "full_safe_fine",
+          "replicates": 32,
+          "total_cost_shots": 398,
+          "mean_cost_shots": 12.4375,
+          "correct_stops": 32,
+          "wrong_stops": 0,
+          "cap_abstentions": 0,
+          "correct_stop_rate": 1.0,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 0.125,
+      "ratio_to_envelope": 1.0100502512562815,
+      "ratio_to_envelope_exact": [
+        201,
+        199
+      ],
+      "relative_cost_gap_to_envelope": 0.010050251256281407,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.6184615384615385,
+        "beta_exact": 0.6860068259385665,
+        "maxsprt": 0.6184615384615385,
+        "pair_grid": 0.6860068259385665,
+        "pairwise_hedge": 0.6860068259385665,
+        "sprt_0.6": 0.20180722891566266,
+        "sprt_0.75": 0.4740566037735849,
+        "sprt_0.9": 0.6860068259385665,
+        "sprt_0.99": 0.7760617760617761,
+        "closed_hedge_original": 0.392578125,
+        "closed_hedge_fine_initial": 0.6184615384615385,
+        "full_safe_fine": 1.0100502512562815,
+        "full_safe_coarse": 0.392578125,
+        "rb_fine": 0.6184615384615385,
+        "rb_coarse": 0.392578125
+      }
+    },
+    {
+      "case_id": 45,
+      "A": 0.5,
+      "B": 0.441,
+      "C": 0.21358604823349295,
+      "replicates": 32,
+      "candidate_total_cost_shots": 2116,
+      "candidate_mean_cost_shots": 66.125,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 65.5,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.9",
+          "replicates": 32,
+          "total_cost_shots": 2096,
+          "mean_cost_shots": 65.5,
+          "correct_stops": 32,
+          "wrong_stops": 0,
+          "cap_abstentions": 0,
+          "correct_stop_rate": 1.0,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 0.625,
+      "ratio_to_envelope": 1.0095419847328244,
+      "ratio_to_envelope_exact": [
+        529,
+        524
+      ],
+      "relative_cost_gap_to_envelope": 0.009541984732824428,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.883876357560568,
+        "beta_exact": 0.9860205032618826,
+        "maxsprt": 0.8707818930041152,
+        "pair_grid": 0.9860205032618826,
+        "pairwise_hedge": 0.9860205032618826,
+        "sprt_0.6": 0.4328968903436989,
+        "sprt_0.75": 0.8794679966749792,
+        "sprt_0.9": 1.0095419847328244,
+        "sprt_0.99": 0.2303003918154114,
+        "closed_hedge_original": 0.9152249134948097,
+        "closed_hedge_fine_initial": 0.8928270042194093,
+        "full_safe_fine": 0.8376880443388757,
+        "full_safe_coarse": 0.8650858544562551,
+        "rb_fine": 0.9240174672489083,
+        "rb_coarse": 0.9887850467289719
+      }
+    },
+    {
+      "case_id": 1007,
+      "A": 0.01,
+      "B": 0.0,
+      "C": -0.0098,
+      "replicates": 32,
+      "candidate_total_cost_shots": 31754,
+      "candidate_mean_cost_shots": 992.3125,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 858.5,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.99",
+          "replicates": 32,
+          "total_cost_shots": 27472,
+          "mean_cost_shots": 858.5,
+          "correct_stops": 32,
+          "wrong_stops": 0,
+          "cap_abstentions": 0,
+          "correct_stop_rate": 1.0,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 133.8125,
+      "ratio_to_envelope": 1.1558677926616192,
+      "ratio_to_envelope_exact": [
+        15877,
+        13736
+      ],
+      "relative_cost_gap_to_envelope": 0.1558677926616191,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.8659394600490864,
+        "beta_exact": 1.0,
+        "maxsprt": 0.8659394600490864,
+        "pair_grid": 1.0,
+        "pairwise_hedge": 1.0,
+        "sprt_0.6": 0.3151261338149773,
+        "sprt_0.75": 0.6633659229547924,
+        "sprt_0.9": 1.0110163015792155,
+        "sprt_0.99": 1.1558677926616192,
+        "closed_hedge_original": 0.8659394600490864,
+        "closed_hedge_fine_initial": 0.8659394600490864,
+        "full_safe_fine": 0.791120633813344,
+        "full_safe_coarse": 0.4893361277199038,
+        "rb_fine": 0.8659394600490864,
+        "rb_coarse": 0.8659394600490864
+      }
+    },
+    {
+      "case_id": 1009,
+      "A": 0.01,
+      "B": 0.00882,
+      "C": -0.004271720964669859,
+      "replicates": 32,
+      "candidate_total_cost_shots": 121128,
+      "candidate_mean_cost_shots": 3785.25,
+      "candidate_correct_stops": 6,
+      "candidate_correct_stop_rate": 0.1875,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 26,
+      "envelope_mean_cost_shots": 3773.0625,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.9",
+          "replicates": 32,
+          "total_cost_shots": 120738,
+          "mean_cost_shots": 3773.0625,
+          "correct_stops": 6,
+          "wrong_stops": 0,
+          "cap_abstentions": 26,
+          "correct_stop_rate": 0.1875,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 12.1875,
+      "ratio_to_envelope": 1.0032301346717687,
+      "ratio_to_envelope_exact": [
+        20188,
+        20123
+      ],
+      "relative_cost_gap_to_envelope": 0.003230134671768623,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.9471560608667094,
+        "beta_exact": 1.0,
+        "maxsprt": 0.9471560608667094,
+        "pair_grid": 1.0,
+        "pairwise_hedge": 1.0,
+        "sprt_0.6": 0.92413330078125,
+        "sprt_0.75": 0.9571098960144125,
+        "sprt_0.9": 1.0032301346717687,
+        "sprt_0.99": 0.9742773032189567,
+        "closed_hedge_original": 0.9471560608667094,
+        "closed_hedge_fine_initial": 0.9471560608667094,
+        "full_safe_fine": 0.92413330078125,
+        "full_safe_coarse": 0.92413330078125,
+        "rb_fine": 0.9471560608667094,
+        "rb_coarse": 0.9471560608667094
+      }
+    },
+    {
+      "case_id": 1019,
+      "A": 0.05,
+      "B": 0.0,
+      "C": -0.049,
+      "replicates": 32,
+      "candidate_total_cost_shots": 6722,
+      "candidate_mean_cost_shots": 210.0625,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 192.75,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.99",
+          "replicates": 32,
+          "total_cost_shots": 6168,
+          "mean_cost_shots": 192.75,
+          "correct_stops": 32,
+          "wrong_stops": 0,
+          "cap_abstentions": 0,
+          "correct_stop_rate": 1.0,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 17.3125,
+      "ratio_to_envelope": 1.0898184176394292,
+      "ratio_to_envelope_exact": [
+        3361,
+        3084
+      ],
+      "relative_cost_gap_to_envelope": 0.08981841763942931,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.9086239524195728,
+        "beta_exact": 1.0,
+        "maxsprt": 0.9086239524195728,
+        "pair_grid": 1.0,
+        "pairwise_hedge": 1.0,
+        "sprt_0.6": 0.324076752482885,
+        "sprt_0.75": 0.7102704987320372,
+        "sprt_0.9": 1.020030349013657,
+        "sprt_0.99": 1.0898184176394292,
+        "closed_hedge_original": 0.966915995397008,
+        "closed_hedge_fine_initial": 0.9613844393592678,
+        "full_safe_fine": 0.8348236462990561,
+        "full_safe_coarse": 0.5376739721644537,
+        "rb_fine": 0.9086239524195728,
+        "rb_coarse": 0.9261504546707082
+      }
+    },
+    {
+      "case_id": 1021,
+      "A": 0.05,
+      "B": 0.0441,
+      "C": -0.021358604823349298,
+      "replicates": 32,
+      "candidate_total_cost_shots": 37486,
+      "candidate_mean_cost_shots": 1171.4375,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 1121.0625,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.75",
+          "replicates": 32,
+          "total_cost_shots": 35874,
+          "mean_cost_shots": 1121.0625,
+          "correct_stops": 31,
+          "wrong_stops": 0,
+          "cap_abstentions": 1,
+          "correct_stop_rate": 0.96875,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 50.375,
+      "ratio_to_envelope": 1.044935050454368,
+      "ratio_to_envelope_exact": [
+        18743,
+        17937
+      ],
+      "relative_cost_gap_to_envelope": 0.04493505045436807,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.8775223559155391,
+        "beta_exact": 1.0,
+        "maxsprt": 0.9405831284187284,
+        "pair_grid": 1.0,
+        "pairwise_hedge": 1.0,
+        "sprt_0.6": 0.704571084880836,
+        "sprt_0.75": 1.044935050454368,
+        "sprt_0.9": 0.5399884759435322,
+        "sprt_0.99": 0.32324434326710816,
+        "closed_hedge_original": 0.916752262166789,
+        "closed_hedge_fine_initial": 0.916752262166789,
+        "full_safe_fine": 0.8571363241414003,
+        "full_safe_coarse": 0.7608898631916535,
+        "rb_fine": 0.9194054743451389,
+        "rb_coarse": 0.9218473342514263
+      }
+    },
+    {
+      "case_id": 1031,
+      "A": 0.2,
+      "B": 0.0,
+      "C": -0.196,
+      "replicates": 32,
+      "candidate_total_cost_shots": 1620,
+      "candidate_mean_cost_shots": 50.625,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 47.5,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.99",
+          "replicates": 32,
+          "total_cost_shots": 1520,
+          "mean_cost_shots": 47.5,
+          "correct_stops": 32,
+          "wrong_stops": 0,
+          "cap_abstentions": 0,
+          "correct_stop_rate": 1.0,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 3.125,
+      "ratio_to_envelope": 1.0657894736842106,
+      "ratio_to_envelope_exact": [
+        81,
+        76
+      ],
+      "relative_cost_gap_to_envelope": 0.06578947368421052,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.8871851040525739,
+        "beta_exact": 1.0,
+        "maxsprt": 0.8871851040525739,
+        "pair_grid": 1.0,
+        "pairwise_hedge": 1.0,
+        "sprt_0.6": 0.3283340089177138,
+        "sprt_0.75": 0.7212822796081924,
+        "sprt_0.9": 1.0062111801242235,
+        "sprt_0.99": 1.0657894736842106,
+        "closed_hedge_original": 0.9794437726723095,
+        "closed_hedge_fine_initial": 0.9451575262543758,
+        "full_safe_fine": 0.9310344827586207,
+        "full_safe_coarse": 0.7370336669699727,
+        "rb_fine": 0.8871851040525739,
+        "rb_coarse": 0.8980044345898004
+      }
+    },
+    {
+      "case_id": 1033,
+      "A": 0.2,
+      "B": 0.1764,
+      "C": -0.08543441929339719,
+      "replicates": 32,
+      "candidate_total_cost_shots": 8702,
+      "candidate_mean_cost_shots": 271.9375,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 250.5625,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.75",
+          "replicates": 32,
+          "total_cost_shots": 8018,
+          "mean_cost_shots": 250.5625,
+          "correct_stops": 32,
+          "wrong_stops": 0,
+          "cap_abstentions": 0,
+          "correct_stop_rate": 1.0,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 21.375,
+      "ratio_to_envelope": 1.085308056872038,
+      "ratio_to_envelope_exact": [
+        229,
+        211
+      ],
+      "relative_cost_gap_to_envelope": 0.08530805687203792,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.9436130991108219,
+        "beta_exact": 1.0,
+        "maxsprt": 0.9594266813671445,
+        "pair_grid": 1.0,
+        "pairwise_hedge": 1.0,
+        "sprt_0.6": 0.6759359950287401,
+        "sprt_0.75": 1.085308056872038,
+        "sprt_0.9": 0.2860806101650339,
+        "sprt_0.99": 0.08456754130223518,
+        "closed_hedge_original": 0.9675339114965532,
+        "closed_hedge_fine_initial": 0.9379176546669541,
+        "full_safe_fine": 0.9127333752884413,
+        "full_safe_coarse": 0.8356059151142693,
+        "rb_fine": 0.9038221852928957,
+        "rb_coarse": 1.008342989571263
+      }
+    },
+    {
+      "case_id": 1043,
+      "A": 0.5,
+      "B": 0.0,
+      "C": -0.49,
+      "replicates": 32,
+      "candidate_total_cost_shots": 434,
+      "candidate_mean_cost_shots": 13.5625,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 13.0,
+      "envelope_winning_controls": [
+        {
+          "method": "full_safe_fine",
+          "replicates": 32,
+          "total_cost_shots": 416,
+          "mean_cost_shots": 13.0,
+          "correct_stops": 32,
+          "wrong_stops": 0,
+          "cap_abstentions": 0,
+          "correct_stop_rate": 1.0,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 0.5625,
+      "ratio_to_envelope": 1.0432692307692308,
+      "ratio_to_envelope_exact": [
+        217,
+        208
+      ],
+      "relative_cost_gap_to_envelope": 0.04326923076923077,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.6555891238670695,
+        "beta_exact": 0.7281879194630873,
+        "maxsprt": 0.6555891238670695,
+        "pair_grid": 0.7281879194630873,
+        "pairwise_hedge": 0.7281879194630873,
+        "sprt_0.6": 0.2178714859437751,
+        "sprt_0.75": 0.5046511627906977,
+        "sprt_0.9": 0.7281879194630873,
+        "sprt_0.99": 0.8188679245283019,
+        "closed_hedge_original": 0.423828125,
+        "closed_hedge_fine_initial": 0.6555891238670695,
+        "full_safe_fine": 1.0432692307692308,
+        "full_safe_coarse": 0.423828125,
+        "rb_fine": 0.6555891238670695,
+        "rb_coarse": 0.423828125
+      }
+    },
+    {
+      "case_id": 1045,
+      "A": 0.5,
+      "B": 0.441,
+      "C": -0.21358604823349295,
+      "replicates": 32,
+      "candidate_total_cost_shots": 2392,
+      "candidate_mean_cost_shots": 74.75,
+      "candidate_correct_stops": 32,
+      "candidate_correct_stop_rate": 1.0,
+      "candidate_wrong_stops": 0,
+      "candidate_cap_abstentions": 0,
+      "envelope_mean_cost_shots": 71.3125,
+      "envelope_winning_controls": [
+        {
+          "method": "sprt_0.9",
+          "replicates": 32,
+          "total_cost_shots": 2282,
+          "mean_cost_shots": 71.3125,
+          "correct_stops": 32,
+          "wrong_stops": 0,
+          "cap_abstentions": 0,
+          "correct_stop_rate": 1.0,
+          "right_censored": 0
+        }
+      ],
+      "mean_cost_gap_to_envelope_shots": 3.4375,
+      "ratio_to_envelope": 1.0482033304119194,
+      "ratio_to_envelope_exact": [
+        1196,
+        1141
+      ],
+      "relative_cost_gap_to_envelope": 0.04820333041191937,
+      "ratios_to_fixed_global_controls": {
+        "beta_ville100": 0.9033232628398792,
+        "beta_exact": 1.0,
+        "maxsprt": 0.8878990348923533,
+        "pair_grid": 1.0,
+        "pairwise_hedge": 1.0,
+        "sprt_0.6": 0.4799357945425361,
+        "sprt_0.75": 0.9214175654853621,
+        "sprt_0.9": 1.0482033304119194,
+        "sprt_0.99": 0.3367117117117117,
+        "closed_hedge_original": 0.9529880478087649,
+        "closed_hedge_fine_initial": 0.9454545454545454,
+        "full_safe_fine": 0.896551724137931,
+        "full_safe_coarse": 0.9214175654853621,
+        "rb_fine": 0.9221279876638396,
+        "rb_coarse": 1.0144189991518235
+      }
+    }
+  ],
+  "formal_acceptance_status": {
+    "sota_acceptance_established": false,
+    "power_qualified": false,
+    "correct_stop_target": 0.95,
+    "diagnostic_only": true
+  },
+  "limits": [
+    "The fixed15 envelope is a development hindsight diagnostic, not an executable strategy.",
+    "The candidate and all gates remain outside the frozen control pool.",
+    "Global full-count comparisons use the same one named control on every case; envelope winners may differ by case.",
+    "Costs include all observed wrong stops and cap abstentions; no censoring or new continuation was introduced.",
+    "Observed correct-stop rate remains below95%; no power-qualified SOTA acceptance conclusion follows.",
+    "No observed regression against beta_exact in576 paths is not a universal dominance theorem or a holdout result."
+  ]
+}

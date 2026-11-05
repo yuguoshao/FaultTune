@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "reviewer": "stream_stats independent review of proposed curvature theorem",
+  "sources": {
+    "docs/CONTINUOUS_FISHER_CURVATURE_BOUND.md": "c6afebe49172690c351fcd9a5e5bc2cd495aaf7aa044d744d39f68f0586085e5",
+    "docs/CONTINUOUS_FISHER_EXPLORATION.md": "36bc6865f66600651fda05fb0d30bea75fa15430d01274e23f2a8edde5c7bcfa",
+    "experiments/structured_validation/review_continuous_fisher_curvature.py": "d938eaaf0e2e87220a0da8873c2d93c7a2df45f880330c728d3cd6ebcacca424",
+    "results/structured_validation/continuous_fisher_literature_review.json": "1ff88b4c077e1e0344da64883a890bfcdafc29816c95d224bcc5b3ae609b7377"
+  },
+  "scope": "New mathematical bound only; no Monte Carlo, simulator, prospective files or trial ledgers.",
+  "mathematical_review": [
+    "Fixed-size positive-weight subset covariance is wi*wj*(e_T*e_(T-2)-e_(T-1)^2)/Z^2; Newton gives nonpositivity, including zero-extended boundary degrees.",
+    "The original fixed-T representation has m plus indicators, giving Var(K)<=m/4.",
+    "The alternative fixed-m representation has T odds-weighted indicators and 2m-T unit-weight indicators. Its coefficient ratio to the original law is T!*(2m-T)!/(m!)^2, independent of K.",
+    "Applying negative covariance to K and m-K gives Var(K)<=min(T,2m-T)/4. No Jacobi identity is required.",
+    "For S=sum(min(T,2m-T)), the finite-support CGF second derivative is the tilted variance, and the log prior contributes at most 1/4 in absolute second derivative. Thus g_second>=-(S+1)/4.",
+    "The global quadratic lower bound is g(x+h)>=g(x)+g_prime(x)*h-(S+1)*h^2/8.",
+    "Full Gaussian integration yields M>=exp(g(x))*sqrt(8*pi/(S+1))*exp(2*g_prime(x)^2/(S+1)). Dropping the last factor gives sqrt(2/(pi*(S+1)))*L(x)/cosh(x/2).",
+    "S<=n=N/2 gives the weaker physical-shot form 2*L(x)/(sqrt(pi*(N+2))*cosh(x/2)); the inequality, not equality, connects the S and N forms.",
+    "For fixed finite x, log expert loss is at most 0.5*log(S+1)+0.5*log(pi/2)+log(cosh(x/2)).",
+    "The bound is simultaneous and pathwise in finite x, so post-data choices are allowed while retaining the actual location penalty. Infinite-odds endpoints are not directly covered.",
+    "S=0 and n=0 are valid because S+1>0; zero or all-success margins contribute zero conditional variance.",
+    "A numerically certified evaluation can serve as a lower bound for the existing signed/common-order risk argument, but current finite chord values do not automatically inherit this bound."
+  ],
+  "deterministic_checks": {
+    "distribution_equivalence_and_variance_cases": 3249,
+    "m_range_inclusive": [
+      0,
+      18
+    ],
+    "all_valid_total_margins_checked": true,
+    "rational_odds": [
+      "1/1000",
+      "1/10",
+      "1/3",
+      "1/2",
+      "1",
+      "2",
+      "3",
+      "10",
+      "1000"
+    ],
+    "largest_4_variance_over_minority_margin": "1",
+    "exact_heterogeneous_weight_pair_covariance_checks": 630,
+    "heterogeneous_subset_population_sizes": [
+      2,
+      8
+    ],
+    "complete_paired_beta_analytic_comparisons": 729,
+    "mpmath_digits": 90,
+    "largest_derivative_strengthened_bound_over_exact_beta": "0.985410043808078971951754866919",
+    "mpmath_checks_are_outward_certificates": false
+  },
+  "limits": [
+    "Finite exact examples corroborate but do not replace the general Newton and Gaussian proof.",
+    "No first-crossing cost, power within a finite cap, or SOTA advantage is established.",
+    "Half-logarithmic mixture regret has classical precedent; priority of this explicit model-specific derivation is unresolved.",
+    "A separately implemented floating-point or interval certificate requires its own code review and numerical checks."
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "status": "passed",
+  "scope": "Synthetic bookkeeping plus frozen old-count replay; no new Monte Carlo or release",
+  "created_utc": "2026-11-04T11:05:59.755380+00:00",
+  "checks": {
+    "controller": {
+      "status": "passed",
+      "first_check": 6,
+      "shared_physical_shots": 12,
+      "stopped_prefix_shots": [
+        8,
+        10,
+        12
+      ],
+      "deadline_retained_shots": 9,
+      "invalid_input_rejections": [
+        {
+          "fixture": "batch_two",
+          "rejection": "AssertionError: Single-arm paths must take one paid observation"
+        },
+        {
+          "fixture": "fractional_arm",
+          "rejection": "AssertionError: Integer controller indices/counts required"
+        },
+        {
+          "fixture": "fractional_batch",
+          "rejection": "AssertionError: Integer controller indices/counts required"
+        },
+        {
+          "fixture": "wrong_prefix",
+          "rejection": "AssertionError: Controller used a different observed prefix"
+        },
+        {
+          "fixture": "too_many_successes",
+          "rejection": "AssertionError: Invalid simulator count"
+        },
+        {
+          "fixture": "fractional_successes",
+          "rejection": "AssertionError: Integer simulator counts required"
+        },
+        {
+          "fixture": "boolean_successes",
+          "rejection": "AssertionError: Integer simulator counts required"
+        }
+      ]
+    },
+    "direction_selection": {
+      "status": "passed",
+      "positive_tie_break": true,
+      "decimal_margin_ordering": true
+    },
+    "complete_matrix": {
+      "status": "passed",
+      "method_records": 64,
+      "main_mean_all_costs": 1032,
+      "null_mean_all_costs": 2053.5,
+      "invalid_matrices_rejected": [
+        {
+          "fixture": "missing",
+          "rejection": "Incomplete or duplicate method matrix"
+        },
+        {
+          "fixture": "duplicate",
+          "rejection": "Incomplete or duplicate method matrix"
+        },
+        {
+          "fixture": "invalid_decision",
+          "rejection": "Invalid counted cost"
+        }
+      ]
+    },
+    "old_hedge_replay": {
+      "status": "passed",
+      "fixture": {
+        "path": "results/structured_validation/refined_development_v1/trials.jsonl",
+        "sha256": "55047a732a135b029045cdfe69bbd4f69a83b3727e2d5a395b00ffcbdcf639c7",
+        "case_id": 1,
+        "rep": 0,
+        "seed": 810001009,
+        "shots": 1024
+      },
+      "exact_fields": [
+        "paid_queries",
+        "history_except_unused_safe_prediction",
+        "shots",
+        "decision",
+        "certificate",
+        "counts",
+        "exploration_pairs"
+      ],
+      "new_observations": 0,
+      "random_draws": 0
+    }
+  },
+  "sources": {
+    "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f",
+    "experiments/structured_validation/weighted_fisher.py": "1f31c9cbea3c8db4d7d8dc75936dc5304fd3273fb8ad1fafedc90e792fe24e24",
+    "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/structured_validation/conditional_fisher_unequal.py": "011d691f76b798cd0372544156ab86dbf7b6273b02b41de009737f433caef917",
+    "experiments/structured_validation/safe_grid.py": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+    "experiments/structured_validation/rb_grid.py": "a262a4790289505e7846c98334edbf341cded98090ce7bd8bf7c0c3974fb420f",
+    "experiments/structured_validation/predictive.py": "fc16237805139c707e6e076c0c7e69f45e88c111d405349c68daa3f150871fe4",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/structured_validation/design_policy.py": "1e61776de4b3bd8b2fd331b9c9f28b7b68f4e6c9672e19ca38aa9b436e3d4547",
+    "experiments/structured_validation/probe_fixed.py": "bf64f1ab7fb5e1675966704cc315de1f21b51db8135301fc319d8388d67311ec",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/sota_round2/benchmark/benchmark_checks.py": "d6310560c16601abab051bdde37a5b48fb3a41754c3b3e94dc07512e39c90014",
+    "experiments/sota_round2/benchmark/benchmark_runner.py": "ef09fc795f9c45863e9fa7ccd6dcf8c2efd1745465ed95a577db598a67967f27",
+    "experiments/sota_round2/literature/dkm_baseline.py": "e8799facf1494dcf6355f2f2e6069be350f35f788a70381201f55c53e5479c9d"
+  }
+}

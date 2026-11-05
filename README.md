@@ -4,7 +4,7 @@
 
 The optimizer is written in Rust for speed. A Python package built on top of it lets you describe the processor, write error models with NumPy, and run calibrations from scripts or Jupyter notebooks, without writing any Rust.
 
-> **Status: early development.** No code has been published yet. The Rust and Python APIs below describe the planned design and may change before the first release. The planned internals are described in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+> **Status: research development.** Python experiment code, research notes, and validation summaries are available in [experiments](experiments), [docs](docs), and [results](results). The Rust and Python package APIs below remain planned designs; the planned internals are described in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). The latest completed round is recorded in [round 6 research state](results/sota_round6/research_state.json); round 7 includes exploratory and draft work. Superiority over applicable SOTA has not been established. Large raw observation logs and downloaded literature mirrors are omitted from this Git snapshot; [SYNC_MANIFEST.json](SYNC_MANIFEST.json) lists the exclusions and checksums.
 
 ---
 

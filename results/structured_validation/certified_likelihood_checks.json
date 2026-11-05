@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "support_point_inequalities": 15250,
+  "support_formula_high_precision_checks": 250,
+  "gradient_interval_corner_checks": 16,
+  "analytic_cases": [
+    {
+      "sign": 1,
+      "case": "analytic two-angle null",
+      "certified_upper_minus_exact": "0.00001544310809762620152094839439",
+      "fit": {
+        "candidate": [
+          0.450000042468546,
+          0.0,
+          -2.1980866498167672e-16
+        ],
+        "loglik": -137.6277627427185,
+        "support_gap": 1.5443108882104902e-05,
+        "loglik_upper": -137.6277472996096,
+        "success": true,
+        "iterations": 2,
+        "status": "Optimization terminated successfully",
+        "certified": false
+      }
+    },
+    {
+      "sign": -1,
+      "case": "analytic two-angle null",
+      "certified_upper_minus_exact": "6.048320744400025595242414013E-62",
+      "fit": {
+        "candidate": [
+          0.45000002810187567,
+          0.0,
+          0.3500000021225317
+        ],
+        "loglik": -82.54853969296427,
+        "support_gap": 1.7998799822970495e-05,
+        "loglik_upper": -82.5485396929636,
+        "success": true,
+        "iterations": 15,
+        "status": "Optimization terminated successfully",
+        "certified": false
+      }
+    }
+  ],
+  "exact_boundary_cases": 4,
+  "infeasible_candidate_null_grid_checks": 60,
+  "invalid_input_rejections": 3,
+  "fine_rational_feature_check": true,
+  "predictive_loglik_enclosure": true,
+  "candidate_loglik_enclosure": true,
+  "monte_carlo": false,
+  "formal_verification": false,
+  "theory": {
+    "tangent": "For every null theta, l(theta)<=l(theta0)+g(theta0) dot (theta-theta0). The exact closed physical support upper bounds the last term.",
+    "support": "h(g)=max(0,gA,(gA+sqrt(gB^2+max(0,-sign*gC)^2))/2).",
+    "numerator": "A product of normalized predictable predictive probabilities defines Q_n. For each true null theta, Q_n/L_theta,n is a nonnegative martingale (or supermartingale at zero-probability boundaries).",
+    "denominator": "exp(U_n)>=sup_null L_theta,n implies Q_n/exp(U_n)<=Q_n/L_true,n at every time.",
+    "two_directions": "If both directions share the SAME Q_n, every wrong-direction evidence is dominated by the SAME true-model likelihood-ratio process, so threshold 1/delta controls their union. Distinct direction-specific Q_n instead require an explicit allocation such as delta/2 each.",
+    "count_aggregation": "Denominator may aggregate identical queries; numerator must preserve the predictive probabilities used before each observation/block. No binomial coefficients in either ordered-outcome likelihood.",
+    "limits": "Numerical enclosure prototype, not formal proof-assistant verification; no SOTA or finite-cost claim."
+  },
+  "sources": {
+    "experiments/structured_validation/certified_likelihood_checks.py": "0d4e334cf9f314802890cc842d3dc4e2ce4b61c31daae63febf263aca115a212",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a"
+  },
+  "elapsed_seconds": 1.3983505
+}

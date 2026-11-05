@@ -1,0 +1,28 @@
+"""Fixed rational discretization of Jeffreys' prior on discordant odds.
+
+Positive log odds: 1e-4*(sqrt(2)**j), j=0..34. Reciprocal negatives share
+weights. Cell weights approximate the exact Jeffreys CDF 2/pi*atan(exp(l/2)),
+then are frozen as integers. This is a fixed finite prior, not the continuous
+Jeffreys mixture and not a claim of exact equivalence or universal power.
+"""
+
+WEIGHT_DENOMINATOR = 1000000000000
+CENTRAL_WEIGHT = 26766566
+POSITIVE = [[1000100005,1000000000,5543537],[1000141431,1000000000,7839745],[1000200020,1000000000,11087074],[1000282883,1000000000,15679490],[1000400080,1000000000,22174147],[1000565845,1000000000,31358979],[1000800320,1000000000,44348292],[1001132011,1000000000,62717951],[1001601281,1000000000,88696562],[1002265304,1000000000,125435839],[1003205125,1000000000,177392946],[1004535739,1000000000,250871177],[1006420524,1000000000,354784475],[1009092051,1000000000,501738344],[1012882271,1000000000,709557611],[1018266767,1000000000,1003444616],[1025930494,1000000000,1419024513],[1036867208,1000000000,2006632689],[1052533379,1000000000,2837323546],[1075093607,1000000000,4011214169],[1107826514,1000000000,5668849672],[1155826265,1000000000,8006054894],[1227279584,1000000000,11291524280],[1335934354,1000000000,15882270751],[1506215179,1000000000,22220065159],[1784720598,1000000000,30761253561],[2268684164,1000000000,41727312889],[3185227612,1000000000,54482658032],[5146927836,1000000000,66467970484],[10145674942,1000000000,72544992281],[26490866150,1000000000,67133703433],[102934720030,1000000000,49690939035],[701765989386,1000000000,27496150339],[10595556587620,1000000000,10352502243],[492475503859050,1000000000,2573503962]]
+
+
+def expert_config():
+    entries = [{"numerator": 1, "denominator": 1,
+                "weight": [CENTRAL_WEIGHT, WEIGHT_DENOMINATOR]}]
+    entries += [{"numerator": p, "denominator": q, "weight": [w, WEIGHT_DENOMINATOR]}
+                for p, q, w in POSITIVE]
+    entries += [{"numerator": q, "denominator": p, "weight": [w, WEIGHT_DENOMINATOR]}
+                for p, q, w in POSITIVE]
+    assert CENTRAL_WEIGHT > 0 and CENTRAL_WEIGHT+2*sum(r[2] for r in POSITIVE) == WEIGHT_DENOMINATOR
+    return entries
+
+
+def protocol_config():
+    return {"version": "fixed_jeffreys_cells71_v1", "experts": expert_config(),
+            "construction": "Geometric log-odds cells under Jeffreys CDF; exact rational weights frozen in source",
+            "expert_count": 71, "limits": "Finite discretization; not exact Jeffreys and not positive-growth universal"}

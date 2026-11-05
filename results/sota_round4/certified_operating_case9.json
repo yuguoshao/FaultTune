@@ -1,0 +1,490 @@
+{
+  "status": "certified_four_method_case9_operating_intervals",
+  "rows": [
+    {
+      "method": "beta_exact",
+      "case_id": 9,
+      "mirrored_case_id": 1009,
+      "pair_cap": 8192,
+      "physical_shot_cap": 16384,
+      "source_binary64_probabilities": {
+        "pminus_hex": "0x1.7768931e7db0cp-8",
+        "pplus_hex": "0x1.d3a7df6683b70p-7",
+        "pminus_rational": "1651064021055171/288230376151711744",
+        "pplus_rational": "514192937747383/36028797018963968"
+      },
+      "boundary_path": "results/sota_round3/cap16384_preparation/beta_exact.json",
+      "boundary_sha256": "d2dbc9579dcaa4789bd56272f1ecd7bf0cacea22d60e24836fc71b37b67423ee",
+      "operating_intervals": {
+        "plus": [
+          0.979303172581761,
+          0.9793031725908125
+        ],
+        "minus": [
+          1.2882592671323004e-05,
+          1.2882592671416941e-05
+        ],
+        "abstain": [
+          0.02068394481651612,
+          0.020683944825567655
+        ],
+        "expected_shots": [
+          6518.890596510492,
+          6518.890596582023
+        ],
+        "pair_cap": 8192,
+        "exact_binary_model_probabilities": [
+          "1651064021055171/288230376151711744",
+          "514192937747383/36028797018963968"
+        ],
+        "discordance_rate_interval": [
+          0.0198364952,
+          0.019836495200000002
+        ],
+        "sign_probability_interval": [
+          0.7153465580285502,
+          0.7153465580285503
+        ],
+        "protocol": "Every physical pair inspected; stationary independent Bernoulli arms",
+        "arithmetic": "Outward IEEE-754 intervals; rational mode-centered binomial ratios; explicit interval sign recursion; conservative cumulative-sum error envelope"
+      },
+      "floating_crosscheck": {
+        "plus": {
+          "reference_float": 0.9793031725889308,
+          "inside_outward_interval": true
+        },
+        "minus": {
+          "reference_float": 1.2882592671416874e-05,
+          "inside_outward_interval": true
+        },
+        "abstain": {
+          "reference_float": 0.020683944818397648,
+          "inside_outward_interval": true
+        },
+        "expected_shots": {
+          "reference_float": 6518.890596558116,
+          "inside_outward_interval": true
+        }
+      },
+      "correct_probability_at_least_95_percent": true,
+      "elapsed_seconds": 0.7480162
+    },
+    {
+      "method": "sprt_0.7",
+      "case_id": 9,
+      "mirrored_case_id": 1009,
+      "pair_cap": 8192,
+      "physical_shot_cap": 16384,
+      "source_binary64_probabilities": {
+        "pminus_hex": "0x1.7768931e7db0cp-8",
+        "pplus_hex": "0x1.d3a7df6683b70p-7",
+        "pminus_rational": "1651064021055171/288230376151711744",
+        "pplus_rational": "514192937747383/36028797018963968"
+      },
+      "boundary_path": "results/sota_round4/lr_mixture_boundaries/sprt_0.7.json",
+      "boundary_sha256": "9c3ab739ccf03a0655d3871e5a153103ce1335b3e25b92b0e9dd98233fb08b0f",
+      "operating_intervals": {
+        "plus": [
+          0.9903039881400939,
+          0.9903039881483503
+        ],
+        "minus": [
+          2.601227524966659e-08,
+          2.6012275249856584e-08
+        ],
+        "abstain": [
+          0.009695985839374446,
+          0.009695985847630848
+        ],
+        "expected_shots": [
+          5585.818968163962,
+          5585.818968217087
+        ],
+        "pair_cap": 8192,
+        "exact_binary_model_probabilities": [
+          "1651064021055171/288230376151711744",
+          "514192937747383/36028797018963968"
+        ],
+        "discordance_rate_interval": [
+          0.0198364952,
+          0.019836495200000002
+        ],
+        "sign_probability_interval": [
+          0.7153465580285502,
+          0.7153465580285503
+        ],
+        "protocol": "Every physical pair inspected; stationary independent Bernoulli arms",
+        "arithmetic": "Outward IEEE-754 intervals; rational mode-centered binomial ratios; explicit interval sign recursion; conservative cumulative-sum error envelope"
+      },
+      "floating_crosscheck": {
+        "plus": {
+          "reference_float": 0.9903039881473209,
+          "inside_outward_interval": true
+        },
+        "minus": {
+          "reference_float": 2.601227524985627e-08,
+          "inside_outward_interval": true
+        },
+        "abstain": {
+          "reference_float": 0.009695985840403654,
+          "inside_outward_interval": true
+        },
+        "expected_shots": {
+          "reference_float": 5585.818968204774,
+          "inside_outward_interval": true
+        }
+      },
+      "correct_probability_at_least_95_percent": true,
+      "elapsed_seconds": 1.5217652999999998
+    },
+    {
+      "method": "mix_0.75_0.99_w0.5",
+      "case_id": 9,
+      "mirrored_case_id": 1009,
+      "pair_cap": 8192,
+      "physical_shot_cap": 16384,
+      "source_binary64_probabilities": {
+        "pminus_hex": "0x1.7768931e7db0cp-8",
+        "pplus_hex": "0x1.d3a7df6683b70p-7",
+        "pminus_rational": "1651064021055171/288230376151711744",
+        "pplus_rational": "514192937747383/36028797018963968"
+      },
+      "boundary_path": "results/sota_round4/lr_mixture_boundaries/mix_0.75_0.99_w0.5.json",
+      "boundary_sha256": "b2492e8389d5272d0a1e6e52e2419de92aee96ea5d8a9503647c4adf6f7c352b",
+      "operating_intervals": {
+        "plus": [
+          0.9659888064659002,
+          0.9659888064743002
+        ],
+        "minus": [
+          1.246522832654913e-05,
+          1.2465228326640027e-05
+        ],
+        "abstain": [
+          0.03399872829737316,
+          0.033998728305773225
+        ],
+        "expected_shots": [
+          5997.165145830338,
+          5997.165145892808
+        ],
+        "pair_cap": 8192,
+        "exact_binary_model_probabilities": [
+          "1651064021055171/288230376151711744",
+          "514192937747383/36028797018963968"
+        ],
+        "discordance_rate_interval": [
+          0.0198364952,
+          0.019836495200000002
+        ],
+        "sign_probability_interval": [
+          0.7153465580285502,
+          0.7153465580285503
+        ],
+        "protocol": "Every physical pair inspected; stationary independent Bernoulli arms",
+        "arithmetic": "Outward IEEE-754 intervals; rational mode-centered binomial ratios; explicit interval sign recursion; conservative cumulative-sum error envelope"
+      },
+      "floating_crosscheck": {
+        "plus": {
+          "reference_float": 0.965988806472986,
+          "inside_outward_interval": true
+        },
+        "minus": {
+          "reference_float": 1.246522832663996e-05,
+          "inside_outward_interval": true
+        },
+        "abstain": {
+          "reference_float": 0.03399872829868769,
+          "inside_outward_interval": true
+        },
+        "expected_shots": {
+          "reference_float": 5997.165145874156,
+          "inside_outward_interval": true
+        }
+      },
+      "correct_probability_at_least_95_percent": true,
+      "elapsed_seconds": 1.8429246000000004
+    },
+    {
+      "method": "mix_0.7_0.9_0.99_equal",
+      "case_id": 9,
+      "mirrored_case_id": 1009,
+      "pair_cap": 8192,
+      "physical_shot_cap": 16384,
+      "source_binary64_probabilities": {
+        "pminus_hex": "0x1.7768931e7db0cp-8",
+        "pplus_hex": "0x1.d3a7df6683b70p-7",
+        "pminus_rational": "1651064021055171/288230376151711744",
+        "pplus_rational": "514192937747383/36028797018963968"
+      },
+      "boundary_path": "results/sota_round4/lr_mixture_boundaries/mix_0.7_0.9_0.99_equal.json",
+      "boundary_sha256": "66bc75adb866ffc155b5371ccea7da07351f13dfdeaeac972184d1bfd117023e",
+      "operating_intervals": {
+        "plus": [
+          0.9838152252716725,
+          0.9838152252802916
+        ],
+        "minus": [
+          1.2882621308957932e-05,
+          1.288262130905187e-05
+        ],
+        "abstain": [
+          0.016171892098399303,
+          0.016171892107018516
+        ],
+        "expected_shots": [
+          6072.243561820001,
+          6072.2435618822055
+        ],
+        "pair_cap": 8192,
+        "exact_binary_model_probabilities": [
+          "1651064021055171/288230376151711744",
+          "514192937747383/36028797018963968"
+        ],
+        "discordance_rate_interval": [
+          0.0198364952,
+          0.019836495200000002
+        ],
+        "sign_probability_interval": [
+          0.7153465580285502,
+          0.7153465580285503
+        ],
+        "protocol": "Every physical pair inspected; stationary independent Bernoulli arms",
+        "arithmetic": "Outward IEEE-754 intervals; rational mode-centered binomial ratios; explicit interval sign recursion; conservative cumulative-sum error envelope"
+      },
+      "floating_crosscheck": {
+        "plus": {
+          "reference_float": 0.9838152252788617,
+          "inside_outward_interval": true
+        },
+        "minus": {
+          "reference_float": 1.2882621309051802e-05,
+          "inside_outward_interval": true
+        },
+        "abstain": {
+          "reference_float": 0.01617189209982906,
+          "inside_outward_interval": true
+        },
+        "expected_shots": {
+          "reference_float": 6072.243561864293,
+          "inside_outward_interval": true
+        }
+      },
+      "correct_probability_at_least_95_percent": true,
+      "elapsed_seconds": 1.5364497000000004
+    }
+  ],
+  "aggregates": [
+    {
+      "method": "beta_exact",
+      "case_count": 1,
+      "equal_case_mean_expected_shots": {
+        "lower": "6518.8905965104922870523296296596527099609375",
+        "upper": "6518.8905965820231358520686626434326171875"
+      },
+      "equal_case_mean_correct_probability": {
+        "lower": "0.97930317258176102779287930388818494975566864013671875",
+        "upper": "0.97930317259081245406804328013095073401927947998046875"
+      },
+      "minimum_case_correct_probability": {
+        "lower": "0.97930317258176102779287930388818494975566864013671875",
+        "upper": "0.97930317259081245406804328013095073401927947998046875"
+      },
+      "each_case_correct_probability_certified_at_least_95_percent": true,
+      "cost_ratios": {
+        "beta_exact": {
+          "geometric_mean_cost_ratio": {
+            "lower": "0.9999999999890271438460335564686941575098060664210210958606216362",
+            "upper": "1.000000000010972856154086847103482802912379821818891750179801214"
+          },
+          "case_ratios": [
+            {
+              "case_id": 9,
+              "ratio": {
+                "lower": "0.9999999999890271438460335564686941575098060664210210958606216363",
+                "upper": "1.000000000010972856154086847103482802912379821818891750179801213"
+              }
+            }
+          ]
+        },
+        "sprt_0.7": {
+          "geometric_mean_cost_ratio": {
+            "lower": "1.167042940990840679241966899034137156131378515228343236456864153",
+            "upper": "1.167042941014745753229096243136168626101072273679898541215354954"
+          },
+          "case_ratios": [
+            {
+              "case_id": 9,
+              "ratio": {
+                "lower": "1.167042940990840679241966899034137156131378515228343236456864154",
+                "upper": "1.167042941014745753229096243136168626101072273679898541215354953"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "sprt_0.7",
+      "case_count": 1,
+      "equal_case_mean_expected_shots": {
+        "lower": "5585.8189681639623813680373132228851318359375",
+        "upper": "5585.818968217086876393295824527740478515625"
+      },
+      "equal_case_mean_correct_probability": {
+        "lower": "0.9903039881400939048461395941558293998241424560546875",
+        "upper": "0.99030398814835030041336949579999782145023345947265625"
+      },
+      "minimum_case_correct_probability": {
+        "lower": "0.9903039881400939048461395941558293998241424560546875",
+        "upper": "0.99030398814835030041336949579999782145023345947265625"
+      },
+      "each_case_correct_probability_certified_at_least_95_percent": true,
+      "cost_ratios": {
+        "beta_exact": {
+          "geometric_mean_cost_ratio": {
+            "lower": "0.8568664998140499939354524375492871724213200648079938125332187326",
+            "upper": "0.8568664998316015821038848603807370051772561396202403292788415312"
+          },
+          "case_ratios": [
+            {
+              "case_id": 9,
+              "ratio": {
+                "lower": "0.8568664998140499939354524375492871724213200648079938125332187328",
+                "upper": "0.8568664998316015821038848603807370051772561396202403292788415310"
+              }
+            }
+          ]
+        },
+        "sprt_0.7": {
+          "geometric_mean_cost_ratio": {
+            "lower": "0.9999999999904893990787146676003356089549997799224795146441037513",
+            "upper": "1.000000000009510600921375783929549204706810834263813754845778109"
+          },
+          "case_ratios": [
+            {
+              "case_id": 9,
+              "ratio": {
+                "lower": "0.9999999999904893990787146676003356089549997799224795146441037514",
+                "upper": "1.000000000009510600921375783929549204706810834263813754845778108"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "mix_0.75_0.99_w0.5",
+      "case_count": 1,
+      "equal_case_mean_expected_shots": {
+        "lower": "5997.1651458303376784897409379482269287109375",
+        "upper": "5997.165145892808141070418059825897216796875"
+      },
+      "equal_case_mean_correct_probability": {
+        "lower": "0.96598880646590024046105327215627767145633697509765625",
+        "upper": "0.96598880647430018786536720654112286865711212158203125"
+      },
+      "minimum_case_correct_probability": {
+        "lower": "0.96598880646590024046105327215627767145633697509765625",
+        "upper": "0.96598880647430018786536720654112286865711212158203125"
+      },
+      "each_case_correct_probability_certified_at_least_95_percent": true,
+      "cost_ratios": {
+        "beta_exact": {
+          "geometric_mean_cost_ratio": {
+            "lower": "0.9199671411842321886539651531950919119559321922480374346066597556",
+            "upper": "0.9199671412039098456353723794856932385546771788711079330388951149"
+          },
+          "case_ratios": [
+            {
+              "case_id": 9,
+              "ratio": {
+                "lower": "0.9199671411842321886539651531950919119559321922480374346066597557",
+                "upper": "0.9199671412039098456353723794856932385546771788711079330388951148"
+              }
+            }
+          ]
+        },
+        "sprt_0.7": {
+          "geometric_mean_cost_ratio": {
+            "lower": "1.073641158074363192129161152644026168186219628383119142781549206",
+            "upper": "1.073641158095757925403339021563878897773919069884441248827238414"
+          },
+          "case_ratios": [
+            {
+              "case_id": 9,
+              "ratio": {
+                "lower": "1.073641158074363192129161152644026168186219628383119142781549207",
+                "upper": "1.073641158095757925403339021563878897773919069884441248827238413"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "mix_0.7_0.9_0.99_equal",
+      "case_count": 1,
+      "equal_case_mean_expected_shots": {
+        "lower": "6072.2435618200006501865573227405548095703125",
+        "upper": "6072.24356188220554031431674957275390625"
+      },
+      "equal_case_mean_correct_probability": {
+        "lower": "0.9838152252716725332248870472540147602558135986328125",
+        "upper": "0.983815225280291638654261987539939582347869873046875"
+      },
+      "minimum_case_correct_probability": {
+        "lower": "0.9838152252716725332248870472540147602558135986328125",
+        "upper": "0.983815225280291638654261987539939582347869873046875"
+      },
+      "each_case_correct_probability_certified_at_least_95_percent": true,
+      "cost_ratios": {
+        "beta_exact": {
+          "geometric_mean_cost_ratio": {
+            "lower": "0.9314841953328365533782151742848526818189608837263063063697137376",
+            "upper": "0.9314841953525998464349238266605386818502372832723146793257591448"
+          },
+          "case_ratios": [
+            {
+              "case_id": 9,
+              "ratio": {
+                "lower": "0.9314841953328365533782151742848526818189608837263063063697137377",
+                "upper": "0.9314841953525998464349238266605386818502372832723146793257591447"
+              }
+            }
+          ]
+        },
+        "sprt_0.7": {
+          "geometric_mean_cost_ratio": {
+            "lower": "1.087082054819648677615818181456646450079546176973801802279179532",
+            "upper": "1.087082054841123697845573783128363071520802892456879461153282558"
+          },
+          "case_ratios": [
+            {
+              "case_id": 9,
+              "ratio": {
+                "lower": "1.087082054819648677615818181456646450079546176973801802279179533",
+                "upper": "1.087082054841123697845573783128363071520802892456879461153282557"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "results/sota_round4/theory/certify_operating_comparison.py": "6d78a994090e85d376e75b434ef5db46acf8b30311180c0e416502be6f74af6d",
+    "experiments/sota_round4/interval_sign_cost.py": "14a01510987617c05e37d991c995698e99d8f6cc28d5e7e7c5afe51512b48c40",
+    "results/sota_round4/analytic_prior_comparison.json": "13440af229b9363f8ca6fb475ca0a6d5783aacac709e98bbac614c6b32967822",
+    "results/sota_round3/paired_benchmark/preliminary_plan.json": "f89aefeab89c5ea26716c8cf4fa8b91902fdcdbc1d2853eeaea1f52022ea56f7",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "results/sota_round4/theory/audit_interval_sign_cost.json": "53fd8ee03cdaf49050dee6a5774cd20da93996ccc360bd99fcf9e4fbff8f1b99",
+    "results/sota_round4/theory/audit_lr_mixture_tables.json": "24e67ba5d099462b7ce18165cdd7bc115f1a050eebfb36d13cc281c110a2a28e",
+    "results/sota_round2/theory/cap16384_preparation_independent_audit.json": "56553f36e5d35899cd1b07951bd029af6aabb78a7c70d9fc35b120879603bf8c",
+    "results/sota_round3/cap16384_preparation/beta_exact.json": "d2dbc9579dcaa4789bd56272f1ecd7bf0cacea22d60e24836fc71b37b67423ee",
+    "results/sota_round4/lr_mixture_boundaries/sprt_0.7.json": "9c3ab739ccf03a0655d3871e5a153103ce1335b3e25b92b0e9dd98233fb08b0f",
+    "results/sota_round4/lr_mixture_boundaries/mix_0.75_0.99_w0.5.json": "b2492e8389d5272d0a1e6e52e2419de92aee96ea5d8a9503647c4adf6f7c352b",
+    "results/sota_round4/lr_mixture_boundaries/mix_0.7_0.9_0.99_equal.json": "66bc75adb866ffc155b5371ccea7da07351f13dfdeaeac972184d1bfd117023e"
+  },
+  "new_simulation_observations": 0
+}

@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "source": {
+    "path": "docs/RAO_BLACKWELL_BLOCK_EVIDENCE.md",
+    "sha256": "57a159188c3b968cda78ab2a7c59d0c019864056e2372b402e002cd2eab11a8e"
+  },
+  "mathematical_review": [
+    {
+      "claim": "Ancillary hypergeometric law",
+      "status": "passed",
+      "reason": "Conditional on both margins, independent exchangeable Bernoulli lists induce Hypergeom(m,Kplus,Kminus) overlap, independent of the unknown probabilities."
+    },
+    {
+      "claim": "Oriented expectation",
+      "status": "passed",
+      "reason": "The original single-pair odds factor has expectation 1+(qplus-qminus)*(omega-1)/(omega+1); independent pairs and conditional averaging give the displayed block power."
+    },
+    {
+      "claim": "Single total error threshold",
+      "status": "passed",
+      "reason": "The score-sign decomposition uses fixed odds and H<=1; every wrong crossing is dominated by a single oriented nonnegative supermartingale, while equality uses the whole mixture."
+    },
+    {
+      "claim": "Whole-mixture Rao-Blackwell identity",
+      "status": "passed",
+      "reason": "Under margin-only policies and the stated nonleaking future-probability assumption, conditional pairing laws factor across blocks; finite fixed weights commute with conditional expectation."
+    },
+    {
+      "claim": "Scope of Jensen inequality",
+      "status": "passed",
+      "reason": "Conditional Jensen proves fixed-time expected log improvement only. The explicit m=2 counterexample prevents a pointwise claim. Expected stopping cost and superiority to continuous Beta are not deduced."
+    },
+    {
+      "claim": "Certified implementation identity",
+      "status": "passed",
+      "reason": "kappa=(p+q)^2/(4pq) and centered-overlap CGF yield log H=CGF-(T-2*Kplus*Kminus/m)*log(kappa)/2. Intersecting with log H<=0 is valid."
+    }
+  ],
+  "blocking_errors": [],
+  "formal_proof_assistant_verification": false,
+  "literature_priority_established": false,
+  "finite_budget_superiority_proved": false
+}

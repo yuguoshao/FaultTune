@@ -1,0 +1,275 @@
+{
+  "status": "passed",
+  "directory": "D:\\Engineering Projects\\FaultTune\\results\\structured_validation\\smoke_v1",
+  "run_input_sha256": {
+    "spec.json": "080f7b0188890382f79a14ca634db626fe880be1f6ef04aad67a872930ed1c57",
+    "summary.json": "b89b0cfdfc89ae9a3d66a08d92901e14ed58050ba741ef295a2e18239980d718",
+    "trials.jsonl": "64556f9909857021faf7199b1e2df5434a53a2b0cd156d4790a00e3e4e9d889c"
+  },
+  "audit_source_sha256": "c605dca6595464338fb529c16bfc2aaccf0d35f38fffea6aec890dfc4176611f",
+  "run_sources_match_spec": true,
+  "frozen_evidence_before_and_after": {
+    "manifests": [
+      {
+        "manifest": "results/streaming_validation/evidence_manifest.json",
+        "sha256": "3af4a45b0a3a7aa9d139f0efb0752651da1286635b54e7166f7e529f982343ed",
+        "verified_files": 107
+      },
+      {
+        "manifest": "results/learned_validation/evidence_manifest.json",
+        "sha256": "5e0633642dfbd38be219a9a71df780d3bd8cd354557320d734da44c95b0f3abd",
+        "verified_files": 39
+      }
+    ],
+    "unique_verified_files": 127
+  },
+  "spec_summary_and_all_cells_match": true,
+  "trial_groups": 9,
+  "replay_rule": "For every case and policy choose reps 0 and R-1, deduplicated; no outcome selection",
+  "replayed_rep_indices": [
+    0
+  ],
+  "checks": {
+    "history_blocks": 642,
+    "screen_checks": 1896,
+    "certificates_recomputed": 36,
+    "final_certificates": 36,
+    "replayed_trials": 9,
+    "replayed_records": 36,
+    "policy_prefix_comparisons": 6
+  },
+  "outcomes": {
+    "wrong": 0,
+    "abstained": 0,
+    "paid_shots_across_protocol_records": 2097330
+  },
+  "matched_prior": {
+    "same_rational_odds_and_weights": true,
+    "expert_count": 33,
+    "m1_conditional_pair_log_identity_max_error": 9.237055564881302e-14
+  },
+  "maximum_screen_outside_certificate": 1.3769430040611041e-10,
+  "decision_rule": "Recomputed first eligible float screen followed by outward Decimal crossing; cap abstentions retained",
+  "limits": "Full ledger/strategy/certificate audit with selected complete seed replays; not a proof of power or SOTA",
+  "replays": [
+    {
+      "case_id": 1,
+      "policy": "psr",
+      "rep": 0,
+      "seed": 510001009,
+      "records_sha256": "c054d4f3203f9ea6a7956ad54199e37ce27ff35eda89b30d7b765ca1689e1844"
+    },
+    {
+      "case_id": 1,
+      "policy": "closed",
+      "rep": 0,
+      "seed": 510001009,
+      "records_sha256": "302773e789f89b2b9f125578a1fb5f978435370a118ae145081298eee7be4d79"
+    },
+    {
+      "case_id": 1,
+      "policy": "grid",
+      "rep": 0,
+      "seed": 510001009,
+      "records_sha256": "ddf5ae1ed52afe1c0149a1b44c3e1b407a76100e007944017683ca2642c84539"
+    },
+    {
+      "case_id": 11,
+      "policy": "psr",
+      "rep": 0,
+      "seed": 510011099,
+      "records_sha256": "9eaac52b0a2a6fda04f69cefaf41b76438610979a1dc7fd21a5d443a4d6582a6"
+    },
+    {
+      "case_id": 11,
+      "policy": "closed",
+      "rep": 0,
+      "seed": 510011099,
+      "records_sha256": "dcbb28d3fc6259627b77f058d1d0ed3f8d84f887baa54071040dfff73f182796"
+    },
+    {
+      "case_id": 11,
+      "policy": "grid",
+      "rep": 0,
+      "seed": 510011099,
+      "records_sha256": "9ba9b0c5189a738fe9f60c63b211023866759ee5943d76f40508eddc6a18368c"
+    },
+    {
+      "case_id": 47,
+      "policy": "psr",
+      "rep": 0,
+      "seed": 510047423,
+      "records_sha256": "15230d8a7cd35e46714d52fbd1696236d09f9e0d57ffe429ccb9c59753bff0f9"
+    },
+    {
+      "case_id": 47,
+      "policy": "closed",
+      "rep": 0,
+      "seed": 510047423,
+      "records_sha256": "5c61eb253dca11ec78a2deff0db6768d84c4a3d7f0cd238582cbbe70761b770e"
+    },
+    {
+      "case_id": 47,
+      "policy": "grid",
+      "rep": 0,
+      "seed": 510047423,
+      "records_sha256": "b60f5ec7593514a2e91ba5fb2784a2ea88a78412667c505592e8134e4a601291"
+    }
+  ],
+  "stopping_checks": [
+    {
+      "case_id": 1,
+      "policy": "psr",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 8566,
+        "pair_grid": 9638,
+        "fisher": 9638,
+        "hedge": 9638
+      },
+      "stop_looks": {
+        "beta": 47,
+        "pair_grid": 48,
+        "fisher": 48,
+        "hedge": 48
+      }
+    },
+    {
+      "case_id": 1,
+      "policy": "closed",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 12200,
+        "pair_grid": 12200,
+        "fisher": 12200,
+        "hedge": 12200
+      },
+      "stop_looks": {
+        "beta": 50,
+        "pair_grid": 50,
+        "fisher": 50,
+        "hedge": 50
+      }
+    },
+    {
+      "case_id": 1,
+      "policy": "grid",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 12200,
+        "pair_grid": 12200,
+        "fisher": 12200,
+        "hedge": 12200
+      },
+      "stop_looks": {
+        "beta": 50,
+        "pair_grid": 50,
+        "fisher": 50,
+        "hedge": 50
+      }
+    },
+    {
+      "case_id": 11,
+      "policy": "psr",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 90406,
+        "pair_grid": 90406,
+        "fisher": 90406,
+        "hedge": 90406
+      },
+      "stop_looks": {
+        "beta": 67,
+        "pair_grid": 67,
+        "fisher": 67,
+        "hedge": 67
+      }
+    },
+    {
+      "case_id": 11,
+      "policy": "closed",
+      "rep": 0,
+      "first_float_crossing": {
+        "beta": 128726,
+        "pair_grid": 128726,
+        "fisher": 128726,
+        "hedge": 128726
+      },
+      "stop_looks": {
+        "beta": 70,
+        "pair_grid": 70,
+        "fisher": 70,
+        "hedge": 70
+      }
+    },
+    {
+      "case_id": 11,
+      "policy": "grid",
+      "rep": 0,
+      "first_float_crossing": {
+        "pair_grid": 231976,
+        "fisher": 231976,
+        "beta": 293596,
+        "hedge": 293596
+      },
+      "stop_looks": {
+        "pair_grid": 75,
+        "fisher": 75,
+        "beta": 77,
+        "hedge": 77
+      }
+    },
+    {
+      "case_id": 47,
+      "policy": "psr",
+      "rep": 0,
+      "first_float_crossing": {
+        "fisher": 2634,
+        "beta": 2964,
+        "pair_grid": 2964,
+        "hedge": 2964
+      },
+      "stop_looks": {
+        "fisher": 37,
+        "beta": 38,
+        "pair_grid": 38,
+        "hedge": 38
+      }
+    },
+    {
+      "case_id": 47,
+      "policy": "closed",
+      "rep": 0,
+      "first_float_crossing": {
+        "fisher": 2634,
+        "beta": 2964,
+        "pair_grid": 2964,
+        "hedge": 2964
+      },
+      "stop_looks": {
+        "fisher": 37,
+        "beta": 38,
+        "pair_grid": 38,
+        "hedge": 38
+      }
+    },
+    {
+      "case_id": 47,
+      "policy": "grid",
+      "rep": 0,
+      "first_float_crossing": {
+        "fisher": 2634,
+        "beta": 2964,
+        "pair_grid": 2964,
+        "hedge": 2964
+      },
+      "stop_looks": {
+        "fisher": 37,
+        "beta": 38,
+        "pair_grid": 38,
+        "hedge": 38
+      }
+    }
+  ],
+  "elapsed_seconds": 7.95782
+}

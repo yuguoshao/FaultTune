@@ -1,0 +1,83 @@
+{
+  "status": "complete_source_bound_quantitative_gap_report",
+  "sota_goal_complete": false,
+  "new_simulation_observations": 0,
+  "latest_operational_comparison": {
+    "main_cases": 48,
+    "distinct_positive_parameter_cases": 24,
+    "sign_mirrors_included": true,
+    "strongest_qualified_implemented_fixed_control": "mix_0.75_0.99_w0.5",
+    "comparisons": {
+      "beta_exact": {
+        "candidate_over_comparator_geometric_cost_ratio": [
+          "1.01403188147",
+          "1.014031881486"
+        ],
+        "candidate_extra_cost_percent": [
+          "1.403188147",
+          "1.4031881486"
+        ],
+        "fraction_of_current_geometric_cost_to_save_for_tie": [
+          "0.01383771233075883459776877344455866913819194359733329381312948276",
+          "0.01383771234631909151945975308200646208493799755268259971936351432"
+        ],
+        "fraction_of_current_geometric_cost_to_save_for_threefold_speedup": [
+          "0.6712792374435862781992562578148528897127306478657777646043764941",
+          "0.6712792374487730305064865843606688206949793325175608665731211716"
+        ],
+        "candidate_cheaper_cases": 16,
+        "candidate_more_expensive_cases": 32
+      },
+      "mix_0.75_0.99_w0.5": {
+        "candidate_over_comparator_geometric_cost_ratio": [
+          "1.040816700212",
+          "1.040816700229"
+        ],
+        "candidate_extra_cost_percent": [
+          "4.0816700212",
+          "4.0816700229"
+        ],
+        "fraction_of_current_geometric_cost_to_save_for_tie": [
+          "0.03921603122210299025843279231128040896154774736046402556721238867",
+          "0.03921603123779578944740679527580970201750181202702847201222893514"
+        ],
+        "fraction_of_current_geometric_cost_to_save_for_threefold_speedup": [
+          "0.6797386770740343300861442641037601363205159157868213418557374626",
+          "0.6797386770792652631491355984252699006725006040090094906707429786"
+        ],
+        "candidate_cheaper_cases": 8,
+        "candidate_more_expensive_cases": 40
+      }
+    },
+    "minimum_correct_stop_probability_interval": [
+      0.9947284226877364,
+      0.9947284226956155
+    ],
+    "user_one_percent_risk_pass": true,
+    "stricter_internal_risk_target_pass": false,
+    "qualification_caveat": "Passes original user risk/power requirements but fails its stricter preregistered internal .00999 risk target; no replacement or repair has been accepted."
+  },
+  "original_threefold_obstruction": {
+    "geometric_speedup_strict_upper": {
+      "numerator": "2593",
+      "denominator": "1000"
+    },
+    "baseline": "qualified beta_exact, cap8192 pairs /16384 shots",
+    "scope": "Old eight positive single-harmonic Bernoulli cases and their exact sign mirrors; arbitrary predictable angles, allocation and single-shot stopping, with every paid observation counted and .01 uniform null-report risk/.95 per-case correct stop.",
+    "interpretation": "Within this fixed model and case set, tuning the stopping rule or adaptively choosing more angles cannot meet3x. A different observation/task structure must first demonstrate greater accessible information.",
+    "nontransfer": "This certificate is not a theorem about every future FaultTune task and was not proved for the newer48-case independent grid."
+  },
+  "remaining_research_gates": [
+    "Find an observation/task mechanism with sufficient information gain, retaining the original risk, power, and3x ambition and giving applicable baselines the same resources.",
+    "Implement a paid-learning and stopping rule with a finite-cost advantage; local oracle optimality alone supplies no operational gain.",
+    "Finish complete, faithful implementations and qualification of the strongest applicable literature baselines; the best currently implemented mixture is not established to equal full-field SOTA.",
+    "Freeze a new candidate and a genuinely independent evaluation, and pass the unchanged acceptance requirements."
+  ],
+  "time_estimate": "No defensible completion time for a missing research mechanism. The3.92percent tie gap to an implemented comparator is not a percentage completion estimate for the SOTA objective.",
+  "source_sha256": {
+    "experiments/sota_round6/report_sota_gap.py": "5120c112427b7dd8830e13026bbece3fe7e375c6dc75555e6bd4832b5700a55e",
+    "results/sota_round5/hybrid_minimax/independent_comparison.json": "a767974286fca387e8c1bb40942175fa58dd5d2af246d28e128aa29d1145f3c2",
+    "results/sota_round5/theory/certify_adaptive_angle_speedup_limit.json": "3bc160cdcd5ef774898c163ed4901d6f793f93e42b25214fc2cde78d53209546",
+    "results/sota_round5/theory/adaptive_angle_speedup_limit_independent_review.json": "fa194e7e3f243fe6d2da068935796b36e245b7960f3f70cc35addfc2cc0820a6"
+  }
+}

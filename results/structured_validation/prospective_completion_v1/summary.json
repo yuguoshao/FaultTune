@@ -1,0 +1,2309 @@
+{
+  "status": "complete",
+  "spec": {
+    "status": "prospective frozen design",
+    "created_utc": "2026-11-03T16:59:45.884569+00:00",
+    "plan_sha256": "c9baab61fc33594ac21d3231ae51fc40bc3824506145ae9f45c0c71960e81d37",
+    "release_sha256": "ba4f454b605539ebfb6be16ce53500b782a715b3410f02edad72bacfe9c4389c",
+    "selection": {
+      "candidate": "closed_rb",
+      "primary_comparator": "closed_hedge",
+      "secondary_comparator": "psr_beta",
+      "methods": [
+        "closed_hedge",
+        "closed_rb",
+        "psr_beta"
+      ],
+      "development_scores": {
+        "psr_beta": 2461.479115462408,
+        "psr_pair_grid": 2461.479115462408,
+        "psr_fisher": 2436.599673749071,
+        "psr_hedge": 2425.9619356898675,
+        "psr_safe": 2716.7808259575554,
+        "psr_rb": 2421.3770107793703,
+        "closed_beta": 2359.692802284061,
+        "closed_pair_grid": 2359.692802284061,
+        "closed_fisher": 2345.4517731252554,
+        "closed_hedge": 2330.6958135160216,
+        "closed_safe": 2617.803598699344,
+        "closed_rb": 2331.8302400170423,
+        "grid_beta": 2387.1491605682427,
+        "grid_pair_grid": 2387.1491605682427,
+        "grid_fisher": 2371.2669059975856,
+        "grid_hedge": 2359.501988604498,
+        "grid_safe": 2650.2098499672516,
+        "grid_rb": 2357.153505859195,
+        "psr_weighted_conditional_unequal": 2411.582537710495,
+        "closed_weighted_conditional_unequal": 2454.746856926516,
+        "grid_weighted_conditional_unequal": 2458.626777987293
+      },
+      "development_input_sha256": {
+        "results/structured_validation/refined_development_v1": {
+          "spec.json": "7cd44298b83d58b3649abc3f7b4ff56f8c6898dd52673f0e9dc80ac47ff2b243",
+          "summary.json": "f70ef9f8edef39d5eaacc8c9e5429da33d9cc1df5a68bfc84cc81f4cbdfa05da",
+          "trials.jsonl": "55047a732a135b029045cdfe69bbd4f69a83b3727e2d5a395b00ffcbdcf639c7",
+          "audit.json": "7e38e8c4e0167f1a415a179c82c58afff5ccb39c03b0902248de306f29bb3786"
+        },
+        "results/structured_validation/unequal_development_v1": {
+          "spec.json": "a13a5356446a2e0b4448e938ca68b048d500f6d4f3b988f61468d627fdf290ee",
+          "summary.json": "7deb8ff6be8e87c339b86558726b6559524a3ee572389abbc251df727e2f7564",
+          "trials.jsonl": "c8a998941fefcf387e6fbcc439c78fad1ed5bc034db6471f9ad14ca3f632355b",
+          "audit.json": "e4fb689f0b00c46a84ece145f167d1f089c05e6e3cff7d204835594e9d4986d4"
+        }
+      },
+      "selection_rule": "Equal-case geometric mean of unconditional per-case mean total shots across all 24 main development cases, including all errors and cap abstentions.",
+      "tie_break": "Ascending lexicographic method name after numeric metric; exact float equality only."
+    },
+    "cases": [
+      {
+        "case_id": 0,
+        "kind": "main",
+        "A": 0.012,
+        "rho": 0.45,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": -0.0054,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.001078200899785744
+      },
+      {
+        "case_id": 1,
+        "kind": "main",
+        "A": 0.012,
+        "rho": 0.45,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": 0.0054,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.001078200899785744
+      },
+      {
+        "case_id": 2,
+        "kind": "main",
+        "A": 0.012,
+        "rho": 0.45,
+        "B_over_R": 0.82,
+        "B": 0.004428,
+        "C": -0.0030907630125909047,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.0006171228631851872
+      },
+      {
+        "case_id": 3,
+        "kind": "main",
+        "A": 0.012,
+        "rho": 0.45,
+        "B_over_R": 0.82,
+        "B": 0.004428,
+        "C": 0.0030907630125909047,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0006171228631851872
+      },
+      {
+        "case_id": 4,
+        "kind": "main",
+        "A": 0.012,
+        "rho": 0.45,
+        "B_over_R": 0.99,
+        "B": 0.005346,
+        "C": -0.0007617637429019583,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.00015209895426315697
+      },
+      {
+        "case_id": 5,
+        "kind": "main",
+        "A": 0.012,
+        "rho": 0.45,
+        "B_over_R": 0.99,
+        "B": 0.005346,
+        "C": 0.0007617637429019583,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.00015209895426315697
+      },
+      {
+        "case_id": 6,
+        "kind": "main",
+        "A": 0.012,
+        "rho": 0.965,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": -0.01158,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.0023121419295405402
+      },
+      {
+        "case_id": 7,
+        "kind": "main",
+        "A": 0.012,
+        "rho": 0.965,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": 0.01158,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0023121419295405402
+      },
+      {
+        "case_id": 8,
+        "kind": "main",
+        "A": 0.012,
+        "rho": 0.965,
+        "B_over_R": 0.82,
+        "B": 0.0094956,
+        "C": -0.00662796957144494,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.0013233856954971235
+      },
+      {
+        "case_id": 9,
+        "kind": "main",
+        "A": 0.012,
+        "rho": 0.965,
+        "B_over_R": 0.82,
+        "B": 0.0094956,
+        "C": 0.00662796957144494,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0013233856954971235
+      },
+      {
+        "case_id": 10,
+        "kind": "main",
+        "A": 0.012,
+        "rho": 0.965,
+        "B_over_R": 0.99,
+        "B": 0.0114642,
+        "C": -0.0016335600264453104,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.0003261677574754366
+      },
+      {
+        "case_id": 11,
+        "kind": "main",
+        "A": 0.012,
+        "rho": 0.965,
+        "B_over_R": 0.99,
+        "B": 0.0114642,
+        "C": 0.0016335600264453104,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0003261677574754366
+      },
+      {
+        "case_id": 12,
+        "kind": "main",
+        "A": 0.07,
+        "rho": 0.45,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": -0.03150000000000001,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.006289505248750175
+      },
+      {
+        "case_id": 13,
+        "kind": "main",
+        "A": 0.07,
+        "rho": 0.45,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": 0.03150000000000001,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.006289505248750175
+      },
+      {
+        "case_id": 14,
+        "kind": "main",
+        "A": 0.07,
+        "rho": 0.45,
+        "B_over_R": 0.82,
+        "B": 0.025830000000000006,
+        "C": -0.018029450906780282,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.003599883368580259
+      },
+      {
+        "case_id": 15,
+        "kind": "main",
+        "A": 0.07,
+        "rho": 0.45,
+        "B_over_R": 0.82,
+        "B": 0.025830000000000006,
+        "C": 0.018029450906780282,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.003599883368580259
+      },
+      {
+        "case_id": 16,
+        "kind": "main",
+        "A": 0.07,
+        "rho": 0.45,
+        "B_over_R": 0.99,
+        "B": 0.031185000000000008,
+        "C": -0.0044436218335947575,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.0008872438998684158
+      },
+      {
+        "case_id": 17,
+        "kind": "main",
+        "A": 0.07,
+        "rho": 0.45,
+        "B_over_R": 0.99,
+        "B": 0.031185000000000008,
+        "C": 0.0044436218335947575,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0008872438998684158
+      },
+      {
+        "case_id": 18,
+        "kind": "main",
+        "A": 0.07,
+        "rho": 0.965,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": -0.06755,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.013487494588986484
+      },
+      {
+        "case_id": 19,
+        "kind": "main",
+        "A": 0.07,
+        "rho": 0.965,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": 0.06755,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.013487494588986484
+      },
+      {
+        "case_id": 20,
+        "kind": "main",
+        "A": 0.07,
+        "rho": 0.965,
+        "B_over_R": 0.82,
+        "B": 0.055390999999999996,
+        "C": -0.03866315583342882,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.007719749890399887
+      },
+      {
+        "case_id": 21,
+        "kind": "main",
+        "A": 0.07,
+        "rho": 0.965,
+        "B_over_R": 0.82,
+        "B": 0.055390999999999996,
+        "C": 0.03866315583342882,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.007719749890399887
+      },
+      {
+        "case_id": 22,
+        "kind": "main",
+        "A": 0.07,
+        "rho": 0.965,
+        "B_over_R": 0.99,
+        "B": 0.0668745,
+        "C": -0.009529100154264312,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.001902645251940047
+      },
+      {
+        "case_id": 23,
+        "kind": "main",
+        "A": 0.07,
+        "rho": 0.965,
+        "B_over_R": 0.99,
+        "B": 0.0668745,
+        "C": 0.009529100154264312,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.001902645251940047
+      },
+      {
+        "case_id": 24,
+        "kind": "main",
+        "A": 0.28,
+        "rho": 0.45,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": -0.12600000000000003,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.0251580209950007
+      },
+      {
+        "case_id": 25,
+        "kind": "main",
+        "A": 0.28,
+        "rho": 0.45,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": 0.12600000000000003,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0251580209950007
+      },
+      {
+        "case_id": 26,
+        "kind": "main",
+        "A": 0.28,
+        "rho": 0.45,
+        "B_over_R": 0.82,
+        "B": 0.10332000000000002,
+        "C": -0.07211780362712113,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.014399533474321036
+      },
+      {
+        "case_id": 27,
+        "kind": "main",
+        "A": 0.28,
+        "rho": 0.45,
+        "B_over_R": 0.82,
+        "B": 0.10332000000000002,
+        "C": 0.07211780362712113,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.014399533474321036
+      },
+      {
+        "case_id": 28,
+        "kind": "main",
+        "A": 0.28,
+        "rho": 0.45,
+        "B_over_R": 0.99,
+        "B": 0.12474000000000003,
+        "C": -0.01777448733437903,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.003548975599473663
+      },
+      {
+        "case_id": 29,
+        "kind": "main",
+        "A": 0.28,
+        "rho": 0.45,
+        "B_over_R": 0.99,
+        "B": 0.12474000000000003,
+        "C": 0.01777448733437903,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.003548975599473663
+      },
+      {
+        "case_id": 30,
+        "kind": "main",
+        "A": 0.28,
+        "rho": 0.965,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": -0.2702,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.053949978355945935
+      },
+      {
+        "case_id": 31,
+        "kind": "main",
+        "A": 0.28,
+        "rho": 0.965,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": 0.2702,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.053949978355945935
+      },
+      {
+        "case_id": 32,
+        "kind": "main",
+        "A": 0.28,
+        "rho": 0.965,
+        "B_over_R": 0.82,
+        "B": 0.22156399999999998,
+        "C": -0.15465262333371527,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.03087899956159955
+      },
+      {
+        "case_id": 33,
+        "kind": "main",
+        "A": 0.28,
+        "rho": 0.965,
+        "B_over_R": 0.82,
+        "B": 0.22156399999999998,
+        "C": 0.15465262333371527,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.03087899956159955
+      },
+      {
+        "case_id": 34,
+        "kind": "main",
+        "A": 0.28,
+        "rho": 0.965,
+        "B_over_R": 0.99,
+        "B": 0.267498,
+        "C": -0.03811640061705725,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.007610581007760188
+      },
+      {
+        "case_id": 35,
+        "kind": "main",
+        "A": 0.28,
+        "rho": 0.965,
+        "B_over_R": 0.99,
+        "B": 0.267498,
+        "C": 0.03811640061705725,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.007610581007760188
+      },
+      {
+        "case_id": 36,
+        "kind": "main",
+        "A": 0.68,
+        "rho": 0.45,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": -0.144,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.028752023994286505
+      },
+      {
+        "case_id": 37,
+        "kind": "main",
+        "A": 0.68,
+        "rho": 0.45,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": 0.144,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.028752023994286505
+      },
+      {
+        "case_id": 38,
+        "kind": "main",
+        "A": 0.68,
+        "rho": 0.45,
+        "B_over_R": 0.82,
+        "B": 0.11807999999999999,
+        "C": -0.08242034700242412,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.016456609684938322
+      },
+      {
+        "case_id": 39,
+        "kind": "main",
+        "A": 0.68,
+        "rho": 0.45,
+        "B_over_R": 0.82,
+        "B": 0.11807999999999999,
+        "C": 0.08242034700242412,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.016456609684938322
+      },
+      {
+        "case_id": 40,
+        "kind": "main",
+        "A": 0.68,
+        "rho": 0.45,
+        "B_over_R": 0.99,
+        "B": 0.14256,
+        "C": -0.020313699810718885,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.004055972113684185
+      },
+      {
+        "case_id": 41,
+        "kind": "main",
+        "A": 0.68,
+        "rho": 0.45,
+        "B_over_R": 0.99,
+        "B": 0.14256,
+        "C": 0.020313699810718885,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.004055972113684185
+      },
+      {
+        "case_id": 42,
+        "kind": "main",
+        "A": 0.68,
+        "rho": 0.965,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": -0.30879999999999996,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.06165711812108106
+      },
+      {
+        "case_id": 43,
+        "kind": "main",
+        "A": 0.68,
+        "rho": 0.965,
+        "B_over_R": 0.0,
+        "B": 0.0,
+        "C": 0.30879999999999996,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.06165711812108106
+      },
+      {
+        "case_id": 44,
+        "kind": "main",
+        "A": 0.68,
+        "rho": 0.965,
+        "B_over_R": 0.82,
+        "B": 0.25321599999999994,
+        "C": -0.1767458552385317,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.03529028521325662
+      },
+      {
+        "case_id": 45,
+        "kind": "main",
+        "A": 0.68,
+        "rho": 0.965,
+        "B_over_R": 0.82,
+        "B": 0.25321599999999994,
+        "C": 0.1767458552385317,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.03529028521325662
+      },
+      {
+        "case_id": 46,
+        "kind": "main",
+        "A": 0.68,
+        "rho": 0.965,
+        "B_over_R": 0.99,
+        "B": 0.305712,
+        "C": -0.04356160070520827,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": -0.008697806866011642
+      },
+      {
+        "case_id": 47,
+        "kind": "main",
+        "A": 0.68,
+        "rho": 0.965,
+        "B_over_R": 0.99,
+        "B": 0.305712,
+        "C": 0.04356160070520827,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.008697806866011642
+      },
+      {
+        "case_id": 48,
+        "kind": "null",
+        "A": 0.012,
+        "B": 0.0,
+        "C": 0.0,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "case_id": 49,
+        "kind": "null",
+        "A": 0.012,
+        "B": 0.011519999999999999,
+        "C": 0.0,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "case_id": 50,
+        "kind": "null",
+        "A": 0.07,
+        "B": 0.0,
+        "C": 0.0,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "case_id": 51,
+        "kind": "null",
+        "A": 0.07,
+        "B": 0.06720000000000001,
+        "C": 0.0,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "case_id": 52,
+        "kind": "null",
+        "A": 0.28,
+        "B": 0.0,
+        "C": 0.0,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "case_id": 53,
+        "kind": "null",
+        "A": 0.28,
+        "B": 0.26880000000000004,
+        "C": 0.0,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "case_id": 54,
+        "kind": "null",
+        "A": 0.68,
+        "B": 0.0,
+        "C": 0.0,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      },
+      {
+        "case_id": 55,
+        "kind": "null",
+        "A": 0.68,
+        "B": 0.3071999999999999,
+        "C": 0.0,
+        "h": 0.2,
+        "epsilon": 9e-05,
+        "target_delta": 0.0
+      }
+    ],
+    "methods": [
+      "closed_hedge",
+      "closed_rb",
+      "psr_beta"
+    ],
+    "repetitions_by_kind": {
+      "main": 64,
+      "null": 16
+    },
+    "cap_by_kind": {
+      "main": 4194304,
+      "null": 65536
+    },
+    "delta": 0.01,
+    "seed_base": 1100000000,
+    "seed_rule": "base+1009*case_id+1000003*rep",
+    "execution_groups": [
+      [
+        "closed",
+        "refined",
+        [
+          "hedge",
+          "rb"
+        ]
+      ],
+      [
+        "psr",
+        "refined",
+        [
+          "beta"
+        ]
+      ]
+    ],
+    "expected_method_trajectories": 9600,
+    "sources": {
+      "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f",
+      "experiments/structured_validation/weighted_fisher.py": "1f31c9cbea3c8db4d7d8dc75936dc5304fd3273fb8ad1fafedc90e792fe24e24",
+      "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c",
+      "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+      "experiments/structured_validation/conditional_fisher_unequal.py": "011d691f76b798cd0372544156ab86dbf7b6273b02b41de009737f433caef917",
+      "experiments/structured_validation/safe_grid.py": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+      "experiments/structured_validation/rb_grid.py": "a262a4790289505e7846c98334edbf341cded98090ce7bd8bf7c0c3974fb420f",
+      "experiments/structured_validation/predictive.py": "fc16237805139c707e6e076c0c7e69f45e88c111d405349c68daa3f150871fe4",
+      "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+      "experiments/structured_validation/design_policy.py": "1e61776de4b3bd8b2fd331b9c9f28b7b68f4e6c9672e19ca38aa9b436e3d4547",
+      "experiments/structured_validation/probe_fixed.py": "bf64f1ab7fb5e1675966704cc315de1f21b51db8135301fc319d8388d67311ec",
+      "experiments/structured_validation/unequal_runner.py": "7518c2ff311b0b1db6f4252aa0270664dc4c87d8b0ce06a9616691e88ec9e8bc",
+      "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a"
+    },
+    "wrapper_sources_sha256": {
+      "experiments/structured_validation/prospective/common.py": "8eeaa1af5eb178456b4101eedf307e2cd4cc3cdb3148bb3b4137671273632196",
+      "experiments/structured_validation/prospective/run.py": "089dfc722290aa388be59c7481356a55d6bc6fd6368ab7f03b3b7f033deab318",
+      "experiments/structured_validation/prospective/analyze.py": "995e1ae97210634dc8eb77369354c6008befe379a8ab05c4bfe56cfe88b72a68"
+    },
+    "execution": {
+      "directory": "results/structured_validation/prospective_v1",
+      "case_order": "Ascending case_id, all main then null. Within case, ascending rep; deterministic sorted policy groups and engine tuples.",
+      "stop_new_experiments_by_utc": "2026-11-03T18:37:14Z",
+      "hard_deadline_utc": "2026-11-03T19:07:14Z",
+      "cutoff_unix": 1793731034,
+      "deadline_rule": "Check cutoff before every independent runner call; unequal runner also checks its outer checkpoints. A refined call already in flight may finish and be retained. No new call begins at or after cutoff. Incomplete data remain incomplete and cannot pass.",
+      "progress_rule": "Flush trials.jsonl after every completed call. After every complete case write progress.json with completed_case_ids and flushed ledger byte length. On early cutoff write final partial progress and preserve all completed records.",
+      "incomplete_rule": "No sample reduction, no extension, no replacement run, no primary inference from partial data. Preserve partial ledger and status.",
+      "overwrite_rule": "Never overwrite an existing release, spec, raw ledger or completed result."
+    },
+    "coupling": "Independent joint case/rep labels. Methods share seed labels; branches may diverge. Refined engines within one policy share their paid observations until separate first stopping times.",
+    "counting": "Unconditional total shots include exploration, all wrong decisions and all cap abstentions. Report main and null outcomes separately; null cap differs explicitly."
+  },
+  "cells": [
+    {
+      "case_id": 0,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 5857.4375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 0,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 5814.375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 0,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 5619.4375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 1,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 5823.03125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 1,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 5788.21875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 1,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 5629.03125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 2,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 21058.71875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 2,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 21015.75,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 2,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 20989.125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 3,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 22206.6875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 3,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 22222.28125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 3,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 21055.0625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 4,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 378420.78125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 4,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 378420.78125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 4,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 378608.1875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 5,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 434491.03125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 5,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 434944.125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 5,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 377350.0,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 6,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 915.03125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 6,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 917.8125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 6,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 917.8125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 7,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 884.0625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 7,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 878.90625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 7,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 889.71875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 8,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 3768.25,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 8,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 3779.3125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 8,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 3729.78125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 9,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 3695.96875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 9,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 3676.71875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 9,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 3704.625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 10,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 55853.4375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 10,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 55853.4375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 10,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 79308.96875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 11,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 64706.15625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 11,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 64685.6875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 11,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 84296.96875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 12,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 899.03125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 12,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 876.0625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 12,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 908.4375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 13,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 858.75,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 13,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 854.0,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 13,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 861.21875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 14,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 2472.40625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 14,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 2506.375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 14,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 2446.40625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 15,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 3123.375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 15,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 3106.0625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 15,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 3071.96875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 16,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 62828.875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 16,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 63129.53125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 16,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 60680.09375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 17,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 62724.3125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 17,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 63382.375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 17,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 71618.28125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 18,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 165.96875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 18,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 174.59375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 18,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 179.03125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 19,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 150.03125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 19,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 164.53125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 19,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 166.21875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 20,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 562.84375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 20,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 572.5,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 20,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 591.5,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 21,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 532.71875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 21,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 515.25,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 21,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 538.46875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 22,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 12034.625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 22,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 12031.46875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 22,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 13428.28125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 23,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 10965.0,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 23,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 10965.0,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 23,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 12497.21875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 24,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 199.5625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 24,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 190.75,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 24,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 199.0,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 25,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 173.8125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 25,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 165.40625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 25,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 175.21875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 26,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 580.84375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 26,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 562.65625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 26,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 584.5,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 27,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 586.34375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 27,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 585.125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 27,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 589.3125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 28,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 12379.90625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 28,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 12419.75,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 28,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 11066.875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 29,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 11396.03125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 29,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 11754.6875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 29,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 10806.84375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 30,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 38.34375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 30,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 39.6875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 30,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 41.59375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 31,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 38.34375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 31,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 40.15625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 31,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 40.75,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 32,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 102.59375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 32,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 104.46875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 32,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 108.03125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 33,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 123.03125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 33,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 114.53125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 33,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 124.4375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 34,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 2226.8125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 34,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 2217.03125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 34,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 2231.375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 35,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 2297.90625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 35,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 2280.25,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 35,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 2302.25,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 36,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 148.15625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 36,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 140.875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 36,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 146.65625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 37,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 134.28125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 37,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 131.09375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 37,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 134.5,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 38,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 521.21875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 38,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 522.0,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 38,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 513.21875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 39,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 481.40625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 39,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 477.65625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 39,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 485.625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 40,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 9341.375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 40,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 9307.875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 40,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 10724.125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 41,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 9827.1875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 41,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 9938.5,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 41,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 9046.03125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 42,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 34.46875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 42,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 35.96875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 42,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 36.34375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 43,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 33.9375,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 43,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 34.71875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 43,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 35.21875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 44,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 91.40625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 44,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 88.6875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 44,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 96.75,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 45,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 93.90625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 45,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 89.6875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 45,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 97.90625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 46,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 1823.71875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 46,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 1829.8125,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 46,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 1818.71875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 47,
+      "kind": "main",
+      "method": "closed_hedge",
+      "repetitions": 64,
+      "mean_shots": 2058.1875,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 47,
+      "kind": "main",
+      "method": "closed_rb",
+      "repetitions": 64,
+      "mean_shots": 2015.40625,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 47,
+      "kind": "main",
+      "method": "psr_beta",
+      "repetitions": 64,
+      "mean_shots": 2085.0,
+      "wrong": 0,
+      "abstained": 0
+    },
+    {
+      "case_id": 48,
+      "kind": "null",
+      "method": "closed_hedge",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 48,
+      "kind": "null",
+      "method": "closed_rb",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 48,
+      "kind": "null",
+      "method": "psr_beta",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 49,
+      "kind": "null",
+      "method": "closed_hedge",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 49,
+      "kind": "null",
+      "method": "closed_rb",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 49,
+      "kind": "null",
+      "method": "psr_beta",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 50,
+      "kind": "null",
+      "method": "closed_hedge",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 50,
+      "kind": "null",
+      "method": "closed_rb",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 50,
+      "kind": "null",
+      "method": "psr_beta",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 51,
+      "kind": "null",
+      "method": "closed_hedge",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 51,
+      "kind": "null",
+      "method": "closed_rb",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 51,
+      "kind": "null",
+      "method": "psr_beta",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 52,
+      "kind": "null",
+      "method": "closed_hedge",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 52,
+      "kind": "null",
+      "method": "closed_rb",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 52,
+      "kind": "null",
+      "method": "psr_beta",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 53,
+      "kind": "null",
+      "method": "closed_hedge",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 53,
+      "kind": "null",
+      "method": "closed_rb",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 53,
+      "kind": "null",
+      "method": "psr_beta",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 54,
+      "kind": "null",
+      "method": "closed_hedge",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 54,
+      "kind": "null",
+      "method": "closed_rb",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 54,
+      "kind": "null",
+      "method": "psr_beta",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 55,
+      "kind": "null",
+      "method": "closed_hedge",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 55,
+      "kind": "null",
+      "method": "closed_rb",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    },
+    {
+      "case_id": 55,
+      "kind": "null",
+      "method": "psr_beta",
+      "repetitions": 16,
+      "mean_shots": 65536.0,
+      "wrong": 0,
+      "abstained": 16
+    }
+  ],
+  "new_trajectories": 9600,
+  "joint_replicate_labels": 3200,
+  "additional_trajectories": 1663,
+  "original_trajectories": 7937,
+  "timings": {
+    "planning_seconds": 1.4533825999981325,
+    "screening_seconds": 113.77150420001193,
+    "certification_seconds": 1449.451616200003
+  },
+  "timings_scope": "completion phase only",
+  "elapsed_seconds": 1971.2652181,
+  "trials_sha256": "1115fbb8e4a96de8bc244925e61291bb28ed9efa95734ed3d8842259dcf4b320"
+}

@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T12:23:44.695470+00:00",
+  "scope": "Independent source and exact-arithmetic review of three separately calibrated physical-prefix gates; no new simulation.",
+  "sources": {
+    "experiments/sota_round3/fast_gate_boundary.py": "9079714c90379c36db80a6e9a639a64818578c5dc25fecc2c17089b7ed1995d2",
+    "experiments/sota_round3/fast_gate_boundary_checks.py": "7f21792dcce27aa2bd7ab5b9844199df9d8ca47c7995f366a39d7eff0c229e30",
+    "results/sota_round3/fast_gate_boundary_checks.json": "74d06b355562d94f3907584306e8b175aa83894f0359cf50b26b3341bcaded26",
+    "experiments/sota_round2/theory/verify_physical_fast_gate.py": "e4e4216b46ff9b891e5e195f2c9ebc72f945100df0e75b6df4a7f78a9922dd32",
+    "results/sota_round2/theory/physical_fast_gate_independent_audit.json": "85f734d8127b6a769e0fc3f4f89ab39ae696ae2a85ea0f87ad091042a2db9be6",
+    "results/sota_round2/theory/physical_fast_gate_lemma.json": "de8de7e005e0b4ffbd3150b6636f0e2505b9dd50ceb3ce572b1742906a6e30de",
+    "results/sota_round3/fast_gate_boundaries/m5.json": "e8f9639c1f541ac77032df096a5cc06d7b2f3518cb4ffaab1b5e36852297e5fa",
+    "results/sota_round3/fast_gate_boundaries/m6.json": "7edecef36d42f22e92ca60b66a38fdc33bee46337bc06c0340197055e51cec10",
+    "results/sota_round3/fast_gate_boundaries/m7.json": "5fbb234f56d8240085dbe7070f5767f4da8351c34814b26f08496f5d11d49fa9"
+  },
+  "review": [
+    "The null gate construction uses independent latent U signs and V discordance uniforms. It relies only on the pointwise containment of the adaptive physical gate in the first-m V<=1/2 event, not on false independence of the actual gate and U.",
+    "For each strict sign, the wrong-only pair probability is at most 1/4 under conditional within-pair independence and common ordering. The implementation separately certifies the conservative strict union bound as well as the null overlap bound.",
+    "The restricted survivor DP discards homogeneous prefixes that already crossed beta at any d<=m, then propagates only their surviving completions. The independent verifier instead propagates from d=0 with a homogeneous-prefix condition at every early step; all full-horizon integer counts agree.",
+    "The null and strict rational numerators are assembled correctly. Null calibration is monotone in the beta crossing event: P(E outside F)+(1-2^-m)P(E inside F)+2^-m P(F), where F means a homogeneous latent prefix. Therefore nested threshold tables permit binary search of simultaneous certification.",
+    "The conservative upper search bracket reserves at most 2*4^-m for the null gate. The selected rational threshold and immediately lower lattice point are both independently certified, including exact Jeffreys contour verification through all 2048 discordance states.",
+    "All m=5,6,7 artifacts satisfy both sufficient bounds. Independent exhaustive checks cover 198 arbitrary symmetric tables through H=5, all 910 table/gate-length choices, and 25668 sign strings.",
+    "The runtime requires a verified immutable boundary, exact nonnegative integer counts, physical-pair and discordance caps, and an exact first-m prefix once m pairs exist. The fixed gate direction remains persistent and takes priority over later beta decisions.",
+    "The producer selfchecks additionally enumerate finite U/V spaces, physical four-category spaces, adaptive rational-probability trees and invalid prefix/runtime inputs. These are deterministic checks, not empirical error calibration."
+  ],
+  "artifact_results": [
+    {
+      "status": "passed",
+      "artifact": "results/sota_round3/fast_gate_boundaries/m5.json",
+      "artifact_file_sha256": "e8f9639c1f541ac77032df096a5cc06d7b2f3518cb4ffaab1b5e36852297e5fa",
+      "prefix_pairs": 5,
+      "threshold_exact": "47480469/500000",
+      "null_union_upper_float": 0.008716646706298889,
+      "strict_wrong_upper_float": 0.007832763938321564,
+      "all_integer_bounds_recomputed": true,
+      "lower_lattice_neighbor_independently_verified": true,
+      "producer_imported_for_risk_verification": false,
+      "scope": "Two sufficient risk upper bounds, not an estimate of actual physical stopping risk."
+    },
+    {
+      "status": "passed",
+      "artifact": "results/sota_round3/fast_gate_boundaries/m6.json",
+      "artifact_file_sha256": "7edecef36d42f22e92ca60b66a38fdc33bee46337bc06c0340197055e51cec10",
+      "prefix_pairs": 6,
+      "threshold_exact": "22280471/250000",
+      "null_union_upper_float": 0.009999771427557544,
+      "strict_wrong_upper_float": 0.009829188869372346,
+      "all_integer_bounds_recomputed": true,
+      "lower_lattice_neighbor_independently_verified": true,
+      "producer_imported_for_risk_verification": false,
+      "scope": "Two sufficient risk upper bounds, not an estimate of actual physical stopping risk."
+    },
+    {
+      "status": "passed",
+      "artifact": "results/sota_round3/fast_gate_boundaries/m7.json",
+      "artifact_file_sha256": "5fbb234f56d8240085dbe7070f5767f4da8351c34814b26f08496f5d11d49fa9",
+      "prefix_pairs": 7,
+      "threshold_exact": "41413533/500000",
+      "null_union_upper_float": 0.009999136185936354,
+      "strict_wrong_upper_float": 0.009972533717619587,
+      "all_integer_bounds_recomputed": true,
+      "lower_lattice_neighbor_independently_verified": true,
+      "producer_imported_for_risk_verification": false,
+      "scope": "Two sufficient risk upper bounds, not an estimate of actual physical stopping risk."
+    }
+  ],
+  "issues": [],
+  "limits": [
+    "Aggregate containment cannot prove that first_m_counts is the actual earliest prefix. The measurement controller and replay audit must freeze it from the observed chronology and reject a block that straddles the required endpoint without recorded order.",
+    "The proof requires independent Bernoulli outcomes within each pair; equal marginals alone are insufficient.",
+    "Each m is a separate certified procedure. Their union, sliding or restarted windows, and data-selected gate lengths are not covered.",
+    "The recorded rational bounds control dominating events. They are not claimed to equal the actual finite-physical-budget error probability.",
+    "This full paired Bernoulli extreme-alternative gate is related to classical unconditional exact tests and e-values. No first-invention, performance-superiority or SOTA claim follows from this implementation review.",
+    "The optional shadow-null sharpening is not part of the certified method."
+  ]
+}

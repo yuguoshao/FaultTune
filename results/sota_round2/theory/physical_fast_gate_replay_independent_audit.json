@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T12:29:26.286938+00:00",
+  "inputs": {
+    "results/sota_round3/fast_gate_boundaries/m5.json": "e8f9639c1f541ac77032df096a5cc06d7b2f3518cb4ffaab1b5e36852297e5fa",
+    "results/sota_round3/fast_gate_boundaries/m6.json": "7edecef36d42f22e92ca60b66a38fdc33bee46337bc06c0340197055e51cec10",
+    "results/sota_round3/fast_gate_boundaries/m7.json": "5fbb234f56d8240085dbe7070f5767f4da8351c34814b26f08496f5d11d49fa9",
+    "results/sota_round3/paired_benchmark/paths.jsonl": "56361be6ceb9e1cea62345666ec4efd72d1ac9303092f83ff7cfc74b59ab9ef9",
+    "results/sota_round3/paired_benchmark/preliminary_plan.json": "f89aefeab89c5ea26716c8cf4fa8b91902fdcdbc1d2853eeaea1f52022ea56f7",
+    "results/sota_round3/paired_benchmark/method_results.jsonl": "c46e96f8b27fe3494e3c27ab8b581299b0c754afcff0e5e7eb9fade97318c3e7",
+    "experiments/sota_round3/replay_fast_gate.py": "b1edd7b2aad49965a9405e0dd3fb1acd1a414022fb99fb019226b11b7b541dc9",
+    "results/sota_round3/paired_benchmark_audit/audit.json": "bf12f8fc9bc21c10d1ebc904a85c30ed54a189fd8c0b33072661a631806cfa4a",
+    "experiments/sota_round3/paired_benchmark.py": "d92c724cca5e1e3ada3169cbb14e89236bb4c88c6f0349a63b829fa3f9f7a2bd",
+    "experiments/sota_round3/replay_boundaries.py": "b5f247b3a803d587ed7bf12e7be3ef275cbe0b5f0893d1386a2cf4ec0563f229",
+    "results/sota_round2/theory/physical_fast_gate_independent_audit.json": "85f734d8127b6a769e0fc3f4f89ab39ae696ae2a85ea0f87ad091042a2db9be6",
+    "results/sota_round3/fast_gate_replay_v1/records.jsonl": "979c16d3f450f0fc31c296d6562f1bead041e17d445019e69bde4e78a885aa97",
+    "results/sota_round3/fast_gate_replay_v1/summary.json": "286e0c24bb1a3f3f8932779fb00ad3b59de7e8ce855e7558222114c836ef805a"
+  },
+  "verifier_source_sha256": "7f38e5911123d3bea99b1280ccf42dd03c0eb433ae42f41f78a145e23f066b01",
+  "paths": 576,
+  "method_records": 1728,
+  "right_censored": 0,
+  "all_prefixes_and_certificates_reconstructed_without_producer_import": true,
+  "full_cost_error_abstention_summaries_recomputed": true,
+  "new_simulation_observations": 0,
+  "main_comparisons": {
+    "physical_gate_m5": {
+      "beta_exact": 1.0122248623365804,
+      "maxsprt": 0.9301896613777797,
+      "pair_grid": 1.0122248623365804,
+      "closed_hedge_fine_initial": 0.9442277606326911
+    },
+    "physical_gate_m6": {
+      "beta_exact": 0.9627147095496669,
+      "maxsprt": 0.8846920313854553,
+      "pair_grid": 0.9627147095496669,
+      "closed_hedge_fine_initial": 0.8980434962127711
+    },
+    "physical_gate_m7": {
+      "beta_exact": 0.975972074333593,
+      "maxsprt": 0.8968749604143429,
+      "pair_grid": 0.975972074333593,
+      "closed_hedge_fine_initial": 0.910410285774649
+    }
+  },
+  "limitations": [
+    "All cases are development cases and the gate was explored after seeing the original pilot.",
+    "The three m values remain separate methods; no combined or hindsight-selected test is audited.",
+    "No held-out confidence interval, hardware conclusion or SOTA claim is established."
+  ]
+}

@@ -1,0 +1,3474 @@
+{
+  "status": "passed",
+  "sources": {
+    "experiments/structured_validation/continuous_fisher.py": "8fac52c9d71a1343491d023eef731332e1400104cf47cc027e68bcdf10b35ace",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/structured_validation/continuous_fisher_curvature.py": "61a6c7939f9c8df2eabfabaee33790a348d0c4554e2f21bc6dcfdf4464dd31e5",
+    "experiments/structured_validation/continuous_fisher_curvature_checks.py": "2fadf33138b8d960006bf78aa16f694103044f1721d2249695f3c215aea56808",
+    "results/structured_validation/continuous_fisher_replay_refined.json": "da1fb1549ba29d4037749c52a0051c118856d2d060cc1f7820240044aa2cb686"
+  },
+  "input_sha256": {
+    "results/structured_validation/refined_development_v1/spec.json": "7cd44298b83d58b3649abc3f7b4ff56f8c6898dd52673f0e9dc80ac47ff2b243",
+    "results/structured_validation/refined_development_v1/trials.jsonl": "55047a732a135b029045cdfe69bbd4f69a83b3727e2d5a395b00ffcbdcf639c7",
+    "results/structured_validation/refined_development_v1/audit.json": "7e38e8c4e0167f1a415a179c82c58afff5ccb39c03b0902248de306f29bb3786",
+    "results/structured_validation/refined_development_v1/summary.json": "f70ef9f8edef39d5eaacc8c9e5429da33d9cc1df5a68bfc84cc81f4cbdfa05da"
+  },
+  "scope": "Deterministic variance/analytic checks and all 48 existing development terminal histories; no Monte Carlo, first-crossing analysis, or prospective data.",
+  "exact_variance_cases": 560,
+  "maximum_exact_4_variance_over_S": "1",
+  "exact_weighted_subset_identity_and_covariances_checked": true,
+  "analytic_cases": [
+    {
+      "case": "m1",
+      "positive": 0,
+      "negative": 0,
+      "complete_mixture_exact": "1",
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "abstain",
+        "delta": "0.01",
+        "shots": 0,
+        "blocks": 0,
+        "score": 0,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          1,
+          1
+        ],
+        "node_log_odds_bounds": [
+          "-1E-1000062",
+          "1E-1000062"
+        ],
+        "log_integrand_bounds": [
+          "-1.837877066409345483560659472811235279722794947275566825634303084",
+          "-1.837877066409345483560659472811235279722794947275566825634303078"
+        ],
+        "n": 0,
+        "S": 0,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "-0.225791352644727432363097614947441071785897339277528158696471535",
+        "single_node_S_log_bound_enclosure": [
+          "-0.225791352644727432363097614947441071785897339277528158696471535",
+          "-0.225791352644727432363097614947441071785897339277528158696471527"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "-0.225791352644727432363097614947441071785897339277528158696471535",
+          "-0.225791352644727432363097614947441071785897339277528158696471527"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 0,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      }
+    },
+    {
+      "case": "m1",
+      "positive": 1,
+      "negative": 0,
+      "complete_mixture_exact": "1",
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "abstain",
+        "delta": "0.01",
+        "shots": 2,
+        "blocks": 1,
+        "score": 1,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          3,
+          1
+        ],
+        "node_log_odds_bounds": [
+          "1.098612288668109691395245236922525704647490557822749451734694333",
+          "1.098612288668109691395245236922525704647490557822749451734694335"
+        ],
+        "log_integrand_bounds": [
+          "-1.576252994527071565302255860343799858902559379261953156273621605",
+          "-1.576252994527071565302255860343799858902559379261953156273621594"
+        ],
+        "n": 1,
+        "S": 1,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "-0.310740871042426168813310063209093935003411838444042116396130061",
+        "single_node_S_log_bound_enclosure": [
+          "-0.310740871042426168813310063209093935003411838444042116396130061",
+          "-0.310740871042426168813310063209093935003411838444042116396130048"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "-0.310740871042426168813310063209093935003411838444042116396130061",
+          "-0.310740871042426168813310063209093935003411838444042116396130048"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 2,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      }
+    },
+    {
+      "case": "m1",
+      "positive": 3,
+      "negative": 2,
+      "complete_mixture_exact": "3/8",
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "abstain",
+        "delta": "0.01",
+        "shots": 10,
+        "blocks": 5,
+        "score": 1,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          7,
+          5
+        ],
+        "node_log_odds_bounds": [
+          "0.3364722366212129305045934102169920901114833753133434665467422584",
+          "0.3364722366212129305045934102169920901114833753133434665467422586"
+        ],
+        "log_integrand_bounds": [
+          "-1.754153578998827984064890687978850763516939161165786596377063893",
+          "-1.754153578998827984064890687978850763516939161165786596377063881"
+        ],
+        "n": 5,
+        "S": 5,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "-1.037947599848237433273567509305407691941536899259250282366919516",
+        "single_node_S_log_bound_enclosure": [
+          "-1.037947599848237433273567509305407691941536899259250282366919516",
+          "-1.037947599848237433273567509305407691941536899259250282366919501"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "-1.037947599848237433273567509305407691941536899259250282366919516",
+          "-1.037947599848237433273567509305407691941536899259250282366919501"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 10,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      }
+    },
+    {
+      "case": "m1",
+      "positive": 8,
+      "negative": 0,
+      "complete_mixture_exact": "6435/128",
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "abstain",
+        "delta": "0.01",
+        "shots": 16,
+        "blocks": 8,
+        "score": 8,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          17,
+          1
+        ],
+        "node_log_odds_bounds": [
+          "2.833213344056216080249534617873126535588203012585744787297237737",
+          "2.833213344056216080249534617873126535588203012585744787297237739"
+        ],
+        "log_integrand_bounds": [
+          "2.469415162042516753445970514504877589122100618893773735167719657",
+          "2.469415162042516753445970514504877589122100618893773735167719715"
+        ],
+        "n": 8,
+        "S": 8,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "2.982888587139025113248287135446146092411507669069062950370856872",
+        "single_node_S_log_bound_enclosure": [
+          "2.982888587139025113248287135446146092411507669069062950370856872",
+          "2.982888587139025113248287135446146092411507669069062950370856933"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "2.982888587139025113248287135446146092411507669069062950370856872",
+          "2.982888587139025113248287135446146092411507669069062950370856933"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 16,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      }
+    },
+    {
+      "case": "m1",
+      "positive": 20,
+      "negative": 20,
+      "complete_mixture_exact": "34461632205/274877906944",
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "abstain",
+        "delta": "0.01",
+        "shots": 80,
+        "blocks": 40,
+        "score": 0,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          1,
+          1
+        ],
+        "node_log_odds_bounds": [
+          "-1E-1000062",
+          "1E-1000062"
+        ],
+        "log_integrand_bounds": [
+          "-1.837877066409345483560659472811235279722794947275566825634303096",
+          "-1.837877066409345483560659472811235279722794947275566825634303078"
+        ],
+        "n": 40,
+        "S": 40,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "-2.082577385996881334296479301466144865974102573977178975506103002",
+        "single_node_S_log_bound_enclosure": [
+          "-2.082577385996881334296479301466144865974102573977178975506103002",
+          "-2.082577385996881334296479301466144865974102573977178975506102982"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "-2.082577385996881334296479301466144865974102573977178975506103002",
+          "-2.082577385996881334296479301466144865974102573977178975506102982"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 80,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      }
+    },
+    {
+      "case": "m1",
+      "positive": 20,
+      "negative": 0,
+      "complete_mixture_exact": "34461632205/262144",
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 40,
+        "blocks": 20,
+        "score": 20,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          41,
+          1
+        ],
+        "node_log_odds_bounds": [
+          "3.713572066704307803866763373037407588376410469399301633619262909",
+          "3.713572066704307803866763373037407588376410469399301633619262911"
+        ],
+        "log_integrand_bounds": [
+          "10.35537910883708156919543208677580616201753863991329321948481225",
+          "10.35537910883708156919543208677580616201753863991329321948481256"
+        ],
+        "n": 20,
+        "S": 20,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "10.44520360373998812214269495445674765281214860420902656632560155",
+        "single_node_S_log_bound_enclosure": [
+          "10.44520360373998812214269495445674765281214860420902656632560155",
+          "10.44520360373998812214269495445674765281214860420902656632560187"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "10.44520360373998812214269495445674765281214860420902656632560155",
+          "10.44520360373998812214269495445674765281214860420902656632560187"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 40,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      }
+    },
+    {
+      "case": "m1",
+      "positive": 0,
+      "negative": 20,
+      "complete_mixture_exact": "34461632205/262144",
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "accept",
+        "delta": "0.01",
+        "shots": 40,
+        "blocks": 20,
+        "score": -20,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          1,
+          41
+        ],
+        "node_log_odds_bounds": [
+          "-3.713572066704307803866763373037407588376410469399301633619262911",
+          "-3.713572066704307803866763373037407588376410469399301633619262909"
+        ],
+        "log_integrand_bounds": [
+          "10.35537910883708156919543208677580616201753863991329321948481225",
+          "10.35537910883708156919543208677580616201753863991329321948481256"
+        ],
+        "n": 20,
+        "S": 20,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "10.44520360373998812214269495445674765281214860420902656632560155",
+        "single_node_S_log_bound_enclosure": [
+          "10.44520360373998812214269495445674765281214860420902656632560155",
+          "10.44520360373998812214269495445674765281214860420902656632560187"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "10.44520360373998812214269495445674765281214860420902656632560155",
+          "10.44520360373998812214269495445674765281214860420902656632560187"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 40,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      }
+    },
+    {
+      "case": "m2 T2",
+      "minus": 0,
+      "plus": 2,
+      "complete_mixture_analytic_bounds": [
+        "1.898979485566356196394568149411782783931894961313340256865385132",
+        "1.898979485566356196394568149411782783931894961313340256865385136"
+      ],
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "abstain",
+        "delta": "0.01",
+        "shots": 4,
+        "blocks": 1,
+        "score": 2,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          4,
+          1
+        ],
+        "node_log_odds_bounds": [
+          "1.386294361119890618834464242916353136151000268720510508241360018",
+          "1.386294361119890618834464242916353136151000268720510508241360020"
+        ],
+        "log_integrand_bounds": [
+          "-0.993179987722199236302737533795316242541602214959714943920758622",
+          "-0.993179987722199236302737533795316242541602214959714943920758607"
+        ],
+        "n": 2,
+        "S": 2,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "0.069599581708363969197201705607215113071550114126948997149725760",
+        "single_node_S_log_bound_enclosure": [
+          "0.069599581708363969197201705607215113071550114126948997149725760",
+          "0.069599581708363969197201705607215113071550114126948997149725777"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "0.069599581708363969197201705607215113071550114126948997149725760",
+          "0.069599581708363969197201705607215113071550114126948997149725777"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 3,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      }
+    },
+    {
+      "case": "m2 T2",
+      "minus": 2,
+      "plus": 0,
+      "complete_mixture_analytic_bounds": [
+        "1.898979485566356196394568149411782783931894961313340256865385132",
+        "1.898979485566356196394568149411782783931894961313340256865385136"
+      ],
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "abstain",
+        "delta": "0.01",
+        "shots": 4,
+        "blocks": 1,
+        "score": -2,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          1,
+          4
+        ],
+        "node_log_odds_bounds": [
+          "-1.386294361119890618834464242916353136151000268720510508241360020",
+          "-1.386294361119890618834464242916353136151000268720510508241360018"
+        ],
+        "log_integrand_bounds": [
+          "-0.993179987722199236302737533795316242541602214959714943920758623",
+          "-0.993179987722199236302737533795316242541602214959714943920758607"
+        ],
+        "n": 2,
+        "S": 2,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "0.069599581708363969197201705607215113071550114126948997149725759",
+        "single_node_S_log_bound_enclosure": [
+          "0.069599581708363969197201705607215113071550114126948997149725759",
+          "0.069599581708363969197201705607215113071550114126948997149725777"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "0.069599581708363969197201705607215113071550114126948997149725759",
+          "0.069599581708363969197201705607215113071550114126948997149725777"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 3,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      }
+    },
+    {
+      "case": "m2 T2",
+      "minus": 1,
+      "plus": 1,
+      "complete_mixture_analytic_bounds": [
+        "0.550510257216821901802715925294108608034052519343329871567307432",
+        "0.550510257216821901802715925294108608034052519343329871567307434"
+      ],
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "abstain",
+        "delta": "0.01",
+        "shots": 4,
+        "blocks": 1,
+        "score": 0,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          1,
+          1
+        ],
+        "node_log_odds_bounds": [
+          "-1E-1000062",
+          "1E-1000062"
+        ],
+        "log_integrand_bounds": [
+          "-1.837877066409345483560659472811235279722794947275566825634303088",
+          "-1.837877066409345483560659472811235279722794947275566825634303078"
+        ],
+        "n": 2,
+        "S": 2,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "-0.775097496978782278060720233408703924109642618188902884563818706",
+        "single_node_S_log_bound_enclosure": [
+          "-0.775097496978782278060720233408703924109642618188902884563818706",
+          "-0.775097496978782278060720233408703924109642618188902884563818694"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "-0.775097496978782278060720233408703924109642618188902884563818706",
+          "-0.775097496978782278060720233408703924109642618188902884563818694"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 3,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      }
+    }
+  ],
+  "selection": {
+    "cases": 24,
+    "policies": [
+      "psr",
+      "closed"
+    ],
+    "rep": 0,
+    "checkpoints": 48,
+    "node_rule": "Stored exact rational node closest in absolute log odds to the stored floating mode; index breaks ties"
+  },
+  "records": [
+    {
+      "case_id": 1,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 1024,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "abstain",
+        "delta": "0.01",
+        "shots": 1024,
+        "blocks": 29,
+        "score": 10,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          2783434002330309,
+          125000000000000
+        ],
+        "node_log_odds_bounds": [
+          "3.103126959722333281691372882311670549685973300829853026732663116",
+          "3.103126959722333281691372882311670549685973300829853026732663118"
+        ],
+        "log_integrand_bounds": [
+          "3.894781824049398504475647398138704200557574616672067736407820459",
+          "3.894781824049398602453457612508713917109143236522457196743015517"
+        ],
+        "n": 512,
+        "S": 10,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "4.307919901414831283642237467019933758583618797701397815736368153",
+        "single_node_S_log_bound_enclosure": [
+          "4.307919901414831283642237467019933758583618797701397815736368153",
+          "4.307919901414831381620047681389943475135187417551787276071563213"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "2.386729615228631788575827684674783082904546757286417816474630389",
+          "2.386729615228631886553637899044792799456115377136807276809825449"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 39,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.015625,
+      "wall_seconds": 0.010028000000000148,
+      "S_lower_minus_193_lower": "-1.029306456123727356662857909023167948401184262328096428817375885",
+      "S_lower_minus_71_upper": "-1.033344859486071376717863421557846460022178071055762055646369285",
+      "n_lower_minus_193_lower": "-2.950496742309926851729267691368318624080256302743076428079113649"
+    },
+    {
+      "case_id": 1,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 1024,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "abstain",
+        "delta": "0.01",
+        "shots": 1024,
+        "blocks": 29,
+        "score": 10,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          2783434002330309,
+          125000000000000
+        ],
+        "node_log_odds_bounds": [
+          "3.103126959722333281691372882311670549685973300829853026732663116",
+          "3.103126959722333281691372882311670549685973300829853026732663118"
+        ],
+        "log_integrand_bounds": [
+          "3.894781824049398504475647398138704200557574616672067736407820459",
+          "3.894781824049398602453457612508713917109143236522457196743015517"
+        ],
+        "n": 512,
+        "S": 10,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "4.307919901414831283642237467019933758583618797701397815736368153",
+        "single_node_S_log_bound_enclosure": [
+          "4.307919901414831283642237467019933758583618797701397815736368153",
+          "4.307919901414831381620047681389943475135187417551787276071563213"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "2.386729615228631788575827684674783082904546757286417816474630389",
+          "2.386729615228631886553637899044792799456115377136807276809825449"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 39,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0011283999999989192,
+      "S_lower_minus_193_lower": "-1.029306456123727356662857909023167948401184262328096428817375885",
+      "S_lower_minus_71_upper": "-1.033344859486071376717863421557846460022178071055762055646369285",
+      "n_lower_minus_193_lower": "-2.950496742309926851729267691368318624080256302743076428079113649"
+    },
+    {
+      "case_id": 3,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 35230,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 35230,
+        "blocks": 95,
+        "score": 73,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          418391284377377,
+          250000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.5149561638334927104800994691732013657512511245206517302828533239",
+          "0.5149561638334927104800994691732013657512511245206517302828533241"
+        ],
+        "log_integrand_bounds": [
+          "7.460010876241222623611950300866599209299012946203080061816166323",
+          "7.460010876241222692147206790943112555369813689543582969759944328"
+        ],
+        "n": 17615,
+        "S": 291,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "6.233719688871699800846225608552945563708033997405064642335468434",
+        "single_node_S_log_bound_enclosure": [
+          "6.233719688871699800846225608552945563708033997405064642335468434",
+          "6.233719688871699869381482098629458909778834740745567550279246441"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.183815160524610074467709327773562845996331789062669362652661277",
+          "4.183815160524610143002965817850076192067132532403172270596439284"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 386,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.09375,
+      "wall_seconds": 0.09406189999999981,
+      "S_lower_minus_193_lower": "-0.036470376369437870088372261421857156763327309897294722638563441",
+      "S_lower_minus_71_upper": "-0.044214654847895351280853740699940981756879570298467645334564578",
+      "n_lower_minus_193_lower": "-2.086374904716527596466888542201239874475029518239690002321370598"
+    },
+    {
+      "case_id": 3,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 35230,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 35230,
+        "blocks": 59,
+        "score": 74,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          3211994806818371,
+          2000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.4737449987170272192017761273027771340078145140952080027140449041",
+          "0.4737449987170272192017761273027771340078145140952080027140449043"
+        ],
+        "log_integrand_bounds": [
+          "6.847497068803898144235142972682592534527796037245351395675163174",
+          "6.847497068803898201187920206026228872169160774893554173766886023"
+        ],
+        "n": 17615,
+        "S": 320,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.573862221003508263082882803573485389359375228266311559965589196",
+        "single_node_S_log_bound_enclosure": [
+          "5.573862221003508263082882803573485389359375228266311559965589196",
+          "5.573862221003508320035660036917121727000739965914514338057312048"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "3.571301353087285595090901999589556171225114880104940696511658128",
+          "3.571301353087285652043679232933192508866479617753143474603380979"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 379,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0625,
+      "wall_seconds": 0.06273790000000012,
+      "S_lower_minus_193_lower": "-0.031894287852414591342478634945959467474183298447158981675955659",
+      "S_lower_minus_71_upper": "-0.041691499272755214446014086174675820853892524949948095296964447",
+      "n_lower_minus_193_lower": "-2.034455155768637259334459438929888685608443646608529845129886727"
+    },
+    {
+      "case_id": 5,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 1206662,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 1206662,
+        "blocks": 185,
+        "score": 485,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          2730367432075027,
+          2500000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.08814545876989695616429530544162350998772129594333133475796507029",
+          "0.08814545876989695616429530544162350998772129594333133475796507031"
+        ],
+        "log_integrand_bounds": [
+          "8.846395971253549881986415372855930458839290440509839924365872207",
+          "8.846395971253550183044053991950754610427824359487374428969886142"
+        ],
+        "n": 603331,
+        "S": 11113,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.800501258098234652302122474843637451434569905303588435661369125",
+        "single_node_S_log_bound_enclosure": [
+          "5.800501258098234652302122474843637451434569905303588435661369125",
+          "5.800501258098234953359761093938461603023103824281122940265383062"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "3.803370232704815193783692471016837171723723615202900430884364327",
+          "3.803370232704815494841331090111661323312257534180434935488378272"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 5457,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.421875,
+      "wall_seconds": 0.4261513000000008,
+      "S_lower_minus_193_lower": "-0.005022039984975634959701311592028568187678149819567696683283463",
+      "S_lower_minus_71_upper": "-0.022395489931122632681165400049591458781667931736948411162482836",
+      "n_lower_minus_193_lower": "-2.002153065378395093478131315418828847898524439920255701460288261"
+    },
+    {
+      "case_id": 5,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 1072588,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 1072588,
+        "blocks": 88,
+        "score": 469,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          681471177547963,
+          625000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.08650230783959393949003478464998393797478877423473456311486986540",
+          "0.08650230783959393949003478464998393797478877423473456311486986542"
+        ],
+        "log_integrand_bounds": [
+          "8.301453216402530082448953079337907886367362070805861154492853173",
+          "8.301453216402530255029584884860705581428430732513298885091654588"
+        ],
+        "n": 536294,
+        "S": 10961,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.262443917364117275700718633186279585729474953137345383077772966",
+        "single_node_S_log_bound_enclosure": [
+          "5.262443917364117275700718633186279585729474953137345383077772966",
+          "5.262443917364117448281350438709077280790543614844783113676574383"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "3.317319099273387004934236356023478083806860759957724890646551150",
+          "3.317319099273387177514868161546275778867929421665162621245352567"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 5296,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.25,
+      "wall_seconds": 0.31475570000000097,
+      "S_lower_minus_193_lower": "-0.005476265731540398274599191610004066172971398908850299349136660",
+      "S_lower_minus_71_upper": "-0.020887540355611619668111896549333805933894337009644649900912336",
+      "n_lower_minus_193_lower": "-1.950601083822270669041081468772805568095585592088470791780358476"
+    },
+    {
+      "case_id": 7,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 808,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 808,
+        "blocks": 27,
+        "score": 11,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          1153987660205523,
+          50000000000000
+        ],
+        "node_log_odds_bounds": [
+          "3.138955748519922582645197064036302683660503962548355371784034876",
+          "3.138955748519922582645197064036302683660503962548355371784034878"
+        ],
+        "log_integrand_bounds": [
+          "4.410915667325577197246107871411938709845738100579250761283509886",
+          "4.410915667325577326430519904697260477292094227696755433803219922"
+        ],
+        "n": 404,
+        "S": 11,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "4.780548056196195093328814989356293497383390295305659448233314259",
+        "single_node_S_log_bound_enclosure": [
+          "4.780548056196195093328814989356293497383390295305659448233314259",
+          "4.780548056196195222513227022641615264829746422423164120753024297"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "3.021057847536925678352799588817587688724853915797531663795628822",
+          "3.021057847536925807537211622102909456171210042915036336315338860"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 38,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.004623399999999833,
+      "S_lower_minus_193_lower": "-1.068050874796084781302869324928407808539985538970847841739961600",
+      "S_lower_minus_71_upper": "-1.072278442771913665262786251350496049188626991014264943130967994",
+      "n_lower_minus_193_lower": "-2.827541083455354196278884725467113617198521918478975626177647037"
+    },
+    {
+      "case_id": 7,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 808,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 808,
+        "blocks": 27,
+        "score": 11,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          1153987660205523,
+          50000000000000
+        ],
+        "node_log_odds_bounds": [
+          "3.138955748519922582645197064036302683660503962548355371784034876",
+          "3.138955748519922582645197064036302683660503962548355371784034878"
+        ],
+        "log_integrand_bounds": [
+          "4.410915667325577197246107871411938709845738100579250761283509886",
+          "4.410915667325577326430519904697260477292094227696755433803219922"
+        ],
+        "n": 404,
+        "S": 11,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "4.780548056196195093328814989356293497383390295305659448233314259",
+        "single_node_S_log_bound_enclosure": [
+          "4.780548056196195093328814989356293497383390295305659448233314259",
+          "4.780548056196195222513227022641615264829746422423164120753024297"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "3.021057847536925678352799588817587688724853915797531663795628822",
+          "3.021057847536925807537211622102909456171210042915036336315338860"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 38,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.015625,
+      "wall_seconds": 0.001101600000000147,
+      "S_lower_minus_193_lower": "-1.068050874796084781302869324928407808539985538970847841739961600",
+      "S_lower_minus_71_upper": "-1.072278442771913665262786251350496049188626991014264943130967994",
+      "n_lower_minus_193_lower": "-2.827541083455354196278884725467113617198521918478975626177647037"
+    },
+    {
+      "case_id": 9,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 6768,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 6768,
+        "blocks": 53,
+        "score": 30,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          3246907872102019,
+          1000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "1.177703119481968824565436196635684059852048951368020990955931529",
+          "1.177703119481968824565436196635684059852048951368020990955931531"
+        ],
+        "log_integrand_bounds": [
+          "6.526208516055199667075640888590153464776928076730645382116150582",
+          "6.526208516055199727142141778038692124363580384180522332782640333"
+        ],
+        "n": 3384,
+        "S": 56,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "6.116768595902542642571066412048758051771390775167744913917654846",
+        "single_node_S_log_bound_enclosure": [
+          "6.116768595902542642571066412048758051771390775167744913917654846",
+          "6.116768595902542702637567301497296711358043082617621864584144599"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.074739637146630034352477112180597839205536735946658151762258177",
+          "4.074739637146630094418978001629136498792189043396535102428747931"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 109,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.015625,
+      "wall_seconds": 0.016509599999999125,
+      "S_lower_minus_193_lower": "-0.170810117765482435712944658063137147428005295440090286005498904",
+      "S_lower_minus_71_upper": "-0.169939011098720780310851949405341943127906832489034166654412121",
+      "n_lower_minus_193_lower": "-2.212839076521395043931533957931297359993859334661177048160895573"
+    },
+    {
+      "case_id": 9,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 5346,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 5346,
+        "blocks": 43,
+        "score": 25,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          852466084353211,
+          250000000000000
+        ],
+        "node_log_odds_bounds": [
+          "1.226672506754131933875989235891633698573798944809550728920496157",
+          "1.226672506754131933875989235891633698573798944809550728920496159"
+        ],
+        "log_integrand_bounds": [
+          "5.390424916692907870006368523545152446131005817620799070371369691",
+          "5.390424916692907929965664813328005159664551479352304704804040916"
+        ],
+        "n": 2673,
+        "S": 45,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.088189932212978421091937904774760310808963201018492239249543546",
+        "single_node_S_log_bound_enclosure": [
+          "5.088189932212978421091937904774760310808963201018492239249543546",
+          "5.088189932212978481051234194557613024342508862749997873682214773"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "3.056845251626581677517662972857084931907390255414006000278810216",
+          "3.056845251626581737476959262639937645440935917145511634711481444"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 88,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.011752599999999447,
+      "S_lower_minus_193_lower": "-0.185644289271818687389133152821715573769278164919909013861683245",
+      "S_lower_minus_71_upper": "-0.185820490091278415608210689173995573164009718267605592143427560",
+      "n_lower_minus_193_lower": "-2.216988969858215430963408084739390952670851110524395252832416575"
+    },
+    {
+      "case_id": 11,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 90406,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 90406,
+        "blocks": 119,
+        "score": 81,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          201224574199291,
+          125000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.4761078316324746274367886782060726434055597408455204477295718811",
+          "0.4761078316324746274367886782060726434055597408455204477295718813"
+        ],
+        "log_integrand_bounds": [
+          "7.714329894804323712345030349901189275081712621330553327854823252",
+          "7.714329894804323897848413617995298069803163906170240395234904229"
+        ],
+        "n": 45203,
+        "S": 347,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "6.400314368681704594836101451664588259872108359095589975343792449",
+        "single_node_S_log_bound_enclosure": [
+          "6.400314368681704594836101451664588259872108359095589975343792449",
+          "6.400314368681704780339484719758697054593559643935277042723873428"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "3.966945179828921074087327876241142492397253700022016804166104025",
+          "3.966945179828921259590711144335251287118704984861703871546185005"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 466,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.015625,
+      "wall_seconds": 0.0571912999999995,
+      "S_lower_minus_193_lower": "-0.029966736938519922128691501742587996270710573737072946055828691",
+      "S_lower_minus_71_upper": "-0.040782146533992849709988163176980515745866079788862070782886076",
+      "n_lower_minus_193_lower": "-2.463335925791303442877465077166033763745565232810646117233517115"
+    },
+    {
+      "case_id": 11,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 183288,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 183288,
+        "blocks": 73,
+        "score": 182,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          12221015089703529,
+          10000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.2005719251966359938161942420626158113876400796718475710329684614",
+          "0.2005719251966359938161942420626158113876400796718475710329684616"
+        ],
+        "log_integrand_bounds": [
+          "7.273327863069835249614410544226041962280091687222599636377414565",
+          "7.273327863069835460343084404129344032831815407271257408927526211"
+        ],
+        "n": 91644,
+        "S": 1838,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.126924964532292755394483486840547849549703188468445634714046460",
+        "single_node_S_log_bound_enclosure": [
+          "5.126924964532292755394483486840547849549703188468445634714046460",
+          "5.126924964532292966123157346743849920101426908517103407264158109"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "3.172574728631479182507867669980133759427914062264609857729950432",
+          "3.172574728631479393236541529883435829979637782313267630280062081"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 1653,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.109375,
+      "wall_seconds": 0.11503740000000029,
+      "S_lower_minus_193_lower": "-0.009426786946897574097583536023942796217637107362326948038102094",
+      "S_lower_minus_71_upper": "-0.007846389700021803804295260684895323833742025899122946818147000",
+      "n_lower_minus_193_lower": "-1.963777022847711146984199352884356886339426233566162725022198122"
+    },
+    {
+      "case_id": 13,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 1152,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 1152,
+        "blocks": 30,
+        "score": 30,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          3210139599480429,
+          1000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "1.166314425131021275334190143173360494055506515297020423657034221",
+          "1.166314425131021275334190143173360494055506515297020423657034223"
+        ],
+        "log_integrand_bounds": [
+          "6.494594575569020640620776697941080661801595280282868562460070179",
+          "6.494594575569020821093503083233590620605654712886788337467650297"
+        ],
+        "n": 576,
+        "S": 58,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "6.067911567380778966510313368945026057706819493615679964641883379",
+        "single_node_S_log_bound_enclosure": [
+          "6.067911567380778966510313368945026057706819493615679964641883379",
+          "6.067911567380779146983039754237536016510878926219599739649463499"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.927759156079588911080050902169530666237447473403003606642724440",
+          "4.927759156079589091552777287462040625041506906006923381650304560"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 88,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.02161539999999995,
+      "S_lower_minus_193_lower": "-0.171115309897922519403995529030896807700738136131476056727788253",
+      "S_lower_minus_71_upper": "-0.169898586448927545296807458976006527363366394527054097262575158",
+      "n_lower_minus_193_lower": "-1.311267721199112574834257995806392199170110156344152414726947192"
+    },
+    {
+      "case_id": 13,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 1152,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 1152,
+        "blocks": 30,
+        "score": 30,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          3210139599480429,
+          1000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "1.166314425131021275334190143173360494055506515297020423657034221",
+          "1.166314425131021275334190143173360494055506515297020423657034223"
+        ],
+        "log_integrand_bounds": [
+          "6.494594575569020640620776697941080661801595280282868562460070179",
+          "6.494594575569020821093503083233590620605654712886788337467650297"
+        ],
+        "n": 576,
+        "S": 58,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "6.067911567380778966510313368945026057706819493615679964641883379",
+        "single_node_S_log_bound_enclosure": [
+          "6.067911567380778966510313368945026057706819493615679964641883379",
+          "6.067911567380779146983039754237536016510878926219599739649463499"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.927759156079588911080050902169530666237447473403003606642724440",
+          "4.927759156079589091552777287462040625041506906006923381650304560"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 88,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0019498999999996158,
+      "S_lower_minus_193_lower": "-0.171115309897922519403995529030896807700738136131476056727788253",
+      "S_lower_minus_71_upper": "-0.169898586448927545296807458976006527363366394527054097262575158",
+      "n_lower_minus_193_lower": "-1.311267721199112574834257995806392199170110156344152414726947192"
+    },
+    {
+      "case_id": 15,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 3754,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 3754,
+        "blocks": 40,
+        "score": 52,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          18830066906361893,
+          10000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.6328698028477730936947308424554481161280352829169956178949223554",
+          "0.6328698028477730936947308424554481161280352829169956178949223556"
+        ],
+        "log_integrand_bounds": [
+          "6.271255392940471831022679576225018802626473055030738484098846624",
+          "6.271255392940472037197899055978717537079741506685171798762003124"
+        ],
+        "n": 1877,
+        "S": 176,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.295266240418175311214593628767701346207951989452175160413312657",
+        "single_node_S_log_bound_enclosure": [
+          "5.295266240418175311214593628767701346207951989452175160413312657",
+          "5.295266240418175517389813108521400080661220441106608475076469160"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.114359776820985773474620100269856697415325682768639834034809179",
+          "4.114359776820985979649839580023555431868594134423073148697965681"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 216,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.03125,
+      "wall_seconds": 0.03290959999999998,
+      "S_lower_minus_193_lower": "-0.066974804162988121929557811416934270120106737293845691580349742",
+      "S_lower_minus_71_upper": "-0.072734989711037212245906655930703741023545004119589797956517287",
+      "n_lower_minus_193_lower": "-1.247881267760177659669531339914778918912733043977381017958853220"
+    },
+    {
+      "case_id": 15,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 3754,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 3754,
+        "blocks": 40,
+        "score": 52,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          18830066906361893,
+          10000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.6328698028477730936947308424554481161280352829169956178949223554",
+          "0.6328698028477730936947308424554481161280352829169956178949223556"
+        ],
+        "log_integrand_bounds": [
+          "6.271255392940471831022679576225018802626473055030738484098846624",
+          "6.271255392940472037197899055978717537079741506685171798762003124"
+        ],
+        "n": 1877,
+        "S": 176,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.295266240418175311214593628767701346207951989452175160413312657",
+        "single_node_S_log_bound_enclosure": [
+          "5.295266240418175311214593628767701346207951989452175160413312657",
+          "5.295266240418175517389813108521400080661220441106608475076469160"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.114359776820985773474620100269856697415325682768639834034809179",
+          "4.114359776820985979649839580023555431868594134423073148697965681"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 216,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0011790999999998775,
+      "S_lower_minus_193_lower": "-0.066974804162988121929557811416934270120106737293845691580349742",
+      "S_lower_minus_71_upper": "-0.072734989711037212245906655930703741023545004119589797956517287",
+      "n_lower_minus_193_lower": "-1.247881267760177659669531339914778918912733043977381017958853220"
+    },
+    {
+      "case_id": 17,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 90406,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 90406,
+        "blocks": 119,
+        "score": 295,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          2893040619159521,
+          2500000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.1460173345188637395762277429918000573948342910547769866918617938",
+          "0.1460173345188637395762277429918000573948342910547769866918617940"
+        ],
+        "log_integrand_bounds": [
+          "8.922622135177576854132710809202662098974339672550245521740361878",
+          "8.922622135177577304808893189229617084991585411033026968024876483"
+        ],
+        "n": 45203,
+        "S": 4245,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "6.357841527810594202663219290663273990867600040109955186923859298",
+        "single_node_S_log_bound_enclosure": [
+          "6.357841527810594202663219290663273990867600040109955186923859298",
+          "6.357841527810594653339401670690228976884845778592736633208373905"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "5.175237420202174215875008335542615316289880751241708998051642651",
+          "5.175237420202174666551190715569570302307126489724490444336157259"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 3001,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.171875,
+      "wall_seconds": 0.21197519999999948,
+      "S_lower_minus_193_lower": "-0.025803778326022586955786593292992389212347729303187490467964851",
+      "S_lower_minus_71_upper": "-0.020054105494753529740073723638057699594974804839846006913129134",
+      "n_lower_minus_193_lower": "-1.208407885934442573743997548413651063790067018171433679340181498"
+    },
+    {
+      "case_id": 17,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 71430,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 71430,
+        "blocks": 65,
+        "score": 247,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          11585739009836433,
+          10000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.1471898530876724310660829259226270043269744849882550756555790120",
+          "0.1471898530876724310660829259226270043269744849882550756555790122"
+        ],
+        "log_integrand_bounds": [
+          "7.244051708759310614506640152097819609041263345411369155451885558",
+          "7.244051708759310928823549949173086482761422057627050161514352044"
+        ],
+        "n": 35715,
+        "S": 3535,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "4.770761710645161638718226737326038110630425206015921362290215463",
+        "single_node_S_log_bound_enclosure": [
+          "4.770761710645161638718226737326038110630425206015921362290215463",
+          "4.770761710645161953035136534401304984350583918231602368352681952"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "3.614460399205375144283662659710661567377009443417146812190353975",
+          "3.614460399205375458600572456785928441097168155632827818252820463"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 2584,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.109375,
+      "wall_seconds": 0.14861089999999955,
+      "S_lower_minus_193_lower": "-0.027128696898171963055952022896958884615003381594397917081374988",
+      "S_lower_minus_71_upper": "-0.025355563490394748058469720434756635914768387322218461280790498",
+      "n_lower_minus_193_lower": "-1.183430008337958457490516100512335427868419144193172467181236476"
+    },
+    {
+      "case_id": 19,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 396,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 396,
+        "blocks": 21,
+        "score": 14,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          11039236624814421,
+          1000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "2.401455892155191856847197754906809654411002839418775900200439870",
+          "2.401455892155191856847197754906809654411002839418775900200439872"
+        ],
+        "log_integrand_bounds": [
+          "5.101293638856671778734969241366598574303872103420912871057746973",
+          "5.101293638856671835248064365567702452151925481185531903001210608"
+        ],
+        "n": 198,
+        "S": 16,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.296772680593181789807763790293829514446668205126079144346959653",
+        "single_node_S_log_bound_enclosure": [
+          "5.296772680593181789807763790293829514446668205126079144346959653",
+          "5.296772680593181846320858914494933392294721582890698176290423290"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.066726940259043632227470453296124181295217071134215288542348028",
+          "4.066726940259043688740565577497228059143270448898834320485811665"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 37,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.004112499999999741,
+      "S_lower_minus_193_lower": "-0.627844893604569766798976829129644852464628486755009067997304163",
+      "S_lower_minus_71_upper": "-0.622466772786075191336800526830617698982987388786872933327056642",
+      "n_lower_minus_193_lower": "-1.857890633938707924379270166127350185616079620746872923801915788"
+    },
+    {
+      "case_id": 19,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 396,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 396,
+        "blocks": 21,
+        "score": 14,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          11039236624814421,
+          1000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "2.401455892155191856847197754906809654411002839418775900200439870",
+          "2.401455892155191856847197754906809654411002839418775900200439872"
+        ],
+        "log_integrand_bounds": [
+          "5.101293638856671778734969241366598574303872103420912871057746973",
+          "5.101293638856671835248064365567702452151925481185531903001210608"
+        ],
+        "n": 198,
+        "S": 16,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.296772680593181789807763790293829514446668205126079144346959653",
+        "single_node_S_log_bound_enclosure": [
+          "5.296772680593181789807763790293829514446668205126079144346959653",
+          "5.296772680593181846320858914494933392294721582890698176290423290"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.066726940259043632227470453296124181295217071134215288542348028",
+          "4.066726940259043688740565577497228059143270448898834320485811665"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 37,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0009698999999994129,
+      "S_lower_minus_193_lower": "-0.627844893604569766798976829129644852464628486755009067997304163",
+      "S_lower_minus_71_upper": "-0.622466772786075191336800526830617698982987388786872933327056642",
+      "n_lower_minus_193_lower": "-1.857890633938707924379270166127350185616079620746872923801915788"
+    },
+    {
+      "case_id": 21,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 2964,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 2964,
+        "blocks": 38,
+        "score": 47,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          2019451667823577,
+          1000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.7028260229909799086084198205665096326023970045583990890972743014",
+          "0.7028260229909799086084198205665096326023970045583990890972743016"
+        ],
+        "log_integrand_bounds": [
+          "6.277417961134481886890651493000201035590173907031608001032185404",
+          "6.277417961134482089545193184234529706659361419443265503122422775"
+        ],
+        "n": 1482,
+        "S": 145,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.397700364044931718833542861415635674036945025413720208611827519",
+        "single_node_S_log_bound_enclosure": [
+          "5.397700364044931718833542861415635674036945025413720208611827519",
+          "5.397700364044931921488084552649964345106132537825377710702064893"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.238592503830133890461595966165054783668706911176448881492126156",
+          "4.238592503830134093116137657399383454737894423588106383582363529"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 183,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.015625,
+      "wall_seconds": 0.01860700000000115,
+      "S_lower_minus_193_lower": "-0.080002683491208522092563825097205557715811266924494589944064605",
+      "S_lower_minus_71_upper": "-0.085467665454138636970229165430935886926020313920196049339053976",
+      "n_lower_minus_193_lower": "-1.239110543706006350464510720347786448084049381161765917063765968"
+    },
+    {
+      "case_id": 21,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 2964,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 2964,
+        "blocks": 38,
+        "score": 47,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          2019451667823577,
+          1000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.7028260229909799086084198205665096326023970045583990890972743014",
+          "0.7028260229909799086084198205665096326023970045583990890972743016"
+        ],
+        "log_integrand_bounds": [
+          "6.277417961134481886890651493000201035590173907031608001032185404",
+          "6.277417961134482089545193184234529706659361419443265503122422775"
+        ],
+        "n": 1482,
+        "S": 145,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.397700364044931718833542861415635674036945025413720208611827519",
+        "single_node_S_log_bound_enclosure": [
+          "5.397700364044931718833542861415635674036945025413720208611827519",
+          "5.397700364044931921488084552649964345106132537825377710702064893"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.238592503830133890461595966165054783668706911176448881492126156",
+          "4.238592503830134093116137657399383454737894423588106383582363529"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 183,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0012515999999997973,
+      "S_lower_minus_193_lower": "-0.080002683491208522092563825097205557715811266924494589944064605",
+      "S_lower_minus_71_upper": "-0.085467665454138636970229165430935886926020313920196049339053976",
+      "n_lower_minus_193_lower": "-1.239110543706006350464510720347786448084049381161765917063765968"
+    },
+    {
+      "case_id": 23,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 35230,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 35230,
+        "blocks": 95,
+        "score": 123,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          13372573744812337,
+          10000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.2906207810756235433329567969330520701080221492385934041706081225",
+          "0.2906207810756235433329567969330520701080221492385934041706081227"
+        ],
+        "log_integrand_bounds": [
+          "7.070028130008958566638493867097506431653946443511592440041607325",
+          "7.070028130008958821347000115427068412502452528846994083980861345"
+        ],
+        "n": 17615,
+        "S": 877,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.293290546956018288130833599360835505375018701302451236785243631",
+        "single_node_S_log_bound_enclosure": [
+          "5.293290546956018288130833599360835505375018701302451236785243631",
+          "5.293290546956018542839339847690397486223524786637852880724497654"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "3.793832414292346017494252894004470068351265286371181740878102279",
+          "3.793832414292346272202759142334032049199771371706583384817356301"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 970,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0625,
+      "wall_seconds": 0.0824745,
+      "S_lower_minus_193_lower": "-0.024416826785615340430319864606166546312947823347359432930365952",
+      "S_lower_minus_71_upper": "-0.022815117009829498152641770517383772492439616246538260497877560",
+      "n_lower_minus_193_lower": "-1.523874959449287611066900569962531983336701238278628928837507304"
+    },
+    {
+      "case_id": 23,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 24740,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 24740,
+        "blocks": 56,
+        "score": 152,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          1293603130217493,
+          1000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.2574314490501677367211999339379731718028292061391590928019193538",
+          "0.2574314490501677367211999339379731718028292061391590928019193540"
+        ],
+        "log_integrand_bounds": [
+          "7.921404250528641273667093911384949980282553608539517698874835847",
+          "7.921404250528641535633672895706315861673118667577818992788000804"
+        ],
+        "n": 12370,
+        "S": 1248,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.968440709230470487077714698884312062000967845973020186478448934",
+        "single_node_S_log_bound_enclosure": [
+          "5.968440709230470487077714698884312062000967845973020186478448934",
+          "5.968440709230470749044293683205677943391532905011321480391613894"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.821934812861843527111355539476047687295822692793499725922279355",
+          "4.821934812861843789077934523797413568686387751831801019835444314"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 1217,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0625,
+      "wall_seconds": 0.10311060000000083,
+      "S_lower_minus_193_lower": "-0.032372636019345660971389928611829080265583122484863672381395698",
+      "S_lower_minus_71_upper": "-0.043982631577475257520268372993303381034584116633245161542904029",
+      "n_lower_minus_193_lower": "-1.178878532387972620937749088020093454970728275664384132937565277"
+    },
+    {
+      "case_id": 25,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 276,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 276,
+        "blocks": 18,
+        "score": 28,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          16513091703074363,
+          5000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "1.194715590418017947759441883219402329672522983454290433489453824",
+          "1.194715590418017947759441883219402329672522983454290433489453826"
+        ],
+        "log_integrand_bounds": [
+          "6.267639298220061782777750820487518311854394793989083999829565597",
+          "6.267639298220061830625746494568338909236500354805582316327883980"
+        ],
+        "n": 138,
+        "S": 62,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.808157648788913490027391069707196950325259479373442620803007737",
+        "single_node_S_log_bound_enclosure": [
+          "5.808157648788913490027391069707196950325259479373442620803007737",
+          "5.808157648788913537875386743788017547707365040189940937301326122"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "5.412488045419333955380920218913540628569994071809545708930357893",
+          "5.412488045419334003228915892994361225952099632626044025428676279"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 80,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.015625,
+      "wall_seconds": 0.01076340000000009,
+      "S_lower_minus_193_lower": "-0.214216873331469660202775284851270821489842969421795649225269847",
+      "S_lower_minus_71_upper": "-0.213251732832494313753389076739127458099813767686131905846547950",
+      "n_lower_minus_193_lower": "-0.609886476701049194849246135644927143245108376985692561097919691"
+    },
+    {
+      "case_id": 25,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 276,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 276,
+        "blocks": 18,
+        "score": 28,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          16513091703074363,
+          5000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "1.194715590418017947759441883219402329672522983454290433489453824",
+          "1.194715590418017947759441883219402329672522983454290433489453826"
+        ],
+        "log_integrand_bounds": [
+          "6.267639298220061782777750820487518311854394793989083999829565597",
+          "6.267639298220061830625746494568338909236500354805582316327883980"
+        ],
+        "n": 138,
+        "S": 62,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.808157648788913490027391069707196950325259479373442620803007737",
+        "single_node_S_log_bound_enclosure": [
+          "5.808157648788913490027391069707196950325259479373442620803007737",
+          "5.808157648788913537875386743788017547707365040189940937301326122"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "5.412488045419333955380920218913540628569994071809545708930357893",
+          "5.412488045419334003228915892994361225952099632626044025428676279"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 80,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0010860999999984244,
+      "S_lower_minus_193_lower": "-0.214216873331469660202775284851270821489842969421795649225269847",
+      "S_lower_minus_71_upper": "-0.213251732832494313753389076739127458099813767686131905846547950",
+      "n_lower_minus_193_lower": "-0.609886476701049194849246135644927143245108376985692561097919691"
+    },
+    {
+      "case_id": 27,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 1458,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 1458,
+        "blocks": 32,
+        "score": 64,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          17735901013353361,
+          10000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.5730057981898976792266268410904624098523628341135345889868151777",
+          "0.5730057981898976792266268410904624098523628341135345889868151779"
+        ],
+        "log_integrand_bounds": [
+          "7.261816671276527244846765012685310512956793253745907251812744488",
+          "7.261816671276527487312769772052870309967612729527750571481809613"
+        ],
+        "n": 729,
+        "S": 280,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "6.054725050374272413491007708202518750483747978739481154941757353",
+        "single_node_S_log_bound_enclosure": [
+          "6.054725050374272413491007708202518750483747978739481154941757353",
+          "6.054725050374272655957012467570078547494567454521324474610822480"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "5.577380117969926889489276714487651331640763694993760598436062658",
+          "5.577380117969927131955281473855211128651583170775603918105127785"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 312,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.015625,
+      "wall_seconds": 0.023482299999999512,
+      "S_lower_minus_193_lower": "-0.129834093497807994988079046294946740311274482726280363916496125",
+      "S_lower_minus_71_upper": "-0.127223735378068348775665823084772106973955071605574487702945810",
+      "n_lower_minus_193_lower": "-0.607179025902153518989810040009814159154258766472000920422190820"
+    },
+    {
+      "case_id": 27,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 1458,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 1458,
+        "blocks": 32,
+        "score": 64,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          17735901013353361,
+          10000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.5730057981898976792266268410904624098523628341135345889868151777",
+          "0.5730057981898976792266268410904624098523628341135345889868151779"
+        ],
+        "log_integrand_bounds": [
+          "7.261816671276527244846765012685310512956793253745907251812744488",
+          "7.261816671276527487312769772052870309967612729527750571481809613"
+        ],
+        "n": 729,
+        "S": 280,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "6.054725050374272413491007708202518750483747978739481154941757353",
+        "single_node_S_log_bound_enclosure": [
+          "6.054725050374272413491007708202518750483747978739481154941757353",
+          "6.054725050374272655957012467570078547494567454521324474610822480"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "5.577380117969926889489276714487651331640763694993760598436062658",
+          "5.577380117969927131955281473855211128651583170775603918105127785"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 312,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0011671999999993687,
+      "S_lower_minus_193_lower": "-0.129834093497807994988079046294946740311274482726280363916496125",
+      "S_lower_minus_71_upper": "-0.127223735378068348775665823084772106973955071605574487702945810",
+      "n_lower_minus_193_lower": "-0.607179025902153518989810040009814159154258766472000920422190820"
+    },
+    {
+      "case_id": 29,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 19546,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 19546,
+        "blocks": 80,
+        "score": 229,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          5859512877468217,
+          5000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.1586285609876959127413841495901773809703372799328788394970957840",
+          "0.1586285609876959127413841495901773809703372799328788394970957842"
+        ],
+        "log_integrand_bounds": [
+          "7.238308827415158780930632324967167978114949049461817626951183537",
+          "7.238308827415159095301815280163155011260031328607303700438873014"
+        ],
+        "n": 9773,
+        "S": 3533,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "4.765301714739955978752859625425505675846692215478493545813988760",
+        "single_node_S_log_bound_enclosure": [
+          "4.765301714739955978752859625425505675846692215478493545813988760",
+          "4.765301714739956293124042580621492708991774494623979619301678239"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.256654002264726766907166747401580881422694532794365082435269528",
+          "4.256654002264727081278349702597567914567776811939851155922959008"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 2610,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.09375,
+      "wall_seconds": 0.13582340000000137,
+      "S_lower_minus_193_lower": "-0.101700916013688002663281746948398867317449566044447136451366053",
+      "S_lower_minus_71_upper": "-0.107727930878224947526144998468113965467710423118399195001812946",
+      "n_lower_minus_193_lower": "-0.610348628488917214508974624972323661741447248728575599830085285"
+    },
+    {
+      "case_id": 29,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 12200,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 12200,
+        "blocks": 50,
+        "score": 186,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          242518507481863,
+          200000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.1927606604301524735298411440843418840600927819859413108028760548",
+          "0.1927606604301524735298411440843418840600927819859413108028760550"
+        ],
+        "log_integrand_bounds": [
+          "7.118178270960804950449305556950832377646582660293036595002024866",
+          "7.118178270960805264827836814298491402438570571617996206192599143"
+        ],
+        "n": 6100,
+        "S": 2406,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "4.837195765833887026317495286987985556321567282998085037385049507",
+        "single_node_S_log_bound_enclosure": [
+          "4.837195765833887026317495286987985556321567282998085037385049507",
+          "4.837195765833887340696026544335644581113555194323044648575623787"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.372159999149496779372502098245599015899735435280543983023563362",
+          "4.372159999149497093751033355593258040691723346605503594214137642"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 1904,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.09375,
+      "wall_seconds": 0.095744100000001,
+      "S_lower_minus_193_lower": "-0.111592354570725791717710498678253924495873714382524120315936216",
+      "S_lower_minus_71_upper": "-0.113394185422596173042389131222064810500742889437669046661263163",
+      "n_lower_minus_193_lower": "-0.576628121255116038662703687420640464917705562100065174677422361"
+    },
+    {
+      "case_id": 31,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 70,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 70,
+        "blocks": 7,
+        "score": 10,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          3602956857872289,
+          125000000000000
+        ],
+        "node_log_odds_bounds": [
+          "3.361196399428028073820057811856404699234588987096169808851933633",
+          "3.361196399428028073820057811856404699234588987096169808851933635"
+        ],
+        "log_integrand_bounds": [
+          "4.509968473566374334372992116455502722008073832696664152570022179",
+          "4.509968473566374358296989953495913020699126613104913310819180925"
+        ],
+        "n": 35,
+        "S": 10,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "4.923106550931807113539582185336732280034118013725994231898569873",
+        "single_node_S_log_bound_enclosure": [
+          "4.923106550931807113539582185336732280034118013725994231898569873",
+          "4.923106550931807137463580022377142578725170794134243390147728621"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.330294718102937384758076615938594657221980748511698113652479385",
+          "4.330294718102937408682074452979004955913033528919947271901638133"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 17,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.002926299999998605,
+      "S_lower_minus_193_lower": "-1.041767066158018852556001071029919345278684867962105096252776001",
+      "S_lower_minus_71_upper": "-1.046470612418595726269072615987666980390650118925437330703941168",
+      "n_lower_minus_193_lower": "-1.634578898986888581337506640428056968090822133176401214498866489"
+    },
+    {
+      "case_id": 31,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 70,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 70,
+        "blocks": 7,
+        "score": 10,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          3602956857872289,
+          125000000000000
+        ],
+        "node_log_odds_bounds": [
+          "3.361196399428028073820057811856404699234588987096169808851933633",
+          "3.361196399428028073820057811856404699234588987096169808851933635"
+        ],
+        "log_integrand_bounds": [
+          "4.509968473566374334372992116455502722008073832696664152570022179",
+          "4.509968473566374358296989953495913020699126613104913310819180925"
+        ],
+        "n": 35,
+        "S": 10,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "4.923106550931807113539582185336732280034118013725994231898569873",
+        "single_node_S_log_bound_enclosure": [
+          "4.923106550931807113539582185336732280034118013725994231898569873",
+          "4.923106550931807137463580022377142578725170794134243390147728621"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.330294718102937384758076615938594657221980748511698113652479385",
+          "4.330294718102937408682074452979004955913033528919947271901638133"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 17,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0010347000000017204,
+      "S_lower_minus_193_lower": "-1.041767066158018852556001071029919345278684867962105096252776001",
+      "S_lower_minus_71_upper": "-1.046470612418595726269072615987666980390650118925437330703941168",
+      "n_lower_minus_193_lower": "-1.634578898986888581337506640428056968090822133176401214498866489"
+    },
+    {
+      "case_id": 33,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 150,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 150,
+        "blocks": 13,
+        "score": 17,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          12210671742256121,
+          2000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "1.809163121795149419223893819904020182690876091944958142609607691",
+          "1.809163121795149419223893819904020182690876091944958142609607693"
+        ],
+        "log_integrand_bounds": [
+          "5.214344064629851017146940579630932126086562459222147475193417935",
+          "5.214344064629851041070938416671342424777615239630396633442577148"
+        ],
+        "n": 75,
+        "S": 25,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.197381509383728045609142655982978747583076027659954956861386724",
+        "single_node_S_log_bound_enclosure": [
+          "5.197381509383728045609142655982978747583076027659954956861386724",
+          "5.197381509383728069533140493023389046274128808068204115110545939"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.661063108251303528922756600092622997329270302210366478741589356",
+          "4.661063108251303552846754437133033296020323082618615636990748572"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 38,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.015625,
+      "wall_seconds": 0.005069900000000516,
+      "S_lower_minus_193_lower": "-0.352098263253631763497607374146276416372509263790103595400693522",
+      "S_lower_minus_71_upper": "-0.348445123873667414609944902122148058566297675726306226648156495",
+      "n_lower_minus_193_lower": "-0.888416664386056280183993430036632166626314989239692073520490890"
+    },
+    {
+      "case_id": 33,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 150,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 150,
+        "blocks": 13,
+        "score": 17,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          12210671742256121,
+          2000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "1.809163121795149419223893819904020182690876091944958142609607691",
+          "1.809163121795149419223893819904020182690876091944958142609607693"
+        ],
+        "log_integrand_bounds": [
+          "5.214344064629851017146940579630932126086562459222147475193417935",
+          "5.214344064629851041070938416671342424777615239630396633442577148"
+        ],
+        "n": 75,
+        "S": 25,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.197381509383728045609142655982978747583076027659954956861386724",
+        "single_node_S_log_bound_enclosure": [
+          "5.197381509383728045609142655982978747583076027659954956861386724",
+          "5.197381509383728069533140493023389046274128808068204115110545939"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.661063108251303528922756600092622997329270302210366478741589356",
+          "4.661063108251303552846754437133033296020323082618615636990748572"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 38,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0009745999999992705,
+      "S_lower_minus_193_lower": "-0.352098263253631763497607374146276416372509263790103595400693522",
+      "S_lower_minus_71_upper": "-0.348445123873667414609944902122148058566297675726306226648156495",
+      "n_lower_minus_193_lower": "-0.888416664386056280183993430036632166626314989239692073520490890"
+    },
+    {
+      "case_id": 35,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 7614,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 7614,
+        "blocks": 56,
+        "score": 127,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          657238246191049,
+          500000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.2734384817126359914642804145515407162552630649177282027292914557",
+          "0.2734384817126359914642804145515407162552630649177282027292914559"
+        ],
+        "log_integrand_bounds": [
+          "6.828000660322653000732074675584908323816898481975261209395999314",
+          "6.828000660322653325056372794834090589198015329814153615804347118"
+        ],
+        "n": 3807,
+        "S": 1131,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "4.924215744705706930189410838592955861278079204162316316944774401",
+        "single_node_S_log_bound_enclosure": [
+          "4.924215744705706930189410838592955861278079204162316316944774401",
+          "4.924215744705707254513708957842138126659196052001208723353122207"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.317656676131643085709112549145107978952401882988858753153816895",
+          "4.317656676131643410033410668394290244333518730827751159562164701"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 1162,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.046875,
+      "wall_seconds": 0.06425010000000064,
+      "S_lower_minus_193_lower": "-0.102089429134885895943515831279089874551793888416220262570814697",
+      "S_lower_minus_71_upper": "-0.103124502759813739970032699348754377989314375567424024842532639",
+      "n_lower_minus_193_lower": "-0.708648497708949740423814120726937756877471209589677826361772203"
+    },
+    {
+      "case_id": 35,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 10844,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 10844,
+        "blocks": 49,
+        "score": 194,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          12478118053142817,
+          10000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.2213914615524088289250406169868595575366624036532491608630989549",
+          "0.2213914615524088289250406169868595575366624036532491608630989551"
+        ],
+        "log_integrand_bounds": [
+          "8.888261458939332630400032034296051238183057237759627440629411496",
+          "8.888261458939332900687679359582967385129010919579394955935577451"
+        ],
+        "n": 5422,
+        "S": 2200,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "6.652013631940719847968284463632149792515197117162087067628171107",
+        "single_node_S_log_bound_enclosure": [
+          "6.652013631940719847968284463632149792515197117162087067628171107",
+          "6.652013631940720118255931788919065939461150798981854582934337065"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "6.201144949283420355850218778059761725667743455534713086848505145",
+          "6.201144949283420626137866103346677872613697137354480602154671103"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 1764,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0625,
+      "wall_seconds": 0.08842849999999913,
+      "S_lower_minus_193_lower": "-0.115531533788554679254355847678085692433731252618313954289537237",
+      "S_lower_minus_71_upper": "-0.113126801553768075832351764975797329581591489378897695411174559",
+      "n_lower_minus_193_lower": "-0.566400216445854171372421533250473759281184914245687935069203199"
+    },
+    {
+      "case_id": 37,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 80,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 80,
+        "blocks": 8,
+        "score": 18,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          6641958055785947,
+          1000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "1.893406807937016078980602471518791837192662717126793177284909818",
+          "1.893406807937016078980602471518791837192662717126793177284909820"
+        ],
+        "log_integrand_bounds": [
+          "6.208763866450617743039513780566957235005470192858973049101832743",
+          "6.208763866450617766963511617607367533696522973267222207350991602"
+        ],
+        "n": 40,
+        "S": 30,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "6.103855977972662671272493476159572837717398335616715730161305256",
+        "single_node_S_log_bound_enclosure": [
+          "6.103855977972662671272493476159572837717398335616715730161305256",
+          "6.103855977972662695196491313199983136408451116024964888410464117"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "5.964063546863081892303693951912047648754162566157360899230032837",
+          "5.964063546863081916227691788952457947445215346565610057479191698"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 38,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.004816599999999838,
+      "S_lower_minus_193_lower": "-0.370694007039599362550887935435506677544359731803178336113627725",
+      "S_lower_minus_71_upper": "-0.367526603163121404957763611872308820753860315577884632415755372",
+      "n_lower_minus_193_lower": "-0.510486438149180141519687459683031866507595501262533167044900144"
+    },
+    {
+      "case_id": 37,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 80,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 80,
+        "blocks": 8,
+        "score": 18,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          6641958055785947,
+          1000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "1.893406807937016078980602471518791837192662717126793177284909818",
+          "1.893406807937016078980602471518791837192662717126793177284909820"
+        ],
+        "log_integrand_bounds": [
+          "6.208763866450617743039513780566957235005470192858973049101832743",
+          "6.208763866450617766963511617607367533696522973267222207350991602"
+        ],
+        "n": 40,
+        "S": 30,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "6.103855977972662671272493476159572837717398335616715730161305256",
+        "single_node_S_log_bound_enclosure": [
+          "6.103855977972662671272493476159572837717398335616715730161305256",
+          "6.103855977972662695196491313199983136408451116024964888410464117"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "5.964063546863081892303693951912047648754162566157360899230032837",
+          "5.964063546863081916227691788952457947445215346565610057479191698"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 38,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.000995500000000149,
+      "S_lower_minus_193_lower": "-0.370694007039599362550887935435506677544359731803178336113627725",
+      "S_lower_minus_71_upper": "-0.367526603163121404957763611872308820753860315577884632415755372",
+      "n_lower_minus_193_lower": "-0.510486438149180141519687459683031866507595501262533167044900144"
+    },
+    {
+      "case_id": 39,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 352,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 352,
+        "blocks": 20,
+        "score": 42,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          324087723148607,
+          125000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.9527004923024009250842627638078557521771413418051509197495761456",
+          "0.9527004923024009250842627638078557521771413418051509197495761458"
+        ],
+        "log_integrand_bounds": [
+          "8.054371621825955750539826154968494098155719352194834946942535612",
+          "8.054371621825955809887062305205469745507377682388920372854223378"
+        ],
+        "n": 176,
+        "S": 146,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "7.171241042201205650934412650927845724131786951699637699553629844",
+        "single_node_S_log_bound_enclosure": [
+          "7.171241042201205650934412650927845724131786951699637699553629844",
+          "7.171241042201205710281648801164821371483445281893723125465317612"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "7.078382469303659230731740207511176641737198286616271623257001645",
+          "7.078382469303659290078976357748152289088856616810357049168689414"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 166,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.013433199999999701,
+      "S_lower_minus_193_lower": "-0.278239193904932985006634704302569841666500220433687722776172098",
+      "S_lower_minus_71_upper": "-0.286272298692306908030383801750977288435095348440405853883737381",
+      "n_lower_minus_193_lower": "-0.371097766802479405209307147719238924061088885517053799072800297"
+    },
+    {
+      "case_id": 39,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 352,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 352,
+        "blocks": 20,
+        "score": 42,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          324087723148607,
+          125000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.9527004923024009250842627638078557521771413418051509197495761456",
+          "0.9527004923024009250842627638078557521771413418051509197495761458"
+        ],
+        "log_integrand_bounds": [
+          "8.054371621825955750539826154968494098155719352194834946942535612",
+          "8.054371621825955809887062305205469745507377682388920372854223378"
+        ],
+        "n": 176,
+        "S": 146,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "7.171241042201205650934412650927845724131786951699637699553629844",
+        "single_node_S_log_bound_enclosure": [
+          "7.171241042201205650934412650927845724131786951699637699553629844",
+          "7.171241042201205710281648801164821371483445281893723125465317612"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "7.078382469303659230731740207511176641737198286616271623257001645",
+          "7.078382469303659290078976357748152289088856616810357049168689414"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 166,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0010777999999991295,
+      "S_lower_minus_193_lower": "-0.278239193904932985006634704302569841666500220433687722776172098",
+      "S_lower_minus_71_upper": "-0.286272298692306908030383801750977288435095348440405853883737381",
+      "n_lower_minus_193_lower": "-0.371097766802479405209307147719238924061088885517053799072800297"
+    },
+    {
+      "case_id": 41,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 3336,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 3336,
+        "blocks": 39,
+        "score": 121,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          6677924644507677,
+          5000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.2893693448828869343825734410084301799977673675772823287322576307",
+          "0.2893693448828869343825734410084301799977673675772823287322576309"
+        ],
+        "log_integrand_bounds": [
+          "6.907657206489441394327661034238092980776111618859365896403283291",
+          "6.907657206489441686965680147904429325300856233472014673134810752"
+        ],
+        "n": 1668,
+        "S": 1569,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "4.840327471082882574804004546557967460541336667111192897360357890",
+        "single_node_S_log_bound_enclosure": [
+          "4.840327471082882574804004546557967460541336667111192897360357890",
+          "4.840327471082882867442023660224303805066081281723841674091885354"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.809752958423141907364854629545278412350493958121106502380981805",
+          "4.809752958423142200002873743211614756875238572733755279112509269"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 1220,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0625,
+      "wall_seconds": 0.061608099999999055,
+      "S_lower_minus_193_lower": "-0.316223313011376259620972340852578591767235096674587488676155752",
+      "S_lower_minus_71_upper": "-0.314631806590996857782662679653356724723690510282109989883188083",
+      "n_lower_minus_193_lower": "-0.346797825671116927060122257865267639958077805664673883655531837"
+    },
+    {
+      "case_id": 41,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 3336,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 3336,
+        "blocks": 39,
+        "score": 121,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          6677924644507677,
+          5000000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.2893693448828869343825734410084301799977673675772823287322576307",
+          "0.2893693448828869343825734410084301799977673675772823287322576309"
+        ],
+        "log_integrand_bounds": [
+          "6.907657206489441394327661034238092980776111618859365896403283291",
+          "6.907657206489441686965680147904429325300856233472014673134810752"
+        ],
+        "n": 1668,
+        "S": 1569,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "4.840327471082882574804004546557967460541336667111192897360357890",
+        "single_node_S_log_bound_enclosure": [
+          "4.840327471082882574804004546557967460541336667111192897360357890",
+          "4.840327471082882867442023660224303805066081281723841674091885354"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "4.809752958423141907364854629545278412350493958121106502380981805",
+          "4.809752958423142200002873743211614756875238572733755279112509269"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 1220,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0011699000000007231,
+      "S_lower_minus_193_lower": "-0.316223313011376259620972340852578591767235096674587488676155752",
+      "S_lower_minus_71_upper": "-0.314631806590996857782662679653356724723690510282109989883188083",
+      "n_lower_minus_193_lower": "-0.346797825671116927060122257865267639958077805664673883655531837"
+    },
+    {
+      "case_id": 43,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 32,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 32,
+        "blocks": 1,
+        "score": 16,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          239577146521921,
+          625000000000
+        ],
+        "node_log_odds_bounds": [
+          "5.948879109142909678702533569383240566475176727926967269526850619",
+          "5.948879109142909678702533569383240566475176727926967269526850621"
+        ],
+        "log_integrand_bounds": [
+          "15.52059934426995572110165723922977765653736864806116366017427320",
+          "15.52059934426995574502565526213501644109683841612293765170154267"
+        ],
+        "n": 16,
+        "S": 16,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "15.71607838600646573217445178815700859668016474976632993346348588",
+        "single_node_S_log_bound_enclosure": [
+          "15.71607838600646573217445178815700859668016474976632993346348588",
+          "15.71607838600646575609844981106224738123963451782810392499075536"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "15.71607838600646573217445178815700859668016474976632993346348588",
+          "15.71607838600646575609844981106224738123963451782810392499075536"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 12,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0019252999999999076,
+      "S_lower_minus_193_lower": "-1.33638377199302155256758515366403213241124872703547830243698205",
+      "S_lower_minus_71_upper": "-1.35798660298848388699331791253220786692497710956146601638034030",
+      "n_lower_minus_193_lower": "-1.33638377199302155256758515366403213241124872703547830243698205"
+    },
+    {
+      "case_id": 43,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 32,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 32,
+        "blocks": 1,
+        "score": 16,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          239577146521921,
+          625000000000
+        ],
+        "node_log_odds_bounds": [
+          "5.948879109142909678702533569383240566475176727926967269526850619",
+          "5.948879109142909678702533569383240566475176727926967269526850621"
+        ],
+        "log_integrand_bounds": [
+          "15.52059934426995572110165723922977765653736864806116366017427320",
+          "15.52059934426995574502565526213501644109683841612293765170154267"
+        ],
+        "n": 16,
+        "S": 16,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "15.71607838600646573217445178815700859668016474976632993346348588",
+        "single_node_S_log_bound_enclosure": [
+          "15.71607838600646573217445178815700859668016474976632993346348588",
+          "15.71607838600646575609844981106224738123963451782810392499075536"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "15.71607838600646573217445178815700859668016474976632993346348588",
+          "15.71607838600646575609844981106224738123963451782810392499075536"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 12,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.001008000000000564,
+      "S_lower_minus_193_lower": "-1.33638377199302155256758515366403213241124872703547830243698205",
+      "S_lower_minus_71_upper": "-1.35798660298848388699331791253220786692497710956146601638034030",
+      "n_lower_minus_193_lower": "-1.33638377199302155256758515366403213241124872703547830243698205"
+    },
+    {
+      "case_id": 45,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 80,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 80,
+        "blocks": 8,
+        "score": 18,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          115545963659611,
+          20000000000000
+        ],
+        "node_log_odds_bounds": [
+          "1.753936131008125688374540351514181676385704454914648223447018397",
+          "1.753936131008125688374540351514181676385704454914648223447018399"
+        ],
+        "log_integrand_bounds": [
+          "5.759603381641089849732700861587523027243943857230916842051945244",
+          "5.759603381641089873656698698627933325934996637639166000301104110"
+        ],
+        "n": 40,
+        "S": 34,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.594015064661001061077206681116633550599498423303766053803757772",
+        "single_node_S_log_bound_enclosure": [
+          "5.594015064661001061077206681116633550599498423303766053803757772",
+          "5.594015064661001085001204518157043849290551203712015212052916640"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "5.514903062053553998996881032932613440992636230529304692180145338",
+          "5.514903062053554022920878869973023739683689010937553850429304206"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 42,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.004813800000000867,
+      "S_lower_minus_193_lower": "-0.348694842232208942414095108260003640341758359776637646260155545",
+      "S_lower_minus_71_upper": "-0.346233547831157885777361368387739327396685729016457446985561123",
+      "n_lower_minus_193_lower": "-0.427806844839656004494420756444023749948620552551099007883767979"
+    },
+    {
+      "case_id": 45,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 80,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 80,
+        "blocks": 8,
+        "score": 18,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          115545963659611,
+          20000000000000
+        ],
+        "node_log_odds_bounds": [
+          "1.753936131008125688374540351514181676385704454914648223447018397",
+          "1.753936131008125688374540351514181676385704454914648223447018399"
+        ],
+        "log_integrand_bounds": [
+          "5.759603381641089849732700861587523027243943857230916842051945244",
+          "5.759603381641089873656698698627933325934996637639166000301104110"
+        ],
+        "n": 40,
+        "S": 34,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "5.594015064661001061077206681116633550599498423303766053803757772",
+        "single_node_S_log_bound_enclosure": [
+          "5.594015064661001061077206681116633550599498423303766053803757772",
+          "5.594015064661001085001204518157043849290551203712015212052916640"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "5.514903062053553998996881032932613440992636230529304692180145338",
+          "5.514903062053554022920878869973023739683689010937553850429304206"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 42,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0010539999999998884,
+      "S_lower_minus_193_lower": "-0.348694842232208942414095108260003640341758359776637646260155545",
+      "S_lower_minus_71_upper": "-0.346233547831157885777361368387739327396685729016457446985561123",
+      "n_lower_minus_193_lower": "-0.427806844839656004494420756444023749948620552551099007883767979"
+    },
+    {
+      "case_id": 47,
+      "method": "closed_fisher",
+      "rep": 0,
+      "checkpoint_shots": 2340,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 2340,
+        "blocks": 36,
+        "score": 107,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          14473402126769,
+          10000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.3697275358929311453500963035739960312239019420012873407429976835",
+          "0.3697275358929311453500963035739960312239019420012873407429976837"
+        ],
+        "log_integrand_bounds": [
+          "8.037364038752571949719563982808696867329443488208995124201908335",
+          "8.037364038752572300723358823252245300429215202247971526979553012"
+        ],
+        "n": 1170,
+        "S": 1045,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "6.173085430204755895803438191486855144369420510774425044476328517",
+        "single_node_S_log_bound_enclosure": [
+          "6.173085430204755895803438191486855144369420510774425044476328517",
+          "6.173085430204756246807233031930403577469192224813401447253973196"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "6.116643070718331330000509250702547257587577917920592604881459094",
+          "6.116643070718331681004304091146095690687349631959569007659103773"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 918,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0625,
+      "wall_seconds": 0.061568399999998746,
+      "S_lower_minus_193_lower": "-0.298449304344814507404970420907841760946661064885384671007802642",
+      "S_lower_minus_71_upper": "-0.308329249945005779017422526976881023433573078506177624379241938",
+      "n_lower_minus_193_lower": "-0.354891663831239073207899361692149647728503657739217110602672065"
+    },
+    {
+      "case_id": 47,
+      "method": "psr_fisher",
+      "rep": 0,
+      "checkpoint_shots": 2340,
+      "node_index_in_193_grid": 96,
+      "certificate": {
+        "method": "continuous_jeffreys_balanced_fisher_single_node_curvature_v1",
+        "decision": "reject",
+        "delta": "0.01",
+        "shots": 2340,
+        "blocks": 36,
+        "score": 107,
+        "score_definition": "sum(plus-minus)=2*U",
+        "node": [
+          14473402126769,
+          10000000000000
+        ],
+        "node_log_odds_bounds": [
+          "0.3697275358929311453500963035739960312239019420012873407429976835",
+          "0.3697275358929311453500963035739960312239019420012873407429976837"
+        ],
+        "log_integrand_bounds": [
+          "8.037364038752571949719563982808696867329443488208995124201908335",
+          "8.037364038752572300723358823252245300429215202247971526979553012"
+        ],
+        "n": 1170,
+        "S": 1045,
+        "decision_bound": "S",
+        "log_evidence_lower_bound": "6.173085430204755895803438191486855144369420510774425044476328517",
+        "single_node_S_log_bound_enclosure": [
+          "6.173085430204755895803438191486855144369420510774425044476328517",
+          "6.173085430204756246807233031930403577469192224813401447253973196"
+        ],
+        "single_node_n_log_bound_enclosure": [
+          "6.116643070718331330000509250702547257587577917920592604881459094",
+          "6.116643070718331681004304091146095690687349631959569007659103773"
+        ],
+        "threshold_log_bounds": [
+          "4.605170185988091368035982909368728415202202977257545952066655801",
+          "4.605170185988091368035982909368728415202202977257545952066655803"
+        ],
+        "retained_cgf_terms": 918,
+        "whole_line_integration": true,
+        "fixed_prior": "rho(lambda)=1/(2*pi*cosh(lambda/2)) on the entire real line",
+        "anytime_valid_under_assumptions": true,
+        "assumptions": "predictable balanced independent Bernoulli blocks with a common ordering",
+        "limits": [
+          "Bound enclosures are not upper bounds on the complete mixture.",
+          "The derivative-square improvement is deliberately omitted.",
+          "A finite fixed node need not have positive growth at every gap.",
+          "This is not empirical stopping-cost or SOTA superiority."
+        ]
+      },
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0013687999999998368,
+      "S_lower_minus_193_lower": "-0.298449304344814507404970420907841760946661064885384671007802642",
+      "S_lower_minus_71_upper": "-0.308329249945005779017422526976881023433573078506177624379241938",
+      "n_lower_minus_193_lower": "-0.354891663831239073207899361692149647728503657739217110602672065"
+    }
+  ],
+  "summary": {
+    "S_lower_exceeds_193_lower": 0,
+    "S_lower_exceeds_71_upper": 0,
+    "certified_crossings": 46,
+    "cpu_seconds_total": 1.921875,
+    "wall_seconds_total": 2.3294352999999965
+  },
+  "sources_and_inputs_unchanged": true,
+  "claim_boundary": "A stronger computed lower bound is not a stopping-cost or SOTA win. Bounds below another lower bound do not order the true complete mixture.",
+  "elapsed_seconds": 13.9792555
+}

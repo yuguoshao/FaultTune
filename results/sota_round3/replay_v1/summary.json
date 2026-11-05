@@ -1,0 +1,1608 @@
+{
+  "status": "complete_development_replay_with_explicit_censoring",
+  "input_sha256": {
+    "results/sota_round3/beta_boundary_N2048.json": "b6d215f23593d1d0151ec03c918bbcd6173a55154d44fcb840ad9d056652f84e",
+    "results/sota_round3/boundaries/maxsprt.json": "506c54e766563437d53297498101880c33eef97db489d64fcdf518dbd96151c0",
+    "results/sota_round3/boundaries/pair_grid.json": "fb4c63db31fc16d53239e8361da19a135b3408385c6a6b675d1c1a216d5902b4",
+    "results/sota_round3/boundaries/pairwise_hedge.json": "39f0e5010253d6169c6d34932842e4b3790037d09e7385219744beed438c131e",
+    "results/sota_round3/boundaries/sprt_0.6.json": "44a83f0a821e81c092c863ec0c3cf1a033f1c9cc6493c69632beb0df4757b378",
+    "results/sota_round3/boundaries/sprt_0.75.json": "e2321fd70fd270a6e9fd686db24ce9763a23438d8e884c77bde66abb3ddfbeaf",
+    "results/sota_round3/boundaries/sprt_0.9.json": "f0d6fdd34d21367385ed9f5f164fc830020a26502b64ae6dc9d63c0d46073359",
+    "results/sota_round3/boundaries/sprt_0.99.json": "f3a656bb731d10c070abf5b155b4a2106455571b2eee8282493a53b53902cf75",
+    "results/sota_round2/benchmark/paths.jsonl": "1b36df11b1dbf1843731619765dcd906a7202ca2442c409d51cd15a013bf7440",
+    "results/sota_round2/benchmark/preliminary_plan.json": "f245d69f688211e7c1b12985b266f5e288decafb951f1a1d72db5fa1fc2f0c33",
+    "experiments/sota_round3/replay_boundaries.py": "b5f247b3a803d587ed7bf12e7be3ef275cbe0b5f0893d1386a2cf4ec0563f229"
+  },
+  "path_count": 80,
+  "record_count": 720,
+  "new_simulation_observations": 0,
+  "inferential_confidence_intervals": false,
+  "cost_intervals": "Logical bounds for unobserved continuation, not statistical confidence intervals. Methods inspect the same physical checkpoints as each reference path.",
+  "outcomes": [
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "beta_exact",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 29,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 3,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 0.9371254597117815,
+      "geometric_cost_ratio_upper": 0.9371254597117815,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1075.5,
+          "ratio_lower": 0.9200371920037193,
+          "ratio_upper": 0.9200371920037193
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 3534.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 217.0,
+          "ratio_lower": 0.923963133640553,
+          "ratio_upper": 0.923963133640553
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1267.5,
+          "ratio_lower": 0.9680473372781065,
+          "ratio_upper": 0.9680473372781065
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 56.5,
+          "ratio_lower": 0.8761061946902655,
+          "ratio_upper": 0.8761061946902655
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 408.5,
+          "ratio_lower": 0.9118727050183598,
+          "ratio_upper": 0.9118727050183598
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 21.0,
+          "ratio_lower": 0.9047619047619048,
+          "ratio_upper": 0.9047619047619048
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 83.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "beta_exact",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 1,
+      "observed_cap_abstentions": 7,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 3251.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "beta_ville",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 29,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 3,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1075.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 3534.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 217.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1267.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 56.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 408.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 21.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 83.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "beta_ville",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 1,
+      "observed_cap_abstentions": 7,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 3251.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "maxsprt",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 29,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 3,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 0.9925606299367633,
+      "geometric_cost_ratio_upper": 0.9925606299367633,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1075.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 3534.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 217.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1267.5,
+          "ratio_lower": 0.9420118343195266,
+          "ratio_upper": 0.9420118343195266
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 56.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 408.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 21.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 83.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "maxsprt",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 1,
+      "observed_cap_abstentions": 7,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 3251.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "pair_grid",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 29,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 3,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 0.9371254597117815,
+      "geometric_cost_ratio_upper": 0.9371254597117815,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1075.5,
+          "ratio_lower": 0.9200371920037193,
+          "ratio_upper": 0.9200371920037193
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 3534.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 217.0,
+          "ratio_lower": 0.923963133640553,
+          "ratio_upper": 0.923963133640553
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1267.5,
+          "ratio_lower": 0.9680473372781065,
+          "ratio_upper": 0.9680473372781065
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 56.5,
+          "ratio_lower": 0.8761061946902655,
+          "ratio_upper": 0.8761061946902655
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 408.5,
+          "ratio_lower": 0.9118727050183598,
+          "ratio_upper": 0.9118727050183598
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 21.0,
+          "ratio_lower": 0.9047619047619048,
+          "ratio_upper": 0.9047619047619048
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 83.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "pair_grid",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 1,
+      "observed_cap_abstentions": 7,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 3251.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "pairwise_hedge",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 29,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 3,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 0.9371254597117815,
+      "geometric_cost_ratio_upper": 0.9371254597117815,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1075.5,
+          "ratio_lower": 0.9200371920037193,
+          "ratio_upper": 0.9200371920037193
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 3534.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 217.0,
+          "ratio_lower": 0.923963133640553,
+          "ratio_upper": 0.923963133640553
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1267.5,
+          "ratio_lower": 0.9680473372781065,
+          "ratio_upper": 0.9680473372781065
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 56.5,
+          "ratio_lower": 0.8761061946902655,
+          "ratio_upper": 0.8761061946902655
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 408.5,
+          "ratio_lower": 0.9118727050183598,
+          "ratio_upper": 0.9118727050183598
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 21.0,
+          "ratio_lower": 0.9047619047619048,
+          "ratio_upper": 0.9047619047619048
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 83.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "pairwise_hedge",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 1,
+      "observed_cap_abstentions": 7,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 3251.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "sprt_0.6",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 3,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 3,
+      "right_censored": 26,
+      "geometric_cost_ratio_lower": 1.077454541168794,
+      "geometric_cost_ratio_upper": 13.192496845054324,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1075.5,
+          "ratio_lower": 1.1255230125523012,
+          "ratio_upper": 3.808461180846118
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 3534.0,
+          "ratio_lower": 1.0164119977362762,
+          "ratio_upper": 1.159026598754952
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 217.0,
+          "ratio_lower": 1.1290322580645162,
+          "ratio_upper": 18.87557603686636
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1267.5,
+          "ratio_lower": 0.9514792899408284,
+          "ratio_upper": 2.8339250493096646
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 56.5,
+          "ratio_lower": 1.1327433628318584,
+          "ratio_upper": 72.49557522123894
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 408.5,
+          "ratio_lower": 1.0526315789473684,
+          "ratio_upper": 5.602203182374541
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 21.0,
+          "ratio_lower": 1.0952380952380953,
+          "ratio_upper": 195.04761904761904
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 83.5,
+          "ratio_lower": 1.1317365269461077,
+          "ratio_upper": 49.053892215568865
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "sprt_0.6",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 1,
+      "observed_cap_abstentions": 7,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 0.9969197524237177,
+      "geometric_cost_ratio_upper": 0.9969197524237177,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 3251.5,
+          "ratio_lower": 0.9938489927725666,
+          "ratio_upper": 0.9938489927725666
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "sprt_0.75",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 12,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 3,
+      "right_censored": 17,
+      "geometric_cost_ratio_lower": 1.0062298154916085,
+      "geometric_cost_ratio_upper": 5.8008474903481675,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1075.5,
+          "ratio_lower": 1.1255230125523012,
+          "ratio_upper": 3.808461180846118
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 3534.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 217.0,
+          "ratio_lower": 1.1290322580645162,
+          "ratio_upper": 18.87557603686636
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1267.5,
+          "ratio_lower": 0.8631163708086785,
+          "ratio_upper": 1.6331360946745561
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 56.5,
+          "ratio_lower": 1.1327433628318584,
+          "ratio_upper": 72.49557522123894
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 408.5,
+          "ratio_lower": 0.7723378212974297,
+          "ratio_upper": 0.7723378212974297
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 21.0,
+          "ratio_lower": 1.0952380952380953,
+          "ratio_upper": 195.04761904761904
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 83.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "sprt_0.75",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 7,
+      "right_censored": 1,
+      "geometric_cost_ratio_lower": 1.003453976588295,
+      "geometric_cost_ratio_upper": 1.1223752849107018,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 3251.5,
+          "ratio_lower": 1.0069198831308628,
+          "ratio_upper": 1.2597262801783793
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "sprt_0.9",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 23,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 3,
+      "right_censored": 6,
+      "geometric_cost_ratio_lower": 0.9545750535868486,
+      "geometric_cost_ratio_upper": 1.353868820169821,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1075.5,
+          "ratio_lower": 0.9200371920037193,
+          "ratio_upper": 0.9200371920037193
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 3534.0,
+          "ratio_lower": 0.9854272778720996,
+          "ratio_upper": 0.9854272778720996
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 217.0,
+          "ratio_lower": 0.923963133640553,
+          "ratio_upper": 0.923963133640553
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1267.5,
+          "ratio_lower": 1.121499013806706,
+          "ratio_upper": 2.457199211045365
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 56.5,
+          "ratio_lower": 0.8761061946902655,
+          "ratio_upper": 0.8761061946902655
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 408.5,
+          "ratio_lower": 1.0171358629130967,
+          "ratio_upper": 7.600979192166463
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 21.0,
+          "ratio_lower": 0.9047619047619048,
+          "ratio_upper": 0.9047619047619048
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 83.5,
+          "ratio_lower": 0.9101796407185628,
+          "ratio_upper": 0.9101796407185628
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "sprt_0.9",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 7,
+      "right_censored": 1,
+      "geometric_cost_ratio_lower": 1.003453976588295,
+      "geometric_cost_ratio_upper": 1.1223752849107018,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 3251.5,
+          "ratio_lower": 1.0069198831308628,
+          "ratio_upper": 1.2597262801783793
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "sprt_0.99",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 18,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 3,
+      "right_censored": 11,
+      "geometric_cost_ratio_lower": 0.9540428820317072,
+      "geometric_cost_ratio_upper": 2.2161725217267882,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1075.5,
+          "ratio_lower": 0.8321710832171083,
+          "ratio_upper": 0.8321710832171083
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 3534.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 217.0,
+          "ratio_lower": 0.8617511520737328,
+          "ratio_upper": 0.8617511520737328
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1267.5,
+          "ratio_lower": 1.1140039447731755,
+          "ratio_upper": 2.4497041420118344
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 56.5,
+          "ratio_lower": 0.831858407079646,
+          "ratio_upper": 0.831858407079646
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 408.5,
+          "ratio_lower": 1.127294981640147,
+          "ratio_upper": 10.026927784577722
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 21.0,
+          "ratio_lower": 0.8095238095238095,
+          "ratio_upper": 0.8095238095238095
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 83.5,
+          "ratio_lower": 1.1317365269461077,
+          "ratio_upper": 49.053892215568865
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_fine_initial",
+      "method": "sprt_0.99",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 7,
+      "right_censored": 1,
+      "geometric_cost_ratio_lower": 1.003453976588295,
+      "geometric_cost_ratio_upper": 1.1223752849107018,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 3251.5,
+          "ratio_lower": 1.0069198831308628,
+          "ratio_upper": 1.2597262801783793
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "beta_exact",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 29,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 2,
+      "right_censored": 1,
+      "geometric_cost_ratio_lower": 0.9595517232964719,
+      "geometric_cost_ratio_upper": 1.1362211655694614,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1241.0,
+          "ratio_lower": 0.9443996776792909,
+          "ratio_upper": 0.9443996776792909
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 2592.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 194.0,
+          "ratio_lower": 0.9226804123711341,
+          "ratio_upper": 0.9226804123711341
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1719.0,
+          "ratio_lower": 0.9662594531704479,
+          "ratio_upper": 0.9662594531704479
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 71.0,
+          "ratio_lower": 0.9788732394366197,
+          "ratio_upper": 0.9788732394366197
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 350.0,
+          "ratio_lower": 1.0057142857142858,
+          "ratio_upper": 3.887142857142857
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 32.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 86.5,
+          "ratio_lower": 0.8670520231213873,
+          "ratio_upper": 0.8670520231213873
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "beta_exact",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 8,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "beta_ville",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 24,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 2,
+      "right_censored": 6,
+      "geometric_cost_ratio_lower": 1.0143091726780826,
+      "geometric_cost_ratio_upper": 2.541510401138584,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1241.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 2592.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 194.0,
+          "ratio_lower": 1.0309278350515463,
+          "ratio_upper": 6.030927835051546
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1719.0,
+          "ratio_lower": 1.0186154741128564,
+          "ratio_upper": 1.4467713787085514
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 71.0,
+          "ratio_lower": 1.056338028169014,
+          "ratio_upper": 29.3943661971831
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 350.0,
+          "ratio_lower": 1.01,
+          "ratio_upper": 6.787142857142857
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 32.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 86.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "beta_ville",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 8,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "maxsprt",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 23,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 2,
+      "right_censored": 7,
+      "geometric_cost_ratio_lower": 1.0147438130262112,
+      "geometric_cost_ratio_upper": 3.600112677996042,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1241.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 2592.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 194.0,
+          "ratio_lower": 1.0309278350515463,
+          "ratio_upper": 6.030927835051546
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1719.0,
+          "ratio_lower": 0.9662594531704479,
+          "ratio_upper": 0.9662594531704479
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 71.0,
+          "ratio_lower": 1.056338028169014,
+          "ratio_upper": 29.3943661971831
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 350.0,
+          "ratio_lower": 1.01,
+          "ratio_upper": 6.787142857142857
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 32.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 86.5,
+          "ratio_lower": 1.0578034682080926,
+          "ratio_upper": 24.271676300578033
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "maxsprt",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 8,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "pair_grid",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 29,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 2,
+      "right_censored": 1,
+      "geometric_cost_ratio_lower": 0.9595517232964719,
+      "geometric_cost_ratio_upper": 1.1362211655694614,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1241.0,
+          "ratio_lower": 0.9443996776792909,
+          "ratio_upper": 0.9443996776792909
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 2592.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 194.0,
+          "ratio_lower": 0.9226804123711341,
+          "ratio_upper": 0.9226804123711341
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1719.0,
+          "ratio_lower": 0.9662594531704479,
+          "ratio_upper": 0.9662594531704479
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 71.0,
+          "ratio_lower": 0.9788732394366197,
+          "ratio_upper": 0.9788732394366197
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 350.0,
+          "ratio_lower": 1.0057142857142858,
+          "ratio_upper": 3.887142857142857
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 32.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 86.5,
+          "ratio_lower": 0.8670520231213873,
+          "ratio_upper": 0.8670520231213873
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "pair_grid",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 8,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "pairwise_hedge",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 29,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 2,
+      "right_censored": 1,
+      "geometric_cost_ratio_lower": 0.9595517232964719,
+      "geometric_cost_ratio_upper": 1.1362211655694614,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1241.0,
+          "ratio_lower": 0.9443996776792909,
+          "ratio_upper": 0.9443996776792909
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 2592.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 194.0,
+          "ratio_lower": 0.9226804123711341,
+          "ratio_upper": 0.9226804123711341
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1719.0,
+          "ratio_lower": 0.9662594531704479,
+          "ratio_upper": 0.9662594531704479
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 71.0,
+          "ratio_lower": 0.9788732394366197,
+          "ratio_upper": 0.9788732394366197
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 350.0,
+          "ratio_lower": 1.0057142857142858,
+          "ratio_upper": 3.887142857142857
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 32.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 86.5,
+          "ratio_lower": 0.8670520231213873,
+          "ratio_upper": 0.8670520231213873
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "pairwise_hedge",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 8,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "sprt_0.6",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 3,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 2,
+      "right_censored": 27,
+      "geometric_cost_ratio_lower": 1.0837639630128655,
+      "geometric_cost_ratio_upper": 12.669643688122338,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1241.0,
+          "ratio_lower": 1.1257050765511685,
+          "ratio_upper": 3.3005640612409346
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 2592.0,
+          "ratio_lower": 1.0262345679012346,
+          "ratio_upper": 1.5802469135802468
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 194.0,
+          "ratio_lower": 1.1288659793814433,
+          "ratio_upper": 21.11340206185567
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1719.0,
+          "ratio_lower": 0.951716114019779,
+          "ratio_upper": 1.8432228039557883
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 71.0,
+          "ratio_lower": 1.1338028169014085,
+          "ratio_upper": 57.690140845070424
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 350.0,
+          "ratio_lower": 1.0557142857142856,
+          "ratio_upper": 9.354285714285714
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 32.0,
+          "ratio_lower": 1.125,
+          "ratio_upper": 128.0
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 86.5,
+          "ratio_lower": 1.138728323699422,
+          "ratio_upper": 47.35260115606936
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "sprt_0.6",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 8,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "sprt_0.75",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 15,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 2,
+      "right_censored": 15,
+      "geometric_cost_ratio_lower": 0.9911205335687608,
+      "geometric_cost_ratio_upper": 3.5305908924282443,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1241.0,
+          "ratio_lower": 1.088638195004029,
+          "ratio_upper": 2.769137792103143
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 2592.0,
+          "ratio_lower": 1.0262345679012346,
+          "ratio_upper": 1.5802469135802468
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 194.0,
+          "ratio_lower": 1.1288659793814433,
+          "ratio_upper": 21.11340206185567
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1719.0,
+          "ratio_lower": 0.6713205351948808,
+          "ratio_upper": 0.6713205351948808
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 71.0,
+          "ratio_lower": 1.1338028169014085,
+          "ratio_upper": 57.690140845070424
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 350.0,
+          "ratio_lower": 0.97,
+          "ratio_upper": 6.747142857142857
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 32.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 86.5,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "sprt_0.75",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 8,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "sprt_0.9",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 24,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 2,
+      "right_censored": 6,
+      "geometric_cost_ratio_lower": 0.9677946535288692,
+      "geometric_cost_ratio_upper": 1.3089560171547852,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1241.0,
+          "ratio_lower": 0.9443996776792909,
+          "ratio_upper": 0.9443996776792909
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 2592.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 194.0,
+          "ratio_lower": 0.9226804123711341,
+          "ratio_upper": 0.9226804123711341
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1719.0,
+          "ratio_lower": 1.1253635834787667,
+          "ratio_upper": 2.382780686445608
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 71.0,
+          "ratio_lower": 0.9788732394366197,
+          "ratio_upper": 0.9788732394366197
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 350.0,
+          "ratio_lower": 1.1185714285714285,
+          "ratio_upper": 5.9157142857142855
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 32.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 86.5,
+          "ratio_lower": 0.7167630057803468,
+          "ratio_upper": 0.7167630057803468
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "sprt_0.9",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 8,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "sprt_0.99",
+      "kind": "main",
+      "trajectories": 32,
+      "observed_correct_stops": 20,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 2,
+      "right_censored": 10,
+      "geometric_cost_ratio_lower": 0.9748866795582237,
+      "geometric_cost_ratio_upper": 2.182856228373636,
+      "cells": [
+        {
+          "case_id": 7,
+          "reference_mean": 1241.0,
+          "ratio_lower": 0.9057211925866236,
+          "ratio_upper": 0.9057211925866236
+        },
+        {
+          "case_id": 9,
+          "reference_mean": 2592.0,
+          "ratio_lower": 0.9656635802469136,
+          "ratio_upper": 0.9656635802469136
+        },
+        {
+          "case_id": 19,
+          "reference_mean": 194.0,
+          "ratio_lower": 0.8427835051546392,
+          "ratio_upper": 0.8427835051546392
+        },
+        {
+          "case_id": 21,
+          "reference_mean": 1719.0,
+          "ratio_lower": 1.1253635834787667,
+          "ratio_upper": 2.382780686445608
+        },
+        {
+          "case_id": 31,
+          "reference_mean": 71.0,
+          "ratio_lower": 0.9366197183098591,
+          "ratio_upper": 0.9366197183098591
+        },
+        {
+          "case_id": 33,
+          "reference_mean": 350.0,
+          "ratio_lower": 1.1214285714285714,
+          "ratio_upper": 8.8
+        },
+        {
+          "case_id": 43,
+          "reference_mean": 32.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 45,
+          "reference_mean": 86.5,
+          "ratio_lower": 0.9364161849710982,
+          "ratio_upper": 35.60693641618497
+        }
+      ]
+    },
+    {
+      "path": "closed_hedge_original",
+      "method": "sprt_0.99",
+      "kind": "null",
+      "trajectories": 8,
+      "observed_correct_stops": 0,
+      "observed_wrong_stops": 0,
+      "observed_cap_abstentions": 8,
+      "right_censored": 0,
+      "geometric_cost_ratio_lower": 1.0,
+      "geometric_cost_ratio_upper": 1.0,
+      "cells": [
+        {
+          "case_id": 100,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        },
+        {
+          "case_id": 101,
+          "reference_mean": 4096.0,
+          "ratio_lower": 1.0,
+          "ratio_upper": 1.0
+        }
+      ]
+    }
+  ],
+  "claim_boundary": "Development screening only. Censoring is retained; no held-out or SOTA superiority claim."
+}

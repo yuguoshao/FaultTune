@@ -1,0 +1,232 @@
+{
+  "status": "development analysis; no prospective superiority claim",
+  "baseline": "psr_beta",
+  "new_trajectories": 4608,
+  "main_cases": 24,
+  "repetitions": 16,
+  "bootstrap": {
+    "repetitions": 5000,
+    "seed": 972041,
+    "unit": "Independent joint replicate label within fixed case",
+    "scope": "Unadjusted descriptive intervals on development data, not population generalization."
+  },
+  "comparisons": {
+    "closed_beta": {
+      "geomean_cost_ratio": 0.9589477434583693,
+      "ci95_percentile": [
+        0.931388031342765,
+        0.988674455642816
+      ],
+      "lower_cost_cases": 7,
+      "tied_cases": 13,
+      "higher_cost_cases": 4,
+      "worst_case_ratio": 1.2211013288644463,
+      "best_case_ratio": 0.5119616947979044
+    },
+    "closed_fisher": {
+      "geomean_cost_ratio": 1.0468243924330853,
+      "ci95_percentile": [
+        1.0123975875207454,
+        1.0869063427914727
+      ],
+      "lower_cost_cases": 6,
+      "tied_cases": 1,
+      "higher_cost_cases": 17,
+      "worst_case_ratio": 1.3218259494417826,
+      "best_case_ratio": 0.5179941012261579
+    },
+    "closed_hedge": {
+      "geomean_cost_ratio": 0.9775490603311063,
+      "ci95_percentile": [
+        0.9483649917735172,
+        1.010015865479006
+      ],
+      "lower_cost_cases": 7,
+      "tied_cases": 4,
+      "higher_cost_cases": 13,
+      "worst_case_ratio": 1.2702527910874029,
+      "best_case_ratio": 0.5119616947979044
+    },
+    "closed_pair_grid": {
+      "geomean_cost_ratio": 1.0694518873379473,
+      "ci95_percentile": [
+        1.0343371656214675,
+        1.1110981460302995
+      ],
+      "lower_cost_cases": 6,
+      "tied_cases": 1,
+      "higher_cost_cases": 17,
+      "worst_case_ratio": 1.4695399721481341,
+      "best_case_ratio": 0.5179941012261579
+    },
+    "grid_beta": {
+      "geomean_cost_ratio": 0.9515567032449266,
+      "ci95_percentile": [
+        0.9190306907552306,
+        0.9831899405108803
+      ],
+      "lower_cost_cases": 8,
+      "tied_cases": 13,
+      "higher_cost_cases": 3,
+      "worst_case_ratio": 1.2906554629782614,
+      "best_case_ratio": 0.515157302389498
+    },
+    "grid_fisher": {
+      "geomean_cost_ratio": 1.0464730330989827,
+      "ci95_percentile": [
+        1.0086076246340978,
+        1.0888236421309498
+      ],
+      "lower_cost_cases": 7,
+      "tied_cases": 1,
+      "higher_cost_cases": 16,
+      "worst_case_ratio": 1.4667453442537823,
+      "best_case_ratio": 0.5255069883529205
+    },
+    "grid_hedge": {
+      "geomean_cost_ratio": 0.9744468604704065,
+      "ci95_percentile": [
+        0.9416982232960552,
+        1.0087659271307714
+      ],
+      "lower_cost_cases": 8,
+      "tied_cases": 4,
+      "higher_cost_cases": 12,
+      "worst_case_ratio": 1.3563858663582504,
+      "best_case_ratio": 0.5207761843582531
+    },
+    "grid_pair_grid": {
+      "geomean_cost_ratio": 1.0689883075173037,
+      "ci95_percentile": [
+        1.0299653491044376,
+        1.1129473022783654
+      ],
+      "lower_cost_cases": 7,
+      "tied_cases": 1,
+      "higher_cost_cases": 16,
+      "worst_case_ratio": 1.6144593669601341,
+      "best_case_ratio": 0.5255069883529205
+    },
+    "psr_beta": {
+      "geomean_cost_ratio": 1.0,
+      "ci95_percentile": [
+        1.0,
+        1.0
+      ],
+      "lower_cost_cases": 0,
+      "tied_cases": 24,
+      "higher_cost_cases": 0,
+      "worst_case_ratio": 1.0,
+      "best_case_ratio": 1.0
+    },
+    "psr_fisher": {
+      "geomean_cost_ratio": 1.0779621066736358,
+      "ci95_percentile": [
+        1.0561102512615237,
+        1.1044790789903227
+      ],
+      "lower_cost_cases": 6,
+      "tied_cases": 1,
+      "higher_cost_cases": 17,
+      "worst_case_ratio": 1.31468949044586,
+      "best_case_ratio": 0.8378499866363217
+    },
+    "psr_hedge": {
+      "geomean_cost_ratio": 1.0132942471221122,
+      "ci95_percentile": [
+        1.0005397247526808,
+        1.029431052745653
+      ],
+      "lower_cost_cases": 7,
+      "tied_cases": 4,
+      "higher_cost_cases": 13,
+      "worst_case_ratio": 1.1873817034700316,
+      "best_case_ratio": 0.8824475552607015
+    },
+    "psr_pair_grid": {
+      "geomean_cost_ratio": 1.0983142273179787,
+      "ci95_percentile": [
+        1.0748906493423764,
+        1.1276159012355362
+      ],
+      "lower_cost_cases": 7,
+      "tied_cases": 1,
+      "higher_cost_cases": 16,
+      "worst_case_ratio": 1.3701234076433122,
+      "best_case_ratio": 0.8378499866363217
+    }
+  },
+  "matched_prior_comparisons": {
+    "psr_fisher_over_matched_pair_grid": 0.9814696740348692,
+    "closed_fisher_over_matched_pair_grid": 0.978841970197289,
+    "grid_fisher_over_matched_pair_grid": 0.9789377729765707
+  },
+  "all_case_safety_counts": {
+    "psr_beta": {
+      "wrong": 0,
+      "abstained": 0,
+      "trials": 384
+    },
+    "psr_hedge": {
+      "wrong": 0,
+      "abstained": 0,
+      "trials": 384
+    },
+    "psr_pair_grid": {
+      "wrong": 0,
+      "abstained": 0,
+      "trials": 384
+    },
+    "psr_fisher": {
+      "wrong": 0,
+      "abstained": 0,
+      "trials": 384
+    },
+    "closed_beta": {
+      "wrong": 0,
+      "abstained": 0,
+      "trials": 384
+    },
+    "closed_pair_grid": {
+      "wrong": 0,
+      "abstained": 0,
+      "trials": 384
+    },
+    "closed_fisher": {
+      "wrong": 0,
+      "abstained": 0,
+      "trials": 384
+    },
+    "closed_hedge": {
+      "wrong": 0,
+      "abstained": 0,
+      "trials": 384
+    },
+    "grid_beta": {
+      "wrong": 1,
+      "abstained": 0,
+      "trials": 384
+    },
+    "grid_pair_grid": {
+      "wrong": 0,
+      "abstained": 0,
+      "trials": 384
+    },
+    "grid_fisher": {
+      "wrong": 0,
+      "abstained": 0,
+      "trials": 384
+    },
+    "grid_hedge": {
+      "wrong": 0,
+      "abstained": 0,
+      "trials": 384
+    }
+  },
+  "sources": {
+    "spec.json": "2093f190d1f76b5893bb90fe7188a6a2f58a3440b1f17bb46d44710872ed8d9f",
+    "summary.json": "04ee3b0b1466082c7014c2e30534867fd71faa09ec8bc35cab89dee23971c3fc",
+    "trials.jsonl": "ae1dcabf4e6fc020d089258cb9a97f35a505357aeedb5f71ecc23c90b7a9ba43"
+  },
+  "analysis_source_sha256": "db011236ae66fb4a8033d0baa841efc369cd1598e56c230fe6412bf1e1d83e24"
+}

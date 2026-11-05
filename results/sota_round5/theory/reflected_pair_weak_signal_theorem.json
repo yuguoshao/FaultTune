@@ -1,0 +1,184 @@
+{
+  "status": "complete_analytic_weak_signal_argument_pending_independent_review",
+  "new_simulation_observations": 0,
+  "global_all_C_conjecture_status": "Unresolved; no counterexample found in the retained finite diagnostics. The theorem below is local in C for each fixed interior(A,B).",
+  "definitions": {
+    "model": "p(x)=A+B cos x+C sin x, B^2+C^2<=min(A,1-A)^2.",
+    "oracle": "V(A,B,C)=sup_w inf_{physical(a,b)} integral kl(p(x)||a+b cos x) w(dx), with natural logarithms.",
+    "reflection": "Write z=cos x in[-1,1], s=sqrt(1-z^2), and p_minus=A+Bz-C s,p_plus=A+Bz+C s, taking C>0 without loss of generality.",
+    "entropy_secant": "Let f(p)=p log p+(1-p)log(1-p), l(z,C)=[f(p_plus)-f(p_minus)]/(p_plus-p_minus), q_c(z,C)=logistic(l(z,C)).",
+    "capacity": "R(z,C)=kl(p_minus||q_c)=kl(p_plus||q_c). Its achieving plus-arm weight is omega=(q_c-p_minus)/(p_plus-p_minus), strictly between0 and1 for distinct interior endpoints.",
+    "zero_extension": "At C=0 or z=+/-1 define q_c=A+Bz and R=0 by continuity. For fixed interior(A,B), q_c and R are analytic in z and C^2 on a neighborhood of[-1,1] times{0}."
+  },
+  "theorem": {
+    "assumptions": "Fix0<A<1 and |B|<min(A,1-A). There exists epsilon(A,B)>0 such that for every0<|C|<epsilon(A,B), the model is physical and the following statements hold.",
+    "one_dimensional_exact_value": "V(A,B,C)=max_{-1<=z<=1} R(z,C). The maximizer z*(C) is unique and interior in this weak-signal neighborhood.",
+    "optimal_design": "Use x*=arccos z*, its reflection -x*, and weights omega(z*,C),1-omega(z*,C). For negative C swap the arm labels/weights as needed.",
+    "explicit_tangent_null": "Let b*=partial_z q_c(z*,C), a*=q_c(z*,C)-b*z*. Then q*(x)=a*+b* cos x is physically feasible and kl(p(x)||q*(x))<=R(z*,C) for EVERY real x.",
+    "one_sided_extension": "The same value/design/certificate hold if the null is enlarged to the opposite physical sign C_null<=0 for C>0, or C_null>=0 for C<0.",
+    "claim_boundary": "This is an oracle information-design theorem. It does not give a computable uniform epsilon, paid-learning policy, finite95%/1% cost gain, or novelty/SOTA conclusion."
+  },
+  "proof_steps": [
+    {
+      "step": 1,
+      "claim": "Every reflection pair yields a capacity lower bound.",
+      "argument": "The logit secant lies strictly between logit(p_minus) and logit(p_plus), so p_minus<q_c<p_plus. Its definition makes the two endpoint KLs equal. With omega=(q_c-p_minus)/(p_plus-p_minus), the weighted Bernoulli KL is minimized at the mixture mean q_c. A constant null(a,b)=(q_c,0) is physical, so this two-arm design has exact null-information value R. Consequently V>=max_z R."
+    },
+    {
+      "step": 2,
+      "claim": "The limiting one-dimensional objective has a unique nondegenerate interior maximum.",
+      "argument": "Let p0=A+Bz, v=A(1-A), d=v-B^2, e=B(1-2A). Because(A+/-B)(1-A-/+B)>0, d>|e|. The limiting objective is h(z)=(1-z^2)/(2 p0(1-p0)). Its reciprocal apart from2 is w(z)=p0(1-p0)/(1-z^2)=B^2+(d+ez)/(1-z^2). Its derivative has numerator e(1+z^2)+2dz, with exactly one root inside(-1,1): z0=-e/(d+sqrt(d^2-e^2)); this formula also gives0 when e=0. At the root d2w/dz2=2 sqrt(d^2-e^2)/(1-z0^2)^2>0. Thus h has a unique strict nondegenerate global maximum z0; h(+/-1)=0."
+    },
+    {
+      "step": 3,
+      "claim": "The capacity maximizer persists analytically for small C.",
+      "argument": "The strict interior margin of p0 on[-1,1] makes f analytic uniformly around every p0. The entropy secant has an even power series in C sqrt(1-z^2); hence q_c=p0+C^2 g(z)+O(C^4) and R=C^2 h(z)+O(C^4), including derivatives in z on[-1,1]. Here g(z)=(1-z^2)(2p0-1)/(6p0(1-p0)). Therefore R/C^2 extends analytically in(z,C^2). The implicit-function theorem at the nondegenerate maximum gives z*(C)=z0+O(C^2), analytic in C^2. Uniform convergence and the nonzero derivative of h off any neighborhood of z0 make this the unique global maximum for all sufficiently small C."
+    },
+    {
+      "step": 4,
+      "claim": "The tangent null is physical and matches two stationary equal-height contacts.",
+      "argument": "Since q_c=p0+O(C^2) with its first z derivative, the tangent coefficients satisfy(a*,b*)=(A,B)+O(C^2). The fixed strict null margin |B|<min(A,1-A) guarantees physical feasibility for small C. At z*, the line q_t(z)=a*+b*z has both the same value and same first derivative as q_c. Thus F_plus(z)=kl(p_plus(z)||q_t(z)) and F_minus(z)=kl(p_minus(z)||q_t(z)) satisfy F_plus(z*)=F_minus(z*)=R(z*,C) and partial_z F_plus(z*)=partial_z F_minus(z*)=partial_z R(z*,C)=0."
+    },
+    {
+      "step": 5,
+      "claim": "These two contacts are GLOBAL KL maxima, not just tangencies.",
+      "argument": "Choose a closed neighborhood J of z0 strictly inside(-1,1), small enough that d2h/dz2<=-lambda<0 on J. On J, F_plus/C^2 and F_minus/C^2 converge to h in the C^2 norm as C->0; this means convergence of functions and two z derivatives, NOT an O(C^2) convergence rate. Hence each F branch is strictly concave on J for sufficiently small C, and its stationary point z* is its unique maximum there. Globally on[-1,1], both normalized branches converge uniformly to h: Taylor expansion of KL uses p_plus/minus-q_t=+/-C sqrt(1-z^2)+O(C^2), uniformly including endpoints. The strict global gap h(z0)-max_{z outside J}h(z)>0 therefore implies F_plus(z),F_minus(z)<R(z*,C) outside J once C is small enough. This proves the uniform all-angle bound."
+    },
+    {
+      "step": 6,
+      "claim": "The upper certificate matches the design lower bound.",
+      "argument": "For every distribution w over angles, the same physical null q* gives inf_null integral KL<=integral KL(p||q*)<=R(z*,C). Combined with Step1 this proves equality and the optimal design."
+    },
+    {
+      "step": 7,
+      "claim": "The opposite-sign extension has the same value.",
+      "argument": "At the reflected angles, any opposite-sign null has ordered rates q_plus<=q_minus. Weighted KL to the true ordered p_plus>p_minus is minimized over this order cone by pooling at their weighted mean q_c. The constant physical null attains it. The upper bound still uses the same C_null=0 tangent null, so the sandwich remains exact."
+    }
+  ],
+  "closed_asymptotics": {
+    "discriminant_identity": "d^2-e^2=(A^2-B^2)((1-A)^2-B^2)>0.",
+    "value": "V(A,B,C)=C^2/[A(1-A)+B^2+sqrt((A^2-B^2)((1-A)^2-B^2))]+O_{A,B}(C^4).",
+    "angle": "cos x*(C)=z0+O_{A,B}(C^2).",
+    "weight": "omega=1/2+C sqrt(1-z0^2)(2(A+Bz0)-1)/[12(A+Bz0)(1-A-Bz0)]+O_{A,B}(C^3), for the plus endpoint when C>0.",
+    "null": "b*=B+C^2 partial_z g(z0)+O(C^4), a*=A+C^2[g(z0)-z0 partial_z g(z0)]+O(C^4).",
+    "nonuniformity": "All O constants and the existence neighborhood depend on fixed(A,B). The proof is not uniform when |B| approaches min(A,1-A) while C also approaches0; the limiting maximizer may approach z=+/-1."
+  },
+  "other_exact_cases": {
+    "B_zero": "For B=0 and any physical C, p(x) lies in[A-|C|,A+|C|]. Choose the Bernoulli capacity center of these endpoints as a constant null. KL is convex in p, so every angle is dominated by the two endpoint KLs. The reflected PSR pair+/-pi/2 with capacity weights is globally optimal, including boundary endpoints by continuity.",
+    "A_half": "The previously proved operator-concavity theorem gives global exact optimality of equally weighted PSR for A=1/2 and every physical B,C.",
+    "C_zero": "The model is a null; the oracle value is0."
+  },
+  "global_conjecture_reduction": {
+    "two_support_kkt": "If a positive-information two-support design has an INTERIOR minimizing affine null, KKT gives sum_i g_i=0 and sum_i z_i g_i=0, g_i=w_i(q_i-p_i)/[q_i(1-q_i)]. Distinct z_i force both g_i=0 and zero information. Thus such a two-support solution must have the same cosine at both angles, hence be a reflection pair. This does not exclude three or more supports or a boundary null.",
+    "sufficient_curvature_lemma": "Let R*=max_z R(z,C). Define ell_R(p) and u_R(p) as the lower and upper endpoints of{q:kl(p||q)<=R}. If L(z)=ell_R*(p_plus(z)) is concave and U(z)=u_R*(p_minus(z)) is convex globally, then L<=U and at a capacity maximum they meet. Their common tangent line lies above L and below U, giving the full conjecture immediately.",
+    "exact_lower_inverse_derivatives": "For p>q=ell_R(p), put K=q(1-q)[logit(p)-logit(q)]/(p-q). Then d ell_R/dp=K and d2 ell_R/dp2={1/[p(1-p)]-2K/[q(1-q)]+[p/q^2+(1-p)/(1-q)^2]K^2} q(1-q)/(p-q). Consequently d2L/dz2=(d2 ell_R/dp2)(B-Cz/sqrt(1-z^2))^2-(d ell_R/dp) C/(1-z^2)^(3/2). The upper branch follows by probability complementation.",
+    "remaining_gap": "The required global curvature sign has not been proved from physicality at R*. Joint convexity of KL alone is insufficient, and the corresponding claim fails for unrestricted large radii. The prior operator proof uses a normalized trace-one state with A=1/2 and does not directly establish the general tangent-null claim."
+  },
+  "deterministic_checks": {
+    "mpmath_precision_digits": 120,
+    "formula_checks": [
+      {
+        "A_exact": "1/100",
+        "B_exact": "0",
+        "C_diagnostic": "0.0001",
+        "z0_closed_form": "0.0",
+        "hmax_closed_form": "50.5050505050505050505050505050505050505050505050505050505050505050505050505050505050505051",
+        "capacity_stationary_cosine": "0.0",
+        "z_shift_divided_by_C_squared": "0.0",
+        "null_intercept": "0.00999983501323207986385062901921379693903245911447821235588974197366670173824639251662366451",
+        "null_slope": "0.0",
+        "null_physical_margin": "0.00999983501323207986385062901921379693903245911447821235588974197366670173824639251662366451",
+        "radius": "0.000000505060213520220977511086505094928308939860032784935470726946422496509954086949463506595049",
+        "radius_over_C_squared_minus_hmax": "0.000970846971592700603600004442325843480952773443042022189591744600490358189895845608999879503",
+        "two_equal_values_and_two_zero_derivatives_checked_to_95_digits": true,
+        "diagnostic_only": "These point checks do not supply the existential epsilon or prove a global optimum for the selected nonzero C. The mathematical theorem below supplies an asymptotic neighborhood, without a numeric epsilon."
+      },
+      {
+        "A_exact": "1/100",
+        "B_exact": "9/1000",
+        "C_diagnostic": "0.00001",
+        "z0_closed_form": "-0.624021356935634776960296409398750950208614028217334514902606231597104301869942306318237658",
+        "hmax_closed_form": "69.9489921996580090467878312456417701338268608503319805116171229961291350925048289102081005",
+        "capacity_stationary_cosine": "-0.624021750316474976817897829149389454989353761665675516980497610208109640715682648988312029",
+        "z_shift_divided_by_C_squared": "-3933.80840199857601419750638504780739733448341002077891378611005338845740342670074370985538",
+        "null_intercept": "0.00999999771499821975257929005076812104895621957981580547931876400402230781139387942187683836",
+        "null_slope": "0.00900000004196976079685582743696788647720148709892852144470792093043994747469273598570136152",
+        "null_physical_margin": "0.000999997673028458955723462613800234571754732480887284034610843073582360336701143436175476844",
+        "radius": "0.00000000699490351975519103146699503644165572077086180769597387303540332603559585217896942462133713",
+        "radius_over_C_squared_minus_hmax": "0.0000429978939012678821191187747870738817572266277582187369102642268234292848653360052708105181",
+        "two_equal_values_and_two_zero_derivatives_checked_to_95_digits": true,
+        "diagnostic_only": "These point checks do not supply the existential epsilon or prove a global optimum for the selected nonzero C. The mathematical theorem below supplies an asymptotic neighborhood, without a numeric epsilon."
+      },
+      {
+        "A_exact": "1/5",
+        "B_exact": "1/6",
+        "C_diagnostic": "0.000333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333",
+        "z0_closed_form": "-0.457195283371025747567616629769653430545385455415912075622724410154439503264840189507807041",
+        "hmax_closed_form": "3.64590302013569269124341986717075234996338763949728347224180787655598221175342468222810535",
+        "capacity_stationary_cosine": "-0.457196116019616875251052615363797489574152984100563906738610844239256461443212966746271908",
+        "z_shift_divided_by_C_squared": "-7.49383732014915092387034729653125890775816186648004297790676335262360535499514618380275299",
+        "null_intercept": "0.199999918979828188505418915878620098025279800945074892117616059447518728873587590947625287",
+        "null_slope": "0.166666711677897674967883734552592990812875572317230593033101735806365818544594875811561423",
+        "null_physical_margin": "0.0333332073019305135375351813260271072124042286278442990845143236411529103289927151360638632",
+        "radius": "0.000000405100723332225901287163723768488769787633025114592554784949206591088742770820720391516811",
+        "radius_over_C_squared_minus_hmax": "0.00000348985434042034105364674564657812530958653404952082273498276381647318396180129554595109409",
+        "two_equal_values_and_two_zero_derivatives_checked_to_95_digits": true,
+        "diagnostic_only": "These point checks do not supply the existential epsilon or prove a global optimum for the selected nonzero C. The mathematical theorem below supplies an asymptotic neighborhood, without a numeric epsilon."
+      },
+      {
+        "A_exact": "49/100",
+        "B_exact": "1/10",
+        "C_diagnostic": "0.0039",
+        "z0_closed_form": "-0.0041684759324368457908751759407523784445726850084693793751996014203676807367362363976459681",
+        "hmax_closed_form": "2.00083369518648736915817503518815047568891453700169387587503992028407353614734724727952919",
+        "capacity_stationary_cosine": "-0.00416868159330887098127196253471526588996767061788128814668836511385535878090750001319248614",
+        "z_shift_divided_by_C_squared": "-0.0135214248537271792759101882240266531877455234654024647444900386376097417004349471740988238",
+        "null_intercept": "0.489999797108049193555690449877096123547082544899187393139899975228571294647706779300113324",
+        "null_slope": "0.100002028919518000567085897736394461493955395633849886042604617171910097794959436649146843",
+        "null_physical_margin": "0.389997768188531192988604552140701662053127149265337507097295358056661196852747342650966481",
+        "radius": "0.0000304329898529500417432635038305660033127259849236635902776237417572340402109374401528290467",
+        "radius_over_C_squared_minus_hmax": "0.0000203385380387152115490825347951727480338471970957544749759743401237163797691335770813720252",
+        "two_equal_values_and_two_zero_derivatives_checked_to_95_digits": true,
+        "diagnostic_only": "These point checks do not supply the existential epsilon or prove a global optimum for the selected nonzero C. The mathematical theorem below supplies an asymptotic neighborhood, without a numeric epsilon."
+      },
+      {
+        "A_exact": "1/2",
+        "B_exact": "49/100",
+        "C_diagnostic": "0.0001",
+        "z0_closed_form": "0.0",
+        "hmax_closed_form": "2.0",
+        "capacity_stationary_cosine": "-8.82531024561186151979175434248277466784733575459456203636803649701092806150354337178854242e-129",
+        "z_shift_divided_by_C_squared": "-8.82531024561186151979175434248277466784733575459456203636803649701092806150354337178854242e-121",
+        "null_intercept": "0.5",
+        "null_slope": "0.490000006533333490133337813333472711115672565810953354225455728913429129037226152030254861",
+        "null_physical_margin": "0.00999999346666650986666218666652728888432743418904664577454427108657087096277384796974513923",
+        "radius": "0.0000000200000001333333354666667123809535187301897604626606815679882082048871143635458816321149928",
+        "radius_over_C_squared_minus_hmax": "0.0000000133333335466666712380953518730189760462660681567988208204887114363545881632114992775540627",
+        "two_equal_values_and_two_zero_derivatives_checked_to_95_digits": true,
+        "diagnostic_only": "These point checks do not supply the existential epsilon or prove a global optimum for the selected nonzero C. The mathematical theorem below supplies an asymptotic neighborhood, without a numeric epsilon."
+      },
+      {
+        "A_exact": "7/10",
+        "B_exact": "1/5",
+        "C_diagnostic": "0.001",
+        "z0_closed_form": "0.25",
+        "hmax_closed_form": "2.5",
+        "capacity_stationary_cosine": "0.250001620385079611555371989736041996911887256421891896700576234278902323434170278264329764",
+        "z_shift_divided_by_C_squared": "1.62038507961155537198973604199691188725642189189670057623427890232343417027826432976414744",
+        "null_intercept": "0.700000333334781903045501463475846678993775620189055430558441309472200102855332438359054302",
+        "null_slope": "0.200000333334946516381242146667166066234561091212110407729774820923885314323746151747574618",
+        "null_physical_margin": "0.0999993333302715805732563898569872547716632885988341617117838696039145828209214098933710804",
+        "radius": "0.00000250000532411237464378861344209853159964555824310246605425572002297585022822167422433116523",
+        "radius_over_C_squared_minus_hmax": "0.00000532411237464378861344209853159964555824310246605425572002297585022822167422433116523053204",
+        "two_equal_values_and_two_zero_derivatives_checked_to_95_digits": true,
+        "diagnostic_only": "These point checks do not supply the existential epsilon or prove a global optimum for the selected nonzero C. The mathematical theorem below supplies an asymptotic neighborhood, without a numeric epsilon."
+      }
+    ],
+    "scope": "Independent high-precision algebra/stationarity diagnostics. They do not replace the compactness/implicit-function proof or certify a numerical epsilon."
+  },
+  "source_sha256": {
+    "results/sota_round5/theory/reflected_pair_weak_signal_theorem.py": "229adb8f0bc6fd30a5fd5969135f6491a2574da5ba1b305631072d87151d364c",
+    "docs/CONTINUOUS_SYMMETRIC_DESIGN.md": "0e16a486bb11c38b179b1d8d2aa8ed18184aefe07ceabd99c44efb59b10cd13d",
+    "results/sota_round5/continuous_chernoff_refinement.json": "5a2dc575808bd0679c1deb0c0b7947c2662fca6ccbcd82aaef0f1d1dcf4ec130"
+  }
+}

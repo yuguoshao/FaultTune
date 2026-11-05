@@ -1,0 +1,232 @@
+{
+  "status": "passed_exact_rational_impossibility_certificate",
+  "new_simulation_observations": 0,
+  "baseline": "Frozen beta_exact H8192, common physical-shot cap16384, inspection after every completed PSR pair.",
+  "candidate_requirements": {
+    "observations": "Only independent Bernoulli observations at the same fixed +/-pi/2 PSR arms, balanced in complete paid pairs; stopping at complete-pair boundaries; no uncharged side information.",
+    "correct_probability": "At least19/20 separately on every one of the eight positive registered cases (and each mirror if claiming the16-case version).",
+    "null_report_probability": "At most1/100 for every physical null C=0.",
+    "cost": "Unconditional expected physical shots, including wrong reports and abstentions. Any finite cap is allowed; a larger cap does not remove the information lower bound."
+  },
+  "baseline_qualification": {
+    "every_case95percent_power_checked_from_certified_lower_endpoint": true,
+    "null_report_budget_checked_by_exact_integer_crossing_count": true,
+    "previous_full_boundary_audit_bound_to_current_file": true
+  },
+  "proof": [
+    "For each i, the finite-transcript KL theorem gives candidate mean C_i>=L_i, where L_i is the stored downward-enclosing endpoint of kl(.95,.01)/E_i for the exact rounded binary64 PSR arm probabilities.",
+    "The certified interval computation gives the actual baseline mean B_i<=U_i. Every baseline cell separately has correct probability>=.95 and the exact frozen boundary has null crossing probability<=.01.",
+    "Therefore the equal-case geometric speedup G=(product_i B_i/C_i)^(1/8) is at most (product_i U_i/L_i)^(1/8).",
+    "Each U_i is converted from binary64 to its exact rational. Each L_i is parsed from its outward decimal endpoint as an exact rational. Their ratio product P is computed with Fraction arithmetic.",
+    "Integer cross multiplication proves P<(1641/1000)^8<3^8. Hence G<1.641 and a geometric threefold gain is impossible within the stated PSR/resource/power scope.",
+    "For case9 alone exact cross multiplication gives B_9/C_9<=U_9/L_9<743/500=1.486.",
+    "For all16 sign-mirrored cases, beta costs and the information lower bounds repeat exactly by arm swap. Applying the bound to each candidate mirror separately yields product<=P^2, so the same G<1.641 conclusion holds even if the candidate itself is not mirror symmetric."
+  ],
+  "rows": [
+    {
+      "case_id": 7,
+      "exact_arm_probability_match": true,
+      "beta_correct_probability_lower_endpoint_binary64_rational": {
+        "numerator": "9007199254675357",
+        "denominator": "9007199254740992"
+      },
+      "beta_mean_cost_upper_endpoint_exact": {
+        "numerator": "4160312791585237",
+        "denominator": "4398046511104"
+      },
+      "candidate95percent_mean_cost_lower_endpoint_exact": {
+        "numerator": "6506111331902322934916121168652551126288606986112317250017449057",
+        "denominator": "10000000000000000000000000000000000000000000000000000000000000"
+      },
+      "maximum_cost_speedup_upper_exact": {
+        "numerator": "9459456104162284191261278465390205383300781250000000000000000000",
+        "denominator": "6506111331902322934916121168652551126288606986112317250017449057"
+      }
+    },
+    {
+      "case_id": 9,
+      "exact_arm_probability_match": true,
+      "beta_correct_probability_lower_endpoint_binary64_rational": {
+        "numerator": "8820778806243927",
+        "denominator": "9007199254740992"
+      },
+      "beta_mean_cost_upper_endpoint_exact": {
+        "numerator": "895949501392695",
+        "denominator": "137438953472"
+      },
+      "candidate95percent_mean_cost_lower_endpoint_exact": {
+        "numerator": "4389375814433617561779682903970789809376878108648970945655382543",
+        "denominator": "1000000000000000000000000000000000000000000000000000000000000"
+      },
+      "maximum_cost_speedup_upper_exact": {
+        "numerator": "343099505083264375571161508560180664062500000000000000000000000",
+        "denominator": "231019779707032503251562258103725779440888321507840576087125397"
+      }
+    },
+    {
+      "case_id": 19,
+      "exact_arm_probability_match": true,
+      "beta_correct_probability_lower_endpoint_binary64_rational": {
+        "numerator": "4503599627337653",
+        "denominator": "4503599627370496"
+      },
+      "beta_mean_cost_upper_endpoint_exact": {
+        "numerator": "6640800372721505",
+        "denominator": "35184372088832"
+      },
+      "candidate95percent_mean_cost_lower_endpoint_exact": {
+        "numerator": "630541414280568075953294519153868616512115820696079513009120917",
+        "denominator": "5000000000000000000000000000000000000000000000000000000000000"
+      },
+      "maximum_cost_speedup_upper_exact": {
+        "numerator": "943714492894046230730964452959597110748291015625000000000000000",
+        "denominator": "630541414280568075953294519153868616512115820696079513009120917"
+      }
+    },
+    {
+      "case_id": 21,
+      "exact_arm_probability_match": true,
+      "beta_correct_probability_lower_endpoint_binary64_rational": {
+        "numerator": "4503553989144335",
+        "denominator": "4503599627370496"
+      },
+      "beta_mean_cost_upper_endpoint_exact": {
+        "numerator": "5547734995933931",
+        "denominator": "4398046511104"
+      },
+      "candidate95percent_mean_cost_lower_endpoint_exact": {
+        "numerator": "1054345421872850357981872692310596477312533527747345009994619189",
+        "denominator": "1250000000000000000000000000000000000000000000000000000000000"
+      },
+      "maximum_cost_speedup_upper_exact": {
+        "numerator": "1576761120513177445445762714371085166931152343750000000000000000",
+        "denominator": "1054345421872850357981872692310596477312533527747345009994619189"
+      }
+    },
+    {
+      "case_id": 31,
+      "exact_arm_probability_match": true,
+      "beta_correct_probability_lower_endpoint_binary64_rational": {
+        "numerator": "4503599627337627",
+        "denominator": "4503599627370496"
+      },
+      "beta_mean_cost_upper_endpoint_exact": {
+        "numerator": "1645490853384269",
+        "denominator": "35184372088832"
+      },
+      "candidate95percent_mean_cost_lower_endpoint_exact": {
+        "numerator": "1376830598821708291320665318453544505971442214678131041670023543",
+        "denominator": "50000000000000000000000000000000000000000000000000000000000000"
+      },
+      "maximum_cost_speedup_upper_exact": {
+        "numerator": "49752832877952357648609904572367668151855468750000000000000000",
+        "denominator": "29294268060036346623843942945820095871732813078258107269574969"
+      }
+    },
+    {
+      "case_id": 33,
+      "exact_arm_probability_match": true,
+      "beta_correct_probability_lower_endpoint_binary64_rational": {
+        "numerator": "9007170190399129",
+        "denominator": "9007199254740992"
+      },
+      "beta_mean_cost_upper_endpoint_exact": {
+        "numerator": "2343719929521415",
+        "denominator": "8796093022208"
+      },
+      "candidate95percent_mean_cost_lower_endpoint_exact": {
+        "numerator": "178361613088055838318705085844316853490087155752200927457681603",
+        "denominator": "1000000000000000000000000000000000000000000000000000000000000"
+      },
+      "maximum_cost_speedup_upper_exact": {
+        "numerator": "266450107292418465476657729595899581909179687500000000000000000",
+        "denominator": "178361613088055838318705085844316853490087155752200927457681603"
+      }
+    },
+    {
+      "case_id": 43,
+      "exact_arm_probability_match": true,
+      "beta_correct_probability_lower_endpoint_binary64_rational": {
+        "numerator": "9007199254675347",
+        "denominator": "9007199254740992"
+      },
+      "beta_mean_cost_upper_endpoint_exact": {
+        "numerator": "1292882797325233",
+        "denominator": "70368744177664"
+      },
+      "candidate95percent_mean_cost_lower_endpoint_exact": {
+        "numerator": "409727643810083874216727322256992251676026617824903012920030997",
+        "denominator": "62500000000000000000000000000000000000000000000000000000000000"
+      },
+      "maximum_cost_speedup_upper_exact": {
+        "numerator": "1148310599785802743610929610440507531166076660156250000000000000",
+        "denominator": "409727643810083874216727322256992251676026617824903012920030997"
+      }
+    },
+    {
+      "case_id": 45,
+      "exact_arm_probability_match": true,
+      "beta_correct_probability_lower_endpoint_binary64_rational": {
+        "numerator": "9007199082529649",
+        "denominator": "9007199254740992"
+      },
+      "beta_mean_cost_upper_endpoint_exact": {
+        "numerator": "4752872898187687",
+        "denominator": "70368744177664"
+      },
+      "candidate95percent_mean_cost_lower_endpoint_exact": {
+        "numerator": "4432301775690215746272815877881273316065279684806305042685734829",
+        "denominator": "100000000000000000000000000000000000000000000000000000000000000"
+      },
+      "maximum_cost_speedup_upper_exact": {
+        "numerator": "6754238623596630475276469951495528221130371093750000000000000000",
+        "denominator": "4432301775690215746272815877881273316065279684806305042685734829"
+      }
+    }
+  ],
+  "product_of_eight_speedup_upper_ratios_exact": {
+    "numerator": "688701809630352297230068184629284427105597529925528951723319429421608817802131783204771585007979262791550380636330227493984480254079358491758563405733751277133331716990754472650640147010482120678849504206607711976940045948938485539449875765076896356989616088671886146600402256238960830717601412138317207216383908134911648497855640727038917248137295246124267578125000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "denominator": "13150575886511342124448717933534960893150271626873804729475611401622105491348326358948135462294882760398824506120741482117425930691752087093837273131933058267356308240953467369683385188196090368705323178443265209513858915182694552769359807935779318034656165122159560552061027298317599089117363381304566507305654011309453545153468894386550500979466710854035662333473031813756206400778688832265504227228167690609583024084079991586754404505997508450456024335236797092305477439951375898273632058771199"
+  },
+  "geometric_speedup_strict_upper_exact": {
+    "numerator": "1641",
+    "denominator": "1000"
+  },
+  "geometric_speedup_upper_root_bracket_by_integer_bisection": {
+    "lower": "410039613251/250000000000",
+    "strict_upper": "328031690601/200000000000",
+    "scale": 1000000000000,
+    "lower_integer_tick": 1640158453004,
+    "upper_integer_tick": 1640158453005
+  },
+  "integer_cross_multiplication_witness": {
+    "formula": "1641^8 * P.denominator - 1000^8 * P.numerator >0",
+    "positive_integer_slack": "2832003523498992139368950465227422607049651826822513266199389582467411594225726028624205262929501530029010556575158519064745916794839618170601001673784814071222854280574678159676257387855206420492249926863344375476131483842367345830122121243796409548720034632813961205644476676855743132424082562076139636459271447365031604103534910956590738882696298257350988718631012698254539358489801699736170881040280833277740458329266393497031598632378005210781383548606684034596626936479664321960875837358118829376300382768518489279",
+    "product_strictly_below_3_power_8": true
+  },
+  "case9": {
+    "strict_upper_exact": {
+      "numerator": "743",
+      "denominator": "500"
+    },
+    "ratio_upper_exact": {
+      "numerator": "343099505083264375571161508560180664062500000000000000000000000",
+      "denominator": "231019779707032503251562258103725779440888321507840576087125397"
+    },
+    "positive_integer_slack_743den_minus_500num": "97943780692962130330003490977922093330022880325548032734169971"
+  },
+  "claim_boundary": [
+    "This proves an impossibility for the specified balanced-PSR statistical cost comparison, not a claim of algorithmic optimality or SOTA superiority.",
+    "The bound is necessary and can be unattainable. Less than1.641 remaining multiplicative room does not imply that this gain is achievable.",
+    "It does not cover arbitrary adaptive angles, unequal or mid-pair stopping, other observation resources, other comparator algorithms, different power/error requirements, or CPU/runtime speedups.",
+    "No empirical cost or successful-trajectory mean is substituted for a true expected cost; all inputs are deterministic certified bounds with exactly matched sampler probabilities.",
+    "No floating logarithm or root approximation is used in either the1.641 or3-fold impossibility certificate."
+  ],
+  "source_sha256": {
+    "results/sota_round4/certified_operating_comparison.json": "0efdeee99757fc7ffbf863631fe7ccbe04cb48ab5cbf9c2436dbd82807d323a0",
+    "results/sota_round4/theory/finite_budget_information_bounds.json": "21108102dedd5897426c07757a8c1a05ae43cc1bad6df096c1866e3f6aac387c",
+    "results/sota_round3/cap16384_preparation/beta_exact.json": "d2dbc9579dcaa4789bd56272f1ecd7bf0cacea22d60e24836fc71b37b67423ee",
+    "results/sota_round2/theory/cap16384_preparation_independent_audit.json": "56553f36e5d35899cd1b07951bd029af6aabb78a7c70d9fc35b120879603bf8c",
+    "results/sota_round4/theory/certify_psr_speedup_limit.py": "91a2c78aa5c149d37d9030e962284048568fe4eb8fc67d477fd0667c50cd54b2"
+  }
+}

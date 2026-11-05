@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "input_sha256": {
+    "results/sota_round3/piecewise_comparator_envelope_diagnostic.json": "023e3c6c9901b78dc606060cec44d2b5e26f9ac0a5fe53f7e7d8f3c8d59973ba",
+    "results/sota_round3/comparator_envelope_diagnostic.json": "38bb030b39918bdd0122449a06c275a6d126a69354948955a906a12363f694c7",
+    "results/sota_round2/theory/comparator_envelope_independent_audit.json": "93582f6275e698cc6c8b0385a12634717ccc600c1e921c35f597a88e7d657f4b",
+    "results/sota_round3/piecewise_gate_replay/summary.json": "44d579d8f95ec2b2a1051ecd7fa8cecd67d302f4ad91c8608b3308055822eb40",
+    "results/sota_round2/theory/piecewise_gate_replay_independent_audit.json": "1b5c0b37b8d1b49c9d1158e3e789c22eab8955a3ee2cf197fa4fe310f00f1a9a"
+  },
+  "all16_case_ratios_and15_fixed_global_comparisons_recomputed": true,
+  "ratio_to_hindsight_casewise_envelope": 1.0616079966409286,
+  "ratios_to_fixed_global_controls": {
+    "beta_ville100": 0.8733758719772231,
+    "beta_exact": 0.9567062602247729,
+    "maxsprt": 0.8791705334941396,
+    "pair_grid": 0.9567062602247729,
+    "pairwise_hedge": 0.9567062602247729,
+    "sprt_0.6": 0.4416789507484079,
+    "sprt_0.75": 0.8037220321732528,
+    "sprt_0.9": 0.7783044179383463,
+    "sprt_0.99": 0.5524737278262714,
+    "closed_hedge_original": 0.8520037141890348,
+    "closed_hedge_fine_initial": 0.8924386697932505,
+    "full_safe_fine": 0.8969001444551514,
+    "full_safe_coarse": 0.6711559216450294,
+    "rb_fine": 0.8805625395710384,
+    "rb_coarse": 0.8508856338516853
+  },
+  "all_fixed_global_geometric_ratios_below_one": true,
+  "cases_above_hindsight_envelope": 16,
+  "new_simulation_observations": 0,
+  "limits": [
+    "Static arithmetic based on already audited summaries; no new raw-ledger audit.",
+    "Every case remains above its hindsight control envelope; that envelope is not an executable or power-qualified test.",
+    "The 95% power target and held-out SOTA acceptance remain unmet."
+  ]
+}

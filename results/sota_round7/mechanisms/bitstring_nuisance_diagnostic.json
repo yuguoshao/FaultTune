@@ -1,0 +1,200 @@
+{
+  "schema": "faulttune.round7.bitstring_nuisance_diagnostic.v1",
+  "created_utc": "2026-11-04T16:00:20.958302+00:00",
+  "status": "deterministic_exploration_not_SOTA_claim",
+  "mechanism": "Same-duration q0 amplitude update, shared spectator noise, complete three-bit readout.",
+  "analytic_derivation": [
+    "The q0 Hamiltonian acts on a distinct tensor factor from the q1,q2 Hamiltonian. Initial preparation and all noise channels also factor across this partition.",
+    "Changing only q0 amplitude at a common duration leaves the spectator channel Q identical: P_j(X,S)=Bern(x_j) times Q(S).",
+    "For all-bit-zero success and s=Q(00), y_j=1-s(1-x_j); hence Delta=s(x_new-x_old). For s>0 the signs agree exactly.",
+    "Complete readout supplies X from each paid shot. OR compression discards X whenever S is nonzero. No physical postselection or extra shot is required to retain X.",
+    "In the enlarged arbitrary-common-Q model, the likelihood factor involving Q cancels in the sign test, so X counts suffice. This need not be a minimal sufficient statistic for the more restricted physical model with shared nuisance parameters.",
+    "A balanced equal-mean null has m=(x_old+x_new)/2, and per-shot KL equals Bernoulli JS. Fisher information for x from OR divided by that from X is s*x/(1-s+s*x).",
+    "Delta magnitude can use pooled spectator success: var coefficient 2*s^2*(v(x_old)+v(x_new))+(x_new-x_old)^2*s*(1-s). This is asymptotic, not a finite-sample certificate."
+  ],
+  "example": {
+    "private_scorer_truth": {
+      "omega": 0.0,
+      "gamma": 1.9011178121828858,
+      "readout_flip": "1/200",
+      "dephasing_rate": 0.0,
+      "ideal_phase_sin_squared": "19601/29601",
+      "old_local_ideal_flip": "5/198",
+      "new_local_ideal_flip": "1/198",
+      "observed_q0_old": "3/100",
+      "observed_q0_new": "1/100",
+      "common_spectator_pmf_exact": [
+        "1/2",
+        "50/299",
+        "50/299",
+        "99/598"
+      ],
+      "old_full_pmf_exact": [
+        "97/200",
+        "3/200",
+        "97/598",
+        "3/598",
+        "97/598",
+        "3/598",
+        "9603/59800",
+        "297/59800"
+      ],
+      "new_full_pmf_exact": [
+        "99/200",
+        "1/200",
+        "99/598",
+        "1/598",
+        "99/598",
+        "1/598",
+        "9801/59800",
+        "99/59800"
+      ],
+      "old_failure": "103/200",
+      "new_failure": "101/200",
+      "Delta": "-1/100"
+    },
+    "public_fixed_controls": {
+      "old": {
+        "amplitude": 0.31917392579812226,
+        "duration": 1.0
+      },
+      "new": {
+        "amplitude": 0.14225372489090912,
+        "duration": 1.0
+      },
+      "formula": "u_old=2 asin(sqrt(5/198)); u_new=2 asin(sqrt(1/198))",
+      "status": "Static exploratory design; never generated from a held-out scorer truth."
+    },
+    "gate_kraus_vs_exact_product_max_error": 3.3306690738754696e-16,
+    "physical_reflected_world": {
+      "omega": -0.46142765068903135,
+      "formula": "omega'=-u_old-u_new-omega (duration=1)",
+      "Delta": "1/100",
+      "shared_Q": true,
+      "swapped_full_pmfs_max_error": 3.3306690738754696e-16
+    },
+    "enlarged_factorized_model_information": {
+      "model": "Independent Bern(x_j) times arbitrary common Q; x_old,x_new,Q unrestricted.",
+      "balanced_JS_full_per_shot": {
+        "lower_decimal": "0.002667262012424940465770022119489929615610426759690474873947785561",
+        "upper_decimal": "0.002667262012424940465770022119489929615610426759690474873947787111",
+        "display_midpoint": 0.0026672620124249405
+      },
+      "balanced_JS_OR_per_shot": {
+        "lower_decimal": "0.0000500208433720716211420436297458688917203347805919413123748000535",
+        "upper_decimal": "0.0000500208433720716211420436297458688917203347805919413123748008650",
+        "display_midpoint": 5.002084337207162e-05
+      },
+      "balanced_JS_ratio_full_over_OR": {
+        "lower_decimal": "53.32301162107486048847011425931747586977518900817635514344275454",
+        "upper_decimal": "53.32301162107486048847011425931747586977518900817635514344365064",
+        "display_midpoint": 53.32301162107486
+      },
+      "local_fisher_ratio_at_x_midpoint": "51",
+      "delta_variance_full_coefficient_exact": "49/2500",
+      "delta_variance_OR_coefficient_exact": "1999/2000",
+      "delta_variance_ratio_exact": "9995/196",
+      "delta_variance_ratio_display": 50.994897959183675,
+      "event_kl_95_percent_power_1_percent_risk": {
+        "lower_decimal": "4.176898950135489315266713690929139464445277254023544295589312295",
+        "upper_decimal": "4.176898950135489315266713690929139464445277254023544295589312299",
+        "display_midpoint": 4.176898950135489
+      },
+      "necessary_balanced_total_shots_full": {
+        "lower_decimal": "1565.987492296665251985053140286793394275378791306616731954361825",
+        "upper_decimal": "1565.987492296665251985053140286793394275378791306616731954362738",
+        "display_midpoint": 1565.9874922966653
+      },
+      "necessary_balanced_total_shots_OR": {
+        "lower_decimal": "83503.16925019295979975729956939294971684181241023792620688508412",
+        "upper_decimal": "83503.16925019295979975729956939294971684181241023792620688643895",
+        "display_midpoint": 83503.16925019296
+      },
+      "scope": "Necessary expected-shot bounds for paired/balanced tests valid over the enlarged class; not attainable stopping costs, not physical-model universal bounds, not a ratio of optimal costs."
+    },
+    "physical_binary_reflection_information": {
+      "balanced_KL_full_per_shot": {
+        "lower_decimal": "0.01119021160299316796130957667028744699955263624746884174446416281",
+        "upper_decimal": "0.01119021160299316796130957667028744699955263624746884174446416436",
+        "display_midpoint": 0.011190211602993168
+      },
+      "balanced_KL_OR_per_shot": {
+        "lower_decimal": "0.0002000867150979171231005823912333532952257579404866656769584374540",
+        "upper_decimal": "0.0002000867150979171231005823912333532952257579404866656769584387525",
+        "display_midpoint": 0.00020008671509791711
+      },
+      "balanced_KL_ratio_full_over_OR": {
+        "lower_decimal": "55.92680952114674714313055363787857575243316387365330464979827912",
+        "upper_decimal": "55.92680952114674714313055363787857575243316387365330464979864984",
+        "display_midpoint": 55.926809521146744
+      },
+      "necessary_balanced_total_shots_full": {
+        "lower_decimal": "373.2636252399595903151824222896590620463149253470453563192794188",
+        "upper_decimal": "373.2636252399595903151824222896590620463149253470453563192794710",
+        "display_midpoint": 373.2636252399596
+      },
+      "necessary_balanced_total_shots_OR": {
+        "lower_decimal": "20875.44366996792329593292136923817263374040733252487139618357325",
+        "upper_decimal": "20875.44366996792329593292136923817263374040733252487139618370876",
+        "display_midpoint": 20875.443669967925
+      },
+      "scope": "A genuine physical alternative with opposite sign and identical public controls/context. Change-of-measure necessary expected-shot bounds apply to tests with P_accept>=.95 here and <=.01 in the reflected world, stopping only after paid independent old/new pairs. These lower bounds alone do not demonstrate achievable speedup."
+    },
+    "unequal_duration_obstruction": {
+      "new_duration": 2.0,
+      "new_amplitude": 0.07112686244545456,
+      "new_q0_failure": 0.010000000000000002,
+      "new_spectator_success": 0.32785142478294654,
+      "new_all_qubit_failure": 0.675427089464883,
+      "Delta": 0.16042708946488293,
+      "meaning": "Local q0 improves, but the changed spectator distribution makes the target worse. Common duration/noise is an essential structural assumption."
+    }
+  },
+  "deterministic_physics_audit": {
+    "fixed_models_contexts": 36,
+    "gate_pmf_checks": 72,
+    "gate_vs_product_max_error": 6.661338147750939e-16,
+    "Delta_factorization_max_error": 1.3877787807814457e-16,
+    "shared_Q_max_error": 0.0,
+    "status": "Floating gate verification plus exact rational designated instance; analytic factorization proof is stated separately."
+  },
+  "required_strong_comparators": [
+    {
+      "name": "Safe two-sample Bernoulli e-process on q0",
+      "reference": "Turner, Ly and Gruenwald; existing safe full-count/KT evidence implementation",
+      "requirement": "Same complete bitstrings, known common-Q factorization, target context and paid costs; extract X directly."
+    },
+    {
+      "name": "Frozen exact paired-sign mixture on q0",
+      "reference": "Existing strongest qualified paired-sign mixtures",
+      "requirement": "Fresh independent old/new shots, charge concordant pairs too, use identical risk and power targets."
+    },
+    {
+      "name": "Bernoulli GLR with valid mixture threshold",
+      "reference": "Kaufmann and Koolen 2021; Track-and-Stop when unequal allocation is allowed",
+      "requirement": "Prove implemented threshold applies to the composite sign null and permitted allocation; count all learning shots."
+    },
+    {
+      "name": "Physics-aware known-control likelihood/e-process",
+      "reference": "Restricted shared-omega/readout Hamiltonian family",
+      "requirement": "May exploit exactly the same public controls, tensor factorization and response relations as FaultTune; unknown physical parameters stay hidden and are inferred from paid outcomes."
+    }
+  ],
+  "fairness_and_limits": [
+    "The roughly fifty-fold effect is loss from compressing observed bitstrings to OR, not superiority over SOTA methods given the same information.",
+    "Any comparator can use X; no claim is made that FaultTune outperforms those comparators.",
+    "No free inverse, controlled-U, amplitude amplification, coherent repeat queries, simulator truth, or shared old/new random noise is available.",
+    "Every old/new target shot costs one complete circuit run. Both configurations have equal duration, readout/reset cost, context and three-bit measurement.",
+    "A full-output theorem does not repair the previously proved wrong-context nonidentifiability: this construction requires target-context shots.",
+    "Equal duration is a new frozen control family; prior duration-changing benchmark results remain untouched.",
+    "Common-Q factorization is supplied by a declared exact model, not inferred for free. Arm-dependent spectator noise or q0-spectator entangling terms require a new robust certificate.",
+    "The designated high-gain instance is exploratory and cannot be repurposed as a held-out SOTA result.",
+    "JS and variance ratios are deterministic information diagnostics; they are not measured sample-cost speedups or finite-cap power guarantees."
+  ],
+  "recommended_next_gate": "Only benchmark a new validator after including structure-aware q0 safe/paired/GLR baselines. A result against OR-only validation is an instrumentation benefit. Seek extra measurement or across-update structure if the goal remains >=3x over same-information SOTA.",
+  "source_files": {
+    "experiments/sota_round7/bitstring_nuisance_diagnostic.py": "9aac0a5afd54cf0e591c47993bce641dfba8a49ee3f61fe6ddd7743903526df5",
+    "experiments/circuit_validation/quantum_model.py": "e8fd420cba361de28798e09bf46cdc9f791522e56f7252d8fa660d726c480bc2",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a"
+  }
+}

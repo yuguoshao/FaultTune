@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T11:02:23.502114+00:00",
+  "sources": {
+    "experiments/sota_round2/structured_grid_predictive.py": "483db5fb5a64cf91a9558af3006c2cdb0192c2cda4bafc99890fd5252238265b",
+    "experiments/sota_round2/structured_grid_checks.py": "ed499bf356eddea31dc37c99287dcd47223ca6de7e66544c8d38534c4c928208",
+    "results/sota_round2/structured_grid_checks.json": "5a20ad33b1940d5e13070a9a5bbd334e9ecbe4240ae031d1bdaff0ed85b373be",
+    "results/sota_round2/structured_grid_prior.json": "70a9cedde4037c437324c20c7d13caae0507752ab59d14fc4ea972dbac3824f0",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/sota_round2/adaptive_safe_replay.py": "a1eaba577bde2dc769280df2b6525221de11011b87fed7ca21b4b34020a5a198"
+  },
+  "grid": {
+    "models": 7141,
+    "exact_weight_sum": "1",
+    "saved_prior_matches_runtime_exactly": true,
+    "digest": "4d3ab802658e18ddc03727b0c2410a4b9cec8dc4b877bcf25d6d07e4a70ddee5"
+  },
+  "review": [
+    "The full fixed physical mixture and the product per-arm Jeffreys law are normalized probability laws under predictable actions. The same numerator serves both signs.",
+    "Any false sign certificate is dominated by the same Q/L_true process, including at C=0; interior likelihood ratios are martingales and support-edge cases are supermartingales.",
+    "A data-dependent positive subset retains its original exact prior weights. The returned interval encloses only that partial numerator; its lower endpoint is a valid lower bound for the full numerator.",
+    "The KT component remains complete, so both the full and certified partial numerators are at least Q_KT/2. This is a log-evidence bound, not a stopping-cost ratio.",
+    "Zero-count registered arms contribute likelihood one and KT marginal one. Positive grid points prevent log-zero arithmetic; global null certification uses the full closed physical cone.",
+    "Reviewed the 15 exact-rational enclosure tests, adaptive-action probability-tree code and output, input rejection checks and both-direction certificate examples; recorded source hashes match.",
+    "The saved rational prior exactly matches all 7141 runtime model tuples, strict physical inequalities and total weight one. It resolves the portability ambiguity of the trigonometric construction when used as the audit reference.",
+    "Production arithmetic dependencies certified_likelihood.py and direct_tests.py are bound; the self-test hash/write helper adaptive_safe_replay.py is additionally bound here."
+  ],
+  "issues": [],
+  "limits": [
+    "The grid is an engineering prior. No continuum approximation, novelty or performance superiority has been established.",
+    "The current implementation regenerates the grid from math.tan; any reproduction on another platform must compare the generated digest against the saved exact prior or consume the saved rational tuples.",
+    "Floating scores only select positive terms and screen. Actual stopping must use the conservative certificate lower bound."
+  ]
+}

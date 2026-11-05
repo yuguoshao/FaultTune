@@ -1,0 +1,282 @@
+{
+  "status": "passed",
+  "reviewer": "stream_stats independent continuation wrapper review",
+  "scope": "Administrative continuation wrapper only. No simulator or run_trial calls by reviewer; no fresh sampling. This review is not the final statistical/protocol audit.",
+  "sources": {
+    "experiments/structured_validation/completion_common.py": "81ecd628d39da4068da6350e87ba341087e71a38c006fa12b0e8407b523ddfc2",
+    "experiments/structured_validation/complete_prospective.py": "c6981988c1e59ec1e4e67d8ae67423dbe1c6fb1443a1e478f1e63640ecab6cb8",
+    "experiments/structured_validation/audit_prospective_completion.py": "c1a78c54340507d6a3ab2c7e61f8b96607aaf3c590001e6cf530c92c0ea23ca7",
+    "results/structured_validation/prospective_completion_v1/amendment.json": "905a1c1b8f85da818a7ea12c7bd9f0c421dd4a649261497b22a1281132ada72f",
+    "experiments/structured_validation/completion_wrapper_checks.py": "7db9ede8f047a99b80e7ccefddb88b62e360d683f248cebb02dc4cc83fa80f92",
+    "results/structured_validation/prospective_plan.json": "c9baab61fc33594ac21d3231ae51fc40bc3824506145ae9f45c0c71960e81d37",
+    "experiments/structured_validation/prospective/common.py": "8eeaa1af5eb178456b4101eedf307e2cd4cc3cdb3148bb3b4137671273632196",
+    "experiments/structured_validation/prospective/run.py": "089dfc722290aa388be59c7481356a55d6bc6fd6368ab7f03b3b7f033deab318",
+    "experiments/structured_validation/prospective/analyze.py": "995e1ae97210634dc8eb77369354c6008befe379a8ab05c4bfe56cfe88b72a68"
+  },
+  "boundary_checks": {
+    "status": "passed",
+    "scope": "Synthetic BytesIO records and in-memory mutation facades only; no simulator or run_trial calls, no real file mutations.",
+    "cases": [
+      {
+        "case": "complete_matrix",
+        "status": "accepted_as_required"
+      },
+      {
+        "case": "empty_prefix",
+        "status": "accepted_as_required"
+      },
+      {
+        "case": "whole_group_prefix",
+        "status": "accepted_as_required"
+      },
+      {
+        "case": "either_within_group_order",
+        "status": "accepted_as_required"
+      },
+      {
+        "case": "partial_execution_group",
+        "status": "rejected",
+        "message": "Prefix ends inside an execution group"
+      },
+      {
+        "case": "missing_middle_record",
+        "status": "rejected",
+        "message": "Duplicate or unexpected method"
+      },
+      {
+        "case": "missing_middle_whole_group",
+        "status": "rejected",
+        "message": "Duplicate or unexpected method"
+      },
+      {
+        "case": "duplicate_method_in_group",
+        "status": "rejected",
+        "message": "Duplicate or unexpected method"
+      },
+      {
+        "case": "duplicate_complete_group",
+        "status": "rejected",
+        "message": "Duplicate or unexpected method"
+      },
+      {
+        "case": "unexpected_extra_record",
+        "status": "rejected",
+        "message": "Unexpected records beyond the frozen sample matrix"
+      },
+      {
+        "case": "noncanonical_group_order",
+        "status": "rejected",
+        "message": "Duplicate or unexpected method"
+      },
+      {
+        "case": "unterminated_final_line",
+        "status": "rejected",
+        "message": "Unterminated original ledger record"
+      },
+      {
+        "case": "invalid_json",
+        "status": "rejected",
+        "message": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+      },
+      {
+        "case": "changed_case_id_99",
+        "status": "rejected",
+        "message": "Record is outside its frozen case/replicate/seed/policy group"
+      },
+      {
+        "case": "changed_rep_9",
+        "status": "rejected",
+        "message": "Record is outside its frozen case/replicate/seed/policy group"
+      },
+      {
+        "case": "changed_seed_0",
+        "status": "rejected",
+        "message": "Record is outside its frozen case/replicate/seed/policy group"
+      },
+      {
+        "case": "changed_policy_grid",
+        "status": "rejected",
+        "message": "Record is outside its frozen case/replicate/seed/policy group"
+      },
+      {
+        "case": "changed_method_closed_safe",
+        "status": "rejected",
+        "message": "Duplicate or unexpected method"
+      },
+      {
+        "case": "changed_shots_0",
+        "status": "rejected",
+        "message": "Invalid recorded cost"
+      },
+      {
+        "case": "changed_shots_101",
+        "status": "rejected",
+        "message": "Invalid recorded cost"
+      },
+      {
+        "case": "changed_shots_True",
+        "status": "rejected",
+        "message": "Invalid recorded cost"
+      },
+      {
+        "case": "changed_shots_10.0",
+        "status": "rejected",
+        "message": "Invalid recorded cost"
+      },
+      {
+        "case": "changed_decision_unknown",
+        "status": "rejected",
+        "message": "Invalid decision"
+      },
+      {
+        "case": "changed_decision_abstain",
+        "status": "rejected",
+        "message": "Abstention before cap"
+      },
+      {
+        "case": "cap_abstention",
+        "status": "accepted_as_required"
+      },
+      {
+        "case": "changed_frozen_plan_hash",
+        "status": "rejected",
+        "message": "Frozen prospective plan changed"
+      },
+      {
+        "case": "changed_frozen_algorithm_hash",
+        "status": "rejected",
+        "message": "Algorithm source changed"
+      },
+      {
+        "case": "changed_original_run_control_hash",
+        "status": "rejected",
+        "message": "Run deadline changed"
+      },
+      {
+        "case": "amended_plan",
+        "status": "rejected",
+        "message": "Amended scientific plan"
+      },
+      {
+        "case": "amended_algorithm_set",
+        "status": "rejected",
+        "message": "Changed algorithm set"
+      },
+      {
+        "case": "amended_old_wrapper",
+        "status": "rejected",
+        "message": "Changed old wrappers"
+      },
+      {
+        "case": "changed_completion_source",
+        "status": "rejected",
+        "message": "Completion source changed after release"
+      },
+      {
+        "case": "changed_original_inventory",
+        "status": "rejected",
+        "message": "Changed original artifact inventory"
+      },
+      {
+        "case": "changed_original_directory",
+        "status": "rejected",
+        "message": "Changed original directory"
+      },
+      {
+        "case": "changed_original_byte_metadata",
+        "status": "rejected",
+        "message": "Original amendment metadata differs from stopped progress"
+      },
+      {
+        "case": "changed_original_case_metadata",
+        "status": "rejected",
+        "message": "Original amendment metadata differs from stopped progress"
+      },
+      {
+        "case": "changed_start",
+        "status": "rejected",
+        "message": "Administrative window changed"
+      },
+      {
+        "case": "changed_sampling_cutoff",
+        "status": "rejected",
+        "message": "Invalid administrative clock"
+      },
+      {
+        "case": "changed_hard_deadline",
+        "status": "rejected",
+        "message": "Invalid administrative clock"
+      },
+      {
+        "case": "changed_maximum_minutes",
+        "status": "rejected",
+        "message": "Administrative window changed"
+      },
+      {
+        "case": "changed_original_count",
+        "status": "rejected",
+        "message": "Amended sample count"
+      },
+      {
+        "case": "changed_expected_count",
+        "status": "rejected",
+        "message": "Amended sample count"
+      },
+      {
+        "case": "changed_remaining_count",
+        "status": "rejected",
+        "message": "Amended sample count"
+      }
+    ],
+    "rejected_cases": 38,
+    "accepted_boundary_cases": 5
+  },
+  "actual_original_prefix_check": {
+    "records": 7937,
+    "bytes": 531045065,
+    "groups_consumed": 5291,
+    "complete_case_count": 41,
+    "next_group": {
+      "case_id": 41,
+      "rep": 21,
+      "methods": [
+        "psr_beta"
+      ],
+      "seed": 1121041432
+    },
+    "input_sha256": {
+      "results/structured_validation/prospective_v1/trials.jsonl": "f1f14a93f33289d46ad99defa6818bf815abf806770bd638ac42fc56d7221703"
+    },
+    "all_progress_boundaries_match": true
+  },
+  "implementation_findings": [
+    "Original release validation still checks frozen plan, algorithm, old wrappers and run control. The separate amendment changes only an explicit execution window and wrapper provenance.",
+    "The original prefix must contain exactly 7937 complete canonical execution-group records. Group membership is exact, duplicates are rejected, and stopping-order variation inside each group is allowed.",
+    "The runner skips precisely the consumed groups, then uses the same frozen case, replicate, seed, cap, policy and full engine group; there is no method substitution or outcome-driven sample extension.",
+    "Original spec, selection and release are copied byte-for-byte. The new ledger starts with a byte-copy of the original ledger, and old artifacts are never opened for writing.",
+    "Only 1663 missing method trajectories are authorized toward the original 9600 total. New sampling groups stop launching at 09:32:02 UTC; the explicit hard deadline is 09:52:02 UTC.",
+    "Audit source reuses old passed complete-case audits only after source, boundary, raw-segment and count checks; the 65-record unfinished tail and all appended data are covered by fresh case audits.",
+    "The audit adapter explicitly redirects the destination and replaces only the administrative deadline hook in process. Its final audit rebuilds the frozen complete-data analysis and checks all final source/input bindings.",
+    "The run release requires this passed review and verifies each bound source. The auditor additionally requires review coverage of all three continuation source files."
+  ],
+  "delegated_integration_check": {
+    "reviewer": "stream_sota",
+    "execution_observed_by_this_reviewer": false,
+    "reported_status": "passed",
+    "original_bytes_compared": 531045065,
+    "reused_complete_cases": 41,
+    "reused_terminal_records": 7872,
+    "reused_end_offset": 525326930,
+    "rejected_faults": [
+      "altered audit source",
+      "single changed prefix byte"
+    ],
+    "original_ledger_preserved": true
+  },
+  "limits": [
+    "Sampling has not been authorized by this JSON alone beyond the user-approved fixed continuation scope.",
+    "A launched frozen balanced execution group is allowed to finish after the sampling launch cutoff; root must still enforce the hard wall-clock limit.",
+    "Full final protocol audit, complete-data comparison and final report remain necessary.",
+    "This release does not establish superiority over any comparator or SOTA."
+  ]
+}

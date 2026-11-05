@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T12:51:02.172563+00:00",
+  "audit_sources": {
+    "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f",
+    "experiments/structured_validation/weighted_fisher.py": "1f31c9cbea3c8db4d7d8dc75936dc5304fd3273fb8ad1fafedc90e792fe24e24",
+    "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/structured_validation/conditional_fisher_unequal.py": "011d691f76b798cd0372544156ab86dbf7b6273b02b41de009737f433caef917",
+    "experiments/structured_validation/safe_grid.py": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+    "experiments/structured_validation/rb_grid.py": "a262a4790289505e7846c98334edbf341cded98090ce7bd8bf7c0c3974fb420f",
+    "experiments/structured_validation/predictive.py": "fc16237805139c707e6e076c0c7e69f45e88c111d405349c68daa3f150871fe4",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/structured_validation/design_policy.py": "1e61776de4b3bd8b2fd331b9c9f28b7b68f4e6c9672e19ca38aa9b436e3d4547",
+    "experiments/structured_validation/probe_fixed.py": "bf64f1ab7fb5e1675966704cc315de1f21b51db8135301fc319d8388d67311ec",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/sota_round3/audit_full_count_replay.py": "7371b067a4f937e8d68aed98f67ae82e79cee32d1116ad4817d5d274df207fcb"
+  },
+  "replay_sources": {
+    "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f",
+    "experiments/structured_validation/weighted_fisher.py": "1f31c9cbea3c8db4d7d8dc75936dc5304fd3273fb8ad1fafedc90e792fe24e24",
+    "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/structured_validation/conditional_fisher_unequal.py": "011d691f76b798cd0372544156ab86dbf7b6273b02b41de009737f433caef917",
+    "experiments/structured_validation/safe_grid.py": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+    "experiments/structured_validation/rb_grid.py": "a262a4790289505e7846c98334edbf341cded98090ce7bd8bf7c0c3974fb420f",
+    "experiments/structured_validation/predictive.py": "fc16237805139c707e6e076c0c7e69f45e88c111d405349c68daa3f150871fe4",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/structured_validation/design_policy.py": "1e61776de4b3bd8b2fd331b9c9f28b7b68f4e6c9672e19ca38aa9b436e3d4547",
+    "experiments/structured_validation/probe_fixed.py": "bf64f1ab7fb5e1675966704cc315de1f21b51db8135301fc319d8388d67311ec",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/sota_round3/replay_full_count_controls.py": "8af6983c2fe3f62a9303ee1a6e37eca6fa732bd4912d719bfc2011142acc0236"
+  },
+  "inputs": {
+    "results/sota_round3/full_count_replay/spec.json": "c62ef75fd42d6c852f8f56d4f0175e7ca57c6ce4fd544ee39592b062a072bc9f",
+    "results/sota_round3/full_count_replay/interface_checks.json": "c2160e282d4e0771dd3c7b0fea7e66563addd2258630bf95749b1015edafbd53",
+    "results/sota_round3/full_count_replay/records.jsonl": "52998ac5ca32ea85a2aea45458513e498d2fcd5d1f54e23b098b14c550b97486",
+    "results/sota_round3/full_count_replay/summary.json": "59495d608a66da255a0effbc8b8ceeae009ba7f7fffc8534056739b45bb00543"
+  },
+  "counts": {
+    "past_only_predictions_reconstructed": 32908,
+    "prefix_screens_recomputed": 64827,
+    "paid_method_blocks_checked": 64827,
+    "outward_certificates_recomputed": 2304,
+    "observed_stop": 1827,
+    "method_records_checked": 2304,
+    "paths_checked": 576,
+    "previously_generated_physical_shots": 1254704,
+    "observed_cap_abstention": 477
+  },
+  "new_simulation_observations": 0,
+  "elapsed_seconds": 611.5610213,
+  "scope": "All576 audited raw paths, all2304 controls, every past-only prediction, screen, outward certificate, first stopping prefix and censor cost interval; all summary arithmetic.",
+  "independence": "Independent replay adapter and aggregation; frozen safe/RB numerical kernels and predictor are shared and hash-checked. Underlying raw RNG audit is trusted through its passed bound audit.",
+  "limits": [
+    "Development replay only; no new holdout and no SOTA superiority conclusion.",
+    "Logical censoring cost intervals are not confidence intervals; unknown decisions remain unknown."
+  ]
+}

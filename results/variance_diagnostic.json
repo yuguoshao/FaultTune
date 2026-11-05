@@ -1,0 +1,2014 @@
+{
+  "aggregate": {
+    "cases": 36,
+    "max_heterogeneity_fraction": 0.060790666582033116,
+    "paired_over_optimal_geometric_mean": 1.1227911894011584,
+    "paired_over_optimal_max": 1.9972781194147657,
+    "paired_over_optimal_min": 1.000128547192908
+  },
+  "changes_frozen_experiment": false,
+  "coefficient_convention": "Var(mean estimator)=coefficient/T for total paid shots T, at fixed positive allocation proportions",
+  "exact_rational_formula_checks": [
+    {
+      "conditional_noise_variance": "1/2",
+      "context_delta_variance": "0",
+      "covariance_of_context_means": "0",
+      "example": "independent_fair_branches",
+      "paired_difference_variance": "1/2",
+      "public_context_covariance_identity_exact": true,
+      "variance_identity_exact": true
+    },
+    {
+      "conditional_noise_variance": "0",
+      "context_delta_variance": "1",
+      "covariance_of_context_means": "-1/4",
+      "example": "opposite_deterministic_contexts",
+      "paired_difference_variance": "1",
+      "public_context_covariance_identity_exact": true,
+      "variance_identity_exact": true
+    },
+    {
+      "conditional_noise_variance": "0",
+      "context_delta_variance": "0",
+      "covariance_of_context_means": "1/4",
+      "example": "matching_deterministic_contexts",
+      "paired_difference_variance": "0",
+      "public_context_covariance_identity_exact": true,
+      "variance_identity_exact": true
+    },
+    {
+      "conditional_noise_variance": "9/50",
+      "context_delta_variance": "0",
+      "covariance_of_context_means": "4/25",
+      "example": "shared_public_context_only",
+      "paired_difference_variance": "9/50",
+      "public_context_covariance_identity_exact": true,
+      "variance_identity_exact": true
+    }
+  ],
+  "important_limit": "oracle fixed-allocation variance comparison, not a lower bound for abstaining finite-budget validation and not an automatic finite-sample speedup",
+  "input_spec": "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\confirmation_spec_v1.json",
+  "input_spec_sha256": "ab2c711aacca68e84972ac5f6163a08bbc2f3e64544f90d26c9777904e146235",
+  "numeric_status": "binary64 physical probabilities and square roots; explanatory calculations, not certified bounds",
+  "oracle_allocation_is_not_an_executed_policy": true,
+  "per_main_case": [
+    {
+      "case_id": "confirm_main_e0p01_w0p2_low_readout_beneficial",
+      "conditional_delta": [
+        -0.01999999999999955,
+        0.017499999999998413
+      ],
+      "conditional_noise_variance_mean": 0.03202998194982805,
+      "context_delta_variance": 0.00022499999999997552,
+      "context_heterogeneity_fraction_of_paired_variance": 0.006975666591596873,
+      "covariance_of_public_context_failure_means": 9.948159114090481e-05,
+      "discordance_probability": 0.03241123194982802,
+      "epsilon": 0.01,
+      "fixed_proportional_stratum_variance_coefficient": 0.0640599638996561,
+      "independent_target_context_variance_coefficient": 0.06490789026421967,
+      "mixed_delta": -0.012499999999999957,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 2.927345865710862e-18,
+        "optimal_allocation_variance_residual": 6.938893903907228e-18,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.6575638300624165,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.5477745971019489,
+        0.17282652523248188,
+        0.06726379930460548,
+        0.21213507836096376
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.04241941893904605,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.032254981949828024,
+      "paired_over_optimal": 1.5207649117578126,
+      "paired_per_total_shot_variance_coefficient": 0.06450996389965605,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.020299970000999548,
+        0.03274808604397048,
+        0.00029997000100000004,
+        0.050248086043968895
+      ],
+      "strata": {
+        "epsilon": 0.01,
+        "intended_sign": -1,
+        "noise": "low_readout",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 0.00044999999999995044,
+      "variance_savings_from_oracle_allocation": 0.021640544960610048,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p01_w0p2_low_readout_harmful",
+      "conditional_delta": [
+        -0.01999999999999955,
+        0.14249999999999868
+      ],
+      "conditional_noise_variance_mean": 0.0652758006582482,
+      "context_delta_variance": 0.0042249999999999085,
+      "context_heterogeneity_fraction_of_paired_variance": 0.060790666582033116,
+      "covariance_of_public_context_failure_means": 0.0020913366466127417,
+      "discordance_probability": 0.06965705065824812,
+      "epsilon": 0.01,
+      "fixed_proportional_stratum_variance_coefficient": 0.1305516013164964,
+      "independent_target_context_variance_coefficient": 0.1473669479029472,
+      "mixed_delta": 0.012500000000000098,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 0.0,
+        "optimal_allocation_variance_residual": 1.3877787807814457e-17,
+        "variance_decomposition_residual": -1.3877787807814457e-17
+      },
+      "optimal_over_paired": 0.5006813974876048,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.427655061172507,
+        0.20485942798273596,
+        0.05251376087626891,
+        0.31497174996848815
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.0695955160001582,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.06950080065824811,
+      "paired_over_optimal": 1.9972781194147657,
+      "paired_per_total_shot_variance_coefficient": 0.13900160131649622,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.020299970000999548,
+        0.07930836205413032,
+        0.00029997000100000004,
+        0.22180836205412902
+      ],
+      "strata": {
+        "epsilon": 0.01,
+        "intended_sign": 1,
+        "noise": "low_readout",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 0.008449999999999819,
+      "variance_savings_from_oracle_allocation": 0.0609560853163382,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p01_w0p2_standard_readout_beneficial",
+      "conditional_delta": [
+        -0.019999999999999792,
+        0.0174999999999983
+      ],
+      "conditional_noise_variance_mean": 0.0871582778991534,
+      "context_delta_variance": 0.00022499999999997714,
+      "context_heterogeneity_fraction_of_paired_variance": 0.0025748633538289034,
+      "covariance_of_public_context_failure_means": 9.948744796596695e-05,
+      "discordance_probability": 0.08753952789915337,
+      "epsilon": 0.01,
+      "fixed_proportional_stratum_variance_coefficient": 0.1743165557983068,
+      "independent_target_context_variance_coefficient": 0.17516450559017058,
+      "mixed_delta": -0.012500000000000174,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -3.474867962816042e-17,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 1.3877787807814457e-17
+      },
+      "optimal_over_paired": 0.9717593242431052,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.42188507789071167,
+        0.11716766136771914,
+        0.3295488441890665,
+        0.13139841655250273
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.1698310301628575,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.08738327789915337,
+      "paired_over_optimal": 1.02906138902129,
+      "paired_per_total_shot_variance_coefficient": 0.17476655579830674,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.049700999999999794,
+        0.06214970269397919,
+        0.029701,
+        0.07964970269397749
+      ],
+      "strata": {
+        "epsilon": 0.01,
+        "intended_sign": -1,
+        "noise": "standard_readout",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 0.00044999999999995044,
+      "variance_savings_from_oracle_allocation": 0.0044855256354492945,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p01_w0p2_standard_readout_harmful",
+      "conditional_delta": [
+        -0.019999999999999792,
+        0.14249999999999993
+      ],
+      "conditional_noise_variance_mean": 0.11790225420025352,
+      "context_delta_variance": 0.004224999999999986,
+      "context_heterogeneity_fraction_of_paired_variance": 0.03459506256541397,
+      "covariance_of_public_context_failure_means": 0.0021024905884897797,
+      "discordance_probability": 0.1222835042002535,
+      "epsilon": 0.01,
+      "fixed_proportional_stratum_variance_coefficient": 0.23580450840050704,
+      "independent_target_context_variance_coefficient": 0.25266447075446613,
+      "mixed_delta": 0.012500000000000153,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 1.3877787807814457e-17,
+        "optimal_allocation_variance_residual": 2.7755575615628914e-17,
+        "variance_decomposition_residual": 1.3877787807814457e-17
+      },
+      "optimal_over_paired": 0.8616360919373888,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.37898275729854325,
+        0.13583911994327943,
+        0.2960363762087687,
+        0.18914174654940855
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.21045850005630096,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.1221272542002535,
+      "paired_over_optimal": 1.1605827673159557,
+      "paired_per_total_shot_variance_coefficient": 0.244254508400507,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.049700999999999794,
+        0.1089576855279886,
+        0.029701,
+        0.25145768552798853
+      ],
+      "strata": {
+        "epsilon": 0.01,
+        "intended_sign": 1,
+        "noise": "standard_readout",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 0.008449999999999958,
+      "variance_savings_from_oracle_allocation": 0.025346008344206084,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p01_w0p2_dephasing_beneficial",
+      "conditional_delta": [
+        -0.020300265444366902,
+        0.01870106177746827
+      ],
+      "conditional_noise_variance_mean": 0.05531733758155389,
+      "context_delta_variance": 0.00024337656401034581,
+      "context_heterogeneity_fraction_of_paired_variance": 0.004380371414462392,
+      "covariance_of_public_context_failure_means": 0.00011798776895597015,
+      "discordance_probability": 0.05571696414556422,
+      "epsilon": 0.01,
+      "fixed_proportional_stratum_variance_coefficient": 0.11063467516310778,
+      "independent_target_context_variance_coefficient": 0.11159337936695235,
+      "mixed_delta": -0.01249999999999987,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -7.426784881525705e-18,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 1.3877787807814457e-17
+      },
+      "optimal_over_paired": 0.9178220340287983,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.4424035906703393,
+        0.1314080805317216,
+        0.27195379042882756,
+        0.1542345383691116
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.10198969533834878,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.05556071414556424,
+      "paired_over_optimal": 1.0895358391108567,
+      "paired_per_total_shot_variance_coefficient": 0.11112142829112848,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.0322285526360167,
+        0.046159901187710246,
+        0.011928287191649798,
+        0.06486096296517851
+      ],
+      "strata": {
+        "epsilon": 0.01,
+        "intended_sign": -1,
+        "noise": "dephasing",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 0.0004867531280206977,
+      "variance_savings_from_oracle_allocation": 0.008644979824758994,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p01_w0p2_dephasing_harmful",
+      "conditional_delta": [
+        -0.020300265444366902,
+        0.14370106177746667
+      ],
+      "conditional_noise_variance_mean": 0.0873846881240205,
+      "context_delta_variance": 0.004303429652883668,
+      "context_heterogeneity_fraction_of_paired_variance": 0.04693552182361064,
+      "covariance_of_public_context_failure_means": 0.0021854013894416937,
+      "discordance_probability": 0.09184436777690416,
+      "epsilon": 0.01,
+      "fixed_proportional_stratum_variance_coefficient": 0.174769376248041,
+      "independent_target_context_variance_coefficient": 0.19211784111157512,
+      "mixed_delta": 0.01249999999999981,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 1.5612511283791264e-17,
+        "optimal_allocation_variance_residual": 2.7755575615628914e-17,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.7515342577055765,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.380584303649816,
+        0.1564666546365705,
+        0.23395231444314435,
+        0.2289967272704692
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.13781352306777428,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.09168811777690417,
+      "paired_over_optimal": 1.3306113324134896,
+      "paired_per_total_shot_variance_coefficient": 0.18337623555380833,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.0322285526360167,
+        0.09299646931026391,
+        0.011928287191649798,
+        0.23669753108773056
+      ],
+      "strata": {
+        "epsilon": 0.01,
+        "intended_sign": 1,
+        "noise": "dephasing",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 0.008606859305767323,
+      "variance_savings_from_oracle_allocation": 0.03695585318026673,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p01_w0p8_low_readout_beneficial",
+      "conditional_delta": [
+        -0.01999999999999955,
+        -0.010624999999999813
+      ],
+      "conditional_noise_variance_mean": 0.032345765692232374,
+      "context_delta_variance": 1.4062499999999207e-05,
+      "context_heterogeneity_fraction_of_paired_variance": 0.0004345665841135324,
+      "covariance_of_public_context_failure_means": 6.08585418835682e-06,
+      "discordance_probability": 0.03251607819223237,
+      "epsilon": 0.01,
+      "fixed_proportional_stratum_variance_coefficient": 0.06469153138446475,
+      "independent_target_context_variance_coefficient": 0.06474399980121819,
+      "mixed_delta": -0.012499999999999761,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 6.152847328855238e-18,
+        "optimal_allocation_variance_residual": 6.938893903907228e-18,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.9063882492048898,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.11645255452275116,
+        0.498895578650394,
+        0.014299752667188978,
+        0.3703521141596659
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.05866113603945707,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.032359828192232376,
+      "paired_over_optimal": 1.1032799695684814,
+      "paired_per_total_shot_variance_coefficient": 0.06471965638446475,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.020299970000999548,
+        0.023359033427915444,
+        0.00029997000100000004,
+        0.01273403342791563
+      ],
+      "strata": {
+        "epsilon": 0.01,
+        "intended_sign": -1,
+        "noise": "low_readout",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 2.812500000000384e-05,
+      "variance_savings_from_oracle_allocation": 0.006030395345007676,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p01_w0p8_low_readout_harmful",
+      "conditional_delta": [
+        -0.01999999999999955,
+        0.02062500000000026
+      ],
+      "conditional_noise_variance_mean": 0.07135135030485709,
+      "context_delta_variance": 0.0002640624999999975,
+      "context_heterogeneity_fraction_of_paired_variance": 0.003687230020156894,
+      "covariance_of_public_context_failure_means": 0.00011703951038475527,
+      "discordance_probability": 0.0717716628048571,
+      "epsilon": 0.01,
+      "fixed_proportional_stratum_variance_coefficient": 0.14270270060971418,
+      "independent_target_context_variance_coefficient": 0.14369898365125322,
+      "mixed_delta": 0.012500000000000299,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 2.5207700510287978e-17,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.8936401273727465,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.07883601725044459,
+        0.40416273743079395,
+        0.00968064249485704,
+        0.5073206028239043
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.1279968132415686,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.07161541280485709,
+      "paired_over_optimal": 1.119018684780803,
+      "paired_per_total_shot_variance_coefficient": 0.14323082560971417,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.020299970000999548,
+        0.033811937419640795,
+        0.00029997000100000004,
+        0.054436937419641056
+      ],
+      "strata": {
+        "epsilon": 0.01,
+        "intended_sign": 1,
+        "noise": "low_readout",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 0.0005281249999999904,
+      "variance_savings_from_oracle_allocation": 0.01470588736814557,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p01_w0p8_standard_readout_beneficial",
+      "conditional_delta": [
+        -0.019999999999999792,
+        -0.01062500000000028
+      ],
+      "conditional_noise_variance_mean": 0.08747612417100874,
+      "context_delta_variance": 1.4062499999998533e-05,
+      "context_heterogeneity_fraction_of_paired_variance": 0.00016073231221780404,
+      "covariance_of_public_context_failure_means": 6.081200068167748e-06,
+      "discordance_probability": 0.08764643667100873,
+      "epsilon": 0.01,
+      "fixed_proportional_stratum_variance_coefficient": 0.17495224834201747,
+      "independent_target_context_variance_coefficient": 0.17500469814229014,
+      "mixed_delta": -0.012500000000000181,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 2.7037291676357267e-18,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 1.3877787807814457e-17
+      },
+      "optimal_over_paired": 0.9936302881787137,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.10424029102368096,
+        0.4289021897294011,
+        0.08142565173562469,
+        0.3854318675112933
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.17386579878944772,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.08749018667100873,
+      "paired_over_optimal": 1.0064105451464869,
+      "paired_per_total_shot_variance_coefficient": 0.17498037334201746,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.049700999999999794,
+        0.052758185705440004,
+        0.029701,
+        0.042133185705439724
+      ],
+      "strata": {
+        "epsilon": 0.01,
+        "intended_sign": -1,
+        "noise": "standard_readout",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 2.8124999999989964e-05,
+      "variance_savings_from_oracle_allocation": 0.001086449552569757,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p01_w0p8_standard_readout_harmful",
+      "conditional_delta": [
+        -0.019999999999999792,
+        0.02062499999999974
+      ],
+      "conditional_noise_variance_mean": 0.12403323979685574,
+      "context_delta_variance": 0.00026406249999999385,
+      "context_heterogeneity_fraction_of_paired_variance": 0.0021244427282045178,
+      "covariance_of_public_context_failure_means": 0.00011705780741530191,
+      "discordance_probability": 0.12445355229685573,
+      "epsilon": 0.01,
+      "fixed_proportional_stratum_variance_coefficient": 0.24806647959371148,
+      "independent_target_context_variance_coefficient": 0.24906283582337266,
+      "mixed_delta": 0.012499999999999834,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -1.5287250632045613e-17,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.9809242441735998,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.08801954347115166,
+        0.39423514920898256,
+        0.06875507178872406,
+        0.44899023553114165
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.24385247461672133,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.12429730229685573,
+      "paired_over_optimal": 1.0194467166447405,
+      "paired_per_total_shot_variance_coefficient": 0.24859460459371147,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.049700999999999794,
+        0.06321465781603978,
+        0.029701,
+        0.08383965781603953
+      ],
+      "strata": {
+        "epsilon": 0.01,
+        "intended_sign": 1,
+        "noise": "standard_readout",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 0.0005281249999999904,
+      "variance_savings_from_oracle_allocation": 0.004214004976990149,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p01_w0p8_dephasing_beneficial",
+      "conditional_delta": [
+        -0.02120213915253112,
+        -0.010324465211867098
+      ],
+      "conditional_noise_variance_mean": 0.05899445835122923,
+      "context_delta_variance": 1.8931806457504186e-05,
+      "context_heterogeneity_fraction_of_paired_variance": 0.00032080526820976474,
+      "covariance_of_public_context_failure_means": 1.109514587109208e-05,
+      "discordance_probability": 0.05916964015768673,
+      "epsilon": 0.01,
+      "fixed_proportional_stratum_variance_coefficient": 0.11798891670245847,
+      "independent_target_context_variance_coefficient": 0.11807116089885783,
+      "mixed_delta": -0.012499999999999904,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -1.362028979184915e-17,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 6.938893903907228e-18
+      },
+      "optimal_over_paired": 0.9803525596530919,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.10523156548935718,
+        0.4475994452384941,
+        0.06383102944268212,
+        0.38333795982946656
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.11570785618978954,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.05901339015768674,
+      "paired_over_optimal": 1.0200411986009,
+      "paired_per_total_shot_variance_coefficient": 0.11802678031537348,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.03313042634418092,
+        0.03763772476827099,
+        0.011928287191649798,
+        0.027313259556403895
+      ],
+      "strata": {
+        "epsilon": 0.01,
+        "intended_sign": -1,
+        "noise": "dephasing",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 3.7863612915009504e-05,
+      "variance_savings_from_oracle_allocation": 0.0022810605126689226,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p01_w0p8_dephasing_harmful",
+      "conditional_delta": [
+        -0.02120213915253112,
+        0.02092553478813177
+      ],
+      "conditional_noise_variance_mean": 0.096817449870937,
+      "context_delta_variance": 0.00028395854586412913,
+      "context_heterogeneity_fraction_of_paired_variance": 0.002924350434189961,
+      "covariance_of_public_context_failure_means": 0.00013688417031216567,
+      "discordance_probability": 0.0972576584168011,
+      "epsilon": 0.01,
+      "fixed_proportional_stratum_variance_coefficient": 0.193634899741874,
+      "independent_target_context_variance_coefficient": 0.19475035351485093,
+      "mixed_delta": 0.012499999999999192,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -6.7220534694101275e-18,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 1.3877787807814457e-17
+      },
+      "optimal_over_paired": 0.9588502531234042,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.08295151051971802,
+        0.3967371559792897,
+        0.05031646432015294,
+        0.46999486918083927
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.18621142007817765,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.09710140841680114,
+      "paired_over_optimal": 1.0429157178011401,
+      "paired_per_total_shot_variance_coefficient": 0.19420281683360227,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.03313042634418092,
+        0.04811116306204472,
+        0.011928287191649798,
+        0.06903669785017649
+      ],
+      "strata": {
+        "epsilon": 0.01,
+        "intended_sign": 1,
+        "noise": "dephasing",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 0.000567917091728265,
+      "variance_savings_from_oracle_allocation": 0.0074234796636963585,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p003_w0p2_low_readout_beneficial",
+      "conditional_delta": [
+        -0.0059999999999997755,
+        0.005249999999998686
+      ],
+      "conditional_noise_variance_mean": 0.010249185932967177,
+      "context_delta_variance": 2.024999999999446e-05,
+      "context_heterogeneity_fraction_of_paired_variance": 0.001971870717357266,
+      "covariance_of_public_context_failure_means": 8.985289488035702e-06,
+      "discordance_probability": 0.010283498432967171,
+      "epsilon": 0.003,
+      "fixed_proportional_stratum_variance_coefficient": 0.020498371865934353,
+      "independent_target_context_variance_coefficient": 0.020574813023886484,
+      "mixed_delta": -0.0037500000000000836,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -7.182839392716467e-19,
+        "optimal_allocation_variance_residual": -1.734723475976807e-18,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.7204044622749832,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.5203677693605859,
+        0.16395988254326638,
+        0.1138904376844377,
+        0.20178191041170998
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.014796294942313212,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.010269435932967171,
+      "paired_over_optimal": 1.3881091142079756,
+      "paired_per_total_shot_variance_coefficient": 0.020538871865934342,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.006299970000999775,
+        0.01004506521397541,
+        0.00029997000100000004,
+        0.015295065213974095
+      ],
+      "strata": {
+        "epsilon": 0.003,
+        "intended_sign": -1,
+        "noise": "low_readout",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 4.049999999998846e-05,
+      "variance_savings_from_oracle_allocation": 0.005702076923621142,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p003_w0p2_low_readout_harmful",
+      "conditional_delta": [
+        -0.0059999999999997755,
+        0.04274999999999993
+      ],
+      "conditional_noise_variance_mean": 0.02199600212140374,
+      "context_delta_variance": 0.0003802499999999954,
+      "context_heterogeneity_fraction_of_paired_variance": 0.016993462441204435,
+      "covariance_of_public_context_failure_means": 0.000173740506395012,
+      "discordance_probability": 0.022390314621403732,
+      "epsilon": 0.003,
+      "fixed_proportional_stratum_variance_coefficient": 0.04399200424280748,
+      "independent_target_context_variance_coefficient": 0.04544746626838751,
+      "mixed_delta": 0.0037500000000001655,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -2.6020852139652106e-18,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 3.469446951953614e-18
+      },
+      "optimal_over_paired": 0.5480857007745936,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.40416059860070697,
+        0.19107536804130593,
+        0.08845672268672468,
+        0.3163073106712625
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.024528207649337105,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.022376252121403734,
+      "paired_over_optimal": 1.824532182807778,
+      "paired_per_total_shot_variance_coefficient": 0.04475250424280747,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.006299970000999775,
+        0.022913002278346657,
+        0.00029997000100000004,
+        0.06566300227834658
+      ],
+      "strata": {
+        "epsilon": 0.003,
+        "intended_sign": 1,
+        "noise": "low_readout",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 0.0007604999999999904,
+      "variance_savings_from_oracle_allocation": 0.019463796593470372,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p003_w0p2_standard_readout_beneficial",
+      "conditional_delta": [
+        -0.006000000000000286,
+        0.005250000000001073
+      ],
+      "conditional_noise_variance_mean": 0.06671393371170413,
+      "context_delta_variance": 2.0250000000004893e-05,
+      "context_heterogeneity_fraction_of_paired_variance": 0.0003034426866969133,
+      "covariance_of_public_context_failure_means": 8.985382295848543e-06,
+      "discordance_probability": 0.06674824621170414,
+      "epsilon": 0.003,
+      "fixed_proportional_stratum_variance_coefficient": 0.13342786742340826,
+      "independent_target_context_variance_coefficient": 0.13350430895259163,
+      "mixed_delta": -0.0037500000000000146,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -1.8831236483357605e-17,
+        "optimal_allocation_variance_residual": 2.7755575615628914e-17,
+        "variance_decomposition_residual": -1.3877787807814457e-17
+      },
+      "optimal_over_paired": 0.9954534444870219,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.4072268310638687,
+        0.1068054436476793,
+        0.3725878287769086,
+        0.1133798965115434
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.13286154608169118,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.06673418371170413,
+      "paired_over_optimal": 1.0045673210918677,
+      "paired_per_total_shot_variance_coefficient": 0.13346836742340826,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.03570100000000029,
+        0.03944612616505529,
+        0.029701,
+        0.04469612616505636
+      ],
+      "strata": {
+        "epsilon": 0.003,
+        "intended_sign": -1,
+        "noise": "standard_readout",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 4.049999999999887e-05,
+      "variance_savings_from_oracle_allocation": 0.0005663213417170798,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p003_w0p2_standard_readout_harmful",
+      "conditional_delta": [
+        -0.006000000000000286,
+        0.042750000000001544
+      ],
+      "conditional_noise_variance_mean": 0.07772232701723661,
+      "context_delta_variance": 0.0003802500000000286,
+      "context_heterogeneity_fraction_of_paired_variance": 0.004868597356475323,
+      "covariance_of_public_context_failure_means": 0.0001739431617562546,
+      "discordance_probability": 0.07811663951723663,
+      "epsilon": 0.003,
+      "fixed_proportional_stratum_variance_coefficient": 0.15544465403447322,
+      "independent_target_context_variance_coefficient": 0.1569009266814983,
+      "mixed_delta": 0.0037500000000000797,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 9.64939933512099e-18,
+        "optimal_allocation_variance_residual": 5.551115123125783e-17,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.9610124096809242,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.38311032632907355,
+        0.11495284221994022,
+        0.35052269099276273,
+        0.15141414045822352
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.15011509148324909,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.07810257701723664,
+      "paired_over_optimal": 1.0405692891437484,
+      "paired_per_total_shot_variance_coefficient": 0.15620515403447327,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.03570100000000029,
+        0.05232948016908546,
+        0.029701,
+        0.095079480169087
+      ],
+      "strata": {
+        "epsilon": 0.003,
+        "intended_sign": 1,
+        "noise": "standard_readout",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 0.0007605000000000528,
+      "variance_savings_from_oracle_allocation": 0.005329562551224132,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p003_w0p2_dephasing_beneficial",
+      "conditional_delta": [
+        -0.0062960831079962015,
+        0.006434332431985549
+      ],
+      "conditional_noise_variance_mean": 0.034119595039543545,
+      "context_delta_variance": 2.5930156771297418e-05,
+      "context_heterogeneity_fraction_of_paired_variance": 0.0007594013160499265,
+      "covariance_of_public_context_failure_means": 1.5000596536719282e-05,
+      "discordance_probability": 0.03415958769631484,
+      "epsilon": 0.003,
+      "fixed_proportional_stratum_variance_coefficient": 0.06823919007908709,
+      "independent_target_context_variance_coefficient": 0.06835105277877657,
+      "mixed_delta": -0.003749999999999852,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 4.675621868843738e-18,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 6.938893903907228e-18
+      },
+      "optimal_over_paired": 0.9760363533084334,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.4144837258283828,
+        0.11722045033098609,
+        0.3364018460284873,
+        0.1318939778121438
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.06665454778882474,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.03414552519631484,
+      "paired_over_optimal": 1.0245520021978054,
+      "paired_per_total_shot_variance_coefficient": 0.06829105039262968,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.018224370299646,
+        0.023446638454534006,
+        0.011928287191649798,
+        0.029880970886519555
+      ],
+      "strata": {
+        "epsilon": 0.003,
+        "intended_sign": -1,
+        "noise": "dephasing",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 5.186031354259546e-05,
+      "variance_savings_from_oracle_allocation": 0.001584642290262353,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p003_w0p2_dephasing_harmful",
+      "conditional_delta": [
+        -0.0062960831079962015,
+        0.04393433243198656
+      ],
+      "conditional_noise_variance_mean": 0.04552004967020065,
+      "context_delta_variance": 0.00040369514325109466,
+      "context_heterogeneity_fraction_of_paired_variance": 0.008790553664361586,
+      "covariance_of_public_context_failure_means": 0.00019839474389254686,
+      "discordance_probability": 0.04593780731345175,
+      "epsilon": 0.003,
+      "fixed_proportional_stratum_variance_coefficient": 0.0910400993404013,
+      "independent_target_context_variance_coefficient": 0.09264106860247368,
+      "mixed_delta": 0.0037500000000003503,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -4.119968255444917e-18,
+        "optimal_allocation_variance_residual": 1.3877787807814457e-17,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.8883705991484235,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.3746205891500795,
+        0.13106165320165347,
+        0.3040482651001505,
+        0.19026949254811648
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.08159460939013087,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.045923744813451746,
+      "paired_over_optimal": 1.1256563431506879,
+      "paired_per_total_shot_variance_coefficient": 0.09184748962690349,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.018224370299646,
+        0.03636122387542464,
+        0.011928287191649798,
+        0.0802955563074112
+      ],
+      "strata": {
+        "epsilon": 0.003,
+        "intended_sign": 1,
+        "noise": "dephasing",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 0.0008073902865021881,
+      "variance_savings_from_oracle_allocation": 0.009445489950270433,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p003_w0p8_low_readout_beneficial",
+      "conditional_delta": [
+        -0.0059999999999997755,
+        -0.00318750000000004
+      ],
+      "conditional_noise_variance_mean": 0.010277564329580222,
+      "context_delta_variance": 1.2656249999997618e-06,
+      "context_heterogeneity_fraction_of_paired_variance": 0.00012312928665930527,
+      "covariance_of_public_context_failure_means": 5.580523535778656e-07,
+      "discordance_probability": 0.01029289245458022,
+      "epsilon": 0.003,
+      "fixed_proportional_stratum_variance_coefficient": 0.020555128659160444,
+      "independent_target_context_variance_coefficient": 0.020559892118574757,
+      "mixed_delta": -0.003749999999999987,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 2.1336759941335826e-18,
+        "optimal_allocation_variance_residual": -3.469446951953614e-18,
+        "variance_decomposition_residual": 1.734723475976807e-18
+      },
+      "optimal_over_paired": 0.9242673108721007,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.11479983202742977,
+        0.49174902078107463,
+        0.02512569741160109,
+        0.36832544977989456
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.019000773042062918,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.010278829954580222,
+      "paired_over_optimal": 1.0819380802902583,
+      "paired_per_total_shot_variance_coefficient": 0.020557659909160444,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.006299970000999775,
+        0.007231532284388223,
+        0.00029997000100000004,
+        0.004044032284388183
+      ],
+      "strata": {
+        "epsilon": 0.003,
+        "intended_sign": -1,
+        "noise": "low_readout",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 2.5312499999999294e-06,
+      "variance_savings_from_oracle_allocation": 0.0015543556170975262,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p003_w0p8_low_readout_harmful",
+      "conditional_delta": [
+        -0.0059999999999997755,
+        0.0061875000000002605
+      ],
+      "conditional_noise_variance_mean": 0.022532257324115602,
+      "context_delta_variance": 2.3765625000000136e-05,
+      "context_heterogeneity_fraction_of_paired_variance": 0.0010536265658894427,
+      "covariance_of_public_context_failure_means": 1.0552688650076224e-05,
+      "discordance_probability": 0.022570085449115602,
+      "epsilon": 0.003,
+      "fixed_proportional_stratum_variance_coefficient": 0.045064514648231205,
+      "independent_target_context_variance_coefficient": 0.04515425665283151,
+      "mixed_delta": 0.003750000000000254,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -5.1228552649940085e-18,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 3.469446951953614e-18
+      },
+      "optimal_over_paired": 0.9075782123430203,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.07820573380690511,
+        0.4003213926225254,
+        0.01711651984834801,
+        0.5043563537222214
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.04094270997145296,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.022556022949115604,
+      "paired_over_optimal": 1.101833413803954,
+      "paired_per_total_shot_variance_coefficient": 0.04511204589823121,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.006299970000999775,
+        0.01035945067529632,
+        0.00029997000100000004,
+        0.01654695067529658
+      ],
+      "strata": {
+        "epsilon": 0.003,
+        "intended_sign": 1,
+        "noise": "low_readout",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 4.75312500000033e-05,
+      "variance_savings_from_oracle_allocation": 0.004121804676778244,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p003_w0p8_standard_readout_beneficial",
+      "conditional_delta": [
+        -0.006000000000000286,
+        -0.003187500000000197
+      ],
+      "conditional_noise_variance_mean": 0.06674249249382772,
+      "context_delta_variance": 1.26562500000008e-06,
+      "context_heterogeneity_fraction_of_paired_variance": 1.896244736094746e-05,
+      "covariance_of_public_context_failure_means": 5.579258791495999e-07,
+      "discordance_probability": 0.06675782061882772,
+      "epsilon": 0.003,
+      "fixed_proportional_stratum_variance_coefficient": 0.13348498498765543,
+      "independent_target_context_variance_coefficient": 0.13348974794117202,
+      "mixed_delta": -0.003750000000000215,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -8.834553639862353e-19,
+        "optimal_allocation_variance_residual": 2.7755575615628914e-17,
+        "variance_decomposition_residual": -1.3877787807814457e-17
+      },
+      "optimal_over_paired": 0.9990355285152074,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.10161673848842066,
+        0.4115360263810358,
+        0.09297314683779641,
+        0.39387408829274706
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.13335877133466842,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.06674375811882771,
+      "paired_over_optimal": 1.00096540258806,
+      "paired_per_total_shot_variance_coefficient": 0.13348751623765542,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.03570100000000029,
+        0.03663239321640114,
+        0.029701,
+        0.03344489321640094
+      ],
+      "strata": {
+        "epsilon": 0.003,
+        "intended_sign": -1,
+        "noise": "standard_readout",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 2.5312499999929905e-06,
+      "variance_savings_from_oracle_allocation": 0.0001262136529870117,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p003_w0p8_standard_readout_harmful",
+      "conditional_delta": [
+        -0.006000000000000286,
+        0.006187499999999922
+      ],
+      "conditional_noise_variance_mean": 0.07826231319200448,
+      "context_delta_variance": 2.3765625000000813e-05,
+      "context_heterogeneity_fraction_of_paired_variance": 0.0003035740882558891,
+      "covariance_of_public_context_failure_means": 1.05530806037182e-05,
+      "discordance_probability": 0.0783001413170045,
+      "epsilon": 0.003,
+      "fixed_proportional_stratum_variance_coefficient": 0.15652462638400896,
+      "independent_target_context_variance_coefficient": 0.15661436995642386,
+      "mixed_delta": 0.003749999999999881,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 1.3457659465976324e-17,
+        "optimal_allocation_variance_residual": 2.7755575615628914e-17,
+        "variance_decomposition_residual": -1.3877787807814457e-17
+      },
+      "optimal_over_paired": 0.9958799249868039,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.09397563895460857,
+        0.3958635019513718,
+        0.08598200463497634,
+        0.42417885445904324
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.1559270685995789,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.07828607881700449,
+      "paired_over_optimal": 1.004137120259002,
+      "paired_per_total_shot_variance_coefficient": 0.15657215763400897,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.03570100000000029,
+        0.039760601310564594,
+        0.029701,
+        0.04594810131056452
+      ],
+      "strata": {
+        "epsilon": 0.003,
+        "intended_sign": 1,
+        "noise": "standard_readout",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 4.753125000001024e-05,
+      "variance_savings_from_oracle_allocation": 0.000597557784430075,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p003_w0p8_dephasing_beneficial",
+      "conditional_delta": [
+        -0.007185394800511108,
+        -0.002891151299871896
+      ],
+      "conditional_noise_variance_mean": 0.03756477264169437,
+      "context_delta_variance": 2.950484358845138e-06,
+      "context_heterogeneity_fraction_of_paired_variance": 7.853774765495376e-05,
+      "covariance_of_public_context_failure_means": 2.567408509109896e-06,
+      "discordance_probability": 0.03758178562605321,
+      "epsilon": 0.003,
+      "fixed_proportional_stratum_variance_coefficient": 0.07512954528338874,
+      "independent_target_context_variance_coefficient": 0.07514571588614287,
+      "mixed_delta": -0.0037499999999997384,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 2.07014852308951e-18,
+        "optimal_allocation_variance_residual": 1.3877787807814457e-17,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.9941613865920899,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.10019836420350445,
+        0.42467067324163144,
+        0.0794442357659953,
+        0.3956867267888688
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.07469675942820957,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.037567723126053214,
+      "paired_over_optimal": 1.0058729030182156,
+      "paired_per_total_shot_variance_coefficient": 0.07513544625210643,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.019113681992160906,
+        0.021511495334076654,
+        0.011928287191649798,
+        0.018620344034204758
+      ],
+      "strata": {
+        "epsilon": 0.003,
+        "intended_sign": -1,
+        "noise": "dephasing",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 5.900968717692523e-06,
+      "variance_savings_from_oracle_allocation": 0.00043278585517916857,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p003_w0p8_dephasing_harmful",
+      "conditional_delta": [
+        -0.007185394800511108,
+        0.00648384870012815
+      ],
+      "conditional_noise_variance_mean": 0.04946493885444274,
+      "context_delta_variance": 2.9895714860762976e-05,
+      "context_heterogeneity_fraction_of_paired_variance": 0.0006040168660206853,
+      "covariance_of_public_context_failure_means": 1.699295319897726e-05,
+      "discordance_probability": 0.049508897069303504,
+      "epsilon": 0.003,
+      "fixed_proportional_stratum_variance_coefficient": 0.09892987770888548,
+      "independent_target_context_variance_coefficient": 0.0990576409514029,
+      "mixed_delta": 0.003750000000000299,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -9.012430558785756e-18,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.9837736090545508,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.08775441831096388,
+        0.39746031472112175,
+        0.06957780951038876,
+        0.4452074574575256
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.0973834240676033,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.0494948345693035,
+      "paired_over_optimal": 1.0164940295166522,
+      "paired_per_total_shot_variance_coefficient": 0.098989669138607,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.019113681992160906,
+        0.02464506250464028,
+        0.011928287191649798,
+        0.03112891120476843
+      ],
+      "strata": {
+        "epsilon": 0.003,
+        "intended_sign": 1,
+        "noise": "dephasing",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 5.9791429721525735e-05,
+      "variance_savings_from_oracle_allocation": 0.0015464536412821833,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p001_w0p2_low_readout_beneficial",
+      "conditional_delta": [
+        -0.0019999999999999367,
+        0.001749999999999218
+      ],
+      "conditional_noise_variance_mean": 0.0038372788642233252,
+      "context_delta_variance": 2.2499999999989857e-06,
+      "context_heterogeneity_fraction_of_paired_variance": 0.0005860093984354315,
+      "covariance_of_public_context_failure_means": 9.994479914761314e-07,
+      "discordance_probability": 0.0038410913642233243,
+      "epsilon": 0.001,
+      "fixed_proportional_stratum_variance_coefficient": 0.0076745577284466505,
+      "independent_target_context_variance_coefficient": 0.007683055520412553,
+      "mixed_delta": -0.001250000000000106,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 1.6432439176733427e-19,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.804334613992712,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.48761686704287777,
+        0.15134361486114467,
+        0.17627527718691574,
+        0.18476424090906177
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.006176531933837886,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.003839528864223324,
+      "paired_over_optimal": 1.2432636649018576,
+      "paired_per_total_shot_variance_coefficient": 0.007679057728446648,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.002299970000999937,
+        0.0035494179437134776,
+        0.00029997000100000004,
+        0.0052994179437126955
+      ],
+      "strata": {
+        "epsilon": 0.001,
+        "intended_sign": -1,
+        "noise": "low_readout",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 4.4999999999975615e-06,
+      "variance_savings_from_oracle_allocation": 0.0014980257946087643,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p001_w0p2_low_readout_harmful",
+      "conditional_delta": [
+        -0.0019999999999999367,
+        0.014249999999999529
+      ],
+      "conditional_noise_variance_mean": 0.007918851168464452,
+      "context_delta_variance": 4.2249999999997225e-05,
+      "context_heterogeneity_fraction_of_paired_variance": 0.00530705477872309,
+      "covariance_of_public_context_failure_means": 1.894509474706405e-05,
+      "discordance_probability": 0.007962663668464449,
+      "epsilon": 0.001,
+      "fixed_proportional_stratum_variance_coefficient": 0.015837702336928904,
+      "independent_target_context_variance_coefficient": 0.015997982715917153,
+      "mixed_delta": 0.0012499999999999564,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -1.2468324983583301e-18,
+        "optimal_allocation_variance_residual": 1.734723475976807e-18,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.6163047572334086,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.38685813700785426,
+        0.1771072744294203,
+        0.139850628520356,
+        0.29618396004236935
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.009812929045882176,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.007961101168464449,
+      "paired_over_optimal": 1.6225738780420889,
+      "paired_per_total_shot_variance_coefficient": 0.015922202336928898,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.002299970000999937,
+        0.007755193385361228,
+        0.00029997000100000004,
+        0.022005193385360756
+      ],
+      "strata": {
+        "epsilon": 0.001,
+        "intended_sign": 1,
+        "noise": "low_readout",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 8.44999999999943e-05,
+      "variance_savings_from_oracle_allocation": 0.006024773291046727,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p001_w0p2_standard_readout_beneficial",
+      "conditional_delta": [
+        -0.002000000000000151,
+        0.001750000000000168
+      ],
+      "conditional_noise_variance_mean": 0.06068412735706609,
+      "context_delta_variance": 2.2500000000003825e-06,
+      "context_heterogeneity_fraction_of_paired_variance": 3.707586608378101e-05,
+      "covariance_of_public_context_failure_means": 9.994507876574445e-07,
+      "discordance_probability": 0.06068793985706609,
+      "epsilon": 0.001,
+      "fixed_proportional_stratum_variance_coefficient": 0.12136825471413218,
+      "independent_target_context_variance_coefficient": 0.1213767525172828,
+      "mixed_delta": -0.0012500000000000872,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -8.740532982717125e-18,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 6.938893903907228e-18
+      },
+      "optimal_over_paired": 0.999372542566394,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.4024453360255516,
+        0.10250870048277377,
+        0.38994558153581443,
+        0.10510038195586022
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.12129659847694955,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.06068637735706609,
+      "paired_over_optimal": 1.000627851383624,
+      "paired_per_total_shot_variance_coefficient": 0.12137275471413218,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.03170100000000015,
+        0.03295045073938758,
+        0.029701,
+        0.034700450739387746
+      ],
+      "strata": {
+        "epsilon": 0.001,
+        "intended_sign": -1,
+        "noise": "standard_readout",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 4.5000000000045e-06,
+      "variance_savings_from_oracle_allocation": 7.165623718262404e-05,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p001_w0p2_standard_readout_harmful",
+      "conditional_delta": [
+        -0.002000000000000151,
+        0.014250000000001088
+      ],
+      "conditional_noise_variance_mean": 0.06452034287390947,
+      "context_delta_variance": 4.225000000000645e-05,
+      "context_heterogeneity_fraction_of_paired_variance": 0.0006544037052929481,
+      "covariance_of_public_context_failure_means": 1.895192175266876e-05,
+      "discordance_probability": 0.06456415537390947,
+      "epsilon": 0.001,
+      "fixed_proportional_stratum_variance_coefficient": 0.12904068574781893,
+      "independent_target_context_variance_coefficient": 0.1292009934348296,
+      "mixed_delta": 0.001250000000000097,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -2.1155494890623405e-17,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.9923704420654949,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.39155143501747536,
+        0.10567934879752156,
+        0.3793900397428834,
+        0.12337917644211963
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.12814001766235222,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.06456259287390947,
+      "paired_over_optimal": 1.0076882156209985,
+      "paired_per_total_shot_variance_coefficient": 0.12912518574781895,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.03170100000000015,
+        0.03715779428331092,
+        0.029701,
+        0.051407794283312006
+      ],
+      "strata": {
+        "epsilon": 0.001,
+        "intended_sign": 1,
+        "noise": "standard_readout",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 8.450000000001512e-05,
+      "variance_savings_from_oracle_allocation": 0.0009006680854667104,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p001_w0p2_dephasing_beneficial",
+      "conditional_delta": [
+        -0.00229488815474742,
+        0.002929552618990538
+      ],
+      "conditional_noise_variance_mean": 0.027874267208833067,
+      "context_delta_variance": 4.3671650237273075e-06,
+      "context_heterogeneity_fraction_of_paired_variance": 0.00015664917316834639,
+      "covariance_of_public_context_failure_means": 3.4662029281899823e-06,
+      "discordance_probability": 0.027880196873856795,
+      "epsilon": 0.001,
+      "fixed_proportional_stratum_variance_coefficient": 0.05574853441766613,
+      "independent_target_context_variance_coefficient": 0.055771133559426346,
+      "mixed_delta": -0.0012499999999998285,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -5.041540102057596e-18,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.993070263129076,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.4025657626766104,
+        0.10970862229384237,
+        0.3690902126161553,
+        0.11863540241339196
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.05537088554665054,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.027878634373856796,
+      "paired_over_optimal": 1.006978093220805,
+      "paired_per_total_shot_variance_coefficient": 0.05575726874771359,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.014223175346397218,
+        0.016948319819715455,
+        0.011928287191649798,
+        0.019877872438705993
+      ],
+      "strata": {
+        "epsilon": 0.001,
+        "intended_sign": -1,
+        "noise": "dephasing",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 8.734330047457939e-06,
+      "variance_savings_from_oracle_allocation": 0.00037764887101559425,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p001_w0p2_dephasing_harmful",
+      "conditional_delta": [
+        -0.00229488815474742,
+        0.015429552618990552
+      ],
+      "conditional_noise_variance_mean": 0.03184088308739841,
+      "context_delta_variance": 5.026492811867922e-05,
+      "context_heterogeneity_fraction_of_paired_variance": 0.0015761404416743514,
+      "covariance_of_public_context_failure_means": 2.740859818998609e-05,
+      "discordance_probability": 0.03189271051551709,
+      "epsilon": 0.001,
+      "fixed_proportional_stratum_variance_coefficient": 0.06368176617479682,
+      "independent_target_context_variance_coefficient": 0.06389193042379412,
+      "mixed_delta": 0.0012500000000001746,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 2.5478751053409354e-18,
+        "optimal_allocation_variance_residual": 6.938893903907228e-18,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.9636653234428212,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.3820888643323427,
+        0.11611931194092284,
+        0.350316080625014,
+        0.1514757431017205
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.06146478693467232,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.03189114801551709,
+      "paired_over_optimal": 1.0377046633029903,
+      "paired_per_total_shot_variance_coefficient": 0.06378229603103418,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.014223175346397218,
+        0.02116736786293074,
+        0.011928287191649798,
+        0.03659692048192129
+      ],
+      "strata": {
+        "epsilon": 0.001,
+        "intended_sign": 1,
+        "noise": "dephasing",
+        "weight_plus": 0.2
+      },
+      "variance_savings_from_fixed_context_counts": 0.00010052985623736077,
+      "variance_savings_from_oracle_allocation": 0.0022169792401244975,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p001_w0p8_low_readout_beneficial",
+      "conditional_delta": [
+        -0.0019999999999999367,
+        -0.0010625000000002618
+      ],
+      "conditional_noise_variance_mean": 0.003840430734584375,
+      "context_delta_variance": 1.4062499999990246e-07,
+      "context_heterogeneity_fraction_of_paired_variance": 3.6615645650995234e-05,
+      "covariance_of_public_context_failure_means": 6.233510602822125e-08,
+      "discordance_probability": 0.0038421338595843748,
+      "epsilon": 0.001,
+      "fixed_proportional_stratum_variance_coefficient": 0.00768086146916875,
+      "independent_target_context_variance_coefficient": 0.007681392059592862,
+      "mixed_delta": -0.0012500000000001967,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 4.018112543537587e-19,
+        "optimal_allocation_variance_residual": 8.673617379884035e-19,
+        "variance_decomposition_residual": 4.336808689942018e-19
+      },
+      "optimal_over_paired": 0.9481521826324317,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.11226364326871213,
+        0.4784548465836064,
+        0.04058371679227642,
+        0.36869779335540503
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.007282892234291061,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.0038405713595843745,
+      "paired_over_optimal": 1.0546830121970705,
+      "paired_per_total_shot_variance_coefficient": 0.007681142719168749,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.002299970000999937,
+        0.002611810146451751,
+        0.00029997000100000004,
+        0.001549310146451489
+      ],
+      "strata": {
+        "epsilon": 0.001,
+        "intended_sign": -1,
+        "noise": "low_readout",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 2.812499999994139e-07,
+      "variance_savings_from_oracle_allocation": 0.00039796923487768823,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p001_w0p8_low_readout_harmful",
+      "conditional_delta": [
+        -0.0019999999999999367,
+        0.002062499999999899
+      ],
+      "conditional_noise_variance_mean": 0.0079781563752466,
+      "context_delta_variance": 2.640624999999786e-06,
+      "context_heterogeneity_fraction_of_paired_variance": 0.0003308723426893571,
+      "covariance_of_public_context_failure_means": 1.1732364387919573e-06,
+      "discordance_probability": 0.007982359500246599,
+      "epsilon": 0.001,
+      "fixed_proportional_stratum_variance_coefficient": 0.0159563127504932,
+      "independent_target_context_variance_coefficient": 0.015966286946248364,
+      "mixed_delta": 0.0012499999999999322,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -2.089630280876359e-18,
+        "optimal_allocation_variance_residual": 1.734723475976807e-18,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.9267589239186408,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.0787715798451216,
+        0.39686741647458507,
+        0.028476213622095806,
+        0.4958847900581976
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.014792549679923309,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.0079807970002466,
+      "paired_over_optimal": 1.0790292644517216,
+      "paired_per_total_shot_variance_coefficient": 0.0159615940004932,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.002299970000999937,
+        0.0036537907986273596,
+        0.00029997000100000004,
+        0.005716290798627259
+      ],
+      "strata": {
+        "epsilon": 0.001,
+        "intended_sign": 1,
+        "noise": "low_readout",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 5.28124999999921e-06,
+      "variance_savings_from_oracle_allocation": 0.0011637630705698902,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p001_w0p8_standard_readout_beneficial",
+      "conditional_delta": [
+        -0.002000000000000151,
+        -0.001062499999999987
+      ],
+      "conditional_noise_variance_mean": 0.06068729911359274,
+      "context_delta_variance": 1.4062500000004916e-07,
+      "context_heterogeneity_fraction_of_paired_variance": 2.317201065093244e-06,
+      "covariance_of_public_context_failure_means": 6.23304131825771e-08,
+      "discordance_probability": 0.06068900223859274,
+      "epsilon": 0.001,
+      "fixed_proportional_stratum_variance_coefficient": 0.12137459822718548,
+      "independent_target_context_variance_coefficient": 0.12137512879883822,
+      "mixed_delta": -0.0012500000000000198,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 9.633835104715192e-18,
+        "optimal_allocation_variance_residual": 2.7755575615628914e-17,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.9998714693293488,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.1005853483796865,
+        0.4042502257158089,
+        0.0974612168580556,
+        0.397703209046449
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.12135927908252607,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.06068743973859274,
+      "paired_over_optimal": 1.000128547192908,
+      "paired_per_total_shot_variance_coefficient": 0.12137487947718548,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.03170100000000015,
+        0.03201282135797523,
+        0.029701,
+        0.030950321357975243
+      ],
+      "strata": {
+        "epsilon": 0.001,
+        "intended_sign": -1,
+        "noise": "standard_readout",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 2.812499999976792e-07,
+      "variance_savings_from_oracle_allocation": 1.53191446594092e-05,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p001_w0p8_standard_readout_harmful",
+      "conditional_delta": [
+        -0.002000000000000151,
+        0.0020625000000002655
+      ],
+      "conditional_noise_variance_mean": 0.06458003340953271,
+      "context_delta_variance": 2.6406250000005406e-06,
+      "context_heterogeneity_fraction_of_paired_variance": 4.088751417429053e-05,
+      "covariance_of_public_context_failure_means": 1.1732499613324618e-06,
+      "discordance_probability": 0.06458423653453271,
+      "epsilon": 0.001,
+      "fixed_proportional_stratum_variance_coefficient": 0.12916006681906542,
+      "independent_target_context_variance_coefficient": 0.12917004106891078,
+      "mixed_delta": 0.0012500000000001824,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": 4.3899176557348624e-17,
+        "optimal_allocation_variance_residual": 2.7755575615628914e-17,
+        "variance_decomposition_residual": -1.3877787807814457e-17
+      },
+      "optimal_over_paired": 0.9993429576119441,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.09753060785331014,
+        0.3980871036618964,
+        0.09450135507219751,
+        0.409880933412596
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.12908048096031605,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.0645826740345327,
+      "paired_over_optimal": 1.0006574743765904,
+      "paired_per_total_shot_variance_coefficient": 0.1291653480690654,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.03170100000000015,
+        0.0330548332812249,
+        0.029701,
+        0.03511733328122517
+      ],
+      "strata": {
+        "epsilon": 0.001,
+        "intended_sign": 1,
+        "noise": "standard_readout",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 5.281249999988802e-06,
+      "variance_savings_from_oracle_allocation": 7.95858587493703e-05,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p001_w0p8_dephasing_beneficial",
+      "conditional_delta": [
+        -0.0031806106999340694,
+        -0.000767347325016432
+      ],
+      "conditional_noise_variance_mean": 0.03131030596659213,
+      "context_delta_variance": 9.318144186750183e-07,
+      "context_heterogeneity_fraction_of_paired_variance": 2.9759743935774136e-05,
+      "covariance_of_public_context_failure_means": 1.197167290620813e-06,
+      "discordance_probability": 0.03131280028101081,
+      "epsilon": 0.001,
+      "fixed_proportional_stratum_variance_coefficient": 0.06262061193318426,
+      "independent_target_context_variance_coefficient": 0.06262726423118409,
+      "mixed_delta": -0.0012499999999999595,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -2.2556487385382018e-18,
+        "optimal_allocation_variance_residual": 0.0,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.9977812827184313,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.097601772177988,
+        0.41242768687014747,
+        0.08686213101363888,
+        0.40310840993822566
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.06248353399327753,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.0313112377810108,
+      "paired_over_optimal": 1.002223650934325,
+      "paired_per_total_shot_variance_coefficient": 0.0626224755620216,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.015108897891583867,
+        0.016891957759379503,
+        0.011928287191649798,
+        0.01612461043436307
+      ],
+      "strata": {
+        "epsilon": 0.001,
+        "intended_sign": -1,
+        "noise": "dephasing",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 1.8636288373480303e-06,
+      "variance_savings_from_oracle_allocation": 0.00013707793990672817,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    },
+    {
+      "case_id": "confirm_main_e0p001_w0p8_dephasing_harmful",
+      "conditional_delta": [
+        -0.0031806106999340694,
+        0.0023576526749837963
+      ],
+      "conditional_noise_variance_mean": 0.03532987859325759,
+      "context_delta_variance": 4.907577793593059e-06,
+      "context_heterogeneity_fraction_of_paired_variance": 0.00013888800033587587,
+      "covariance_of_public_context_failure_means": 3.7835607362197504e-06,
+      "discordance_probability": 0.03533634867105119,
+      "epsilon": 0.001,
+      "fixed_proportional_stratum_variance_coefficient": 0.07065975718651518,
+      "independent_target_context_variance_coefficient": 0.07068470658504725,
+      "mixed_delta": 0.0012500000000002236,
+      "numerical_identity_checks": {
+        "context_pairing_covariance_residual": -6.4679435852338374e-18,
+        "optimal_allocation_variance_residual": 1.3877787807814457e-17,
+        "variance_decomposition_residual": 0.0
+      },
+      "optimal_over_paired": 0.9943547987036996,
+      "oracle_fixed_allocation_old_contexts_then_new": [
+        0.09203511877338467,
+        0.4005282191973547,
+        0.08190800603672352,
+        0.42552865599253714
+      ],
+      "oracle_optimal_independent_arm_variance_coefficient": 0.07027062838070774,
+      "ordering_holds_numerically": true,
+      "paired_difference_variance": 0.03533478617105119,
+      "paired_over_optimal": 1.0056772505182856,
+      "paired_per_total_shot_variance_coefficient": 0.07066957234210237,
+      "phase": "confirmation",
+      "probabilities_old_contexts_then_new": [
+        0.015108897891583867,
+        0.017935777721613314,
+        0.011928287191649798,
+        0.02029343039659711
+      ],
+      "strata": {
+        "epsilon": 0.001,
+        "intended_sign": 1,
+        "noise": "dephasing",
+        "weight_plus": 0.8
+      },
+      "variance_savings_from_fixed_context_counts": 9.815155587192259e-06,
+      "variance_savings_from_oracle_allocation": 0.00038912880580743714,
+      "weights": [
+        0.19999999999999996,
+        0.8
+      ]
+    }
+  ],
+  "probability_source": "physical statevector/Kraus case probabilities frozen before confirmation",
+  "purpose": "exploratory mechanism explanation; not a frozen acceptance endpoint",
+  "raw_trial_results_read": false,
+  "sampling_law": "fresh iid public context per pair; old/new noise independent conditional on context",
+  "schema": "faulttune.postfreeze_variance_diagnostic.v1",
+  "script_sha256": "3c218427d95c995757ad731f9358102ce6ae25010a3c9f4ec6399deb695be0f6",
+  "strata": {
+    "epsilon": {
+      "0.001": {
+        "cases": 12,
+        "max_heterogeneity_fraction": 0.00530705477872309,
+        "paired_over_optimal_geometric_mean": 1.0771635926483374,
+        "paired_over_optimal_max": 1.6225738780420889,
+        "paired_over_optimal_min": 1.000128547192908
+      },
+      "0.003": {
+        "cases": 12,
+        "max_heterogeneity_fraction": 0.016993462441204435,
+        "paired_over_optimal_geometric_mean": 1.1162083895739847,
+        "paired_over_optimal_max": 1.824532182807778,
+        "paired_over_optimal_min": 1.00096540258806
+      },
+      "0.01": {
+        "cases": 12,
+        "max_heterogeneity_fraction": 0.060790666582033116,
+        "paired_over_optimal_geometric_mean": 1.177253633625467,
+        "paired_over_optimal_max": 1.9972781194147657,
+        "paired_over_optimal_min": 1.0064105451464869
+      }
+    },
+    "intended_sign": {
+      "-1": {
+        "cases": 18,
+        "max_heterogeneity_fraction": 0.006975666591596873,
+        "paired_over_optimal_geometric_mean": 1.0797645302454326,
+        "paired_over_optimal_max": 1.5207649117578126,
+        "paired_over_optimal_min": 1.000128547192908
+      },
+      "1": {
+        "cases": 18,
+        "max_heterogeneity_fraction": 0.060790666582033116,
+        "paired_over_optimal_geometric_mean": 1.1675323829264121,
+        "paired_over_optimal_max": 1.9972781194147657,
+        "paired_over_optimal_min": 1.0006574743765904
+      }
+    },
+    "noise": {
+      "dephasing": {
+        "cases": 12,
+        "max_heterogeneity_fraction": 0.04693552182361064,
+        "paired_over_optimal_geometric_mean": 1.0556550790467985,
+        "paired_over_optimal_max": 1.3306113324134896,
+        "paired_over_optimal_min": 1.002223650934325
+      },
+      "low_readout": {
+        "cases": 12,
+        "max_heterogeneity_fraction": 0.060790666582033116,
+        "paired_over_optimal_geometric_mean": 1.3119078765289243,
+        "paired_over_optimal_max": 1.9972781194147657,
+        "paired_over_optimal_min": 1.0546830121970705
+      },
+      "standard_readout": {
+        "cases": 12,
+        "max_heterogeneity_fraction": 0.03459506256541397,
+        "paired_over_optimal_geometric_mean": 1.0220487397720837,
+        "paired_over_optimal_max": 1.1605827673159557,
+        "paired_over_optimal_min": 1.000128547192908
+      }
+    },
+    "weight_plus": {
+      "0.2": {
+        "cases": 18,
+        "max_heterogeneity_fraction": 0.060790666582033116,
+        "paired_over_optimal_geometric_mean": 1.2166739948769933,
+        "paired_over_optimal_max": 1.9972781194147657,
+        "paired_over_optimal_min": 1.000627851383624
+      },
+      "0.8": {
+        "cases": 18,
+        "max_heterogeneity_fraction": 0.003687230020156894,
+        "paired_over_optimal_geometric_mean": 1.0361527083714168,
+        "paired_over_optimal_max": 1.119018684780803,
+        "paired_over_optimal_min": 1.000128547192908
+      }
+    }
+  }
+}

@@ -1,0 +1,492 @@
+{
+  "status": "complete_frozen_lp_physical_float_development_evaluation",
+  "protocol": {
+    "status": "fixed_physical_protocol_before_evaluation",
+    "pair_cap": 8192,
+    "physical_shot_cap": 16384,
+    "candidate_source": "results/sota_round5/optimal_sign_stopping/prototype.json",
+    "candidate_sha256": "9193d84bbfa11761ee800a7175e76d5ffd5bbe6cd76c020c4dca0180cdf23030",
+    "monitoring": "Inspect after each physical pair, with a fresh policy coin only when that pair is discordant. A concordant pair neither changes the sign state nor redraws the policy coin.",
+    "sign_horizon_abstention": "At discordance H128, all remaining non-reporting paths are forbidden to report later and are charged through the full physical cap. No early-abstention cost saving.",
+    "comparison": "All original 16 main cases and 2 null cases. Original H8192 controls are compared at the same physical cap and monitoring, with per-case >=95% power qualification. Original controls may use more than128 discordances, a permitted advantage to them.",
+    "new_observations": 0,
+    "status_of_results": "Floating estimates pending independent interval verification."
+  },
+  "rows": [
+    {
+      "positive_probability": 0.9999999999917379,
+      "negative_probability": 8.219912002895466e-21,
+      "abstain_probability": 8.262012039293392e-12,
+      "expected_pairs": 525.4654299124172,
+      "case_id": 7,
+      "kind": "main",
+      "expected_shots": 1050.9308598248344,
+      "correct_probability": 0.9999999999917379,
+      "error_probability": 8.219912002895466e-21,
+      "p_minus": 0.00020000000000000052,
+      "p_plus": 0.019799999999999998,
+      "discordance_rate": 0.01999208,
+      "conditional_plus_probability": 0.9901941168702806,
+      "sign_horizon_survival": 8.229630214964473e-12,
+      "no_report_tail_paid_shots": 1.3483426144197792e-07
+    },
+    {
+      "positive_probability": 0.9787137435124108,
+      "negative_probability": 3.702929107406599e-06,
+      "abstain_probability": 0.02128255355848165,
+      "expected_pairs": 2874.708969341507,
+      "case_id": 9,
+      "kind": "main",
+      "expected_shots": 5749.417938683014,
+      "correct_probability": 0.9787137435124108,
+      "error_probability": 3.702929107406599e-06,
+      "p_minus": 0.005728279035330141,
+      "p_plus": 0.01427172096466986,
+      "discordance_rate": 0.019836495200000002,
+      "conditional_plus_probability": 0.7153465580285503,
+      "sign_horizon_survival": 0.021254437568239033,
+      "no_report_tail_paid_shots": 348.2327051180283
+    },
+    {
+      "positive_probability": 0.9999999999925621,
+      "negative_probability": 3.596296525393561e-21,
+      "abstain_probability": 7.437695977190761e-12,
+      "expected_pairs": 104.84744456506498,
+      "case_id": 19,
+      "kind": "main",
+      "expected_shots": 209.69488913012995,
+      "correct_probability": 0.9999999999925621,
+      "error_probability": 3.596296525393561e-21,
+      "p_minus": 0.0010000000000000009,
+      "p_plus": 0.099,
+      "discordance_rate": 0.099802,
+      "conditional_plus_probability": 0.990972124807118,
+      "sign_horizon_survival": 7.437695977190761e-12,
+      "no_report_tail_paid_shots": 1.2185921089029343e-07
+    },
+    {
+      "positive_probability": 0.9866304494267315,
+      "negative_probability": 2.833819886210727e-06,
+      "abstain_probability": 0.01336671675338201,
+      "expected_pairs": 644.3568597805271,
+      "case_id": 21,
+      "kind": "main",
+      "expected_shots": 1288.7137195610542,
+      "correct_probability": 0.9866304494267315,
+      "error_probability": 2.833819886210727e-06,
+      "p_minus": 0.028641395176650705,
+      "p_plus": 0.0713586048233493,
+      "discordance_rate": 0.09591238,
+      "conditional_plus_probability": 0.7226887167574123,
+      "sign_horizon_survival": 0.01336671675338201,
+      "no_report_tail_paid_shots": 219.00028728741086
+    },
+    {
+      "positive_probability": 0.9999999999953786,
+      "negative_probability": 6.996848126704478e-23,
+      "abstain_probability": 4.621125853591701e-12,
+      "expected_pairs": 25.981123453452657,
+      "case_id": 31,
+      "kind": "main",
+      "expected_shots": 51.962246906905314,
+      "correct_probability": 0.9999999999953786,
+      "error_probability": 6.996848126704478e-23,
+      "p_minus": 0.0040000000000000036,
+      "p_plus": 0.396,
+      "discordance_rate": 0.3968320000000001,
+      "conditional_plus_probability": 0.993911781307959,
+      "sign_horizon_survival": 4.621125853591701e-12,
+      "no_report_tail_paid_shots": 7.571252598524643e-08
+    },
+    {
+      "positive_probability": 0.9989537244837526,
+      "negative_probability": 7.928414722929424e-07,
+      "abstain_probability": 0.0010454826747750704,
+      "expected_pairs": 131.16950950311698,
+      "case_id": 33,
+      "kind": "main",
+      "expected_shots": 262.33901900623397,
+      "correct_probability": 0.9989537244837526,
+      "error_probability": 7.928414722929424e-07,
+      "p_minus": 0.11456558070660282,
+      "p_plus": 0.2854344192933972,
+      "discordance_rate": 0.33459808,
+      "conditional_plus_probability": 0.755334457667531,
+      "sign_horizon_survival": 0.0010454826747750704,
+      "no_report_tail_paid_shots": 17.129188143514753
+    },
+    {
+      "positive_probability": 0.9999999999999386,
+      "negative_probability": 1.2213862266661142e-40,
+      "abstain_probability": 6.136768066605332e-14,
+      "expected_pairs": 10.20720527812451,
+      "case_id": 43,
+      "kind": "main",
+      "expected_shots": 20.41441055624902,
+      "correct_probability": 0.9999999999999386,
+      "error_probability": 1.2213862266661142e-40,
+      "p_minus": 0.010000000000000009,
+      "p_plus": 0.99,
+      "discordance_rate": 0.9802,
+      "conditional_plus_probability": 0.9998979800040808,
+      "sign_horizon_survival": 6.136768066605332e-14,
+      "no_report_tail_paid_shots": 1.0054480800326176e-09
+    },
+    {
+      "positive_probability": 0.9999999971602727,
+      "negative_probability": 2.652644574056322e-09,
+      "abstain_probability": 1.8708280165251475e-10,
+      "expected_pairs": 35.35240590155492,
+      "case_id": 45,
+      "kind": "main",
+      "expected_shots": 70.70481180310983,
+      "correct_probability": 0.9999999971602727,
+      "error_probability": 2.652644574056322e-09,
+      "p_minus": 0.2864139517665071,
+      "p_plus": 0.7135860482334929,
+      "discordance_rate": 0.5912379999999999,
+      "conditional_plus_probability": 0.8612522338440576,
+      "sign_horizon_survival": 1.8708280165251475e-10,
+      "no_report_tail_paid_shots": 3.0651646222748017e-06
+    },
+    {
+      "positive_probability": 8.21991200289528e-21,
+      "negative_probability": 0.9999999999917377,
+      "abstain_probability": 8.262012039293374e-12,
+      "expected_pairs": 525.465429912417,
+      "case_id": 1007,
+      "kind": "main",
+      "expected_shots": 1050.930859824834,
+      "correct_probability": 0.9999999999917377,
+      "error_probability": 8.21991200289528e-21,
+      "p_minus": 0.019799999999999998,
+      "p_plus": 0.00020000000000000052,
+      "discordance_rate": 0.01999208,
+      "conditional_plus_probability": 0.009805883129719395,
+      "sign_horizon_survival": 8.229630214964455e-12,
+      "no_report_tail_paid_shots": 1.3483426144197763e-07
+    },
+    {
+      "positive_probability": 3.702929107406599e-06,
+      "negative_probability": 0.9787137435124108,
+      "abstain_probability": 0.02128255355848165,
+      "expected_pairs": 2874.708969341507,
+      "case_id": 1009,
+      "kind": "main",
+      "expected_shots": 5749.417938683014,
+      "correct_probability": 0.9787137435124108,
+      "error_probability": 3.702929107406599e-06,
+      "p_minus": 0.01427172096466986,
+      "p_plus": 0.005728279035330141,
+      "discordance_rate": 0.019836495200000002,
+      "conditional_plus_probability": 0.2846534419714497,
+      "sign_horizon_survival": 0.021254437568239033,
+      "no_report_tail_paid_shots": 348.2327051180283
+    },
+    {
+      "positive_probability": 3.596296525393417e-21,
+      "negative_probability": 0.9999999999925616,
+      "abstain_probability": 7.437695977190726e-12,
+      "expected_pairs": 104.84744456506492,
+      "case_id": 1019,
+      "kind": "main",
+      "expected_shots": 209.69488913012984,
+      "correct_probability": 0.9999999999925616,
+      "error_probability": 3.596296525393417e-21,
+      "p_minus": 0.099,
+      "p_plus": 0.0010000000000000009,
+      "discordance_rate": 0.099802,
+      "conditional_plus_probability": 0.009027875192881915,
+      "sign_horizon_survival": 7.437695977190726e-12,
+      "no_report_tail_paid_shots": 1.2185921089029285e-07
+    },
+    {
+      "positive_probability": 2.833819886210727e-06,
+      "negative_probability": 0.9866304494267315,
+      "abstain_probability": 0.01336671675338202,
+      "expected_pairs": 644.3568597805272,
+      "case_id": 1021,
+      "kind": "main",
+      "expected_shots": 1288.7137195610544,
+      "correct_probability": 0.9866304494267315,
+      "error_probability": 2.833819886210727e-06,
+      "p_minus": 0.0713586048233493,
+      "p_plus": 0.028641395176650705,
+      "discordance_rate": 0.09591238,
+      "conditional_plus_probability": 0.2773112832425877,
+      "sign_horizon_survival": 0.01336671675338202,
+      "no_report_tail_paid_shots": 219.00028728741103
+    },
+    {
+      "positive_probability": 6.99684812670395e-23,
+      "negative_probability": 0.999999999995378,
+      "abstain_probability": 4.621125853591671e-12,
+      "expected_pairs": 25.98112345345264,
+      "case_id": 1031,
+      "kind": "main",
+      "expected_shots": 51.96224690690528,
+      "correct_probability": 0.999999999995378,
+      "error_probability": 6.99684812670395e-23,
+      "p_minus": 0.396,
+      "p_plus": 0.0040000000000000036,
+      "discordance_rate": 0.3968320000000001,
+      "conditional_plus_probability": 0.006088218692040968,
+      "sign_horizon_survival": 4.621125853591671e-12,
+      "no_report_tail_paid_shots": 7.571252598524594e-08
+    },
+    {
+      "positive_probability": 7.928414722929405e-07,
+      "negative_probability": 0.9989537244837547,
+      "abstain_probability": 0.0010454826747750706,
+      "expected_pairs": 131.16950950311724,
+      "case_id": 1033,
+      "kind": "main",
+      "expected_shots": 262.3390190062345,
+      "correct_probability": 0.9989537244837547,
+      "error_probability": 7.928414722929405e-07,
+      "p_minus": 0.2854344192933972,
+      "p_plus": 0.11456558070660282,
+      "discordance_rate": 0.33459808,
+      "conditional_plus_probability": 0.2446655423324689,
+      "sign_horizon_survival": 0.0010454826747750706,
+      "no_report_tail_paid_shots": 17.129188143514757
+    },
+    {
+      "positive_probability": 1.2213862266674492e-40,
+      "negative_probability": 0.9999999999999387,
+      "abstain_probability": 6.13676806660534e-14,
+      "expected_pairs": 10.207205278124512,
+      "case_id": 1043,
+      "kind": "main",
+      "expected_shots": 20.414410556249024,
+      "correct_probability": 0.9999999999999387,
+      "error_probability": 1.2213862266674492e-40,
+      "p_minus": 0.99,
+      "p_plus": 0.010000000000000009,
+      "discordance_rate": 0.9802,
+      "conditional_plus_probability": 0.00010201999591920035,
+      "sign_horizon_survival": 6.13676806660534e-14,
+      "no_report_tail_paid_shots": 1.0054480800326188e-09
+    },
+    {
+      "positive_probability": 2.652644574056311e-09,
+      "negative_probability": 0.9999999971602715,
+      "abstain_probability": 1.8708280165251292e-10,
+      "expected_pairs": 35.35240590155487,
+      "case_id": 1045,
+      "kind": "main",
+      "expected_shots": 70.70481180310973,
+      "correct_probability": 0.9999999971602715,
+      "error_probability": 2.652644574056311e-09,
+      "p_minus": 0.7135860482334929,
+      "p_plus": 0.2864139517665071,
+      "discordance_rate": 0.5912379999999999,
+      "conditional_plus_probability": 0.13874776615594236,
+      "sign_horizon_survival": 1.8708280165251292e-10,
+      "no_report_tail_paid_shots": 3.0651646222747717e-06
+    },
+    {
+      "positive_probability": 0.004994387509752744,
+      "negative_probability": 0.004994387509752744,
+      "abstain_probability": 0.9900112249804941,
+      "expected_pairs": 8135.710761328444,
+      "case_id": 100,
+      "kind": "null",
+      "expected_shots": 16271.421522656889,
+      "correct_probability": 0.0,
+      "error_probability": 0.009988775019505488,
+      "p_minus": 0.01,
+      "p_plus": 0.01,
+      "discordance_rate": 0.0198,
+      "conditional_plus_probability": 0.5,
+      "sign_horizon_survival": 0.9900099997752048,
+      "no_report_tail_paid_shots": 16220.323836316955
+    },
+    {
+      "positive_probability": 0.004995000112397421,
+      "negative_probability": 0.004995000112397421,
+      "abstain_probability": 0.9900099997752048,
+      "expected_pairs": 8111.173661816859,
+      "case_id": 101,
+      "kind": "null",
+      "expected_shots": 16222.347323633718,
+      "correct_probability": 0.0,
+      "error_probability": 0.009990000224794841,
+      "p_minus": 0.5,
+      "p_plus": 0.5,
+      "discordance_rate": 0.5,
+      "conditional_plus_probability": 0.5,
+      "sign_horizon_survival": 0.9900099997752048,
+      "no_report_tail_paid_shots": 16220.323836316955
+    }
+  ],
+  "aggregate": {
+    "minimum_case_correct_probability": 0.9787137435124108,
+    "every_main_case_correct_at_least95_float": true,
+    "equal_case_mean_expected_shots": 1088.0222369339413,
+    "maximum_main_error_probability": 3.702929107406599e-06,
+    "maximum_null_false_report_probability": 0.009990000224794841
+  },
+  "control_comparisons": [
+    {
+      "control": "beta_exact",
+      "control_qualified_every_case_float": true,
+      "candidate_over_control_geometric_cost_float": 1.0443580224543054,
+      "candidate_over_control_arithmetic_cost_float": 0.9345141399665572
+    },
+    {
+      "control": "sprt_0.6",
+      "control_qualified_every_case_float": true,
+      "candidate_over_control_geometric_cost_float": 0.4849352957936137,
+      "candidate_over_control_arithmetic_cost_float": 0.6290922018313803
+    },
+    {
+      "control": "sprt_0.7",
+      "control_qualified_every_case_float": true,
+      "candidate_over_control_geometric_cost_float": 0.8100202142610929,
+      "candidate_over_control_arithmetic_cost_float": 0.9588717111871549
+    },
+    {
+      "control": "sprt_0.75",
+      "control_qualified_every_case_float": true,
+      "candidate_over_control_geometric_cost_float": 0.9144145549653506,
+      "candidate_over_control_arithmetic_cost_float": 0.9942196518896327
+    },
+    {
+      "control": "sprt_0.85",
+      "control_qualified_every_case_float": false,
+      "candidate_over_control_geometric_cost_float": 0.9080220258619258,
+      "candidate_over_control_arithmetic_cost_float": 0.7447011476480103
+    },
+    {
+      "control": "sprt_0.9",
+      "control_qualified_every_case_float": false,
+      "candidate_over_control_geometric_cost_float": 0.7350606560863462,
+      "candidate_over_control_arithmetic_cost_float": 0.4777149184350367
+    },
+    {
+      "control": "sprt_0.99",
+      "control_qualified_every_case_float": false,
+      "candidate_over_control_geometric_cost_float": 0.36565404027998566,
+      "candidate_over_control_arithmetic_cost_float": 0.20169031002120183
+    },
+    {
+      "control": "mix_0.75_0.99_w0.25",
+      "control_qualified_every_case_float": false,
+      "candidate_over_control_geometric_cost_float": 1.0019867436368584,
+      "candidate_over_control_arithmetic_cost_float": 0.8836833500745658
+    },
+    {
+      "control": "mix_0.75_0.99_w0.5",
+      "control_qualified_every_case_float": true,
+      "candidate_over_control_geometric_cost_float": 1.074093508814577,
+      "candidate_over_control_arithmetic_cost_float": 1.0019099264285287
+    },
+    {
+      "control": "mix_0.75_0.99_w0.75",
+      "control_qualified_every_case_float": true,
+      "candidate_over_control_geometric_cost_float": 1.0356662178048208,
+      "candidate_over_control_arithmetic_cost_float": 1.0208709547322194
+    },
+    {
+      "control": "mix_0.7_0.9_0.99_equal",
+      "control_qualified_every_case_float": true,
+      "candidate_over_control_geometric_cost_float": 1.0692246473469746,
+      "candidate_over_control_arithmetic_cost_float": 0.9921891881847549
+    },
+    {
+      "control": "mix_beta_0.75_half",
+      "control_qualified_every_case_float": true,
+      "candidate_over_control_geometric_cost_float": 1.0292344273980698,
+      "candidate_over_control_arithmetic_cost_float": 1.0057066455049957
+    }
+  ],
+  "qualified_control_hindsight_envelope": {
+    "methods": [
+      "beta_exact",
+      "sprt_0.6",
+      "sprt_0.7",
+      "sprt_0.75",
+      "mix_0.75_0.99_w0.5",
+      "mix_0.75_0.99_w0.75",
+      "mix_0.7_0.9_0.99_equal",
+      "mix_beta_0.75_half"
+    ],
+    "candidate_over_envelope_geometric_cost_float": 1.1031385861924443,
+    "scope": "Non-executable hindsight diagnostic; not a deployable baseline.",
+    "selected_control_by_case": {
+      "7": "mix_0.7_0.9_0.99_equal",
+      "9": "sprt_0.7",
+      "19": "mix_0.7_0.9_0.99_equal",
+      "21": "sprt_0.7",
+      "31": "mix_0.7_0.9_0.99_equal",
+      "33": "sprt_0.75",
+      "43": "beta_exact",
+      "45": "mix_0.7_0.9_0.99_equal",
+      "1007": "mix_0.7_0.9_0.99_equal",
+      "1009": "sprt_0.7",
+      "1019": "mix_0.7_0.9_0.99_equal",
+      "1021": "sprt_0.7",
+      "1031": "mix_0.7_0.9_0.99_equal",
+      "1033": "sprt_0.75",
+      "1043": "beta_exact",
+      "1045": "mix_0.7_0.9_0.99_equal"
+    }
+  },
+  "independent_checks": {
+    "exact_grid_crosschecks": [
+      {
+        "q_exact": [
+          7,
+          10
+        ],
+        "maximum_absolute_float_error_to_exact_sign_dp": 7.105427357601002e-15
+      },
+      {
+        "q_exact": [
+          9,
+          10
+        ],
+        "maximum_absolute_float_error_to_exact_sign_dp": 7.105427357601002e-15
+      },
+      {
+        "q_exact": [
+          99,
+          100
+        ],
+        "maximum_absolute_float_error_to_exact_sign_dp": 7.105427357601002e-15
+      }
+    ],
+    "exact_physical_dp_crosschecks": [
+      {
+        "rate": "1/5",
+        "q": "7/10",
+        "pair_cap": 12,
+        "sign_cap": 8,
+        "exactly_equal": true
+      },
+      {
+        "rate": "1/2",
+        "q": "1/2",
+        "pair_cap": 12,
+        "sign_cap": 8,
+        "exactly_equal": true
+      },
+      {
+        "rate": "1",
+        "q": "1/10",
+        "pair_cap": 12,
+        "sign_cap": 8,
+        "exactly_equal": true
+      }
+    ]
+  },
+  "input_sha256": {
+    "results/sota_round5/optimal_sign_stopping/prototype.json": "9193d84bbfa11761ee800a7175e76d5ffd5bbe6cd76c020c4dca0180cdf23030",
+    "results/sota_round3/paired_benchmark/preliminary_plan.json": "f89aefeab89c5ea26716c8cf4fa8b91902fdcdbc1d2853eeaea1f52022ea56f7",
+    "results/sota_round4/analytic_prior_comparison.json": "13440af229b9363f8ca6fb475ca0a6d5783aacac709e98bbac614c6b32967822",
+    "experiments/sota_round5/evaluate_optimal_sign_physical.py": "9f0a3647bfbcffb013c7ebf5052726ddd6902751bf7b9bf7683887cf4ef92c50"
+  },
+  "new_observations": 0,
+  "claim_boundary": "This is retrospective development evaluation of an existing classical LP rule with every non-reporting path charged to the full cap. All float costs and probabilities need interval confirmation. No new algorithmic novelty, SOTA, broad uniform superiority or threefold-improvement claim."
+}

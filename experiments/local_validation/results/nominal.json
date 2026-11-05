@@ -1,0 +1,6388 @@
+{
+  "analytic_bounds": {
+    "128": {
+      "fixed_exact_alternative_error": 0.042783813199933435,
+      "fixed_exact_full_shots": 5760,
+      "fixed_exact_null_error": 0.04169903716839212,
+      "fixed_exact_shots_per_arm": 45,
+      "fixed_exact_threshold": 13,
+      "fixed_shots_per_arm": 175,
+      "full_fixed_shots": 22400,
+      "kl_decision": 2.649995081249796,
+      "kl_p0_p1": 0.22628916118535888,
+      "null_expected_shots_lower": 1498.964283676528,
+      "sequential_null_expected_shots_upper": 1923.8803245028053
+    },
+    "32": {
+      "fixed_exact_alternative_error": 0.04344151651368316,
+      "fixed_exact_full_shots": 1248,
+      "fixed_exact_null_error": 0.036777488775007174,
+      "fixed_exact_shots_per_arm": 39,
+      "fixed_exact_threshold": 11,
+      "fixed_shots_per_arm": 144,
+      "full_fixed_shots": 4608,
+      "kl_decision": 2.649995081249796,
+      "kl_p0_p1": 0.22628916118535888,
+      "null_expected_shots_lower": 374.741070919132,
+      "sequential_null_expected_shots_upper": 480.9700811257013
+    },
+    "8": {
+      "fixed_exact_alternative_error": 0.04315001306113817,
+      "fixed_exact_full_shots": 264,
+      "fixed_exact_null_error": 0.032600434251281105,
+      "fixed_exact_shots_per_arm": 33,
+      "fixed_exact_threshold": 9,
+      "fixed_shots_per_arm": 113,
+      "full_fixed_shots": 904,
+      "kl_decision": 2.649995081249796,
+      "kl_p0_p1": 0.22628916118535888,
+      "null_expected_shots_lower": 93.685267729783,
+      "sequential_null_expected_shots_upper": 120.24252028142533
+    }
+  },
+  "groups": [
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 113,
+        "mean": 113.0,
+        "median": 113.0,
+        "min": 113,
+        "p95": 113.0,
+        "total": 22600
+      },
+      "n": 8,
+      "policy": "full_fixed",
+      "policy_valid": true,
+      "shots": {
+        "max": 904,
+        "mean": 904.0,
+        "median": 904.0,
+        "min": 904,
+        "p95": 904.0,
+        "total": 180800
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 113,
+        "mean": 113.0,
+        "median": 113.0,
+        "min": 113,
+        "p95": 113.0,
+        "total": 22600
+      },
+      "n": 8,
+      "policy": "fixed_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 904,
+        "mean": 904.0,
+        "median": 904.0,
+        "min": 904,
+        "p95": 904.0,
+        "total": 180800
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 196,
+        "rate": 0.98,
+        "wilson_95": [
+          0.9497129130941735,
+          0.9921955735836505
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 196,
+          "rate": 0.98,
+          "wilson_95": [
+            0.9497129130941735,
+            0.9921955735836505
+          ]
+        },
+        "reject": {
+          "count": 4,
+          "rate": 0.02,
+          "wilson_95": [
+            0.0078044264163494685,
+            0.050287086905826436
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 33,
+        "mean": 33.0,
+        "median": 33.0,
+        "min": 33,
+        "p95": 33.0,
+        "total": 6600
+      },
+      "n": 8,
+      "policy": "fixed_exact",
+      "policy_valid": true,
+      "shots": {
+        "max": 264,
+        "mean": 264.0,
+        "median": 264.0,
+        "min": 264,
+        "p95": 264.0,
+        "total": 52800
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 4,
+        "rate": 0.02,
+        "wilson_95": [
+          0.0078044264163494685,
+          0.050287086905826436
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 196,
+        "rate": 0.98,
+        "wilson_95": [
+          0.9497129130941735,
+          0.9921955735836505
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 7.915,
+        "median": 8.0,
+        "min": 1,
+        "p95": 8.0,
+        "total": 1583
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 196,
+          "rate": 0.98,
+          "wilson_95": [
+            0.9497129130941735,
+            0.9921955735836505
+          ]
+        },
+        "reject": {
+          "count": 4,
+          "rate": 0.02,
+          "wilson_95": [
+            0.0078044264163494685,
+            0.050287086905826436
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 33,
+        "mean": 33.0,
+        "median": 33.0,
+        "min": 33,
+        "p95": 33.0,
+        "total": 6600
+      },
+      "n": 8,
+      "policy": "fixed_exact_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 264,
+        "mean": 261.195,
+        "median": 264.0,
+        "min": 33,
+        "p95": 264.0,
+        "total": 52239
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 4,
+        "rate": 0.02,
+        "wilson_95": [
+          0.0078044264163494685,
+          0.050287086905826436
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 194,
+        "rate": 0.97,
+        "wilson_95": [
+          0.9361057075454807,
+          0.9861796856598887
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 7.935,
+        "median": 8.0,
+        "min": 2,
+        "p95": 8.0,
+        "total": 1587
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 194,
+          "rate": 0.97,
+          "wilson_95": [
+            0.9361057075454807,
+            0.9861796856598887
+          ]
+        },
+        "reject": {
+          "count": 6,
+          "rate": 0.03,
+          "wilson_95": [
+            0.013820314340111346,
+            0.06389429245451925
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 70,
+        "mean": 29.265,
+        "median": 30.0,
+        "min": 8,
+        "p95": 48.19999999999993,
+        "total": 5853
+      },
+      "n": 8,
+      "policy": "sequential_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 214,
+        "mean": 113.045,
+        "median": 111.0,
+        "min": 13,
+        "p95": 161.0,
+        "total": 22609
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 6,
+        "rate": 0.03,
+        "wilson_95": [
+          0.013820314340111346,
+          0.06389429245451925
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 194,
+        "rate": 0.97,
+        "wilson_95": [
+          0.9361057075454807,
+          0.9861796856598887
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 194,
+          "rate": 0.97,
+          "wilson_95": [
+            0.9361057075454807,
+            0.9861796856598887
+          ]
+        },
+        "reject": {
+          "count": 6,
+          "rate": 0.03,
+          "wilson_95": [
+            0.013820314340111346,
+            0.06389429245451925
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 70,
+        "mean": 28.655,
+        "median": 28.0,
+        "min": 5,
+        "p95": 48.19999999999993,
+        "total": 5731
+      },
+      "n": 8,
+      "policy": "sequential_round_robin",
+      "policy_valid": true,
+      "shots": {
+        "max": 214,
+        "mean": 112.285,
+        "median": 111.0,
+        "min": 34,
+        "p95": 161.0,
+        "total": 22457
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 6,
+        "rate": 0.03,
+        "wilson_95": [
+          0.013820314340111346,
+          0.06389429245451925
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "n": 8,
+      "policy": "local_only",
+      "policy_valid": false,
+      "shots": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 113,
+        "mean": 113.0,
+        "median": 113.0,
+        "min": 113,
+        "p95": 113.0,
+        "total": 22600
+      },
+      "n": 8,
+      "policy": "full_fixed",
+      "policy_valid": true,
+      "shots": {
+        "max": 904,
+        "mean": 904.0,
+        "median": 904.0,
+        "min": 904,
+        "p95": 904.0,
+        "total": 180800
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 1,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1,
+        "p95": 1.0,
+        "total": 200
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 113,
+        "mean": 113.0,
+        "median": 113.0,
+        "min": 113,
+        "p95": 113.0,
+        "total": 22600
+      },
+      "n": 8,
+      "policy": "fixed_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 113,
+        "mean": 113.0,
+        "median": 113.0,
+        "min": 113,
+        "p95": 113.0,
+        "total": 22600
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 189,
+        "rate": 0.945,
+        "wilson_95": [
+          0.9042130012276914,
+          0.9690146582965411
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 11,
+          "rate": 0.055,
+          "wilson_95": [
+            0.03098534170345884,
+            0.0957869987723084
+          ]
+        },
+        "reject": {
+          "count": 189,
+          "rate": 0.945,
+          "wilson_95": [
+            0.9042130012276914,
+            0.9690146582965411
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 33,
+        "mean": 33.0,
+        "median": 33.0,
+        "min": 33,
+        "p95": 33.0,
+        "total": 6600
+      },
+      "n": 8,
+      "policy": "fixed_exact",
+      "policy_valid": true,
+      "shots": {
+        "max": 264,
+        "mean": 264.0,
+        "median": 264.0,
+        "min": 264,
+        "p95": 264.0,
+        "total": 52800
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 11,
+        "rate": 0.055,
+        "wilson_95": [
+          0.03098534170345884,
+          0.0957869987723084
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 189,
+        "rate": 0.945,
+        "wilson_95": [
+          0.9042130012276914,
+          0.9690146582965411
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 1.385,
+        "median": 1.0,
+        "min": 1,
+        "p95": 8.0,
+        "total": 277
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 11,
+          "rate": 0.055,
+          "wilson_95": [
+            0.03098534170345884,
+            0.0957869987723084
+          ]
+        },
+        "reject": {
+          "count": 189,
+          "rate": 0.945,
+          "wilson_95": [
+            0.9042130012276914,
+            0.9690146582965411
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 33,
+        "mean": 33.0,
+        "median": 33.0,
+        "min": 33,
+        "p95": 33.0,
+        "total": 6600
+      },
+      "n": 8,
+      "policy": "fixed_exact_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 264,
+        "mean": 45.705,
+        "median": 33.0,
+        "min": 33,
+        "p95": 264.0,
+        "total": 9141
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 11,
+        "rate": 0.055,
+        "wilson_95": [
+          0.03098534170345884,
+          0.0957869987723084
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 191,
+        "rate": 0.955,
+        "wilson_95": [
+          0.9167032959981803,
+          0.976147456998507
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 1.315,
+        "median": 1.0,
+        "min": 1,
+        "p95": 1.0,
+        "total": 263
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 9,
+          "rate": 0.045,
+          "wilson_95": [
+            0.023852543001492997,
+            0.0832967040018196
+          ]
+        },
+        "reject": {
+          "count": 191,
+          "rate": 0.955,
+          "wilson_95": [
+            0.9167032959981803,
+            0.976147456998507
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 56,
+        "mean": 17.84,
+        "median": 16.5,
+        "min": 4,
+        "p95": 39.14999999999995,
+        "total": 3568
+      },
+      "n": 8,
+      "policy": "sequential_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 134,
+        "mean": 21.425,
+        "median": 16.5,
+        "min": 4,
+        "p95": 53.14999999999995,
+        "total": 4285
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 9,
+        "rate": 0.045,
+        "wilson_95": [
+          0.023852543001492997,
+          0.0832967040018196
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 191,
+        "rate": 0.955,
+        "wilson_95": [
+          0.9167032959981803,
+          0.976147456998507
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 9,
+          "rate": 0.045,
+          "wilson_95": [
+            0.023852543001492997,
+            0.0832967040018196
+          ]
+        },
+        "reject": {
+          "count": 191,
+          "rate": 0.955,
+          "wilson_95": [
+            0.9167032959981803,
+            0.976147456998507
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 56,
+        "mean": 17.64,
+        "median": 16.0,
+        "min": 4,
+        "p95": 39.14999999999995,
+        "total": 3528
+      },
+      "n": 8,
+      "policy": "sequential_round_robin",
+      "policy_valid": true,
+      "shots": {
+        "max": 211,
+        "mean": 89.9,
+        "median": 89.5,
+        "min": 25,
+        "p95": 148.0,
+        "total": 17980
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 9,
+        "rate": 0.045,
+        "wilson_95": [
+          0.023852543001492997,
+          0.0832967040018196
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      },
+      "covered": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "n": 8,
+      "policy": "local_only",
+      "policy_valid": false,
+      "shots": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 113,
+        "mean": 113.0,
+        "median": 113.0,
+        "min": 113,
+        "p95": 113.0,
+        "total": 22600
+      },
+      "n": 8,
+      "policy": "full_fixed",
+      "policy_valid": true,
+      "shots": {
+        "max": 904,
+        "mean": 904.0,
+        "median": 904.0,
+        "min": 904,
+        "p95": 904.0,
+        "total": 180800
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 5,
+        "mean": 5.0,
+        "median": 5.0,
+        "min": 5,
+        "p95": 5.0,
+        "total": 1000
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 113,
+        "mean": 113.0,
+        "median": 113.0,
+        "min": 113,
+        "p95": 113.0,
+        "total": 22600
+      },
+      "n": 8,
+      "policy": "fixed_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 565,
+        "mean": 565.0,
+        "median": 565.0,
+        "min": 565,
+        "p95": 565.0,
+        "total": 113000
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 192,
+        "rate": 0.96,
+        "wilson_95": [
+          0.923067931799067,
+          0.9795943679338476
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 8,
+          "rate": 0.04,
+          "wilson_95": [
+            0.020405632066152306,
+            0.07693206820093293
+          ]
+        },
+        "reject": {
+          "count": 192,
+          "rate": 0.96,
+          "wilson_95": [
+            0.923067931799067,
+            0.9795943679338476
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 33,
+        "mean": 33.0,
+        "median": 33.0,
+        "min": 33,
+        "p95": 33.0,
+        "total": 6600
+      },
+      "n": 8,
+      "policy": "fixed_exact",
+      "policy_valid": true,
+      "shots": {
+        "max": 264,
+        "mean": 264.0,
+        "median": 264.0,
+        "min": 264,
+        "p95": 264.0,
+        "total": 52800
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 8,
+        "rate": 0.04,
+        "wilson_95": [
+          0.020405632066152306,
+          0.07693206820093293
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 192,
+        "rate": 0.96,
+        "wilson_95": [
+          0.923067931799067,
+          0.9795943679338476
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 5.09,
+        "median": 5.0,
+        "min": 1,
+        "p95": 5.0,
+        "total": 1018
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 8,
+          "rate": 0.04,
+          "wilson_95": [
+            0.020405632066152306,
+            0.07693206820093293
+          ]
+        },
+        "reject": {
+          "count": 192,
+          "rate": 0.96,
+          "wilson_95": [
+            0.923067931799067,
+            0.9795943679338476
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 33,
+        "mean": 33.0,
+        "median": 33.0,
+        "min": 33,
+        "p95": 33.0,
+        "total": 6600
+      },
+      "n": 8,
+      "policy": "fixed_exact_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 264,
+        "mean": 167.97,
+        "median": 165.0,
+        "min": 33,
+        "p95": 165.0,
+        "total": 33594
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 8,
+        "rate": 0.04,
+        "wilson_95": [
+          0.020405632066152306,
+          0.07693206820093293
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 191,
+        "rate": 0.955,
+        "wilson_95": [
+          0.9167032959981803,
+          0.976147456998507
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 5.115,
+        "median": 5.0,
+        "min": 2,
+        "p95": 5.0,
+        "total": 1023
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 9,
+          "rate": 0.045,
+          "wilson_95": [
+            0.023852543001492997,
+            0.0832967040018196
+          ]
+        },
+        "reject": {
+          "count": 191,
+          "rate": 0.955,
+          "wilson_95": [
+            0.9167032959981803,
+            0.976147456998507
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 70,
+        "mean": 26.46,
+        "median": 26.0,
+        "min": 8,
+        "p95": 48.0,
+        "total": 5292
+      },
+      "n": 8,
+      "policy": "sequential_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 142,
+        "mean": 75.73,
+        "median": 71.0,
+        "min": 13,
+        "p95": 117.14999999999995,
+        "total": 15146
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 9,
+        "rate": 0.045,
+        "wilson_95": [
+          0.023852543001492997,
+          0.0832967040018196
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 191,
+        "rate": 0.955,
+        "wilson_95": [
+          0.9167032959981803,
+          0.976147456998507
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 9,
+          "rate": 0.045,
+          "wilson_95": [
+            0.023852543001492997,
+            0.0832967040018196
+          ]
+        },
+        "reject": {
+          "count": 191,
+          "rate": 0.955,
+          "wilson_95": [
+            0.9167032959981803,
+            0.976147456998507
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 61,
+        "mean": 17.24,
+        "median": 13.0,
+        "min": 4,
+        "p95": 43.0,
+        "total": 3448
+      },
+      "n": 8,
+      "policy": "sequential_round_robin",
+      "policy_valid": true,
+      "shots": {
+        "max": 185,
+        "mean": 89.7,
+        "median": 87.0,
+        "min": 29,
+        "p95": 143.14999999999995,
+        "total": 17940
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 9,
+        "rate": 0.045,
+        "wilson_95": [
+          0.023852543001492997,
+          0.0832967040018196
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      },
+      "covered": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "n": 8,
+      "policy": "local_only",
+      "policy_valid": false,
+      "shots": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 113,
+        "mean": 113.0,
+        "median": 113.0,
+        "min": 113,
+        "p95": 113.0,
+        "total": 22600
+      },
+      "n": 8,
+      "policy": "full_fixed",
+      "policy_valid": true,
+      "shots": {
+        "max": 904,
+        "mean": 904.0,
+        "median": 904.0,
+        "min": 904,
+        "p95": 904.0,
+        "total": 180800
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 113,
+        "mean": 113.0,
+        "median": 113.0,
+        "min": 113,
+        "p95": 113.0,
+        "total": 22600
+      },
+      "n": 8,
+      "policy": "fixed_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 904,
+        "mean": 904.0,
+        "median": 904.0,
+        "min": 904,
+        "p95": 904.0,
+        "total": 180800
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 192,
+        "rate": 0.96,
+        "wilson_95": [
+          0.923067931799067,
+          0.9795943679338476
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 8,
+          "rate": 0.04,
+          "wilson_95": [
+            0.020405632066152306,
+            0.07693206820093293
+          ]
+        },
+        "reject": {
+          "count": 192,
+          "rate": 0.96,
+          "wilson_95": [
+            0.923067931799067,
+            0.9795943679338476
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 33,
+        "mean": 33.0,
+        "median": 33.0,
+        "min": 33,
+        "p95": 33.0,
+        "total": 6600
+      },
+      "n": 8,
+      "policy": "fixed_exact",
+      "policy_valid": true,
+      "shots": {
+        "max": 264,
+        "mean": 264.0,
+        "median": 264.0,
+        "min": 264,
+        "p95": 264.0,
+        "total": 52800
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 8,
+        "rate": 0.04,
+        "wilson_95": [
+          0.020405632066152306,
+          0.07693206820093293
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 192,
+        "rate": 0.96,
+        "wilson_95": [
+          0.923067931799067,
+          0.9795943679338476
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 7.915,
+        "median": 8.0,
+        "min": 1,
+        "p95": 8.0,
+        "total": 1583
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 8,
+          "rate": 0.04,
+          "wilson_95": [
+            0.020405632066152306,
+            0.07693206820093293
+          ]
+        },
+        "reject": {
+          "count": 192,
+          "rate": 0.96,
+          "wilson_95": [
+            0.923067931799067,
+            0.9795943679338476
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 33,
+        "mean": 33.0,
+        "median": 33.0,
+        "min": 33,
+        "p95": 33.0,
+        "total": 6600
+      },
+      "n": 8,
+      "policy": "fixed_exact_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 264,
+        "mean": 261.195,
+        "median": 264.0,
+        "min": 33,
+        "p95": 264.0,
+        "total": 52239
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 8,
+        "rate": 0.04,
+        "wilson_95": [
+          0.020405632066152306,
+          0.07693206820093293
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 191,
+        "rate": 0.955,
+        "wilson_95": [
+          0.9167032959981803,
+          0.976147456998507
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 7.935,
+        "median": 8.0,
+        "min": 2,
+        "p95": 8.0,
+        "total": 1587
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 9,
+          "rate": 0.045,
+          "wilson_95": [
+            0.023852543001492997,
+            0.0832967040018196
+          ]
+        },
+        "reject": {
+          "count": 191,
+          "rate": 0.955,
+          "wilson_95": [
+            0.9167032959981803,
+            0.976147456998507
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 70,
+        "mean": 29.945,
+        "median": 30.0,
+        "min": 8,
+        "p95": 52.0,
+        "total": 5989
+      },
+      "n": 8,
+      "policy": "sequential_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 232,
+        "mean": 116.17,
+        "median": 114.0,
+        "min": 13,
+        "p95": 165.09999999999997,
+        "total": 23234
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 9,
+        "rate": 0.045,
+        "wilson_95": [
+          0.023852543001492997,
+          0.0832967040018196
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 191,
+        "rate": 0.955,
+        "wilson_95": [
+          0.9167032959981803,
+          0.976147456998507
+        ]
+      },
+      "covered": {
+        "max": 8,
+        "mean": 8.0,
+        "median": 8.0,
+        "min": 8,
+        "p95": 8.0,
+        "total": 1600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 9,
+          "rate": 0.045,
+          "wilson_95": [
+            0.023852543001492997,
+            0.0832967040018196
+          ]
+        },
+        "reject": {
+          "count": 191,
+          "rate": 0.955,
+          "wilson_95": [
+            0.9167032959981803,
+            0.976147456998507
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 67,
+        "mean": 17.67,
+        "median": 15.5,
+        "min": 4,
+        "p95": 39.0,
+        "total": 3534
+      },
+      "n": 8,
+      "policy": "sequential_round_robin",
+      "policy_valid": true,
+      "shots": {
+        "max": 190,
+        "mean": 92.58,
+        "median": 93.0,
+        "min": 32,
+        "p95": 148.09999999999997,
+        "total": 18516
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 9,
+        "rate": 0.045,
+        "wilson_95": [
+          0.023852543001492997,
+          0.0832967040018196
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      },
+      "covered": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "n": 8,
+      "policy": "local_only",
+      "policy_valid": false,
+      "shots": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 144,
+        "mean": 144.0,
+        "median": 144.0,
+        "min": 144,
+        "p95": 144.0,
+        "total": 28800
+      },
+      "n": 32,
+      "policy": "full_fixed",
+      "policy_valid": true,
+      "shots": {
+        "max": 4608,
+        "mean": 4608.0,
+        "median": 4608.0,
+        "min": 4608,
+        "p95": 4608.0,
+        "total": 921600
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 144,
+        "mean": 144.0,
+        "median": 144.0,
+        "min": 144,
+        "p95": 144.0,
+        "total": 28800
+      },
+      "n": 32,
+      "policy": "fixed_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 4608,
+        "mean": 4608.0,
+        "median": 4608.0,
+        "min": 4608,
+        "p95": 4608.0,
+        "total": 921600
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 189,
+        "rate": 0.945,
+        "wilson_95": [
+          0.9042130012276914,
+          0.9690146582965411
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 189,
+          "rate": 0.945,
+          "wilson_95": [
+            0.9042130012276914,
+            0.9690146582965411
+          ]
+        },
+        "reject": {
+          "count": 11,
+          "rate": 0.055,
+          "wilson_95": [
+            0.03098534170345884,
+            0.0957869987723084
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 39,
+        "mean": 39.0,
+        "median": 39.0,
+        "min": 39,
+        "p95": 39.0,
+        "total": 7800
+      },
+      "n": 32,
+      "policy": "fixed_exact",
+      "policy_valid": true,
+      "shots": {
+        "max": 1248,
+        "mean": 1248.0,
+        "median": 1248.0,
+        "min": 1248,
+        "p95": 1248.0,
+        "total": 249600
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 11,
+        "rate": 0.055,
+        "wilson_95": [
+          0.03098534170345884,
+          0.0957869987723084
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 189,
+        "rate": 0.945,
+        "wilson_95": [
+          0.9042130012276914,
+          0.9690146582965411
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 30.99,
+        "median": 32.0,
+        "min": 4,
+        "p95": 32.0,
+        "total": 6198
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 189,
+          "rate": 0.945,
+          "wilson_95": [
+            0.9042130012276914,
+            0.9690146582965411
+          ]
+        },
+        "reject": {
+          "count": 11,
+          "rate": 0.055,
+          "wilson_95": [
+            0.03098534170345884,
+            0.0957869987723084
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 39,
+        "mean": 39.0,
+        "median": 39.0,
+        "min": 39,
+        "p95": 39.0,
+        "total": 7800
+      },
+      "n": 32,
+      "policy": "fixed_exact_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 1248,
+        "mean": 1208.61,
+        "median": 1248.0,
+        "min": 156,
+        "p95": 1248.0,
+        "total": 241722
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 11,
+        "rate": 0.055,
+        "wilson_95": [
+          0.03098534170345884,
+          0.0957869987723084
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 192,
+        "rate": 0.96,
+        "wilson_95": [
+          0.923067931799067,
+          0.9795943679338476
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 31.42,
+        "median": 32.0,
+        "min": 5,
+        "p95": 32.0,
+        "total": 6284
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 192,
+          "rate": 0.96,
+          "wilson_95": [
+            0.923067931799067,
+            0.9795943679338476
+          ]
+        },
+        "reject": {
+          "count": 8,
+          "rate": 0.04,
+          "wilson_95": [
+            0.020405632066152306,
+            0.07693206820093293
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 92,
+        "mean": 41.67,
+        "median": 39.0,
+        "min": 21,
+        "p95": 65.0,
+        "total": 8334
+      },
+      "n": 32,
+      "policy": "sequential_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 612,
+        "mean": 444.335,
+        "median": 443.0,
+        "min": 73,
+        "p95": 531.05,
+        "total": 88867
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 8,
+        "rate": 0.04,
+        "wilson_95": [
+          0.020405632066152306,
+          0.07693206820093293
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 192,
+        "rate": 0.96,
+        "wilson_95": [
+          0.923067931799067,
+          0.9795943679338476
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 192,
+          "rate": 0.96,
+          "wilson_95": [
+            0.923067931799067,
+            0.9795943679338476
+          ]
+        },
+        "reject": {
+          "count": 8,
+          "rate": 0.04,
+          "wilson_95": [
+            0.020405632066152306,
+            0.07693206820093293
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 92,
+        "mean": 41.005,
+        "median": 39.0,
+        "min": 6,
+        "p95": 65.0,
+        "total": 8201
+      },
+      "n": 32,
+      "policy": "sequential_round_robin",
+      "policy_valid": true,
+      "shots": {
+        "max": 612,
+        "mean": 448.935,
+        "median": 443.0,
+        "min": 189,
+        "p95": 531.05,
+        "total": 89787
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 8,
+        "rate": 0.04,
+        "wilson_95": [
+          0.020405632066152306,
+          0.07693206820093293
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "n": 32,
+      "policy": "local_only",
+      "policy_valid": false,
+      "shots": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 144,
+        "mean": 144.0,
+        "median": 144.0,
+        "min": 144,
+        "p95": 144.0,
+        "total": 28800
+      },
+      "n": 32,
+      "policy": "full_fixed",
+      "policy_valid": true,
+      "shots": {
+        "max": 4608,
+        "mean": 4608.0,
+        "median": 4608.0,
+        "min": 4608,
+        "p95": 4608.0,
+        "total": 921600
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 1,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1,
+        "p95": 1.0,
+        "total": 200
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 144,
+        "mean": 144.0,
+        "median": 144.0,
+        "min": 144,
+        "p95": 144.0,
+        "total": 28800
+      },
+      "n": 32,
+      "policy": "fixed_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 144,
+        "mean": 144.0,
+        "median": 144.0,
+        "min": 144,
+        "p95": 144.0,
+        "total": 28800
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 192,
+        "rate": 0.96,
+        "wilson_95": [
+          0.923067931799067,
+          0.9795943679338476
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 8,
+          "rate": 0.04,
+          "wilson_95": [
+            0.020405632066152306,
+            0.07693206820093293
+          ]
+        },
+        "reject": {
+          "count": 192,
+          "rate": 0.96,
+          "wilson_95": [
+            0.923067931799067,
+            0.9795943679338476
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 39,
+        "mean": 39.0,
+        "median": 39.0,
+        "min": 39,
+        "p95": 39.0,
+        "total": 7800
+      },
+      "n": 32,
+      "policy": "fixed_exact",
+      "policy_valid": true,
+      "shots": {
+        "max": 1248,
+        "mean": 1248.0,
+        "median": 1248.0,
+        "min": 1248,
+        "p95": 1248.0,
+        "total": 249600
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 8,
+        "rate": 0.04,
+        "wilson_95": [
+          0.020405632066152306,
+          0.07693206820093293
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 192,
+        "rate": 0.96,
+        "wilson_95": [
+          0.923067931799067,
+          0.9795943679338476
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 2.24,
+        "median": 1.0,
+        "min": 1,
+        "p95": 1.0,
+        "total": 448
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 8,
+          "rate": 0.04,
+          "wilson_95": [
+            0.020405632066152306,
+            0.07693206820093293
+          ]
+        },
+        "reject": {
+          "count": 192,
+          "rate": 0.96,
+          "wilson_95": [
+            0.923067931799067,
+            0.9795943679338476
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 39,
+        "mean": 39.0,
+        "median": 39.0,
+        "min": 39,
+        "p95": 39.0,
+        "total": 7800
+      },
+      "n": 32,
+      "policy": "fixed_exact_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 1248,
+        "mean": 87.36,
+        "median": 39.0,
+        "min": 39,
+        "p95": 39.0,
+        "total": 17472
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 8,
+        "rate": 0.04,
+        "wilson_95": [
+          0.020405632066152306,
+          0.07693206820093293
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 192,
+        "rate": 0.96,
+        "wilson_95": [
+          0.923067931799067,
+          0.9795943679338476
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 2.24,
+        "median": 1.0,
+        "min": 1,
+        "p95": 1.0,
+        "total": 448
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 8,
+          "rate": 0.04,
+          "wilson_95": [
+            0.020405632066152306,
+            0.07693206820093293
+          ]
+        },
+        "reject": {
+          "count": 192,
+          "rate": 0.96,
+          "wilson_95": [
+            0.923067931799067,
+            0.9795943679338476
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 75,
+        "mean": 22.26,
+        "median": 19.0,
+        "min": 5,
+        "p95": 44.04999999999998,
+        "total": 4452
+      },
+      "n": 32,
+      "policy": "sequential_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 469,
+        "mean": 36.935,
+        "median": 19.0,
+        "min": 5,
+        "p95": 63.399999999999864,
+        "total": 7387
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 8,
+        "rate": 0.04,
+        "wilson_95": [
+          0.020405632066152306,
+          0.07693206820093293
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 192,
+        "rate": 0.96,
+        "wilson_95": [
+          0.923067931799067,
+          0.9795943679338476
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 8,
+          "rate": 0.04,
+          "wilson_95": [
+            0.020405632066152306,
+            0.07693206820093293
+          ]
+        },
+        "reject": {
+          "count": 192,
+          "rate": 0.96,
+          "wilson_95": [
+            0.923067931799067,
+            0.9795943679338476
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 75,
+        "mean": 22.12,
+        "median": 19.0,
+        "min": 5,
+        "p95": 44.04999999999998,
+        "total": 4424
+      },
+      "n": 32,
+      "policy": "sequential_round_robin",
+      "policy_valid": true,
+      "shots": {
+        "max": 599,
+        "mean": 376.67,
+        "median": 389.5,
+        "min": 129,
+        "p95": 497.15,
+        "total": 75334
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 8,
+        "rate": 0.04,
+        "wilson_95": [
+          0.020405632066152306,
+          0.07693206820093293
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      },
+      "covered": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "n": 32,
+      "policy": "local_only",
+      "policy_valid": false,
+      "shots": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 144,
+        "mean": 144.0,
+        "median": 144.0,
+        "min": 144,
+        "p95": 144.0,
+        "total": 28800
+      },
+      "n": 32,
+      "policy": "full_fixed",
+      "policy_valid": true,
+      "shots": {
+        "max": 4608,
+        "mean": 4608.0,
+        "median": 4608.0,
+        "min": 4608,
+        "p95": 4608.0,
+        "total": 921600
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 17,
+        "mean": 17.0,
+        "median": 17.0,
+        "min": 17,
+        "p95": 17.0,
+        "total": 3400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 144,
+        "mean": 144.0,
+        "median": 144.0,
+        "min": 144,
+        "p95": 144.0,
+        "total": 28800
+      },
+      "n": 32,
+      "policy": "fixed_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 2448,
+        "mean": 2448.0,
+        "median": 2448.0,
+        "min": 2448,
+        "p95": 2448.0,
+        "total": 489600
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 195,
+        "rate": 0.975,
+        "wilson_95": [
+          0.942821659593358,
+          0.9892752803482386
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 5,
+          "rate": 0.025,
+          "wilson_95": [
+            0.010724719651761264,
+            0.05717834040664198
+          ]
+        },
+        "reject": {
+          "count": 195,
+          "rate": 0.975,
+          "wilson_95": [
+            0.942821659593358,
+            0.9892752803482386
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 39,
+        "mean": 39.0,
+        "median": 39.0,
+        "min": 39,
+        "p95": 39.0,
+        "total": 7800
+      },
+      "n": 32,
+      "policy": "fixed_exact",
+      "policy_valid": true,
+      "shots": {
+        "max": 1248,
+        "mean": 1248.0,
+        "median": 1248.0,
+        "min": 1248,
+        "p95": 1248.0,
+        "total": 249600
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 5,
+        "rate": 0.025,
+        "wilson_95": [
+          0.010724719651761264,
+          0.05717834040664198
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 195,
+        "rate": 0.975,
+        "wilson_95": [
+          0.942821659593358,
+          0.9892752803482386
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 17.105,
+        "median": 17.0,
+        "min": 4,
+        "p95": 17.0,
+        "total": 3421
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 5,
+          "rate": 0.025,
+          "wilson_95": [
+            0.010724719651761264,
+            0.05717834040664198
+          ]
+        },
+        "reject": {
+          "count": 195,
+          "rate": 0.975,
+          "wilson_95": [
+            0.942821659593358,
+            0.9892752803482386
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 39,
+        "mean": 39.0,
+        "median": 39.0,
+        "min": 39,
+        "p95": 39.0,
+        "total": 7800
+      },
+      "n": 32,
+      "policy": "fixed_exact_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 1248,
+        "mean": 667.095,
+        "median": 663.0,
+        "min": 156,
+        "p95": 663.0,
+        "total": 133419
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 5,
+        "rate": 0.025,
+        "wilson_95": [
+          0.010724719651761264,
+          0.05717834040664198
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 191,
+        "rate": 0.955,
+        "wilson_95": [
+          0.9167032959981803,
+          0.976147456998507
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 17.55,
+        "median": 17.0,
+        "min": 5,
+        "p95": 17.0,
+        "total": 3510
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 9,
+          "rate": 0.045,
+          "wilson_95": [
+            0.023852543001492997,
+            0.0832967040018196
+          ]
+        },
+        "reject": {
+          "count": 191,
+          "rate": 0.955,
+          "wilson_95": [
+            0.9167032959981803,
+            0.976147456998507
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 79,
+        "mean": 37.41,
+        "median": 34.0,
+        "min": 12,
+        "p95": 61.0,
+        "total": 7482
+      },
+      "n": 32,
+      "policy": "sequential_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 567,
+        "mean": 256.32,
+        "median": 247.5,
+        "min": 73,
+        "p95": 347.49999999999983,
+        "total": 51264
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 9,
+        "rate": 0.045,
+        "wilson_95": [
+          0.023852543001492997,
+          0.0832967040018196
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 191,
+        "rate": 0.955,
+        "wilson_95": [
+          0.9167032959981803,
+          0.976147456998507
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 9,
+          "rate": 0.045,
+          "wilson_95": [
+            0.023852543001492997,
+            0.0832967040018196
+          ]
+        },
+        "reject": {
+          "count": 191,
+          "rate": 0.955,
+          "wilson_95": [
+            0.9167032959981803,
+            0.976147456998507
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 72,
+        "mean": 22.91,
+        "median": 20.0,
+        "min": 5,
+        "p95": 48.0,
+        "total": 4582
+      },
+      "n": 32,
+      "policy": "sequential_round_robin",
+      "policy_valid": true,
+      "shots": {
+        "max": 585,
+        "mean": 384.935,
+        "median": 394.5,
+        "min": 145,
+        "p95": 512.0999999999999,
+        "total": 76987
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 9,
+        "rate": 0.045,
+        "wilson_95": [
+          0.023852543001492997,
+          0.0832967040018196
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      },
+      "covered": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "n": 32,
+      "policy": "local_only",
+      "policy_valid": false,
+      "shots": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 144,
+        "mean": 144.0,
+        "median": 144.0,
+        "min": 144,
+        "p95": 144.0,
+        "total": 28800
+      },
+      "n": 32,
+      "policy": "full_fixed",
+      "policy_valid": true,
+      "shots": {
+        "max": 4608,
+        "mean": 4608.0,
+        "median": 4608.0,
+        "min": 4608,
+        "p95": 4608.0,
+        "total": 921600
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 144,
+        "mean": 144.0,
+        "median": 144.0,
+        "min": 144,
+        "p95": 144.0,
+        "total": 28800
+      },
+      "n": 32,
+      "policy": "fixed_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 4608,
+        "mean": 4608.0,
+        "median": 4608.0,
+        "min": 4608,
+        "p95": 4608.0,
+        "total": 921600
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 194,
+        "rate": 0.97,
+        "wilson_95": [
+          0.9361057075454807,
+          0.9861796856598887
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 6,
+          "rate": 0.03,
+          "wilson_95": [
+            0.013820314340111346,
+            0.06389429245451925
+          ]
+        },
+        "reject": {
+          "count": 194,
+          "rate": 0.97,
+          "wilson_95": [
+            0.9361057075454807,
+            0.9861796856598887
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 39,
+        "mean": 39.0,
+        "median": 39.0,
+        "min": 39,
+        "p95": 39.0,
+        "total": 7800
+      },
+      "n": 32,
+      "policy": "fixed_exact",
+      "policy_valid": true,
+      "shots": {
+        "max": 1248,
+        "mean": 1248.0,
+        "median": 1248.0,
+        "min": 1248,
+        "p95": 1248.0,
+        "total": 249600
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 6,
+        "rate": 0.03,
+        "wilson_95": [
+          0.013820314340111346,
+          0.06389429245451925
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 194,
+        "rate": 0.97,
+        "wilson_95": [
+          0.9361057075454807,
+          0.9861796856598887
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 30.99,
+        "median": 32.0,
+        "min": 4,
+        "p95": 32.0,
+        "total": 6198
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 6,
+          "rate": 0.03,
+          "wilson_95": [
+            0.013820314340111346,
+            0.06389429245451925
+          ]
+        },
+        "reject": {
+          "count": 194,
+          "rate": 0.97,
+          "wilson_95": [
+            0.9361057075454807,
+            0.9861796856598887
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 39,
+        "mean": 39.0,
+        "median": 39.0,
+        "min": 39,
+        "p95": 39.0,
+        "total": 7800
+      },
+      "n": 32,
+      "policy": "fixed_exact_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 1248,
+        "mean": 1208.61,
+        "median": 1248.0,
+        "min": 156,
+        "p95": 1248.0,
+        "total": 241722
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 6,
+        "rate": 0.03,
+        "wilson_95": [
+          0.013820314340111346,
+          0.06389429245451925
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 189,
+        "rate": 0.945,
+        "wilson_95": [
+          0.9042130012276914,
+          0.9690146582965411
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 31.42,
+        "median": 32.0,
+        "min": 5,
+        "p95": 32.0,
+        "total": 6284
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 11,
+          "rate": 0.055,
+          "wilson_95": [
+            0.03098534170345884,
+            0.0957869987723084
+          ]
+        },
+        "reject": {
+          "count": 189,
+          "rate": 0.945,
+          "wilson_95": [
+            0.9042130012276914,
+            0.9690146582965411
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 92,
+        "mean": 42.315,
+        "median": 39.0,
+        "min": 21,
+        "p95": 65.0,
+        "total": 8463
+      },
+      "n": 32,
+      "policy": "sequential_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 609,
+        "mean": 450.29,
+        "median": 449.0,
+        "min": 73,
+        "p95": 541.0,
+        "total": 90058
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 11,
+        "rate": 0.055,
+        "wilson_95": [
+          0.03098534170345884,
+          0.0957869987723084
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 189,
+        "rate": 0.945,
+        "wilson_95": [
+          0.9042130012276914,
+          0.9690146582965411
+        ]
+      },
+      "covered": {
+        "max": 32,
+        "mean": 32.0,
+        "median": 32.0,
+        "min": 32,
+        "p95": 32.0,
+        "total": 6400
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 11,
+          "rate": 0.055,
+          "wilson_95": [
+            0.03098534170345884,
+            0.0957869987723084
+          ]
+        },
+        "reject": {
+          "count": 189,
+          "rate": 0.945,
+          "wilson_95": [
+            0.9042130012276914,
+            0.9690146582965411
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 58,
+        "mean": 21.475,
+        "median": 19.0,
+        "min": 5,
+        "p95": 43.0,
+        "total": 4295
+      },
+      "n": 32,
+      "policy": "sequential_round_robin",
+      "policy_valid": true,
+      "shots": {
+        "max": 548,
+        "mean": 384.28,
+        "median": 392.5,
+        "min": 160,
+        "p95": 490.2499999999999,
+        "total": 76856
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 11,
+        "rate": 0.055,
+        "wilson_95": [
+          0.03098534170345884,
+          0.0957869987723084
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      },
+      "covered": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "n": 32,
+      "policy": "local_only",
+      "policy_valid": false,
+      "shots": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 175,
+        "mean": 175.0,
+        "median": 175.0,
+        "min": 175,
+        "p95": 175.0,
+        "total": 35000
+      },
+      "n": 128,
+      "policy": "full_fixed",
+      "policy_valid": true,
+      "shots": {
+        "max": 22400,
+        "mean": 22400.0,
+        "median": 22400.0,
+        "min": 22400,
+        "p95": 22400.0,
+        "total": 4480000
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 175,
+        "mean": 175.0,
+        "median": 175.0,
+        "min": 175,
+        "p95": 175.0,
+        "total": 35000
+      },
+      "n": 128,
+      "policy": "fixed_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 22400,
+        "mean": 22400.0,
+        "median": 22400.0,
+        "min": 22400,
+        "p95": 22400.0,
+        "total": 4480000
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 191,
+        "rate": 0.955,
+        "wilson_95": [
+          0.9167032959981803,
+          0.976147456998507
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 191,
+          "rate": 0.955,
+          "wilson_95": [
+            0.9167032959981803,
+            0.976147456998507
+          ]
+        },
+        "reject": {
+          "count": 9,
+          "rate": 0.045,
+          "wilson_95": [
+            0.023852543001492997,
+            0.0832967040018196
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 45,
+        "mean": 45.0,
+        "median": 45.0,
+        "min": 45,
+        "p95": 45.0,
+        "total": 9000
+      },
+      "n": 128,
+      "policy": "fixed_exact",
+      "policy_valid": true,
+      "shots": {
+        "max": 5760,
+        "mean": 5760.0,
+        "median": 5760.0,
+        "min": 5760,
+        "p95": 5760.0,
+        "total": 1152000
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 9,
+        "rate": 0.045,
+        "wilson_95": [
+          0.023852543001492997,
+          0.0832967040018196
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 191,
+        "rate": 0.955,
+        "wilson_95": [
+          0.9167032959981803,
+          0.976147456998507
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 125.235,
+        "median": 128.0,
+        "min": 13,
+        "p95": 128.0,
+        "total": 25047
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 191,
+          "rate": 0.955,
+          "wilson_95": [
+            0.9167032959981803,
+            0.976147456998507
+          ]
+        },
+        "reject": {
+          "count": 9,
+          "rate": 0.045,
+          "wilson_95": [
+            0.023852543001492997,
+            0.0832967040018196
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 45,
+        "mean": 45.0,
+        "median": 45.0,
+        "min": 45,
+        "p95": 45.0,
+        "total": 9000
+      },
+      "n": 128,
+      "policy": "fixed_exact_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 5760,
+        "mean": 5635.575,
+        "median": 5760.0,
+        "min": 585,
+        "p95": 5760.0,
+        "total": 1127115
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 9,
+        "rate": 0.045,
+        "wilson_95": [
+          0.023852543001492997,
+          0.0832967040018196
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 189,
+        "rate": 0.945,
+        "wilson_95": [
+          0.9042130012276914,
+          0.9690146582965411
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 125.185,
+        "median": 128.0,
+        "min": 23,
+        "p95": 128.0,
+        "total": 25037
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 189,
+          "rate": 0.945,
+          "wilson_95": [
+            0.9042130012276914,
+            0.9690146582965411
+          ]
+        },
+        "reject": {
+          "count": 11,
+          "rate": 0.055,
+          "wilson_95": [
+            0.03098534170345884,
+            0.0957869987723084
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 105,
+        "mean": 57.29,
+        "median": 56.0,
+        "min": 30,
+        "p95": 83.0,
+        "total": 11458
+      },
+      "n": 128,
+      "policy": "sequential_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 2107,
+        "mean": 1764.14,
+        "median": 1798.0,
+        "min": 365,
+        "p95": 1950.0,
+        "total": 352828
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 11,
+        "rate": 0.055,
+        "wilson_95": [
+          0.03098534170345884,
+          0.0957869987723084
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 189,
+        "rate": 0.945,
+        "wilson_95": [
+          0.9042130012276914,
+          0.9690146582965411
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 189,
+          "rate": 0.945,
+          "wilson_95": [
+            0.9042130012276914,
+            0.9690146582965411
+          ]
+        },
+        "reject": {
+          "count": 11,
+          "rate": 0.055,
+          "wilson_95": [
+            0.03098534170345884,
+            0.0957869987723084
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 105,
+        "mean": 55.735,
+        "median": 54.0,
+        "min": 7,
+        "p95": 83.0,
+        "total": 11147
+      },
+      "n": 128,
+      "policy": "sequential_round_robin",
+      "policy_valid": true,
+      "shots": {
+        "max": 2107,
+        "mean": 1787.08,
+        "median": 1798.0,
+        "min": 895,
+        "p95": 1950.0,
+        "total": 357416
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 11,
+        "rate": 0.055,
+        "wilson_95": [
+          0.03098534170345884,
+          0.0957869987723084
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "null",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "accept",
+      "max_samples": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "n": 128,
+      "policy": "local_only",
+      "policy_valid": false,
+      "shots": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 175,
+        "mean": 175.0,
+        "median": 175.0,
+        "min": 175,
+        "p95": 175.0,
+        "total": 35000
+      },
+      "n": 128,
+      "policy": "full_fixed",
+      "policy_valid": true,
+      "shots": {
+        "max": 22400,
+        "mean": 22400.0,
+        "median": 22400.0,
+        "min": 22400,
+        "p95": 22400.0,
+        "total": 4480000
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 1,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1,
+        "p95": 1.0,
+        "total": 200
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 175,
+        "mean": 175.0,
+        "median": 175.0,
+        "min": 175,
+        "p95": 175.0,
+        "total": 35000
+      },
+      "n": 128,
+      "policy": "fixed_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 175,
+        "mean": 175.0,
+        "median": 175.0,
+        "min": 175,
+        "p95": 175.0,
+        "total": 35000
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 189,
+        "rate": 0.945,
+        "wilson_95": [
+          0.9042130012276914,
+          0.9690146582965411
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 11,
+          "rate": 0.055,
+          "wilson_95": [
+            0.03098534170345884,
+            0.0957869987723084
+          ]
+        },
+        "reject": {
+          "count": 189,
+          "rate": 0.945,
+          "wilson_95": [
+            0.9042130012276914,
+            0.9690146582965411
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 45,
+        "mean": 45.0,
+        "median": 45.0,
+        "min": 45,
+        "p95": 45.0,
+        "total": 9000
+      },
+      "n": 128,
+      "policy": "fixed_exact",
+      "policy_valid": true,
+      "shots": {
+        "max": 5760,
+        "mean": 5760.0,
+        "median": 5760.0,
+        "min": 5760,
+        "p95": 5760.0,
+        "total": 1152000
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 11,
+        "rate": 0.055,
+        "wilson_95": [
+          0.03098534170345884,
+          0.0957869987723084
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 189,
+        "rate": 0.945,
+        "wilson_95": [
+          0.9042130012276914,
+          0.9690146582965411
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 7.985,
+        "median": 1.0,
+        "min": 1,
+        "p95": 128.0,
+        "total": 1597
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 11,
+          "rate": 0.055,
+          "wilson_95": [
+            0.03098534170345884,
+            0.0957869987723084
+          ]
+        },
+        "reject": {
+          "count": 189,
+          "rate": 0.945,
+          "wilson_95": [
+            0.9042130012276914,
+            0.9690146582965411
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 45,
+        "mean": 45.0,
+        "median": 45.0,
+        "min": 45,
+        "p95": 45.0,
+        "total": 9000
+      },
+      "n": 128,
+      "policy": "fixed_exact_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 5760,
+        "mean": 359.325,
+        "median": 45.0,
+        "min": 45,
+        "p95": 5760.0,
+        "total": 71865
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 11,
+        "rate": 0.055,
+        "wilson_95": [
+          0.03098534170345884,
+          0.0957869987723084
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 190,
+        "rate": 0.95,
+        "wilson_95": [
+          0.9104218518612239,
+          0.972617354399236
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 7.98,
+        "median": 1.0,
+        "min": 1,
+        "p95": 127.04999999999998,
+        "total": 1596
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 10,
+          "rate": 0.05,
+          "wilson_95": [
+            0.02738264560076393,
+            0.08957814813877599
+          ]
+        },
+        "reject": {
+          "count": 190,
+          "rate": 0.95,
+          "wilson_95": [
+            0.9104218518612239,
+            0.972617354399236
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 82,
+        "mean": 29.275,
+        "median": 27.0,
+        "min": 6,
+        "p95": 56.0,
+        "total": 5855
+      },
+      "n": 128,
+      "policy": "sequential_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 1923,
+        "mean": 124.87,
+        "median": 27.0,
+        "min": 6,
+        "p95": 1634.549999999999,
+        "total": 24974
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 10,
+        "rate": 0.05,
+        "wilson_95": [
+          0.02738264560076393,
+          0.08957814813877599
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 190,
+        "rate": 0.95,
+        "wilson_95": [
+          0.9104218518612239,
+          0.972617354399236
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 10,
+          "rate": 0.05,
+          "wilson_95": [
+            0.02738264560076393,
+            0.08957814813877599
+          ]
+        },
+        "reject": {
+          "count": 190,
+          "rate": 0.95,
+          "wilson_95": [
+            0.9104218518612239,
+            0.972617354399236
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 82,
+        "mean": 28.56,
+        "median": 26.0,
+        "min": 6,
+        "p95": 55.04999999999998,
+        "total": 5712
+      },
+      "n": 128,
+      "policy": "sequential_round_robin",
+      "policy_valid": true,
+      "shots": {
+        "max": 2074,
+        "mean": 1592.805,
+        "median": 1645.0,
+        "min": 641,
+        "p95": 1910.3999999999999,
+        "total": 318561
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 10,
+        "rate": 0.05,
+        "wilson_95": [
+          0.02738264560076393,
+          0.08957814813877599
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "first",
+      "correct_unconditional": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      },
+      "covered": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "n": 128,
+      "policy": "local_only",
+      "policy_valid": false,
+      "shots": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 175,
+        "mean": 175.0,
+        "median": 175.0,
+        "min": 175,
+        "p95": 175.0,
+        "total": 35000
+      },
+      "n": 128,
+      "policy": "full_fixed",
+      "policy_valid": true,
+      "shots": {
+        "max": 22400,
+        "mean": 22400.0,
+        "median": 22400.0,
+        "min": 22400,
+        "p95": 22400.0,
+        "total": 4480000
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 65,
+        "mean": 65.0,
+        "median": 65.0,
+        "min": 65,
+        "p95": 65.0,
+        "total": 13000
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 175,
+        "mean": 175.0,
+        "median": 175.0,
+        "min": 175,
+        "p95": 175.0,
+        "total": 35000
+      },
+      "n": 128,
+      "policy": "fixed_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 11375,
+        "mean": 11375.0,
+        "median": 11375.0,
+        "min": 11375,
+        "p95": 11375.0,
+        "total": 2275000
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 192,
+        "rate": 0.96,
+        "wilson_95": [
+          0.923067931799067,
+          0.9795943679338476
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 8,
+          "rate": 0.04,
+          "wilson_95": [
+            0.020405632066152306,
+            0.07693206820093293
+          ]
+        },
+        "reject": {
+          "count": 192,
+          "rate": 0.96,
+          "wilson_95": [
+            0.923067931799067,
+            0.9795943679338476
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 45,
+        "mean": 45.0,
+        "median": 45.0,
+        "min": 45,
+        "p95": 45.0,
+        "total": 9000
+      },
+      "n": 128,
+      "policy": "fixed_exact",
+      "policy_valid": true,
+      "shots": {
+        "max": 5760,
+        "mean": 5760.0,
+        "median": 5760.0,
+        "min": 5760,
+        "p95": 5760.0,
+        "total": 1152000
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 8,
+        "rate": 0.04,
+        "wilson_95": [
+          0.020405632066152306,
+          0.07693206820093293
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 192,
+        "rate": 0.96,
+        "wilson_95": [
+          0.923067931799067,
+          0.9795943679338476
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 66.675,
+        "median": 65.0,
+        "min": 13,
+        "p95": 65.0,
+        "total": 13335
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 8,
+          "rate": 0.04,
+          "wilson_95": [
+            0.020405632066152306,
+            0.07693206820093293
+          ]
+        },
+        "reject": {
+          "count": 192,
+          "rate": 0.96,
+          "wilson_95": [
+            0.923067931799067,
+            0.9795943679338476
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 45,
+        "mean": 45.0,
+        "median": 45.0,
+        "min": 45,
+        "p95": 45.0,
+        "total": 9000
+      },
+      "n": 128,
+      "policy": "fixed_exact_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 5760,
+        "mean": 3000.375,
+        "median": 2925.0,
+        "min": 585,
+        "p95": 2925.0,
+        "total": 600075
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 8,
+        "rate": 0.04,
+        "wilson_95": [
+          0.020405632066152306,
+          0.07693206820093293
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 197,
+        "rate": 0.985,
+        "wilson_95": [
+          0.9568342712073097,
+          0.9948857622067417
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 65.335,
+        "median": 65.0,
+        "min": 23,
+        "p95": 65.0,
+        "total": 13067
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 3,
+          "rate": 0.015,
+          "wilson_95": [
+            0.00511423779325831,
+            0.04316572879269026
+          ]
+        },
+        "reject": {
+          "count": 197,
+          "rate": 0.985,
+          "wilson_95": [
+            0.9568342712073097,
+            0.9948857622067417
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 87,
+        "mean": 50.515,
+        "median": 48.0,
+        "min": 30,
+        "p95": 74.09999999999997,
+        "total": 10103
+      },
+      "n": 128,
+      "policy": "sequential_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 1832,
+        "mean": 930.67,
+        "median": 920.0,
+        "min": 365,
+        "p95": 1059.1499999999999,
+        "total": 186134
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 3,
+        "rate": 0.015,
+        "wilson_95": [
+          0.00511423779325831,
+          0.04316572879269026
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 197,
+        "rate": 0.985,
+        "wilson_95": [
+          0.9568342712073097,
+          0.9948857622067417
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 3,
+          "rate": 0.015,
+          "wilson_95": [
+            0.00511423779325831,
+            0.04316572879269026
+          ]
+        },
+        "reject": {
+          "count": 197,
+          "rate": 0.985,
+          "wilson_95": [
+            0.9568342712073097,
+            0.9948857622067417
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 87,
+        "mean": 26.88,
+        "median": 24.0,
+        "min": 6,
+        "p95": 55.0,
+        "total": 5376
+      },
+      "n": 128,
+      "policy": "sequential_round_robin",
+      "policy_valid": true,
+      "shots": {
+        "max": 1992,
+        "mean": 1600.795,
+        "median": 1650.5,
+        "min": 705,
+        "p95": 1888.25,
+        "total": 320159
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 3,
+        "rate": 0.015,
+        "wilson_95": [
+          0.00511423779325831,
+          0.04316572879269026
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "middle",
+      "correct_unconditional": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      },
+      "covered": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "n": 128,
+      "policy": "local_only",
+      "policy_valid": false,
+      "shots": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 175,
+        "mean": 175.0,
+        "median": 175.0,
+        "min": 175,
+        "p95": 175.0,
+        "total": 35000
+      },
+      "n": 128,
+      "policy": "full_fixed",
+      "policy_valid": true,
+      "shots": {
+        "max": 22400,
+        "mean": 22400.0,
+        "median": 22400.0,
+        "min": 22400,
+        "p95": 22400.0,
+        "total": 4480000
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "reject": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 175,
+        "mean": 175.0,
+        "median": 175.0,
+        "min": 175,
+        "p95": 175.0,
+        "total": 35000
+      },
+      "n": 128,
+      "policy": "fixed_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 22400,
+        "mean": 22400.0,
+        "median": 22400.0,
+        "min": 22400,
+        "p95": 22400.0,
+        "total": 4480000
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 193,
+        "rate": 0.965,
+        "wilson_95": [
+          0.9295293884777092,
+          0.9829444579914328
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 7,
+          "rate": 0.035,
+          "wilson_95": [
+            0.017055542008567192,
+            0.07047061152229073
+          ]
+        },
+        "reject": {
+          "count": 193,
+          "rate": 0.965,
+          "wilson_95": [
+            0.9295293884777092,
+            0.9829444579914328
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 45,
+        "mean": 45.0,
+        "median": 45.0,
+        "min": 45,
+        "p95": 45.0,
+        "total": 9000
+      },
+      "n": 128,
+      "policy": "fixed_exact",
+      "policy_valid": true,
+      "shots": {
+        "max": 5760,
+        "mean": 5760.0,
+        "median": 5760.0,
+        "min": 5760,
+        "p95": 5760.0,
+        "total": 1152000
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 7,
+        "rate": 0.035,
+        "wilson_95": [
+          0.017055542008567192,
+          0.07047061152229073
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 193,
+        "rate": 0.965,
+        "wilson_95": [
+          0.9295293884777092,
+          0.9829444579914328
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 125.235,
+        "median": 128.0,
+        "min": 13,
+        "p95": 128.0,
+        "total": 25047
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 7,
+          "rate": 0.035,
+          "wilson_95": [
+            0.017055542008567192,
+            0.07047061152229073
+          ]
+        },
+        "reject": {
+          "count": 193,
+          "rate": 0.965,
+          "wilson_95": [
+            0.9295293884777092,
+            0.9829444579914328
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 45,
+        "mean": 45.0,
+        "median": 45.0,
+        "min": 45,
+        "p95": 45.0,
+        "total": 9000
+      },
+      "n": 128,
+      "policy": "fixed_exact_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 5760,
+        "mean": 5635.575,
+        "median": 5760.0,
+        "min": 585,
+        "p95": 5760.0,
+        "total": 1127115
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 7,
+        "rate": 0.035,
+        "wilson_95": [
+          0.017055542008567192,
+          0.07047061152229073
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 195,
+        "rate": 0.975,
+        "wilson_95": [
+          0.942821659593358,
+          0.9892752803482386
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 125.185,
+        "median": 128.0,
+        "min": 23,
+        "p95": 128.0,
+        "total": 25037
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 5,
+          "rate": 0.025,
+          "wilson_95": [
+            0.010724719651761264,
+            0.05717834040664198
+          ]
+        },
+        "reject": {
+          "count": 195,
+          "rate": 0.975,
+          "wilson_95": [
+            0.942821659593358,
+            0.9892752803482386
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 105,
+        "mean": 57.245,
+        "median": 56.0,
+        "min": 30,
+        "p95": 79.19999999999993,
+        "total": 11449
+      },
+      "n": 128,
+      "policy": "sequential_scan",
+      "policy_valid": true,
+      "shots": {
+        "max": 2081,
+        "mean": 1774.405,
+        "median": 1806.0,
+        "min": 365,
+        "p95": 1968.1499999999999,
+        "total": 354881
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 5,
+        "rate": 0.025,
+        "wilson_95": [
+          0.010724719651761264,
+          0.05717834040664198
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 195,
+        "rate": 0.975,
+        "wilson_95": [
+          0.942821659593358,
+          0.9892752803482386
+        ]
+      },
+      "covered": {
+        "max": 128,
+        "mean": 128.0,
+        "median": 128.0,
+        "min": 128,
+        "p95": 128.0,
+        "total": 25600
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 5,
+          "rate": 0.025,
+          "wilson_95": [
+            0.010724719651761264,
+            0.05717834040664198
+          ]
+        },
+        "reject": {
+          "count": 195,
+          "rate": 0.975,
+          "wilson_95": [
+            0.942821659593358,
+            0.9892752803482386
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 83,
+        "mean": 26.185,
+        "median": 24.0,
+        "min": 6,
+        "p95": 52.0,
+        "total": 5237
+      },
+      "n": 128,
+      "policy": "sequential_round_robin",
+      "policy_valid": true,
+      "shots": {
+        "max": 2074,
+        "mean": 1606.48,
+        "median": 1647.0,
+        "min": 768,
+        "p95": 1910.05,
+        "total": 321296
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 5,
+        "rate": 0.025,
+        "wilson_95": [
+          0.010724719651761264,
+          0.05717834040664198
+        ]
+      }
+    },
+    {
+      "budget": null,
+      "case": "last",
+      "correct_unconditional": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          1.734723475976807e-18,
+          0.018845326377266575
+        ]
+      },
+      "covered": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        },
+        "accept": {
+          "count": 200,
+          "rate": 1.0,
+          "wilson_95": [
+            0.9811546736227335,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            1.734723475976807e-18,
+            0.018845326377266575
+          ]
+        }
+      },
+      "expected_decision": "reject",
+      "max_samples": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "n": 128,
+      "policy": "local_only",
+      "policy_valid": false,
+      "shots": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0.0,
+        "total": 0
+      },
+      "trials": 200,
+      "wrong_decision": {
+        "count": 200,
+        "rate": 1.0,
+        "wilson_95": [
+          0.9811546736227335,
+          1.0
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "accuracy": "abstention is never correct; local_only is an invalid unvalidated baseline",
+    "base_seed": 20261102,
+    "budget_per_run": null,
+    "cases": [
+      "null",
+      "first",
+      "middle",
+      "last"
+    ],
+    "delta": 0.05,
+    "fixed_exact_design": "minimal depth and threshold from binomial probabilities evaluated in double precision; both family null rejection and one-anomaly acceptance <= delta - min(1e-12, delta*1e-6); floating numerical calibration, not interval arithmetic",
+    "generated_at_utc": "2026-11-02T14:05:23.163694+00:00",
+    "intervals": "marginal 95% Wilson intervals for each rate; not simultaneous confidence bounds",
+    "local_gain": 0.15,
+    "lower_bound_premise": "uniform unconditional delta-correctness across null and every one-arm alternative; high abstention can violate this premise",
+    "model": "null or exactly one anomalous Bernoulli arm; independent observations conditional on hypothesis",
+    "p0": 0.1,
+    "p1": 0.4,
+    "policies": [
+      "full_fixed",
+      "fixed_scan",
+      "fixed_exact",
+      "fixed_exact_scan",
+      "sequential_scan",
+      "sequential_round_robin",
+      "local_only"
+    ],
+    "probe_version": "0.1.0",
+    "python_version": "3.8.5",
+    "quantiles": "linear interpolation at q*(trials-1)",
+    "script_sha256": "750c961e47d0efc5cc4f1ba5763a84fe7342cab433d6a56cd65353dd456e8368",
+    "sequential_upper_bound_premise": "nominal model; unlimited-budget likelihood-ratio policy",
+    "sizes": [
+      8,
+      32,
+      128
+    ],
+    "source_sha": "4f4c319+uncommitted-local-validation",
+    "stream_scheme": "BLAKE2b-128 namespace ft-local-valid; independent Random(instance, arm); same kth uniform across policies",
+    "trials_per_group": 200
+  },
+  "schema_version": "faulttune.local_validation.v1"
+}

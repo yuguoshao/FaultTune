@@ -1,0 +1,79 @@
+{
+  "status": "analytic_reduction_complete_global_curvature_unresolved",
+  "new_simulation_observations": 0,
+  "purpose": "Minimal handoff separating the proved reductions from the unresolved all-C reflected-pair conjecture. This file does not upgrade numerical diagnostics to certificates.",
+  "model": "p(x)=A+B cos(x)+C sin(x), B^2+C^2<=min(A,1-A)^2. Take C>0 by reflection; z=cos(x), s=sqrt(1-z^2), p_plus=A+Bz+Cs, p_minus=A+Bz-Cs.",
+  "proved_reductions": [
+    {
+      "claim": "Every reflection pair gives an exact achievable oracle information value.",
+      "detail": "For f(p)=p log(p)+(1-p)log(1-p), let q_c=logistic((f(p_plus)-f(p_minus))/(p_plus-p_minus)). The two KL values to q_c coincide at R(z). The plus-arm weight omega=(q_c-p_minus)/(p_plus-p_minus) has weighted mean q_c, so the minimizing common null is q_c. Thus V>=R_star=max_z R(z)."
+    },
+    {
+      "claim": "Pointwise KL intervals overlap at radius R_star.",
+      "detail": "Let ell_R(p) and u_R(p) be the lower and upper endpoints of {q:kl(p||q)<=R}. Their monotonicity in p implies that the common interval for p_minus and p_plus is [L(z),U(z)], with L=ell_R_star(p_plus), U=u_R_star(p_minus). Since R_star>=R(z), L(z)<=U(z). At any capacity maximizer z_star, both equal q_c(z_star)."
+    },
+    {
+      "claim": "The proposed global curvature statement would prove the full conjecture.",
+      "detail": "If L is concave and U is convex on [-1,1], a common supporting tangent at an interior contact z_star satisfies L(z)<=q_t(z)<=U(z) for all z. Its endpoints are in [0,1], so q_t=a+bz is physical. Both KL branches are then <=R_star globally. This gives V<=R_star and matches the reflected design. In a differentiable interior model, L'(z_star)=U'(z_star)=partial_z q_c(z_star), so the line is precisely the entropy-center tangent null. Boundary models require endpoint/subgradient or limiting treatment."
+    },
+    {
+      "claim": "The lower-envelope curvature can be written explicitly.",
+      "detail": "For 0<q=ell_R(p)<p<1, K=q(1-q)(logit(p)-logit(q))/(p-q). Then ell_R'=K and ell_R''=[1/(p(1-p))-2K/(q(1-q))+(p/q^2+(1-p)/(1-q)^2)K^2]q(1-q)/(p-q). Thus L''=ell_R''(B-Cz/s)^2-K C/s^3. The upper-envelope problem is the probability-complemented lower-envelope problem."
+    },
+    {
+      "claim": "A positive-information two-support design with an interior minimizing affine null must use reflected angles.",
+      "detail": "The two null score equations are g1+g2=0 and z1*g1+z2*g2=0, where gi=wi(qi-pi)/(qi(1-qi)). If z1 differs from z2 both scores vanish, so each qi=pi and the information is zero. This does not exclude three or more supports or a boundary minimizer."
+    }
+  ],
+  "proved_special_regimes": [
+    {
+      "regime": "A=1/2, all physical B,C",
+      "status": "analytic_proof_independently_reviewed",
+      "source": "docs/CONTINUOUS_SYMMETRIC_DESIGN.md",
+      "result": "Balanced PSR is globally optimal with value Phi(2C)."
+    },
+    {
+      "regime": "B=0, all physical A,C",
+      "status": "elementary_analytic_argument",
+      "result": "Constant Bernoulli capacity-center null dominates the entire probability interval by convexity of KL in p. The PSR pair with capacity weights is globally optimal."
+    },
+    {
+      "regime": "Each fixed 0<A<1 and |B|<min(A,1-A), sufficiently small nonzero |C|",
+      "status": "complete_analytic_argument_pending_independent_review",
+      "source": "results/sota_round5/theory/reflected_pair_weak_signal_theorem.json",
+      "result": "Unique capacity maximizer and its tangent null give an exact globally optimal reflected pair. No numeric epsilon or uniform boundary neighborhood has been proved."
+    },
+    {
+      "regime": "C=0",
+      "status": "exact",
+      "result": "The model is a null and V=0."
+    }
+  ],
+  "unresolved": [
+    "Prove L''<=0 and U''>=0 globally at R_star for every interior physical model, or replace the curvature claim by a weaker direct affine-separation proof.",
+    "If the curvature claim fails, distinguish failure of this sufficient proof route from an actual counterexample to reflected-pair optimality.",
+    "Control limiting models whose Bernoulli rates reach zero or one, and capacity contacts approaching z=+/-1.",
+    "Exclude genuinely better designs with three or more supports, including those whose minimizing affine null is on the physical boundary.",
+    "Obtain a paid-learning rule and finite-risk finite-cost analysis before interpreting any oracle information theorem as an operational improvement.",
+    "Perform independent novelty and literature comparison before claiming a new theorem or SOTA result."
+  ],
+  "known_nonproofs": [
+    "Joint convexity of Bernoulli KL alone does not give the needed envelope curvature.",
+    "The analogous curvature assertion is false for unrestricted large radii; the link R=R_star must be used.",
+    "Treating A*I+B*Z+C*X as a trace-one qubit state is invalid when A differs from 1/2.",
+    "A finite mesh without a counterexample does not establish all-angle domination.",
+    "The six 120-digit weak-signal checks verify algebra and stationary contacts, not a numerical epsilon."
+  ],
+  "retained_numerical_evidence": {
+    "source": "results/sota_round5/continuous_chernoff_refinement.json",
+    "models": 48,
+    "status": "floating_diagnostics_only",
+    "scope": "The retained 48-model registry did not reveal a robust reflected-pair counterexample. It is not a certified continuum bound. No new counterexample scan is started by this checklist."
+  },
+  "frozen_sources_sha256": {
+    "results/sota_round5/theory/reflected_pair_weak_signal_theorem.json": "e695769b81be5962e2e85945448532bd131b2fe7203ec1ee995d58293774270d",
+    "docs/CONTINUOUS_SYMMETRIC_DESIGN.md": "0e16a486bb11c38b179b1d8d2aa8ed18184aefe07ceabd99c44efb59b10cd13d",
+    "results/sota_round5/continuous_chernoff_refinement.json": "5a2dc575808bd0679c1deb0c0b7947c2662fca6ccbcd82aaef0f1d1dcf4ec130"
+  },
+  "claim_boundary": "The unrestricted all-C conjecture remains unresolved. These analytic information statements do not evade the previously certified finite-cost threefold-speedup obstructions, do not establish finite-budget superiority, and do not by themselves support a SOTA claim."
+}

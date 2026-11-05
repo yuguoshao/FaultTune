@@ -1,0 +1,1219 @@
+{
+  "configurations": [
+    {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "graph": "path",
+      "null_bound": {
+        "objects_lower": 1503.0805853584384,
+        "rounds_lower": 187.8850731698048,
+        "scope": "equal-group action family; complete uniform delta-correct tests on all nonzero sum changes"
+      },
+      "partition": [
+        [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ],
+        [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15
+        ]
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "case": "null",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.013896100000000022,
+        "mean": 0.009367466666666666,
+        "median": 0.007392099999999985,
+        "p95": 0.013245700000000018
+      },
+      "expected_decision": "accept",
+      "graph": "path",
+      "guarantee_in_scope": true,
+      "n": 16,
+      "objects": {
+        "max": 16384,
+        "mean": 10922.666666666666,
+        "median": 8192,
+        "p95": 15564.8
+      },
+      "policy": "sweep_kl",
+      "rounds": {
+        "max": 2048,
+        "mean": 1365.3333333333333,
+        "median": 1024,
+        "p95": 1945.6
+      },
+      "switches": {
+        "max": 2047,
+        "mean": 1364.3333333333333,
+        "median": 1023,
+        "p95": 1944.6
+      },
+      "trials": 3,
+      "true_delta": -0.3,
+      "wrong": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          5.551115123125783e-17,
+          0.5614970317550454
+        ]
+      }
+    },
+    {
+      "case": "null",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.014518099999999978,
+        "mean": 0.013900633333333329,
+        "median": 0.014034800000000014,
+        "p95": 0.014469769999999983
+      },
+      "expected_decision": "accept",
+      "graph": "path",
+      "guarantee_in_scope": true,
+      "n": 16,
+      "objects": {
+        "max": 16384,
+        "mean": 16384,
+        "median": 16384,
+        "p95": 16384.0
+      },
+      "policy": "group_kl_balanced",
+      "rounds": {
+        "max": 2048,
+        "mean": 2048,
+        "median": 2048,
+        "p95": 2048.0
+      },
+      "switches": {
+        "max": 21,
+        "mean": 21,
+        "median": 21,
+        "p95": 21.0
+      },
+      "trials": 3,
+      "true_delta": -0.3,
+      "wrong": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          5.551115123125783e-17,
+          0.5614970317550454
+        ]
+      }
+    },
+    {
+      "case": "null",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.013738100000000003,
+        "mean": 0.013401399999999999,
+        "median": 0.013373899999999994,
+        "p95": 0.013701680000000003
+      },
+      "expected_decision": "accept",
+      "graph": "path",
+      "guarantee_in_scope": true,
+      "n": 16,
+      "objects": {
+        "max": 16384,
+        "mean": 16384,
+        "median": 16384,
+        "p95": 16384.0
+      },
+      "policy": "group_kl_adaptive",
+      "rounds": {
+        "max": 2048,
+        "mean": 2048,
+        "median": 2048,
+        "p95": 2048.0
+      },
+      "switches": {
+        "max": 19,
+        "mean": 18,
+        "median": 19,
+        "p95": 19.0
+      },
+      "trials": 3,
+      "true_delta": -0.3,
+      "wrong": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          5.551115123125783e-17,
+          0.5614970317550454
+        ]
+      }
+    },
+    {
+      "case": "null",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.0010204000000000046,
+        "mean": 0.0008014000000000077,
+        "median": 0.0007242999999999833,
+        "p95": 0.0009907900000000025
+      },
+      "expected_decision": "accept",
+      "graph": "path",
+      "guarantee_in_scope": false,
+      "n": 16,
+      "objects": {
+        "max": 285,
+        "mean": 236.66666666666666,
+        "median": 224,
+        "p95": 278.9
+      },
+      "policy": "legacy_guard",
+      "rounds": {
+        "max": 285,
+        "mean": 236.66666666666666,
+        "median": 224,
+        "p95": 278.9
+      },
+      "switches": {
+        "max": 15,
+        "mean": 15,
+        "median": 15,
+        "p95": 15.0
+      },
+      "trials": 3,
+      "true_delta": -0.3,
+      "wrong": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          5.551115123125783e-17,
+          0.5614970317550454
+        ]
+      }
+    },
+    {
+      "case": "four_cluster",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "reject": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.10372910000000002,
+        "mean": 0.06018426666666665,
+        "median": 0.050468599999999975,
+        "p95": 0.09840305000000002
+      },
+      "expected_decision": "reject",
+      "graph": "path",
+      "guarantee_in_scope": true,
+      "n": 16,
+      "objects": {
+        "max": 131072,
+        "mean": 76458.66666666667,
+        "median": 65536,
+        "p95": 124518.4
+      },
+      "policy": "sweep_kl",
+      "rounds": {
+        "max": 16384,
+        "mean": 9557.333333333334,
+        "median": 8192,
+        "p95": 15564.8
+      },
+      "switches": {
+        "max": 16383,
+        "mean": 9556.333333333334,
+        "median": 8191,
+        "p95": 15563.8
+      },
+      "trials": 3,
+      "true_delta": 0.10000000000000003,
+      "wrong": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          5.551115123125783e-17,
+          0.5614970317550454
+        ]
+      }
+    },
+    {
+      "case": "four_cluster",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "reject": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.10277800000000004,
+        "mean": 0.08562086666666668,
+        "median": 0.10252499999999998,
+        "p95": 0.10275270000000003
+      },
+      "expected_decision": "reject",
+      "graph": "path",
+      "guarantee_in_scope": true,
+      "n": 16,
+      "objects": {
+        "max": 131072,
+        "mean": 109226.66666666667,
+        "median": 131072,
+        "p95": 131072.0
+      },
+      "policy": "group_kl_balanced",
+      "rounds": {
+        "max": 16384,
+        "mean": 13653.333333333334,
+        "median": 16384,
+        "p95": 16384.0
+      },
+      "switches": {
+        "max": 27,
+        "mean": 26.333333333333332,
+        "median": 27,
+        "p95": 27.0
+      },
+      "trials": 3,
+      "true_delta": 0.10000000000000003,
+      "wrong": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          5.551115123125783e-17,
+          0.5614970317550454
+        ]
+      }
+    },
+    {
+      "case": "four_cluster",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "reject": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.10180430000000007,
+        "mean": 0.08438383333333337,
+        "median": 0.09997650000000002,
+        "p95": 0.10162152000000006
+      },
+      "expected_decision": "reject",
+      "graph": "path",
+      "guarantee_in_scope": true,
+      "n": 16,
+      "objects": {
+        "max": 131072,
+        "mean": 109226.66666666667,
+        "median": 131072,
+        "p95": 131072.0
+      },
+      "policy": "group_kl_adaptive",
+      "rounds": {
+        "max": 16384,
+        "mean": 13653.333333333334,
+        "median": 16384,
+        "p95": 16384.0
+      },
+      "switches": {
+        "max": 27,
+        "mean": 25.666666666666668,
+        "median": 25,
+        "p95": 26.8
+      },
+      "trials": 3,
+      "true_delta": 0.10000000000000003,
+      "wrong": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          5.551115123125783e-17,
+          0.5614970317550454
+        ]
+      }
+    },
+    {
+      "case": "four_cluster",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 1,
+          "rate": 0.3333333333333333,
+          "wilson_95": [
+            0.06149194472039621,
+            0.7923403991979522
+          ]
+        },
+        "reject": {
+          "count": 2,
+          "rate": 0.6666666666666666,
+          "wilson_95": [
+            0.2076596008020477,
+            0.9385080552796037
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.0008053000000000088,
+        "mean": 0.0005212333333333522,
+        "median": 0.00042850000000005384,
+        "p95": 0.0007676200000000133
+      },
+      "expected_decision": "reject",
+      "graph": "path",
+      "guarantee_in_scope": false,
+      "n": 16,
+      "objects": {
+        "max": 236,
+        "mean": 163,
+        "median": 142,
+        "p95": 226.6
+      },
+      "policy": "legacy_guard",
+      "rounds": {
+        "max": 236,
+        "mean": 163,
+        "median": 142,
+        "p95": 226.6
+      },
+      "switches": {
+        "max": 15,
+        "mean": 7.666666666666667,
+        "median": 6,
+        "p95": 14.1
+      },
+      "trials": 3,
+      "true_delta": 0.10000000000000003,
+      "wrong": {
+        "count": 1,
+        "rate": 0.3333333333333333,
+        "wilson_95": [
+          0.06149194472039621,
+          0.7923403991979522
+        ]
+      }
+    },
+    {
+      "case": "four_spread",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "reject": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.05283250000000006,
+        "mean": 0.05244639999999997,
+        "median": 0.05244289999999985,
+        "p95": 0.05279354000000004
+      },
+      "expected_decision": "reject",
+      "graph": "path",
+      "guarantee_in_scope": true,
+      "n": 16,
+      "objects": {
+        "max": 65536,
+        "mean": 65536,
+        "median": 65536,
+        "p95": 65536.0
+      },
+      "policy": "sweep_kl",
+      "rounds": {
+        "max": 8192,
+        "mean": 8192,
+        "median": 8192,
+        "p95": 8192.0
+      },
+      "switches": {
+        "max": 8191,
+        "mean": 8191,
+        "median": 8191,
+        "p95": 8191.0
+      },
+      "trials": 3,
+      "true_delta": 0.10000000000000003,
+      "wrong": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          5.551115123125783e-17,
+          0.5614970317550454
+        ]
+      }
+    },
+    {
+      "case": "four_spread",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "reject": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.10208839999999997,
+        "mean": 0.08491333333333333,
+        "median": 0.1001341,
+        "p95": 0.10189296999999997
+      },
+      "expected_decision": "reject",
+      "graph": "path",
+      "guarantee_in_scope": true,
+      "n": 16,
+      "objects": {
+        "max": 131072,
+        "mean": 109226.66666666667,
+        "median": 131072,
+        "p95": 131072.0
+      },
+      "policy": "group_kl_balanced",
+      "rounds": {
+        "max": 16384,
+        "mean": 13653.333333333334,
+        "median": 16384,
+        "p95": 16384.0
+      },
+      "switches": {
+        "max": 27,
+        "mean": 26.333333333333332,
+        "median": 27,
+        "p95": 27.0
+      },
+      "trials": 3,
+      "true_delta": 0.10000000000000003,
+      "wrong": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          5.551115123125783e-17,
+          0.5614970317550454
+        ]
+      }
+    },
+    {
+      "case": "four_spread",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "reject": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.10324779999999989,
+        "mean": 0.08542063333333323,
+        "median": 0.10133409999999987,
+        "p95": 0.1030564299999999
+      },
+      "expected_decision": "reject",
+      "graph": "path",
+      "guarantee_in_scope": true,
+      "n": 16,
+      "objects": {
+        "max": 131072,
+        "mean": 109226.66666666667,
+        "median": 131072,
+        "p95": 131072.0
+      },
+      "policy": "group_kl_adaptive",
+      "rounds": {
+        "max": 16384,
+        "mean": 13653.333333333334,
+        "median": 16384,
+        "p95": 16384.0
+      },
+      "switches": {
+        "max": 26,
+        "mean": 23.666666666666668,
+        "median": 23,
+        "p95": 25.7
+      },
+      "trials": 3,
+      "true_delta": 0.10000000000000003,
+      "wrong": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          5.551115123125783e-17,
+          0.5614970317550454
+        ]
+      }
+    },
+    {
+      "case": "four_spread",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 2,
+          "rate": 0.6666666666666666,
+          "wilson_95": [
+            0.2076596008020477,
+            0.9385080552796037
+          ]
+        },
+        "reject": {
+          "count": 1,
+          "rate": 0.3333333333333333,
+          "wilson_95": [
+            0.06149194472039621,
+            0.7923403991979522
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.0010508000000000184,
+        "mean": 0.000718233333333318,
+        "median": 0.0008684999999999388,
+        "p95": 0.0010325700000000104
+      },
+      "expected_decision": "reject",
+      "graph": "path",
+      "guarantee_in_scope": false,
+      "n": 16,
+      "objects": {
+        "max": 333,
+        "mean": 222.66666666666666,
+        "median": 259,
+        "p95": 325.6
+      },
+      "policy": "legacy_guard",
+      "rounds": {
+        "max": 333,
+        "mean": 222.66666666666666,
+        "median": 259,
+        "p95": 325.6
+      },
+      "switches": {
+        "max": 15,
+        "mean": 10.333333333333334,
+        "median": 15,
+        "p95": 15.0
+      },
+      "trials": 3,
+      "true_delta": 0.10000000000000003,
+      "wrong": {
+        "count": 2,
+        "rate": 0.6666666666666666,
+        "wilson_95": [
+          0.2076596008020477,
+          0.9385080552796037
+        ]
+      }
+    },
+    {
+      "case": "many_weak",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "reject": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.007100099999999943,
+        "mean": 0.004947299999999988,
+        "median": 0.003886999999999974,
+        "p95": 0.006778789999999946
+      },
+      "expected_decision": "reject",
+      "graph": "path",
+      "guarantee_in_scope": true,
+      "n": 16,
+      "objects": {
+        "max": 8192,
+        "mean": 5461.333333333333,
+        "median": 4096,
+        "p95": 7782.4
+      },
+      "policy": "sweep_kl",
+      "rounds": {
+        "max": 1024,
+        "mean": 682.6666666666666,
+        "median": 512,
+        "p95": 972.8
+      },
+      "switches": {
+        "max": 1023,
+        "mean": 681.6666666666666,
+        "median": 511,
+        "p95": 971.8
+      },
+      "trials": 3,
+      "true_delta": 0.3000000000000001,
+      "wrong": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          5.551115123125783e-17,
+          0.5614970317550454
+        ]
+      }
+    },
+    {
+      "case": "many_weak",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "reject": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.010643200000000075,
+        "mean": 0.0085504666666667,
+        "median": 0.007516199999999973,
+        "p95": 0.010330500000000065
+      },
+      "expected_decision": "reject",
+      "graph": "path",
+      "guarantee_in_scope": true,
+      "n": 16,
+      "objects": {
+        "max": 12288,
+        "mean": 9557.333333333334,
+        "median": 8192,
+        "p95": 11878.4
+      },
+      "policy": "group_kl_balanced",
+      "rounds": {
+        "max": 1536,
+        "mean": 1194.6666666666667,
+        "median": 1024,
+        "p95": 1484.8
+      },
+      "switches": {
+        "max": 20,
+        "mean": 19.333333333333332,
+        "median": 19,
+        "p95": 19.9
+      },
+      "trials": 3,
+      "true_delta": 0.3000000000000001,
+      "wrong": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          5.551115123125783e-17,
+          0.5614970317550454
+        ]
+      }
+    },
+    {
+      "case": "many_weak",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "reject": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.010598200000000002,
+        "mean": 0.008536166666666642,
+        "median": 0.007515599999999845,
+        "p95": 0.010289939999999987
+      },
+      "expected_decision": "reject",
+      "graph": "path",
+      "guarantee_in_scope": true,
+      "n": 16,
+      "objects": {
+        "max": 12288,
+        "mean": 9557.333333333334,
+        "median": 8192,
+        "p95": 11878.4
+      },
+      "policy": "group_kl_adaptive",
+      "rounds": {
+        "max": 1536,
+        "mean": 1194.6666666666667,
+        "median": 1024,
+        "p95": 1484.8
+      },
+      "switches": {
+        "max": 19,
+        "mean": 17.333333333333332,
+        "median": 18,
+        "p95": 18.9
+      },
+      "trials": 3,
+      "true_delta": 0.3000000000000001,
+      "wrong": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          5.551115123125783e-17,
+          0.5614970317550454
+        ]
+      }
+    },
+    {
+      "case": "many_weak",
+      "decisions": {
+        "abstain": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "accept": {
+          "count": 3,
+          "rate": 1.0,
+          "wilson_95": [
+            0.4385029682449546,
+            1.0
+          ]
+        },
+        "reject": {
+          "count": 0,
+          "rate": 0.0,
+          "wilson_95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        }
+      },
+      "elapsed_seconds": {
+        "max": 0.0010831000000000035,
+        "mean": 0.0009917333333332816,
+        "median": 0.0010639999999999539,
+        "p95": 0.0010811899999999986
+      },
+      "expected_decision": "reject",
+      "graph": "path",
+      "guarantee_in_scope": false,
+      "n": 16,
+      "objects": {
+        "max": 365,
+        "mean": 323.3333333333333,
+        "median": 356,
+        "p95": 364.1
+      },
+      "policy": "legacy_guard",
+      "rounds": {
+        "max": 365,
+        "mean": 323.3333333333333,
+        "median": 356,
+        "p95": 364.1
+      },
+      "switches": {
+        "max": 15,
+        "mean": 15,
+        "median": 15,
+        "p95": 15.0
+      },
+      "trials": 3,
+      "true_delta": 0.3000000000000001,
+      "wrong": {
+        "count": 3,
+        "rate": 1.0,
+        "wilson_95": [
+          0.4385029682449546,
+          1.0
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "cases": [
+      "null",
+      "four_cluster",
+      "four_spread",
+      "many_weak"
+    ],
+    "confidence": "fixed geometric checkpoints; summable error budgets; independent stationary Bernoulli; double-precision outer bracket with numerical margin",
+    "cost": "rounds and scalar objects charged separately; switches exclude first action; elapsed is Python runtime, not device time",
+    "delta": 0.05,
+    "gain": 0.3,
+    "generated_at_utc": "2026-11-02T15:09:15.737921+00:00",
+    "graphs": [
+      "path"
+    ],
+    "n": 16,
+    "object_budget": 262144,
+    "oracle": "conflict graph controls simultaneous actions; each monitor distribution is action-independent; known p0 and gain",
+    "p0": 0.1,
+    "pairing": "same per-arm kth random uniform across policies, graphs and cases",
+    "policies": [
+      "sweep_kl",
+      "group_kl_balanced",
+      "group_kl_adaptive",
+      "legacy_guard"
+    ],
+    "python": "3.8.5",
+    "round_budget": 262144,
+    "script_sha256": "25d00df307f4e48b9e4b245c31e15aa33406cd0f8a8dc477050d67cfa389d744",
+    "seed": 20261104,
+    "trials_per_group": 3
+  },
+  "schema_version": "faulttune.aggregate_validation.v1"
+}

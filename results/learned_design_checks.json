@@ -1,0 +1,47 @@
+{
+  "config": {
+    "grid_batch_size": 256,
+    "grid_points": 513,
+    "mean_clip": 0.001,
+    "min_allocation": 0.1,
+    "min_shift": 0.2,
+    "pseudocount": 0.5,
+    "radial_fraction": 0.98
+  },
+  "default_allocation_clip_count": 2,
+  "edge_case_records": 10,
+  "elapsed_seconds": 0.08376073837280273,
+  "high_precision_reference_sha256": "223febf495ef93a3b1a6ba2703896742737899acffb620f75036b6c81e69493a",
+  "independent_80_digit_no_cap_reference_checks": 104,
+  "independent_dense_grid_checks": 106,
+  "independent_unclipped_scalar_minimization_checks": 104,
+  "invalid_inputs_rejected": 5,
+  "maximum_80_digit_reference_error": 8.992806499463768e-15,
+  "maximum_closed_form_relative_error_against_independent_minimization": 2.1094237467877974e-15,
+  "maximum_public_grid_variance_over_dense_grid_relative_excess": 1.2236790237540873e-05,
+  "maximum_scalar_vector_difference": 0.0,
+  "maximum_true_conditional_identity_error": 1.3877787807814457e-17,
+  "mean_fit_clip_count": 2,
+  "paid_pilot_records_checked": 106,
+  "passed": true,
+  "policies": [
+    "psr_uniform",
+    "learned_psr_neyman",
+    "learned_closed_form",
+    "learned_grid_design"
+  ],
+  "policy_signature": "(policy, pilot_counts, pilot_totals, config=DesignConfig(pseudocount=0.5, mean_clip=0.001, radial_fraction=0.98, min_shift=0.2, min_allocation=0.1, grid_points=513, grid_batch_size=256))",
+  "radial_fit_clip_count": 7,
+  "restrictive_public_shift_cap_checked": true,
+  "schema": "faulttune.paid_pilot_design_checks.v1",
+  "scope": "finite correctness checks only; synthetic truth appears in this checker, never in the paid-pilot design API; no acceptance certification or cost-performance claim",
+  "source_sha256": {
+    "design_checks.py": "cfc645b1a5e73812ecf3e640eb8bb51cacfbffaab1d2c88470f740e42132be26",
+    "designs.py": "4b1cbb8ce96fa65650bfd84e46e2a0b2f74ca45470a1ce65c8872fdc0bc2dc8b"
+  },
+  "versions": {
+    "numpy": "1.18.5",
+    "python": "3.8.3",
+    "scipy": "1.5.0"
+  }
+}

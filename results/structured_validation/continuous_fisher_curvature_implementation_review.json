@@ -1,0 +1,1051 @@
+{
+  "status": "passed",
+  "reviewer": "stream_stats independent implementation review",
+  "sources": {
+    "experiments/structured_validation/continuous_fisher.py": "8fac52c9d71a1343491d023eef731332e1400104cf47cc027e68bcdf10b35ace",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/structured_validation/continuous_fisher_curvature.py": "61a6c7939f9c8df2eabfabaee33790a348d0c4554e2f21bc6dcfdf4464dd31e5",
+    "docs/CONTINUOUS_FISHER_CURVATURE_BOUND.md": "c6afebe49172690c351fcd9a5e5bc2cd495aaf7aa044d744d39f68f0586085e5",
+    "experiments/structured_validation/continuous_fisher_curvature_checks.py": "2fadf33138b8d960006bf78aa16f694103044f1721d2249695f3c215aea56808",
+    "experiments/structured_validation/review_continuous_fisher_curvature_implementation.py": "44b51ed4ec9350ba8e873199cd728d7274ae1c8034fade74c2dbb8429a116f57",
+    "results/structured_validation/continuous_fisher_curvature_checks.json": "068a47118cfc2a0d7ea2b8d437e9ce02e60fdf9a6d71cb1b1705afe1047e0394",
+    "results/structured_validation/continuous_fisher_curvature_review.json": "d42ff828033f5e73e1152f426141e53e09cd99bb339d075bdaf57168c780504a"
+  },
+  "scope": "Read-only source review and 30 new deterministic small inputs; no simulator or trial ledger reads and no Monte Carlo.",
+  "implementation_findings": [
+    "Reuses reviewed outward endpoint and Machin-pi routines. g+0.5*log(8*pi/(S+1)) is the correct whole-line lower formula.",
+    "Both S and n are exact integers from validated balanced blocks; shots=2*n and score=2*U.",
+    "Positive exact rational odds may be selected after data without changing the prior.",
+    "Only the S lower endpoint is compared to the upper endpoint of -log(delta); zero score always abstains.",
+    "Returned interval upper endpoints enclose the analytic lower bound, not the complete mixture.",
+    "The derivative-square factor is conservatively omitted. No automatic finite-node power or sample-cost advantage is claimed."
+  ],
+  "independent_checks": {
+    "exact_rational_likelihood_formula": "Product of odds^K * choose(2m,T) / sum_j choose(m,j) choose(m,T-j) odds^j",
+    "reference_precision_digits": 110,
+    "bound_enclosure_cases": 30,
+    "invalid_inputs_rejected": 12,
+    "cases": [
+      {
+        "blocks": [],
+        "odds": "1/17",
+        "decision": "abstain",
+        "n": 0,
+        "S": 0,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [],
+        "odds": "1",
+        "decision": "abstain",
+        "n": 0,
+        "S": 0,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [],
+        "odds": "17",
+        "decision": "abstain",
+        "n": 0,
+        "S": 0,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "odds": "1/17",
+        "decision": "abstain",
+        "n": 0,
+        "S": 0,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "odds": "1",
+        "decision": "abstain",
+        "n": 0,
+        "S": 0,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "odds": "17",
+        "decision": "abstain",
+        "n": 0,
+        "S": 0,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "odds": "1/17",
+        "decision": "abstain",
+        "n": 2,
+        "S": 0,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "odds": "1",
+        "decision": "abstain",
+        "n": 2,
+        "S": 0,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "odds": "17",
+        "decision": "abstain",
+        "n": 2,
+        "S": 0,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            2,
+            0,
+            2
+          ]
+        ],
+        "odds": "1/17",
+        "decision": "abstain",
+        "n": 2,
+        "S": 2,
+        "exact_likelihood": "3/179"
+      },
+      {
+        "blocks": [
+          [
+            2,
+            0,
+            2
+          ]
+        ],
+        "odds": "1",
+        "decision": "abstain",
+        "n": 2,
+        "S": 2,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            2,
+            0,
+            2
+          ]
+        ],
+        "odds": "17",
+        "decision": "abstain",
+        "n": 2,
+        "S": 2,
+        "exact_likelihood": "867/179"
+      },
+      {
+        "blocks": [
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "odds": "1/17",
+        "decision": "abstain",
+        "n": 2,
+        "S": 2,
+        "exact_likelihood": "51/179"
+      },
+      {
+        "blocks": [
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "odds": "1",
+        "decision": "abstain",
+        "n": 2,
+        "S": 2,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "odds": "17",
+        "decision": "abstain",
+        "n": 2,
+        "S": 2,
+        "exact_likelihood": "51/179"
+      },
+      {
+        "blocks": [
+          [
+            3,
+            0,
+            1
+          ]
+        ],
+        "odds": "1/17",
+        "decision": "abstain",
+        "n": 3,
+        "S": 1,
+        "exact_likelihood": "1/9"
+      },
+      {
+        "blocks": [
+          [
+            3,
+            0,
+            1
+          ]
+        ],
+        "odds": "1",
+        "decision": "abstain",
+        "n": 3,
+        "S": 1,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            3,
+            0,
+            1
+          ]
+        ],
+        "odds": "17",
+        "decision": "abstain",
+        "n": 3,
+        "S": 1,
+        "exact_likelihood": "17/9"
+      },
+      {
+        "blocks": [
+          [
+            3,
+            3,
+            2
+          ]
+        ],
+        "odds": "1/17",
+        "decision": "abstain",
+        "n": 3,
+        "S": 1,
+        "exact_likelihood": "17/9"
+      },
+      {
+        "blocks": [
+          [
+            3,
+            3,
+            2
+          ]
+        ],
+        "odds": "1",
+        "decision": "abstain",
+        "n": 3,
+        "S": 1,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            3,
+            3,
+            2
+          ]
+        ],
+        "odds": "17",
+        "decision": "abstain",
+        "n": 3,
+        "S": 1,
+        "exact_likelihood": "1/9"
+      },
+      {
+        "blocks": [
+          [
+            8,
+            3,
+            6
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "odds": "1/17",
+        "decision": "abstain",
+        "n": 10,
+        "S": 8,
+        "exact_likelihood": "206635/6335425611"
+      },
+      {
+        "blocks": [
+          [
+            8,
+            3,
+            6
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "odds": "1",
+        "decision": "abstain",
+        "n": 10,
+        "S": 8,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            8,
+            3,
+            6
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "odds": "17",
+        "decision": "abstain",
+        "n": 10,
+        "S": 8,
+        "exact_likelihood": "17258361835/6335425611"
+      },
+      {
+        "blocks": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "odds": "1/17",
+        "decision": "abstain",
+        "n": 20,
+        "S": 20,
+        "exact_likelihood": "1/12157665459056928801"
+      },
+      {
+        "blocks": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "odds": "1",
+        "decision": "abstain",
+        "n": 20,
+        "S": 20,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "odds": "17",
+        "decision": "reject",
+        "n": 20,
+        "S": 20,
+        "exact_likelihood": "4064231406647572522401601/12157665459056928801"
+      },
+      {
+        "blocks": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "odds": "1/17",
+        "decision": "accept",
+        "n": 20,
+        "S": 20,
+        "exact_likelihood": "4064231406647572522401601/12157665459056928801"
+      },
+      {
+        "blocks": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "odds": "1",
+        "decision": "abstain",
+        "n": 20,
+        "S": 20,
+        "exact_likelihood": "1"
+      },
+      {
+        "blocks": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "odds": "17",
+        "decision": "abstain",
+        "n": 20,
+        "S": 20,
+        "exact_likelihood": "1/12157665459056928801"
+      }
+    ],
+    "high_precision_references_are_outward_certificates": false
+  },
+  "author_checks_inspected_not_rerun": {
+    "exact_variance_cases": 560,
+    "analytic_cases": 10,
+    "stored_development_endpoints": 48,
+    "summary": {
+      "S_lower_exceeds_193_lower": 0,
+      "S_lower_exceeds_71_upper": 0,
+      "certified_crossings": 46,
+      "cpu_seconds_total": 1.921875,
+      "wall_seconds_total": 2.3294352999999965
+    }
+  },
+  "limits": [
+    "No prospective data or full development ledger was reread.",
+    "Neither theory nor this implementation review demonstrates earlier first crossing or SOTA superiority."
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "status": "passed",
+  "reviewer": "stream_design independent read-only source and artifact review",
+  "reviewed_utc": "2026-11-03T18:15:02.902425+00:00",
+  "sources": {
+    "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f",
+    "experiments/structured_validation/weighted_fisher.py": "1f31c9cbea3c8db4d7d8dc75936dc5304fd3273fb8ad1fafedc90e792fe24e24",
+    "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/structured_validation/conditional_fisher_unequal.py": "011d691f76b798cd0372544156ab86dbf7b6273b02b41de009737f433caef917",
+    "experiments/structured_validation/safe_grid.py": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+    "experiments/structured_validation/rb_grid.py": "a262a4790289505e7846c98334edbf341cded98090ce7bd8bf7c0c3974fb420f",
+    "experiments/structured_validation/predictive.py": "fc16237805139c707e6e076c0c7e69f45e88c111d405349c68daa3f150871fe4",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/structured_validation/design_policy.py": "1e61776de4b3bd8b2fd331b9c9f28b7b68f4e6c9672e19ca38aa9b436e3d4547",
+    "experiments/structured_validation/probe_fixed.py": "bf64f1ab7fb5e1675966704cc315de1f21b51db8135301fc319d8388d67311ec",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/structured_validation/continuous_fisher.py": "8fac52c9d71a1343491d023eef731332e1400104cf47cc027e68bcdf10b35ace",
+    "experiments/structured_validation/replay_continuous_fisher.py": "bdc5d12447918421b5d0815be3246765c2d483c12cd84326e943ef611c3870e2",
+    "results/structured_validation/continuous_fisher_replay_development.json": "c34f0db6412036bc2b3a732c374fad3cb1d27d742bcb06cd2c8445ce18329470",
+    "results/structured_validation/continuous_fisher_replay_refined.json": "da1fb1549ba29d4037749c52a0051c118856d2d060cc1f7820240044aa2cb686",
+    "results/structured_validation/refined_development_v1/spec.json": "7cd44298b83d58b3649abc3f7b4ff56f8c6898dd52673f0e9dc80ac47ff2b243",
+    "results/structured_validation/refined_development_v1/audit.json": "7e38e8c4e0167f1a415a179c82c58afff5ccb39c03b0902248de306f29bb3786",
+    "results/structured_validation/refined_development_v1/summary.json": "f70ef9f8edef39d5eaacc8c9e5429da33d9cc1df5a68bfc84cc81f4cbdfa05da",
+    "results/structured_validation/continuous_fisher_checks.json": "d381078f889dce9dd5569542c74887001fde7b5959f063b9aa661e7b428d94d3",
+    "results/structured_validation/continuous_fisher_independent_review.json": "5cafdb666db41983200d9f2aa5d3af19e22db8fb989b0fce4e0dc65a89c97bd5"
+  },
+  "input_sha256": {
+    "results/structured_validation/refined_development_v1/spec.json": "7cd44298b83d58b3649abc3f7b4ff56f8c6898dd52673f0e9dc80ac47ff2b243",
+    "results/structured_validation/refined_development_v1/trials.jsonl": "55047a732a135b029045cdfe69bbd4f69a83b3727e2d5a395b00ffcbdcf639c7",
+    "results/structured_validation/refined_development_v1/audit.json": "7e38e8c4e0167f1a415a179c82c58afff5ccb39c03b0902248de306f29bb3786"
+  },
+  "scope": "Both completed deterministic development replay outputs; source review, complete selection/cost/summary reconstruction, and mechanical certificate spot reproduction. No fresh sampling or prospective ledger access.",
+  "source_matrix": {
+    "fixed_cases": 24,
+    "physical_direction_counts": {
+      "positive": 24
+    },
+    "case_ids": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29,
+      31,
+      33,
+      35,
+      37,
+      39,
+      41,
+      43,
+      45,
+      47
+    ],
+    "policies": [
+      "psr",
+      "closed"
+    ],
+    "rep": 0,
+    "unique_joint_seed_labels": 24,
+    "trajectories": 48,
+    "single_checkpoint_records": [
+      {
+        "case_id": 43,
+        "method": "closed_fisher",
+        "rep": 0,
+        "shots": 32
+      },
+      {
+        "case_id": 43,
+        "method": "psr_fisher",
+        "rep": 0,
+        "shots": 32
+      }
+    ]
+  },
+  "paid_data_coverage": {
+    "all_checkpoint_costs_rebuilt": true,
+    "all_checkpoint_scores_and_block_counts_rebuilt": true,
+    "all_recorded_initialization_exploration_and_exploitation_blocks_retained": true,
+    "terminal_history_phase_block_counts": {
+      "psr": 1545,
+      "explore_a": 158,
+      "explore_b": 158,
+      "exploit": 158
+    },
+    "all_positive_arm_sines_positive": true,
+    "note": "Each phase remains a separate balanced block. No outcomes are reconstructed beyond the stored terminal history."
+  },
+  "comparator": {
+    "protocol": "fixed_jeffreys_cells71_v1",
+    "experts": 71,
+    "statistic": "Weighted balanced conditional Fisher mixture on exactly the same source history",
+    "threshold": "1/delta with delta=0.01 for both methods",
+    "kernel_note": "conditional_fisher imports provide CGF kernels; its unrelated default CF33 grid is not used as the comparator."
+  },
+  "summaries": {
+    "coarse49": {
+      "selected_trajectories": 48,
+      "checked_checkpoints": 94,
+      "terminal_checkpoints": 48,
+      "penultimate_checkpoints": 46,
+      "certified_crossings": {
+        "penultimate": 0,
+        "terminal": 48
+      },
+      "terminal_lower_exceeds_old_upper": 0,
+      "strict_improvements_by_policy": {
+        "closed_fisher": 0,
+        "psr_fisher": 0
+      },
+      "log_lower_minus_old_upper_range": [
+        "-0.02889921507523127587531275975400502625026244322903868389337477",
+        "-0.002775368425810487376173908661296075527703287584173134465375977"
+      ]
+    },
+    "refined193": {
+      "selected_trajectories": 48,
+      "checked_checkpoints": 48,
+      "terminal_checkpoints": 48,
+      "penultimate_checkpoints": 0,
+      "certified_crossings": {
+        "terminal": 48
+      },
+      "terminal_lower_exceeds_old_upper": 22,
+      "strict_improvements_by_policy": {
+        "closed_fisher": 11,
+        "psr_fisher": 11
+      },
+      "log_lower_minus_old_upper_range": [
+        "-0.02160283099546233442573275886817573451372838252598771394335825",
+        "0.005749672831269057215712869654934689617372924463341483554835717"
+      ]
+    }
+  },
+  "refinement_comparison": {
+    "same_48_terminal_checkpoints_and_float_proposals": true,
+    "coarse_nodes_are_subset_of_refined_nodes": true,
+    "all_refined_lower_bounds_larger": true,
+    "log_lower_bound_gain_range": [
+      "0.00729638407976894144958000088582929173653406070305096995001652",
+      "0.008671237063983649148425380207581607619372485344539105665120184"
+    ]
+  },
+  "mechanical_reproduction": {
+    "selection": "First and last source identity in lexicographic case_id/method/rep order, selected before inspecting refined outputs",
+    "coarse_rechecks_done_in_prior_read_only_command": true,
+    "records": [
+      {
+        "case_id": 1,
+        "method": "closed_fisher",
+        "rep": 0,
+        "checkpoint_shots": 1024,
+        "coarse49_certificate_digest": "7f33c17a1467e94f688d8b16f835c8474d4e05c07a206112c53fab854f3c2037",
+        "refined193_certificate_digest": "090421772f26caa8b19225f53315bd7016fce1a60f32be69716b67bb71c9d281",
+        "coarse49_whole_certificate_exact": true,
+        "refined193_whole_certificate_exact": true,
+        "original71_evidence_bounds_exact": true,
+        "seconds_for_refined_and_original_recheck": 0.9443239999999999
+      },
+      {
+        "case_id": 47,
+        "method": "psr_fisher",
+        "rep": 0,
+        "checkpoint_shots": 2340,
+        "coarse49_certificate_digest": "b0307f4f063fe37f06e1b3a3b481f9056306bae3653e81b51bc7d5c86915caec",
+        "refined193_certificate_digest": "b030cab867fe60c0380889871ca36803113c66556f228a20f4645db2b026f7fa",
+        "coarse49_whole_certificate_exact": true,
+        "refined193_whole_certificate_exact": true,
+        "original71_evidence_bounds_exact": true,
+        "seconds_for_refined_and_original_recheck": 11.6871705
+      }
+    ],
+    "limits": "Four continuous certificate spot reproductions and two original71 endpoint-bound reproductions, not a rerun of every numerical certificate."
+  },
+  "provenance": {
+    "distinct_source_and_input_files_rechecked_unchanged": 20,
+    "both_replay_outputs_have_identical_source_and_development_input_bindings": true,
+    "old_development_audit_inputs_including_summary_verified": true
+  },
+  "validity_findings": [
+    "Float optimization and observed-data node choices only select numerical integration locations. Every accepted decision is based on the strict lower bound for the same fixed complete continuous Jeffreys mixture.",
+    "At 193 points, 22 of 48 terminal lower bounds strictly exceed the old71 upper bound, proving stronger complete continuous-mixture evidence on those particular stored histories.",
+    "A lower bound below the old71 upper bound does not prove that the complete continuous mixture is worse.",
+    "The 49-point run has 46 available penultimate checkpoints, all abstaining; two trajectories stopped at their first source checkpoint. The 193-point run evaluates terminal checkpoints only."
+  ],
+  "claim_boundaries": [
+    "Retrospective fixed positive-case development data and one replicate per case; two source policies share coupled random streams, so these are not 48 independent held-out observations.",
+    "The node refinement was selected after seeing coarse diagnostics; fixed-prior numerical validity is unchanged, but this is still exploratory evidence analysis.",
+    "No first crossing search, new stopping-cost estimate, confidence interval, independent validation, or SOTA superiority claim.",
+    "The numerical upper endpoint bounds the computed lower quadrature quantity, not the complete continuous mixture."
+  ],
+  "findings": [],
+  "new_simulator_observations": 0,
+  "prospective_ledger_read": false
+}

@@ -1,0 +1,462 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T10:59:45.493742+00:00",
+  "sources": {
+    "experiments/sota_round2/theory/dkm_numeric_checks.py": "a10c17ae91b0f673810ae8431fadecdd7deda689230ea7c1f7663d79cac748e2",
+    "experiments/sota_round2/literature/dkm_baseline.py": "e8799facf1494dcf6355f2f2e6069be350f35f788a70381201f55c53e5479c9d",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "results/sota_round2/literature/kk_arxiv.txt": "fd64c39d144a8b5a3b2547d97fb50fb8ccd188019d98bb532fabe606ed3eb6ed"
+  },
+  "checks": {
+    "calibration_reference_checks": 20,
+    "count_dependent_threshold_checks": 20,
+    "calibration_cases": [
+      {
+        "delta": "0.5",
+        "arms": 1,
+        "calibration_upper": "8.466117217994089403797658334645253949385634674762452759661343168",
+        "reference": "8.46611721799408940379765833464525394938563137954713343704937700614933405989",
+        "outward_gap": "3.2952153e-42"
+      },
+      {
+        "delta": "0.5",
+        "arms": 2,
+        "calibration_upper": "15.2187803050289835339029071686336889856970397794333601229281399",
+        "reference": "15.2187803050289835339029071686336889856970320204618901661108992982423960258",
+        "outward_gap": "7.7589715e-42"
+      },
+      {
+        "delta": "0.5",
+        "arms": 6,
+        "calibration_upper": "41.01186759205292439141490076585918450776710275275596652307189166",
+        "reference": "41.0118675920529243914149007658591845077670979585811408100261401871707157507",
+        "outward_gap": "4.7941748e-42"
+      },
+      {
+        "delta": "0.5",
+        "arms": 65,
+        "calibration_upper": "404.5784131366059268581181451331586359756692364267781173245684359",
+        "reference": "404.578413136605926858118145133158635975669155263931765111514560372002107548",
+        "outward_gap": "8.1162846e-41"
+      },
+      {
+        "delta": "0.1",
+        "arms": 1,
+        "calibration_upper": "11.35028634032098114532677219426459391523936515907278960888176609",
+        "reference": "11.3502863403209811453267721942645939152393592682866073908194969770796547156",
+        "outward_gap": "5.8907862e-42"
+      },
+      {
+        "delta": "0.1",
+        "arms": 2,
+        "calibration_upper": "18.79197341470407550949793247296246228067674082876039271661640817",
+        "reference": "18.791973414704075509497932472962462280676731908585916997933270547348611171",
+        "outward_gap": "8.9201745e-42"
+      },
+      {
+        "delta": "0.1",
+        "arms": 6,
+        "calibration_upper": "46.27755007753755315358836217634750139689628985267945811478027023",
+        "reference": "46.2775500775375531535883621763475013968962671487801711093633724427160938369",
+        "outward_gap": "2.2703899e-41"
+      },
+      {
+        "delta": "0.1",
+        "arms": 65,
+        "calibration_upper": "417.9419938287229202128267231338129020489297891361204809112658884",
+        "reference": "417.941993828722920212826723133812902048929723092939756950829895820785129841",
+        "outward_gap": "6.6043181e-41"
+      },
+      {
+        "delta": "0.01",
+        "arms": 1,
+        "calibration_upper": "14.66226991037628343410670832520134557424040773322618202616704932",
+        "reference": "14.6622699103762834341067083252013455742403953382053575221482198420649840742",
+        "outward_gap": "1.2395021e-41"
+      },
+      {
+        "delta": "0.01",
+        "arms": 2,
+        "calibration_upper": "22.70057268064196229065354438852918783047873031814557921776353218",
+        "reference": "22.7005726806419622906535443885291878304787185365732147816389939541593094312",
+        "outward_gap": "1.1781572e-41"
+      },
+      {
+        "delta": "0.01",
+        "arms": 6,
+        "calibration_upper": "51.76845163561994556049979221432063860383799745406881183751635462",
+        "reference": "51.7684516356199455604997922143206386038379815825036668915610899047435906818",
+        "outward_gap": "1.5871565e-41"
+      },
+      {
+        "delta": "0.01",
+        "arms": 65,
+        "calibration_upper": "431.0823478214110703994412182042169483554917378033247689034157847",
+        "reference": "431.082347821411070399441218204216948355491648278386261489322612200472552535",
+        "outward_gap": "8.9524939e-41"
+      },
+      {
+        "delta": "0.000001",
+        "arms": 1,
+        "calibration_upper": "25.9216162192595764953751783451686066644839005431291142532783812",
+        "reference": "25.921616219259576495375178345168606664483864878091464637738135544521845377",
+        "outward_gap": "3.5665038e-41"
+      },
+      {
+        "delta": "0.000001",
+        "arms": 2,
+        "calibration_upper": "35.31423239766520365665944970523337293785259415878417576491021592",
+        "reference": "35.314232397665203656659449705233372937852566912410895358774117146885955174",
+        "outward_gap": "2.7246373e-41"
+      },
+      {
+        "delta": "0.000001",
+        "arms": 6,
+        "calibration_upper": "68.10171804192588687196063316558756349143619095443673765329059653",
+        "reference": "68.1017180419258868719606331655875634914361556097196443449169818624779282937",
+        "outward_gap": "3.5344717e-41"
+      },
+      {
+        "delta": "0.000001",
+        "arms": 65,
+        "calibration_upper": "467.7111472189020150313269363725334811828023275951610932132714662",
+        "reference": "467.71114721890201503132693637253348118280219366596692047317988847627297237",
+        "outward_gap": "1.3392919e-40"
+      },
+      {
+        "delta": "0.000000000001",
+        "arms": 1,
+        "calibration_upper": "41.29586477406460392474883114810959583406973939996681533170894052",
+        "reference": "41.2958647740646039247488311481095958340696806785659280011601725761490271555",
+        "outward_gap": "5.8721401e-41"
+      },
+      {
+        "delta": "0.000000000001",
+        "arms": 2,
+        "calibration_upper": "51.8432324385191529907503566903372133289678010862582285065567624",
+        "reference": "51.8432324385191529907503566903372133289677297561829292754762710890436907539",
+        "outward_gap": "7.1330075e-41"
+      },
+      {
+        "delta": "0.000000000001",
+        "arms": 6,
+        "calibration_upper": "87.97361946225770060464024995120807344544244639935709215700229589",
+        "reference": "87.9736194622577006046402499512080734454423720292321451328893190523899044452",
+        "outward_gap": "7.4370125e-41"
+      },
+      {
+        "delta": "0.000000000001",
+        "arms": 65,
+        "calibration_upper": "508.5386619954480774085678738899135405669121873529869755735060399",
+        "reference": "508.538661995448077408567873889913540566912118753610272326187463279117327921",
+        "outward_gap": "6.8599377e-41"
+      }
+    ],
+    "analytic_global_null_checks": [
+      {
+        "trials": [
+          64,
+          64
+        ],
+        "successes": [
+          0,
+          64
+        ],
+        "null_pooled_mean": "0.5",
+        "analytic_null_loglik": "-88.7228391116729996054057115466466007136640171981126725274470412151543836121",
+        "certified_upper": "-88.72283911167299960540571154664660071366401719811267252744704119",
+        "outward_gap": "2.5154384e-62"
+      },
+      {
+        "trials": [
+          7,
+          13
+        ],
+        "successes": [
+          1,
+          10
+        ],
+        "null_pooled_mean": "0.55",
+        "analytic_null_loglik": "-13.762776274271769438908677900628930531838427025659485544451415403308117492",
+        "certified_upper": "-13.76277627427176943890867790062893053183842702565948554445141535",
+        "outward_gap": "5.3308117e-62"
+      }
+    ],
+    "two_sided_certificate_cases": [
+      {
+        "calibration": "kk21",
+        "sign": 1,
+        "correct_certificate": {
+          "decision": "reject",
+          "sign": 1,
+          "shots": 128,
+          "delta": 0.01,
+          "calibration": "kk21",
+          "description": "DKM GLR with KK21 Theorem 7 two-sided all-arm calibration",
+          "evidence_lower_decimal": "88.72283911167299960540571154664660071366401719811267252744704118",
+          "threshold_upper_decimal": "32.54489327674252622611801353116040325366680235491681775642614644",
+          "numerator_bounds": [
+            "-1.28E-1000060",
+            "1.28E-1000060"
+          ],
+          "null_certificate": {
+            "sign": 1,
+            "null": "sign*C<=0 in the closed physical double cone",
+            "loglik_upper_decimal": "-88.72283911167299960540571154664660071366401719811267252744704119",
+            "loglik_upper": -88.722839111673,
+            "tangent_upper_decimal": "-88.72283911167299960540571154664660071366401719811267252744704119",
+            "saturated_upper_decimal": "1.28E-1000060",
+            "candidate": [
+              0.5,
+              0.0,
+              0.0
+            ],
+            "candidate_decimal": [
+              "0.5",
+              "0",
+              "0"
+            ],
+            "candidate_loglik_bounds": [
+              "-88.72283911167299960540571154664660071366401719811267252744704124",
+              "-88.72283911167299960540571154664660071366401719811267252744704120"
+            ],
+            "gradient_bounds": [
+              [
+                "-0",
+                "0"
+              ],
+              [
+                "-0",
+                "0"
+              ],
+              [
+                "256",
+                "256"
+              ]
+            ],
+            "support_bounds": [
+              "0",
+              "1E-1000062"
+            ],
+            "shots": 128,
+            "rows": 2,
+            "optimizer": null,
+            "certified": true,
+            "arithmetic": "frozen direct_tests._Bounds outward Decimal arithmetic",
+            "model_features": "exact rational unit-circle coordinates",
+            "likelihood_convention": "ordered outcomes; no binomial coefficients"
+          },
+          "anytime_valid_under_stated_model": true,
+          "arithmetic": "Outward Decimal likelihood and threshold bounds; optimizer is only a proposal"
+        },
+        "opposite_decision": "abstain"
+      },
+      {
+        "calibration": "kk21",
+        "sign": -1,
+        "correct_certificate": {
+          "decision": "accept",
+          "sign": -1,
+          "shots": 128,
+          "delta": 0.01,
+          "calibration": "kk21",
+          "description": "DKM GLR with KK21 Theorem 7 two-sided all-arm calibration",
+          "evidence_lower_decimal": "88.72283911167299960540571154664660071366401719811267252744704118",
+          "threshold_upper_decimal": "32.54489327674252622611801353116040325366680235491681775642614644",
+          "numerator_bounds": [
+            "-1.28E-1000060",
+            "1.28E-1000060"
+          ],
+          "null_certificate": {
+            "sign": -1,
+            "null": "sign*C<=0 in the closed physical double cone",
+            "loglik_upper_decimal": "-88.72283911167299960540571154664660071366401719811267252744704119",
+            "loglik_upper": -88.722839111673,
+            "tangent_upper_decimal": "-88.72283911167299960540571154664660071366401719811267252744704119",
+            "saturated_upper_decimal": "1.28E-1000060",
+            "candidate": [
+              0.5,
+              0.0,
+              0.0
+            ],
+            "candidate_decimal": [
+              "0.5",
+              "0",
+              "0"
+            ],
+            "candidate_loglik_bounds": [
+              "-88.72283911167299960540571154664660071366401719811267252744704124",
+              "-88.72283911167299960540571154664660071366401719811267252744704120"
+            ],
+            "gradient_bounds": [
+              [
+                "-0",
+                "0"
+              ],
+              [
+                "-0",
+                "0"
+              ],
+              [
+                "-256",
+                "-256"
+              ]
+            ],
+            "support_bounds": [
+              "0",
+              "1E-1000062"
+            ],
+            "shots": 128,
+            "rows": 2,
+            "optimizer": null,
+            "certified": true,
+            "arithmetic": "frozen direct_tests._Bounds outward Decimal arithmetic",
+            "model_features": "exact rational unit-circle coordinates",
+            "likelihood_convention": "ordered outcomes; no binomial coefficients"
+          },
+          "anytime_valid_under_stated_model": true,
+          "arithmetic": "Outward Decimal likelihood and threshold bounds; optimizer is only a proposal"
+        },
+        "opposite_decision": "abstain"
+      },
+      {
+        "calibration": "kt_safe",
+        "sign": 1,
+        "correct_certificate": {
+          "decision": "reject",
+          "sign": 1,
+          "shots": 128,
+          "delta": 0.01,
+          "calibration": "kt_safe",
+          "description": "DKM sampling adapted to a product-Jeffreys universal-inference certificate",
+          "evidence_lower_decimal": "83.41531993219744758103791191910969113553581746853970843704146613",
+          "threshold_upper_decimal": "4.605170185988091368035982909368728415202202977257545952066655803",
+          "numerator_bounds": [
+            "-5.30751917947555202436779962753690957812819972957296409040557506",
+            "-5.30751917947555202418071086881676781973465779002890849205347840"
+          ],
+          "null_certificate": {
+            "sign": 1,
+            "null": "sign*C<=0 in the closed physical double cone",
+            "loglik_upper_decimal": "-88.72283911167299960540571154664660071366401719811267252744704119",
+            "loglik_upper": -88.722839111673,
+            "tangent_upper_decimal": "-88.72283911167299960540571154664660071366401719811267252744704119",
+            "saturated_upper_decimal": "1.28E-1000060",
+            "candidate": [
+              0.5,
+              0.0,
+              0.0
+            ],
+            "candidate_decimal": [
+              "0.5",
+              "0",
+              "0"
+            ],
+            "candidate_loglik_bounds": [
+              "-88.72283911167299960540571154664660071366401719811267252744704124",
+              "-88.72283911167299960540571154664660071366401719811267252744704120"
+            ],
+            "gradient_bounds": [
+              [
+                "-0",
+                "0"
+              ],
+              [
+                "-0",
+                "0"
+              ],
+              [
+                "256",
+                "256"
+              ]
+            ],
+            "support_bounds": [
+              "0",
+              "1E-1000062"
+            ],
+            "shots": 128,
+            "rows": 2,
+            "optimizer": null,
+            "certified": true,
+            "arithmetic": "frozen direct_tests._Bounds outward Decimal arithmetic",
+            "model_features": "exact rational unit-circle coordinates",
+            "likelihood_convention": "ordered outcomes; no binomial coefficients"
+          },
+          "anytime_valid_under_stated_model": true,
+          "arithmetic": "Outward Decimal likelihood and threshold bounds; optimizer is only a proposal"
+        },
+        "opposite_decision": "abstain"
+      },
+      {
+        "calibration": "kt_safe",
+        "sign": -1,
+        "correct_certificate": {
+          "decision": "accept",
+          "sign": -1,
+          "shots": 128,
+          "delta": 0.01,
+          "calibration": "kt_safe",
+          "description": "DKM sampling adapted to a product-Jeffreys universal-inference certificate",
+          "evidence_lower_decimal": "83.41531993219744758103791191910969113553581746853970843704146613",
+          "threshold_upper_decimal": "4.605170185988091368035982909368728415202202977257545952066655803",
+          "numerator_bounds": [
+            "-5.30751917947555202436779962753690957812819972957296409040557506",
+            "-5.30751917947555202418071086881676781973465779002890849205347840"
+          ],
+          "null_certificate": {
+            "sign": -1,
+            "null": "sign*C<=0 in the closed physical double cone",
+            "loglik_upper_decimal": "-88.72283911167299960540571154664660071366401719811267252744704119",
+            "loglik_upper": -88.722839111673,
+            "tangent_upper_decimal": "-88.72283911167299960540571154664660071366401719811267252744704119",
+            "saturated_upper_decimal": "1.28E-1000060",
+            "candidate": [
+              0.5,
+              0.0,
+              0.0
+            ],
+            "candidate_decimal": [
+              "0.5",
+              "0",
+              "0"
+            ],
+            "candidate_loglik_bounds": [
+              "-88.72283911167299960540571154664660071366401719811267252744704124",
+              "-88.72283911167299960540571154664660071366401719811267252744704120"
+            ],
+            "gradient_bounds": [
+              [
+                "-0",
+                "0"
+              ],
+              [
+                "-0",
+                "0"
+              ],
+              [
+                "-256",
+                "-256"
+              ]
+            ],
+            "support_bounds": [
+              "0",
+              "1E-1000062"
+            ],
+            "shots": 128,
+            "rows": 2,
+            "optimizer": null,
+            "certified": true,
+            "arithmetic": "frozen direct_tests._Bounds outward Decimal arithmetic",
+            "model_features": "exact rational unit-circle coordinates",
+            "likelihood_convention": "ordered outcomes; no binomial coefficients"
+          },
+          "anytime_valid_under_stated_model": true,
+          "arithmetic": "Outward Decimal likelihood and threshold bounds; optimizer is only a proposal"
+        },
+        "opposite_decision": "abstain"
+      }
+    ]
+  },
+  "scope": "Independent 100-digit mathematical-reference checks and analytic null maxima; no Monte Carlo, performance comparison, or exact-oracle efficiency claim"
+}

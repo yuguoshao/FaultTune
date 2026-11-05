@@ -1,0 +1,98 @@
+{
+  "deadline_epoch": 1793681104.0,
+  "jobs": {
+    "delivery_integrity": {
+      "command": [
+        "D:\\softwares\\anaconda\\anaconda\\python.exe",
+        "-B",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\delivery_integrity.py",
+        "--spec",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\confirmation_spec_v1.json",
+        "--trials",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\results\\confirmation_v1_trials.jsonl.gz",
+        "--status",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\results\\confirmation_v1_status.json",
+        "--expected-spec-sha256",
+        "ab2c711aacca68e84972ac5f6163a08bbc2f3e64544f90d26c9777904e146235",
+        "--output",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\results\\delivery_integrity.json"
+      ],
+      "exit_code": 0,
+      "finished_epoch": 1793678686.95092,
+      "log": "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\results\\closeout_delivery_integrity.log",
+      "pid": 16032,
+      "started_epoch": 1793678474.8829336,
+      "state": "complete"
+    },
+    "records_audit": {
+      "command": [
+        "D:\\softwares\\anaconda\\anaconda\\python.exe",
+        "-B",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\audit_records.py",
+        "--spec",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\confirmation_spec_v1.json",
+        "--trials",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\results\\confirmation_v1_trials.jsonl.gz",
+        "--output",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\results\\confirmation_v1_records_audit.json",
+        "--workers",
+        "12",
+        "--chunk-records",
+        "16",
+        "--progress-every",
+        "25000"
+      ],
+      "exit_code": 0,
+      "finished_epoch": 1793679281.6698759,
+      "log": "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\results\\closeout_records_audit.log",
+      "pid": 30556,
+      "started_epoch": 1793678474.8632107,
+      "state": "complete"
+    },
+    "seed_replay": {
+      "command": [
+        "D:\\softwares\\anaconda\\anaconda\\python.exe",
+        "-B",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\replay_registered.py",
+        "--spec",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\confirmation_spec_v1.json",
+        "--trials",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\results\\confirmation_v1_trials.jsonl.gz",
+        "--output",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\results\\confirmation_v1_replay_audit.json",
+        "--workers",
+        "2"
+      ],
+      "exit_code": 0,
+      "finished_epoch": 1793678831.1053514,
+      "log": "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\results\\closeout_seed_replay.log",
+      "pid": 604,
+      "started_epoch": 1793678474.8767364,
+      "state": "complete"
+    },
+    "summary": {
+      "command": [
+        "D:\\softwares\\anaconda\\anaconda\\python.exe",
+        "-B",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\summarize_results.py",
+        "--spec",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\confirmation_spec_v1.json",
+        "--trials",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\results\\confirmation_v1_trials.jsonl.gz",
+        "--output-prefix",
+        "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\results\\confirmation_v1"
+      ],
+      "exit_code": 0,
+      "finished_epoch": 1793678767.6066246,
+      "log": "D:\\Engineering Projects\\FaultTune\\experiments\\circuit_validation\\results\\closeout_summary.log",
+      "pid": 30464,
+      "started_epoch": 1793678474.869991,
+      "state": "complete"
+    }
+  },
+  "purpose": "authorized 45-minute closeout only",
+  "schema": "faulttune.closeout_jobs.v1",
+  "start_epoch": 1793678474.8574314,
+  "state": "complete",
+  "updated_epoch": 1793679281.6698759
+}

@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "source": {
+    "path": "docs/CONTINUOUS_SYMMETRIC_DESIGN.md",
+    "sha256": "0e16a486bb11c38b179b1d8d2aa8ed18184aefe07ceabd99c44efb59b10cd13d"
+  },
+  "scope": "Independent mathematical source review, not formal proof-assistant certification or literature-novelty verification.",
+  "checks": [
+    "Physical rho is positive semidefinite with trace one under beta^2+gamma^2<=1.",
+    "atanh(t)<t/sqrt(1-t^2) establishes strict positivity of the proposed dual sigma for 0<abs(gamma)<1.",
+    "In the signal eigenbasis Dlog(Hstar)[rho] has diagonal entries 1/2 and off-diagonal beta*atanh(gamma)/(2*gamma), matching sigma.",
+    "The Frechet derivative is self-adjoint for the trace inner product. Concavity gives the stated supporting hyperplane.",
+    "Likelihood-ratio operator Hx satisfies Tr(sigma Hx)=1 and Tr(rho log Hx)=Bernoulli KL, so the uniform bound follows.",
+    "Zero outcome probabilities are correctly handled by (Hx+epsilon I)/(1+epsilon), preserving normalization.",
+    "Equal PSR gives a matching lower bound with a=1/2; no minimax interchange is needed.",
+    "The one-sided full null extension has gradient (-2C,2C) and nonnegative tangent term under reversed ordering.",
+    "C=0 and abs(C)=1/2 are separately covered without undefined products."
+  ],
+  "claim": "For A=1/2, all physical B,C, and equal query costs, continuous-angle oracle information design is exactly attained by equal PSR; no finite stopping-cost or full-field SOTA claim.",
+  "blocking_findings": []
+}

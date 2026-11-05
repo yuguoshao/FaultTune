@@ -1,0 +1,65 @@
+{
+  "status": "independent_root_review_passed",
+  "blocking_findings": [],
+  "new_simulation_observations": 0,
+  "analytic_review": [
+    "The target difference and randomized quadrature arise from one physical repeated-phase/dephasing/readout model. Multiplying the observed sign by an independently randomized phase sign removes the unknown readout bias without giving the true contrast or dephasing to the policy.",
+    "The bounded phase domain prevents aliases for both fixed controls. The wrong-direction e-process is a supermartingale over the entire declared domain; equality uses a union bound on two thresholds200. The confidence/risk and power levels are kept distinct.",
+    "The sin(kh)/sin(h) lower bound and the largest declared gamma give a uniform positive drift for every eligible case. Hoeffding at the finite cap bounds failure of the correct process to cross; adding the wrong-direction Ville event proves correct-stop power, including both signs.",
+    "For finite expected cost, bounded stopped-Wald may be applied to the uncapped correct crossing at T wedge n. The stopped log value is at most log200+log(1+b), yielding E[T wedge n]<=that value/drift. Monotone convergence establishes integrability and the claimed upper cost without circularly assuming Wald at an integrable T.",
+    "The common physical null phi=0 retains exactly the same dephasing and readout nuisance for all depths. Quantum relative entropy bounds every allowed final measurement. It is not optimized separately under each history.",
+    "The positive series for r atanh(r), the inequality1-cos(theta)<=theta^2/2, and termwise upper maxima are global. Their sums equal log2 and4log2-pi^2/6. No weak-phase asymptotic or unrestricted-noiseless Heisenberg claim is used.",
+    "Both E[N] and E[G] lower bounds hold simultaneously for every allowed transcript, so their positive linear combination bounds modeled device time. Ignoring switches in a lower bound is conservative.",
+    "The explicit shared shot/gate/time budgets contain both baseline paths for all outcomes. Penalized shot and actual costs coincide; optional larger gate/time penalties also retain the claimed exclusions.",
+    "A valid baseline upper cost divided by a universal candidate lower cost correctly bounds the speedup over the strongest qualified comparator, whose cost can only be smaller. The exclusion applies to the declared score pair, not every phase-estimation problem."
+  ],
+  "numerical_precision_digits": 130,
+  "independent_matrix_relative_entropy_checks": [
+    {
+      "depth": 1,
+      "KL_formula_error": "1.03141862828859e-131"
+    },
+    {
+      "depth": 8,
+      "KL_formula_error": "8.74884590961032e-132"
+    },
+    {
+      "depth": 16,
+      "KL_formula_error": "5.65737606232389e-132"
+    },
+    {
+      "depth": 97,
+      "KL_formula_error": "2.25342582018425e-131"
+    }
+  ],
+  "symbolic_checks": 3,
+  "independent_baselines": [
+    {
+      "depth": 8,
+      "independent_mean_cost_bound": "73710.068545373613212732708555847716129517925892825920421139590991676536787986668",
+      "independent_uniform_power_lower": "0.99388171060938087743135521796876676847009365938951046903685160866242821575565884"
+    },
+    {
+      "depth": 16,
+      "independent_mean_cost_bound": "50204.682431444953034050776235363482702648562696495977090847457436993165358523832",
+      "independent_uniform_power_lower": "0.99484886821123137193534760413582529701175013955911753268863959972530451117660511"
+    }
+  ],
+  "independent_speedup_upper_constants": {
+    "primary_shots": "1.5923001275467917556353922048777938161999180494579361997570588721433368950455502",
+    "paid_gate_uses": "1.9530859271974332064798081694987942260436442872919759982253052919127802904548948",
+    "modeled_device_time": "2.0448122485656459092900234409315598096915446971137850444654996436663542654399402"
+  },
+  "source_links_checked": 9,
+  "scope_limits": [
+    "The known small phase domain, single phase axis and stationary commuting noise are substantive model promises. A broader application must pay for phase localization and test a new physical model.",
+    "Reference-assisted, cross-circuit coherent memory, noncommuting dynamical control and error correction are outside this resource contract.",
+    "The >15x advantage over restricted depth1 methods is not superiority over equally equipped multi-depth SOTA. No new operational Monte Carlo or original-benchmark success is claimed.",
+    "The RPE literature is used only as a comparator pointer. Its corrected or uncorrected constants are not inputs to this proof."
+  ],
+  "source_sha256": {
+    "experiments/sota_round7/review_multidepth_obstruction.py": "5d2d62cde71594c0d4d2a34d0af727f4864b2843f6196be87ef871be411f7643",
+    "results/sota_round7/mechanisms/noisy_multidepth_phase_obstruction.json": "78db9abc7d27879995d0b37e958937b996e4fdb02992f3f4ca86156555108fda",
+    "results/sota_round7/mechanisms/noisy_multidepth_phase_budget_closure.json": "9e54a9518da3e39cc423fd2d9dc2a5e08c06dfe41657a211ca32c5e8b14c5a6a"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T14:45:52.781387+00:00",
+  "reviewer_source": "experiments/sota_round5/review_hybrid_stopping_intervals.py",
+  "reviewer_sha256": "90f9d0caccbc9b8640ffe73b44bac6e42f89a357d682c8864bfa35d0910766f6",
+  "input_sha256": {
+    "experiments/sota_round5/interval_hybrid_stopping.py": "47a0b3bf1459d4b96abc8afadb25dc0ac33eaae9a1e2509924dd11a3617aeccd",
+    "experiments/sota_round5/interval_randomized_stopping.py": "af140b3686a856b502df20507ccc87f812c0dd4c95460c493d078b3dafe02ba9",
+    "experiments/sota_round4/interval_sign_cost.py": "14a01510987617c05e37d991c995698e99d8f6cc28d5e7e7c5afe51512b48c40",
+    "results/sota_round5/theory/randomized_stopping_interval_review.json": "4faf3d9b784f2b9d08b70b5675e26a04a398e07111ba4390063d083839f9fcea",
+    "results/sota_round4/theory/audit_interval_sign_cost.json": "53fd8ee03cdaf49050dee6a5774cd20da93996ccc360bd99fcf9e4fbff8f1b99"
+  },
+  "new_simulation_observations": 0,
+  "counts": {
+    "physical_time_fraction_arm_cases": 1440,
+    "H_eq_T": 160,
+    "latent_fraction_first_passage_cases": 864,
+    "physical_time_fraction_rq_cases": 90,
+    "H_lt_T": 800,
+    "H_gt_T": 480
+  },
+  "maximum_small_case_interval_widths": {
+    "plus": 1.3100631690576847e-14,
+    "minus": 1.4210854715202004e-14,
+    "abstain": 1.4856171848265376e-14,
+    "expected_shots": 1.8829382497642655e-13
+  },
+  "explicit_phase_transition_witnesses": [
+    {
+      "name": "H2_partial_stop_then_H3_fallback",
+      "exact": {
+        "plus": "1",
+        "minus": "0",
+        "abstain": "0",
+        "expected_shots": "36/7"
+      },
+      "at_H_stop_mass": "3/7",
+      "at_Hplus1_stop_mass": "4/7",
+      "point": "Fallback at H would incorrectly stop all paths at cost4; correct cost is36/7."
+    },
+    {
+      "name": "fallback_origin_shift",
+      "exact": {
+        "plus": "20/27",
+        "minus": "7/27",
+        "abstain": "0",
+        "expected_shots": "44/9"
+      },
+      "point": "After d2 only absolute count k1 survives with mass4/9; d3 must use counts1,2, not counts0,1."
+    },
+    {
+      "name": "prefix_absorption_is_final",
+      "exact": {
+        "plus": "2/3",
+        "minus": "1/3",
+        "abstain": "0",
+        "expected_shots": "2"
+      },
+      "point": "Every path stops at d1; fallback may not recycle its mass or charge later pairs."
+    }
+  ],
+  "mathematical_review": [
+    "At d<=H, the strict-majority randomized row is used once, and surviving mass is multiplied by1-stop probability. No fallback is called atH. At d=H+1 and later, the frozen boundary is applied to the total discordance count and total plus count, including the whole prefix.",
+    "The randomized phase retains the full count vector with origin0, so its stop-probability arrays have matching lengths. After the phase change, tail absorption leaves a contiguous interval. Updating origin to the first surviving absolute count correctly indexes subsequent transitions; the method never returns to the randomized phase.",
+    "Previously absorbed randomized mass cannot enter fallback. Rounding may leave tiny upper survival bounds after exact mass is zero, which remains a conservative enclosure and does not resurrect actual paths.",
+    "WhenH>=T, the physical cap prevents reaching fallback; the randomized rule is truncated atT, with all unreported mass paying2T. WhenH<T, every latent path survivingH continues into the boundary phase. Boundary validation covers every discordance throughT, which suffices because at mostT discordances occur inT pairs.",
+    "For iid stationary independent Bernoulli arms, marked discordance arrivals have rate r and independent iid signs q. The combined rule depends only on signs and fresh independent prefix stop coins, so its first passage is independent of waiting times. The already audited binomial arrival tails and truncated-negative-binomial identity apply to the entire hybrid first-passage law.",
+    "Physical cost includes all paid pairs before either report and the full cap for every abstaining path. Both the direct stopped-cost calculation and the sum of survival probabilities before each paid pair agree exactly in the independent Fraction DP.",
+    "Degenerate r=0 gives no reports and full-cap cost. r=1, q=0/1, below-subnormal positive r/q, least subnormal, and near-one probabilities pass exact checks. Positive r whose lower endpoint is0 safely usesT as the wait upper bound."
+  ],
+  "independence": {
+    "physical_dp": "Reference state is physical time plus(discordances,plus_count); transitions enumerate concordance/plus/minus probabilities with exact Fraction arithmetic. It imports no producer waiting, binomial, passage, or interval arithmetic helper.",
+    "latent_dp": "Separate full-dictionary count recursion checks every plus/minus first-passage component and final survivor mass, without origin compression.",
+    "arm_models": "10 stationary independent-arm models per configuration, including interior, fair, degenerate and below-subnormal probabilities.",
+    "rq_models": "10 additional iid marked-arrival laws per horizon/cap test tiny r and q together; these check operating_rq, without claiming every r,q law is realizable by independent Bernoulli arms.",
+    "configurations": "H=1,2,4; T=1,3,5; 4 randomized prefixes and 4 deterministic symmetric fallback shapes."
+  },
+  "interface_scope": "Pass canonical immutable policy, a valid symmetric integer boundary covering the positive physical cap, and independent fresh prefix coins once per discordance. Continuous scanning occurs only at new discordances.",
+  "blocking_findings": [],
+  "limits": [
+    "This audit verifies hybrid operating characteristics and the phase transition. It does not certify any selected production table joint error probability.",
+    "Individual prefix and fallback risk guarantees do not automatically combine into one1% guarantee. The entire combined first-report rule requires a separate joint risk certificate.",
+    "No current production policy performance, >=95% power, SOTA superiority, or research-goal completion is claimed.",
+    "Finite exact cases and source review are not formal verification of every possible input, IEEE-754, Python, or numpy implementation."
+  ],
+  "elapsed_seconds": 4.4401978
+}

@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "inputs": {
+    "results/sota_round3/comparator_envelope_diagnostic.json": "38bb030b39918bdd0122449a06c275a6d126a69354948955a906a12363f694c7",
+    "results/sota_round3/paired_benchmark/preliminary_plan.json": "f89aefeab89c5ea26716c8cf4fa8b91902fdcdbc1d2853eeaea1f52022ea56f7",
+    "results/sota_round3/paired_benchmark/summary.json": "b2d5dbe8281302408fa2e8e0ad1e2e7f3ba8403b903b938b84528f298325796e",
+    "results/sota_round3/full_count_replay/summary.json": "59495d608a66da255a0effbc8b8ceeae009ba7f7fffc8534056739b45bb00543",
+    "results/sota_round3/fast_gate_replay_v1/summary.json": "286e0c24bb1a3f3f8932779fb00ad3b59de7e8ce855e7558222114c836ef805a",
+    "results/sota_round3/paired_benchmark_audit/audit.json": "bf12f8fc9bc21c10d1ebc904a85c30ed54a189fd8c0b33072661a631806cfa4a",
+    "results/sota_round3/full_count_replay_audit/audit.json": "4948e641d9a12567683c19a3af14608e58fe45d33dd10b13b60083815f9be5e8",
+    "results/sota_round2/theory/physical_fast_gate_replay_independent_audit.json": "10c9b7ac46231840587217f32bc84a034c0e01bfaba3ef5c90eb0efc709898af"
+  },
+  "verifier_source_sha256": "2b748caddb129a51db94bf101b0a6f3b52cc24a3de0a53b5a98d5e4c6cefffb0",
+  "cases": 16,
+  "control_pool_size": 15,
+  "all_240_control_cells_and_exact_ties_checked": true,
+  "candidate_comparisons": [
+    {
+      "method": "physical_gate_m6",
+      "ratio_to_envelope": 1.0682752654944017,
+      "ratio_to_global_beta": 0.9627147095496669
+    },
+    {
+      "method": "physical_gate_m7",
+      "ratio_to_envelope": 1.0829862850143275,
+      "ratio_to_global_beta": 0.975972074333593
+    },
+    {
+      "method": "beta_exact",
+      "ratio_to_envelope": 1.1096488449772552,
+      "ratio_to_global_beta": 1.0
+    }
+  ],
+  "new_simulation_observations": 0,
+  "limits": [
+    "Independent arithmetic uses already independently audited summaries, not a new raw-ledger audit.",
+    "This is a hindsight per-case cost envelope, not an executable method or a power-qualified benchmark.",
+    "It does not relax the 95% correct-stop target or establish SOTA performance."
+  ]
+}

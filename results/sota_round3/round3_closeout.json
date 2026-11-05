@@ -1,0 +1,91 @@
+{
+  "status": "round3_development_closed_out_goal_active",
+  "created_utc": "2026-11-04T13:20:23.435628+00:00",
+  "objective": "Continue pursuing a defensible advantage over applicable SOTA.",
+  "candidate": "physical_gate_m6_piecewise_D512",
+  "implementation": "Use the actual first six physical pairs for a jointly calibrated perfect-separation gate; retain the original exact beta table through 512 discordances and use a higher threshold thereafter.",
+  "risk_scope": "Both null and strict wrong-sign bounds are <=1 percent through 4096 physical shots under the stated independent-Bernoulli/common-ordering assumptions. This is not a hardware validation or an infinite-horizon guarantee.",
+  "risk_bounds": {
+    "null_union_probability_float_diagnostic": 0.009999982346466218,
+    "strict_wrong_probability_float_diagnostic": 0.009829722860308313,
+    "beta_crossing_probability_float_diagnostic": 0.009585582235308313
+  },
+  "new_experiment": {
+    "paths": 576,
+    "methods": 6336,
+    "paid_physical_observations": 1254704,
+    "independent_original_runner_seed_replays": 36
+  },
+  "additional_replays": {
+    "full_count_control_records": 2304,
+    "fixed_gate_records": 1728,
+    "piecewise_candidate_records": 576,
+    "new_observations": 0
+  },
+  "pathwise_observed_comparison_to_beta_exact": {
+    "fewer_shots": 58,
+    "same_shots": 518,
+    "more_shots": 0,
+    "different_decision": 0
+  },
+  "main": {
+    "group": "main",
+    "method": "physical_gate_m6_piecewise_D512",
+    "trajectories": 512,
+    "mean_paid_shots": 824.0859375,
+    "wrong": 0,
+    "correct_stops": 462,
+    "abstained": 50
+  },
+  "reference_main": {
+    "group": "main",
+    "method": "beta_exact",
+    "trajectories": 512,
+    "mean_paid_shots": 824.8203125,
+    "wrong": 0,
+    "correct_stops": 462,
+    "abstained": 50
+  },
+  "geometric_metric": {
+    "definition": "Equal-case geometric mean of per-case unconditional mean paid-shot cost ratios over all 16 main cases.",
+    "ratio_to_beta_exact": 0.9567062602247729,
+    "ratio_to_fine_hedge": 0.8924386697932505,
+    "ratio_to_maxsprt": 0.8791705334941396,
+    "ratio_to_diagnostic_casewise_control_envelope": 1.0616079966409286
+  },
+  "arithmetic_cost": {
+    "candidate_mean": 824.0859375,
+    "reference_mean": 824.8203125,
+    "fraction_saved": 0.0008903454350852602,
+    "main_total_shots_saved": 376,
+    "interpretation": "Most gains occur in short strong-signal paths; the geometric percentage is not the percentage reduction in the total shot budget."
+  },
+  "acceptance_audit": {
+    "global_development_cost_improvement": "Observed against every one of the 15 fixed implemented controls, using the prespecified geometric metric.",
+    "held_out_superiority": "Not established. Candidate was refined using this development pilot.",
+    "95_percent_correct_stop_target": "Not achieved: 462/512 = 90.234375 percent overall; weakest case is much lower.",
+    "original_threefold_target": "Not achieved.",
+    "universal_pathwise_dominance": "Not proved. Later-D paths outside this development sample can be delayed by the higher threshold.",
+    "international_sota_or_novelty": "Not established; exact sequential calibration and full-count e-values have classical precedents."
+  },
+  "next_required": [
+    "Improve the rare/weak-signal long paths that dominate total observations, while retaining adequate power.",
+    "Freeze a sufficient physical budget and independently evaluated cases/seeds; the H8192 boundary preparations are mathematical preparation, not a new experiment.",
+    "Match comparator optimization, including exact sequential and full-count methods, before formal superiority testing.",
+    "Preserve the full original international-leading objective and acceptance criteria."
+  ],
+  "artifact_sha256": {
+    "results/sota_round3/paired_benchmark/summary.json": "b2d5dbe8281302408fa2e8e0ad1e2e7f3ba8403b903b938b84528f298325796e",
+    "results/sota_round3/paired_benchmark_audit/audit.json": "bf12f8fc9bc21c10d1ebc904a85c30ed54a189fd8c0b33072661a631806cfa4a",
+    "results/sota_round3/full_count_replay/summary.json": "59495d608a66da255a0effbc8b8ceeae009ba7f7fffc8534056739b45bb00543",
+    "results/sota_round3/full_count_replay_audit/audit.json": "4948e641d9a12567683c19a3af14608e58fe45d33dd10b13b60083815f9be5e8",
+    "results/sota_round3/piecewise_gate_boundary.json": "5eb0e31307f74f3869271bb704cddfda42d10ef032c64307996158915a70b5db",
+    "results/sota_round2/theory/piecewise_physical_gate_independent_audit.json": "5c1c75a0db33b750eb2466568abc4d9f98b638b068798b0f3e65718e4ea3fe9c",
+    "results/sota_round3/piecewise_gate_replay/summary.json": "44d579d8f95ec2b2a1051ecd7fa8cecd67d302f4ad91c8608b3308055822eb40",
+    "results/sota_round2/theory/piecewise_gate_replay_independent_audit.json": "1b5c0b37b8d1b49c9d1158e3e789c22eab8955a3ee2cf197fa4fe310f00f1a9a",
+    "results/sota_round3/piecewise_comparator_envelope_diagnostic.json": "023e3c6c9901b78dc606060cec44d2b5e26f9ac0a5fe53f7e7d8f3c8d59973ba",
+    "results/sota_round3/literature/finite_horizon_prior_art.json": "cebd45773de5ffe271504faf4211705345b247620a2d6881e3c6f72f581cf3e6",
+    "results/sota_round2/theory/cap16384_preparation_independent_audit.json": "56553f36e5d35899cd1b07951bd029af6aabb78a7c70d9fc35b120879603bf8c"
+  },
+  "sota_goal_complete": false
+}

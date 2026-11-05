@@ -1,0 +1,378 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T14:26:30.957222+00:00",
+  "reviewer_source": "experiments/sota_round5/review_randomized_stopping_intervals.py",
+  "reviewer_sha256": "6e467e4b88e63094fde7859374e58a4bb788418d8eb2206c2b70a48ee02249cb",
+  "inputs": {
+    "experiments/sota_round5/interval_randomized_stopping.py": "af140b3686a856b502df20507ccc87f812c0dd4c95460c493d078b3dafe02ba9",
+    "experiments/sota_round4/interval_sign_cost.py": "14a01510987617c05e37d991c995698e99d8f6cc28d5e7e7c5afe51512b48c40",
+    "results/sota_round4/theory/audit_interval_sign_cost.json": "53fd8ee03cdaf49050dee6a5774cd20da93996ccc360bd99fcf9e4fbff8f1b99"
+  },
+  "counts": {
+    "physical_time_fraction_dp_cases": 1400,
+    "H_eq_cap": 280,
+    "H_lt_cap": 560,
+    "latent_sign_fraction_dp_cases": 384,
+    "H_gt_cap": 560,
+    "negative_binomial_index_identities": 76,
+    "cap8192_tiny_probability_bound_checks": 3
+  },
+  "maximum_observed_interval_widths_small_cases": {
+    "plus": 2.042810365310288e-14,
+    "minus": 2.0095036745715333e-14,
+    "abstain": 2.081711539259068e-14,
+    "expected_shots": 2.4868995751603507e-13
+  },
+  "examples": [
+    {
+      "policy_horizon": 1,
+      "cap": 1,
+      "policy": [
+        7,
+        [
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ]
+      ],
+      "pm": "1/3",
+      "pp": "2/3",
+      "exact": {
+        "plus": "0",
+        "minus": "0",
+        "abstain": "1",
+        "expected_shots": "2"
+      },
+      "enclosures": {
+        "plus": [
+          0.0,
+          1e-323
+        ],
+        "minus": [
+          0.0,
+          1e-323
+        ],
+        "abstain": [
+          0.9999999999999998,
+          1.0
+        ],
+        "expected_shots": [
+          1.9999999999999982,
+          2.0000000000000004
+        ]
+      }
+    },
+    {
+      "policy_horizon": 1,
+      "cap": 5,
+      "policy": [
+        7,
+        [
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ]
+      ],
+      "pm": "1/3",
+      "pp": "2/3",
+      "exact": {
+        "plus": "0",
+        "minus": "0",
+        "abstain": "1",
+        "expected_shots": "10"
+      },
+      "enclosures": {
+        "plus": [
+          0.0,
+          1e-323
+        ],
+        "minus": [
+          0.0,
+          1e-323
+        ],
+        "abstain": [
+          0.9999999999999998,
+          1.0
+        ],
+        "expected_shots": [
+          9.99999999999999,
+          10.000000000000002
+        ]
+      }
+    },
+    {
+      "policy_horizon": 1,
+      "cap": 1,
+      "policy": [
+        7,
+        [
+          [
+            0
+          ],
+          [
+            7
+          ]
+        ]
+      ],
+      "pm": "1/3",
+      "pp": "2/3",
+      "exact": {
+        "plus": "4/9",
+        "minus": "1/9",
+        "abstain": "4/9",
+        "expected_shots": "2"
+      },
+      "enclosures": {
+        "plus": [
+          0.4444444444444429,
+          0.44444444444444586
+        ],
+        "minus": [
+          0.11111111111111076,
+          0.11111111111111145
+        ],
+        "abstain": [
+          0.44444444444444253,
+          0.44444444444444653
+        ],
+        "expected_shots": [
+          1.9999999999999907,
+          2.0000000000000004
+        ]
+      }
+    },
+    {
+      "policy_horizon": 1,
+      "cap": 5,
+      "policy": [
+        7,
+        [
+          [
+            0
+          ],
+          [
+            7
+          ]
+        ]
+      ],
+      "pm": "1/3",
+      "pp": "2/3",
+      "exact": {
+        "plus": "46420/59049",
+        "minus": "11605/59049",
+        "abstain": "1024/59049",
+        "expected_shots": "23210/6561"
+      },
+      "enclosures": {
+        "plus": [
+          0.7861267760673283,
+          0.7861267760673395
+        ],
+        "minus": [
+          0.1965316940168321,
+          0.19653169401683485
+        ],
+        "abstain": [
+          0.01734152991582563,
+          0.017341529915839652
+        ],
+        "expected_shots": [
+          3.537570492302972,
+          3.5375704923030336
+        ]
+      }
+    },
+    {
+      "policy_horizon": 1,
+      "cap": 1,
+      "policy": [
+        7,
+        [
+          [
+            0
+          ],
+          [
+            3
+          ]
+        ]
+      ],
+      "pm": "1/3",
+      "pp": "2/3",
+      "exact": {
+        "plus": "4/21",
+        "minus": "1/21",
+        "abstain": "16/21",
+        "expected_shots": "2"
+      },
+      "enclosures": {
+        "plus": [
+          0.1904761904761898,
+          0.1904761904761911
+        ],
+        "minus": [
+          0.04761904761904746,
+          0.047619047619047776
+        ],
+        "abstain": [
+          0.7619047619047609,
+          0.761904761904763
+        ],
+        "expected_shots": [
+          1.9999999999999947,
+          2.0000000000000004
+        ]
+      }
+    },
+    {
+      "policy_horizon": 1,
+      "cap": 5,
+      "policy": [
+        7,
+        [
+          [
+            0
+          ],
+          [
+            3
+          ]
+        ]
+      ],
+      "pm": "1/3",
+      "pp": "2/3",
+      "exact": {
+        "plus": "46420/137781",
+        "minus": "11605/137781",
+        "abstain": "79756/137781",
+        "expected_shots": "110690/15309"
+      },
+      "enclosures": {
+        "plus": [
+          0.33691147545742633,
+          0.3369114754574312
+        ],
+        "minus": [
+          0.0842278688643566,
+          0.0842278688643578
+        ],
+        "abstain": [
+          0.5788606556782108,
+          0.5788606556782173
+        ],
+        "expected_shots": [
+          7.230387353844125,
+          7.230387353844164
+        ]
+      }
+    },
+    {
+      "policy_horizon": 1,
+      "cap": 1,
+      "policy": [
+        7,
+        [
+          [
+            0
+          ],
+          [
+            7
+          ]
+        ]
+      ],
+      "pm": "1/3",
+      "pp": "2/3",
+      "exact": {
+        "plus": "4/9",
+        "minus": "1/9",
+        "abstain": "4/9",
+        "expected_shots": "2"
+      },
+      "enclosures": {
+        "plus": [
+          0.4444444444444429,
+          0.44444444444444586
+        ],
+        "minus": [
+          0.11111111111111076,
+          0.11111111111111145
+        ],
+        "abstain": [
+          0.44444444444444253,
+          0.44444444444444653
+        ],
+        "expected_shots": [
+          1.9999999999999907,
+          2.0000000000000004
+        ]
+      }
+    },
+    {
+      "policy_horizon": 1,
+      "cap": 5,
+      "policy": [
+        7,
+        [
+          [
+            0
+          ],
+          [
+            7
+          ]
+        ]
+      ],
+      "pm": "1/3",
+      "pp": "2/3",
+      "exact": {
+        "plus": "46420/59049",
+        "minus": "11605/59049",
+        "abstain": "1024/59049",
+        "expected_shots": "23210/6561"
+      },
+      "enclosures": {
+        "plus": [
+          0.7861267760673283,
+          0.7861267760673395
+        ],
+        "minus": [
+          0.1965316940168321,
+          0.19653169401683485
+        ],
+        "abstain": [
+          0.01734152991582563,
+          0.017341529915839652
+        ],
+        "expected_shots": [
+          3.537570492302972,
+          3.5375704923030336
+        ]
+      }
+    }
+  ],
+  "new_simulation_observations": 0,
+  "mathematical_review": [
+    "The latent sign DP first transitions withq/1-q, reports with the frozen rational stop probability, then keeps the complement. The sign is the strict majority; ties have zero report probability. Independent fresh decision coins are used once per discordance.",
+    "For stationary independent Bernoulli arms, discordance arrivals have rate r and conditional signs are iidBernoulli(q), independent of arrival waiting times and fresh policy randomization.",
+    "LetJ be the latent first-report discordance or infinity. P(report+ before capT)=sum_d P(J=d,+)*P(Bin(T,r)>=d), and similarly forminus.",
+    "E[min(NB(d,r),T)]=(d/r)*P(Bin(T+1,r)>=d+1)+T*P(Bin(T,r)<=d-1). Therefore the code tail slice starting2 and head slice starting0 have the correct d+1 and d-1 indices.",
+    "The common latent horizon is min(H,T). IfH<T, surviving pastH means never reporting later and every such path pays2T. IfH>T, no physical path can reach more thanT discordances, so truncating the latent policy atT and charging surviving mass2T is exact.",
+    "Expected cost includes all report directions and all cap-abstention paths. No cheap abstention atH is credited.",
+    "The r=0 branch returns full cap and no reports. q=0/1 andr=1 are correctly covered. For positive r rounding below the least subnormal, the full cap is a valid waiting-time upper bound; dividing tail by r before multiplyingd avoids the d/r overflow pitfall."
+  ],
+  "test_design": {
+    "physical_dp": "Exact Fraction state mass indexed by physical time and(discordances,plus signs). Every concordance leaves the policy coin untouched; afterH, all surviving mass keeps paying until cap.",
+    "probabilities": "r=0, r=1, q=0, q=1, symmetric/interior arms, least subnormal, below-subnormal positive probabilities, and near-one rational probabilities.",
+    "policy_types": "Never-report, immediate-report, randomized last-row-only, and nonmonotone randomized folded majority rules, with horizons1/2/3/5/8.",
+    "independence": "Exact physical-time and latent-sign Fraction DPs use neither binomial_intervals nor any passage/output helper from the producer. Subject helpers are called only to obtain compared intervals."
+  },
+  "interface_scope": "Pass the immutable result of canonical_policy as the policy key, with independent fresh stop coins once per discordance. The helper does not prove that a supplied policy has1% risk.",
+  "limitations": [
+    "Validity of operating characteristics assumes stationary independent Bernoulli pairs; adaptive angle/action changes are outside this probability factorization.",
+    "Finite exact examples audit implementation and indexing; they are not a formal proof of IEEE-754 or exhaustive coverage of arbitrary horizons.",
+    "This is a probability/cost enclosure review, not a policy-risk proof, simulation result,95%-power claim, or SOTA acceptance."
+  ]
+}

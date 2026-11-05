@@ -1,0 +1,90 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T11:05:24.445530+00:00",
+  "scope": "Independent review of DKM paper mapping, Bernoulli risk calibration, KT adaptation and conservative numerical certificates. This is not official-code replication or a performance-superiority verdict.",
+  "sources": {
+    "experiments/sota_round2/literature/dkm_baseline.py": "e8799facf1494dcf6355f2f2e6069be350f35f788a70381201f55c53e5479c9d",
+    "experiments/sota_round2/literature/check_dkm_baseline.py": "4140adaf63f252b0495b9db85c992ee3324ec6f69f330554775d159156e820ac",
+    "results/sota_round2/literature/dkm_checks.json": "08948e06398f09bc4b8529e2fddbe181d9bcaffdda6c8e3d8e6acb85a11d3dea",
+    "results/sota_round2/literature/dkm_checks_initial_oracle_issue.json": "fdf9ee2befabb4f3966dd4a3081a985b02f5e19978c1b30f5af8e4932376fb62",
+    "experiments/sota_round2/theory/dkm_numeric_checks.py": "a10c17ae91b0f673810ae8431fadecdd7deda689230ea7c1f7663d79cac748e2",
+    "results/sota_round2/theory/dkm_numeric_checks.json": "79d08da3523d716d61585112be4fa558db3fa18d2ebc45199ecbbec2a43ecae2",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "results/sota_round2/literature/dkm_neurips.txt": "bb13bcf87f3b879f5eab5c6c1d63f289dd48d96c27d46bfaaa89aa29f8f445ec",
+    "results/sota_round2/literature/dkm_neurips.pdf": "6d10b4bc7e0f601fceaeb5966b8030f0f3cc08ce7a3a04f252733c0e9be91c30",
+    "results/sota_round2/literature/dkm_arxiv.txt": "17eea26eab46378ed89b8a62f92dfc418a3989d64a1f3aa7c9e0d40d0bbbe412",
+    "results/sota_round2/literature/kk_arxiv.txt": "fd64c39d144a8b5a3b2547d97fb50fb8ccd188019d98bb532fabe606ed3eb6ed",
+    "results/sota_round2/literature/kk_arxiv.pdf": "77998951a041c2d454044aa62580c183baa0c13f780657b8897a9ae658c1f6eb",
+    "results/sota_round2/literature/tidnabbil_README.md": "83ebacdd91cfc80e5de760f257b66875696c0915bd815dedb2546ed3ed7b9698",
+    "results/sota_round2/literature/tidnabbil_tracking.jl": "4e667156a1f0760d4f02b9ae01a6d8fbc33885ed8e8fa2d1bd5de5cb8dd29715",
+    "results/sota_round2/literature/tidnabbil_thresholds.jl": "073885481f2c0502fa814631bca8b11c2bf388e47729496126bd2dc18f69b6b1",
+    "results/sota_round2/literature/tidnabbil_repo.json": "b1a3ff81f283671a74024b25546ec8aa3f053ed475854fbeded6a08c0c081bf9"
+  },
+  "algorithm_mapping": [
+    {
+      "paper": "DKM2019 Algorithm 1 line 1",
+      "implementation": "Paid one-pull-per-arm initialization; initial tracking target equals these paid counts."
+    },
+    {
+      "paper": "Algorithm 1 lines 3-5 and Section 2.3",
+      "implementation": "Bernoulli KL intervals with f(t)=x+log(x)+1/2, x=(1+a)(1+b)log(t); weighted model projection inside the interval box; answer is the sign of its C."
+    },
+    {
+      "paper": "Algorithm 1 line 6",
+      "implementation": "Current-count projection and selected sign are now tested against the same current counts before the next paid draw. A terminal unused allocation computation is recorded explicitly."
+    },
+    {
+      "paper": "Section 3.1",
+      "implementation": "A separate AdaHedge instance for each answer selects arm weights; the lambda player uses a numerical opposite-answer KL best response."
+    },
+    {
+      "paper": "Algorithm 1 lines 8-10",
+      "implementation": "Optimistic payoffs maximize endpoint KL and f(t)/N; negative payoffs update the selected answer learner."
+    },
+    {
+      "paper": "Algorithm 1 line 11",
+      "implementation": "Cumulative RATIO tracking argmin N/sum(w), matching the printed algorithm."
+    }
+  ],
+  "kk21_review": {
+    "formula": "sum_a 3 log(1+log N_a) + K C_exp(log(1/delta)/K), with C_exp from Theorem 7 equations (9)-(10), equivalently Proposition 15 equation (20).",
+    "family": "The generic exponential-family/Bernoulli result is used; no Gaussian-only calibration is substituted.",
+    "global_control": "On any incorrect selected sign, the true physical parameter belongs to that opposite closed cone. The saturated/null GLR is no larger than sum_a N_a KL(empirical_a,true_a); Theorem 7/Proposition 15 control the same all-arm event for either selected direction, including C=0.",
+    "boundary": "For p=0 or 1, apply the interior Bernoulli result to a physical contraction toward A=1/2, use continuity of finite-history event probabilities, then increase the finite time horizon. This extends risk validity, not the exact-oracle efficiency theorem.",
+    "arithmetic": "Machin/Basel constant bounds, monotone h-inverse upper bracketing, monotone h-tilde evaluation and outward likelihood tangents produce conservative threshold/likelihood bounds. Independent 100-digit comparisons cover 20 calibration and 20 count-dependent threshold cases."
+  },
+  "kt_safe_review": {
+    "name": "A separately named DKM-sampling plus product-Jeffreys universal-inference adaptation.",
+    "proof": "The product of fixed per-arm Jeffreys marginal likelihoods is one normalized Q under predictable arm choices. Every erroneous sign threshold crossing Q/sup_opposite L implies Q/L_true >=1/delta; both signs share this same likelihood-ratio event. A factor-two directional threshold is unnecessary.",
+    "boundary": "On support edges Q/L_true is a nonnegative supermartingale on the realized support; the common-event argument still applies.",
+    "not_original_threshold": true
+  },
+  "official_code_boundary": {
+    "repository": "https://bitbucket.org/wmkoolen/tidnabbil",
+    "executed_official_code": false,
+    "tracking_difference": "Cached tidnabbil_tracking.jl CTracking uses argmin(N-sumw), whereas the printed DKM algorithm and this implementation use argmin(N/sumw).",
+    "threshold_difference": "Cached tidnabbil_thresholds.jl uses the GK16 empirical log((log(t)+1)/delta) threshold. The implemented KK21 bound is a conservative proven Bernoulli choice, not a recreation of the paper plot threshold."
+  },
+  "corrected_issues": [
+    "The initial driver tested fresh counts with a stale pre-pull label; the frozen driver now selects and tests on the same current counts before drawing.",
+    "Initial SLSQP success flags admitted poor best responses. The frozen objective has a matching convex linear extension, nondegenerate cone constraints, pooled restarts, feasible line corrections and a convex-gap gate. The initial issue artifact is preserved separately."
+  ],
+  "validation": {
+    "independent_calibrations": 20,
+    "independent_count_thresholds": 20,
+    "analytic_PSR_global_null_maxima": 2,
+    "KK_and_KT_both_direction_certificate_cases": 4,
+    "implementation_checks_reviewed": "16 independent 100-digit threshold comparisons, 49-round high-precision AdaHedge comparison, per-step confidence/optimism/tracking/RNG reconstruction, current-label verification and engineering probes including a 4096-shot null path."
+  },
+  "issues": [],
+  "limitations": [
+    "The default six registered rational arms differ from FaultTune continuous rational-angle selection; comparisons must name the grid or add a matched-grid control.",
+    "Design uses a 1e-6 interior physical margin and numerical SLSQP oracles. The stopping certificate uses the entire closed physical null, so the design restriction affects efficiency rather than risk validity.",
+    "The best-response 1e-5 gap gate is an absolute floating diagnostic, not a certified relative-error guarantee. It can be material on very weak-signal games; log it and do not inherit exact-oracle sample-complexity claims.",
+    "Projection failure may retain a previous answer. Exact DKM permits arbitrary answers for an empty model/confidence intersection, while numerical failure is an additional implementation limitation; report projection failures.",
+    "batch_size>1 is an explicitly named allocation adaptation. check_every>1 also coarsens the stopping schedule. Neither reproduces the original per-observation stopping trajectory.",
+    "C=0 is protected against either directional claim and may remain undecided at the finite cap; no finite stopping guarantee at zero is asserted.",
+    "Official Julia code was located and read in part, but it has not been run or matched step by step. No full-field SOTA or mathematical novelty claim follows."
+  ]
+}

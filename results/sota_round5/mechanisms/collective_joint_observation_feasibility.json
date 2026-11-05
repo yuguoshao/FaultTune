@@ -1,0 +1,317 @@
+{
+  "status": "explicit_quantum_mechanism_with_strong_local_baseline_and_fixed_block_rejection",
+  "new_simulation_observations": 0,
+  "sdp_solved": false,
+  "root_implementation_recommendation": "Do NOT launch a fixed-block collective SDP campaign for a3x claim on this near-pure family: the fidelity lower bound plus an explicit fair local SPRT proves a speedup ceiling below1.5. The SDP formulation remains a reusable exact feasibility diagnostic. A genuinely sequential coherent-instrument mechanism is a separate, unresolved problem; the relative-entropy gap does not establish its benefit.",
+  "physical_model": {
+    "density_matrix": "rho(A,B,C)=diag-block(1-2A, [[A+B,C],[C,A-B]]),0<A<=1/2,B^2+C^2<=A^2.",
+    "original_query": "P_x=0_vacuum direct-sum (I+cos(x)Z+sin(x)X)/2. Then Tr rho P_x=A+B cos x+C sin x exactly.",
+    "extra_joint_resource": "A nondestructive measurement of the active/vacuum projector, storage of multiple surviving active qubits, and a joint POVM on them. The active conditional state is tau=(I+beta Z+gamma X)/2 with beta=B/A,gamma=C/A.",
+    "strong_local_control": "Give the comparator the SAME nondestructive flag, every possible single-copy POVM, and arbitrary classical adaptation from all earlier results. It may use all outcome categories. It does not have coherent storage across preparations or entangling measurements between copies.",
+    "resource_accounting": "Count every source preparation, including discarded vacuum events and abstaining runs. Separately report stored-qubit count/lifetime, two-qubit gates, ancillas, measurement depth and error. A preparation reduction bought by unbounded coherent memory or joint gates is not a same-resource SOTA win."
+  },
+  "arbitrary_single_copy_povm_information_theorem": {
+    "normalized_null": "For0<|gamma|<1 let lambda=atanh(gamma)/gamma and sigma=(I+beta lambda Z)/2. Physicality implies |beta lambda|<1. Set H*=I+gamma X. The prior symmetric proof gives D log(H*)[tau]=sigma, Tr sigma H*=1, and Tr tau log H*=Phi(gamma).",
+    "all_positive_H": "Concavity of Tr tau log H gives Tr tau log H<=Phi(gamma)+Tr sigma(H-H*).",
+    "povm_extension": "For any POVM{E_y}, let p_y=Tr tau E_y,q_y=Tr sigma E_y,h_y=p_y/q_y and H=sum h_y E_y. Operator Jensen gives log H >=sum(log h_y) E_y, so KL(p||q)<=Tr tau log H. Also Tr sigma H=sum q_y h_y=1. Hence KL(p||q)<=Phi(gamma). Zero p_y are handled by positive regularization; full-rank sigma makes q_y=0 imply E_y=0.",
+    "flag_extension": "Use one qutrit null omega=(1-2A)|vac><vac| direct-sum2A sigma. Both states are block diagonal in the flag. Adding the flag before any POVM does not disturb either state and can only increase classical KL. Conditional vacuum outputs agree; active output KL<=Phi(gamma). Thus EVERY one-copy POVM, including flag access, has KL<=2A Phi(C/A)=U(A,C) against this same physical null.",
+    "adaptive_local_policies": "The same fixed null works at every history. Transcript chain rule yields KL<=U E[N] for arbitrary local POVMs with classical adaptation and finite stopping. Within-copy feed-forward is part of a POVM; coherent cross-copy memory is deliberately outside this theorem.",
+    "tight_oracle_local_rate": "Flag plus an X-basis measurement of the active qubit gives probabilities(1-2A,A+C,A-C). Its KL to the best C<=0 physical null is exactly2A Phi(C/A), so this local oracle information rate is U. The proposed collective information gap cannot be attributed to withholding the flag."
+  },
+  "collective_quantum_relative_entropy": {
+    "projection": "The minimizer of D(rho||eta) over all physical real qutrit eta with C_eta<=0, for C>0, is diag(rho). Thus I_Q=D(rho||diag rho)=2A[Phi(sqrt(B^2+C^2)/A)-Phi(B/A)].",
+    "proof": "At eta=diag rho, diagonal perturbations have derivative minus their trace, hence zero under normalization. The off-diagonal derivative is -2C*(log(A+B)-log(A-B))/(2B), with its continuous positive divided-difference value when B=0. For a feasible C_eta<=0 perturbation its contribution is nonnegative. Convexity of D(rho||eta) in eta proves the global minimum. Strictly positive diagonal entries suffice; boundary cases follow by limits.",
+    "interpretation": "Quantum relative entropy is an upper bound on measured block KL and supports asymptotic quantum testing/coherence questions. Its size does NOT prove any finite95%-power,1%-risk copy cost, any optimal composite-null test, or an implementable low-cost joint circuit. This artifact makes no finite achievability or novelty claim from I_Q."
+  },
+  "strict_near_pure_family": {
+    "definition": "Fix0<A<=1/2 and0<t<=1/4. Let C=A t, B=A sqrt(1-t^2-t^4). The active Bloch radius is sqrt(1-t^4)<1, so the family is strictly physical and strictly mixed, not just a rank-one boundary example.",
+    "local_rate": "I_local=2A Phi(t)=A t^2+O(A t^4).",
+    "quantum_rate": "I_Q=A t^2[log(1/t)+log2+1/2]+O(A t^4 log(1/t)). Hence I_Q/I_local=log(1/t)+log2+1/2+O(t^2 log(1/t)), which diverges.",
+    "derivation": "Write s_B=(1-sqrt(1-t^2-t^4))/2=t^2/4+O(t^4), s_R=(1-sqrt(1-t^4))/2=t^4/4+O(t^8). Use I_Q=2A[h(s_B)-h(s_R)] and h(s)=s(log(1/s)+1)+O(s^2).",
+    "strict_lower_bound": "For0<t<=1/4, I_Q/I_local >=(1-t^2)[(1/2)log(4/t^2)-(2t^2/3)log(3e/t^4)]. This follows from s_B>=t^2/4,s_R<=t^4/3, h(s)>=s log(1/s), h(s)<=s log(e/s), and Phi(t)<=t^2/[2(1-t^2)].",
+    "not_uniform_finite_error": "The diverging information ratio concerns relative entropy as the state family changes. A Stein-type small-error asymptotic at fixed states cannot be exchanged with t->0 while risk and power stay fixed."
+  },
+  "finite_block_fidelity_dual_obstruction": {
+    "legal_null": "The active pure null |0><0| is allowed by the same C<=0 family. For k active target copies, squared fidelity to |0>^tensor k equals a^k, where a=(1+beta)/2=1-s_B; this is true also for the strictly mixed target.",
+    "data_processing": "For a report event having target probability>=.95 and null probability<=.01, squared classical fidelity is at most F*=(sqrt(.95*.01)+sqrt(.05*.99))^2=(59+sqrt1881)/1000. Monotonicity under measurement gives a^k<=F*. Therefore k>=chi/[-log a],chi=-log F*.",
+    "Fstar": {
+      "lower": "0.1023704968844028809104643884781827784027102726878099854892804821",
+      "upper": "0.1023704968844028809104643884781827784027102726878099854892804823"
+    },
+    "chi": {
+      "lower": "2.279156724253476147748304073904190940683295997134536484370635591",
+      "upper": "2.279156724253476147748304073904190940683295997134536484370635595"
+    },
+    "near_pure_limit": "The necessary fixed-block k is asymptotic to chi/s_B. By comparison the local KL floor kappa/Phi(t) is asymptotic to kappa/(2s_B). The fidelity constant is larger, so the log(1/t) relative-entropy gain does not yield a fixed-block3x gain at these errors.",
+    "duality_use": "Before building any SDP at k, reject infeasible k analytically whenever a^k>F*. This uses a concrete allowed null and data processing, independent of discretizing the nuisance parameter."
+  },
+  "explicit_fair_local_sprt": {
+    "design_information": "The effect design value t is fixed before observations, just as a reference target would be fixed in the proposed SDP. Both procedures get the same t; neither reads simulator truth during operation. The test remains risk-valid for every physical state, not only the reference family.",
+    "observations": "Measure the flag; for each active qubit measure X. Under the reference family the positive outcome probability is q=(1+t)/2, independent of beta.",
+    "rule": "Maintain L+_n=(1+t)^S(1-t)^(n-S) and L-_n=(1-t)^S(1+t)^(n-S). Report a sign on its first crossing of200. At C=0 the union Ville bound is<=2/200=.01; for either nonzero sign the wrong LR is a supermartingale, giving wrong-report probability<=1/200.",
+    "expected_cost_bound": "Under the positive reference, the log L+ increments have mean Phi(t) and positive overshoot<=log(1+t). The finite stopped-Wald identity at T+ wedge n and bounded overshoot imply E[T+]<=[log200+log(1+t)]/Phi(t). Stopping at either sign only lowers cost. No Monte Carlo or successful-path conditioning is involved.",
+    "finite_cap": "Choose an active cap M>=200/9 times that mean upper bound. Markov gives cap abstention<=.045, so correct probability>=1-.005-.045=.95. A physical-preparation cap uses the same formula with the mean divided by2A. The resulting capped expected cost is no greater than the uncapped bound.",
+    "fixed_block_comparison": "For A=.5 a fixed-k joint measurement pays k preparations. For general A and a physical cap, reaching k active copies is necessary for a correct report, so P(reach)>=.95; Wald for flag counts yields E[N]>=.95*k/(2A). The local feasible mean is bounded above by the displayed active mean/(2A)."
+  },
+  "uniform_fixed_block_rejection_for_whole_family": {
+    "algebra": "For0<t<=1/4, beta>=24/25, a>=49/50, s_B<=425*t^2/1568, and -log a<=10625*t^2/38416. Also Phi(t)>=t^2/2 and log(1+t)<=1/4. Therefore local_mean/fidelity_k_lower <=2*(10625/38416)*(log200+1/4)/chi.",
+    "fixed_active_block_speedup_upper": {
+      "lower": "1.346585384872358398039326690827138966668070813310487607694940996",
+      "upper": "1.346585384872358398039326690827138966668070813310487607694941002"
+    },
+    "including_flag_waiting_and_cap_abstention_speedup_upper": {
+      "lower": "1.417458299865640418988764937712777859650600856116302744942043152",
+      "upper": "1.417458299865640418988764937712777859650600856116302744942043161"
+    },
+    "strictly_below_three_halves": true,
+    "meaning": "Against this explicit qualified local comparator, no candidate that first collects a fixed number of active qubits then makes one collective decision can deliver3x on this family; even1.5x is excluded by these conservative bounds. This does not cover genuinely sequential coherent instruments or different physical promises."
+  },
+  "deterministic_sdp_formulation": {
+    "fixed_k_variables": "Real symmetric effects E+,E- on k active qubits, with E+>=0,E->=0,E++E-<=I. Optional sign symmetry E-=Z^tensor k E+ Z^tensor k and permutation symmetry are valid reductions.",
+    "strict_wrong_sign_constraints": "For EVERY(beta,gamma) with beta^2+gamma^2<=1 and gamma<=0 impose Tr[E+ tau(beta,gamma)^tensor k]<=.01. The negative-side counterpart follows by sign symmetry. At gamma=0 impose the stronger combined-null constraint Tr[(E++E-)tau(beta,0)^tensor k]<=.01.",
+    "power_constraint": "For a predeclared positive engineering reference tau0 impose Tr[E+ tau0^tensor k]>=.95, or maximize this power subject to the error constraints. Mirrored power follows by symmetry.",
+    "physical_cap_cost": "With fixed active block k and preparation capM, success probability equals P(Bin(M,2A)>=k) times conditional block power. Expected preparations are E[min(NB(k,2A),M)], using the already audited exact/outward waiting identity. Charge joint gates and memory separately.",
+    "search_only": "A finite nuisance-state grid may propose a POVM but cannot certify continuum error control. Symmetrizing permutation-invariant iid states can reduce variables via Schur-Weyl spin blocks; no numeric feasibility is inferred merely from this reduction.",
+    "rigorous_primal_certificate": "Round the final effects to rational matrices with PSD/slack checks. Their acceptance probabilities are exact polynomials in beta,gamma. Certify .01-f>=0 on the closed half-disk with a rational sum-of-squares identity using1-beta^2-gamma^2 and-gamma, or exhaustive outward Bernstein subdivision with explicit boundary handling. Certify the gamma=0 combined constraint separately on[-1,1].",
+    "finite_null_dual_certificate": "Choose any finite set of allowed null states, nonnegative weights lambda_i and a PSD Y satisfying Y>=tau0^tensor k-sum_i lambda_i sigma_i^tensor k. For any0<=E<=I with Tr(E sigma_i^tensor k)<=alpha_i, Tr(E tau0^tensor k)<=sum lambda_i alpha_i+Tr Y. Exact/outward verification of a value<.95 proves infeasibility even for this relaxed finite-null problem, hence also for the full SDP.",
+    "first_screen": "Apply the fidelity obstruction and the explicit local-SPRT cost bound before solving the SDP. For the stated near-pure fixed-block3x goal this screen already rejects the whole family.",
+    "unresolved_extension": "A sequential coherent tester needs CPTP instrument/comb causality constraints and expected preparation cost, plus uniform null control. A one-shot effect SDP is not a valid replacement. No claim of benefit or implementation authorization follows from leaving this extension open."
+  },
+  "same_information_sota_boundary": "Collective hypothesis testing, measured relative entropy and coherence testing are established fields. Any useful FaultTune claim would need a concrete realizable circuit/resource tradeoff against strongest applicable local and collective controls. Giving only FaultTune the flag or coherent memory would not establish same-resource SOTA superiority.",
+  "numerical_rows": [
+    {
+      "t_exact": "1/4",
+      "strictly_mixed_beta_squared_exact": "239/256",
+      "strictly_mixed_radius_squared_exact": "255/256",
+      "local_information_per_active_copy": {
+        "lower": "0.03158394240196324956422730419596127779530953688084411235455528820",
+        "upper": "0.03158394240196324956422730419596127779530953688084411235455528845",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "0.031583942401963249564227304195961277795309536880844112354555288298634983334875034259712927870549414961464738247"
+      },
+      "quantum_relative_entropy_per_active_copy": {
+        "lower": "0.0779101736300131523667895016824217168426820201830323747705923930",
+        "upper": "0.0779101736300131523667895016824217168426820201830323747705923985",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "0.077910173630013152366789501682421716842682020183032374770592395462335930460192711943735496271526211333614057838"
+      },
+      "quantum_over_local_information_ratio": {
+        "lower": "2.466765315059917169711754874481538362577764330386117521214706631",
+        "upper": "2.466765315059917169711754874481538362577764330386117521214706826",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "2.4667653150599171697117548744815383625777643303861175212147067214914873481638287498740882162558683829423276282"
+      },
+      "rigorous_analytic_information_ratio_lower": {
+        "lower": "1.650890908873765238722953536578155259850957735985686984843313525",
+        "upper": "1.650890908873765238722953536578155259850957735985686984843313528"
+      },
+      "fixed_active_block_copies_necessary_fidelity_bound": {
+        "lower": "133.8245572931879547874899256518000591387742733343555251734648829",
+        "upper": "133.8245572931879547874899256518000591387742733343555251734648874",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "133.82455729318795478748992565180005913877427333435552517346488624017948828903138974810251406829076703865037983"
+      },
+      "necessary_minimum_integer_active_block": 134,
+      "strong_local_sprt_expected_active_copies_upper": "174.8186102796031527960631130605205900826785087619477492546460145",
+      "strong_local_sprt_sufficient_finite_active_cap": 3885,
+      "fixed_block_maximum_speedup_over_this_feasible_local_baseline_upper": "1.306326834293976851837408165168329924839752929500364152273626781",
+      "active_filter_with_cap_abstention_maximum_speedup_upper": "1.375080878204186159828850700177189394568160978421435949761712402"
+    },
+    {
+      "t_exact": "1/8",
+      "strictly_mixed_beta_squared_exact": "4031/4096",
+      "strictly_mixed_radius_squared_exact": "4095/4096",
+      "local_information_per_active_copy": {
+        "lower": "0.00783297328348704555154635241970284521815104366189164079047428735",
+        "upper": "0.00783297328348704555154635241970284521815104366189164079047428760",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "0.0078329732834870455515463524197028452181510436618916407904742874596914039158812455723283363083863303199263308526"
+      },
+      "quantum_relative_entropy_per_active_copy": {
+        "lower": "0.0253314734838720433467784052362260671758403512764587634287556595",
+        "upper": "0.0253314734838720433467784052362260671758403512764587634287556655",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "0.025331473483872043346778405236226067175840351276458763428755662385593437646565313325086048683468451911585919727"
+      },
+      "quantum_over_local_information_ratio": {
+        "lower": "3.233953770437871229105797814897681180215850164922863670381388895",
+        "upper": "3.233953770437871229105797814897681180215850164922863670381389769",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "3.2339537704378712291057978148976811802158501649228636703813893239264943967765191778449770265462593861962488851"
+      },
+      "rigorous_analytic_information_ratio_lower": {
+        "lower": "2.622458455308721901195369718191358549808696165970720852882970532",
+        "upper": "2.622458455308721901195369718191358549808696165970720852882970536"
+      },
+      "fixed_active_block_copies_necessary_fidelity_bound": {
+        "lower": "571.0591426656015036819117859117614189969595056118580800541573939",
+        "upper": "571.0591426656015036819117859117614189969595056118580800541574672",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "571.05914266560150368191178591176141899695950561185808005415741798650492873948879250527115488197664210267446632"
+      },
+      "necessary_minimum_integer_active_block": 572,
+      "strong_local_sprt_expected_active_copies_upper": "691.4488542457158082725725339934105922701150360624057120610276286",
+      "strong_local_sprt_sufficient_finite_active_cap": 15366,
+      "fixed_block_maximum_speedup_over_this_feasible_local_baseline_upper": "1.210818289359936968120612484503416478412974289105075717094522199",
+      "active_filter_with_cap_abstention_maximum_speedup_upper": "1.274545567747302071705907878424648924645236093794816544310023367"
+    },
+    {
+      "t_exact": "1/16",
+      "strictly_mixed_beta_squared_exact": "65279/65536",
+      "strictly_mixed_radius_squared_exact": "65535/65536",
+      "local_information_per_active_copy": {
+        "lower": "0.001954398556744523399263922169601579810369146787937389416129178285",
+        "upper": "0.001954398556744523399263922169601579810369146787937389416129178315",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "0.0019543985567445233992639221696015798103691467879373894161291782974902934496534109534797310843635498829617457964"
+      },
+      "quantum_relative_entropy_per_active_copy": {
+        "lower": "0.0077267917560838686685185914372198016110537195287988709725232735",
+        "upper": "0.0077267917560838686685185914372198016110537195287988709725232800",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "0.0077267917560838686685185914372198016110537195287988709725232769140082416480427501056462574189916011893864540462"
+      },
+      "quantum_over_local_information_ratio": {
+        "lower": "3.953539430030343336453248402444903902240748002091417730193900366",
+        "upper": "3.953539430030343336453248402444903902240748002091417730193903754",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "3.9535394300303433364532484024449039022407480020914177301939021491877807560848458119405883134440809067323588626"
+      },
+      "rigorous_analytic_information_ratio_lower": {
+        "lower": "3.417985768349754625009651205189602084119992219465599872543133657",
+        "upper": "3.417985768349754625009651205189602084119992219465599872543133660"
+      },
+      "fixed_active_block_copies_necessary_fidelity_bound": {
+        "lower": "2321.354171606158185177160920065493907194069810602683558999510131",
+        "upper": "2321.354171606158185177160920065493907194069810602683558999511321",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "2321.3541716061581851771609200654939071940698106026835589995106240187564891391732657401134916363405035530584667"
+      },
+      "necessary_minimum_integer_active_block": 2322,
+      "strong_local_sprt_expected_active_copies_upper": "2741.990352925227776173740144295631261066365277524736675350812808",
+      "strong_local_sprt_sufficient_finite_active_cap": 60934,
+      "fixed_block_maximum_speedup_over_this_feasible_local_baseline_upper": "1.181202931661233330513624978276881992477029989291700527071224621",
+      "active_filter_with_cap_abstention_maximum_speedup_upper": "1.243371507011824558435394713975665255238978936096526870601289075"
+    },
+    {
+      "t_exact": "1/32",
+      "strictly_mixed_beta_squared_exact": "1047551/1048576",
+      "strictly_mixed_radius_squared_exact": "1048575/1048576",
+      "local_information_per_active_copy": {
+        "lower": "0.000488360753920037193391345085768545113618413089096382739036009675",
+        "upper": "0.000488360753920037193391345085768545113618413089096382739036009705",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "0.00048836075392003719339134508576854511361841308909638273903600969038603358707322879780735008601269657828814110098"
+      },
+      "quantum_relative_entropy_per_active_copy": {
+        "lower": "0.0022734211740941341980540597269201055150606230896397342146159130",
+        "upper": "0.0022734211740941341980540597269201055150606230896397342146159200",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "0.0022734211740941341980540597269201055150606230896397342146159162836046583866568671140103767236427208882660109635"
+      },
+      "quantum_over_local_information_ratio": {
+        "lower": "4.655208584730741368782951266999421862563147934480213336673154266",
+        "upper": "4.655208584730741368782951266999421862563147934480213336673168889",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "4.655208584730741368782951266999421862563147934480213336673161130746464734713026227057292974922916456226146618"
+      },
+      "rigorous_analytic_information_ratio_lower": {
+        "lower": "4.144440184226876895707950073622001638912809839346900629992933629",
+        "upper": "4.144440184226876895707950073622001638912809839346900629992933633"
+      },
+      "fixed_active_block_copies_necessary_fidelity_bound": {
+        "lower": "9322.898871146584710118544125086243269703547181476146875884572248",
+        "upper": "9322.898871146584710118544125086243269703547181476146875884591346",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "9322.8988711465847101185441250862432697035471814761468758845794618152891122774908104096816966618424129702470013"
+      },
+      "necessary_minimum_integer_active_block": 9323,
+      "strong_local_sprt_expected_active_copies_upper": "10912.19755567696643503068506496695900339194961567295491839984617",
+      "strong_local_sprt_sufficient_finite_active_cap": 242494,
+      "fixed_block_maximum_speedup_over_this_feasible_local_baseline_upper": "1.170472586530901676905291648948912557806805361172754980630026841",
+      "active_filter_with_cap_abstention_maximum_speedup_upper": "1.232076406874633344110833314683065850322953011760794716452659833"
+    },
+    {
+      "t_exact": "1/64",
+      "strictly_mixed_beta_squared_exact": "16773119/16777216",
+      "strictly_mixed_radius_squared_exact": "16777215/16777216",
+      "local_information_per_active_copy": {
+        "lower": "0.000122075280038858574452295083803619939394917949334102487428822895",
+        "upper": "0.000122075280038858574452295083803619939394917949334102487428822925",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "0.00012207528003885857445229508380361993939491794933410248742882290947147033815600369786008268753975646554347778064"
+      },
+      "quantum_relative_entropy_per_active_copy": {
+        "lower": "0.0006532194671368612369090905019309158268474538680506091739542815",
+        "upper": "0.0006532194671368612369090905019309158268474538680506091739542885",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "0.00065321946713686123690909050193091582684745386805060917395428620195545590552354360475706629563860268270399984342"
+      },
+      "quantum_over_local_information_ratio": {
+        "lower": "5.350956122557578487878320828895209780010842818046853599736336766",
+        "upper": "5.350956122557578487878320828895209780010842818046853599736395424",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "5.3509561225575784878783208288952097800108428180468535997363759644992839153335245944887955411065215629382495466"
+      },
+      "rigorous_analytic_information_ratio_lower": {
+        "lower": "4.847797253461900801772834361756638030929311232415357364757263617",
+        "upper": "4.847797253461900801772834361756638030929311232415357364757263620"
+      },
+      "fixed_active_block_copies_necessary_fidelity_bound": {
+        "lower": "37329.17048262536343187867717388319534553744984649626058438278503",
+        "upper": "37329.17048262536343187867717388319534553744984649626058438309085",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "37329.170482625363431878677173883195345537449846496260584383055137167190607373792605118424940082931159000583742"
+      },
+      "necessary_minimum_integer_active_block": 37330,
+      "strong_local_sprt_expected_active_copies_upper": "43529.05478809899035482607664357157187998455264609642274912039915",
+      "strong_local_sprt_sufficient_finite_active_cap": 967313,
+      "fixed_block_maximum_speedup_over_this_feasible_local_baseline_upper": "1.166086849113331504782190044509527669423148689323061316790656065",
+      "active_filter_with_cap_abstention_maximum_speedup_upper": "1.227459841171927899770726362641608073076998620340064543990164279"
+    },
+    {
+      "t_exact": "1/128",
+      "strictly_mixed_beta_squared_exact": "268419071/268435456",
+      "strictly_mixed_radius_squared_exact": "268435455/268435456",
+      "local_information_per_active_copy": {
+        "lower": "0.0000305178885734375755013309044406548607229209917609544471370023420",
+        "upper": "0.0000305178885734375755013309044406548607229209917609544471370023450",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "0.000030517888573437575501330904440654860722920991760954447137002343698261428390429320575774748995018834808080043637"
+      },
+      "quantum_relative_entropy_per_active_copy": {
+        "lower": "0.0001844766720985790491575352187281975692153345292608332065612150",
+        "upper": "0.0001844766720985790491575352187281975692153345292608332065612220",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "0.00018447667209857904915753521872819756921533452926083320656121814558024402108210689331123498844757522733490310945"
+      },
+      "quantum_over_local_information_ratio": {
+        "lower": "6.044870098226436764237267211381161237562860176224885674254608462",
+        "upper": "6.044870098226436764237267211381161237562860176224885674254838433",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "6.0448700982264367642372672113811612375628601762248856742547117950166080895776879172138041690727865325395080808"
+      },
+      "rigorous_analytic_information_ratio_lower": {
+        "lower": "5.543963935900288556767315773949871987732782360039197564360763189",
+        "upper": "5.543963935900288556767315773949871987732782360039197564360763201"
+      },
+      "fixed_active_block_copies_necessary_fidelity_bound": {
+        "lower": "149354.2802374145091425752301537293799026002360110429869309858188",
+        "upper": "149354.2802374145091425752301537293799026002360110429869309907131",
+        "mpmath160_inside": true,
+        "mpmath160_diagnostic": "149354.28023741450914257523015372937990260023601104298693098823874995346308229926177914661043060410542606066076"
+      },
+      "necessary_minimum_integer_active_block": 149355,
+      "strong_local_sprt_expected_active_copies_upper": "173868.4999200259394165040836425015229728588671053438764828687609",
+      "strong_local_sprt_sufficient_finite_active_cap": 3863745,
+      "fixed_block_maximum_speedup_over_this_feasible_local_baseline_upper": "1.164134698005597640145733139737631027904150821547491093127715100",
+      "active_filter_with_cap_abstention_maximum_speedup_upper": "1.225404945269050147521824357618558976741211391102622203292331684"
+    }
+  ],
+  "source_sha256": {
+    "results/sota_round5/mechanisms/shared_and_collective_feasibility.py": "c61bb00d3d509d79a30080d43070884d8a43b3784e3d1e255ee1b40078059a17",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "docs/CONTINUOUS_SYMMETRIC_DESIGN.md": "0e16a486bb11c38b179b1d8d2aa8ed18184aefe07ceabd99c44efb59b10cd13d",
+    "docs/CONTINUOUS_PSR_INFORMATION_BOUND.md": "8f9dce032aefcee81dae2b33fe808c8885413d35fc46ecaebd69891a591a19d4"
+  }
+}

@@ -1,0 +1,1304 @@
+{
+  "version": "full_count_controls_readonly_replay_v1",
+  "created_utc": "2026-11-04T12:34:54.753209+00:00",
+  "source_sha256": {
+    "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f",
+    "experiments/structured_validation/weighted_fisher.py": "1f31c9cbea3c8db4d7d8dc75936dc5304fd3273fb8ad1fafedc90e792fe24e24",
+    "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/structured_validation/conditional_fisher_unequal.py": "011d691f76b798cd0372544156ab86dbf7b6273b02b41de009737f433caef917",
+    "experiments/structured_validation/safe_grid.py": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+    "experiments/structured_validation/rb_grid.py": "a262a4790289505e7846c98334edbf341cded98090ce7bd8bf7c0c3974fb420f",
+    "experiments/structured_validation/predictive.py": "fc16237805139c707e6e076c0c7e69f45e88c111d405349c68daa3f150871fe4",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/structured_validation/design_policy.py": "1e61776de4b3bd8b2fd331b9c9f28b7b68f4e6c9672e19ca38aa9b436e3d4547",
+    "experiments/structured_validation/probe_fixed.py": "bf64f1ab7fb5e1675966704cc315de1f21b51db8135301fc319d8388d67311ec",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "experiments/sota_round3/replay_full_count_controls.py": "8af6983c2fe3f62a9303ee1a6e37eca6fa732bd4912d719bfc2011142acc0236"
+  },
+  "input_sha256": {
+    "results/sota_round3/paired_benchmark/preliminary_plan.json": "f89aefeab89c5ea26716c8cf4fa8b91902fdcdbc1d2853eeaea1f52022ea56f7",
+    "results/sota_round3/paired_benchmark/release.json": "f525c62cbf2af660dc58c1a6da4ce3f77f2d7fa9bf67bf788ffa7a8897009f86",
+    "results/sota_round3/paired_benchmark/spec.json": "d44d70ec5e1c27c9684ebaf2f8acdfb28c2ef2737ce3533f3dbe782b56af2f1a",
+    "results/sota_round3/paired_benchmark/paths.jsonl": "56361be6ceb9e1cea62345666ec4efd72d1ac9303092f83ff7cfc74b59ab9ef9",
+    "results/sota_round3/paired_benchmark/method_results.jsonl": "c46e96f8b27fe3494e3c27ab8b581299b0c754afcff0e5e7eb9fade97318c3e7",
+    "results/sota_round3/paired_benchmark/summary.json": "b2d5dbe8281302408fa2e8e0ad1e2e7f3ba8403b903b938b84528f298325796e",
+    "results/sota_round3/paired_benchmark_audit/audit.json": "bf12f8fc9bc21c10d1ebc904a85c30ed54a189fd8c0b33072661a631806cfa4a"
+  },
+  "methods": [
+    "full_safe_fine",
+    "full_safe_coarse",
+    "rb_fine",
+    "rb_coarse"
+  ],
+  "expected_paths": 576,
+  "expected_method_records": 2304,
+  "cap": 4096,
+  "delta": 0.01,
+  "fine_checkpoints": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    32,
+    36,
+    42,
+    48,
+    54,
+    62,
+    70,
+    80,
+    90,
+    102,
+    116,
+    132,
+    150,
+    170,
+    192,
+    216,
+    244,
+    276,
+    312,
+    352,
+    396,
+    446,
+    502,
+    566,
+    638,
+    718,
+    808,
+    910,
+    1024,
+    1152,
+    1296,
+    1458,
+    1642,
+    1848,
+    2080,
+    2340,
+    2634,
+    2964,
+    3336,
+    3754,
+    4096
+  ],
+  "coarse_checkpoints": [
+    32,
+    36,
+    42,
+    48,
+    54,
+    62,
+    70,
+    80,
+    90,
+    102,
+    116,
+    132,
+    150,
+    170,
+    192,
+    216,
+    244,
+    276,
+    312,
+    352,
+    396,
+    446,
+    502,
+    566,
+    638,
+    718,
+    808,
+    910,
+    1024,
+    1152,
+    1296,
+    1458,
+    1642,
+    1848,
+    2080,
+    2340,
+    2634,
+    2964,
+    3336,
+    3754,
+    4096
+  ],
+  "safe_config": {
+    "version": "safe_fixed_odds_grid_v1",
+    "endpoint_denominator": 1099511627776,
+    "experts": [
+      {
+        "numerator": 1,
+        "denominator": 1,
+        "weight": [
+          13383283,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 200020001,
+        "denominator": 200000000,
+        "weight": [
+          5543537,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1000141431,
+        "denominator": 1000000000,
+        "weight": [
+          1567949,
+          200000000000
+        ]
+      },
+      {
+        "numerator": 50010001,
+        "denominator": 50000000,
+        "weight": [
+          5543537,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 1000282883,
+        "denominator": 1000000000,
+        "weight": [
+          1567949,
+          100000000000
+        ]
+      },
+      {
+        "numerator": 12505001,
+        "denominator": 12500000,
+        "weight": [
+          22174147,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 200113169,
+        "denominator": 200000000,
+        "weight": [
+          31358979,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 3127501,
+        "denominator": 3125000,
+        "weight": [
+          11087073,
+          250000000000
+        ]
+      },
+      {
+        "numerator": 1001132011,
+        "denominator": 1000000000,
+        "weight": [
+          62717951,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1001601281,
+        "denominator": 1000000000,
+        "weight": [
+          44348281,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 125283163,
+        "denominator": 125000000,
+        "weight": [
+          125435839,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 8025641,
+        "denominator": 8000000,
+        "weight": [
+          88696473,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 1004535739,
+        "denominator": 1000000000,
+        "weight": [
+          250871177,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 251605131,
+        "denominator": 250000000,
+        "weight": [
+          14191379,
+          40000000000
+        ]
+      },
+      {
+        "numerator": 1009092051,
+        "denominator": 1000000000,
+        "weight": [
+          62717293,
+          125000000000
+        ]
+      },
+      {
+        "numerator": 1012882271,
+        "denominator": 1000000000,
+        "weight": [
+          709557611,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1018266767,
+        "denominator": 1000000000,
+        "weight": [
+          125430577,
+          125000000000
+        ]
+      },
+      {
+        "numerator": 512965247,
+        "denominator": 500000000,
+        "weight": [
+          1419024513,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 129608401,
+        "denominator": 125000000,
+        "weight": [
+          2006632689,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1052533379,
+        "denominator": 1000000000,
+        "weight": [
+          1418661773,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 1075093607,
+        "denominator": 1000000000,
+        "weight": [
+          4011214169,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 553913257,
+        "denominator": 500000000,
+        "weight": [
+          708606209,
+          125000000000
+        ]
+      },
+      {
+        "numerator": 231165253,
+        "denominator": 200000000,
+        "weight": [
+          4003027447,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 38352487,
+        "denominator": 31250000,
+        "weight": [
+          282288107,
+          25000000000
+        ]
+      },
+      {
+        "numerator": 667967177,
+        "denominator": 500000000,
+        "weight": [
+          15882270751,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1506215179,
+        "denominator": 1000000000,
+        "weight": [
+          22220065159,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 892360299,
+        "denominator": 500000000,
+        "weight": [
+          30761253561,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 567171041,
+        "denominator": 250000000,
+        "weight": [
+          41727312889,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 796306903,
+        "denominator": 250000000,
+        "weight": [
+          3405166127,
+          62500000000
+        ]
+      },
+      {
+        "numerator": 1286731959,
+        "denominator": 250000000,
+        "weight": [
+          16616992621,
+          250000000000
+        ]
+      },
+      {
+        "numerator": 5072837471,
+        "denominator": 500000000,
+        "weight": [
+          72544992281,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 529817323,
+        "denominator": 20000000,
+        "weight": [
+          67133703433,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 10293472003,
+        "denominator": 100000000,
+        "weight": [
+          9938187807,
+          200000000000
+        ]
+      },
+      {
+        "numerator": 350882994693,
+        "denominator": 500000000,
+        "weight": [
+          27496150339,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 529777829381,
+        "denominator": 50000000,
+        "weight": [
+          10352502243,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 9849510077181,
+        "denominator": 20000000,
+        "weight": [
+          1286751981,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 200000000,
+        "denominator": 200020001,
+        "weight": [
+          5543537,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1000141431,
+        "weight": [
+          1567949,
+          200000000000
+        ]
+      },
+      {
+        "numerator": 50000000,
+        "denominator": 50010001,
+        "weight": [
+          5543537,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1000282883,
+        "weight": [
+          1567949,
+          100000000000
+        ]
+      },
+      {
+        "numerator": 12500000,
+        "denominator": 12505001,
+        "weight": [
+          22174147,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 200000000,
+        "denominator": 200113169,
+        "weight": [
+          31358979,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 3125000,
+        "denominator": 3127501,
+        "weight": [
+          11087073,
+          250000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1001132011,
+        "weight": [
+          62717951,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1001601281,
+        "weight": [
+          44348281,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 125000000,
+        "denominator": 125283163,
+        "weight": [
+          125435839,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 8000000,
+        "denominator": 8025641,
+        "weight": [
+          88696473,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1004535739,
+        "weight": [
+          250871177,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 250000000,
+        "denominator": 251605131,
+        "weight": [
+          14191379,
+          40000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1009092051,
+        "weight": [
+          62717293,
+          125000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1012882271,
+        "weight": [
+          709557611,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1018266767,
+        "weight": [
+          125430577,
+          125000000000
+        ]
+      },
+      {
+        "numerator": 500000000,
+        "denominator": 512965247,
+        "weight": [
+          1419024513,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 125000000,
+        "denominator": 129608401,
+        "weight": [
+          2006632689,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1052533379,
+        "weight": [
+          1418661773,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1075093607,
+        "weight": [
+          4011214169,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 500000000,
+        "denominator": 553913257,
+        "weight": [
+          708606209,
+          125000000000
+        ]
+      },
+      {
+        "numerator": 200000000,
+        "denominator": 231165253,
+        "weight": [
+          4003027447,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 31250000,
+        "denominator": 38352487,
+        "weight": [
+          282288107,
+          25000000000
+        ]
+      },
+      {
+        "numerator": 500000000,
+        "denominator": 667967177,
+        "weight": [
+          15882270751,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1506215179,
+        "weight": [
+          22220065159,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 500000000,
+        "denominator": 892360299,
+        "weight": [
+          30761253561,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 250000000,
+        "denominator": 567171041,
+        "weight": [
+          41727312889,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 250000000,
+        "denominator": 796306903,
+        "weight": [
+          3405166127,
+          62500000000
+        ]
+      },
+      {
+        "numerator": 250000000,
+        "denominator": 1286731959,
+        "weight": [
+          16616992621,
+          250000000000
+        ]
+      },
+      {
+        "numerator": 500000000,
+        "denominator": 5072837471,
+        "weight": [
+          72544992281,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 20000000,
+        "denominator": 529817323,
+        "weight": [
+          67133703433,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 100000000,
+        "denominator": 10293472003,
+        "weight": [
+          9938187807,
+          200000000000
+        ]
+      },
+      {
+        "numerator": 500000000,
+        "denominator": 350882994693,
+        "weight": [
+          27496150339,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 50000000,
+        "denominator": 529777829381,
+        "weight": [
+          10352502243,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 20000000,
+        "denominator": 9849510077181,
+        "weight": [
+          1286751981,
+          500000000000
+        ]
+      }
+    ],
+    "predictor": "past-data nuisance center; stable quadratic then rational lower endpoint",
+    "upper_endpoint": "v=omega*u/(1-u+omega*u) exactly; negative expert swaps endpoints",
+    "threshold": "1/delta, common cumulative plus-minus score, no directional split",
+    "assumptions": "predictable balanced independent Bernoulli blocks with common ordering",
+    "limits": "fixed finite odds grid; predictor affects efficiency; no universal positive-growth guarantee"
+  },
+  "rb_config": {
+    "version": "rao_blackwell_paired_grid_v1",
+    "experts": [
+      {
+        "numerator": 1,
+        "denominator": 1,
+        "weight": [
+          13383283,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 200020001,
+        "denominator": 200000000,
+        "weight": [
+          5543537,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1000141431,
+        "denominator": 1000000000,
+        "weight": [
+          1567949,
+          200000000000
+        ]
+      },
+      {
+        "numerator": 50010001,
+        "denominator": 50000000,
+        "weight": [
+          5543537,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 1000282883,
+        "denominator": 1000000000,
+        "weight": [
+          1567949,
+          100000000000
+        ]
+      },
+      {
+        "numerator": 12505001,
+        "denominator": 12500000,
+        "weight": [
+          22174147,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 200113169,
+        "denominator": 200000000,
+        "weight": [
+          31358979,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 3127501,
+        "denominator": 3125000,
+        "weight": [
+          11087073,
+          250000000000
+        ]
+      },
+      {
+        "numerator": 1001132011,
+        "denominator": 1000000000,
+        "weight": [
+          62717951,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1001601281,
+        "denominator": 1000000000,
+        "weight": [
+          44348281,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 125283163,
+        "denominator": 125000000,
+        "weight": [
+          125435839,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 8025641,
+        "denominator": 8000000,
+        "weight": [
+          88696473,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 1004535739,
+        "denominator": 1000000000,
+        "weight": [
+          250871177,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 251605131,
+        "denominator": 250000000,
+        "weight": [
+          14191379,
+          40000000000
+        ]
+      },
+      {
+        "numerator": 1009092051,
+        "denominator": 1000000000,
+        "weight": [
+          62717293,
+          125000000000
+        ]
+      },
+      {
+        "numerator": 1012882271,
+        "denominator": 1000000000,
+        "weight": [
+          709557611,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1018266767,
+        "denominator": 1000000000,
+        "weight": [
+          125430577,
+          125000000000
+        ]
+      },
+      {
+        "numerator": 512965247,
+        "denominator": 500000000,
+        "weight": [
+          1419024513,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 129608401,
+        "denominator": 125000000,
+        "weight": [
+          2006632689,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1052533379,
+        "denominator": 1000000000,
+        "weight": [
+          1418661773,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 1075093607,
+        "denominator": 1000000000,
+        "weight": [
+          4011214169,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 553913257,
+        "denominator": 500000000,
+        "weight": [
+          708606209,
+          125000000000
+        ]
+      },
+      {
+        "numerator": 231165253,
+        "denominator": 200000000,
+        "weight": [
+          4003027447,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 38352487,
+        "denominator": 31250000,
+        "weight": [
+          282288107,
+          25000000000
+        ]
+      },
+      {
+        "numerator": 667967177,
+        "denominator": 500000000,
+        "weight": [
+          15882270751,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1506215179,
+        "denominator": 1000000000,
+        "weight": [
+          22220065159,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 892360299,
+        "denominator": 500000000,
+        "weight": [
+          30761253561,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 567171041,
+        "denominator": 250000000,
+        "weight": [
+          41727312889,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 796306903,
+        "denominator": 250000000,
+        "weight": [
+          3405166127,
+          62500000000
+        ]
+      },
+      {
+        "numerator": 1286731959,
+        "denominator": 250000000,
+        "weight": [
+          16616992621,
+          250000000000
+        ]
+      },
+      {
+        "numerator": 5072837471,
+        "denominator": 500000000,
+        "weight": [
+          72544992281,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 529817323,
+        "denominator": 20000000,
+        "weight": [
+          67133703433,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 10293472003,
+        "denominator": 100000000,
+        "weight": [
+          9938187807,
+          200000000000
+        ]
+      },
+      {
+        "numerator": 350882994693,
+        "denominator": 500000000,
+        "weight": [
+          27496150339,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 529777829381,
+        "denominator": 50000000,
+        "weight": [
+          10352502243,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 9849510077181,
+        "denominator": 20000000,
+        "weight": [
+          1286751981,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 200000000,
+        "denominator": 200020001,
+        "weight": [
+          5543537,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1000141431,
+        "weight": [
+          1567949,
+          200000000000
+        ]
+      },
+      {
+        "numerator": 50000000,
+        "denominator": 50010001,
+        "weight": [
+          5543537,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1000282883,
+        "weight": [
+          1567949,
+          100000000000
+        ]
+      },
+      {
+        "numerator": 12500000,
+        "denominator": 12505001,
+        "weight": [
+          22174147,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 200000000,
+        "denominator": 200113169,
+        "weight": [
+          31358979,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 3125000,
+        "denominator": 3127501,
+        "weight": [
+          11087073,
+          250000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1001132011,
+        "weight": [
+          62717951,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1001601281,
+        "weight": [
+          44348281,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 125000000,
+        "denominator": 125283163,
+        "weight": [
+          125435839,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 8000000,
+        "denominator": 8025641,
+        "weight": [
+          88696473,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1004535739,
+        "weight": [
+          250871177,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 250000000,
+        "denominator": 251605131,
+        "weight": [
+          14191379,
+          40000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1009092051,
+        "weight": [
+          62717293,
+          125000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1012882271,
+        "weight": [
+          709557611,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1018266767,
+        "weight": [
+          125430577,
+          125000000000
+        ]
+      },
+      {
+        "numerator": 500000000,
+        "denominator": 512965247,
+        "weight": [
+          1419024513,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 125000000,
+        "denominator": 129608401,
+        "weight": [
+          2006632689,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1052533379,
+        "weight": [
+          1418661773,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1075093607,
+        "weight": [
+          4011214169,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 500000000,
+        "denominator": 553913257,
+        "weight": [
+          708606209,
+          125000000000
+        ]
+      },
+      {
+        "numerator": 200000000,
+        "denominator": 231165253,
+        "weight": [
+          4003027447,
+          500000000000
+        ]
+      },
+      {
+        "numerator": 31250000,
+        "denominator": 38352487,
+        "weight": [
+          282288107,
+          25000000000
+        ]
+      },
+      {
+        "numerator": 500000000,
+        "denominator": 667967177,
+        "weight": [
+          15882270751,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 1000000000,
+        "denominator": 1506215179,
+        "weight": [
+          22220065159,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 500000000,
+        "denominator": 892360299,
+        "weight": [
+          30761253561,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 250000000,
+        "denominator": 567171041,
+        "weight": [
+          41727312889,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 250000000,
+        "denominator": 796306903,
+        "weight": [
+          3405166127,
+          62500000000
+        ]
+      },
+      {
+        "numerator": 250000000,
+        "denominator": 1286731959,
+        "weight": [
+          16616992621,
+          250000000000
+        ]
+      },
+      {
+        "numerator": 500000000,
+        "denominator": 5072837471,
+        "weight": [
+          72544992281,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 20000000,
+        "denominator": 529817323,
+        "weight": [
+          67133703433,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 100000000,
+        "denominator": 10293472003,
+        "weight": [
+          9938187807,
+          200000000000
+        ]
+      },
+      {
+        "numerator": 500000000,
+        "denominator": 350882994693,
+        "weight": [
+          27496150339,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 50000000,
+        "denominator": 529777829381,
+        "weight": [
+          10352502243,
+          1000000000000
+        ]
+      },
+      {
+        "numerator": 20000000,
+        "denominator": 9849510077181,
+        "weight": [
+          1286751981,
+          500000000000
+        ]
+      }
+    ],
+    "expert_count": 71,
+    "score": "sum(plus_successes-minus_successes)",
+    "conditioning": "Average arbitrary pairing given both block margins; J is central hypergeometric",
+    "normalizer": "Frozen unequal conditional Fisher centered CGF at rational kappa=(p+q)^2/(4pq)",
+    "threshold": "1/delta with cumulative score sign; no directional split",
+    "assumptions": "Predictable balanced independent Bernoulli blocks with common ordering",
+    "log_efficiency_claim": "Fixed-time expected log evidence dominates matched paired mixture when controls use only past margins",
+    "limits": "No pointwise or stopping-time dominance; finite grid may lack positive growth at weak alternatives"
+  },
+  "prediction_rule": "old.fit_rows(previous_paid_rows)[theta][0] then safe.predict_endpoints; before current block",
+  "method_stop_rule": "first screen >= log(1/delta)-1e-6 with outward certified direction, else observed cap",
+  "censoring": "no missing continuation: next method checkpoint through4096; decision null",
+  "new_simulation_observations": 0,
+  "scope": "all576 fixed development paths; no favorable subset selection"
+}

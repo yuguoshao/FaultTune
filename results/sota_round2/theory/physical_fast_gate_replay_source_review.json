@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-04T12:33:19.096676+00:00",
+  "sources": {
+    "experiments/sota_round3/replay_fast_gate.py": "b1edd7b2aad49965a9405e0dd3fb1acd1a414022fb99fb019226b11b7b541dc9",
+    "experiments/sota_round3/replay_boundaries.py": "b5f247b3a803d587ed7bf12e7be3ef275cbe0b5f0893d1386a2cf4ec0563f229",
+    "experiments/sota_round3/paired_benchmark.py": "d92c724cca5e1e3ada3169cbb14e89236bb4c88c6f0349a63b829fa3f9f7a2bd",
+    "experiments/sota_round2/theory/audit_physical_fast_gate_replay.py": "7f38e5911123d3bea99b1280ccf42dd03c0eb433ae42f41f78a145e23f066b01",
+    "results/sota_round2/theory/physical_fast_gate_source_review.json": "02e3a62396c8cc1f4e5723ba848a1f51a9dd66ad736716c7ec660ba85659429e",
+    "results/sota_round2/theory/physical_fast_gate_replay_independent_audit.json": "10c9b7ac46231840587217f32bc84a034c0e01bfaba3ef5c90eb0efc709898af",
+    "results/sota_round3/paired_benchmark_audit/audit.json": "bf12f8fc9bc21c10d1ebc904a85c30ed54a189fd8c0b33072661a631806cfa4a",
+    "results/sota_round3/fast_gate_replay_v1/summary.json": "286e0c24bb1a3f3f8932779fb00ad3b59de7e8ce855e7558222114c836ef805a"
+  },
+  "review": [
+    "The wrapper checks that original data audit passed and that plan, raw paths and baseline method ledger match its input hashes. It checks all audited source hashes and binds its own source and both summary dependencies.",
+    "For each path, the first-m physical prefix is frozen only at cumulative pair count exactly m. A block that jumps over an uncaptured prefix is rejected. Later prefix decisions therefore do not reconstruct a favorable ordering from aggregate counts.",
+    "Three gate lengths remain separate methods. Each receives its first actual certified stop or cap abstention on the original physical checkpoints, with no method union or per-path selector.",
+    "All 576 path keys and 1728 gate outcomes are required. Unobserved continuations are right-censored and would prevent complete combined-cost reporting.",
+    "The completed replay has no censoring. An independent implementation reconstructed every prefix and full certificate from the audited raw counts and integer artifacts without importing the gate or replay producers. All 1728 rows and the complete 14-method costs/errors/abstentions/ratios match.",
+    "Input artifacts are hashed before and after processing; exclusive output creation preserves prior results."
+  ],
+  "independent_data_audit": {
+    "path": "results/sota_round2/theory/physical_fast_gate_replay_independent_audit.json",
+    "sha256": "10c9b7ac46231840587217f32bc84a034c0e01bfaba3ef5c90eb0efc709898af"
+  },
+  "issues": [],
+  "limits": [
+    "The gates were explored after observing this development pilot. Replaying its full fixed case matrix is useful development evidence, but does not create independent validation.",
+    "Risk statements remain those of each separately certified m. Choosing the best m per trajectory or uniting their stopping rules is not covered.",
+    "No inferential confidence interval, hardware result, new-method novelty or SOTA claim is established by this review."
+  ]
+}

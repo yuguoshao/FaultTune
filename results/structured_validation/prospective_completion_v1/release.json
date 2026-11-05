@@ -1,0 +1,77 @@
+{
+  "status": "released before prospective observations",
+  "released_utc": "2026-11-03T16:59:42.979102+00:00",
+  "explicit_root_release": true,
+  "release_reference": "Root explicitly released closed_rb versus development-selected closed_hedge with psr_beta reference after both complete audits passed and selection was inspected; no prospective observations have been inspected.",
+  "plan_sha256": "c9baab61fc33594ac21d3231ae51fc40bc3824506145ae9f45c0c71960e81d37",
+  "selection_sha256": "1b7ca5e2a590ef0dbc73061c994af9caf74062c6ca355940e0d13b85886bc3f2",
+  "selection": {
+    "candidate": "closed_rb",
+    "primary_comparator": "closed_hedge",
+    "secondary_comparator": "psr_beta",
+    "methods": [
+      "closed_hedge",
+      "closed_rb",
+      "psr_beta"
+    ],
+    "development_scores": {
+      "psr_beta": 2461.479115462408,
+      "psr_pair_grid": 2461.479115462408,
+      "psr_fisher": 2436.599673749071,
+      "psr_hedge": 2425.9619356898675,
+      "psr_safe": 2716.7808259575554,
+      "psr_rb": 2421.3770107793703,
+      "closed_beta": 2359.692802284061,
+      "closed_pair_grid": 2359.692802284061,
+      "closed_fisher": 2345.4517731252554,
+      "closed_hedge": 2330.6958135160216,
+      "closed_safe": 2617.803598699344,
+      "closed_rb": 2331.8302400170423,
+      "grid_beta": 2387.1491605682427,
+      "grid_pair_grid": 2387.1491605682427,
+      "grid_fisher": 2371.2669059975856,
+      "grid_hedge": 2359.501988604498,
+      "grid_safe": 2650.2098499672516,
+      "grid_rb": 2357.153505859195,
+      "psr_weighted_conditional_unequal": 2411.582537710495,
+      "closed_weighted_conditional_unequal": 2454.746856926516,
+      "grid_weighted_conditional_unequal": 2458.626777987293
+    },
+    "development_input_sha256": {
+      "results/structured_validation/refined_development_v1": {
+        "spec.json": "7cd44298b83d58b3649abc3f7b4ff56f8c6898dd52673f0e9dc80ac47ff2b243",
+        "summary.json": "f70ef9f8edef39d5eaacc8c9e5429da33d9cc1df5a68bfc84cc81f4cbdfa05da",
+        "trials.jsonl": "55047a732a135b029045cdfe69bbd4f69a83b3727e2d5a395b00ffcbdcf639c7",
+        "audit.json": "7e38e8c4e0167f1a415a179c82c58afff5ccb39c03b0902248de306f29bb3786"
+      },
+      "results/structured_validation/unequal_development_v1": {
+        "spec.json": "a13a5356446a2e0b4448e938ca68b048d500f6d4f3b988f61468d627fdf290ee",
+        "summary.json": "7deb8ff6be8e87c339b86558726b6559524a3ee572389abbc251df727e2f7564",
+        "trials.jsonl": "c8a998941fefcf387e6fbcc439c78fad1ed5bc034db6471f9ad14ca3f632355b",
+        "audit.json": "e4fb689f0b00c46a84ece145f167d1f089c05e6e3cff7d204835594e9d4986d4"
+      }
+    },
+    "selection_rule": "Equal-case geometric mean of unconditional per-case mean total shots across all 24 main development cases, including all errors and cap abstentions.",
+    "tie_break": "Ascending lexicographic method name after numeric metric; exact float equality only."
+  },
+  "wrapper_sources_sha256": {
+    "experiments/structured_validation/prospective/common.py": "8eeaa1af5eb178456b4101eedf307e2cd4cc3cdb3148bb3b4137671273632196",
+    "experiments/structured_validation/prospective/run.py": "089dfc722290aa388be59c7481356a55d6bc6fd6368ab7f03b3b7f033deab318",
+    "experiments/structured_validation/prospective/analyze.py": "995e1ae97210634dc8eb77369354c6008befe379a8ab05c4bfe56cfe88b72a68"
+  },
+  "algorithm_sources_sha256": {
+    "experiments/structured_validation/run_refined.py": "09fb85767e40e24909835a72c4eae746d2daa930fa4d17341a223f9721248d2f",
+    "experiments/structured_validation/weighted_fisher.py": "1f31c9cbea3c8db4d7d8dc75936dc5304fd3273fb8ad1fafedc90e792fe24e24",
+    "experiments/structured_validation/expert_config.py": "1909e1f422468ca367aa43894e2caea9094b695f03cdbc538f35d82993ca899c",
+    "experiments/structured_validation/conditional_fisher.py": "0b7840375354931a67046441fc8c96bb977657d75da7f801142d5bf5ba84147a",
+    "experiments/structured_validation/conditional_fisher_unequal.py": "011d691f76b798cd0372544156ab86dbf7b6273b02b41de009737f433caef917",
+    "experiments/structured_validation/safe_grid.py": "743936c62548c1d2d53cb903cfa63cd137971a6ef043b92cfc275d5b13bc9b8c",
+    "experiments/structured_validation/rb_grid.py": "a262a4790289505e7846c98334edbf341cded98090ce7bd8bf7c0c3974fb420f",
+    "experiments/structured_validation/predictive.py": "fc16237805139c707e6e076c0c7e69f45e88c111d405349c68daa3f150871fe4",
+    "experiments/structured_validation/certified_likelihood.py": "eb3207ced7da0719157e09b53cb4975473af80160fad1800b94daf435dd9212b",
+    "experiments/structured_validation/design_policy.py": "1e61776de4b3bd8b2fd331b9c9f28b7b68f4e6c9672e19ca38aa9b436e3d4547",
+    "experiments/structured_validation/probe_fixed.py": "bf64f1ab7fb5e1675966704cc315de1f21b51db8135301fc319d8388d67311ec",
+    "experiments/structured_validation/unequal_runner.py": "7518c2ff311b0b1db6f4252aa0270664dc4c87d8b0ce06a9616691e88ec9e8bc",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a"
+  }
+}

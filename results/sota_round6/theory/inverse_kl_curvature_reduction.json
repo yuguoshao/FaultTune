@@ -1,0 +1,62 @@
+{
+  "status": "exact_curvature_identity_and_certified_radius_nonmonotonicity",
+  "new_simulation_observations": 0,
+  "definition": "ell_R(p) is the lower endpoint of {q:kl(p||q)<=R}, with0<p<1 andR>0. Thus0<q=ell_R(p)<p. Let v=logit(p)-logit(q)>0, r=p-q>0 andP=p(1-p)>0.",
+  "exact_identity": {
+    "first_derivative": "K=d ell_R(p)/dp=q(1-q)*v/r>0.",
+    "logarithmic_curvature": "J=(d2 ell_R/dp2)/(d ell_R/dp)=v+(P*v-r)^2/(P*v*r^2)>0.",
+    "hyperbolic_form": "For k=1/2-p and T(v)=coth(v/2)/2-1/v, J=(v/P)[1/4+2k*T(v)+T(v)^2].",
+    "proof": "Implicit differentiation ofD(p,q)=R gives ell_prime=K and ell_second=(q(1-q)/r)[1/P-2K/(q(1-q))+(p/q^2+(1-p)/(1-q)^2)K^2]. Dividing byK and using p(1-q)^2+(1-p)q^2=P+r^2 gives J=1/(Pv)-2/r+(P+r^2)v/r^2=v+(Pv-r)^2/(Pv r^2). Also q=p/[p+(1-p)e^v], hence Pv/r=v[(1-p)+1/(e^v-1)], which yields the hyperbolic form."
+  },
+  "ellipse_reduction": {
+    "model": "p_plus(z)=A+Bz+C sqrt(1-z^2), C>0 and-1<z<1.",
+    "curvature_formula": "Let s=sqrt(1-z^2), evaluateK,J atp=p_plus(z), q=ell_R(p). Then L(z)=ell_R(p_plus(z)) satisfies L_second=(K/s^3)[J*s*(B*s-C*z)^2-C].",
+    "exact_remaining_inequality": "At the model-dependent radiusR*=max_z BernoulliCapacity(A+Bz-C*s,A+Bz+C*s), the desired concavity is exactly J*s*(B*s-C*z)^2<=C for everyz. IfB*s-C*z=0, strict concavity follows immediately.",
+    "upper_branch": "U(z)=u_R(p_minus(z))=1-ell_R(1-p_minus(z)). Thus U convexity is precisely the same lower-concavity condition for the complemented model(Abar,Bbar,Cbar)=(1-A,-B,C).",
+    "status": "The reduction is proved. The remaining inequality has not been proved for all physical models, including atR*. This file does not establish the unrestricted reflected-pair conjecture."
+  },
+  "radius_nonmonotonicity": {
+    "claim": "For fixedp, J need not increase withR, even when both radii are belowlog(2).",
+    "exact_construction": "Usep=999/1000 andv=3 or5 exactly, q_v=p/[p+(1-p)exp(v)], R_v=kl(p||q_v). The retained64-digit outward intervals prove0<R_3<R_5<log(2), whileJ_3>J_5>0.",
+    "certified_intervals": [
+      {
+        "p_exact": "999/1000",
+        "logit_difference_exact": 3,
+        "q_interval": [
+          "0.9802906270421325873009753060575707540575572992238214923759598997",
+          "0.9802906270421325873009753060575707540575572992238214923759599009"
+        ],
+        "radius_interval": [
+          "0.01590569274237117661273649186981708801978563955519232251281850142",
+          "0.01590569274237117661273649186981708801978563955519232251281850446"
+        ],
+        "curvature_ratio_interval": [
+          "238.3305721343147136451017580530177439097329170540407228568976124",
+          "238.3305721343147136451017580530177439097329170540407228568976789"
+        ]
+      },
+      {
+        "p_exact": "999/1000",
+        "logit_difference_exact": 5,
+        "q_interval": [
+          "0.8706541249547332907200517066947056678696450490903518777879386587",
+          "0.8706541249547332907200517066947056678696450490903518777879386597"
+        ],
+        "radius_interval": [
+          "0.1325099817468317880763639482161496015729365717087465753322844254",
+          "0.1325099817468317880763639482161496015729365717087465753322844293"
+        ],
+        "curvature_ratio_interval": [
+          "189.9205371430367441949665581222693211044181321582028124224640333",
+          "189.9205371430367441949665581222693211044181321582028124224640396"
+        ]
+      }
+    ],
+    "implication": "Verifying curvature at a larger radius upper boundU does not by itself verify it atR*, unless an additional justified monotonicity or domination property is available. This counterexample concerns the inverse-KL ratio only, not the physical-ellipse conjecture."
+  },
+  "source_sha256": {
+    "results/sota_round6/theory/inverse_kl_curvature_reduction.py": "19de8a0b7f8ff8f7b2401d7fd93e173a3c57e8680e36478099485bd5ff258e61",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a"
+  },
+  "claim_boundary": "Analytic simplification and a certified caution about a proof shortcut; no new data, no full all-angle theorem, no finite-cost claim and no SOTA claim."
+}

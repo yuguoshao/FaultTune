@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "ledger_records": 36864,
+  "new_trajectories": 36864,
+  "referenced_baseline_trajectories": 18432,
+  "cells_and_aggregates_recomputed": 288,
+  "seed_replay_case_ids": [
+    0,
+    42,
+    49
+  ],
+  "vector_seed_replay_records": 1536,
+  "history_subblocks_reconstructed": 3955154,
+  "final_certificates_recomputed": 36864,
+  "full_cap_abstention_certificates_recomputed": 12086,
+  "prefix_blocks_exactly_matched_controls": 1286930,
+  "no_exploration_trajectories_exactly_matched_controls": 14888,
+  "previous_learned_manifest_files_unchanged": 39,
+  "previous_learned_manifest_sha256": "5e0633642dfbd38be219a9a71df780d3bd8cd354557320d734da44c95b0f3abd",
+  "old_frozen_python_sources_unchanged": 31,
+  "run_source_hashes_verified": 6,
+  "review": {
+    "predictability": "Every subblock angle/forecast checked before adding its observations.",
+    "exploration": "Exact integer sqrt target, deficit, split, and paid subblock costs reconstructed.",
+    "stopping": "Only common outer checkpoints; no free stopping inside exploration.",
+    "controls": "Complete pre-exploration blocks and never-explored trajectories match same-engine controls exactly.",
+    "scope": "Development implementation audit, not independent SOTA confirmation."
+  },
+  "elapsed_seconds": 830.0153126,
+  "audit_source_path": "experiments/streaming_validation/audit_guarded_v2.py",
+  "audit_source_sha256": "edb0d14a468bfb374dfbc406d194136e463e25030f4bf8d6b58d188782486243",
+  "audit_source_unchanged_during_execution": true,
+  "audit_helper_source_sha256": "4aa5a0078624a1f74fb682b430d42573f291a4e049c5028a83cc14a526b58dea",
+  "artifact_sha256": {
+    "spec.json": "a968456ccadd81b0786c16bc33fb6610b58e55feaaaaf470fa786ed861fd3df5",
+    "summary.json": "48858098b004c98a87d26e0dcc2ec17894eefc4a85831471616cd40dd411ff29",
+    "trials.jsonl": "e5c23b0504e9762f767f51a137395ffa903ab7854111d0da4b2e59cc8c70b6d5"
+  }
+}

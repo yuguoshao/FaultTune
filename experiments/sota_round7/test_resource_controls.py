@@ -70,6 +70,8 @@ class ControlChecks(unittest.TestCase):
         self.assertEqual(summary['complete_three_bit_counts']['old'][7], 14)
         self.assertEqual(summary['complete_three_bit_counts']['new'][6], 14)
         self.assertEqual(summary['readout_bits_charged'], 84)
+        self.assertEqual(summary['control_window_uses'], 28)
+        self.assertEqual(F(summary['device_time_exact']), F(462, 5))
         self.assertEqual(summary['evidence']['positive'], 14)
         self.assertEqual(sum(sum(v) for v in summary['complete_three_bit_counts'].values()), 28)
 
@@ -109,6 +111,11 @@ class ControlChecks(unittest.TestCase):
         with self.assertRaises(ValueError):
             policy.observe(action['action_id'], True)
         self.assertEqual(policy.summary()['actual_paid_shots'], 1)
+        self.assertEqual(len(policy.ledger), 1)
+        policy.observe(action['action_id'], 0)
+        with self.assertRaises(RuntimeError):
+            policy.observe(action['action_id'], 0)
+        self.assertEqual(policy.summary()['actual_paid_shots'], 1)
 
     def test_unfinished_snapshots_and_explicit_interruption(self):
         policy = RamseyFixedDepthControl(8, seed=0, cap=20)
@@ -130,9 +137,6 @@ class ControlChecks(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             policy.next_action()
         self.assertEqual(len(policy.ledger), 1)
-        policy.observe(action['action_id'], 0)
-        with self.assertRaises(RuntimeError):
-            policy.observe(action['action_id'], 0)
         self.assertEqual(policy.summary()['actual_paid_shots'], 1)
 
 

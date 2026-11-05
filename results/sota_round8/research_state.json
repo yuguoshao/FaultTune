@@ -1,0 +1,35 @@
+{
+  "status": "development_snapshot_math_reviewed_controller_review_and_independent_benchmark_unfinished",
+  "updated_utc": "2026-11-05T09:26:40.744736+00:00",
+  "goal_status": "cleared_by_user; publication_snapshot_only",
+  "sota_goal_complete": false,
+  "new_monte_carlo_observations": 0,
+  "latest_operational_performance_changed": false,
+  "latest_operational_result_source": "results/sota_round6/distance_to_sota.json",
+  "round8_result": {
+    "type": "deterministic_reference_instance_cost_certificate",
+    "joint_expected_shots_upper": "938.0495591410595278",
+    "specified_two_stage_control_expected_shots_lower": "1025.0473540099491122",
+    "specified_control_over_joint_ratio_lower": "1.0927432820804804",
+    "joint_reference_correct_stop_lower": "0.9806864996468954",
+    "error_bound": "at most .005 for either wrong direction; at most .01 for any report at equality",
+    "shot_cap": 65536,
+    "model_contract": "Scheduled echo exposure at most9; ideal known primitives; no extra q0 noise; stationary disjoint Hamiltonian; abs(chi)<=.2, kappa<=.005, r<=.05.",
+    "scope": "Reference development instance and its sign mirror only. This lower bound is specific to a two-stage comparison rule, not all methods with the same actions and not SOTA."
+  },
+  "implementation_status": {
+    "joint_control": "experiments/sota_round8/joint_midpoint_echo_control.py",
+    "independent_theorem_review": "completed in joint_betting_independent_review.json",
+    "independent_theorem_to_code_review": "not completed before user cleared the goal",
+    "separate_stage_control": "mathematical rule specified; standalone paid state machine not completed",
+    "frozen_independent_benchmark": "not performed"
+  },
+  "acceptance_requirements_unchanged": "Original1percent risk,95percent per-case correct stopping,3x geometric cost,simultaneous cost lower bound>=2,full costs and independent physical validation remain unmet as a whole.",
+  "source_sha256": {
+    "results/sota_round8/joint_midpoint_echo_certificate.json": "a99275aadfcca5ed57a7fba9f32216a121d4ad549a86a99e8df66f1806fbe4cd",
+    "results/sota_round8/joint_betting_independent_review.json": "dcf90c6a8b77a680581d992ae07c92e41d596acd379dd7d57537f957d42368da",
+    "results/sota_round8/midpoint_demodulation_independent_review.json": "bf1f2f06bd84c1542249f0b28594e58c77e99079313a1f04b296d4987dc5cc3c",
+    "results/sota_round8/echo_and_midpoint_mechanisms.json": "91603d0f52cea981e23cbe3990070b54fde7b0cc386319bc4a465cd40936685a",
+    "experiments/sota_round8/joint_midpoint_echo_control.py": "e2cde9a59516e7bba8f533c191fb9190050d20711c76327b8b982144f363c1d0"
+  }
+}

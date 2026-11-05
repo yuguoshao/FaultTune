@@ -1,0 +1,43 @@
+{
+  "schema": "faulttune.round8.echo_control_prior_addendum.v1",
+  "created_utc": "2026-11-05T07:10:16.786682+00:00",
+  "status": "source_bound_comparator_contract_clarification_not_independent_guard_audit",
+  "new_simulation_observations": 0,
+  "sota_claim_supported": false,
+  "clarification": "The k42/original-update-gap dual-quadrature design in the preceding review is an unfrozen branch proposal. The now-implemented stats control uses the stronger allowed amplitude separation2, three echo blocks, gain6 and sensing duration6. These settings and positive visibility/dephasing bounds are shared public resources.",
+  "public_contract_read_from_guard": {
+    "d0": "3/500",
+    "stake": "7/20",
+    "echo_null_mean": "7379/62500",
+    "update_amplitude_gap_interval": {
+      "lower": "0.1769202009072131668019604120166610885406010498145809442708339429",
+      "upper": "0.1769202009072131668019604120166610888011885010298596227782542722"
+    },
+    "update_gap_upper": "177/1000",
+    "chi_critical": "4/177",
+    "echo_gain": "6",
+    "echo_duration": "6",
+    "echo_control_amplitude_gap": "2",
+    "echo_blocks": 3,
+    "chi_prior_abs_upper": "1/5",
+    "kappa_upper": "1/200",
+    "visibility_lower": "9/10",
+    "physical_null_mean_lower_interval": {
+      "lower": "0.1180643604236871574606309623349671256274156596708154041068638991",
+      "upper": "0.1180643604236871574606309623349671256274156596708154041068638994"
+    },
+    "target_e_threshold": 200,
+    "echo_e_threshold": 100
+  },
+  "stronger_control_implication": "With public A>=.9*exp(-6*.005)>0 and |6chi|<=1.2<pi/2, every |chi|>=h implies |E[Z]|>=A_min*sin(6h). Consequently a single randomized sine quadrature supports a direct two-sided equivalence certificate. Requiring a comparator to learn A or perform both quadratures would impose avoidable overhead under this stronger public contract.",
+  "when_dual_quadrature_remains_relevant": "The phase-halfspace sin/cos construction remains applicable when only common positive contrast is justified, without a positive lower bound, provided the preparation/readout circle model holds. It does not by itself promise bounded-cost power as contrast vanishes.",
+  "implemented_control_status": "finite_safe_fixed_stage_control_no_SOTA_claim",
+  "finite_control_scope": "The fixed-stage guard gives finite-risk and case-specific power bounds, with larger costs than anticipated sequential variants. It is a classical same-action baseline and does not establish SOTA. Pulse/readout/setup overhead remains additional to the guard sensing-window count.",
+  "validation_boundary": "This addendum read the produced artifact and its public contract; it is not an independent proof/code audit of fixed_stage_guard.py. Root/stats own that verification.",
+  "source_sha256": {
+    "results/sota_round8/literature/echo_priority_and_same_action_controls.json": "bdb6e3f6da8e99e3bc22cf11f3ae4fe5eddcfaac3a51f2dd172f7bff6764c6cb",
+    "results/sota_round8/fixed_stage_guard.json": "6dfed466e99808c1ea25fe64ff86478bb0e20838ea99c8d2979c39decf64288e",
+    "experiments/sota_round8/fixed_stage_guard.py": "4f3de131a3645964880ab29ee7917f574e16bc6869d43bfaee2e64944aef4cdf",
+    "experiments/sota_round8/write_echo_control_addendum.py": "1dec908270a15c996f705e791e01b5f335a375d8a43cd06f08b664e141ca3574"
+  }
+}

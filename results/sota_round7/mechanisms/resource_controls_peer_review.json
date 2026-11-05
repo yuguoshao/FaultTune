@@ -1,0 +1,124 @@
+{
+  "status": "passed_independent_theorem_to_code_review_stable_v3",
+  "new_simulation_observations": 0,
+  "blocking_findings": [],
+  "tested_source_sha256": "6e6e77a8babd41cdf5cb33d6bb33b0fb68cd8094e128900b2dbbc3219ea55d35",
+  "deterministic_checks": {
+    "original_groups_rerun": 7,
+    "original_groups_passed": true,
+    "additional_threshold_neighborhood_count_cases": 105,
+    "exact_LR_prescribed_Ramsey_prefixes": 1774,
+    "prescribed_complete_bitstring_prefixes": 72,
+    "Ramsey_trajectories": [
+      {
+        "depth": 8,
+        "orientation": -1,
+        "first_crossing_paid_shots": 475,
+        "decision": "accept",
+        "ledger_replayed": true
+      },
+      {
+        "depth": 8,
+        "orientation": 1,
+        "first_crossing_paid_shots": 475,
+        "decision": "reject",
+        "ledger_replayed": true
+      },
+      {
+        "depth": 16,
+        "orientation": -1,
+        "first_crossing_paid_shots": 412,
+        "decision": "accept",
+        "ledger_replayed": true
+      },
+      {
+        "depth": 16,
+        "orientation": 1,
+        "first_crossing_paid_shots": 412,
+        "decision": "reject",
+        "ledger_replayed": true
+      }
+    ],
+    "both_controls_failure_and_interruption_paths": 6,
+    "default_SystemRandom_and_seeded_replay_scope": true,
+    "invalid_integer_depth_and_cap_rejected": true
+  },
+  "theorem_to_code_review": [
+    {
+      "item": "Paid action lifecycle",
+      "verdict": "passed",
+      "reason": "Every successful next_action increments shots and appends one issued ledger row before returning the action. At most one action is pending. Duplicate, mismatched and malformed deliveries are rejected without creating observations or new charges; the original paid action remains pending. Execution failure and explicit interruption clear pending state, absorb the run and preserve all issued charges."
+    },
+    {
+      "item": "Unfinished-run penalties",
+      "verdict": "passed_after_fix",
+      "reason": "Only decided runs use actual shots for the conservative score. Running, cap-abstaining, failed and interrupted snapshots all carry the full cap. finalize_incomplete records an explicit reason and absorbs an unfinished run, with or without a currently pending action. This closes the earlier inexpensive-unfinished-snapshot problem."
+    },
+    {
+      "item": "Exact likelihood-ratio crossing and stopping prefixes",
+      "verdict": "passed",
+      "reason": "The state stores positive/negative increments and reconstructs exact rational products via directed logs. An undecidable log comparison falls back to the integer inequality(d+n)^positive(d-n)^negative>=200*d^(positive+negative), including equality. Zero increments multiply by1. The public controls test after each allowed evidence update and absorb at the first crossing; no later prefix can erase a decision."
+    },
+    {
+      "item": "Ramsey randomization and decision sign",
+      "verdict": "passed",
+      "reason": "The default SystemRandom randrange(2) maps to a fair phase sign. Given independent phase coins and the declared observation law, z=S(2Y-1) has the demodulated Bernoulli law used in the proof and removes unknown readout bias. Positive evidence correctly rejects positiveDelta; negative evidence accepts. Fixed seeds are explicitly marked deterministic replay and no longer inherit probabilistic power claims. These tests prescribe outcomes and do not validate physical stochastic behavior empirically."
+    },
+    {
+      "item": "Ramsey nuisance and power scope",
+      "verdict": "passed_with_declared_contract",
+      "reason": "The reviewed depth/bet pairs are exactly(8,3/250) and(16,7/500), threshold200, with the default2^20 cap. Uniform power applies only under the complete noisy-Ramsey model in noisy_multidepth_phase_obstruction.json: |phi|<=.02, gamma in[.06,.065], contrast>=.95 and the common readout model. A custom cap or seeded replay has no inherited95% certificate. The class consumes no hidden physical parameter."
+    },
+    {
+      "item": "Complete-pair bitstring statistic",
+      "verdict": "passed_with_declared_contract",
+      "reason": "Only the explicitly named same-duration disjoint invariant-spectator contract is accepted. The documented s>0 assumption is essential. Old and new are issued alternately, the X0 statistic is formed from the low bit of each complete output, and evidence z=X_old-X_new is updated only after both separately charged outcomes arrive. Concordant pairs are paid and contribute factor1. Positive crossing correctly accepts. All three-bit counts are retained; the cap is even."
+    },
+    {
+      "item": "Bitstring power claim",
+      "verdict": "passed_scoped",
+      "reason": "The implementation states power only for the reviewed xo=.03,xn=.01,s=.5 example at cap131072. It does not claim uniform eligible-domain power or robustness to unknown amplitude-dependent spectator crosstalk. The physical observation model must ensure the fresh old/new independence used in the theorem."
+    },
+    {
+      "item": "Gate and device ledgers",
+      "verdict": "passed",
+      "reason": "Ramsey charges depth sensing-pulse uses on issuance and exactly22+10*depth+switch tenths of time, including the initial phase configuration. Full deterministic ledger replay matches G=depth*N andT=2.2N+G+.1switches, within the common16N/18.3N caps. Bitstring reports one shared control window, three readouts and an alternating configuration per issued action, withT=3.3N. Simultaneous q0/spectator Hamiltonian terms are not double-counted as serial windows."
+    }
+  ],
+  "resolved_findings": [
+    "Floating depth8.0 previously passed the menu check and later broke exact time serialization; v3 requires an actual non-bool integer.",
+    "Running snapshots previously used partial rather than full-cap conservative cost; v3 penalizes all non-decided snapshots and supports explicit interruption.",
+    "Seeded replay previously retained the general power label; v3 removes inherited probabilistic power for every seeded replay.",
+    "Bitstring device costs were previously only derivable from action records; v3 reports them explicitly."
+  ],
+  "retained_history": [
+    {
+      "version": 1,
+      "source_archive": "results/sota_round7/mechanisms/resource_controls_v1_sources.zip",
+      "archive_sha256": "fc87a8fe7fd52568cf2cb7a033b43b76625dbe86d5566a648ca6d32d02135419",
+      "retained_check_status": "passed"
+    },
+    {
+      "version": 2,
+      "source_archive": "results/sota_round7/mechanisms/resource_controls_v2_sources.zip",
+      "archive_sha256": "abb899026a55f59b4b0eef29d4871e1abd02525888d8ba273367ad413d60f70b",
+      "retained_check_status": "failed"
+    }
+  ],
+  "nonblocking_limits": [
+    "The classes are protocol state machines, not a physical-model validator or a security boundary against mutation of their public Python attributes.",
+    "They assume the caller executes the issued action and supplies the registered physical outcome. Model violations, outcome-dependent delivery failures, or hardware control errors do not inherit the ideal-model power guarantee; failed runs must be included in the external assessment.",
+    "The primary conservative shot score is implemented directly. The optional full-gate/full-time abstention penalties remain assessment formulas from the budget addendum, rather than separate fields of every runtime summary."
+  ],
+  "source_sha256": {
+    "experiments/sota_round7/resource_controls.py": "6e6e77a8babd41cdf5cb33d6bb33b0fb68cd8094e128900b2dbbc3219ea55d35",
+    "results/sota_round7/mechanisms/resource_control_checks_v3.json": "7fd9ec049170de065e704b6bd250aa067315aa1b0a94b0ca00a4ed571d73701e",
+    "experiments/sota_round7/test_resource_controls.py": "0da87586dc8e2a1caf2a5fac2d951955f3b708b44f4cdaca3510a4485ec8cc37",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "results/sota_round7/mechanisms/noisy_multidepth_phase_obstruction.json": "78db9abc7d27879995d0b37e958937b996e4fdb02992f3f4ca86156555108fda",
+    "results/sota_round7/mechanisms/noisy_multidepth_phase_budget_closure.json": "9e54a9518da3e39cc423fd2d9dc2a5e08c06dfe41657a211ca32c5e8b14c5a6a",
+    "results/sota_round7/mechanisms/bitstring_invariance_cost.json": "a51d351690cf7177faa8846267ed9e0d32aefcbe44cbe9a2f129d83787813216",
+    "results/sota_round7/mechanisms/resource_controls_peer_review.py": "fd22f2c6790153e4b0aefb452c4d84c2830c75e7afead4505de22707ebc80734"
+  },
+  "claim_boundary": "The reviewed v3 state machines implement the three classical controls under their stated observation contracts. Deterministic checks are not new Monte Carlo observations, operational device validation, or a SOTA performance result."
+}

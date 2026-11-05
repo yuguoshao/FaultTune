@@ -1,0 +1,100 @@
+{
+  "schema": "faulttune.round8.joint_midpoint_echo_certificate.v1",
+  "created_utc": "2026-11-05T07:26:46.678008+00:00",
+  "status": "certified_reference_advantage_over_specified_two_stage_control_only",
+  "sota_goal_complete": false,
+  "new_monte_carlo_observations": 0,
+  "public_contract": {
+    "model": "H(u)=((omega+u)/2)X0+(gamma+chi*u)P11, disjoint tensor factors; no extra q0 noise; symmetric readout r<=.05; stationary spectator Z dephasing kappa<=.005.",
+    "old_amplitude": "2 asin sqrt(5/198)",
+    "new_amplitude": "2 asin sqrt(1/198)",
+    "echo": "Three low=-1/high=+1 echo blocks, each sensing window duration1, gain6; |chi|<=.2; ideal known preparation/analysis/X gates.",
+    "echo_noise_duration_upper": "9",
+    "minimum_echo_contrast": ".9 exp(-.045)",
+    "price_scope": "Full scheduled echo duration<=9 under the explicit simulation cost schedule. This conservative contrast envelope also covers sensing-only dephasing.",
+    "power_failure_scope": "Cost and power assume delivered physical outcomes and no exogenous execution errors or interruption. Interrupted/failed executions receive full-cap score but need their own failure-rate model for probabilistic performance."
+  },
+  "directed_constants": {
+    "sin_half_update_gap": [
+      "0.08834477607828599535361640845094000191073739329122710760894048999",
+      "0.08834477607828599535361640845094000191073739329122710760894049022"
+    ],
+    "half_gap_upper_test_sin_00885": [
+      "0.08838451954536751859834962746204731181743557756023362618975786721",
+      "0.08838451954536751859834962746204731181743557756023362618975786725"
+    ],
+    "minimum_echo_contrast": [
+      "0.8603977336497899163125348665482598550791195556563087685800034107",
+      "0.8603977336497899163125348665482598550791195556563087685800034109"
+    ],
+    "physical_cone_coefficient": [
+      "0.7498949594991720078792484205988803788289751042516305733787860811",
+      "0.7498949594991720078792484205988803788289751042516305733787860840"
+    ],
+    "rational_cone_coefficient": "3/4",
+    "echo_mean_at_chi_4_over_177": [
+      "0.1163069395816678733512612531975773795896367331939041389605702992",
+      "0.1163069395816678733512612531975773795896367331939041389605702995"
+    ],
+    "safe_separate_echo_boundary": "29/250"
+  },
+  "physical_sign_proof": [
+    "For equal-duration targets, s(theta)=a-(a-1/4)sin^2(theta/2), a in[1/4,1]; s>=1/4 and |s_prime|<=3/8. Thus d>(3/2)|chi|*du guarantees Delta<0, with the mirrored sufficient condition for Delta>0.",
+    "Midpoint Rx(S*pi/2) demodulation gives d=sin(h)*mu_d exactly. Echo Rx(-S*pi/2) on q1 gives mu_e=A sin(6chi). Since sinc decreases on[0,1.2], |chi|<=.2|mu_e|/(Amin*sin1.2).",
+    "The certified cone coefficient is strictly below3/4. Therefore mu_d>(3/4)|mu_e| implies benefit, and mu_d<-(3/4)|mu_e| implies harm. These are sufficient conditions only; many nonzero target effects need a richer fallback."
+  ],
+  "joint_rule": {
+    "action_probabilities": {
+      "midpoint": "4/7",
+      "echo": "3/7"
+    },
+    "bet": "3/25",
+    "threshold_each": 200,
+    "cap": 65536,
+    "rule": "Four products M[t,s]; midpoint multiplies1+beta*t*Z_d, echo1+beta*s*Z_e. Report t only when both CURRENT s products exceed200. Stop at first report or cap.",
+    "risk_proof": "If direction t is wrong then t*mu_d<=3|mu_e|/4; at least one s has (4/7)*t*mu_d+(3/7)*s*mu_e<=0. That nonnegative product is a supermartingale with unit start. Its Ville bound controls a wrong direction by.005. At Delta=0 the union of two wrong directions is<=.01."
+  },
+  "reference_results": {
+    "truth_only_for_scoring": "x_old=.03, x_new=.01, chi=0, original reference r=.005, s=.5, Delta=-.01. Sign-reflected midpoint signal has the same cost and power bounds.",
+    "midpoint_mean": [
+      "0.2263857682120011804844057147767161461848039529815921498076151680",
+      "0.2263857682120011804844057147767161461848039529815921498076151688"
+    ],
+    "joint_log_drift": [
+      "0.008346416183152705774977100693487776000998367476320639374820052230",
+      "0.008346416183152705774977100693487776000998367476320639374820052360"
+    ],
+    "joint_expected_shots_upper": "938.0495591410595277767352344507824185148995582919474934989757105",
+    "joint_full_cap_penalized_expected_shots_upper": "938.0495591410595277767352344507824185148995582919474934989757105",
+    "joint_correct_stop_lower": "0.9806864996468954539828989374626040280377975531266487504043735395",
+    "target_stage_expected_shots_upper": "436.9660270793668542597257837456559936670846813128536912609673694",
+    "echo_stage_expected_shots_upper": "1324.014986782436697159821515482295247976785239653805098295760520",
+    "separate_expected_shots_upper": "1760.981013861803551419547299227951241643869920966658789556727890",
+    "separate_correct_stop_lower": "0.9681295621664153510830757553218391228997212231297812074347423112",
+    "separate_target_expected_shots_lower": "379.0473540099491121750869771381419389114565760431237312060843047",
+    "separate_echo_pathwise_shot_floor": 680,
+    "separate_expected_shots_lower": "1025.047354009949112175086977138141938911456576043123731206084304",
+    "separate_over_joint_shot_cost_ratio_lower": "1.092743282080480420356569480257688230556958035606682986008200302",
+    "joint_sensing_time_upper": "2948.155757300472801584025022559601886761112897488977836711066521",
+    "joint_device_time_upper": "5387.084611067227573803536632131636174899851749048041319808403369",
+    "scope": "A single development reference and its mirror. The comparator lower bound is specific to the named two-stage rule; no lower bound for all same-action methods is claimed. Device-time figures are upper bounds only, not comparative speedups."
+  },
+  "expected_cost_proof": [
+    "At chi=0, log min_s M[+,s]=n*a+b(S_mid-|S_echo|). Each separate log product is a sum of iid bounded increments with mean D>0. The inclusion {T>n} subset of union_s{log M[+,s]_n<L} and Hoeffding give an exponential tail, proving integrability before optional stopping.",
+    "At the first simultaneous crossing T, min log wealth<=L+log(1+beta). Wald gives E S_mid=p*mu_d*ET. The echo martingale isometry gives E S_echo^2=q*ET. Hence D*ET<=L+log(1+beta)+b*sqrt(q*ET); solve the quadratic in sqrt(ET).",
+    "The executable rule stops at tau=min(T_any,cap), so its actual shots and full-cap-penalized shots agree pathwise and are<=T. No premature abandonment is allowed by this theorem. Correct-stop probability is at least1-.005-ET/cap.",
+    "The separate rule first waits for a target LR direction, then echo equivalence. If its final correct power>=.95, the target positive crossing event has probability>=.95, versus<=.005 under midpoint mean60/883. Stopped relative-entropy data processing gives target expected cost>=kl(.95,.005)/kl(Bern((1+mu_d)/2),Bern((1+60/883)/2)).",
+    "Echo log min wealth=n*ea-eb|S|<=n*ea, so no success can occur before ceil(log100/ea) observations. The echo stage is entered with probability>=.95. Add.95 times this deterministic floor to the target lower bound. The argument concerns this specified stage architecture with no direct-target fallback.",
+    "Separate upper: the target log overshoot is bounded bylog(f_plus); for echo use stopped Wald/isometry with positive drift ea and overshoot<=ea+eb. Sum the two infinite-stage upper bounds, then apply the same cap and wrong-direction bound."
+  ],
+  "remaining_gates": [
+    "Independent theorem-to-code review and executable same-action controls.",
+    "Stronger same-action alternatives, optimized stage thresholds/allocation, mixtures, direct target fallback, and literature applicability.",
+    "Freeze a fresh candidate and independent physical test cases; certify original1percent/95percent/3x and simultaneous cost lower bound>=2.",
+    "No transfer of this development example into the frozen48-case operational result."
+  ],
+  "source_sha256": {
+    "experiments/sota_round8/certify_joint_midpoint_echo.py": "2e28e23d513fa18001a90bbff114b38d677aaecf9cfb2d0b32ffc353da92aaef",
+    "experiments/sota_round8/joint_midpoint_echo_control.py": "e2cde9a59516e7bba8f533c191fb9190050d20711c76327b8b982144f363c1d0"
+  }
+}

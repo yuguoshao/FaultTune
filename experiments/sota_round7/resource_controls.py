@@ -237,6 +237,10 @@ a validator for unknown amplitude-dependent spectator crosstalk.
         result = super().summary()
         result.update({'complete_three_bit_counts': {k: list(v) for k, v in self.outcome_counts.items()},
                        'readout_bits_charged': 3*self.shots,
+                       'control_window_uses': self.shots,
+                       'configuration_switches': self.shots,
+                       'device_time_exact': str(F(33*self.shots, 10)),
+                       'device_time_model': 'Per issued action:2.2 setup/readout+1 shared control window+.1 alternating-configuration switch, including initial configuration',
                        'model_contract': 'same_duration_disjoint_invariant_spectators with s>0',
                        'power_scope': 'Reviewed cost/power example x_old=.03,x_new=.01,s=.5 at cap131072 only; no uniform eligible-domain power claim'})
         return result

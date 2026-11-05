@@ -1,0 +1,294 @@
+{
+  "status": "complete_physical_derivation_and_deterministic_resource_bounds_pending_independent_review",
+  "new_simulation_observations": 0,
+  "model": "H(u)=((omega+u)/2)X0+(gamma+chi*u)P11_(1,2), with the existing disjoint subsystem structure and stationary Markov Z-dephasing onq1,q2. Unknown omega,gamma,chi and readout nuisance are never supplied to a policy.",
+  "echo_sequence": {
+    "preparation": "Reset|000>, applyX2 to prepareq2=|1>, applyH1 to prepareq1=|+>. q0 can remain|0>; its later evolution factors and is not used by the echo statistic.",
+    "one_block_in_time_order": [
+      "sensing windowH(u_low), durationtau",
+      "ideal registered X1 pulse",
+      "sensing windowH(u_high), durationtau",
+      "ideal registered X1 pulse"
+    ],
+    "exact_operator": "Onq2=1, V_u=diag(1,exp(-i(gamma+chi*u)tau)) onq1. The block isX V_high X V_low=diag(exp(-i g_high tau),exp(-i g_low tau))=global_phase*Rz(chi*(u_high-u_low)*tau). The scalar global phase containsgamma and disappears from every measurement.",
+    "repetition": "Afterk blocks, phase_phi=k*tau*(u_high-u_low)*chi. Both original amplitudes and the expanded amplitudes use actual paid sensing windows, not a free controlled inverse.",
+    "dephasing": "D_Z commutes with each diagonal sensing window and is covariant underX becauseXZX=-Z. Thus sensing-window dephasing gives attenuationexp(-2*kappa*k*tau). Additional registered dephasing before analysis can be folded into a common attenuationexp(-kappa*T_eff).",
+    "readout": "For a chosen axisP in{X1,Y1} and independently fair signS, measure outcome1 with projector(I+S*P)/2. If classical readout errors arealpha0,alpha1, thenZ=S(2Y-1) has mean A*cos(phi) forX1 or A*sin(phi) forY1, withA=(1-alpha0-alpha1)exp(-kappa*T_eff); the unknown additive bias cancels.",
+    "q0_and_q2": "The q0 rotation during every sensing window is charged but cannot affectq1 under this Hamiltonian. q2 dephasing does nothing to its|1> population. Readout ofall3 bits is charged, with no postselection on the observed q2 bit."
+  },
+  "necessary_implementation_assumptions": [
+    "X1,X2 and the preparation/analysis gates are registered ideal unitary primitives, as in the existing gate/Kraus simulator. They have nonzero scheduled cost. The exact derivation does not assert that finite-width physicalX pulses automatically refocus an always-on Hamiltonian during their own drive.",
+    "A hardware extension needs bounded residual evolution and pulse errors. With unknown unrestrictedgamma, imperfect echo pulses can leakgamma back into the measurement and cannot be absorbed into visibility without proof.",
+    "The q2=1 preparation is a physical assumption, not inferred from noisy final readout. Ifq2 is actually1 with probabilityq, the means becomeqA sin(phi) andA[(1-q)+q cos(phi)]; unknown preparation leakage can mimic a smaller phase.",
+    "Readout contrast is nonnegative and the same classical channel applies to both randomized signs and quadrature axes. Basis-dependent contrast or drifting nuisance between separately acquired axes requires an enlarged model or per-shot axis randomization.",
+    "gamma,chi and the sensing response are stationary during both echo halves. Unmodeled gamma drift creates a residual phase instead of exact cancellation.",
+    "A shared bound|chi|<=1/5 is explicit. Without an alias restriction, chi=2pi*m/gain produces the same echo sin/cos law aschi=0. A wider domain needs paid multidepth phase unwrapping shared with every comparator."
+  ],
+  "paid_cost_contract": {
+    "primary": "One complete prepared/measured echo is one charged circuit shot. Both quadratures, if used, require their own fresh paid shots.",
+    "sensing_time": "Each ofthe2k Hamiltonian windows hasduration1 and costs one sensing-window time unit.",
+    "ideal_gate_prices": "Each registeredX pulse is charged0.1 time unit, including2k X1 echoes andone X2 preparation. Setup/reset/readout and H/analysis layers use the existing2.2 convention. Up to0.1 is added per shot for analysis-phase configuration.",
+    "echo_total": "T_echo<=2k+0.1*(2k+1)+2.2+0.1=2.2k+2.4. This is94.8 for original-menu k42 and9 for expanded-menu k3.",
+    "noise_envelope_for_numeric_controls": "For the numerical single-quadrature controls, assumeunknownkappa in[0,.005] andalpha0+alpha1<=.1. The conservative visibility lower bound is.9*exp(-.005*T_echo), allowing dephasing throughout the full charged duration. The ideal sensing-only attenuation is less severe.",
+    "same_action_comparison": "Every strong control receives exactly the same amplitude menu, durations, echo pulses, midpoint pulse, analysis phases and cost schedule. One cannot giveFaultTune +/-1 drives while restricting the comparator toold/new."
+  },
+  "numeric_gate": {
+    "chi_safe_cut_exact": "11/531",
+    "target_control_gap_interval": [
+      "0.1769202009072131668019604120166610888007430634263762154186336319",
+      "0.1769202009072131668019604120166610888007430634263762154186337451"
+    ],
+    "gap_strict_upper": "177/1000",
+    "prior_abs_chi_max_exact": "1/5",
+    "why_not_original_0075": "The initial exploratory .075 cut is superseded. The current conservative guard usesh=11/531, compatible withd0>=11/2000 throughh=2d0/(3*.177)."
+  },
+  "echo_menu_comparison": [
+    {
+      "name": "original_target_amplitudes",
+      "u_low": "u_new",
+      "u_high": "u_old",
+      "duration_each_window_exact": "1",
+      "blocks": 42,
+      "phase_gain_interval": [
+        "7.430648438102953005682337304699765729631208663907801047582612539",
+        "7.430648438102953005682337304699765729631208663907801047582617295"
+      ],
+      "maximum_absolute_phase_over_declared_domain": [
+        "1.486129687620590601136467460939953145926241732781560209516522507",
+        "1.486129687620590601136467460939953145926241732781560209516523459"
+      ],
+      "sensing_windows_per_echo_shot": 84,
+      "X1_echo_pulses_per_shot": 84,
+      "additional_X2_preparation_pulses": 1,
+      "measured_bits_per_shot": 3,
+      "device_time_upper_per_shot_exact": "474/5",
+      "minimum_contrast_using_full_scheduled_time": [
+        "0.5602565273109180786031729249938785871431423172277976063273391763",
+        "0.5602565273109180786031729249938785871431423172277976063273391766"
+      ],
+      "minimum_sin_mean_at_abs_chi_cut": [
+        "0.08590043693816325934860435424054650932241106574191761078805131740",
+        "0.08590043693816325934860435424054650932241106574191761078805137600"
+      ],
+      "classical_boundary_LR_control": {
+        "boundary_mean_exact": "17/200",
+        "threshold_each": 200,
+        "burnin_n0": 1485,
+        "log_drift_at_chi_zero": [
+          "0.003625613357096431862639326660066287752605131134569368743242710193",
+          "0.003625613357096431862639326660066287752605131134569368743242710195"
+        ],
+        "atanh_boundary_mean": [
+          "0.08520560034951930544394136381869824456192567957922132277201512035",
+          "0.08520560034951930544394136381869824456192567957922132277201512130"
+        ],
+        "expected_echo_shots_upper": [
+          "2207.694241252849846127562032202966072963617359048748811485119723",
+          "2207.694241252849846127562032202966072963617359048748811485119726"
+        ],
+        "audit_shot_cap": 65536,
+        "chi_zero_cap_noncertificate_probability_upper": [
+          "4.682919365414946296497083915750274485453711967913615782599668528E-25",
+          "4.682919365414946296497083915750274485453711967913615782599675650E-25"
+        ]
+      },
+      "expected_sensing_windows_upper": [
+        "185446.3162652393870747152107050491501289438581600949001647500567",
+        "185446.3162652393870747152107050491501289438581600949001647500570"
+      ],
+      "expected_X1_echo_pulses_upper": [
+        "185446.3162652393870747152107050491501289438581600949001647500567",
+        "185446.3162652393870747152107050491501289438581600949001647500570"
+      ],
+      "expected_device_time_upper": [
+        "209289.4140707701654128928806528411837169509256378213873287893497",
+        "209289.4140707701654128928806528411837169509256378213873287893501"
+      ]
+    },
+    {
+      "name": "expanded_public_amplitudes",
+      "u_low": "-1",
+      "u_high": "1",
+      "duration_each_window_exact": "1",
+      "blocks": 3,
+      "phase_gain_interval": [
+        "6",
+        "6"
+      ],
+      "maximum_absolute_phase_over_declared_domain": [
+        "1.2",
+        "1.2"
+      ],
+      "sensing_windows_per_echo_shot": 6,
+      "X1_echo_pulses_per_shot": 6,
+      "additional_X2_preparation_pulses": 1,
+      "measured_bits_per_shot": 3,
+      "device_time_upper_per_shot_exact": "9",
+      "minimum_contrast_using_full_scheduled_time": [
+        "0.8603977336497899163125348665482598550791195556563087685800034107",
+        "0.8603977336497899163125348665482598550791195556563087685800034109"
+      ],
+      "minimum_sin_mean_at_abs_chi_cut": [
+        "0.1066669467266936191213157859124932635121148084639210917451591140",
+        "0.1066669467266936191213157859124932635121148084639210917451591183"
+      ],
+      "classical_boundary_LR_control": {
+        "boundary_mean_exact": "53/500",
+        "threshold_each": 200,
+        "burnin_n0": 957,
+        "log_drift_at_chi_zero": [
+          "0.005649800354239926803756344119297632570703690015969967281405844585",
+          "0.005649800354239926803756344119297632570703690015969967281405844595"
+        ],
+        "atanh_boundary_mean": [
+          "0.1063997034543829834453123864489722296535253124943771071736634180",
+          "0.1063997034543829834453123864489722296535253124943771071736634189"
+        ],
+        "expected_echo_shots_upper": [
+          "1421.939055821419385061071781649793783874898544437417531314217072",
+          "1421.939055821419385061071781649793783874898544437417531314217075"
+        ],
+        "audit_shot_cap": 65536,
+        "chi_zero_cap_noncertificate_probability_upper": [
+          "2.068913927513381310582452645526561294828430713221943639214685706E-39",
+          "2.068913927513381310582452645526561294828430713221943639214690138E-39"
+        ]
+      },
+      "expected_sensing_windows_upper": [
+        "8531.634334928516310366430689898762703249391266624505187885302432",
+        "8531.634334928516310366430689898762703249391266624505187885302450"
+      ],
+      "expected_X1_echo_pulses_upper": [
+        "8531.634334928516310366430689898762703249391266624505187885302432",
+        "8531.634334928516310366430689898762703249391266624505187885302450"
+      ],
+      "expected_device_time_upper": [
+        "12797.45150239277446554964603484814405487408689993675778182795364",
+        "12797.45150239277446554964603484814405487408689993675778182795368"
+      ]
+    }
+  ],
+  "classical_echo_controls": {
+    "with_public_noise_envelope": "Choose rationalbeta<=A_min*sin(gain*h). For each demodulated sin outcomeZ, updateE_right*=1/(1+beta*Z),E_left*=1/(1-beta*Z). Underchi>=h, E_right is a supermartingale; underchi<=-h,E_left is one. Certify|chi|<h only when BOTH current products>=200, at or after the stated deterministicburnin. This intersection-union rule has false-certificate probability<=1/200 overthe entire declaredchi/nuisance domain, not twice that number.",
+    "no_truth_assumption": "The executed rule never assumeschi=0. Cost and power below are evaluated atchi=0, wherefair demodulation makesZ exactlyRademacher regardless ofunknownreadout bias or attenuation.",
+    "closed_cost_proof": "Write d=-log(1-beta^2)/2,l=atanh(beta),L=log200. ThenlogE_right/left=nd-/+l*S_n. Letn0=ceil((L+l)/d),a=d/l<1,so the simultaneous-crossing central band atn0 has radius>=1. Atchi=0, after n0, a surviving positive or negativefair walk hits a boundary moving inward relative toit atspeeda. Bounded stoppedWald gives extra mean at most(distance+1+a)/a. Averaging overS_n0 andusingbandradius>=1 yieldsE[tau]<=n0+[E|S_n0|-P(|S_n0|=1)]/a+P(|S_n0|>1). The retained central-binomial moments are exact rationals. AtcapN, P(no certificate)<=2exp(-(Nd-L)^2/(2N*l^2)).",
+    "without_free_kappa_bound": "Use paid sin AND cos quadratures and letW_right=Z_y-t Z_x,W_left=-Z_y-t Z_x,t=tan(gain*h). Their expectations areA[+/-sin(phi)-t cos(phi)]. For0<b<1/(1+t), products of1-bW_right/left are valid against the respective outside-half-interval nulls. Certifying both gives a risk-valid interval without knowingA or kappa, butA approaching0 precludes a uniform finite-cost/power promise.",
+    "drift_robust_axis_randomization": "Ifvisibility may vary predictably between shots while remaining common toboth potential axes ofthe current shot, independently randomizeaxisQ aswell asS and useW=2[+/-1(Q=Y)Z-t*1(Q=X)Z]. Then conditional mean isA_t[+/-sin(phi)-t cos(phi)], retaining the halfspace supermartingale witha correctly boundedbet. This still doesnot fix uncontrolled phase orpreparation drift."
+  },
+  "midpoint_q0_mechanism": {
+    "public_control": "u_mid=(u_old+u_new)/2, duration1, available equally to all methods.",
+    "exact_target_identity": "Withtheta_j=omega+u_j,phi=omega+(u_old+u_new)/2,h0=(u_old-u_new)/2 andcommonreadoutcontrastv, d_q0=x_old-x_new=v*sin(phi)*sin(h0). This holds for arbitrary realomega, without a local phase oralias assumption.",
+    "operator_and_sign": "Startq0=|0>, executeRx(phi), then the known analysisRx(S*pi/2), andZ-readout. Equivalentlyoutcome1 projectsonto(I-SY0)/2, since the state afterRx(phi) hasY expectation -sin(phi). WithfairS, Z0=S(2Y-1) hasmeanmu_d=v*sin(phi), so d_q0=sin(h0)*E[Z0]. The projector sign is opposite totheq1 Rz-echo Y convention.",
+    "nuisance": "Unknownreadoutbias cancels andunknowncontrastv cancels fromthe identitybetween d_q0 andthe observablemean. gamma andchi act only onq1q2 and cannot affect thisq0 marginal under the declared tensor-factor Hamiltonian. Extraq0 decoherence oranalysis-gate errors require a new derivation.",
+    "multiplier_sin_half_gap_interval": [
+      "0.08834477607828599535361640845094000191073739329122710760894048275",
+      "0.08834477607828599535361640845094000191073739329122710760894054003"
+    ],
+    "example_target_q0_gap_cut_exact": "3/500",
+    "corresponding_observable_mean_cut_interval": [
+      "0.06791573046360035414532171443301484385544118589447764494228451212",
+      "0.06791573046360035414532171443301484385544118589447764494228455622"
+    ],
+    "classical_LR_null_mean_exact": "7/100",
+    "classical_LR_alternative_mean_exact": "1/5",
+    "good_world_observable_mean_interval": [
+      "0.2263857682120011804844057147767161461848039529815921498076151628",
+      "0.2263857682120011804844057147767161461848039529815921498076152251"
+    ],
+    "one_direction_log_drift_at_good_world": [
+      "0.01206782633248635176269533834012673434539291574653224810119474310",
+      "0.01206782633248635176269533834012673434539291574653224810119475265"
+    ],
+    "one_direction_expected_shots_upper": [
+      "448.5464180319317141906651582299589331420861105361498994964444875",
+      "448.5464180319317141906651582299589331420861105361498994964448430"
+    ],
+    "cap": 4096,
+    "good_world_correct_process_non_crossing_upper": [
+      "0.000001346888481790148443070686778373805234780476701640081944934048851",
+      "0.000001346888481790148443070686778373805234780476701640081944934081502"
+    ],
+    "classical_rule": "Forpositive d_q0 use likelihood factors(1+.2Z)/(1+.07Z) andthreshold200;the boundary .07 isrounded UP beyond(.006/sin(h0)). Under d_q0<=.006 the process is a supermartingale. Its sign-reflected version is available for negative d_q0. Bothcan run withfirst-crossing decisions; addingthe wrong-directionVille bound gives a finite-power bound. These areordinary fixed-alternative Bernoulli likelihood controls.",
+    "cost": "Onefresh midpoint measurement isone paidshot,one duration1 sensingwindow,oneknown quarter-turnanalysis gate,fullreadout andconfiguration. A conservative separate analysis surcharge gives atmost3.4 time units per shot underthe stated2.2 setup/readout+.1 analysis+.1switch convention."
+  },
+  "link_to_target_guard": {
+    "structural_bound": "For the original target amplitudes at common duration, s_old>=1/4 and|s_new-s_old|<=(3/8)|chi|Delta_u in the declared spectator model. Thusd_q0>.006 and|chi|<11/531, together withDelta_u<.177, implyDelta_target<-1/8000. The negative-d_q0 mirror yields the corresponding harmful-update certificate with the analogous decomposition.",
+    "not_an_invariance_assumption": "The echo evidence pays toboundchi. It doesnot assumethe good-worldchi=0, andit isnot assertingQ_old=Q_newexactly.",
+    "integration_boundary": "Root/statistics controls supply the final combinedstage budget,risk bookkeeping andany performance comparison. These physical identities and component bounds do not by themselves certify a whole implementation or SOTA win."
+  },
+  "deterministic_checks": {
+    "mpmath_digits": 115,
+    "spectator_matrix_sequences": [
+      {
+        "menu": "original_amplitudes",
+        "chi": "0.0",
+        "kappa": "0.0",
+        "gamma": "1.9",
+        "full_spectator_density_matrix_max_error": "0.0",
+        "demodulated_sin_and_cos_checked": true
+      },
+      {
+        "menu": "original_amplitudes",
+        "chi": "-0.1639587152826606203137657",
+        "kappa": "0.005",
+        "gamma": "-0.8",
+        "full_spectator_density_matrix_max_error": "5.886113775146198304558274e-116",
+        "demodulated_sin_and_cos_checked": true
+      },
+      {
+        "menu": "original_amplitudes",
+        "chi": "0.1",
+        "kappa": "0.002",
+        "gamma": "4.7",
+        "full_spectator_density_matrix_max_error": "1.453027114383799223460324e-114",
+        "demodulated_sin_and_cos_checked": true
+      },
+      {
+        "menu": "expanded_amplitudes",
+        "chi": "0.0",
+        "kappa": "0.0",
+        "gamma": "1.9",
+        "full_spectator_density_matrix_max_error": "0.0",
+        "demodulated_sin_and_cos_checked": true
+      },
+      {
+        "menu": "expanded_amplitudes",
+        "chi": "-0.1639587152826606203137657",
+        "kappa": "0.005",
+        "gamma": "-0.8",
+        "full_spectator_density_matrix_max_error": "2.616050566731643690914789e-116",
+        "demodulated_sin_and_cos_checked": true
+      },
+      {
+        "menu": "expanded_amplitudes",
+        "chi": "0.1",
+        "kappa": "0.002",
+        "gamma": "4.7",
+        "full_spectator_density_matrix_max_error": "1.344450584241829073638429e-115",
+        "demodulated_sin_and_cos_checked": true
+      }
+    ],
+    "midpoint_operator_checks": [
+      {
+        "omega": "-0.8",
+        "identity_residual": "2.379320472483421146819398e-117"
+      },
+      {
+        "omega": "0.0",
+        "identity_residual": "7.931068241611403822731327e-118"
+      },
+      {
+        "omega": "0.6",
+        "identity_residual": "7.931068241611403822731327e-118"
+      }
+    ],
+    "scope": "Independent explicit matrix/channel checks plus directed64-digit scalar bounds. No physical output law was sampled."
+  },
+  "source_sha256": {
+    "results/sota_round8/echo_and_midpoint_mechanisms.py": "ac85fe83d782b9af33b686b4563bb60b1d3b9af9c9caa00301930405e1532e5f",
+    "experiments/circuit_validation/quantum_model.py": "e8fd420cba361de28798e09bf46cdc9f791522e56f7252d8fa660d726c480bc2",
+    "experiments/circuit_validation/direct_tests.py": "2f45bd4b59536352374dafbf6805f0ea927a3d7cff82863989877fb65f17c97a",
+    "results/sota_round7/mechanisms/bitstring_invariance_cost.json": "a51d351690cf7177faa8846267ed9e0d32aefcbe44cbe9a2f129d83787813216"
+  },
+  "claim_boundary": "Echo cancellation, Ramsey phase readout and fixed likelihood controls are established mechanisms available tostrongsame-action baselines. This result expands the admissible information experiment but doesnot claim algorithmic novelty, hardware validation orsame-action SOTA superiority."
+}
